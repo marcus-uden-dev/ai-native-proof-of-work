@@ -1,0 +1,15 @@
+# Internal source maps and local machine paths
+internal/LOCAL_SOURCE_MAP.md
+internal/source-indexes/*.md
+
+# Local exports or temporary files
+tmp/
+.cache/
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env
+.env.*
+*.key
+*.pem

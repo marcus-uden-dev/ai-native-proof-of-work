@@ -1,5 +1,7 @@
 # AI-Native Proof of Work
 
+> Canonical repo: `TheOneDarkHorse/ai-native-proof-of-work`
+
 A private, recruiter-shareable archive documenting practical work on AI-assisted workflow automation, product strategy, architecture reasoning, and execution discipline.
 
 This repository is not a codebase.
@@ -26,32 +28,6 @@ This repository demonstrates:
 The goal is simple:
 
 > Turn real work into reusable proof.
-
----
-
-## Why This Exists
-
-Useful work often disappears into:
-
-- chat history
-- scattered notes
-- local project folders
-- unfinished scripts
-- scheduled task outputs
-- strategy discussions
-- recruiter conversations
-- half-documented experiments
-
-This repository exists to make that work visible, structured, and reusable.
-
-Instead of relying on memory or vague claims, it creates a living archive of:
-
-- what was built
-- what was decided
-- what changed
-- what improved
-- what still needs evidence
-- what can be shown to a recruiter, hiring manager, or collaborator
 
 ---
 
@@ -109,8 +85,6 @@ Recommended order:
 
 ## What to Look For
 
-This repository is designed to show evidence of:
-
 | Capability | How It Shows Up |
 |---|---|
 | Structured thinking | Decision logs, strategy docs, tradeoff analysis |
@@ -124,8 +98,6 @@ This repository is designed to show evidence of:
 ---
 
 ## Evidence Standard
-
-Claims are labeled to avoid overstatement.
 
 | Label | Meaning |
 |---|---|
@@ -150,41 +122,9 @@ Important decisions are documented using a visible reasoning trail:
 Context → Options Considered → Tradeoffs → Decision → Evidence → Open Questions → Next Action
 ```
 
-This is used for:
-
-- product strategy
-- pricing
-- business model
-- architecture
-- workflow design
-- problem-solving
-- weekly reviews
-
----
-
-## Core Workflow
-
-```mermaid
-flowchart LR
-    A[Weekly Work] --> B[Capture]
-    B --> C[Classify]
-    C --> D[Extract Decisions]
-    D --> E[Generate Artifacts]
-    E --> F[Review]
-    F --> G[Publish to Repo]
-
-    G --> H[CV Bullet]
-    G --> I[Recruiter Summary]
-    G --> J[Portfolio Note]
-    G --> K[LinkedIn Draft]
-    G --> L[Demo Script]
-```
-
 ---
 
 ## Current Focus
-
-Current focus areas:
 
 - building a recruiter-shareable proof-of-work archive
 - documenting AI-native workflow design
@@ -199,27 +139,11 @@ Current focus areas:
 
 This repository is private by default.
 
-Recruiter-facing files should not contain:
-
-- private local machine paths
-- raw chat logs
-- private emails
-- credentials
-- API keys
-- personal addresses
-- sensitive personal data
-- confidential third-party material
-- internal-only operational details
-
-Internal source maps and local indexes are used for workflow context, but they are not intended for recruiter-facing review.
+Recruiter-facing files should not contain private local paths, raw chat logs, private emails, credentials, API keys, personal addresses, sensitive personal data, confidential third-party material, or internal-only operational details.
 
 ---
 
 ## Status
-
-This is a living proof-of-work repository.
-
-It is updated through weekly review cycles and structured documentation runs.
 
 ```text
 Status: Active
