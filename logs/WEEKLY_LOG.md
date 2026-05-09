@@ -281,7 +281,7 @@ The update keeps three evidence layers separate:
 | Before | After | Improvement | Evidence |
 |---|---|---|---|
 | Local context was known to exist but not indexed | Local context is mapped by source layer | Better future extraction and less source confusion | Internal source indexes |
-| Codex, Claude, and skills could be accidentally blended | Each layer has an explicit role | Cleaner evidence trail | [internal/LOCAL_SOURCE_MAP.md](../internal/LOCAL_SOURCE_MAP.md) |
+| Codex, Claude, and skills could be accidentally blended | Each layer has an explicit role | Cleaner evidence trail | Internal `internal/LOCAL_SOURCE_MAP.md`, summarized safely in [SOURCE_MAP.md](../SOURCE_MAP.md) |
 
 ### 5. Privacy Handling
 

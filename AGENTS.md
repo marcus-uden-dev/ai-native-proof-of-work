@@ -1,6 +1,6 @@
 # AGENTS.md — AI-Native Proof-of-Work Repository Compiler
 
-Last updated: 2026-05-08
+Last updated: 2026-05-09
 Status: Active instruction
 
 ## Mission
@@ -198,10 +198,15 @@ Summarize, do not dump raw content.
 
 Mostly static files change only when strategy, architecture, positioning, or workflow assumptions change.
 
-Weekly dynamic files update every weekly run:
+Weekly input files are read during weekly runs, but should only be created or edited when Marcus provides notes or explicitly asks for a draft input file:
 
 ```text
 weekly-input/*.md
+```
+
+Weekly dynamic output files update every weekly run when there is verified new material:
+
+```text
 RECRUITER_ONE_PAGER.md
 RECRUITER_AGENT_GUIDE.md
 NAVIGATION.md
