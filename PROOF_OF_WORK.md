@@ -18,29 +18,29 @@ Status: Active / Project-focused evidence map
 
 | Artifact | What It Shows | Status | Link |
 |---|---|---|---|
-| Recruiter one-pager | Fast skim path and top proof points | Verified | `RECRUITER_ONE_PAGER.md` |
-| Job-agent case study | Lead product proof point | Internal / Verified | `case-studies/JOB_AGENT_CASE_STUDY.md` |
-| Evidence matrix | Capability-to-evidence map | Verified | `EVIDENCE_MATRIX.md` |
-| Role reading paths | Role-specific recruiter navigation | Verified | `ROLE_READING_PATHS.md` |
-| Recruiter agent guide | Agent-readable evaluation instructions | Verified | `RECRUITER_AGENT_GUIDE.md` |
-| Project proof points | Concrete project portfolio: job-agent, PKM, household budget app | Internal / Verified | `PROJECT_PROOF_POINTS.md` |
-| Project timeline | Milestones across projects and proof-of-work automation | Internal / Verified | `PROJECT_TIMELINE.md` |
-| Weekly log | Execution cadence | Verified | `logs/WEEKLY_LOG.md` |
-| Value proposition | Project-focused positioning | Hypothesis | `strategy/VALUE_PROPOSITION.md` |
-| Architecture docs | Technical reasoning | Verified | `architecture/ARCHITECTURE.md` |
-| Workflow model | Supporting operating model | Decision | `workflows/AI_OPERATING_MODEL.md` |
-| Recruiter brief | Communication clarity | Verified | `RECRUITER_BRIEF.md` |
-| Local source index summaries | Ability to operationalize project context without exposing private paths | Internal / Verified | `SOURCE_MAP.md`, `PROJECT_PROOF_POINTS.md` |
+| Recruiter one-pager | Fast skim path and top proof points | Verified | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) |
+| Job-agent case study | Lead product proof point | Internal / Verified | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) |
+| Evidence matrix | Capability-to-evidence map | Verified | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) |
+| Role reading paths | Role-specific recruiter navigation | Verified | [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) |
+| Recruiter agent guide | Agent-readable evaluation instructions | Verified | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) |
+| Project proof points | Concrete project portfolio: job-agent, PKM, household budget app | Internal / Verified | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
+| Project timeline | Milestones across projects and proof-of-work automation | Internal / Verified | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) |
+| Weekly log | Execution cadence | Verified | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
+| Value proposition | Project-focused positioning | Hypothesis | [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md) |
+| Architecture docs | Technical reasoning | Verified | [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md) |
+| Workflow model | Supporting operating model | Decision | [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
+| Recruiter brief | Communication clarity | Verified | [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md) |
+| Local source index summaries | Ability to operationalize project context without exposing private paths | Internal / Verified | [SOURCE_MAP.md](SOURCE_MAP.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 
 ## Workflow Improvements
 
 | Workflow | Before | After | Evidence |
 |---|---|---|---|
-| Weekly documentation | Scattered notes/chats/local projects | Structured GitHub archive | `logs/WEEKLY_LOG.md`, commit `1c74a04` |
+| Weekly documentation | Scattered notes/chats/local projects | Structured GitHub archive | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md), commit `1c74a04` |
 | Career assets | Rewritten manually | Generated from one source | `recruiter-assets/`, commit `1c74a04` |
-| Strategy decisions | Implicit | Decision trail with tradeoffs | `logs/DECISION_LOG.md` |
+| Strategy decisions | Implicit | Decision trail with tradeoffs | [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | Local project context | Rediscovered repeatedly | Indexed source map split by Codex projects, Claude projects, and shared agent assets | Internal source summaries created 2026-05-08 |
-| Project positioning | Automation/compiler was treated as the whole value prop | Concrete product projects are now the main proof points, with automation documented as the operating method | `PROJECT_PROOF_POINTS.md`, `RECRUITER_BRIEF.md`, `strategy/VALUE_PROPOSITION.md` |
+| Project positioning | Automation/compiler was treated as the whole value prop | Concrete product projects are now the main proof points, with automation documented as the operating method | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md) |
 
 ## Best Current Proof Points
 
@@ -49,8 +49,8 @@ Status: Active / Project-focused evidence map
 - What was done: Built and documented a career workflow product covering CV, job discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning.
 - Why it matters: Shows practical full-stack product execution in a domain directly related to job search, recruiter workflows, and AI-assisted career operations.
 - Status: Internal / Verified.
-- Evidence link: `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md`
-- Case study: `case-studies/JOB_AGENT_CASE_STUDY.md`
+- Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)
+- Case study: [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
 - Recruiter relevance: Strongest current proof point for product thinking, engineering execution, privacy awareness, and test discipline.
 
 ### 2. PKM product and knowledge workflow system
@@ -58,8 +58,8 @@ Status: Active / Project-focused evidence map
 - What was done: Maintained a personal knowledge-management project with ingestion, search, learning/feed surfaces, browser extension material, tests, and feature lifecycle workflow.
 - Why it matters: Shows information architecture, source ingestion, knowledge workflows, and structured prioritization.
 - Status: Internal / Verified.
-- Evidence link: `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md`
-- Case study: `case-studies/PKM_CASE_STUDY.md`
+- Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)
+- Case study: [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md)
 - Recruiter relevance: Demonstrates ability to build systems that turn messy knowledge into usable product workflows.
 
 ### 3. Household budget app
@@ -67,8 +67,8 @@ Status: Active / Project-focused evidence map
 - What was done: Designed and implemented a household budgeting product with shared household modeling, imports, transaction review, forecasting, goals, security/RLS concerns, and broad test coverage.
 - Why it matters: Shows domain modeling, financial-product UX, and security-aware application design.
 - Status: Internal / Verified.
-- Evidence link: `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md`
-- Case study: `case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md`
+- Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)
+- Case study: [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md)
 - Recruiter relevance: Demonstrates product execution outside the AI/career domain, making the portfolio broader and more credible.
 
 ### 4. Proof-of-work repository scaffold
@@ -76,7 +76,7 @@ Status: Active / Project-focused evidence map
 - What was done: Created a structured documentation architecture for proof-of-work artifacts.
 - Why it matters: Turns project work into a reusable evidence system and shows the automation discipline behind that evidence.
 - Status: Verified.
-- Evidence link: `README.md`, `AGENTS.md`, `START_HERE.md`
+- Evidence link: [README.md](README.md), [AGENTS.md](AGENTS.md), [START_HERE.md](START_HERE.md)
 - Commit evidence: `1c74a04` (`Bootstrap AI-native proof-of-work repository`)
 - Recruiter relevance: Shows structured thinking, documentation discipline, and AI-native workflow design as support for the product portfolio.
 
@@ -85,7 +85,7 @@ Status: Active / Project-focused evidence map
 - What was done: Defined a visible reasoning format for decisions.
 - Why it matters: Makes strategy and tradeoffs inspectable without exposing hidden chain-of-thought.
 - Status: Decision.
-- Evidence link: `AGENTS.md`, `logs/DECISION_LOG.md`
+- Evidence link: [AGENTS.md](AGENTS.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
 - Commit evidence: `1c74a04`
 - Recruiter relevance: Shows clear judgment under uncertainty.
 
@@ -94,7 +94,7 @@ Status: Active / Project-focused evidence map
 - What was done: Created local-only source indexes for Codex projects, Claude projects, and shared agent assets.
 - Why it matters: Reduces repeated rediscovery and preserves source separation between product execution evidence, planning evidence, and reusable workflow infrastructure.
 - Status: Internal / Verified.
-- Evidence link: `architecture/INGESTION_MODEL.md`, `diagrams/LOCAL_SOURCE_DISCOVERY_MODEL.md`, `SOURCE_MAP.md`
+- Evidence link: [architecture/INGESTION_MODEL.md](architecture/INGESTION_MODEL.md), [diagrams/LOCAL_SOURCE_DISCOVERY_MODEL.md](diagrams/LOCAL_SOURCE_DISCOVERY_MODEL.md), [SOURCE_MAP.md](SOURCE_MAP.md)
 - Recruiter relevance: Shows ability to turn messy tool ecosystems into operating systems.
 
 ### 7. Shared skills and routines inventory

@@ -31,18 +31,18 @@ This repository turns that work into structured proof.
 
 Recommended path:
 
-1. `RECRUITER_ONE_PAGER.md`
-2. `case-studies/JOB_AGENT_CASE_STUDY.md`
-3. `EVIDENCE_MATRIX.md`
-4. `PROJECT_TIMELINE.md`
-5. `ROLE_READING_PATHS.md`
-6. `EXECUTIVE_SUMMARY.md`
-7. `PROOF_OF_WORK.md`
-8. `PROJECT_PROOF_POINTS.md`
-9. `diagrams/RECRUITER_VIEW.md`
-10. `logs/WEEKLY_LOG.md`
+1. [Navigation Hub](NAVIGATION.md)
+2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
+3. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
+4. [Evidence Matrix](EVIDENCE_MATRIX.md)
+5. [Project Timeline](PROJECT_TIMELINE.md)
+6. [Role Reading Paths](ROLE_READING_PATHS.md)
+7. [Executive Summary](EXECUTIVE_SUMMARY.md)
+8. [Proof of Work](PROOF_OF_WORK.md)
+9. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+10. [Weekly Log](logs/WEEKLY_LOG.md)
 
-If you are using an assistant or recruiter-side agent, start with `RECRUITER_AGENT_GUIDE.md`.
+If you are using an assistant or recruiter-side agent, start with [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
 
 ## What to Look For
 

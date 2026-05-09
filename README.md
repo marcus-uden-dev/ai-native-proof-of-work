@@ -57,24 +57,25 @@ flowchart TD
 
 | Section | Purpose |
 |---|---|
-| `START_HERE.md` | Fast recruiter-readable entry point |
-| `RECRUITER_ONE_PAGER.md` | One-screen recruiter overview |
-| `RECRUITER_AGENT_GUIDE.md` | Agent-readable guide for recruiter-side assistants |
-| `EXECUTIVE_SUMMARY.md` | High-level positioning and current status |
-| `PROOF_OF_WORK.md` | Central evidence map |
-| `PROJECT_PROOF_POINTS.md` | Project-focused proof points for job-agent, PKM, and the household budget app |
-| `PROJECT_TIMELINE.md` | Milestone timeline showing how the portfolio develops over time |
-| `EVIDENCE_MATRIX.md` | Capability-to-evidence map with visual layout |
-| `ROLE_READING_PATHS.md` | Role-specific reading paths |
-| `case-studies/` | Sanitized project case studies |
-| `strategy/` | Value proposition, product strategy, business model, pricing, GTM |
-| `architecture/` | System design, ingestion, autoresearch, recursive workflows |
-| `workflows/` | Claude/Codex workflow, AI operating model, scheduled tasks |
-| `diagrams/` | GitHub-readable Mermaid diagrams |
-| `logs/` | Weekly diary, decisions, changelog, problem-solving log |
-| `recruiter-assets/` | CV bullets, recruiter summary, LinkedIn drafts, interview talking points |
-| `exports/` | Optional recruiter-readable exports |
-| `internal/` | Local source maps and indexes; not recruiter-facing |
+| [Navigation Hub](NAVIGATION.md) | Plain-English navigation hub for recruiters |
+| [START_HERE.md](START_HERE.md) | Fast recruiter-readable entry point |
+| [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) | One-screen recruiter overview |
+| [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) | Agent-readable guide for recruiter-side assistants |
+| [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | High-level positioning and current status |
+| [PROOF_OF_WORK.md](PROOF_OF_WORK.md) | Central evidence map |
+| [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Project-focused proof points for job-agent, PKM, and the household budget app |
+| [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) | Milestone timeline showing how the portfolio develops over time |
+| [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) | Capability-to-evidence map with visual layout |
+| [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) | Role-specific reading paths |
+| [case-studies/](case-studies/) | Sanitized project case studies |
+| [strategy/](strategy/) | Value proposition, product strategy, business model, pricing, GTM |
+| [architecture/](architecture/) | System design, ingestion, autoresearch, recursive workflows |
+| [workflows/](workflows/) | Claude/Codex workflow, AI operating model, scheduled tasks |
+| [diagrams/](diagrams/) | GitHub-readable Mermaid diagrams |
+| [logs/](logs/) | Weekly diary, decisions, changelog, problem-solving log |
+| [recruiter-assets/](recruiter-assets/) | CV bullets, recruiter summary, LinkedIn drafts, interview talking points |
+| [exports/](exports/) | Optional recruiter-readable exports |
+| [internal/](internal/) | Local source maps and indexes; not recruiter-facing |
 
 ---
 
@@ -82,16 +83,16 @@ flowchart TD
 
 Recommended order:
 
-1. [`START_HERE.md`](START_HERE.md)
-2. [`RECRUITER_ONE_PAGER.md`](RECRUITER_ONE_PAGER.md)
-3. [`case-studies/JOB_AGENT_CASE_STUDY.md`](case-studies/JOB_AGENT_CASE_STUDY.md)
-4. [`EVIDENCE_MATRIX.md`](EVIDENCE_MATRIX.md)
-5. [`PROJECT_TIMELINE.md`](PROJECT_TIMELINE.md)
-6. [`ROLE_READING_PATHS.md`](ROLE_READING_PATHS.md)
-7. [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md)
-8. [`PROOF_OF_WORK.md`](PROOF_OF_WORK.md)
-9. [`PROJECT_PROOF_POINTS.md`](PROJECT_PROOF_POINTS.md)
-10. [`diagrams/RECRUITER_VIEW.md`](diagrams/RECRUITER_VIEW.md)
+1. [START_HERE.md](START_HERE.md)
+2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
+3. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
+4. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+5. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+6. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
+7. [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)
+8. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
+9. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
+10. [diagrams/RECRUITER_VIEW.md](diagrams/RECRUITER_VIEW.md)
 
 ---
 

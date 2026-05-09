@@ -26,10 +26,10 @@ Before sharing this repository or any export with recruiters, verify:
 
 ## Recruiter Readability
 
-- [ ] `START_HERE.md` is clear
-- [ ] `EXECUTIVE_SUMMARY.md` is readable without context
-- [ ] `PROOF_OF_WORK.md` has concrete artifacts
-- [ ] `RECRUITER_BRIEF.md` is concise
+- [ ] [START_HERE.md](START_HERE.md) is clear
+- [ ] [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) is readable without context
+- [ ] [PROOF_OF_WORK.md](PROOF_OF_WORK.md) has concrete artifacts
+- [ ] [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md) is concise
 - [ ] Diagrams render correctly
 
 ## Technical Depth

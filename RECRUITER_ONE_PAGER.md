@@ -11,10 +11,10 @@ AI-native product builder focused on career workflow products, knowledge systems
 
 | Proof Point | Why It Matters | Start Here |
 |---|---|---|
-| Job-agent | Strongest product evidence: career workflow product with CV, discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning | `case-studies/JOB_AGENT_CASE_STUDY.md` |
-| PKM | Shows knowledge workflow design, ingestion/search thinking, learning surfaces, feature lifecycle discipline, and prioritization | `case-studies/PKM_CASE_STUDY.md` |
-| Household budget app | Shows financial domain modeling, shared household access, import/review flows, forecasting, goals, and test-backed product thinking | `case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md` |
-| Proof-of-work automation | Shows how project evidence is captured, reviewed, summarized, and kept recruiter-safe over time | `PROJECT_TIMELINE.md`, `workflows/CLAUDE_CODEX_WORKFLOW.md` |
+| Job-agent | Strongest product evidence: career workflow product with CV, discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) |
+| PKM | Shows knowledge workflow design, ingestion/search thinking, learning surfaces, feature lifecycle discipline, and prioritization | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) |
+| Household budget app | Shows financial domain modeling, shared household access, import/review flows, forecasting, goals, and test-backed product thinking | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
+| Proof-of-work automation | Shows how project evidence is captured, reviewed, summarized, and kept recruiter-safe over time | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md) |
 
 ## What To Look For
 
@@ -26,12 +26,12 @@ AI-native product builder focused on career workflow products, knowledge systems
 
 ## Fast Reading Path
 
-1. `START_HERE.md`
-2. `RECRUITER_ONE_PAGER.md`
-3. `case-studies/JOB_AGENT_CASE_STUDY.md`
-4. `EVIDENCE_MATRIX.md`
-5. `PROJECT_TIMELINE.md`
-6. `ROLE_READING_PATHS.md`
+1. [START_HERE.md](START_HERE.md)
+2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
+3. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
+4. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+5. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+6. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
 
 ## Best Interview Angles
 

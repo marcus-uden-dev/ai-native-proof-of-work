@@ -13,15 +13,15 @@ Useful product work often gets scattered across codebases, chats, local projects
 
 Open:
 
-- `RECRUITER_ONE_PAGER.md`
-- `EVIDENCE_MATRIX.md`
-- `ROLE_READING_PATHS.md`
+- [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
+- [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+- [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
 
 Explain that the repo has a fast human-readable path and an agent-readable path.
 
 ## 3. Repository Structure
 
-Open `README.md`.
+Open [README.md](README.md).
 
 Show the main sections:
 
@@ -36,7 +36,7 @@ Explain that Markdown is the source of truth and Mermaid is used for diagrams.
 
 ## 4. Proof of Work
 
-Open `PROOF_OF_WORK.md`.
+Open [PROOF_OF_WORK.md](PROOF_OF_WORK.md).
 
 Show:
 
@@ -49,7 +49,7 @@ Explain that claims are marked as verified, estimated, planned, or open question
 
 ## 5. Project Proof Points
 
-Open `PROJECT_PROOF_POINTS.md`.
+Open [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md).
 
 Show:
 
@@ -58,11 +58,11 @@ Show:
 - household budget app as financial-product/domain-modeling evidence
 - compiler as documented automation infrastructure, not the whole story
 
-Open `case-studies/JOB_AGENT_CASE_STUDY.md`.
+Open [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md).
 
 Show job-agent as the lead proof point.
 
-Open `PROJECT_TIMELINE.md`.
+Open [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md).
 
 Show how milestones build over time:
 
@@ -75,10 +75,10 @@ Show how milestones build over time:
 
 Open:
 
-- `strategy/VALUE_PROPOSITION.md`
-- `strategy/PRODUCT_STRATEGY.md`
-- `strategy/BUSINESS_MODEL.md`
-- `strategy/PRICING_STRATEGY.md`
+- [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md)
+- [strategy/PRODUCT_STRATEGY.md](strategy/PRODUCT_STRATEGY.md)
+- [strategy/BUSINESS_MODEL.md](strategy/BUSINESS_MODEL.md)
+- [strategy/PRICING_STRATEGY.md](strategy/PRICING_STRATEGY.md)
 
 Explain how product and commercial thinking are separated from weekly execution logs.
 
@@ -86,10 +86,10 @@ Explain how product and commercial thinking are separated from weekly execution 
 
 Open:
 
-- `architecture/ARCHITECTURE.md`
-- `architecture/INGESTION_MODEL.md`
-- `architecture/AUTORESEARCH_MODEL.md`
-- `architecture/RECURSIVE_WORKFLOWS.md`
+- [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md)
+- [architecture/INGESTION_MODEL.md](architecture/INGESTION_MODEL.md)
+- [architecture/AUTORESEARCH_MODEL.md](architecture/AUTORESEARCH_MODEL.md)
+- [architecture/RECURSIVE_WORKFLOWS.md](architecture/RECURSIVE_WORKFLOWS.md)
 
 Explain the input, indexing, ingestion, analysis, artifact, and review layers.
 
@@ -97,8 +97,8 @@ Explain the input, indexing, ingestion, analysis, artifact, and review layers.
 
 Open:
 
-- `workflows/AI_OPERATING_MODEL.md`
-- `workflows/CLAUDE_CODEX_WORKFLOW.md`
+- [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md)
+- [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md)
 
 Explain:
 
@@ -111,10 +111,10 @@ Explain:
 
 Open:
 
-- `logs/WEEKLY_LOG.md`
-- `logs/CHANGELOG.md`
-- `logs/DECISION_LOG.md`
-- `logs/PROBLEM_SOLVING_LOG.md`
+- [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
+- [logs/CHANGELOG.md](logs/CHANGELOG.md)
+- [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
+- [logs/PROBLEM_SOLVING_LOG.md](logs/PROBLEM_SOLVING_LOG.md)
 
 Show how weekly work becomes evidence.
 Point out that the first weekly run distinguishes between repository evidence, internal source indexes, and claims that still need measured outcomes.
@@ -123,9 +123,9 @@ Point out that the first weekly run distinguishes between repository evidence, i
 
 Open:
 
-- `RECRUITER_BRIEF.md`
-- `recruiter-assets/CV_BULLETS.md`
-- `recruiter-assets/INTERVIEW_TALKING_POINTS.md`
+- [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md)
+- [recruiter-assets/CV_BULLETS.md](recruiter-assets/CV_BULLETS.md)
+- [recruiter-assets/INTERVIEW_TALKING_POINTS.md](recruiter-assets/INTERVIEW_TALKING_POINTS.md)
 
 Explain how the repo supports interviews, recruiter conversations, and portfolio review.
 

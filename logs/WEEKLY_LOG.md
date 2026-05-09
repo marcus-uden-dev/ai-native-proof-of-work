@@ -12,17 +12,17 @@ The lead proof point is now job-agent. PKM and the household budget app are supp
 
 | Item | Type | Status | Evidence | Recruiter Relevance |
 |---|---|---|---|---|
-| Project proof-point map | Documentation | Internal / Verified | `PROJECT_PROOF_POINTS.md` | Gives recruiters a project-first view |
-| Project timeline | Documentation | Internal / Verified | `PROJECT_TIMELINE.md` | Shows progression over time instead of only current-state summaries |
-| Job-agent lead positioning | Recruiter asset / strategy | Internal / Verified | `PROOF_OF_WORK.md`, `RECRUITER_BRIEF.md`, `strategy/VALUE_PROPOSITION.md` | Makes strongest product evidence easier to find |
-| PKM and budget app support positioning | Recruiter asset / strategy | Internal / Verified | `PROJECT_PROOF_POINTS.md` | Shows range beyond one product |
-| Compiler operating-layer framing | Strategy / documentation | Decision | `logs/DECISION_LOG.md` | Documents automation while preventing it from overshadowing project work |
+| Project proof-point map | Documentation | Internal / Verified | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md) | Gives recruiters a project-first view |
+| Project timeline | Documentation | Internal / Verified | [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) | Shows progression over time instead of only current-state summaries |
+| Job-agent lead positioning | Recruiter asset / strategy | Internal / Verified | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md), [strategy/VALUE_PROPOSITION.md](../strategy/VALUE_PROPOSITION.md) | Makes strongest product evidence easier to find |
+| PKM and budget app support positioning | Recruiter asset / strategy | Internal / Verified | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md) | Shows range beyond one product |
+| Compiler operating-layer framing | Strategy / documentation | Decision | [logs/DECISION_LOG.md](DECISION_LOG.md) | Documents automation while preventing it from overshadowing project work |
 
 ### 3. Workflow Improvement
 
 | Before | After | Improvement | Evidence |
 |---|---|---|---|
-| Proof-of-work automation looked like the whole product story | Project work is the main evidence and automation is the documented packaging layer | Stronger recruiter signal | `PROJECT_PROOF_POINTS.md`, `RECRUITER_BRIEF.md` |
+| Proof-of-work automation looked like the whole product story | Project work is the main evidence and automation is the documented packaging layer | Stronger recruiter signal | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md) |
 
 ### 4. Decision
 
@@ -50,19 +50,52 @@ The new layer keeps job-agent as the lead proof point, uses PKM and the househol
 
 | Item | Type | Status | Evidence | Recruiter Relevance |
 |---|---|---|---|---|
-| Recruiter one-pager | Recruiter asset | Verified | `RECRUITER_ONE_PAGER.md` | Gives a one-screen overview |
-| Recruiter agent guide | Agent-readable navigation | Verified | `RECRUITER_AGENT_GUIDE.md` | Helps external agents inspect the repo in the intended order |
-| Evidence matrix | Visual evidence map | Verified | `EVIDENCE_MATRIX.md` | Maps capabilities to evidence |
-| Role reading paths | Recruiter navigation | Verified | `ROLE_READING_PATHS.md` | Lets different roles inspect the right files |
-| Before/after snapshots | Progress artifact | Verified | `BEFORE_AFTER_SNAPSHOTS.md` | Shows improvement over time |
+| Recruiter one-pager | Recruiter asset | Verified | [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md) | Gives a one-screen overview |
+| Recruiter agent guide | Agent-readable navigation | Verified | [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md) | Helps external agents inspect the repo in the intended order |
+| Evidence matrix | Visual evidence map | Verified | [EVIDENCE_MATRIX.md](../EVIDENCE_MATRIX.md) | Maps capabilities to evidence |
+| Role reading paths | Recruiter navigation | Verified | [ROLE_READING_PATHS.md](../ROLE_READING_PATHS.md) | Lets different roles inspect the right files |
+| Before/after snapshots | Progress artifact | Verified | [BEFORE_AFTER_SNAPSHOTS.md](../BEFORE_AFTER_SNAPSHOTS.md) | Shows improvement over time |
 | Project case studies | Recruiter asset | Internal / Verified | `case-studies/` | Makes project evidence easier to evaluate |
-| Screenshot plan | Privacy planning | Planned | `recruiter-assets/SCREENSHOT_SHARING_PLAN.md` | Defines safe future visual evidence |
+| Screenshot plan | Privacy planning | Planned | [recruiter-assets/SCREENSHOT_SHARING_PLAN.md](../recruiter-assets/SCREENSHOT_SHARING_PLAN.md) | Defines safe future visual evidence |
 
 ### 3. Workflow Improvement
 
 | Before | After | Improvement | Evidence |
 |---|---|---|---|
-| Recruiter had to infer the best path from README and proof files | Recruiter and agent have explicit skim paths, role paths, and capability map | Faster evaluation and less chance of missing job-agent | `RECRUITER_ONE_PAGER.md`, `RECRUITER_AGENT_GUIDE.md`, `EVIDENCE_MATRIX.md` |
+| Recruiter had to infer the best path from README and proof files | Recruiter and agent have explicit skim paths, role paths, and capability map | Faster evaluation and less chance of missing job-agent | [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [EVIDENCE_MATRIX.md](../EVIDENCE_MATRIX.md) |
+
+### 4. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 5. Next Action
+
+Add privacy-reviewed screenshots or safe test/commit references for job-agent.
+
+---
+
+## Navigation Hardening — 2026-05-09
+
+### 1. Executive Summary
+
+Improved repository navigation for non-technical recruiters and recruiter-side agents.
+
+This pass added a plain-English navigation hub, folder-level guides, and converted many document references into clickable links so GitHub can be used as a guided reading experience rather than a raw file list.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Navigation hub | Recruiter navigation | Verified | [Navigation Hub](../NAVIGATION.md) | Gives 5/15/30-minute reading paths |
+| Case studies index | Folder guide | Verified | [Case Studies](../case-studies/README.md) | Helps readers choose the right project case study |
+| Recruiter assets index | Folder guide | Verified | [Recruiter Assets](../recruiter-assets/README.md) | Explains CV/interview/LinkedIn assets |
+| Clickable document references | Navigation cleanup | Verified | Repository Markdown files | Reduces friction when reading in GitHub |
+
+### 3. Workflow Improvement
+
+| Before | After | Improvement | Evidence |
+|---|---|---|---|
+| File references often appeared as plain code text | Document references are mostly clickable links | Easier GitHub navigation for non-technical readers | [Navigation Hub](../NAVIGATION.md), [README](../README.md) |
 
 ### 4. Time / Effort
 
@@ -86,10 +119,10 @@ This week’s work focused on defining the repository structure, documentation m
 
 | Item | Type | Status | Evidence | Recruiter Relevance |
 |---|---|---|---|---|
-| Repository scaffold | Documentation | Verified once committed | `README.md`, folder structure | Shows documentation architecture |
-| Codex instruction | Workflow | Verified once committed | `AGENTS.md` | Shows AI-native operating model |
-| Recruiter reading path | Recruiter asset | Verified once committed | `README.md`, `START_HERE.md` | Makes repo easier to review |
-| Evidence label model | Documentation | Decision | `AGENTS.md`, `README.md` | Avoids inflated claims |
+| Repository scaffold | Documentation | Verified once committed | [README.md](../README.md), folder structure | Shows documentation architecture |
+| Codex instruction | Workflow | Verified once committed | [AGENTS.md](../AGENTS.md) | Shows AI-native operating model |
+| Recruiter reading path | Recruiter asset | Verified once committed | [README.md](../README.md), [START_HERE.md](../START_HERE.md) | Makes repo easier to review |
+| Evidence label model | Documentation | Decision | [AGENTS.md](../AGENTS.md), [README.md](../README.md) | Avoids inflated claims |
 | Mermaid diagrams | Documentation / Architecture | Verified once committed | `diagrams/` | Visualizes workflows and system model |
 
 ### 3. Workflow Improvements
@@ -97,8 +130,8 @@ This week’s work focused on defining the repository structure, documentation m
 | Before | After | Improvement | Evidence |
 |---|---|---|---|
 | Proof-of-work scattered across chats and ideas | Structured private GitHub repository | Better reuse and recruiter readability | This repo |
-| Decisions implicit | Decision-trail format | Better traceability | `logs/DECISION_LOG.md` |
-| Local project context rediscovered manually | Source-index model defined | Lower future discovery overhead | `architecture/INGESTION_MODEL.md` |
+| Decisions implicit | Decision-trail format | Better traceability | [logs/DECISION_LOG.md](DECISION_LOG.md) |
+| Local project context rediscovered manually | Source-index model defined | Lower future discovery overhead | [architecture/INGESTION_MODEL.md](../architecture/INGESTION_MODEL.md) |
 
 ### 4. Automation Added or Improved
 
@@ -147,12 +180,12 @@ The architecture is documentation-first:
 
 ### 10. Proof-of-Work Assets Created
 
-- GitHub project log: `logs/WEEKLY_LOG.md`
-- CV bullet: `recruiter-assets/CV_BULLETS.md`
-- LinkedIn draft: `recruiter-assets/LINKEDIN_DRAFTS.md`
-- Portfolio note: `PORTFOLIO_CASE_STUDY.md`
-- Demo script: `DEMO_SCRIPT.md`
-- Recruiter summary: `RECRUITER_BRIEF.md`
+- GitHub project log: [logs/WEEKLY_LOG.md](WEEKLY_LOG.md)
+- CV bullet: [recruiter-assets/CV_BULLETS.md](../recruiter-assets/CV_BULLETS.md)
+- LinkedIn draft: [recruiter-assets/LINKEDIN_DRAFTS.md](../recruiter-assets/LINKEDIN_DRAFTS.md)
+- Portfolio note: [PORTFOLIO_CASE_STUDY.md](../PORTFOLIO_CASE_STUDY.md)
+- Demo script: [DEMO_SCRIPT.md](../DEMO_SCRIPT.md)
+- Recruiter summary: [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md)
 
 ### 11. Time / Effort
 
@@ -176,18 +209,18 @@ This pass converted the initial scaffold from "verified once committed" into rep
 
 | Item | Type | Status | Evidence | Recruiter Relevance |
 |---|---|---|---|---|
-| Repository scaffold verification | Documentation | Verified | Commit `1c74a04`, `README.md`, `AGENTS.md` | Shows structured execution and repo hygiene |
-| Weekly compiler prompt | Automation | Verified | `AUTOMATION_PROMPT.md`, `prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md` | Shows repeatable documentation workflow |
-| Recruiter asset set | Recruiter asset | Verified | `recruiter-assets/`, `RECRUITER_BRIEF.md` | Shows role-targeted communication |
-| Evidence gap tracking | Quality control | Verified | `PROOF_OF_WORK.md` | Shows restraint and credibility |
+| Repository scaffold verification | Documentation | Verified | Commit `1c74a04`, [README.md](../README.md), [AGENTS.md](../AGENTS.md) | Shows structured execution and repo hygiene |
+| Weekly compiler prompt | Automation | Verified | [AUTOMATION_PROMPT.md](../AUTOMATION_PROMPT.md), [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](../prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md) | Shows repeatable documentation workflow |
+| Recruiter asset set | Recruiter asset | Verified | `recruiter-assets/`, [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md) | Shows role-targeted communication |
+| Evidence gap tracking | Quality control | Verified | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md) | Shows restraint and credibility |
 
 ### 3. Workflow Improvements
 
 | Before | After | Improvement | Evidence |
 |---|---|---|---|
 | Scaffold status depended on future commit | Scaffold status tied to an actual commit | Stronger evidence discipline | Commit `1c74a04` |
-| Missing local indexes could invite overclaiming | Missing indexes explicitly marked unavailable | Lower privacy and fabrication risk | `PROOF_OF_WORK.md` |
-| Recruiter assets were initial drafts only | Recruiter assets now point to verified repo evidence | Better interview/share readiness | `RECRUITER_BRIEF.md`, `recruiter-assets/` |
+| Missing local indexes could invite overclaiming | Missing indexes explicitly marked unavailable | Lower privacy and fabrication risk | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md) |
+| Recruiter assets were initial drafts only | Recruiter assets now point to verified repo evidence | Better interview/share readiness | [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md), `recruiter-assets/` |
 
 ### 4. Source Index Status
 
@@ -229,11 +262,11 @@ The update keeps three evidence layers separate:
 
 | Item | Type | Status | Evidence | Recruiter Relevance |
 |---|---|---|---|---|
-| Local source map | Internal index | Internal / Verified | Local-only index, summarized in `SOURCE_MAP.md` | Enables safer future extraction |
-| Codex projects index | Internal index | Internal / Verified | Local-only index, summarized in `SOURCE_MAP.md` and `PROJECT_PROOF_POINTS.md` | Shows execution/project evidence source |
-| Claude projects index | Internal index | Internal / Verified | Local-only index, summarized in `SOURCE_MAP.md` and `PROJECT_PROOF_POINTS.md` | Shows strategy/planning evidence source |
-| Agents root and skills indexes | Internal index | Internal / Verified | Local-only indexes, summarized in `SOURCE_MAP.md` | Shows reusable workflow infrastructure |
-| Scripts and documentation indexes | Internal index | Internal / Verified | Local-only indexes, summarized in `SOURCE_MAP.md` | Shows automation/documentation system |
+| Local source map | Internal index | Internal / Verified | Local-only index, summarized in [SOURCE_MAP.md](../SOURCE_MAP.md) | Enables safer future extraction |
+| Codex projects index | Internal index | Internal / Verified | Local-only index, summarized in [SOURCE_MAP.md](../SOURCE_MAP.md) and [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md) | Shows execution/project evidence source |
+| Claude projects index | Internal index | Internal / Verified | Local-only index, summarized in [SOURCE_MAP.md](../SOURCE_MAP.md) and [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md) | Shows strategy/planning evidence source |
+| Agents root and skills indexes | Internal index | Internal / Verified | Local-only indexes, summarized in [SOURCE_MAP.md](../SOURCE_MAP.md) | Shows reusable workflow infrastructure |
+| Scripts and documentation indexes | Internal index | Internal / Verified | Local-only indexes, summarized in [SOURCE_MAP.md](../SOURCE_MAP.md) | Shows automation/documentation system |
 
 ### 3. Source Index Findings
 
@@ -248,7 +281,7 @@ The update keeps three evidence layers separate:
 | Before | After | Improvement | Evidence |
 |---|---|---|---|
 | Local context was known to exist but not indexed | Local context is mapped by source layer | Better future extraction and less source confusion | Internal source indexes |
-| Codex, Claude, and skills could be accidentally blended | Each layer has an explicit role | Cleaner evidence trail | `internal/LOCAL_SOURCE_MAP.md` |
+| Codex, Claude, and skills could be accidentally blended | Each layer has an explicit role | Cleaner evidence trail | [internal/LOCAL_SOURCE_MAP.md](../internal/LOCAL_SOURCE_MAP.md) |
 
 ### 5. Privacy Handling
 

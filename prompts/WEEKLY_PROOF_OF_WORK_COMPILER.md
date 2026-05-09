@@ -20,23 +20,24 @@ Before editing, inspect:
 1. AGENTS.md
 2. SOURCE_MAP.md
 3. README.md
-4. PROOF_OF_WORK.md
-5. PROJECT_PROOF_POINTS.md
-6. PROJECT_TIMELINE.md
-7. RECRUITER_ONE_PAGER.md
-8. RECRUITER_AGENT_GUIDE.md
-9. EVIDENCE_MATRIX.md
-10. ROLE_READING_PATHS.md
-11. case-studies/
-12. logs/WEEKLY_LOG.md
-13. logs/CHANGELOG.md
-14. logs/DECISION_LOG.md
-15. logs/PROBLEM_SOLVING_LOG.md
-16. recruiter-assets/
-17. strategy/
-18. architecture/
-19. workflows/
-20. diagrams/
+4. NAVIGATION.md
+5. PROOF_OF_WORK.md
+6. PROJECT_PROOF_POINTS.md
+7. PROJECT_TIMELINE.md
+8. RECRUITER_ONE_PAGER.md
+9. RECRUITER_AGENT_GUIDE.md
+10. EVIDENCE_MATRIX.md
+11. ROLE_READING_PATHS.md
+12. case-studies/
+13. logs/WEEKLY_LOG.md
+14. logs/CHANGELOG.md
+15. logs/DECISION_LOG.md
+16. logs/PROBLEM_SOLVING_LOG.md
+17. recruiter-assets/
+18. strategy/
+19. architecture/
+20. workflows/
+21. diagrams/
 
 If internal local source indexes are available, inspect them:
 - internal/LOCAL_SOURCE_MAP.md
@@ -51,25 +52,26 @@ Create or update:
 2. project milestone timeline
 3. recruiter one-pager
 4. recruiter agent guide
-5. evidence matrix
-6. role reading paths
-7. project case studies
-8. GitHub-ready project log
-9. weekly diary / changelog
-10. CV bullet
-11. LinkedIn post draft
-12. portfolio case-study note
-13. demo script
-14. recruiter-facing summary
-15. product strategy updates if changed
-16. value proposition updates if changed
-17. business model updates if changed
-18. pricing strategy updates if changed
-19. architecture updates if changed
-20. ingestion/autoresearch updates if changed
-21. recursive workflow updates if changed
-22. Claude + Codex workflow philosophy updates if changed
-23. local source index updates if needed and available
+5. navigation hub
+6. evidence matrix
+7. role reading paths
+8. project case studies
+9. GitHub-ready project log
+10. weekly diary / changelog
+11. CV bullet
+12. LinkedIn post draft
+13. portfolio case-study note
+14. demo script
+15. recruiter-facing summary
+16. product strategy updates if changed
+17. value proposition updates if changed
+18. business model updates if changed
+19. pricing strategy updates if changed
+20. architecture updates if changed
+21. ingestion/autoresearch updates if changed
+22. recursive workflow updates if changed
+23. Claude + Codex workflow philosophy updates if changed
+24. local source index updates if needed and available
 
 Focus on:
 - practical execution

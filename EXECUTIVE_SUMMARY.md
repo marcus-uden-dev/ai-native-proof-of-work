@@ -45,14 +45,14 @@ Operational value:
 
 | Skill Area | Evidence |
 |---|---|
-| Product execution | `PROJECT_PROOF_POINTS.md`, `PROOF_OF_WORK.md` |
-| Product thinking | `strategy/PRODUCT_STRATEGY.md`, `strategy/VALUE_PROPOSITION.md` |
-| Workflow automation | `workflows/SCHEDULED_TASKS_MODEL.md`, `PROOF_OF_WORK.md` |
-| AI-native operating model | `workflows/AI_OPERATING_MODEL.md`, `workflows/CLAUDE_CODEX_WORKFLOW.md` |
-| Architecture reasoning | `architecture/ARCHITECTURE.md`, `architecture/INGESTION_MODEL.md` |
-| Business model thinking | `strategy/BUSINESS_MODEL.md`, `strategy/PRICING_STRATEGY.md` |
-| Documentation discipline | `logs/WEEKLY_LOG.md`, `logs/CHANGELOG.md` |
-| Strategic decision-making | `logs/DECISION_LOG.md` |
+| Product execution | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](PROOF_OF_WORK.md) |
+| Product thinking | [strategy/PRODUCT_STRATEGY.md](strategy/PRODUCT_STRATEGY.md), [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md) |
+| Workflow automation | [workflows/SCHEDULED_TASKS_MODEL.md](workflows/SCHEDULED_TASKS_MODEL.md), [PROOF_OF_WORK.md](PROOF_OF_WORK.md) |
+| AI-native operating model | [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md) |
+| Architecture reasoning | [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md), [architecture/INGESTION_MODEL.md](architecture/INGESTION_MODEL.md) |
+| Business model thinking | [strategy/BUSINESS_MODEL.md](strategy/BUSINESS_MODEL.md), [strategy/PRICING_STRATEGY.md](strategy/PRICING_STRATEGY.md) |
+| Documentation discipline | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md), [logs/CHANGELOG.md](logs/CHANGELOG.md) |
+| Strategic decision-making | [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 
 ## Current Status
 

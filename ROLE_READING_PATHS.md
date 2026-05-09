@@ -11,11 +11,11 @@ Different recruiters look for different signals. This file gives role-specific p
 
 Read:
 
-1. `RECRUITER_ONE_PAGER.md`
-2. `workflows/AI_OPERATING_MODEL.md`
-3. `workflows/CLAUDE_CODEX_WORKFLOW.md`
-4. `EVIDENCE_MATRIX.md`
-5. `PROJECT_TIMELINE.md`
+1. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
+2. [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md)
+3. [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md)
+4. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+5. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
 
 Look for:
 
@@ -28,11 +28,11 @@ Look for:
 
 Read:
 
-1. `case-studies/JOB_AGENT_CASE_STUDY.md`
-2. `PROJECT_PROOF_POINTS.md`
-3. `logs/DECISION_LOG.md`
-4. `logs/WEEKLY_LOG.md`
-5. `BEFORE_AFTER_SNAPSHOTS.md`
+1. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
+2. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
+3. [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
+4. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
+5. [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md)
 
 Look for:
 
@@ -45,11 +45,11 @@ Look for:
 
 Read:
 
-1. `case-studies/JOB_AGENT_CASE_STUDY.md`
-2. `strategy/PRODUCT_STRATEGY.md`
-3. `strategy/VALUE_PROPOSITION.md`
-4. `strategy/PRICING_STRATEGY.md`
-5. `architecture/ARCHITECTURE.md`
+1. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
+2. [strategy/PRODUCT_STRATEGY.md](strategy/PRODUCT_STRATEGY.md)
+3. [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md)
+4. [strategy/PRICING_STRATEGY.md](strategy/PRICING_STRATEGY.md)
+5. [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md)
 
 Look for:
 
@@ -62,11 +62,11 @@ Look for:
 
 Read:
 
-1. `RECRUITER_ONE_PAGER.md`
-2. `case-studies/JOB_AGENT_CASE_STUDY.md`
-3. `recruiter-assets/INTERVIEW_TALKING_POINTS.md`
-4. `SOURCE_MAP.md`
-5. `SHARING_CHECKLIST.md`
+1. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
+2. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
+3. [recruiter-assets/INTERVIEW_TALKING_POINTS.md](recruiter-assets/INTERVIEW_TALKING_POINTS.md)
+4. [SOURCE_MAP.md](SOURCE_MAP.md)
+5. [SHARING_CHECKLIST.md](SHARING_CHECKLIST.md)
 
 Look for:
 
@@ -78,11 +78,11 @@ Look for:
 
 Read:
 
-1. `strategy/VALUE_PROPOSITION.md`
-2. `strategy/BUSINESS_MODEL.md`
-3. `strategy/GO_TO_MARKET.md`
-4. `case-studies/JOB_AGENT_CASE_STUDY.md`
-5. `EVIDENCE_MATRIX.md`
+1. [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md)
+2. [strategy/BUSINESS_MODEL.md](strategy/BUSINESS_MODEL.md)
+3. [strategy/GO_TO_MARKET.md](strategy/GO_TO_MARKET.md)
+4. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
+5. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
 
 Look for:
 

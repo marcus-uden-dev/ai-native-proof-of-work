@@ -21,9 +21,9 @@ The proof-of-work compiler, source indexes, and weekly review process are docume
 
 | Project | Case Study |
 |---|---|
-| Job-agent / job-agent UX | `case-studies/JOB_AGENT_CASE_STUDY.md` |
-| PKM | `case-studies/PKM_CASE_STUDY.md` |
-| Household budget app | `case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md` |
+| Job-agent / job-agent UX | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) |
+| PKM | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) |
+| Household budget app | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
 
 ## Primary Narrative
 

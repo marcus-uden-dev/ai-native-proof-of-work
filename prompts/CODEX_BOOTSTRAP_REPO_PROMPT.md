@@ -16,6 +16,7 @@ Required root files:
 - .gitignore
 - AGENTS.md
 - README.md
+- NAVIGATION.md
 - START_HERE.md
 - RECRUITER_ONE_PAGER.md
 - RECRUITER_AGENT_GUIDE.md

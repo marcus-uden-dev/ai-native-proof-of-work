@@ -76,7 +76,7 @@ The weekly compiler expected optional internal source indexes, but the repositor
 
 ### Cause
 
-The local-only files under `internal/LOCAL_SOURCE_MAP.md` and `internal/source-indexes/*.md` have not been generated yet.
+The local-only files under `internal/LOCAL_SOURCE_MAP.md` and `internal/source-indexes/*.md` had not been generated yet.
 
 ### Attempted Fixes
 
@@ -114,7 +114,7 @@ The source roots serve different purposes and contain different artifact types.
 
 - Created separate internal indexes for Codex projects, Claude projects, and shared agent assets.
 - Added a local source map with an explicit separation rule.
-- Recorded the source-layer rule in `tasks/lessons.md`.
+- Recorded the source-layer rule in [tasks/lessons.md](../tasks/lessons.md).
 
 ### Resolution
 

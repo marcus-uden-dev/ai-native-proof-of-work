@@ -10,4 +10,4 @@ Possible future exports:
 - DOCX recruiter brief
 - PPTX demo deck
 
-Before sharing exports, run `SHARING_CHECKLIST.md`.
+Before sharing exports, run [SHARING_CHECKLIST.md](../SHARING_CHECKLIST.md).

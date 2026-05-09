@@ -74,4 +74,4 @@ Start with a project-first proof-of-work portfolio led by job-agent.
 
 ## Strategy Decisions
 
-Use the decision-trail format in `logs/DECISION_LOG.md` when strategy changes.
+Use the decision-trail format in [logs/DECISION_LOG.md](../logs/DECISION_LOG.md) when strategy changes.

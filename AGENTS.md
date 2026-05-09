@@ -203,6 +203,7 @@ Weekly dynamic files update every weekly run:
 ```text
 RECRUITER_ONE_PAGER.md
 RECRUITER_AGENT_GUIDE.md
+NAVIGATION.md
 EVIDENCE_MATRIX.md
 ROLE_READING_PATHS.md
 BEFORE_AFTER_SNAPSHOTS.md
@@ -233,10 +234,10 @@ If the repository is empty or incomplete:
 
 1. Create the full folder structure.
 2. Create all required Markdown files.
-3. Create `SOURCE_MAP.md`.
+3. Create [SOURCE_MAP.md](SOURCE_MAP.md).
 4. Create local internal source-map placeholders.
 5. Add `.gitignore`.
-6. Add `START_HERE.md`.
+6. Add [START_HERE.md](START_HERE.md).
 7. Add initial Mermaid diagrams.
 8. Add placeholder sections where evidence is missing.
 9. Do not fabricate completed work.
@@ -305,19 +306,19 @@ I explored an internal workflow improvement involving field data capture, master
 
 Before updating artifacts, inspect:
 
-1. `SOURCE_MAP.md`
+1. [SOURCE_MAP.md](SOURCE_MAP.md)
 2. `internal/LOCAL_SOURCE_MAP.md` if available
 3. `internal/source-indexes/*.md` if available
-4. `logs/WEEKLY_LOG.md`
-5. `logs/CHANGELOG.md`
-6. `logs/DECISION_LOG.md`
-7. `PROOF_OF_WORK.md`
-8. `PROJECT_PROOF_POINTS.md`
-9. `PROJECT_TIMELINE.md`
-10. `RECRUITER_ONE_PAGER.md`
-11. `RECRUITER_AGENT_GUIDE.md`
-12. `EVIDENCE_MATRIX.md`
-13. `ROLE_READING_PATHS.md`
+4. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
+5. [logs/CHANGELOG.md](logs/CHANGELOG.md)
+6. [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
+7. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
+8. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
+9. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+10. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
+11. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
+12. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+13. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
 14. case studies under `case-studies/`
 15. newly added or changed files since the last run
 
@@ -474,10 +475,10 @@ One concrete next action only.
 
 A weekly run is complete only when:
 
-- `logs/WEEKLY_LOG.md` has a new weekly entry
-- `PROOF_OF_WORK.md` reflects the strongest current evidence
-- `PROJECT_PROOF_POINTS.md` reflects the strongest current project evidence
-- `PROJECT_TIMELINE.md` reflects any meaningful new milestones
+- [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) has a new weekly entry
+- [PROOF_OF_WORK.md](PROOF_OF_WORK.md) reflects the strongest current evidence
+- [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) reflects the strongest current project evidence
+- [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) reflects any meaningful new milestones
 - recruiter-facing assets are updated
 - any changed strategy or architecture docs have decision-log entries
 - diagrams are valid Mermaid

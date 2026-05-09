@@ -23,16 +23,16 @@ Assess Marcus’s practical evidence for:
 
 ## Canonical Reading Order
 
-1. `RECRUITER_ONE_PAGER.md`
-2. `START_HERE.md`
-3. `case-studies/JOB_AGENT_CASE_STUDY.md`
-4. `EVIDENCE_MATRIX.md`
-5. `PROJECT_PROOF_POINTS.md`
-6. `PROJECT_TIMELINE.md`
-7. `ROLE_READING_PATHS.md`
-8. `PROOF_OF_WORK.md`
-9. `SOURCE_MAP.md`
-10. `logs/DECISION_LOG.md`
+1. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
+2. [Navigation Hub](NAVIGATION.md)
+3. [Start Here](START_HERE.md)
+4. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
+5. [Evidence Matrix](EVIDENCE_MATRIX.md)
+6. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+7. [Project Timeline](PROJECT_TIMELINE.md)
+8. [Role Reading Paths](ROLE_READING_PATHS.md)
+9. [Proof of Work](PROOF_OF_WORK.md)
+10. [Source Map](SOURCE_MAP.md)
 
 ## Important Interpretation Rules
 
@@ -47,12 +47,12 @@ Assess Marcus’s practical evidence for:
 
 | Capability | Primary Evidence |
 |---|---|
-| Product execution | `case-studies/JOB_AGENT_CASE_STUDY.md`, `PROJECT_PROOF_POINTS.md` |
-| Product judgment | `strategy/PRODUCT_STRATEGY.md`, `strategy/VALUE_PROPOSITION.md`, `logs/DECISION_LOG.md` |
-| QA discipline | `case-studies/JOB_AGENT_CASE_STUDY.md`, `case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md` |
-| AI-native workflow design | `workflows/CLAUDE_CODEX_WORKFLOW.md`, `workflows/AI_OPERATING_MODEL.md` |
-| Privacy-aware execution | `SOURCE_MAP.md`, `SHARING_CHECKLIST.md`, case-study evidence boundaries |
-| Communication clarity | `RECRUITER_ONE_PAGER.md`, `RECRUITER_BRIEF.md`, `recruiter-assets/RECRUITER_SUMMARY.md` |
+| Product execution | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
+| Product judgment | [strategy/PRODUCT_STRATEGY.md](strategy/PRODUCT_STRATEGY.md), [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
+| QA discipline | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
+| AI-native workflow design | [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
+| Privacy-aware execution | [SOURCE_MAP.md](SOURCE_MAP.md), [SHARING_CHECKLIST.md](SHARING_CHECKLIST.md), case-study evidence boundaries |
+| Communication clarity | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), [recruiter-assets/RECRUITER_SUMMARY.md](recruiter-assets/RECRUITER_SUMMARY.md) |
 
 ## Suggested Output For A Recruiter Agent
 

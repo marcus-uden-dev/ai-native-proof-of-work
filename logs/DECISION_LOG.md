@@ -32,7 +32,7 @@ Next Action → Create a job-agent case-study page with evidence labels.
 
 ### Evidence
 
-`PROJECT_PROOF_POINTS.md`, `PROOF_OF_WORK.md`, `strategy/VALUE_PROPOSITION.md`, internal source indexes
+[PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [strategy/VALUE_PROPOSITION.md](../strategy/VALUE_PROPOSITION.md), internal source indexes
 
 ### Status
 
@@ -73,7 +73,7 @@ Next Action → Populate first verified proof points.
 
 ### Evidence
 
-`README.md`, `AGENTS.md`, `SOURCE_MAP.md`
+[README.md](../README.md), [AGENTS.md](../AGENTS.md), [SOURCE_MAP.md](../SOURCE_MAP.md)
 
 ### Status
 

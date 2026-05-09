@@ -32,7 +32,7 @@ git push origin main
    `https://github.com/TheOneDarkHorse/ai-native-proof-of-work`
 2. Upload the ZIP contents, not the outer folder if GitHub asks for files.
 3. Commit to `main`.
-4. Open `README.md` and confirm Mermaid diagrams render.
+4. Open [README.md](README.md) and confirm Mermaid diagrams render.
 
 ## Option C — Use GitHub Desktop
 

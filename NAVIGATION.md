@@ -1,0 +1,78 @@
+# Navigation Hub
+
+Last updated: 2026-05-09
+Status: Active / Recruiter-facing
+
+## Purpose
+
+This page is the simplest map through the repository.
+
+Use it if the file list feels overwhelming.
+
+## If You Have 5 Minutes
+
+| Step | Open | Why |
+|---|---|---|
+| 1 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Fast overview of the strongest proof points |
+| 2 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project proof point |
+| 3 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Visual map from capability to evidence |
+
+## If You Have 15 Minutes
+
+| Step | Open | Why |
+|---|---|---|
+| 1 | [Start Here](START_HERE.md) | One-minute orientation |
+| 2 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Summary of positioning and proof |
+| 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Main product evidence |
+| 4 | [Project Timeline](PROJECT_TIMELINE.md) | Progression over time |
+| 5 | [Role Reading Paths](ROLE_READING_PATHS.md) | Choose the angle that fits the role |
+
+## If You Have 30 Minutes
+
+| Step | Open | Why |
+|---|---|---|
+| 1 | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) | Best path for agents and structured review |
+| 2 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
+| 3 | [Project Proof Points](PROJECT_PROOF_POINTS.md) | Portfolio-level evidence |
+| 4 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project |
+| 5 | [PKM Case Study](case-studies/PKM_CASE_STUDY.md) | Supporting knowledge-system evidence |
+| 6 | [Household Budget App Case Study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Supporting domain-modeling evidence |
+| 7 | [Decision Log](logs/DECISION_LOG.md) | Tradeoffs and positioning decisions |
+| 8 | [Before / After Snapshots](BEFORE_AFTER_SNAPSHOTS.md) | How the portfolio improved |
+
+## By Question
+
+| Question | Best File |
+|---|---|
+| What is this repo? | [Start Here](START_HERE.md) |
+| What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
+| What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
+| What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |
+| What capabilities are evidenced? | [Evidence Matrix](EVIDENCE_MATRIX.md) |
+| How did this develop over time? | [Project Timeline](PROJECT_TIMELINE.md) |
+| What role does this support? | [Role Reading Paths](ROLE_READING_PATHS.md) |
+| What changed and why? | [Decision Log](logs/DECISION_LOG.md) |
+| What evidence is private/internal? | [Source Map](SOURCE_MAP.md) |
+
+## What Not To Start With
+
+These file areas are useful, but they are not the best first read for a non-technical recruiter.
+
+| File Area | Use Later For |
+|---|---|
+| [architecture/](architecture/) | Technical depth after the project story is clear |
+| [workflows/](workflows/) | Operating model details |
+| [prompts/](prompts/) | Automation maintenance |
+| [logs/](logs/) | Chronology and audit trail |
+| [internal/](internal/) | Local-only source maps and templates; not recruiter-facing |
+
+## Recommended Summary Path
+
+```mermaid
+flowchart LR
+    A["Start Here"] --> B["Recruiter One-Pager"]
+    B --> C["Job-Agent Case Study"]
+    C --> D["Evidence Matrix"]
+    D --> E["Project Timeline"]
+    E --> F["Role Reading Paths"]
+```

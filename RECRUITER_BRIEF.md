@@ -20,13 +20,13 @@ AI-native product builder focused on career workflow products, knowledge systems
 
 | Proof Point | Evidence | Relevance |
 |---|---|---|
-| Job-agent career workflow product | `case-studies/JOB_AGENT_CASE_STUDY.md`, `PROJECT_PROOF_POINTS.md` | Shows full-stack product execution, privacy/trust thinking, QA discipline, and career-domain judgment |
-| PKM project | `case-studies/PKM_CASE_STUDY.md`, `PROJECT_PROOF_POINTS.md` | Shows knowledge workflow design, ingestion/search thinking, and feature prioritization |
-| Household budget app | `case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md`, `PROJECT_PROOF_POINTS.md` | Shows domain modeling, financial-product UX, shared-data/security thinking, and test-backed development |
-| Evidence matrix | `EVIDENCE_MATRIX.md` | Maps capabilities to evidence for fast review |
-| Proof-of-work repo architecture | `README.md`, `AGENTS.md`, commit `1c74a04` | Shows ability to turn product work into shareable evidence |
-| Decision-trail format | `logs/DECISION_LOG.md` | Shows structured judgment |
-| Source-index model | `architecture/INGESTION_MODEL.md` | Shows ability to organize messy context while keeping source layers separate and privacy-safe |
+| Job-agent career workflow product | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows full-stack product execution, privacy/trust thinking, QA discipline, and career-domain judgment |
+| PKM project | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows knowledge workflow design, ingestion/search thinking, and feature prioritization |
+| Household budget app | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows domain modeling, financial-product UX, shared-data/security thinking, and test-backed development |
+| Evidence matrix | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) | Maps capabilities to evidence for fast review |
+| Proof-of-work repo architecture | [README.md](README.md), [AGENTS.md](AGENTS.md), commit `1c74a04` | Shows ability to turn product work into shareable evidence |
+| Decision-trail format | [logs/DECISION_LOG.md](logs/DECISION_LOG.md) | Shows structured judgment |
+| Source-index model | [architecture/INGESTION_MODEL.md](architecture/INGESTION_MODEL.md) | Shows ability to organize messy context while keeping source layers separate and privacy-safe |
 
 ## Roles This Supports
 

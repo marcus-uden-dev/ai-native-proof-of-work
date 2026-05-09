@@ -4,21 +4,22 @@
 
 ### Added
 
-- `PROJECT_PROOF_POINTS.md` as the project-centered evidence map for job-agent, PKM, and the household budget app.
-- `PROJECT_TIMELINE.md` as a living milestone timeline for projects and proof-of-work automation.
-- `RECRUITER_ONE_PAGER.md` for fast recruiter review.
-- `RECRUITER_AGENT_GUIDE.md` for recruiter-side agents and review bots.
-- `EVIDENCE_MATRIX.md` with a visual Mermaid capability map.
-- `ROLE_READING_PATHS.md` for role-specific navigation.
-- `BEFORE_AFTER_SNAPSHOTS.md` to show progression over time.
+- [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md) as the project-centered evidence map for job-agent, PKM, and the household budget app.
+- [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) as a living milestone timeline for projects and proof-of-work automation.
+- [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md) for fast recruiter review.
+- [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md) for recruiter-side agents and review bots.
+- [NAVIGATION.md](../NAVIGATION.md) as a plain-English hub for non-technical reviewers.
+- [EVIDENCE_MATRIX.md](../EVIDENCE_MATRIX.md) with a visual Mermaid capability map.
+- [ROLE_READING_PATHS.md](../ROLE_READING_PATHS.md) for role-specific navigation.
+- [BEFORE_AFTER_SNAPSHOTS.md](../BEFORE_AFTER_SNAPSHOTS.md) to show progression over time.
 - Sanitized case studies for job-agent, PKM, and the household budget app.
 - Screenshot sharing plan for future privacy-reviewed visuals.
 - Lesson requiring recruiter-facing artifacts to lead with concrete projects, especially job-agent, while keeping the proof-of-work compiler documented as operating infrastructure.
 
 ### Changed
 
-- Repositioned `PROOF_OF_WORK.md`, `RECRUITER_BRIEF.md`, `EXECUTIVE_SUMMARY.md`, `START_HERE.md`, and `README.md` around concrete project execution.
-- Updated `strategy/VALUE_PROPOSITION.md` and `strategy/PRODUCT_STRATEGY.md` so the value proposition is project evidence plus a documented automation method, not the automation/compiler alone.
+- Repositioned [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md), [EXECUTIVE_SUMMARY.md](../EXECUTIVE_SUMMARY.md), [START_HERE.md](../START_HERE.md), and [README.md](../README.md) around concrete project execution.
+- Updated [strategy/VALUE_PROPOSITION.md](../strategy/VALUE_PROPOSITION.md) and [strategy/PRODUCT_STRATEGY.md](../strategy/PRODUCT_STRATEGY.md) so the value proposition is project evidence plus a documented automation method, not the automation/compiler alone.
 - Updated recruiter assets and demo script to make job-agent the lead proof point, with PKM and the household budget app as supporting examples.
 
 ### Notes
@@ -30,7 +31,7 @@ The compiler is now described as documented supporting infrastructure for eviden
 ### Added
 
 - Initial repository scaffold
-- `AGENTS.md` Codex instruction
+- [AGENTS.md](../AGENTS.md) Codex instruction
 - README and recruiter reading path
 - Strategy documentation templates
 - Architecture documentation templates

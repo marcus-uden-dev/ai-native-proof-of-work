@@ -51,15 +51,15 @@ flowchart TD
 
 | Capability | Evidence | Status | Why It Matters |
 |---|---|---|---|
-| Full-stack product execution | `case-studies/JOB_AGENT_CASE_STUDY.md` | Internal / Verified | Shows a broad product system, not only documentation |
-| Career-domain product judgment | `PROJECT_PROOF_POINTS.md`, `strategy/VALUE_PROPOSITION.md` | Hypothesis / Internal Verified | Connects project execution to job-search workflow pain |
-| Knowledge workflow design | `case-studies/PKM_CASE_STUDY.md` | Internal / Verified | Shows ingestion, search, learning, and prioritization thinking |
-| Financial domain modeling | `case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md` | Internal / Verified | Shows careful modeling of household data, imports, goals, and forecasts |
+| Full-stack product execution | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) | Internal / Verified | Shows a broad product system, not only documentation |
+| Career-domain product judgment | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md) | Hypothesis / Internal Verified | Connects project execution to job-search workflow pain |
+| Knowledge workflow design | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) | Internal / Verified | Shows ingestion, search, learning, and prioritization thinking |
+| Financial domain modeling | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Internal / Verified | Shows careful modeling of household data, imports, goals, and forecasts |
 | QA and regression discipline | Job-agent and budget case studies | Internal / Verified | Shows attention to reliability and verification, not just ideation |
-| Privacy-aware execution | `SOURCE_MAP.md`, `SHARING_CHECKLIST.md` | Verified | Shows judgment about what should and should not be shared |
-| Structured decision-making | `logs/DECISION_LOG.md`, `strategy/DECISION_TRAIL.md` | Decision | Makes tradeoffs visible without exposing private reasoning |
-| Automation as operating layer | `AUTOMATION_PROMPT.md`, `prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md`, `workflows/CLAUDE_CODEX_WORKFLOW.md` | Verified | Shows repeatability, review discipline, and evidence packaging |
-| Recruiter communication | `RECRUITER_ONE_PAGER.md`, `RECRUITER_BRIEF.md`, recruiter assets | Verified | Makes the portfolio easier to evaluate quickly |
+| Privacy-aware execution | [SOURCE_MAP.md](SOURCE_MAP.md), [SHARING_CHECKLIST.md](SHARING_CHECKLIST.md) | Verified | Shows judgment about what should and should not be shared |
+| Structured decision-making | [logs/DECISION_LOG.md](logs/DECISION_LOG.md), [strategy/DECISION_TRAIL.md](strategy/DECISION_TRAIL.md) | Decision | Makes tradeoffs visible without exposing private reasoning |
+| Automation as operating layer | [AUTOMATION_PROMPT.md](AUTOMATION_PROMPT.md), [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md) | Verified | Shows repeatability, review discipline, and evidence packaging |
+| Recruiter communication | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), recruiter assets | Verified | Makes the portfolio easier to evaluate quickly |
 
 ## Evidence Gaps To Close Next
 
