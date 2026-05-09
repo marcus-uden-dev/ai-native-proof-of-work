@@ -9,9 +9,19 @@ This repository solves a basic portfolio problem:
 
 Useful product work often gets scattered across codebases, chats, local projects, research notes, and scheduled tasks. The goal is to make concrete project execution legible without exposing private project material.
 
-## 2. Repository Structure
+## 2. Recruiter Skim
 
-Start with `README.md`.
+Open:
+
+- `RECRUITER_ONE_PAGER.md`
+- `EVIDENCE_MATRIX.md`
+- `ROLE_READING_PATHS.md`
+
+Explain that the repo has a fast human-readable path and an agent-readable path.
+
+## 3. Repository Structure
+
+Open `README.md`.
 
 Show the main sections:
 
@@ -24,7 +34,7 @@ Show the main sections:
 
 Explain that Markdown is the source of truth and Mermaid is used for diagrams.
 
-## 3. Proof of Work
+## 4. Proof of Work
 
 Open `PROOF_OF_WORK.md`.
 
@@ -37,7 +47,7 @@ Show:
 
 Explain that claims are marked as verified, estimated, planned, or open questions. The current lead proof point is job-agent, supported by PKM and the household budget app. The committed repository scaffold (`1c74a04`) and internal source indexes are supporting evidence infrastructure.
 
-## 4. Project Proof Points
+## 5. Project Proof Points
 
 Open `PROJECT_PROOF_POINTS.md`.
 
@@ -48,6 +58,10 @@ Show:
 - household budget app as financial-product/domain-modeling evidence
 - compiler as documented automation infrastructure, not the whole story
 
+Open `case-studies/JOB_AGENT_CASE_STUDY.md`.
+
+Show job-agent as the lead proof point.
+
 Open `PROJECT_TIMELINE.md`.
 
 Show how milestones build over time:
@@ -57,7 +71,7 @@ Show how milestones build over time:
 - the proof-of-work repo and compiler then package the evidence
 - future milestones can be added without rewriting the whole portfolio
 
-## 5. Strategy
+## 6. Strategy
 
 Open:
 
@@ -68,7 +82,7 @@ Open:
 
 Explain how product and commercial thinking are separated from weekly execution logs.
 
-## 6. Architecture
+## 7. Architecture
 
 Open:
 
@@ -79,7 +93,7 @@ Open:
 
 Explain the input, indexing, ingestion, analysis, artifact, and review layers.
 
-## 7. Workflow Philosophy
+## 8. Workflow Philosophy
 
 Open:
 
@@ -93,7 +107,7 @@ Explain:
 - GitHub preserves the proof.
 - Human review remains the final gate.
 
-## 8. Weekly Execution
+## 9. Weekly Execution
 
 Open:
 
@@ -105,7 +119,7 @@ Open:
 Show how weekly work becomes evidence.
 Point out that the first weekly run distinguishes between repository evidence, internal source indexes, and claims that still need measured outcomes.
 
-## 9. Recruiter Relevance
+## 10. Recruiter Relevance
 
 Open:
 
@@ -115,7 +129,7 @@ Open:
 
 Explain how the repo supports interviews, recruiter conversations, and portfolio review.
 
-## 10. Closing
+## 11. Closing
 
 This repository demonstrates:
 

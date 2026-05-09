@@ -17,11 +17,16 @@ Required root files:
 - AGENTS.md
 - README.md
 - START_HERE.md
+- RECRUITER_ONE_PAGER.md
+- RECRUITER_AGENT_GUIDE.md
 - EXECUTIVE_SUMMARY.md
 - SOURCE_MAP.md
 - PROOF_OF_WORK.md
 - PROJECT_PROOF_POINTS.md
 - PROJECT_TIMELINE.md
+- EVIDENCE_MATRIX.md
+- ROLE_READING_PATHS.md
+- BEFORE_AFTER_SNAPSHOTS.md
 - RECRUITER_BRIEF.md
 - PORTFOLIO_CASE_STUDY.md
 - DEMO_SCRIPT.md
@@ -34,6 +39,7 @@ Required folders:
 - diagrams/
 - logs/
 - recruiter-assets/
+- case-studies/
 - prompts/
 - exports/
 - internal/
@@ -83,6 +89,12 @@ Required recruiter assets:
 - recruiter-assets/LINKEDIN_DRAFTS.md
 - recruiter-assets/RECRUITER_SUMMARY.md
 - recruiter-assets/INTERVIEW_TALKING_POINTS.md
+- recruiter-assets/SCREENSHOT_SHARING_PLAN.md
+
+Required case studies:
+- case-studies/JOB_AGENT_CASE_STUDY.md
+- case-studies/PKM_CASE_STUDY.md
+- case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md
 
 Required prompt files:
 - prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md

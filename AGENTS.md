@@ -201,9 +201,17 @@ Mostly static files change only when strategy, architecture, positioning, or wor
 Weekly dynamic files update every weekly run:
 
 ```text
+RECRUITER_ONE_PAGER.md
+RECRUITER_AGENT_GUIDE.md
+EVIDENCE_MATRIX.md
+ROLE_READING_PATHS.md
+BEFORE_AFTER_SNAPSHOTS.md
 PROOF_OF_WORK.md
 PROJECT_PROOF_POINTS.md
 PROJECT_TIMELINE.md
+case-studies/JOB_AGENT_CASE_STUDY.md
+case-studies/PKM_CASE_STUDY.md
+case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md
 RECRUITER_BRIEF.md
 PORTFOLIO_CASE_STUDY.md
 DEMO_SCRIPT.md
@@ -306,7 +314,12 @@ Before updating artifacts, inspect:
 7. `PROOF_OF_WORK.md`
 8. `PROJECT_PROOF_POINTS.md`
 9. `PROJECT_TIMELINE.md`
-10. newly added or changed files since the last run
+10. `RECRUITER_ONE_PAGER.md`
+11. `RECRUITER_AGENT_GUIDE.md`
+12. `EVIDENCE_MATRIX.md`
+13. `ROLE_READING_PATHS.md`
+14. case studies under `case-studies/`
+15. newly added or changed files since the last run
 
 If no verified new source material is available, do not invent a weekly update.
 

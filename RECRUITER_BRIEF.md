@@ -20,9 +20,10 @@ AI-native product builder focused on career workflow products, knowledge systems
 
 | Proof Point | Evidence | Relevance |
 |---|---|---|
-| Job-agent career workflow product | `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md` | Shows full-stack product execution, privacy/trust thinking, QA discipline, and career-domain judgment |
-| PKM project | `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md` | Shows knowledge workflow design, ingestion/search thinking, and feature prioritization |
-| Household budget app | `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md` | Shows domain modeling, financial-product UX, shared-data/security thinking, and test-backed development |
+| Job-agent career workflow product | `case-studies/JOB_AGENT_CASE_STUDY.md`, `PROJECT_PROOF_POINTS.md` | Shows full-stack product execution, privacy/trust thinking, QA discipline, and career-domain judgment |
+| PKM project | `case-studies/PKM_CASE_STUDY.md`, `PROJECT_PROOF_POINTS.md` | Shows knowledge workflow design, ingestion/search thinking, and feature prioritization |
+| Household budget app | `case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md`, `PROJECT_PROOF_POINTS.md` | Shows domain modeling, financial-product UX, shared-data/security thinking, and test-backed development |
+| Evidence matrix | `EVIDENCE_MATRIX.md` | Maps capabilities to evidence for fast review |
 | Proof-of-work repo architecture | `README.md`, `AGENTS.md`, commit `1c74a04` | Shows ability to turn product work into shareable evidence |
 | Decision-trail format | `logs/DECISION_LOG.md` | Shows structured judgment |
 | Source-index model | `architecture/INGESTION_MODEL.md` | Shows ability to organize messy context while keeping source layers separate and privacy-safe |

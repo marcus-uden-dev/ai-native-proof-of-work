@@ -18,6 +18,11 @@ Status: Active / Project-focused evidence map
 
 | Artifact | What It Shows | Status | Link |
 |---|---|---|---|
+| Recruiter one-pager | Fast skim path and top proof points | Verified | `RECRUITER_ONE_PAGER.md` |
+| Job-agent case study | Lead product proof point | Internal / Verified | `case-studies/JOB_AGENT_CASE_STUDY.md` |
+| Evidence matrix | Capability-to-evidence map | Verified | `EVIDENCE_MATRIX.md` |
+| Role reading paths | Role-specific recruiter navigation | Verified | `ROLE_READING_PATHS.md` |
+| Recruiter agent guide | Agent-readable evaluation instructions | Verified | `RECRUITER_AGENT_GUIDE.md` |
 | Project proof points | Concrete project portfolio: job-agent, PKM, household budget app | Internal / Verified | `PROJECT_PROOF_POINTS.md` |
 | Project timeline | Milestones across projects and proof-of-work automation | Internal / Verified | `PROJECT_TIMELINE.md` |
 | Weekly log | Execution cadence | Verified | `logs/WEEKLY_LOG.md` |
@@ -45,6 +50,7 @@ Status: Active / Project-focused evidence map
 - Why it matters: Shows practical full-stack product execution in a domain directly related to job search, recruiter workflows, and AI-assisted career operations.
 - Status: Internal / Verified.
 - Evidence link: `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md`
+- Case study: `case-studies/JOB_AGENT_CASE_STUDY.md`
 - Recruiter relevance: Strongest current proof point for product thinking, engineering execution, privacy awareness, and test discipline.
 
 ### 2. PKM product and knowledge workflow system
@@ -53,6 +59,7 @@ Status: Active / Project-focused evidence map
 - Why it matters: Shows information architecture, source ingestion, knowledge workflows, and structured prioritization.
 - Status: Internal / Verified.
 - Evidence link: `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md`
+- Case study: `case-studies/PKM_CASE_STUDY.md`
 - Recruiter relevance: Demonstrates ability to build systems that turn messy knowledge into usable product workflows.
 
 ### 3. Household budget app
@@ -61,6 +68,7 @@ Status: Active / Project-focused evidence map
 - Why it matters: Shows domain modeling, financial-product UX, and security-aware application design.
 - Status: Internal / Verified.
 - Evidence link: `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md`
+- Case study: `case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md`
 - Recruiter relevance: Demonstrates product execution outside the AI/career domain, making the portfolio broader and more credible.
 
 ### 4. Proof-of-work repository scaffold

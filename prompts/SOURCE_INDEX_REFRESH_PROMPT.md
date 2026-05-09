@@ -69,6 +69,8 @@ After refreshing indexes, update recruiter-safe summaries only when evidence cha
 - `SOURCE_MAP.md` for source categories and safe project-source summaries
 - `PROJECT_PROOF_POINTS.md` for project evidence summaries
 - `PROJECT_TIMELINE.md` only when a meaningful milestone changed
+- `EVIDENCE_MATRIX.md` when capability-to-evidence mapping changes
+- case studies under `case-studies/` when project summaries change materially
 - `logs/CHANGELOG.md` and `logs/WEEKLY_LOG.md` for the refresh event
 
 Do not link recruiter-facing files directly to local-only index files. Link to the safe summaries instead.

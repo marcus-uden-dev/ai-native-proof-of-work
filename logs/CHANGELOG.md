@@ -6,6 +6,13 @@
 
 - `PROJECT_PROOF_POINTS.md` as the project-centered evidence map for job-agent, PKM, and the household budget app.
 - `PROJECT_TIMELINE.md` as a living milestone timeline for projects and proof-of-work automation.
+- `RECRUITER_ONE_PAGER.md` for fast recruiter review.
+- `RECRUITER_AGENT_GUIDE.md` for recruiter-side agents and review bots.
+- `EVIDENCE_MATRIX.md` with a visual Mermaid capability map.
+- `ROLE_READING_PATHS.md` for role-specific navigation.
+- `BEFORE_AFTER_SNAPSHOTS.md` to show progression over time.
+- Sanitized case studies for job-agent, PKM, and the household budget app.
+- Screenshot sharing plan for future privacy-reviewed visuals.
 - Lesson requiring recruiter-facing artifacts to lead with concrete projects, especially job-agent, while keeping the proof-of-work compiler documented as operating infrastructure.
 
 ### Changed

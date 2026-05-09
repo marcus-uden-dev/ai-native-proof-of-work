@@ -17,8 +17,9 @@ flowchart LR
     M2["2026-04<br/>Job-agent becomes lead product proof point"]
     M3["2026-05-08<br/>Proof-of-work repo and compiler scaffold"]
     M4["2026-05-09<br/>Project-first portfolio positioning"]
+    M5["2026-05-09<br/>Recruiter and agent review layer"]
 
-    M1 --> M2 --> M3 --> M4
+    M1 --> M2 --> M3 --> M4 --> M5
 ```
 
 ## Milestone Log
@@ -33,6 +34,7 @@ flowchart LR
 | 2026-05-08 | Weekly compiler prompt and recruiter asset set created | Automation / documentation | Verified | `AUTOMATION_PROMPT.md`, `prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md`, `recruiter-assets/` | Shows repeatable packaging of project evidence |
 | 2026-05-08 | Local source indexes created | Automation / source mapping | Internal / Verified | Summarized in `SOURCE_MAP.md` and `PROJECT_PROOF_POINTS.md` | Shows source separation and privacy-aware evidence extraction |
 | 2026-05-09 | Project-first repositioning completed | Portfolio positioning | Decision / Verified | `PROJECT_PROOF_POINTS.md`, `PROOF_OF_WORK.md`, `logs/DECISION_LOG.md` | Makes job-agent the lead proof point while keeping automation documented as the operating layer |
+| 2026-05-09 | Recruiter and agent review layer added | Recruiter experience | Verified | `RECRUITER_ONE_PAGER.md`, `RECRUITER_AGENT_GUIDE.md`, `EVIDENCE_MATRIX.md`, `ROLE_READING_PATHS.md` | Makes the repo easier for humans and recruiter-side agents to evaluate quickly |
 
 ## How To Maintain This
 

@@ -19,15 +19,20 @@ Before updating artifacts, inspect:
 4. PROOF_OF_WORK.md
 5. PROJECT_PROOF_POINTS.md
 6. PROJECT_TIMELINE.md
-7. logs/WEEKLY_LOG.md
-8. logs/CHANGELOG.md
-9. logs/DECISION_LOG.md
-10. logs/PROBLEM_SOLVING_LOG.md
-11. recruiter-assets/
-12. strategy/
-13. architecture/
-14. workflows/
-15. diagrams/
+7. RECRUITER_ONE_PAGER.md
+8. RECRUITER_AGENT_GUIDE.md
+9. EVIDENCE_MATRIX.md
+10. ROLE_READING_PATHS.md
+11. case-studies/
+12. logs/WEEKLY_LOG.md
+13. logs/CHANGELOG.md
+14. logs/DECISION_LOG.md
+15. logs/PROBLEM_SOLVING_LOG.md
+16. recruiter-assets/
+17. strategy/
+18. architecture/
+19. workflows/
+20. diagrams/
 
 If local source indexes are available, inspect:
 - internal/LOCAL_SOURCE_MAP.md
@@ -38,23 +43,28 @@ If the source indexes are unavailable, do not invent their contents. Mark them a
 Update or create:
 1. project proof-point map
 2. project milestone timeline
-3. GitHub-ready project log
-4. weekly diary / changelog
-5. CV bullet
-6. LinkedIn post draft
-7. portfolio case-study note
-8. demo script
-9. recruiter-facing summary
-10. product strategy document updates if changed
-11. value proposition updates if changed
-12. business model updates if changed
-13. pricing strategy updates if changed
-14. architecture updates if changed
-15. ingestion/autoresearch model updates if changed
-16. recursive workflow model updates if changed
-17. Claude + Codex workflow philosophy updates if changed
-18. problem-solving log entries
-19. decision log entries
+3. recruiter one-pager
+4. recruiter agent guide
+5. evidence matrix
+6. role reading paths
+7. project case studies
+8. GitHub-ready project log
+9. weekly diary / changelog
+10. CV bullet
+11. LinkedIn post draft
+12. portfolio case-study note
+13. demo script
+14. recruiter-facing summary
+15. product strategy document updates if changed
+16. value proposition updates if changed
+17. business model updates if changed
+18. pricing strategy updates if changed
+19. architecture updates if changed
+20. ingestion/autoresearch model updates if changed
+21. recursive workflow model updates if changed
+22. Claude + Codex workflow philosophy updates if changed
+23. problem-solving log entries
+24. decision log entries
 
 Focus on:
 - practical execution
@@ -81,6 +91,7 @@ Canonical positioning:
 - PKM and the household budget app are supporting proof points.
 - Automation, source indexes, weekly compiler, and review loops are important documented secondary proof points.
 - Recruiter-facing files should link to `SOURCE_MAP.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md` rather than local-only internal index files.
+- Recruiter-facing review should remain easy for both humans and agents through `RECRUITER_ONE_PAGER.md`, `RECRUITER_AGENT_GUIDE.md`, `EVIDENCE_MATRIX.md`, and `ROLE_READING_PATHS.md`.
 
 Avoid:
 - hype

@@ -17,6 +17,14 @@ The proof-of-work compiler, source indexes, and weekly review process are docume
 | PKM | Supporting proof point: personal knowledge-management product with ingestion, search, learning, social/feed, browser extension, backend/frontend structure, and feature lifecycle workflow | Internal / Verified; summarized from local project index and repo structure | Shows information architecture, knowledge workflows, ingestion thinking, and project prioritization |
 | Household budget app | Supporting proof point: Swedish household budgeting app with shared household, imports, transaction review, forecasting, goals, RLS/security, and extensive unit-test surface | Internal / Verified; summarized from local project docs and repo structure | Shows domain modeling, financial-product UX, privacy/security thinking, and test-backed product development |
 
+## Case Study Links
+
+| Project | Case Study |
+|---|---|
+| Job-agent / job-agent UX | `case-studies/JOB_AGENT_CASE_STUDY.md` |
+| PKM | `case-studies/PKM_CASE_STUDY.md` |
+| Household budget app | `case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md` |
+
 ## Primary Narrative
 
 The strongest story is not only "I built an automation that writes portfolio documents."

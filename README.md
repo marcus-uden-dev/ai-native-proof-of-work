@@ -58,10 +58,15 @@ flowchart TD
 | Section | Purpose |
 |---|---|
 | `START_HERE.md` | Fast recruiter-readable entry point |
+| `RECRUITER_ONE_PAGER.md` | One-screen recruiter overview |
+| `RECRUITER_AGENT_GUIDE.md` | Agent-readable guide for recruiter-side assistants |
 | `EXECUTIVE_SUMMARY.md` | High-level positioning and current status |
 | `PROOF_OF_WORK.md` | Central evidence map |
 | `PROJECT_PROOF_POINTS.md` | Project-focused proof points for job-agent, PKM, and the household budget app |
 | `PROJECT_TIMELINE.md` | Milestone timeline showing how the portfolio develops over time |
+| `EVIDENCE_MATRIX.md` | Capability-to-evidence map with visual layout |
+| `ROLE_READING_PATHS.md` | Role-specific reading paths |
+| `case-studies/` | Sanitized project case studies |
 | `strategy/` | Value proposition, product strategy, business model, pricing, GTM |
 | `architecture/` | System design, ingestion, autoresearch, recursive workflows |
 | `workflows/` | Claude/Codex workflow, AI operating model, scheduled tasks |
@@ -78,14 +83,15 @@ flowchart TD
 Recommended order:
 
 1. [`START_HERE.md`](START_HERE.md)
-2. [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md)
-3. [`PROOF_OF_WORK.md`](PROOF_OF_WORK.md)
-4. [`PROJECT_PROOF_POINTS.md`](PROJECT_PROOF_POINTS.md)
+2. [`RECRUITER_ONE_PAGER.md`](RECRUITER_ONE_PAGER.md)
+3. [`case-studies/JOB_AGENT_CASE_STUDY.md`](case-studies/JOB_AGENT_CASE_STUDY.md)
+4. [`EVIDENCE_MATRIX.md`](EVIDENCE_MATRIX.md)
 5. [`PROJECT_TIMELINE.md`](PROJECT_TIMELINE.md)
-6. [`PORTFOLIO_CASE_STUDY.md`](PORTFOLIO_CASE_STUDY.md)
-7. [`diagrams/RECRUITER_VIEW.md`](diagrams/RECRUITER_VIEW.md)
-8. [`recruiter-assets/RECRUITER_SUMMARY.md`](recruiter-assets/RECRUITER_SUMMARY.md)
-9. [`recruiter-assets/CV_BULLETS.md`](recruiter-assets/CV_BULLETS.md)
+6. [`ROLE_READING_PATHS.md`](ROLE_READING_PATHS.md)
+7. [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md)
+8. [`PROOF_OF_WORK.md`](PROOF_OF_WORK.md)
+9. [`PROJECT_PROOF_POINTS.md`](PROJECT_PROOF_POINTS.md)
+10. [`diagrams/RECRUITER_VIEW.md`](diagrams/RECRUITER_VIEW.md)
 
 ---
 
@@ -93,7 +99,9 @@ Recommended order:
 
 | Capability | How It Shows Up |
 |---|---|
-| Product execution | Job-agent, PKM, and household budget app proof points |
+| Product execution | Job-agent, PKM, and household budget app case studies |
+| Recruiter skim-readability | One-pager, evidence matrix, role reading paths |
+| Agent readability | Recruiter agent guide and canonical reading order |
 | Progress over time | Project timeline and weekly logs |
 | Structured thinking | Decision logs, strategy docs, tradeoff analysis |
 | Workflow automation | Scheduled task model, proof-of-work compiler, source indexes, and review loops as documented operating infrastructure |

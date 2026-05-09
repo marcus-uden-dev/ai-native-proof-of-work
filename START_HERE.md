@@ -31,21 +31,24 @@ This repository turns that work into structured proof.
 
 Recommended path:
 
-1. `EXECUTIVE_SUMMARY.md`
-2. `PROOF_OF_WORK.md`
-3. `PROJECT_PROOF_POINTS.md`
+1. `RECRUITER_ONE_PAGER.md`
+2. `case-studies/JOB_AGENT_CASE_STUDY.md`
+3. `EVIDENCE_MATRIX.md`
 4. `PROJECT_TIMELINE.md`
-5. `diagrams/RECRUITER_VIEW.md`
-6. `PORTFOLIO_CASE_STUDY.md`
-7. `strategy/VALUE_PROPOSITION.md`
-8. `architecture/ARCHITECTURE.md`
-9. `workflows/CLAUDE_CODEX_WORKFLOW.md`
+5. `ROLE_READING_PATHS.md`
+6. `EXECUTIVE_SUMMARY.md`
+7. `PROOF_OF_WORK.md`
+8. `PROJECT_PROOF_POINTS.md`
+9. `diagrams/RECRUITER_VIEW.md`
 10. `logs/WEEKLY_LOG.md`
+
+If you are using an assistant or recruiter-side agent, start with `RECRUITER_AGENT_GUIDE.md`.
 
 ## What to Look For
 
 - structured problem-solving
 - practical product execution
+- clear recruiter and agent reading paths
 - project progress over time
 - practical automation thinking as a documented support system for execution
 - clear before/after workflow improvements

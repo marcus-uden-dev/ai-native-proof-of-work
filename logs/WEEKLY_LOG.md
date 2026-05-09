@@ -38,6 +38,42 @@ Create a sanitized job-agent case-study page with evidence labels.
 
 ---
 
+## Recruiter Review Layer — 2026-05-09
+
+### 1. Executive Summary
+
+Added a recruiter and agent review layer so the repository can be skimmed quickly by humans and inspected more reliably by recruiter-side agents.
+
+The new layer keeps job-agent as the lead proof point, uses PKM and the household budget app as supporting evidence, and makes the automation visible as a documented operating layer.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Recruiter one-pager | Recruiter asset | Verified | `RECRUITER_ONE_PAGER.md` | Gives a one-screen overview |
+| Recruiter agent guide | Agent-readable navigation | Verified | `RECRUITER_AGENT_GUIDE.md` | Helps external agents inspect the repo in the intended order |
+| Evidence matrix | Visual evidence map | Verified | `EVIDENCE_MATRIX.md` | Maps capabilities to evidence |
+| Role reading paths | Recruiter navigation | Verified | `ROLE_READING_PATHS.md` | Lets different roles inspect the right files |
+| Before/after snapshots | Progress artifact | Verified | `BEFORE_AFTER_SNAPSHOTS.md` | Shows improvement over time |
+| Project case studies | Recruiter asset | Internal / Verified | `case-studies/` | Makes project evidence easier to evaluate |
+| Screenshot plan | Privacy planning | Planned | `recruiter-assets/SCREENSHOT_SHARING_PLAN.md` | Defines safe future visual evidence |
+
+### 3. Workflow Improvement
+
+| Before | After | Improvement | Evidence |
+|---|---|---|---|
+| Recruiter had to infer the best path from README and proof files | Recruiter and agent have explicit skim paths, role paths, and capability map | Faster evaluation and less chance of missing job-agent | `RECRUITER_ONE_PAGER.md`, `RECRUITER_AGENT_GUIDE.md`, `EVIDENCE_MATRIX.md` |
+
+### 4. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 5. Next Action
+
+Add privacy-reviewed screenshots or safe test/commit references for job-agent.
+
+---
+
 ## Week of 2026-05-08
 
 ### 1. Executive Summary
