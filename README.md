@@ -2,11 +2,11 @@
 
 > Canonical repo: `TheOneDarkHorse/ai-native-proof-of-work`
 
-A private, recruiter-shareable archive documenting practical work on AI-assisted workflow automation, product strategy, architecture reasoning, and execution discipline.
+A private, recruiter-shareable archive documenting practical product work, AI-native execution, product strategy, architecture reasoning, and execution discipline.
 
 This repository is not a codebase.
 
-It is a structured proof-of-work portfolio showing how I use Claude, Codex, scheduled routines, GitHub-based documentation, local project archives, and reusable skills to turn fragmented work into clearer systems, decisions, and artifacts.
+It is a structured proof-of-work portfolio showing concrete product work first, especially job-agent, with PKM and a household budget app as supporting evidence. Claude, Codex, scheduled routines, GitHub-based documentation, local project archives, and reusable skills are the operating layer that helps package and improve that work.
 
 ---
 
@@ -15,9 +15,11 @@ It is a structured proof-of-work portfolio showing how I use Claude, Codex, sche
 This repository demonstrates:
 
 - AI-native workflow design
-- automation strategy
+- concrete product execution
 - product and business model thinking
 - technical architecture reasoning
+- privacy-aware product design
+- test and QA discipline
 - structured documentation
 - recruiter-facing proof of execution
 - recursive workflow improvement
@@ -58,6 +60,8 @@ flowchart TD
 | `START_HERE.md` | Fast recruiter-readable entry point |
 | `EXECUTIVE_SUMMARY.md` | High-level positioning and current status |
 | `PROOF_OF_WORK.md` | Central evidence map |
+| `PROJECT_PROOF_POINTS.md` | Project-focused proof points for job-agent, PKM, and the household budget app |
+| `PROJECT_TIMELINE.md` | Milestone timeline showing how the portfolio develops over time |
 | `strategy/` | Value proposition, product strategy, business model, pricing, GTM |
 | `architecture/` | System design, ingestion, autoresearch, recursive workflows |
 | `workflows/` | Claude/Codex workflow, AI operating model, scheduled tasks |
@@ -76,10 +80,12 @@ Recommended order:
 1. [`START_HERE.md`](START_HERE.md)
 2. [`EXECUTIVE_SUMMARY.md`](EXECUTIVE_SUMMARY.md)
 3. [`PROOF_OF_WORK.md`](PROOF_OF_WORK.md)
-4. [`PORTFOLIO_CASE_STUDY.md`](PORTFOLIO_CASE_STUDY.md)
-5. [`diagrams/RECRUITER_VIEW.md`](diagrams/RECRUITER_VIEW.md)
-6. [`recruiter-assets/RECRUITER_SUMMARY.md`](recruiter-assets/RECRUITER_SUMMARY.md)
-7. [`recruiter-assets/CV_BULLETS.md`](recruiter-assets/CV_BULLETS.md)
+4. [`PROJECT_PROOF_POINTS.md`](PROJECT_PROOF_POINTS.md)
+5. [`PROJECT_TIMELINE.md`](PROJECT_TIMELINE.md)
+6. [`PORTFOLIO_CASE_STUDY.md`](PORTFOLIO_CASE_STUDY.md)
+7. [`diagrams/RECRUITER_VIEW.md`](diagrams/RECRUITER_VIEW.md)
+8. [`recruiter-assets/RECRUITER_SUMMARY.md`](recruiter-assets/RECRUITER_SUMMARY.md)
+9. [`recruiter-assets/CV_BULLETS.md`](recruiter-assets/CV_BULLETS.md)
 
 ---
 
@@ -87,8 +93,10 @@ Recommended order:
 
 | Capability | How It Shows Up |
 |---|---|
+| Product execution | Job-agent, PKM, and household budget app proof points |
+| Progress over time | Project timeline and weekly logs |
 | Structured thinking | Decision logs, strategy docs, tradeoff analysis |
-| Workflow automation | Scheduled task model, proof-of-work compiler, review loops |
+| Workflow automation | Scheduled task model, proof-of-work compiler, source indexes, and review loops as documented operating infrastructure |
 | Product judgment | Value proposition, MVP scope, pricing hypotheses, GTM thinking |
 | AI-native execution | Claude + Codex workflow, source indexing, recursive improvement |
 | Technical reasoning | Architecture, ingestion model, autoresearch model, system boundaries |
@@ -126,9 +134,9 @@ Context → Options Considered → Tradeoffs → Decision → Evidence → Open 
 
 ## Current Focus
 
-- building a recruiter-shareable proof-of-work archive
-- documenting AI-native workflow design
-- turning weekly execution into reusable artifacts
+- making job-agent the lead proof point
+- using PKM and the household budget app as supporting project evidence
+- documenting the automation clearly while keeping concrete project work as the main story
 - mapping Claude, Codex, scheduled tasks, and shared skills into one operating model
 - separating static strategy from weekly execution logs
 - making decisions and tradeoffs visible without exposing private material
@@ -158,4 +166,4 @@ Exports: Optional
 
 ## One-Sentence Summary
 
-This repository documents how I turn fragmented work, research, and AI-assisted execution into structured proof-of-work artifacts that demonstrate workflow automation, product thinking, architecture reasoning, and practical execution.
+This repository documents how I use AI-native workflows to build, test, and improve real products, then turn that work into structured proof-of-work artifacts that demonstrate product thinking, architecture reasoning, privacy-aware execution, and practical delivery.

@@ -1,5 +1,43 @@
 # Weekly Log
 
+## Project Positioning Correction — 2026-05-09
+
+### 1. Executive Summary
+
+Repositioned the repository so the main value proposition is concrete project execution, with proof-of-work automation documented as the operating method.
+
+The lead proof point is now job-agent. PKM and the household budget app are supporting proof points. The compiler, source indexes, and weekly process remain documented infrastructure for packaging evidence, maintaining privacy, and improving recruiter readability.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Project proof-point map | Documentation | Internal / Verified | `PROJECT_PROOF_POINTS.md` | Gives recruiters a project-first view |
+| Project timeline | Documentation | Internal / Verified | `PROJECT_TIMELINE.md` | Shows progression over time instead of only current-state summaries |
+| Job-agent lead positioning | Recruiter asset / strategy | Internal / Verified | `PROOF_OF_WORK.md`, `RECRUITER_BRIEF.md`, `strategy/VALUE_PROPOSITION.md` | Makes strongest product evidence easier to find |
+| PKM and budget app support positioning | Recruiter asset / strategy | Internal / Verified | `PROJECT_PROOF_POINTS.md` | Shows range beyond one product |
+| Compiler operating-layer framing | Strategy / documentation | Decision | `logs/DECISION_LOG.md` | Documents automation while preventing it from overshadowing project work |
+
+### 3. Workflow Improvement
+
+| Before | After | Improvement | Evidence |
+|---|---|---|---|
+| Proof-of-work automation looked like the whole product story | Project work is the main evidence and automation is the documented packaging layer | Stronger recruiter signal | `PROJECT_PROOF_POINTS.md`, `RECRUITER_BRIEF.md` |
+
+### 4. Decision
+
+Lead with job-agent as the primary proof point, use PKM and the household budget app as supporting project evidence, and keep the proof-of-work compiler documented as automation and documentation/review infrastructure.
+
+### 5. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 6. Next Action
+
+Create a sanitized job-agent case-study page with evidence labels.
+
+---
+
 ## Week of 2026-05-08
 
 ### 1. Executive Summary
@@ -87,3 +125,103 @@ Time spent: Estimated / not directly tracked.
 ### 12. Next Week
 
 Populate the first evidence-backed proof points from actual local Codex, Claude, and shared agents material.
+
+---
+
+## Weekly Compiler Run — 2026-05-08
+
+### 1. Executive Summary
+
+Ran the weekly Proof-of-Work Compiler from the canonical repository root after the bootstrap commit existed.
+
+This pass converted the initial scaffold from "verified once committed" into repo-visible evidence backed by commit `1c74a04` (`Bootstrap AI-native proof-of-work repository`). It did not invent unavailable local source index content.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Repository scaffold verification | Documentation | Verified | Commit `1c74a04`, `README.md`, `AGENTS.md` | Shows structured execution and repo hygiene |
+| Weekly compiler prompt | Automation | Verified | `AUTOMATION_PROMPT.md`, `prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md` | Shows repeatable documentation workflow |
+| Recruiter asset set | Recruiter asset | Verified | `recruiter-assets/`, `RECRUITER_BRIEF.md` | Shows role-targeted communication |
+| Evidence gap tracking | Quality control | Verified | `PROOF_OF_WORK.md` | Shows restraint and credibility |
+
+### 3. Workflow Improvements
+
+| Before | After | Improvement | Evidence |
+|---|---|---|---|
+| Scaffold status depended on future commit | Scaffold status tied to an actual commit | Stronger evidence discipline | Commit `1c74a04` |
+| Missing local indexes could invite overclaiming | Missing indexes explicitly marked unavailable | Lower privacy and fabrication risk | `PROOF_OF_WORK.md` |
+| Recruiter assets were initial drafts only | Recruiter assets now point to verified repo evidence | Better interview/share readiness | `RECRUITER_BRIEF.md`, `recruiter-assets/` |
+
+### 4. Source Index Status
+
+| Source | Index Available? | Handling | Next Action |
+|---|---|---|---|
+| Codex projects | No | Marked unavailable; no content invented | Create internal index |
+| Claude projects | No | Marked unavailable; no content invented | Create internal index |
+| Shared agents / skills | No | Marked unavailable; no content invented | Create internal index |
+
+### 5. Problems Encountered
+
+| Problem | Current Handling | Next Action |
+|---|---|---|
+| Internal source indexes do not exist yet | Continued with repo-visible evidence only | Generate local-only indexes before next weekly proof extraction |
+
+### 6. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 7. Next Week
+
+Create the local-only source indexes and extract the first verified proof points from local Codex, Claude, and shared agent material.
+
+---
+
+## Source Index Refresh — 2026-05-08
+
+### 1. Executive Summary
+
+Created the first local-only source indexes for existing project and workflow material.
+
+The update keeps three evidence layers separate:
+
+- Codex projects: execution, repo work, implementation, documentation maintenance
+- Claude projects: strategy, planning, feature workflow, task decomposition, acceptance criteria
+- Shared agent assets: skills, scripts, scheduled routines, memory, reusable workflow infrastructure
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Local source map | Internal index | Internal / Verified | Local-only index, summarized in `SOURCE_MAP.md` | Enables safer future extraction |
+| Codex projects index | Internal index | Internal / Verified | Local-only index, summarized in `SOURCE_MAP.md` and `PROJECT_PROOF_POINTS.md` | Shows execution/project evidence source |
+| Claude projects index | Internal index | Internal / Verified | Local-only index, summarized in `SOURCE_MAP.md` and `PROJECT_PROOF_POINTS.md` | Shows strategy/planning evidence source |
+| Agents root and skills indexes | Internal index | Internal / Verified | Local-only indexes, summarized in `SOURCE_MAP.md` | Shows reusable workflow infrastructure |
+| Scripts and documentation indexes | Internal index | Internal / Verified | Local-only indexes, summarized in `SOURCE_MAP.md` | Shows automation/documentation system |
+
+### 3. Source Index Findings
+
+| Source Layer | Finding | Status |
+|---|---|---|
+| Codex projects | 3 local Codex project folders observed, including this proof-of-work repo, a PKM project, and a household budget app | Internal / Verified |
+| Claude projects | 23 local Claude project folders observed, including feature workflow, job-agent, PKM, prototype, memory, and worktree-derived traces | Internal / Verified |
+| Shared agent assets | 239 shared skill directories and 11 scheduled routine Markdown files observed | Internal / Verified |
+
+### 4. Workflow Improvement
+
+| Before | After | Improvement | Evidence |
+|---|---|---|---|
+| Local context was known to exist but not indexed | Local context is mapped by source layer | Better future extraction and less source confusion | Internal source indexes |
+| Codex, Claude, and skills could be accidentally blended | Each layer has an explicit role | Cleaner evidence trail | `internal/LOCAL_SOURCE_MAP.md` |
+
+### 5. Privacy Handling
+
+Internal indexes may contain local paths. Recruiter-facing files were updated only with generalized source categories and safe summaries.
+
+### 6. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 7. Next Week
+
+Extract one verified proof point from each source layer and add it to the central proof map.

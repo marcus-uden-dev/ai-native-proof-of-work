@@ -1,53 +1,56 @@
 # LinkedIn Drafts
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-09
 Status: Drafts / Not published
 
-## Draft — 2026-05-08
+## Draft — 2026-05-09
 
 ### Topic
 
-Turning scattered work into proof of work.
+Turning project work into proof of work.
 
 ### Draft
 
-A lot of useful work disappears into places nobody can evaluate later:
+A lot of useful product work disappears into places nobody can evaluate later:
 
 - chats
 - notes
 - local project folders
-- half-finished experiments
+- tests
+- implementation plans
 - task outputs
-- strategy discussions
+- handoff docs
 
-I’m building a private proof-of-work repository to solve that for my own workflow.
+I’m building a private proof-of-work repository to solve that for my own project portfolio.
 
-The goal is not to generate more content.
+The goal is not to make the documentation system the whole story.
 
-The goal is to turn real execution into reusable evidence:
+The goal is to make real projects easier to evaluate:
 
 ```text
-Work done
+Project work
 → decision captured
+→ test or evidence linked
 → tradeoffs documented
-→ artifact created
 → recruiter/portfolio/interview reuse
 ```
+
+The lead proof point is a job-agent career workflow product. Supporting proof points include a PKM system and a household budget app.
 
 The repository is Markdown-first, GitHub-readable, and built around evidence labels.
 
 Claims are marked as verified, estimated, planned, open questions, decisions, or hypotheses.
 
-That matters because AI-assisted work can easily become vague. The useful part is not hype. It is better structure, better review, and lower friction between doing the work and showing the work.
+That matters because AI-assisted work can easily become vague. The useful part is not hype. It is better structure, better review, and lower friction between building the work and showing the work.
 
 ### Proof Point Used
 
-Initial proof-of-work repository scaffold.
+Project-first proof-of-work repositioning with job-agent as lead evidence.
 
 ### Claim Risk
 
 Low
 
-### Needs Evidence?
+### Evidence
 
-Yes — should be linked to actual repo artifacts before publishing.
+Verified by the committed private repository scaffold and internal project source indexes. Keep the post unpublished until the repo is reviewed for sharing and any private context is removed.

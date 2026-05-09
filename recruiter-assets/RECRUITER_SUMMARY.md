@@ -1,30 +1,31 @@
 # Recruiter Summary
 
-Last updated: 2026-05-08  
-Status: Initial scaffold
+Last updated: 2026-05-09
+Status: Active / Project-focused
 
 ## One-Sentence Positioning
 
-AI-native operator focused on workflow automation, product thinking, documentation systems, and practical execution.
+AI-native product builder focused on career workflow products, knowledge systems, privacy-aware automation, and practical execution.
 
 ## What This Repository Shows
 
 - ability to structure ambiguous problems
-- ability to design automation workflows
+- ability to build and evaluate concrete product systems
 - ability to reason about product strategy
 - ability to document technical and business decisions
 - ability to use AI tools as an operating system rather than a gimmick
-- ability to organize local knowledge into reusable systems
+- ability to turn real project work into recruiter-readable evidence
 
 ## Selected Proof Points
 
 | Proof Point | Evidence | Relevance |
 |---|---|---|
-| Proof-of-work repository architecture | `README.md`, `AGENTS.md` | Shows system design and documentation discipline |
-| Weekly compiler model | `logs/WEEKLY_LOG.md`, `prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md` | Shows workflow automation thinking |
+| Job-agent career workflow product | `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md` | Shows full-stack execution, privacy/trust thinking, QA discipline, and career-domain product judgment |
+| PKM project | `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md` | Shows knowledge workflow design, ingestion/search thinking, and prioritization discipline |
+| Household budget app | `PROJECT_PROOF_POINTS.md`, `SOURCE_MAP.md` | Shows domain modeling, financial-product UX, shared-data/security thinking, and test-backed development |
+| Proof-of-work repository architecture | `README.md`, `AGENTS.md`, commit `1c74a04` | Shows documentation discipline and evidence packaging |
 | Decision-trail standard | `logs/DECISION_LOG.md` | Shows structured reasoning and tradeoff analysis |
-| Claude + Codex workflow | `workflows/CLAUDE_CODEX_WORKFLOW.md` | Shows practical AI-native operating method |
-| Source-index model | `architecture/INGESTION_MODEL.md` | Shows information architecture thinking |
+| Claude + Codex workflow | `workflows/CLAUDE_CODEX_WORKFLOW.md` | Shows practical AI-native operating method behind the project work |
 
 ## Roles This Supports
 
@@ -39,8 +40,8 @@ AI-native operator focused on workflow automation, product thinking, documentati
 
 ## Best Interview Angles
 
-1. How I turn scattered work into proof.
-2. How I use Claude and Codex differently.
-3. How I avoid overclaiming with evidence labels.
-4. How I structure workflows into reusable assets.
-5. How I think about product strategy and architecture together.
+1. How job-agent became the lead proof point for product execution.
+2. How I use Claude and Codex differently across planning, implementation, and documentation.
+3. How I avoid overclaiming with evidence labels, tests, and decision logs.
+4. How PKM and the budget app show range beyond one domain.
+5. How the documentation system packages the work without becoming the work.

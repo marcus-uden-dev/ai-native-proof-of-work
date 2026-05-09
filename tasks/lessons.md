@@ -1,0 +1,4 @@
+# Lessons
+
+- Context: local proof-of-work indexing across Codex, Claude, and shared agent folders; Corrected rule: keep projects and source roots separated as Codex execution evidence, Claude strategy/planning evidence, and shared skills/workflow infrastructure; Prevention check: before updating recruiter-facing artifacts, verify the source layer for each claim and avoid merging separate project histories into one bucket.
+- Context: recruiter-facing proof-of-work positioning; Corrected rule: make concrete product projects the primary proof points, especially job-agent, with PKM and the household budget app as supporting evidence, while keeping the automation/compiler documented as the repeatable operating layer; Prevention check: before updating value proposition, recruiter summaries, or CV bullets, verify that the documentation does not make the proof-of-work automation/compiler sound like the whole product story.

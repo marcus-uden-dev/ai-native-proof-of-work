@@ -1,50 +1,52 @@
 # Value Proposition
 
-Last updated: 2026-05-08  
-Status: Hypothesis / Needs validation
+Last updated: 2026-05-09
+Status: Hypothesis / Project-focused
 
 ## Core Claim
 
-The system helps turn fragmented work, research, AI-assisted execution, local project archives, and strategic thinking into structured, reusable proof-of-work assets.
+Marcus builds real product systems with AI-native workflows, then turns that execution into clear recruiter-readable evidence.
+
+The value proposition is not the proof-of-work compiler alone. The compiler is a documented operating method for explaining, reviewing, and improving the project portfolio.
 
 ## User Problem
 
-Useful work often lives in fragmented places: chats, local files, task outputs, research notes, project folders, and memory. This makes it hard to reuse, explain, or prove.
+Useful product work often lives in fragmented places: codebases, tests, task docs, local notes, AI chats, planning folders, and handoff files. That makes it hard for recruiters or collaborators to see the actual depth of execution.
 
 ## Before
 
-- Work was scattered.
-- Strategic decisions were implicit.
-- Weekly execution was hard to summarize.
-- Recruiter-facing proof had to be rewritten manually.
-- Local project and skill context had to be rediscovered repeatedly.
+- Job-agent, PKM, and budget app work existed across separate project contexts.
+- The strongest proof points were buried in implementation notes, tests, plans, and handoffs.
+- The repository scaffold and automation process risked looking like the whole story instead of the documented method behind the project portfolio.
+- Recruiter-facing proof had to be reconstructed manually from scattered evidence.
 
 ## After
 
-- Weekly work is captured in a structured log.
-- Decisions use a visible decision trail.
-- Strategy, architecture, and workflows are documented separately.
-- Recruiter-facing artifacts are generated from evidence.
-- Local context is indexed and reused.
+- Job-agent is positioned as the primary proof point.
+- PKM and the household budget app are supporting project evidence.
+- The proof-of-work repo acts as a portfolio and evidence map.
+- Automation is documented as the packaging/review layer and a secondary proof point, not the central value.
+- Claims are grounded in indexed project sources and labeled by confidence.
 
 ## Value Created
 
 | Value | Explanation | Evidence Needed |
 |---|---|---|
-| Less documentation friction | One weekly process updates multiple artifacts | Time comparison |
-| More reusable work evidence | Work becomes CV bullets, summaries, logs, and case studies | Weekly outputs |
-| Better recruiter communication | Recruiters get a clear reading path | Recruiter feedback |
+| Clearer project signal | Recruiters can see concrete product work first | Sanitized project case studies |
+| Stronger career narrative | Job-agent connects product execution directly to career workflow pain | Recruiter feedback |
+| Better evidence quality | Claims point to projects, tests, docs, and decision logs instead of generic AI claims | Selected commits, test runs, or sanitized excerpts |
+| Less documentation friction | Weekly review turns project work into CV bullets, summaries, logs, and case studies | Time comparison |
 | Better strategic traceability | Decisions are logged with tradeoffs | Decision log entries |
-| Less repeated source discovery | Local folders are indexed | Source index freshness |
-| Better reuse of skills/scripts/docs | Shared skills become visible assets | Skills index |
+| Documented automation discipline | The weekly compiler and source indexes show repeatable evidence packaging | Weekly logs and automation prompts |
+| Privacy-safe sharing | Internal project details are summarized without exposing private paths or raw logs | Sharing checklist |
 
 ## Why Now
 
-Claude, Codex, GitHub, scheduled tasks, local source indexes, and AI-native workflows make it possible to treat documentation as an operating system rather than an afterthought.
+AI-assisted development can produce a lot of activity but weak external signal. A project-focused proof-of-work repo makes the execution legible: what was built, what changed, what tradeoffs mattered, what was tested, and what still needs validation.
 
 ## Validation Needed
 
-- Does the repo improve recruiter conversations?
-- Does weekly compilation reduce duplicated writing?
-- Which artifacts are most useful in interviews?
-- Which proof points should become public portfolio material?
+- Does job-agent work as the strongest lead proof point?
+- Which job-agent artifacts are safe and compelling enough to summarize publicly?
+- Do PKM and the budget app strengthen the story or distract from it?
+- Which proof points should become sanitized portfolio case studies?

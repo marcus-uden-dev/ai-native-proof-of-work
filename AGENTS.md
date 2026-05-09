@@ -1,6 +1,6 @@
 # AGENTS.md — AI-Native Proof-of-Work Repository Compiler
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-08
 Status: Active instruction
 
 ## Mission
@@ -9,7 +9,7 @@ Maintain a private GitHub proof-of-work repository that documents Marcus’s AI-
 
 This repository is not a codebase.
 
-It is a polished, recruiter-shareable documentation repository showing how Marcus thinks, builds, evaluates, documents, and improves workflows using Claude, Codex, scheduled tasks, GitHub, local project archives, shared skills, and structured review loops.
+It is a polished, recruiter-shareable documentation repository showing concrete product execution first, especially job-agent, with PKM and the household budget app as supporting proof points. It also shows how Marcus thinks, builds, evaluates, documents, and improves workflows using Claude, Codex, scheduled tasks, GitHub, local project archives, shared skills, and structured review loops.
 
 ## Target Repository
 
@@ -29,6 +29,14 @@ Repository purpose:
 
 ```text
 Private recruiter-shareable proof-of-work archive for AI-native workflow design, automation strategy, product thinking, architecture reasoning, local knowledge organization, and weekly execution evidence.
+
+Current canonical structure:
+
+- Projects are the primary proof.
+- Job-agent is the lead proof point.
+- PKM and the household budget app are supporting proof points.
+- Automation, source indexes, weekly compiler, and review loops are documented operating infrastructure and secondary proof points.
+- Recruiter-facing docs should summarize local-only evidence through `SOURCE_MAP.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md`.
 ```
 
 Codex must treat this repository as the source of truth for proof-of-work documentation.
@@ -194,6 +202,8 @@ Weekly dynamic files update every weekly run:
 
 ```text
 PROOF_OF_WORK.md
+PROJECT_PROOF_POINTS.md
+PROJECT_TIMELINE.md
 RECRUITER_BRIEF.md
 PORTFOLIO_CASE_STUDY.md
 DEMO_SCRIPT.md
@@ -294,7 +304,9 @@ Before updating artifacts, inspect:
 5. `logs/CHANGELOG.md`
 6. `logs/DECISION_LOG.md`
 7. `PROOF_OF_WORK.md`
-8. newly added or changed files since the last run
+8. `PROJECT_PROOF_POINTS.md`
+9. `PROJECT_TIMELINE.md`
+10. newly added or changed files since the last run
 
 If no verified new source material is available, do not invent a weekly update.
 
@@ -323,6 +335,8 @@ Create or update:
 14. recursive workflow updates if changed
 15. Claude + Codex workflow philosophy updates if changed
 16. local source index updates if needed
+17. project proof-point map updates if changed
+18. project timeline updates if milestones changed
 
 ## Quality Gate
 
@@ -393,6 +407,20 @@ Before completing any weekly run, verify:
 |---|---|---|
 | | | Yes / No |
 
+## Project Proof-Point Updates
+
+| Project | Updated? | Reason | Evidence Status |
+|---|---|---|---|
+| Job-agent | Yes / No | | |
+| PKM | Yes / No | | |
+| Household budget app | Yes / No | | |
+
+## Project Timeline Updates
+
+| Timeline Updated? | New / Changed Milestone | Evidence |
+|---|---|---|
+| Yes / No | | |
+
 ## Source Index Updates
 
 | Index | Updated? | Reason | Freshness |
@@ -435,6 +463,8 @@ A weekly run is complete only when:
 
 - `logs/WEEKLY_LOG.md` has a new weekly entry
 - `PROOF_OF_WORK.md` reflects the strongest current evidence
+- `PROJECT_PROOF_POINTS.md` reflects the strongest current project evidence
+- `PROJECT_TIMELINE.md` reflects any meaningful new milestones
 - recruiter-facing assets are updated
 - any changed strategy or architecture docs have decision-log entries
 - diagrams are valid Mermaid

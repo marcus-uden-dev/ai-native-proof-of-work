@@ -1,23 +1,25 @@
 # CV Bullets
 
-Last updated: 2026-05-08  
-Status: Initial drafts / Needs evidence
+Last updated: 2026-05-09
+Status: Drafts / Project-focused
 
-## AI Transformation / Automation
+## Product Execution
 
-- Designed an AI-assisted proof-of-work workflow that converts weekly execution, strategy decisions, and project context into reusable recruiter-facing artifacts across GitHub logs, CV bullets, portfolio notes, demo scripts, and summaries.
+- Built and documented a job-agent career workflow product spanning CV generation, job discovery, application support, interview/practice flows, feedback capture, privacy/data-rights planning, QA coverage, deployment planning, telemetry, and billing considerations.
+- Developed supporting product systems across a PKM app and household budget app, demonstrating knowledge ingestion/search workflows, financial domain modeling, shared household data access, import/review flows, and test-backed implementation.
 
 ## Product Operations
 
-- Structured a private proof-of-work repository to document product strategy, value proposition, business model hypotheses, pricing reasoning, architecture decisions, and weekly execution evidence.
+- Created an evidence-first proof-of-work repository that packages real project execution into recruiter-readable summaries, project proof points, decision logs, CV bullets, portfolio notes, demo scripts, and weekly logs.
 
 ## Business Development
 
-- Developed a value proposition and early business model hypothesis for turning fragmented AI-assisted work into structured, reusable proof-of-work assets for job seekers, consultants, and AI-native operators.
+- Developed career-domain product reasoning around job-agent, including application workflows, token/pricing questions, referral economy considerations, privacy constraints, and production activation blockers.
 
 ## Digital Transformation
 
-- Designed a documentation-first operating model using Claude, Codex, GitHub, scheduled reviews, and local source indexing to reduce repeated context discovery and improve workflow traceability.
+- Designed an AI-native operating model using Claude, Codex, GitHub, scheduled reviews, and local source indexing to move from product work to evidence-backed documentation without exposing private project internals.
+- Created a local source-indexing model that separates project execution, planning, and reusable workflow infrastructure before promoting claims into recruiter-facing artifacts.
 
 ## Customer Outcome / AI Adoption
 
@@ -25,8 +27,9 @@ Status: Initial drafts / Needs evidence
 
 ## Technical Product Strategy
 
-- Designed an ingestion and source-indexing model for organizing local Codex, Claude, and shared agent resources into reusable documentation and decision artifacts.
+- Designed an ingestion and source-indexing model for organizing local product work, Claude planning, Codex execution, and shared agent resources into reusable documentation and decision artifacts.
+- Indexed a shared workflow asset layer containing reusable skills, scheduled routines, scripts, and documentation patterns, while keeping private paths out of public-facing materials.
 
 ## Notes
 
-Do not present these as measured impact until validated. Add metrics only when supported by evidence.
+Evidence currently supports project existence, project structure, documented task systems, tests, QA notes, and repository scaffold execution. Do not present these as measured business impact until validated. Add metrics only when supported by evidence.

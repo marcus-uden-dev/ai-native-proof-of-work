@@ -1,22 +1,25 @@
 # Executive Summary
 
-Last updated: 2026-05-08  
-Status: Initial scaffold / Needs evidence
+Last updated: 2026-05-09
+Status: Active / Project-focused
 
 ## Positioning
 
-AI-native operator focused on workflow automation, product thinking, documentation systems, and practical execution.
+AI-native product builder focused on career workflow products, knowledge systems, privacy-aware automation, and practical execution.
 
 ## Core Thesis
 
-AI is most useful when treated as an operating layer for real workflows, not as a content gimmick.
+AI is most useful when treated as an operating layer for real product work, not as a content gimmick.
 
 ## What I Built / Designed
 
-This repository is designed to document a proof-of-work system that turns weekly execution, research, strategy, and AI-assisted workflow design into recruiter-readable artifacts.
+This repository documents a project portfolio and the operating system around it.
+
+The lead proof point is job-agent. PKM and the household budget app provide supporting evidence across knowledge management and financial-product domains.
 
 Current scaffold includes:
 
+- project proof points
 - proof-of-work evidence map
 - strategy documentation
 - architecture documentation
@@ -30,6 +33,7 @@ Current scaffold includes:
 
 Operational value:
 
+- concrete product execution is easier to evaluate
 - less duplicated documentation work
 - better reuse of execution evidence
 - clearer documentation
@@ -41,6 +45,7 @@ Operational value:
 
 | Skill Area | Evidence |
 |---|---|
+| Product execution | `PROJECT_PROOF_POINTS.md`, `PROOF_OF_WORK.md` |
 | Product thinking | `strategy/PRODUCT_STRATEGY.md`, `strategy/VALUE_PROPOSITION.md` |
 | Workflow automation | `workflows/SCHEDULED_TASKS_MODEL.md`, `PROOF_OF_WORK.md` |
 | AI-native operating model | `workflows/AI_OPERATING_MODEL.md`, `workflows/CLAUDE_CODEX_WORKFLOW.md` |
@@ -56,16 +61,17 @@ Operational value:
 - Repository scaffold created.
 - Documentation architecture defined.
 - Recruiter reading path defined.
+- Internal source indexes identify job-agent, PKM, and the household budget app as core project evidence.
 
 ### Planned
 
-- Populate proof points from actual weekly work.
-- Index local Codex, Claude, and shared agent folders.
-- Add evidence-backed case studies and CV bullets.
+- Add sanitized project case studies for job-agent first.
+- Select safe public/recruiter excerpts from PKM and the household budget app.
+- Add evidence-backed CV bullets tied to project outcomes rather than the compiler.
 
 ### Open Questions
 
-- Which proof points should be prioritized first?
+- Which job-agent proof points should be prioritized first?
 - Which local folders contain the strongest recruiter-relevant evidence?
 - Which artifacts should be safe to share externally?
 

@@ -1,6 +1,6 @@
 # Claude + Codex Workflow
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-08
 Status: Initial version
 
 ## Claude
@@ -30,9 +30,11 @@ Best for:
 
 ## Shared Skills / Agents Layer
 
-The shared skills layer lives under local agent folders such as the `.agents` workspace.
+The shared skills layer lives in a private local workspace.
 
 Because Marcus uses a custom shared-skills setup, Codex must inspect indexes before assuming structure.
+
+The current internal index treats shared skills and scheduled routines as reusable workflow infrastructure, separate from Codex execution projects and Claude planning projects.
 
 ## Combined Workflow
 

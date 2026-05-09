@@ -8,7 +8,7 @@ Run the weekly Proof-of-Work Compiler for my private GitHub proof-of-work reposi
 Canonical repo:
 https://github.com/TheOneDarkHorse/ai-native-proof-of-work
 
-The repo is recruiter-shareable and documents my AI-native workflow design, product strategy, automation thinking, architecture decisions, local project context, and weekly execution.
+The repo is recruiter-shareable and documents concrete product execution first, especially job-agent, with PKM and the household budget app as supporting proof points. It also documents the automation, source indexing, weekly review, and Claude/Codex operating model that make the work repeatable and recruiter-readable.
 
 This is not a code repo. The main output should be Markdown files readable directly in GitHub. Use Mermaid diagrams for user flows, functional models, technical architecture, and recursive agent/workflow loops. Optional exports to PDF/DOCX/PPTX may be created later, but Markdown is the source of truth.
 
@@ -17,15 +17,17 @@ Before updating artifacts, inspect:
 2. SOURCE_MAP.md
 3. README.md
 4. PROOF_OF_WORK.md
-5. logs/WEEKLY_LOG.md
-6. logs/CHANGELOG.md
-7. logs/DECISION_LOG.md
-8. logs/PROBLEM_SOLVING_LOG.md
-9. recruiter-assets/
-10. strategy/
-11. architecture/
-12. workflows/
-13. diagrams/
+5. PROJECT_PROOF_POINTS.md
+6. PROJECT_TIMELINE.md
+7. logs/WEEKLY_LOG.md
+8. logs/CHANGELOG.md
+9. logs/DECISION_LOG.md
+10. logs/PROBLEM_SOLVING_LOG.md
+11. recruiter-assets/
+12. strategy/
+13. architecture/
+14. workflows/
+15. diagrams/
 
 If local source indexes are available, inspect:
 - internal/LOCAL_SOURCE_MAP.md
@@ -34,29 +36,34 @@ If local source indexes are available, inspect:
 If the source indexes are unavailable, do not invent their contents. Mark them as unavailable and continue with repo-visible evidence.
 
 Update or create:
-1. GitHub-ready project log
-2. weekly diary / changelog
-3. CV bullet
-4. LinkedIn post draft
-5. portfolio case-study note
-6. demo script
-7. recruiter-facing summary
-8. product strategy document updates if changed
-9. value proposition updates if changed
-10. business model updates if changed
-11. pricing strategy updates if changed
-12. architecture updates if changed
-13. ingestion/autoresearch model updates if changed
-14. recursive workflow model updates if changed
-15. Claude + Codex workflow philosophy updates if changed
-16. problem-solving log entries
-17. decision log entries
+1. project proof-point map
+2. project milestone timeline
+3. GitHub-ready project log
+4. weekly diary / changelog
+5. CV bullet
+6. LinkedIn post draft
+7. portfolio case-study note
+8. demo script
+9. recruiter-facing summary
+10. product strategy document updates if changed
+11. value proposition updates if changed
+12. business model updates if changed
+13. pricing strategy updates if changed
+14. architecture updates if changed
+15. ingestion/autoresearch model updates if changed
+16. recursive workflow model updates if changed
+17. Claude + Codex workflow philosophy updates if changed
+18. problem-solving log entries
+19. decision log entries
 
 Focus on:
-- measurable workflow improvement
-- automation
-- AI-native operating model
 - practical execution
+- concrete project proof, especially job-agent
+- supporting evidence from PKM and the household budget app
+- project milestones over time
+- automation as documented operating infrastructure, not the whole value proposition
+- measurable workflow improvement
+- AI-native operating model
 - value proposition
 - business model
 - pricing strategy
@@ -67,6 +74,13 @@ Focus on:
 - recursive review/promotion loops
 - problems encountered and how they were solved
 - how I work with Claude and Codex
+
+Canonical positioning:
+- Projects are the primary proof.
+- Job-agent is the lead proof point.
+- PKM and the household budget app are supporting proof points.
+- Automation, source indexes, weekly compiler, and review loops are important documented secondary proof points.
+- Recruiter-facing files should link to `SOURCE_MAP.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md` rather than local-only internal index files.
 
 Avoid:
 - hype
@@ -99,9 +113,11 @@ Final output must list:
 1. updated files
 2. new artifacts
 3. static files changed
-4. source index updates
-5. key proof-of-work this week
-6. claims that need evidence
-7. problems/blockers
-8. one concrete next action
+4. project proof-point updates
+5. project timeline updates
+6. source index updates
+7. key proof-of-work this week
+8. claims that need evidence
+9. problems/blockers
+10. one concrete next action
 ```

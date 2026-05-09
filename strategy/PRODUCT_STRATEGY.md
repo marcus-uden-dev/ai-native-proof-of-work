@@ -1,15 +1,15 @@
 # Product Strategy
 
-Last updated: 2026-05-08  
-Status: Initial hypothesis
+Last updated: 2026-05-09
+Status: Project-focused hypothesis
 
 ## Target User
 
-Initial target user: an AI-native operator, builder, consultant, job seeker, or career switcher who needs to turn scattered execution into credible proof-of-work.
+Initial target user: recruiters, hiring managers, and collaborators evaluating Marcus’s practical product execution across AI-native projects.
 
 ## Core Problem
 
-People do useful work but fail to package it into evidence. The result is lost leverage in job applications, portfolios, recruiter conversations, and internal career mobility.
+Marcus has concrete product work across job-agent, PKM, and a household budget app, but the evidence is distributed across local projects, task docs, tests, and AI-assisted workflows. Without curation, the documentation system can accidentally overshadow the products.
 
 ## Existing Alternatives
 
@@ -17,16 +17,19 @@ People do useful work but fail to package it into evidence. The result is lost l
 |---|---|
 | Manual portfolio updates | High friction and easy to neglect |
 | Generic AI writing tools | Produce content but not evidence |
-| Project management tools | Track tasks but rarely translate work into proof |
+| Project READMEs only | Explain a project but rarely connect it to career positioning |
 | LinkedIn posts | Public-facing but weak as source of truth |
 | CV updates | Too compressed to preserve reasoning |
 
 ## Product Wedge
 
-Start with weekly proof-of-work compilation for job/career positioning.
+Start with a project-first proof-of-work portfolio led by job-agent.
 
 ## MVP Scope
 
+- Project proof-point map
+- Job-agent lead case study
+- Supporting PKM and budget app summaries
 - Weekly log
 - Proof-of-work evidence map
 - CV bullet generator
@@ -49,6 +52,9 @@ Start with weekly proof-of-work compilation for job/career positioning.
 
 | Feature | User Value | Complexity | Priority |
 |---|---|---|---|
+| Job-agent proof-point page | High | Low | High |
+| Project proof-point map | High | Low | High |
+| Supporting project summaries | High | Low | High |
 | Weekly proof-of-work compiler | High | Medium | High |
 | Recruiter brief generator | High | Low | High |
 | Local source indexing | High | Medium | High |

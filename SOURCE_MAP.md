@@ -1,6 +1,6 @@
 # Source Map
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-08
 Status: Recruiter-safe / Does not expose private local paths
 
 ## Purpose
@@ -26,6 +26,15 @@ It does not expose private local paths or sensitive material.
 | Job/recruiter material | Career positioning and application assets | Redacted and generalized |
 | Research sources | Product, GTM, architecture, and workflow insights | Filtered for source quality |
 | GitHub artifacts | Proof of execution | Linked when safe |
+
+## Project Source Summary
+
+| Project / Layer | What It Supports | Recruiter-Safe Handling |
+|---|---|---|
+| Job-agent / job-agent UX | Primary proof point for career workflow product execution, QA, privacy, deployment planning, telemetry, and billing/product decisions | Summarized in `PROJECT_PROOF_POINTS.md`; raw project internals are not copied |
+| PKM | Supporting proof point for knowledge workflows, ingestion/search, learning/feed surfaces, browser extension material, tests, and feature lifecycle work | Summarized in `PROJECT_PROOF_POINTS.md`; private/local source details stay out of recruiter-facing files |
+| Household budget app | Supporting proof point for financial domain modeling, shared household data access, imports, review queues, forecasting, goals, and tests | Summarized in `PROJECT_PROOF_POINTS.md`; sensitive household/private data is excluded |
+| Proof-of-work automation | Evidence packaging, source separation, weekly review, privacy checks, and recruiter translation | Documented in workflow, architecture, prompt, and log files |
 
 ## Evidence Rule
 

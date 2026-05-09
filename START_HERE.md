@@ -1,23 +1,24 @@
 # Start Here
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-09
 Status: Active / Recruiter-facing
 
 ## One-Minute Overview
 
-This repository documents practical work on AI-native workflow design, automation, product strategy, architecture reasoning, and proof-of-work documentation.
+This repository documents practical product work supported by AI-native workflow design, product strategy, architecture reasoning, and proof-of-work documentation.
 
-It is designed to show how fragmented ideas, research, local project work, scheduled task outputs, and AI-assisted execution can be turned into structured, reusable evidence.
+The main proof points are job-agent, PKM, and a household budget app. The documentation and automation system is also part of the proof, but its role is to make that project work clear, credible, repeatable, and privacy-safe.
 
 ## Why This Exists
 
-Useful work often disappears into chats, local projects, notes, and undocumented workflows.
+Useful product work often disappears into codebases, chats, local projects, notes, and undocumented workflows.
 
 This repository turns that work into structured proof.
 
 ## What This Repository Shows
 
 - AI-native workflow design
+- concrete product execution
 - structured thinking
 - product strategy
 - architecture reasoning
@@ -32,17 +33,21 @@ Recommended path:
 
 1. `EXECUTIVE_SUMMARY.md`
 2. `PROOF_OF_WORK.md`
-3. `diagrams/RECRUITER_VIEW.md`
-4. `PORTFOLIO_CASE_STUDY.md`
-5. `strategy/VALUE_PROPOSITION.md`
-6. `architecture/ARCHITECTURE.md`
-7. `workflows/CLAUDE_CODEX_WORKFLOW.md`
-8. `logs/WEEKLY_LOG.md`
+3. `PROJECT_PROOF_POINTS.md`
+4. `PROJECT_TIMELINE.md`
+5. `diagrams/RECRUITER_VIEW.md`
+6. `PORTFOLIO_CASE_STUDY.md`
+7. `strategy/VALUE_PROPOSITION.md`
+8. `architecture/ARCHITECTURE.md`
+9. `workflows/CLAUDE_CODEX_WORKFLOW.md`
+10. `logs/WEEKLY_LOG.md`
 
 ## What to Look For
 
 - structured problem-solving
-- practical automation thinking
+- practical product execution
+- project progress over time
+- practical automation thinking as a documented support system for execution
 - clear before/after workflow improvements
 - documented tradeoffs
 - recruiter-relevant execution evidence

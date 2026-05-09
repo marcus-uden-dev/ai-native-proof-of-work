@@ -8,6 +8,13 @@ Refresh local source indexes for the AI-native proof-of-work repository.
 Target repo:
 https://github.com/TheOneDarkHorse/ai-native-proof-of-work
 
+Canonical positioning:
+- Local indexes are internal evidence infrastructure.
+- Recruiter-facing proof should be summarized through `SOURCE_MAP.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md`.
+- Job-agent is the lead project proof point.
+- PKM and the household budget app are supporting project proof points.
+- Automation, source indexes, weekly compiler, and review loops are documented operating infrastructure and secondary proof points.
+
 Known local source roots:
 - C:\Users\marcu\.codex\
 - C:\Users\marcu\.codex\projects
@@ -57,6 +64,14 @@ For each index, include:
 6. candidate proof-of-work signals
 7. unknowns
 8. freshness status
+
+After refreshing indexes, update recruiter-safe summaries only when evidence changed:
+- `SOURCE_MAP.md` for source categories and safe project-source summaries
+- `PROJECT_PROOF_POINTS.md` for project evidence summaries
+- `PROJECT_TIMELINE.md` only when a meaningful milestone changed
+- `logs/CHANGELOG.md` and `logs/WEEKLY_LOG.md` for the refresh event
+
+Do not link recruiter-facing files directly to local-only index files. Link to the safe summaries instead.
 
 Do not commit internal source indexes unless Marcus explicitly approves it.
 ```
