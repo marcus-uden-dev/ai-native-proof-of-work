@@ -36,7 +36,7 @@ Current canonical structure:
 - Job-agent is the lead proof point.
 - PKM and the household budget app are supporting proof points.
 - Automation, source indexes, weekly compiler, and review loops are documented operating infrastructure and secondary proof points.
-- Recruiter-facing docs should summarize local-only evidence through `SOURCE_MAP.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md`.
+- Recruiter-facing docs should summarize local-only evidence through `SOURCE_MAP.md`, `PROJECT_STATUS.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md`.
 ```
 
 Codex must treat this repository as the source of truth for proof-of-work documentation.
