@@ -25,6 +25,10 @@ The proof-of-work compiler, source indexes, and weekly review process are docume
 | PKM | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) |
 | Household budget app | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
 
+## Current Status Link
+
+For the current portfolio status snapshot, see [PROJECT_STATUS.md](PROJECT_STATUS.md).
+
 ## Primary Narrative
 
 The strongest story is not only "I built an automation that writes portfolio documents."
@@ -43,18 +47,28 @@ The stronger story is:
 | Privacy and trust | GDPR/cookie consent, data-rights models, retention/anonymization planning, marketing-pixel guardrails, and legal-review blockers are tracked | Internal / Verified |
 | Product judgment | Open decisions include token pricing, referral economy, deployment activation, observability, Stripe live activation, and destructive data-rights workflows | Internal / Verified |
 
+## Current Project Status Summary
+
+| Project | Current State | Open Work |
+|---|---|---|
+| Job-agent | Local status marks the MVP complete and career-ops tasks done; privacy, feedback, QA, discovery, shared-job cleanup, CI, telemetry, billing, and deployment planning are represented | Production activation, legal review, live Stripe, public backend origin, observability setup, OAuth credentials, and public-safe evidence excerpts |
+| PKM | Knowledge-workflow product with ingestion/search/learning/feed/source/person/topic surfaces, feature lifecycle discipline, and a Chrome extension for browser capture | OpenAI billing/quota, SMTP, deployment, source/person/topic setup, and verification of search, flashcard, extension, and MCP paths |
+| Household budget app | Core budgeting surfaces plus substantial household/shared-account hardening, invite onboarding, ownership rules, read-model/view-model extraction, and mutation helper consolidation | Finish post-hardening migration cleanup, remove legacy bridge debt, validate Supabase ownership hardening, and split future modeling into smaller slices |
+
 ## Supporting Project Signals
 
 ### PKM
 
 - Uses feature queues, brainstorm queues, ICE scoring, and explicit lifecycle states.
 - Contains backend/frontend structure, ingestion routes, search, embeddings, learning routes, feed/social tests, and a browser extension.
+- Social feed work is marked `done` in the local feature queue, while full daily-use readiness still depends on operational setup and verification.
 - Demonstrates knowledge workflow design rather than generic note-taking.
 
 ### Household Budget App
 
 - Defines a desktop-first Swedish household budgeting product with shared household, imports, review queues, liquidity forecasting, goals, credit-card handling, and category/rule logic.
 - Maintains durable product memory, roadmap/status docs, handoff docs, and a broad test surface.
+- Recent status emphasizes household-scoped reads/writes, shared-account ownership hardening, invite onboarding, and moving complex page logic into dedicated read models, view models, workflow helpers, and mutation helpers.
 - Demonstrates careful domain modeling and security-aware household data access.
 
 ## How The Automation Fits

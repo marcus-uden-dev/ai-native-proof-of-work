@@ -63,6 +63,7 @@ flowchart TD
 | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) | Agent-readable guide for recruiter-side assistants |
 | [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | High-level positioning and current status |
 | [PROOF_OF_WORK.md](PROOF_OF_WORK.md) | Central evidence map |
+| [PROJECT_STATUS.md](PROJECT_STATUS.md) | Current status, recent progress, and open work across projects |
 | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Project-focused proof points for job-agent, PKM, and the household budget app |
 | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) | Milestone timeline showing how the portfolio develops over time |
 | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) | Capability-to-evidence map with visual layout |
@@ -87,12 +88,13 @@ Recommended order:
 2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
 3. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
 4. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-5. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
-6. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
-7. [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)
-8. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
-9. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
-10. [diagrams/RECRUITER_VIEW.md](diagrams/RECRUITER_VIEW.md)
+5. [PROJECT_STATUS.md](PROJECT_STATUS.md)
+6. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+7. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
+8. [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)
+9. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
+10. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
+11. [diagrams/RECRUITER_VIEW.md](diagrams/RECRUITER_VIEW.md)
 
 ---
 

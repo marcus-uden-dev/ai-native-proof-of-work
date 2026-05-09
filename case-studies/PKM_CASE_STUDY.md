@@ -24,6 +24,16 @@ Personal knowledge work can become a pile of notes, links, fragments, and half-p
 | Feature lifecycle | Brainstorm queues, feature queues, ICE scoring, and lifecycle states are documented | Internal / Verified |
 | Testing | Backend tests across auth, ingest, search, learning, feed/social, and related surfaces are represented | Internal / Verified |
 
+## Current Status
+
+| Area | Current State | Remaining Work |
+|---|---|---|
+| Core workflow | Ingestion, search, learning, feed, sources, persons, topics, and browser capture are represented | Verify full daily-use flow after operational blockers are cleared |
+| Feature workflow | Brainstorm queue, feature queue, lifecycle states, ICE scoring, and review workflow are documented | Continue promoting only validated ideas into implementation |
+| Social feed | Marked `done` in the local feature queue | Needs operational source setup and usage validation before impact claims |
+| Search / AI enrichment | Hybrid search and AI enrichment are part of the product direction | OpenAI billing/quota and re-embedding behavior need cleanup |
+| Operations | Local setup and deployment docs exist | SMTP, frontend URL cleanup, Hetzner deployment, Discord digest, extension, and MCP verification |
+
 ## Workflow Model
 
 ```mermaid

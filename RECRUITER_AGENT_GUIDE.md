@@ -27,12 +27,13 @@ Assess Marcus’s practical evidence for:
 2. [Navigation Hub](NAVIGATION.md)
 3. [Start Here](START_HERE.md)
 4. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
-5. [Evidence Matrix](EVIDENCE_MATRIX.md)
-6. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-7. [Project Timeline](PROJECT_TIMELINE.md)
-8. [Role Reading Paths](ROLE_READING_PATHS.md)
-9. [Proof of Work](PROOF_OF_WORK.md)
-10. [Source Map](SOURCE_MAP.md)
+5. [Project Status](PROJECT_STATUS.md)
+6. [Evidence Matrix](EVIDENCE_MATRIX.md)
+7. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+8. [Project Timeline](PROJECT_TIMELINE.md)
+9. [Role Reading Paths](ROLE_READING_PATHS.md)
+10. [Proof of Work](PROOF_OF_WORK.md)
+11. [Source Map](SOURCE_MAP.md)
 
 ## Important Interpretation Rules
 
@@ -47,7 +48,7 @@ Assess Marcus’s practical evidence for:
 
 | Capability | Primary Evidence |
 |---|---|
-| Product execution | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
+| Product execution | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [PROJECT_STATUS.md](PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 | Product judgment | [strategy/PRODUCT_STRATEGY.md](strategy/PRODUCT_STRATEGY.md), [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | QA discipline | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
 | AI-native workflow design | [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |

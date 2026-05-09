@@ -18,8 +18,9 @@ flowchart TD
     M3["2026-05-08<br/>Proof-of-work repo and compiler scaffold"]
     M4["2026-05-09<br/>Project-first portfolio positioning"]
     M5["2026-05-09<br/>Recruiter and agent review layer"]
+    M6["2026-05-09<br/>Current project status layer"]
 
-    M1 --> M2 --> M3 --> M4 --> M5
+    M1 --> M2 --> M3 --> M4 --> M5 --> M6
 ```
 
 ## Milestone Log
@@ -35,6 +36,7 @@ flowchart TD
 | 2026-05-08 | Local source indexes created | Automation / source mapping | Internal / Verified | Summarized in [SOURCE_MAP.md](SOURCE_MAP.md) and [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows source separation and privacy-aware evidence extraction |
 | 2026-05-09 | Project-first repositioning completed | Portfolio positioning | Decision / Verified | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](PROOF_OF_WORK.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) | Makes job-agent the lead proof point while keeping automation documented as the operating layer |
 | 2026-05-09 | Recruiter and agent review layer added | Recruiter experience | Verified | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md), [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md), [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md), [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) | Makes the repo easier for humans and recruiter-side agents to evaluate quickly |
+| 2026-05-09 | Current project status layer added | Portfolio status | Internal / Verified | [PROJECT_STATUS.md](PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows what is complete, active, blocked, or pending across the project portfolio |
 
 ## How To Maintain This
 
@@ -60,7 +62,6 @@ Use evidence labels:
 
 | Planned Milestone | Why It Matters | Suggested Evidence |
 |---|---|---|
-| Sanitized job-agent case study | Turns the strongest product proof point into a recruiter-readable artifact | Case-study Markdown with evidence labels |
-| PKM supporting case-study note | Shows knowledge workflow and ingestion/search capability | Short project note with sanitized evidence |
-| Household budget app supporting case-study note | Shows domain modeling, privacy/security, and test discipline outside the career domain | Short project note with sanitized evidence |
-| First recruiter export | Tests whether the repo can become a shareable review packet | PDF or curated Markdown export after privacy review |
+| Sanitized job-agent screenshots | Makes the strongest product proof point easier to inspect visually | 2-4 privacy-reviewed screenshots |
+| Selected safe test/commit excerpts | Strengthens verification beyond summarized internal status | Short copied test summaries or safe commit references |
+| Recruiter export packet | Tests whether the repo can become a shareable review packet | PDF or curated Markdown export after privacy review |

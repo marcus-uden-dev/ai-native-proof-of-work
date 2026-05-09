@@ -34,13 +34,14 @@ Recommended path:
 1. [Navigation Hub](NAVIGATION.md)
 2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
 3. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
-4. [Evidence Matrix](EVIDENCE_MATRIX.md)
-5. [Project Timeline](PROJECT_TIMELINE.md)
-6. [Role Reading Paths](ROLE_READING_PATHS.md)
-7. [Executive Summary](EXECUTIVE_SUMMARY.md)
-8. [Proof of Work](PROOF_OF_WORK.md)
-9. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-10. [Weekly Log](logs/WEEKLY_LOG.md)
+4. [Project Status](PROJECT_STATUS.md)
+5. [Evidence Matrix](EVIDENCE_MATRIX.md)
+6. [Project Timeline](PROJECT_TIMELINE.md)
+7. [Role Reading Paths](ROLE_READING_PATHS.md)
+8. [Executive Summary](EXECUTIVE_SUMMARY.md)
+9. [Proof of Work](PROOF_OF_WORK.md)
+10. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+11. [Weekly Log](logs/WEEKLY_LOG.md)
 
 If you are using an assistant or recruiter-side agent, start with [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
 

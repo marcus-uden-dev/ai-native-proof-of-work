@@ -23,6 +23,7 @@ Status: Active / Project-focused evidence map
 | Evidence matrix | Capability-to-evidence map | Verified | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) |
 | Role reading paths | Role-specific recruiter navigation | Verified | [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) |
 | Recruiter agent guide | Agent-readable evaluation instructions | Verified | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) |
+| Project status | Current state, recent progress, and open work across projects | Internal / Verified | [PROJECT_STATUS.md](PROJECT_STATUS.md) |
 | Project proof points | Concrete project portfolio: job-agent, PKM, household budget app | Internal / Verified | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 | Project timeline | Milestones across projects and proof-of-work automation | Internal / Verified | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) |
 | Weekly log | Execution cadence | Verified | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
@@ -47,6 +48,7 @@ Status: Active / Project-focused evidence map
 ### 1. Job-agent career workflow product
 
 - What was done: Built and documented a career workflow product covering CV, job discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning.
+- Current status: Local project status marks MVP and career-ops tasks complete; remaining work is mainly production, infra, legal, and external verification.
 - Why it matters: Shows practical full-stack product execution in a domain directly related to job search, recruiter workflows, and AI-assisted career operations.
 - Status: Internal / Verified.
 - Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)
@@ -56,6 +58,7 @@ Status: Active / Project-focused evidence map
 ### 2. PKM product and knowledge workflow system
 
 - What was done: Maintained a personal knowledge-management project with ingestion, search, learning/feed surfaces, browser extension material, tests, and feature lifecycle workflow.
+- Current status: Feature workflow and core surfaces are represented; social feed is marked done in the local feature queue; full daily-use readiness still depends on operational setup and verification.
 - Why it matters: Shows information architecture, source ingestion, knowledge workflows, and structured prioritization.
 - Status: Internal / Verified.
 - Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)
@@ -65,6 +68,7 @@ Status: Active / Project-focused evidence map
 ### 3. Household budget app
 
 - What was done: Designed and implemented a household budgeting product with shared household modeling, imports, transaction review, forecasting, goals, security/RLS concerns, and broad test coverage.
+- Current status: Core surfaces and household/shared-account hardening are active; recent work extracts read models, view models, workflows, and mutations while migration cleanup remains open.
 - Why it matters: Shows domain modeling, financial-product UX, and security-aware application design.
 - Status: Internal / Verified.
 - Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)

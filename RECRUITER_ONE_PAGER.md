@@ -29,9 +29,10 @@ AI-native product builder focused on career workflow products, knowledge systems
 1. [START_HERE.md](START_HERE.md)
 2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
 3. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
-4. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-5. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
-6. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
+4. [PROJECT_STATUS.md](PROJECT_STATUS.md)
+5. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+6. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+7. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
 
 ## Best Interview Angles
 

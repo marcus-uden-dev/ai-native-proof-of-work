@@ -25,6 +25,16 @@ Job search work is fragmented across CVs, job boards, application portals, inter
 | QA and regression coverage | Backend tests, Playwright coverage, live verification notes, and regression-focused docs are present in source summaries | Internal / Verified |
 | Production readiness | Deployment, observability, Stripe/live activation, and legal/privacy decisions are tracked as open or external blockers | Internal / Verified |
 
+## Current Status
+
+| Area | Current State | Remaining Work |
+|---|---|---|
+| MVP / career-ops | Local status marks MVP complete and career-ops tasks done | Public-safe proof still needs screenshots or selected excerpts |
+| Privacy / GDPR | Consent, data-rights, export/delete request UX, retention planning, and marketing-pixel guardrails are locally represented | Legal review and final production policy decisions |
+| QA | Backend checks, Playwright coverage, discover regression coverage, migration smokes, and CI workflows are represented in local docs | Full production-like verification and selected recruiter-safe evidence |
+| Production | Hosting architecture and observability plans exist | Domain/server setup, public backend origin, OTel/Grafana, Stripe live, OAuth credentials |
+| Product economics | Billing, credits, referrals, and telemetry are planned or represented | Final pricing and live-market validation |
+
 ## Workflow Model
 
 ```mermaid

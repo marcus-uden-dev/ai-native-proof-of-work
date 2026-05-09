@@ -24,8 +24,9 @@ Use it if the file list feels overwhelming.
 | 1 | [Start Here](START_HERE.md) | One-minute orientation |
 | 2 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Summary of positioning and proof |
 | 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Main product evidence |
-| 4 | [Project Timeline](PROJECT_TIMELINE.md) | Progression over time |
-| 5 | [Role Reading Paths](ROLE_READING_PATHS.md) | Choose the angle that fits the role |
+| 4 | [Project Status](PROJECT_STATUS.md) | Current state and open work |
+| 5 | [Project Timeline](PROJECT_TIMELINE.md) | Progression over time |
+| 6 | [Role Reading Paths](ROLE_READING_PATHS.md) | Choose the angle that fits the role |
 
 ## If You Have 30 Minutes
 
@@ -33,12 +34,13 @@ Use it if the file list feels overwhelming.
 |---|---|---|
 | 1 | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) | Best path for agents and structured review |
 | 2 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
-| 3 | [Project Proof Points](PROJECT_PROOF_POINTS.md) | Portfolio-level evidence |
-| 4 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project |
-| 5 | [PKM Case Study](case-studies/PKM_CASE_STUDY.md) | Supporting knowledge-system evidence |
-| 6 | [Household Budget App Case Study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Supporting domain-modeling evidence |
-| 7 | [Decision Log](logs/DECISION_LOG.md) | Tradeoffs and positioning decisions |
-| 8 | [Before / After Snapshots](BEFORE_AFTER_SNAPSHOTS.md) | How the portfolio improved |
+| 3 | [Project Status](PROJECT_STATUS.md) | Current state, progress, and blockers |
+| 4 | [Project Proof Points](PROJECT_PROOF_POINTS.md) | Portfolio-level evidence |
+| 5 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project |
+| 6 | [PKM Case Study](case-studies/PKM_CASE_STUDY.md) | Supporting knowledge-system evidence |
+| 7 | [Household Budget App Case Study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Supporting domain-modeling evidence |
+| 8 | [Decision Log](logs/DECISION_LOG.md) | Tradeoffs and positioning decisions |
+| 9 | [Before / After Snapshots](BEFORE_AFTER_SNAPSHOTS.md) | How the portfolio improved |
 
 ## By Question
 
@@ -48,6 +50,7 @@ Use it if the file list feels overwhelming.
 | What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |
+| What is the current project status? | [Project Status](PROJECT_STATUS.md) |
 | What capabilities are evidenced? | [Evidence Matrix](EVIDENCE_MATRIX.md) |
 | How did this develop over time? | [Project Timeline](PROJECT_TIMELINE.md) |
 | What role does this support? | [Role Reading Paths](ROLE_READING_PATHS.md) |
@@ -72,7 +75,8 @@ These file areas are useful, but they are not the best first read for a non-tech
 flowchart TD
     A["Start Here"] --> B["Recruiter One-Pager"]
     B --> C["Job-Agent Case Study"]
-    C --> D["Evidence Matrix"]
-    D --> E["Project Timeline"]
-    E --> F["Role Reading Paths"]
+    C --> D["Project Status"]
+    D --> E["Evidence Matrix"]
+    E --> F["Project Timeline"]
+    F --> G["Role Reading Paths"]
 ```

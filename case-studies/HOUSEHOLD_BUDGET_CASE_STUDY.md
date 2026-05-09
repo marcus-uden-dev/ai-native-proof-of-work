@@ -22,6 +22,16 @@ Household budgeting is not only category totals. A useful product needs shared h
 | Security | RLS/security thinking and household-scoped access are represented | Internal / Verified |
 | Tests | Broad unit-test surface is represented in project summaries | Internal / Verified |
 
+## Current Status
+
+| Area | Current State | Remaining Work |
+|---|---|---|
+| Core surfaces | Dashboard, transactions, statement imports, recurring expenses, accounts, liquidity, budget, goals, settings, and household administration are represented | Continue polishing after household migration cleanup |
+| Household model | Household scope, member roles, admin flows, invites, ownership proposals, and shared-account ownership hardening are active focus areas | Finish remaining post-hardening migration cleanup and retire legacy bridge debt |
+| Read/write safety | Household-aware read scopes, ownership checks, and migration-safe guards are represented across major surfaces | Validate end-to-end in Supabase after cleanup |
+| Architecture hygiene | Large page-local logic is being moved into read models, view models, workflow helpers, and mutation helpers | Split future-modeling work into smaller landing slices |
+| Verification | Local status reports latest committed feature milestones passing `npm test` and `npm run lint` | Add selected safe test excerpts if this becomes externally shared |
+
 ## Domain Model View
 
 ```mermaid
