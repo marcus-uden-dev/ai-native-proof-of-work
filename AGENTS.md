@@ -201,6 +201,7 @@ Mostly static files change only when strategy, architecture, positioning, or wor
 Weekly dynamic files update every weekly run:
 
 ```text
+weekly-input/*.md
 RECRUITER_ONE_PAGER.md
 RECRUITER_AGENT_GUIDE.md
 NAVIGATION.md
@@ -306,21 +307,31 @@ I explored an internal workflow improvement involving field data capture, master
 
 Before updating artifacts, inspect:
 
-1. [SOURCE_MAP.md](SOURCE_MAP.md)
-2. `internal/LOCAL_SOURCE_MAP.md` if available
-3. `internal/source-indexes/*.md` if available
-4. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
-5. [logs/CHANGELOG.md](logs/CHANGELOG.md)
-6. [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
-7. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
-8. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
-9. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
-10. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-11. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
-12. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-13. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
-14. case studies under `case-studies/`
-15. newly added or changed files since the last run
+1. [weekly-input/](weekly-input/) for the current dated weekly input, if present
+2. [SOURCE_MAP.md](SOURCE_MAP.md)
+3. `internal/LOCAL_SOURCE_MAP.md` if available
+4. `internal/source-indexes/*.md` if available
+5. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
+6. [logs/CHANGELOG.md](logs/CHANGELOG.md)
+7. [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
+8. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
+9. [PROJECT_STATUS.md](PROJECT_STATUS.md)
+10. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
+11. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+12. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
+13. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
+14. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+15. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
+16. case studies under `case-studies/`
+17. newly added or changed files since the last run
+
+Weekly input rule:
+
+- Treat [weekly-input/](weekly-input/) as the clean input layer for new progress, features, decisions, blockers, lessons, and product/business-model insights.
+- Do not treat raw Claude/Codex sessions as the primary source for recruiter-facing updates.
+- If a weekly input file exists, cross-check it against project status files, source indexes, logs, and repo diffs before promoting claims.
+- If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant strategy/workflow document and add a decision-log entry when the change is meaningful.
+- If no weekly input exists, continue from verified repo-visible changes and source indexes, but do not invent missing progress.
 
 If no verified new source material is available, do not invent a weekly update.
 
@@ -350,7 +361,8 @@ Create or update:
 15. Claude + Codex workflow philosophy updates if changed
 16. local source index updates if needed
 17. project proof-point map updates if changed
-18. project timeline updates if milestones changed
+18. project status updates if current state, blockers, or progress changed
+19. project timeline updates if milestones changed
 
 ## Quality Gate
 
@@ -478,6 +490,7 @@ A weekly run is complete only when:
 - [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) has a new weekly entry
 - [PROOF_OF_WORK.md](PROOF_OF_WORK.md) reflects the strongest current evidence
 - [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) reflects the strongest current project evidence
+- [PROJECT_STATUS.md](PROJECT_STATUS.md) reflects meaningful changes in current state, progress, and blockers
 - [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) reflects any meaningful new milestones
 - recruiter-facing assets are updated
 - any changed strategy or architecture docs have decision-log entries

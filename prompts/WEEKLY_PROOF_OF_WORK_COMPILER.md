@@ -18,27 +18,28 @@ Canonical positioning:
 
 Before editing, inspect:
 1. AGENTS.md
-2. SOURCE_MAP.md
-3. README.md
-4. NAVIGATION.md
-5. PROOF_OF_WORK.md
-6. PROJECT_STATUS.md
-7. PROJECT_PROOF_POINTS.md
-8. PROJECT_TIMELINE.md
-9. RECRUITER_ONE_PAGER.md
-10. RECRUITER_AGENT_GUIDE.md
-11. EVIDENCE_MATRIX.md
-12. ROLE_READING_PATHS.md
-13. case-studies/
-14. logs/WEEKLY_LOG.md
-15. logs/CHANGELOG.md
-16. logs/DECISION_LOG.md
-17. logs/PROBLEM_SOLVING_LOG.md
-18. recruiter-assets/
-19. strategy/
-20. architecture/
-21. workflows/
-22. diagrams/
+2. weekly-input/
+3. SOURCE_MAP.md
+4. README.md
+5. NAVIGATION.md
+6. PROOF_OF_WORK.md
+7. PROJECT_STATUS.md
+8. PROJECT_PROOF_POINTS.md
+9. PROJECT_TIMELINE.md
+10. RECRUITER_ONE_PAGER.md
+11. RECRUITER_AGENT_GUIDE.md
+12. EVIDENCE_MATRIX.md
+13. ROLE_READING_PATHS.md
+14. case-studies/
+15. logs/WEEKLY_LOG.md
+16. logs/CHANGELOG.md
+17. logs/DECISION_LOG.md
+18. logs/PROBLEM_SOLVING_LOG.md
+19. recruiter-assets/
+20. strategy/
+21. architecture/
+22. workflows/
+23. diagrams/
 
 If internal local source indexes are available, inspect them:
 - internal/LOCAL_SOURCE_MAP.md
@@ -47,6 +48,8 @@ If internal local source indexes are available, inspect them:
 If they are unavailable or gitignored, continue without inventing their contents.
 
 Compile this week’s work into project-first proof-of-work artifacts.
+
+Treat [weekly-input/](../weekly-input/) as the clean input layer for new progress, features, decisions, blockers, lessons, and product/business-model insights. Do not use raw Claude/Codex sessions as the primary source for recruiter-facing updates. If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant strategy/workflow document and add a decision-log entry when the change is meaningful.
 
 Create or update:
 1. project proof-point map
@@ -80,6 +83,7 @@ Focus on:
 - concrete project proof, especially job-agent
 - supporting evidence from PKM and the household budget app
 - project milestones over time
+- weekly input notes as the source for new insights
 - automation as documented operating infrastructure, not the whole value proposition
 - measurable workflow improvement
 - AI-native operating model

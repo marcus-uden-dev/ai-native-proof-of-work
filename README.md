@@ -69,6 +69,7 @@ flowchart TD
 | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) | Capability-to-evidence map with visual layout |
 | [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) | Role-specific reading paths |
 | [case-studies/](case-studies/) | Sanitized project case studies |
+| [weekly-input/](weekly-input/) | Clean weekly input layer for progress, decisions, blockers, and business insights |
 | [strategy/](strategy/) | Value proposition, product strategy, business model, pricing, GTM |
 | [architecture/](architecture/) | System design, ingestion, autoresearch, recursive workflows |
 | [workflows/](workflows/) | Claude/Codex workflow, AI operating model, scheduled tasks |

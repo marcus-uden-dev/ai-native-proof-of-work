@@ -67,6 +67,7 @@ These file areas are useful, but they are not the best first read for a non-tech
 | [workflows/](workflows/) | Operating model details |
 | [prompts/](prompts/) | Automation maintenance |
 | [logs/](logs/) | Chronology and audit trail |
+| [weekly-input/](weekly-input/) | Weekly compiler input notes |
 | [internal/](internal/) | Local-only source maps and templates; not recruiter-facing |
 
 ## Recommended Summary Path

@@ -11,6 +11,7 @@ https://github.com/TheOneDarkHorse/ai-native-proof-of-work
 Canonical positioning:
 - Local indexes are internal evidence infrastructure.
 - Recruiter-facing proof should be summarized through `SOURCE_MAP.md`, `PROJECT_STATUS.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md`.
+- Weekly deltas, insights, blockers, and strategy changes should be captured through `weekly-input/` before they are promoted into recruiter-facing files.
 - Job-agent is the lead project proof point.
 - PKM and the household budget app are supporting project proof points.
 - Automation, source indexes, weekly compiler, and review loops are documented operating infrastructure and secondary proof points.
@@ -66,6 +67,7 @@ For each index, include:
 8. freshness status
 
 After refreshing indexes, update recruiter-safe summaries only when evidence changed:
+- `weekly-input/` only if Marcus provided explicit weekly notes or asked to create a draft input file
 - `SOURCE_MAP.md` for source categories and safe project-source summaries
 - `PROJECT_STATUS.md` for current project status, blockers, and recent progress
 - `PROJECT_PROOF_POINTS.md` for project evidence summaries
