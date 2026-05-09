@@ -13,38 +13,35 @@ Use it as a quick scan before reading the deeper case studies.
 
 ```mermaid
 flowchart TD
-    A["Marcus<br/>AI-native product builder"]
+    A["Marcus<br/>AI-native product builder"] --> B["1. Product execution"]
+    B --> B1["Lead: job-agent<br/>career workflow product"]
+    B --> B2["Support: PKM<br/>knowledge workflow system"]
+    B --> B3["Support: budget app<br/>financial domain product"]
 
-    A --> B["Product Execution"]
-    A --> C["Product Judgment"]
-    A --> D["QA + Reliability"]
-    A --> E["Privacy + Trust"]
-    A --> F["AI-native Operating Model"]
-    A --> G["Communication + Evidence"]
-
-    B --> B1["Job-agent<br/>career workflow product"]
-    B --> B2["PKM<br/>knowledge workflow system"]
-    B --> B3["Budget app<br/>financial domain product"]
-
+    A --> C["2. Product judgment"]
     C --> C1["Value proposition"]
-    C --> C2["Pricing / GTM hypotheses"]
+    C --> C2["Pricing and GTM hypotheses"]
     C --> C3["Open questions shown explicitly"]
 
+    A --> D["3. QA and reliability"]
     D --> D1["Backend tests"]
-    D --> D2["Playwright / live verification notes"]
+    D --> D2["Playwright / verification notes"]
     D --> D3["Regression-focused documentation"]
 
+    A --> E["4. Privacy and trust"]
     E --> E1["Data rights / retention planning"]
     E --> E2["Privacy-safe source summaries"]
     E --> E3["Sharing checklist"]
 
-    F --> F1["Claude for reasoning"]
-    F --> F2["Codex for repository execution"]
-    F --> F3["Weekly compiler + source indexing"]
+    A --> F["5. AI-native operating model"]
+    F --> F1["Claude: reasoning"]
+    F --> F2["Codex: repository execution"]
+    F --> F3["Weekly compiler and source indexes"]
 
+    A --> G["6. Communication and evidence"]
     G --> G1["One-pager"]
     G --> G2["Case studies"]
-    G --> G3["Timeline + decision logs"]
+    G --> G3["Timeline and decision logs"]
 ```
 
 ## Capability Matrix

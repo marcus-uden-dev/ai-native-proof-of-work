@@ -27,7 +27,7 @@ Personal knowledge work can become a pile of notes, links, fragments, and half-p
 ## Workflow Model
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["Capture"] --> B["Ingest"]
     B --> C["Index / Search"]
     C --> D["Learn / Review"]

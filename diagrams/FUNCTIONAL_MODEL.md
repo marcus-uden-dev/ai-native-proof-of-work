@@ -1,10 +1,10 @@
 # Functional Model
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-09
 Status: Active diagram
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[Input Sources] --> B[Capture Layer]
     B --> C[Analysis Layer]
     C --> D[Artifact Generator]

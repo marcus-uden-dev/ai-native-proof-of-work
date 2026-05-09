@@ -69,7 +69,7 @@ These file areas are useful, but they are not the best first read for a non-tech
 ## Recommended Summary Path
 
 ```mermaid
-flowchart LR
+flowchart TD
     A["Start Here"] --> B["Recruiter One-Pager"]
     B --> C["Job-Agent Case Study"]
     C --> D["Evidence Matrix"]

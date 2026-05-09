@@ -1,6 +1,6 @@
 # Data Flow
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-09
 Status: Initial design
 
 ## Purpose
@@ -10,7 +10,7 @@ Describe how information moves from raw input to recruiter-readable proof.
 ## Flow
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[Raw Inputs] --> B[Capture]
     B --> C[Classification]
     C --> D[Evidence Labeling]

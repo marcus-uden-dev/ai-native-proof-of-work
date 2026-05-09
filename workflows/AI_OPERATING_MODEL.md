@@ -1,12 +1,12 @@
 # AI Operating Model
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-09
 Status: Initial design
 
 ## Operating Model
 
 ```mermaid
-flowchart LR
+flowchart TD
     A[Ideas / Problems] --> B[Claude: Strategy + Synthesis]
     B --> C[Codex: Repo Execution]
     C --> D[GitHub Proof-of-Work]

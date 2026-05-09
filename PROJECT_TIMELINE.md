@@ -12,7 +12,7 @@ It is not a full changelog. It highlights recruiter-relevant milestones across j
 ## Timeline View
 
 ```mermaid
-flowchart LR
+flowchart TD
     M1["2026-03<br/>PKM and budget app evidence visible"]
     M2["2026-04<br/>Job-agent becomes lead product proof point"]
     M3["2026-05-08<br/>Proof-of-work repo and compiler scaffold"]
