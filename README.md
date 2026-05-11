@@ -48,7 +48,7 @@ flowchart TD
     H --> I{"Promote?"}
     I -->|Yes| J["Instruction, checklist,<br/>skill, scheduled task"]
     I -->|No| K["Archive or one-off"]
-    J --> B
+    J --> L["Improves later<br/>AI-assisted work"]
 ```
 
 ---

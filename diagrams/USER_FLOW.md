@@ -12,6 +12,6 @@ flowchart TD
     E --> F{"Safe + useful?"}
     F -->|Yes| G["Evidence repo"]
     F -->|No| H["Summarize,<br/>redact, reject"]
-    H --> E
+    H --> J["Needs another<br/>review pass"]
     G --> I["CV, brief,<br/>portfolio, demo"]
 ```

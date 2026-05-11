@@ -1,6 +1,6 @@
 # Job-Agent Case Study
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Lead proof point / Internal evidence summarized
 
 ## Executive Summary
@@ -44,7 +44,7 @@ flowchart TD
     C --> D["Application support<br/>CV variants, letters, apply assistant"]
     D --> E["Feedback loop<br/>ratings, corrections, outcomes"]
     E --> F["Product learning<br/>QA, privacy, pricing, roadmap"]
-    F --> B
+    F --> G["Updates next<br/>discovery cycle"]
 ```
 
 ## Decision Trail

@@ -1,6 +1,6 @@
 # PKM Case Study
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Supporting proof point / Internal evidence summarized
 
 ## Executive Summary
@@ -43,7 +43,7 @@ flowchart TD
     C --> D["Learn / Review"]
     D --> E["Prioritize Features"]
     E --> F["Implement / Validate"]
-    F --> B
+    F --> G["Improves next<br/>ingestion cycle"]
 ```
 
 ## Recruiter Relevance

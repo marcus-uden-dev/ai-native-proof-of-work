@@ -12,5 +12,5 @@ flowchart TD
     D -->|Yes| F["Promotion board"]
     F --> G["Instruction, checklist,<br/>template, scheduled task,<br/>skill, or source index"]
     G --> H["Next run"]
-    H --> A
+    H --> I["Improves later work"]
 ```

@@ -13,7 +13,7 @@ flowchart TD
     D --> E["Scheduled review"]
     E --> F["Promote/prune"]
     F --> G["Source indexes"]
-    G --> B
+    G --> H["Improves later<br/>strategy + synthesis"]
 ```
 
 ## Roles

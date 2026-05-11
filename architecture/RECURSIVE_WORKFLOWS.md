@@ -14,7 +14,7 @@ flowchart TD
     D -->|No| F["Keep one-off"]
     E --> G["Instruction, checklist,<br/>scheduled task, skill,<br/>template, or index update"]
     G --> H["Next cycle"]
-    H --> A
+    H --> I["Improves later execution"]
 ```
 
 ## What Gets Promoted

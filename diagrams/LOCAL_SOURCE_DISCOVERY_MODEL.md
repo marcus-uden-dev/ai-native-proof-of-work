@@ -13,7 +13,7 @@ flowchart TD
     F --> G{"Fresh enough?"}
     G -->|Yes| H["Use index"]
     G -->|No| I["Refresh"]
-    I --> E
+    I --> J["Updated index<br/>for later runs"]
 
     A --> A1["Codex projects"]
     A --> A2["Claude projects"]
