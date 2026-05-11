@@ -1,11 +1,36 @@
 # Changelog
 
+## 2026-05-11 — Project-scoped strategy structure
+
+### Added
+
+- [strategy/README.md](../strategy/README.md) as the strategy index.
+- [strategy/job-agent/](../strategy/job-agent/) as the lead product strategy folder.
+- [strategy/pkm/](../strategy/pkm/) as the PKM strategy folder.
+- [strategy/household-budget-app/](../strategy/household-budget-app/) as the household budget app strategy folder.
+- [strategy/portfolio-operating-system/README.md](../strategy/portfolio-operating-system/README.md) to separate portfolio evidence-layer strategy from product strategy.
+
+### Changed
+
+- Updated recruiter-facing links from flat `strategy/*.md` files to project-scoped strategy paths.
+- Updated automation/bootstrap prompts so future runs create and maintain project-scoped strategy docs.
+- Normalized the strategy folders and documents so each project uses the same `product/`, `business/`, `market/`, and `decisions/` subfolders plus the same canonical section structure for README, value proposition, product strategy, business model, pricing, GTM, competitive positioning, and decision trails.
+- Added a decision-log entry for the strategy restructure.
+
+### Removed
+
+- Removed the old flat strategy files that made product strategy look like it described the portfolio evidence layer.
+
+### Notes
+
+Each project now has the same canonical strategy folders and document names. Job-agent has the most developed strategy because it is the lead proof point; PKM and the household budget app are intentionally marked as supporting and not commercially validated where evidence is still thin.
+
 ## 2026-05-09 — Project-first repositioning with documented automation
 
 ### Added
 
 - [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md) as the project-centered evidence map for job-agent, PKM, and the household budget app.
-- [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) as a living milestone timeline for projects and proof-of-work automation.
+- [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) as a living milestone timeline for projects and documentation automation.
 - [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md) for fast recruiter review.
 - [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md) for recruiter-side agents and review bots.
 - [NAVIGATION.md](../NAVIGATION.md) as a plain-English hub for non-technical reviewers.
@@ -19,7 +44,7 @@
 ### Changed
 
 - Repositioned [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md), [EXECUTIVE_SUMMARY.md](../EXECUTIVE_SUMMARY.md), [START_HERE.md](../START_HERE.md), and [README.md](../README.md) around concrete project execution.
-- Updated [strategy/VALUE_PROPOSITION.md](../strategy/VALUE_PROPOSITION.md) and [strategy/PRODUCT_STRATEGY.md](../strategy/PRODUCT_STRATEGY.md) so the value proposition is project evidence plus a documented automation method, not the automation/compiler alone.
+- Updated [strategy/job-agent/product/VALUE_PROPOSITION.md](../strategy/job-agent/product/VALUE_PROPOSITION.md) and [strategy/job-agent/product/PRODUCT_STRATEGY.md](../strategy/job-agent/product/PRODUCT_STRATEGY.md) so the value proposition is project evidence plus a documented automation method, not the automation/compiler alone.
 - Updated recruiter assets and demo script to make job-agent the lead proof point, with PKM and the household budget app as supporting examples.
 
 ### Notes

@@ -35,7 +35,7 @@ The strongest story is not only "I built an automation that writes portfolio doc
 
 The stronger story is:
 
-> I use AI-native workflows to design, build, test, document, and improve real products. The automation and proof-of-work repository show how that work is captured, reviewed, and translated into recruiter-readable evidence without exposing private project material.
+> I use AI-native workflows to design, build, test, document, and improve real products. The portfolio evidence layer shows how that work is captured, reviewed, and translated into recruiter-readable evidence without exposing private project material.
 
 ## Job-Agent Proof Points
 
@@ -81,7 +81,7 @@ The compiler and source-indexing workflow should stay documented because they sh
 - recruiter translation layer
 - privacy and claim-quality control
 
-They should be positioned as secondary proof points unless the specific document is about the proof-of-work repository or automation system itself.
+They should be positioned as secondary proof points unless the specific document is about the portfolio evidence layer or automation system itself.
 
 ## Evidence Boundaries
 

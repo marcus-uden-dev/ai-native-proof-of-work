@@ -3,7 +3,7 @@
 Use this prompt in Codex from the root of `TheOneDarkHorse/ai-native-proof-of-work`.
 
 ```text
-Run the weekly Proof-of-Work Compiler for this private GitHub proof-of-work repository.
+Run the weekly Proof-of-Work Compiler for this private GitHub portfolio evidence repository.
 
 Treat this repository as the canonical source of truth:
 https://github.com/TheOneDarkHorse/ai-native-proof-of-work
@@ -13,6 +13,7 @@ Canonical positioning:
 - Job-agent is the lead proof point.
 - PKM and the household budget app are supporting proof points.
 - The proof-of-work compiler, source indexes, weekly review, and Claude/Codex workflow are documented operating infrastructure and secondary proof points.
+- This repository, compiler, and documentation automation are the evidence and packaging layer, not the product.
 - Recruiter-facing files should summarize local-only evidence through `SOURCE_MAP.md`, `PROJECT_STATUS.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md`.
 - Recruiter-facing review should remain easy for both humans and agents through `RECRUITER_ONE_PAGER.md`, `RECRUITER_AGENT_GUIDE.md`, `EVIDENCE_MATRIX.md`, and `ROLE_READING_PATHS.md`.
 
@@ -49,7 +50,7 @@ If they are unavailable or gitignored, continue without inventing their contents
 
 Compile this week’s work into project-first proof-of-work artifacts.
 
-Treat [weekly-input/](../weekly-input/) as the clean input layer for new progress, features, decisions, blockers, lessons, and product/business-model insights. Do not use raw Claude/Codex sessions as the primary source for recruiter-facing updates. If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant strategy/workflow document and add a decision-log entry when the change is meaningful.
+Treat [weekly-input/](../weekly-input/) as the clean input layer for new progress, features, decisions, blockers, lessons, and product/business-model insights. Do not use raw Claude/Codex sessions as the primary source for recruiter-facing updates. If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant project-specific strategy/workflow document and add a decision-log entry when the change is meaningful. Product strategy belongs under `strategy/<project>/` using the canonical `product/`, `business/`, `market/`, and `decisions/` subfolders; portfolio evidence-layer strategy belongs under `strategy/portfolio-operating-system/`.
 
 Create or update:
 1. project proof-point map
@@ -87,10 +88,10 @@ Focus on:
 - automation as documented operating infrastructure, not the whole value proposition
 - measurable workflow improvement
 - AI-native operating model
-- value proposition
-- business model
-- pricing strategy
-- product strategy
+- project-level value propositions
+- project-level business models
+- project-level pricing strategy
+- project-level product strategy
 - technical architecture
 - ingestion model
 - autoresearch

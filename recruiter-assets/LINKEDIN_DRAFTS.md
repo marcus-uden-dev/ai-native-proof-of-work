@@ -1,6 +1,6 @@
 # LinkedIn Drafts
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Drafts / Not published
 
 ## Draft — 2026-05-09
@@ -21,9 +21,9 @@ A lot of useful product work disappears into places nobody can evaluate later:
 - task outputs
 - handoff docs
 
-I’m building a private proof-of-work repository to solve that for my own project portfolio.
+I’m building a private portfolio evidence repository to solve that for my own project portfolio.
 
-The goal is not to make the documentation system the whole story.
+The goal is not to make the documentation layer the product story.
 
 The goal is to make real projects easier to evaluate:
 

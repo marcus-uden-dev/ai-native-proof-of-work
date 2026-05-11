@@ -1,6 +1,6 @@
 # Before / After Snapshots
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -13,7 +13,7 @@ It is designed to make progression visible without requiring a recruiter to read
 
 | Before | After | Evidence |
 |---|---|---|
-| The proof-of-work automation risked looking like the whole product story | Job-agent is now the lead proof point, with PKM and the budget app as supporting evidence | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
+| Documentation automation could overshadow the actual projects | Job-agent is now the lead proof point, with PKM and the budget app as supporting evidence | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | Project evidence was spread across local contexts | Recruiter-facing summaries now point to safe project proof points | [SOURCE_MAP.md](SOURCE_MAP.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 | Progress was visible mostly through logs | A milestone timeline now shows the arc over time | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) |
 
@@ -31,7 +31,7 @@ It is designed to make progression visible without requiring a recruiter to read
 |---|---|---|
 | Weekly work could disappear into chats, notes, and task folders | Weekly review turns work into proof points, timeline updates, and recruiter assets | [AUTOMATION_PROMPT.md](AUTOMATION_PROMPT.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
 | Automation was documented but not clearly positioned | Automation is now documented as the operating layer behind project evidence | [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
-| Future automation runs could drift back to compiler-first positioning | App automation and prompt files now encode project-first structure | [AUTOMATION_PROMPT.md](AUTOMATION_PROMPT.md), [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md) |
+| Future automation runs could drift back to compiler-first positioning | Scheduled automation and prompt files now encode project-first structure | [AUTOMATION_PROMPT.md](AUTOMATION_PROMPT.md), [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md) |
 
 ## Next Snapshot To Add
 

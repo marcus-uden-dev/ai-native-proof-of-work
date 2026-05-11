@@ -1,6 +1,6 @@
 # CV Bullets
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Drafts / Project-focused
 
 ## Product Execution
@@ -10,7 +10,7 @@ Status: Drafts / Project-focused
 
 ## Product Operations
 
-- Created an evidence-first proof-of-work repository that packages real project execution into recruiter-readable summaries, project proof points, decision logs, CV bullets, portfolio notes, demo scripts, and weekly logs.
+- Created an evidence-first portfolio repository that packages real project execution into recruiter-readable summaries, project proof points, decision logs, CV bullets, portfolio notes, demo scripts, and weekly logs.
 
 ## Business Development
 

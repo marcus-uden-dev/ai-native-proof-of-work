@@ -1,6 +1,6 @@
 # Recruiter One-Pager
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Recruiter-facing
 
 ## Positioning
@@ -14,7 +14,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 | Job-agent | Strongest product evidence: career workflow product with CV, discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) |
 | PKM | Shows knowledge workflow design, ingestion/search thinking, learning surfaces, feature lifecycle discipline, and prioritization | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) |
 | Household budget app | Shows financial domain modeling, shared household access, import/review flows, forecasting, goals, and test-backed product thinking | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
-| Proof-of-work automation | Shows how project evidence is captured, reviewed, summarized, and kept recruiter-safe over time | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md) |
+| Portfolio evidence workflow | Shows how project evidence is captured, reviewed, summarized, and kept recruiter-safe over time | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md) |
 
 ## What To Look For
 
@@ -40,7 +40,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 2. How privacy, QA, and production-readiness thinking show up in the work.
 3. How PKM and the budget app show range beyond the career domain.
 4. How AI is used as an operating layer, not as generic content generation.
-5. How the repository turns fragmented project work into evidence without inflating claims.
+5. How the portfolio documentation turns fragmented project work into evidence without inflating claims.
 
 ## Current Evidence Boundaries
 

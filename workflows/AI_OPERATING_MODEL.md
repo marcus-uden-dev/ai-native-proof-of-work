@@ -1,18 +1,18 @@
 # AI Operating Model
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Initial design
 
 ## Operating Model
 
 ```mermaid
 flowchart TD
-    A[Ideas / Problems] --> B[Claude: Strategy + Synthesis]
-    B --> C[Codex: Repo Execution]
-    C --> D[GitHub Proof-of-Work]
-    D --> E[Scheduled Review]
-    E --> F[Promotion / Pruning]
-    F --> G[Local Source Indexes]
+    A["Product work<br/>and problems"] --> B["Claude<br/>strategy + synthesis"]
+    B --> C["Codex<br/>repo updates"]
+    C --> D["Evidence repo"]
+    D --> E["Scheduled review"]
+    E --> F["Promote/prune"]
+    F --> G["Source indexes"]
     G --> B
 ```
 

@@ -1,6 +1,6 @@
 # Navigation Hub
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -56,6 +56,7 @@ Use it if the file list feels overwhelming.
 | What role does this support? | [Role Reading Paths](ROLE_READING_PATHS.md) |
 | What changed and why? | [Decision Log](logs/DECISION_LOG.md) |
 | What evidence is private/internal? | [Source Map](SOURCE_MAP.md) |
+| Where is project strategy documented? | [Project Strategy Index](strategy/README.md) |
 
 ## What Not To Start With
 
@@ -64,6 +65,7 @@ These file areas are useful, but they are not the best first read for a non-tech
 | File Area | Use Later For |
 |---|---|
 | [architecture/](architecture/) | Technical depth after the project story is clear |
+| [strategy/](strategy/) | Project-level product, business, pricing, GTM, and positioning strategy |
 | [workflows/](workflows/) | Operating model details |
 | [prompts/](prompts/) | Automation maintenance |
 | [logs/](logs/) | Chronology and audit trail |

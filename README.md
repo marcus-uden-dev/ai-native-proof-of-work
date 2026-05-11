@@ -2,7 +2,7 @@
 
 > Canonical repo: `TheOneDarkHorse/ai-native-proof-of-work`
 
-A private, recruiter-shareable archive documenting practical product work, AI-native execution, product strategy, architecture reasoning, and execution discipline.
+A private, recruiter-shareable archive documenting practical product work, AI-native execution, project-scoped product strategy, architecture reasoning, and execution discipline.
 
 This repository is not a codebase.
 
@@ -12,11 +12,11 @@ It is a structured proof-of-work portfolio showing concrete product work first, 
 
 ## What This Repository Shows
 
-This repository demonstrates:
+This repository demonstrates evidence of:
 
 - AI-native workflow design
 - concrete product execution
-- product and business model thinking
+- project-level product and business model thinking
 - technical architecture reasoning
 - privacy-aware product design
 - test and QA discipline
@@ -37,17 +37,17 @@ The goal is simple:
 
 ```mermaid
 flowchart TD
-    A[Ideas, projects, research, job signals, workflow problems] --> B[Claude: reasoning, synthesis, strategy]
-    B --> C[Codex: repository updates, documentation structure, execution]
-    C --> D[Private GitHub Proof-of-Work Repository]
-    D --> E[Weekly Review]
-    E --> F[Proof-of-Work Artifacts]
-    F --> G[CV, recruiter brief, portfolio, LinkedIn, demo script]
+    A["Product work<br/>Job-agent, PKM, budget app"] --> B["AI-assisted reasoning<br/>and synthesis"]
+    B --> C["Codex repo updates"]
+    C --> D["Portfolio evidence repo"]
+    D --> E["Weekly review"]
+    E --> F["Recruiter artifacts"]
+    F --> G["CV, brief,<br/>portfolio, demo"]
 
-    E --> H[Pattern Detection]
-    H --> I{Promote?}
-    I -->|Yes| J[Instruction / Checklist / Skill / Scheduled Task]
-    I -->|No| K[Archive or keep as one-off]
+    E --> H["Pattern detection"]
+    H --> I{"Promote?"}
+    I -->|Yes| J["Instruction, checklist,<br/>skill, scheduled task"]
+    I -->|No| K["Archive or one-off"]
     J --> B
 ```
 
@@ -70,7 +70,7 @@ flowchart TD
 | [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) | Role-specific reading paths |
 | [case-studies/](case-studies/) | Sanitized project case studies |
 | [weekly-input/](weekly-input/) | Clean weekly input layer for progress, decisions, blockers, and business insights |
-| [strategy/](strategy/) | Value proposition, product strategy, business model, pricing, GTM |
+| [strategy/](strategy/) | Project-scoped strategy for job-agent, PKM, household budget app, and the portfolio operating layer |
 | [architecture/](architecture/) | System design, ingestion, autoresearch, recursive workflows |
 | [workflows/](workflows/) | Claude/Codex workflow, AI operating model, scheduled tasks |
 | [diagrams/](diagrams/) | GitHub-readable Mermaid diagrams |
@@ -109,7 +109,7 @@ Recommended order:
 | Progress over time | Project timeline and weekly logs |
 | Structured thinking | Decision logs, strategy docs, tradeoff analysis |
 | Workflow automation | Scheduled task model, proof-of-work compiler, source indexes, and review loops as documented operating infrastructure |
-| Product judgment | Value proposition, MVP scope, pricing hypotheses, GTM thinking |
+| Product judgment | Project-scoped value propositions, MVP scope, pricing hypotheses, and GTM thinking for job-agent, PKM, and the household budget app |
 | AI-native execution | Claude + Codex workflow, source indexing, recursive improvement |
 | Technical reasoning | Architecture, ingestion model, autoresearch model, system boundaries |
 | Documentation discipline | Weekly logs, changelog, recruiter assets, diagrams |
@@ -150,7 +150,7 @@ Context → Options Considered → Tradeoffs → Decision → Evidence → Open 
 - using PKM and the household budget app as supporting project evidence
 - documenting the automation clearly while keeping concrete project work as the main story
 - mapping Claude, Codex, scheduled tasks, and shared skills into one operating model
-- separating static strategy from weekly execution logs
+- separating project strategy from the proof-of-work operating layer and weekly execution logs
 - making decisions and tradeoffs visible without exposing private material
 
 ---

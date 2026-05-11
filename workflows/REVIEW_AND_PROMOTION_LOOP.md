@@ -1,6 +1,6 @@
 # Review and Promotion Loop
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-11
 Status: Initial design
 
 ## Purpose
@@ -11,21 +11,21 @@ Turn repeated useful patterns into durable assets.
 
 ```mermaid
 flowchart TD
-    A[Weekly Output] --> B[Review]
-    B --> C[Pattern Detected?]
-    C -->|No| D[Keep as one-off or archive]
-    C -->|Yes| E[Classify Destination]
-    E --> F[Instruction]
-    E --> G[Checklist]
-    E --> H[Template]
-    E --> I[Scheduled Task]
-    E --> J[Skill]
-    F --> K[Human Review]
+    A["Weekly output"] --> B["Review"]
+    B --> C{"Pattern?"}
+    C -->|No| D["Archive/one-off"]
+    C -->|Yes| E["Classify"]
+    E --> F["Instruction"]
+    E --> G["Checklist"]
+    E --> H["Template"]
+    E --> I["Scheduled task"]
+    E --> J["Skill"]
+    F --> K["Human review"]
     G --> K
     H --> K
     I --> K
     J --> K
-    K --> L[Promote or Reject]
+    K --> L["Promote/reject"]
 ```
 
 ## Promotion Destinations

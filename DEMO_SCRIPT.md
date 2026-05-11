@@ -1,11 +1,11 @@
 # Demo Script
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Project-focused
 
 ## 1. Opening
 
-This repository solves a basic portfolio problem:
+This repository addresses a basic portfolio evidence problem:
 
 Useful product work often gets scattered across codebases, chats, local projects, research notes, and scheduled tasks. The goal is to make concrete project execution legible without exposing private project material.
 
@@ -17,7 +17,7 @@ Open:
 - [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
 - [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
 
-Explain that the repo has a fast human-readable path and an agent-readable path.
+Explain that the portfolio evidence layer has a fast human-readable path and an agent-readable path.
 
 ## 3. Repository Structure
 
@@ -68,19 +68,20 @@ Show how milestones build over time:
 
 - project evidence appears first
 - job-agent becomes the lead proof point
-- the proof-of-work repo and compiler then package the evidence
+- the portfolio evidence layer and compiler then package the evidence
 - future milestones can be added without rewriting the whole portfolio
 
 ## 6. Strategy
 
 Open:
 
-- [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md)
-- [strategy/PRODUCT_STRATEGY.md](strategy/PRODUCT_STRATEGY.md)
-- [strategy/BUSINESS_MODEL.md](strategy/BUSINESS_MODEL.md)
-- [strategy/PRICING_STRATEGY.md](strategy/PRICING_STRATEGY.md)
+- [strategy/README.md](strategy/README.md)
+- [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md)
+- [strategy/job-agent/product/PRODUCT_STRATEGY.md](strategy/job-agent/product/PRODUCT_STRATEGY.md)
+- [strategy/job-agent/business/BUSINESS_MODEL.md](strategy/job-agent/business/BUSINESS_MODEL.md)
+- [strategy/job-agent/business/PRICING_STRATEGY.md](strategy/job-agent/business/PRICING_STRATEGY.md)
 
-Explain how product and commercial thinking are separated from weekly execution logs.
+Explain that strategy is now project-scoped: job-agent owns the full lead-product strategy, PKM and the household budget app have supporting strategy snapshots, and the portfolio repository is treated as the evidence/operating layer rather than the product.
 
 ## 7. Architecture
 
@@ -127,11 +128,11 @@ Open:
 - [recruiter-assets/CV_BULLETS.md](recruiter-assets/CV_BULLETS.md)
 - [recruiter-assets/INTERVIEW_TALKING_POINTS.md](recruiter-assets/INTERVIEW_TALKING_POINTS.md)
 
-Explain how the repo supports interviews, recruiter conversations, and portfolio review.
+Explain how the portfolio evidence layer supports interviews, recruiter conversations, and portfolio review.
 
 ## 11. Closing
 
-This repository demonstrates:
+The project portfolio demonstrates:
 
 - structured thinking
 - concrete product execution

@@ -49,7 +49,7 @@ Assess Marcus’s practical evidence for:
 | Capability | Primary Evidence |
 |---|---|
 | Product execution | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [PROJECT_STATUS.md](PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
-| Product judgment | [strategy/PRODUCT_STRATEGY.md](strategy/PRODUCT_STRATEGY.md), [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
+| Product judgment | [strategy/job-agent/product/PRODUCT_STRATEGY.md](strategy/job-agent/product/PRODUCT_STRATEGY.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | QA discipline | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
 | AI-native workflow design | [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
 | Privacy-aware execution | [SOURCE_MAP.md](SOURCE_MAP.md), [SHARING_CHECKLIST.md](SHARING_CHECKLIST.md), case-study evidence boundaries |

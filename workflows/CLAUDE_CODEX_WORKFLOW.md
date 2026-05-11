@@ -1,6 +1,6 @@
 # Claude + Codex Workflow
 
-Last updated: 2026-05-08
+Last updated: 2026-05-11
 Status: Initial version
 
 ## Claude
@@ -43,16 +43,16 @@ sequenceDiagram
     participant M as Marcus
     participant C as Claude
     participant X as Codex
-    participant A as Shared Skills
-    participant G as GitHub
+    participant A as Skills
+    participant R as Evidence Repo
 
-    M->>C: Explore idea / strategy / workflow
-    C->>M: Structured recommendation
-    M->>X: Approved instruction
-    X->>A: Check reusable skills/docs/scripts
-    X->>G: Update repository files
-    G->>M: Proof-of-work artifact
-    M->>C: Review and improve
+    M->>C: Explore product or strategy
+    C->>M: Recommendation
+    M->>X: Approved change
+    X->>A: Check reusable assets
+    X->>R: Update docs
+    R->>M: Portfolio artifact
+    M->>C: Review loop
 ```
 
 ## Operating Rule

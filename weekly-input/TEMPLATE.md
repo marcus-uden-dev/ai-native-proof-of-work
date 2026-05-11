@@ -15,7 +15,7 @@ One to three bullets describing what changed this week.
 | Job-agent | | | Verified / Internal / Needs Review |
 | PKM | | | Verified / Internal / Needs Review |
 | Household budget app | | | Verified / Internal / Needs Review |
-| Proof-of-work repo | | | Verified / Internal / Needs Review |
+| Portfolio evidence layer | | | Verified / Internal / Needs Review |
 
 ## Features / Functionality
 
@@ -37,9 +37,9 @@ Use the visible decision trail format when a meaningful decision changed.
 |---|---|---|---|---|
 | | | | | |
 
-## Product / Business Model Insights
+## Project Product / Business Model Insights
 
-| Area | Insight | Evidence | Status | Suggested Update |
+| Project / Area | Insight | Evidence | Status | Suggested Update |
 |---|---|---|---|---|
 | Value proposition | | | Hypothesis / Decision / Needs Review | |
 | Pricing | | | Hypothesis / Decision / Needs Review | |

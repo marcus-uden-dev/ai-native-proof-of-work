@@ -46,9 +46,9 @@ Look for:
 Read:
 
 1. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
-2. [strategy/PRODUCT_STRATEGY.md](strategy/PRODUCT_STRATEGY.md)
-3. [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md)
-4. [strategy/PRICING_STRATEGY.md](strategy/PRICING_STRATEGY.md)
+2. [strategy/job-agent/product/PRODUCT_STRATEGY.md](strategy/job-agent/product/PRODUCT_STRATEGY.md)
+3. [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md)
+4. [strategy/job-agent/business/PRICING_STRATEGY.md](strategy/job-agent/business/PRICING_STRATEGY.md)
 5. [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md)
 
 Look for:
@@ -78,9 +78,9 @@ Look for:
 
 Read:
 
-1. [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md)
-2. [strategy/BUSINESS_MODEL.md](strategy/BUSINESS_MODEL.md)
-3. [strategy/GO_TO_MARKET.md](strategy/GO_TO_MARKET.md)
+1. [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md)
+2. [strategy/job-agent/business/BUSINESS_MODEL.md](strategy/job-agent/business/BUSINESS_MODEL.md)
+3. [strategy/job-agent/market/GO_TO_MARKET.md](strategy/job-agent/market/GO_TO_MARKET.md)
 4. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
 5. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
 

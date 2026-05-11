@@ -1,6 +1,6 @@
 # Autoresearch Model
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-11
 Status: Initial design
 
 ## Definition
@@ -11,14 +11,14 @@ Autoresearch means using scheduled or semi-automated research loops to discover,
 
 ```mermaid
 flowchart TD
-    A[Research Topic] --> B[Source Discovery]
-    B --> C[Source Quality Filter]
-    C --> D[Insight Extraction]
-    D --> E{Useful?}
-    E -->|Yes| F[Promote to Strategy / Workflow / Architecture]
-    E -->|No| G[Archive or Reject]
-    F --> H[Decision Log]
-    H --> I[Next Research Cycle]
+    A["Research topic"] --> B["Find sources"]
+    B --> C["Quality filter"]
+    C --> D["Extract insight"]
+    D --> E{"Useful?"}
+    E -->|Yes| F["Promote to<br/>strategy/workflow"]
+    E -->|No| G["Archive/reject"]
+    F --> H["Decision log"]
+    H --> I["Next cycle"]
 ```
 
 ## Source Quality Criteria

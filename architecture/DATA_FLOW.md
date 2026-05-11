@@ -1,6 +1,6 @@
 # Data Flow
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Initial design
 
 ## Purpose
@@ -11,13 +11,13 @@ Describe how information moves from raw input to recruiter-readable proof.
 
 ```mermaid
 flowchart TD
-    A[Raw Inputs] --> B[Capture]
-    B --> C[Classification]
-    C --> D[Evidence Labeling]
-    D --> E[Artifact Generation]
-    E --> F[Human Review]
-    F --> G[GitHub Markdown Docs]
-    G --> H[Recruiter / Portfolio / Interview Use]
+    A["Raw inputs"] --> B["Capture"]
+    B --> C["Classify"]
+    C --> D["Evidence label"]
+    D --> E["Generate"]
+    E --> F["Human review"]
+    F --> G["Markdown docs"]
+    G --> H["Recruiter use"]
 ```
 
 ## Data Handling Rules

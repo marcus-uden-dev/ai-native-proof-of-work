@@ -1,15 +1,15 @@
 # AGENTS.md — AI-Native Proof-of-Work Repository Compiler
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active instruction
 
 ## Mission
 
-Maintain a private GitHub proof-of-work repository that documents Marcus’s AI-native workflow design, product thinking, automation systems, business strategy, architecture reasoning, local project context, reusable skills, and weekly execution.
+Maintain a private GitHub portfolio evidence repository that documents Marcus’s AI-native workflow design, product thinking, automation systems, business strategy, architecture reasoning, local project context, reusable skills, and weekly execution.
 
-This repository is not a codebase.
+This repository is not a codebase and it is not the product.
 
-It is a polished, recruiter-shareable documentation repository showing concrete product execution first, especially job-agent, with PKM and the household budget app as supporting proof points. It also shows how Marcus thinks, builds, evaluates, documents, and improves workflows using Claude, Codex, scheduled tasks, GitHub, local project archives, shared skills, and structured review loops.
+It is a polished, recruiter-shareable documentation repository showing concrete product execution first, especially job-agent, with PKM and the household budget app as supporting proof points. The repository is the evidence and packaging layer around those products. It also shows how Marcus thinks, builds, evaluates, documents, and improves workflows using Claude, Codex, scheduled tasks, GitHub, local project archives, shared skills, and structured review loops.
 
 ## Target Repository
 
@@ -28,7 +28,7 @@ ai-native-proof-of-work
 Repository purpose:
 
 ```text
-Private recruiter-shareable proof-of-work archive for AI-native workflow design, automation strategy, product thinking, architecture reasoning, local knowledge organization, and weekly execution evidence.
+Private recruiter-shareable proof-of-work archive for AI-native workflow design, automation strategy, product thinking, architecture reasoning, local knowledge organization, and weekly execution evidence. This archive is the portfolio evidence layer, not the product being commercialized or evaluated as the main build.
 
 Current canonical structure:
 
@@ -335,7 +335,8 @@ Weekly input rule:
 - Treat [weekly-input/](weekly-input/) as the clean input layer for new progress, features, decisions, blockers, lessons, and product/business-model insights.
 - Do not treat raw Claude/Codex sessions as the primary source for recruiter-facing updates.
 - If a weekly input file exists, cross-check it against project status files, source indexes, logs, and repo diffs before promoting claims.
-- If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant strategy/workflow document and add a decision-log entry when the change is meaningful.
+- If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant project-specific strategy/workflow document and add a decision-log entry when the change is meaningful.
+- Keep product strategy under `strategy/<project>/` for the actual product project, using the canonical subfolders `product/`, `business/`, `market/`, and `decisions/`. Use `strategy/portfolio-operating-system/` only for the portfolio evidence layer, compiler, source-indexing, weekly review, and recruiter-packaging operating layer.
 - If no weekly input exists, continue from verified repo-visible changes and source indexes, but do not invent missing progress.
 
 If no verified new source material is available, do not invent a weekly update.
@@ -405,15 +406,16 @@ Before completing any weekly run, verify:
 11. Keep recruiter-facing documents readable without technical background.
 12. Keep technical documents available for deeper review.
 13. Separate static strategy from weekly updates.
-14. Record meaningful strategy or architecture changes in the decision log.
-15. Prioritize substance over volume.
-16. Check source indexes before rescanning local roots.
-17. Refresh stale source indexes when necessary.
-18. Summarize local sources; do not dump raw content.
-19. Respect Marcus’s custom shared-skills setup.
-20. Treat `.agents` as potentially important but structurally non-standard.
-21. Treat `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` as the canonical repository.
-22. If not running inside the repo, report that limitation before attempting edits.
+14. Keep product strategy project-scoped under `strategy/<project>/` with the canonical `product/`, `business/`, `market/`, and `decisions/` subfolders; do not make strategy docs read as though the portfolio evidence layer is the product unless the file is explicitly about the portfolio operating system.
+15. Record meaningful strategy or architecture changes in the decision log.
+16. Prioritize substance over volume.
+17. Check source indexes before rescanning local roots.
+18. Refresh stale source indexes when necessary.
+19. Summarize local sources; do not dump raw content.
+20. Respect Marcus’s custom shared-skills setup.
+21. Treat `.agents` as potentially important but structurally non-standard.
+22. Treat `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` as the canonical repository.
+23. If not running inside the repo, report that limitation before attempting edits.
 
 ## Weekly Final Response Format
 

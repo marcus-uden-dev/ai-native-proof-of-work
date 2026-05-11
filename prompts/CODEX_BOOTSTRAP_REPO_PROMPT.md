@@ -3,12 +3,14 @@
 Use this prompt in Codex if the repository is empty or only partially scaffolded.
 
 ```text
-Bootstrap the private GitHub proof-of-work repository:
+Bootstrap the private GitHub portfolio evidence repository:
 https://github.com/TheOneDarkHorse/ai-native-proof-of-work
 
 Run from the repository root.
 
 Use AGENTS.md as the controlling instruction.
+
+This repository is the documentation and evidence layer for the product portfolio. Do not frame it as the product; the primary products are job-agent, PKM, and the household budget app.
 
 Create the full folder and file scaffold if missing.
 
@@ -46,13 +48,39 @@ Required folders:
 - internal/
 
 Required strategy files:
-- strategy/VALUE_PROPOSITION.md
-- strategy/PRODUCT_STRATEGY.md
-- strategy/BUSINESS_MODEL.md
-- strategy/PRICING_STRATEGY.md
-- strategy/GO_TO_MARKET.md
-- strategy/COMPETITIVE_POSITIONING.md
-- strategy/DECISION_TRAIL.md
+- strategy/README.md
+- strategy/job-agent/README.md
+- strategy/job-agent/product/VALUE_PROPOSITION.md
+- strategy/job-agent/product/PRODUCT_STRATEGY.md
+- strategy/job-agent/business/BUSINESS_MODEL.md
+- strategy/job-agent/business/PRICING_STRATEGY.md
+- strategy/job-agent/market/GO_TO_MARKET.md
+- strategy/job-agent/product/COMPETITIVE_POSITIONING.md
+- strategy/job-agent/decisions/DECISION_TRAIL.md
+- strategy/pkm/README.md
+- strategy/pkm/product/VALUE_PROPOSITION.md
+- strategy/pkm/product/PRODUCT_STRATEGY.md
+- strategy/pkm/business/BUSINESS_MODEL.md
+- strategy/pkm/business/PRICING_STRATEGY.md
+- strategy/pkm/market/GO_TO_MARKET.md
+- strategy/pkm/product/COMPETITIVE_POSITIONING.md
+- strategy/pkm/decisions/DECISION_TRAIL.md
+- strategy/household-budget-app/README.md
+- strategy/household-budget-app/product/VALUE_PROPOSITION.md
+- strategy/household-budget-app/product/PRODUCT_STRATEGY.md
+- strategy/household-budget-app/business/BUSINESS_MODEL.md
+- strategy/household-budget-app/business/PRICING_STRATEGY.md
+- strategy/household-budget-app/market/GO_TO_MARKET.md
+- strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md
+- strategy/household-budget-app/decisions/DECISION_TRAIL.md
+- strategy/portfolio-operating-system/README.md
+
+Required strategy folder layout for each product project:
+- strategy/<project>/README.md
+- strategy/<project>/product/
+- strategy/<project>/business/
+- strategy/<project>/market/
+- strategy/<project>/decisions/
 
 Required architecture files:
 - architecture/ARCHITECTURE.md

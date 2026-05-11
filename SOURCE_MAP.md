@@ -1,11 +1,11 @@
 # Source Map
 
-Last updated: 2026-05-08
+Last updated: 2026-05-11
 Status: Recruiter-safe / Does not expose private local paths
 
 ## Purpose
 
-This file explains what types of sources inform the proof-of-work repository.
+This file explains what types of sources inform the portfolio evidence repository.
 
 It does not expose private local paths or sensitive material.
 
@@ -13,7 +13,7 @@ It does not expose private local paths or sensitive material.
 
 | Item | Location | Notes |
 |---|---|---|
-| Proof-of-work repo | `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` | Main private recruiter-shareable archive |
+| Portfolio evidence repository | `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` | Main private recruiter-shareable archive |
 
 ## Source Categories
 
@@ -34,7 +34,7 @@ It does not expose private local paths or sensitive material.
 | Job-agent / job-agent UX | Primary proof point for career workflow product execution, QA, privacy, deployment planning, telemetry, and billing/product decisions | Summarized in [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md); raw project internals are not copied |
 | PKM | Supporting proof point for knowledge workflows, ingestion/search, learning/feed surfaces, browser extension material, tests, and feature lifecycle work | Summarized in [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md); private/local source details stay out of recruiter-facing files |
 | Household budget app | Supporting proof point for financial domain modeling, shared household data access, imports, review queues, forecasting, goals, and tests | Summarized in [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md); sensitive household/private data is excluded |
-| Proof-of-work automation | Evidence packaging, source separation, weekly review, privacy checks, and recruiter translation | Documented in workflow, architecture, prompt, and log files |
+| Portfolio evidence automation | Evidence packaging, source separation, weekly review, privacy checks, and recruiter translation | Documented in workflow, architecture, prompt, and log files |
 
 ## Evidence Rule
 

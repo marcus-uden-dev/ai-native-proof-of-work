@@ -1,26 +1,26 @@
 # Recruiter View
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active diagram
 
 ```mermaid
 flowchart TD
-    A[Recruiter Opens Repo] --> B[Start Here]
-    B --> C[Recruiter One-Pager]
-    C --> D[Job-Agent Case Study]
-    D --> E[Evidence Matrix]
-    E --> F[Project Timeline]
-    F --> G[Role Reading Paths]
-    G --> H[Proof of Work]
-    H --> I[Workflow + Architecture Docs]
-    I --> J[Interview Talking Points]
+    A["Recruiter opens repo"] --> B["Start Here"]
+    B --> C["One-pager"]
+    C --> D["Job-agent case"]
+    D --> E["Evidence matrix"]
+    E --> F["Timeline"]
+    F --> G["Role paths"]
+    G --> H["Proof map"]
+    H --> I["Workflow docs"]
+    I --> J["Interview points"]
 
-    D --> D1[Lead project proof point]
-    E --> E1[Capability map]
-    G --> G1[AI transformation]
-    G --> G2[Product ops]
-    G --> G3[Technical product]
-    H --> H1[Project proof points]
-    H --> H2[Weekly logs]
-    H --> H3[Decision trails]
+    D --> D1["Lead proof"]
+    E --> E1["Capability map"]
+    G --> G1["AI adoption"]
+    G --> G2["Product ops"]
+    G --> G3["Tech product"]
+    H --> H1["Project proof"]
+    H --> H2["Logs"]
+    H --> H3["Decisions"]
 ```

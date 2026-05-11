@@ -1,6 +1,6 @@
 # Recruiter Summary
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Project-focused
 
 ## One-Sentence Positioning
@@ -23,7 +23,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 | Job-agent career workflow product | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Shows full-stack execution, privacy/trust thinking, QA discipline, and career-domain product judgment |
 | PKM project | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Shows knowledge workflow design, ingestion/search thinking, and prioritization discipline |
 | Household budget app | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Shows domain modeling, financial-product UX, shared-data/security thinking, and test-backed development |
-| Proof-of-work repository architecture | [README.md](../README.md), [AGENTS.md](../AGENTS.md), commit `1c74a04` | Shows documentation discipline and evidence packaging |
+| Portfolio evidence architecture | [README.md](../README.md), [AGENTS.md](../AGENTS.md), commit `1c74a04` | Shows documentation discipline and evidence packaging without treating the documentation layer as the product |
 | Decision-trail standard | [logs/DECISION_LOG.md](../logs/DECISION_LOG.md) | Shows structured reasoning and tradeoff analysis |
 | Claude + Codex workflow | [workflows/CLAUDE_CODEX_WORKFLOW.md](../workflows/CLAUDE_CODEX_WORKFLOW.md) | Shows practical AI-native operating method behind the project work |
 

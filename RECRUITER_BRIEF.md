@@ -1,6 +1,6 @@
 # Recruiter Brief
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Project-focused
 
 ## One-Sentence Positioning
@@ -24,7 +24,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 | PKM project | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows knowledge workflow design, ingestion/search thinking, and feature prioritization |
 | Household budget app | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows domain modeling, financial-product UX, shared-data/security thinking, and test-backed development |
 | Evidence matrix | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) | Maps capabilities to evidence for fast review |
-| Proof-of-work repo architecture | [README.md](README.md), [AGENTS.md](AGENTS.md), commit `1c74a04` | Shows ability to turn product work into shareable evidence |
+| Portfolio evidence architecture | [README.md](README.md), [AGENTS.md](AGENTS.md), commit `1c74a04` | Shows ability to turn product work into shareable evidence without making the documentation layer the product |
 | Decision-trail format | [logs/DECISION_LOG.md](logs/DECISION_LOG.md) | Shows structured judgment |
 | Source-index model | [architecture/INGESTION_MODEL.md](architecture/INGESTION_MODEL.md) | Shows ability to organize messy context while keeping source layers separate and privacy-safe |
 
@@ -45,4 +45,4 @@ AI-native product builder focused on career workflow products, knowledge systems
 2. How I use AI tools to structure product execution rather than just generate content.
 3. How PKM and the budget app show the same operating style in different domains.
 4. How I avoid AI hype by using evidence labels, decision logs, tests, and human review.
-5. How the proof-of-work repo packages product work without exposing private project material.
+5. How the portfolio evidence layer packages product work without exposing private project material.

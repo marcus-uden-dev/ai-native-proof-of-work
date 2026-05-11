@@ -1,31 +1,20 @@
 # Recursive Workflows
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-11
 Status: Initial design
 
 ## Core Loop
 
 ```mermaid
 flowchart TD
-    A[Execution] --> B[Review]
-    B --> C[Pattern Detection]
-    C --> D{Recurring Pattern?}
-    D -->|Yes| E[Promotion Decision]
-    D -->|No| F[Keep as One-Off]
-    E --> G{Best Form?}
-    G --> H[Instruction]
-    G --> I[Checklist]
-    G --> J[Scheduled Task]
-    G --> K[Skill]
-    G --> L[Template]
-    G --> M[Source Index Update]
-    H --> N[Next Execution Cycle]
-    I --> N
-    J --> N
-    K --> N
-    L --> N
-    M --> N
-    N --> A
+    A["Execution"] --> B["Review"]
+    B --> C["Detect pattern"]
+    C --> D{"Recurring?"}
+    D -->|Yes| E["Promotion decision"]
+    D -->|No| F["Keep one-off"]
+    E --> G["Instruction, checklist,<br/>scheduled task, skill,<br/>template, or index update"]
+    G --> H["Next cycle"]
+    H --> A
 ```
 
 ## What Gets Promoted

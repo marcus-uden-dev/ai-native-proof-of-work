@@ -3,12 +3,12 @@
 Use this as the scheduled task prompt.
 
 ```text
-Run the weekly Proof-of-Work Compiler for my private GitHub proof-of-work repository.
+Run the weekly Proof-of-Work Compiler for my private GitHub portfolio evidence repository.
 
 Canonical repo:
 https://github.com/TheOneDarkHorse/ai-native-proof-of-work
 
-The repo is recruiter-shareable and documents concrete product execution first, especially job-agent, with PKM and the household budget app as supporting proof points. It also documents the automation, source indexing, weekly review, and Claude/Codex operating model that make the work repeatable and recruiter-readable.
+The repo is recruiter-shareable and documents concrete product execution first, especially job-agent, with PKM and the household budget app as supporting proof points. It is the portfolio evidence layer, not the product. It also documents the automation, source indexing, weekly review, and Claude/Codex operating model that make the work repeatable and recruiter-readable.
 
 This is not a code repo. The main output should be Markdown files readable directly in GitHub. Use Mermaid diagrams for user flows, functional models, technical architecture, and recursive agent/workflow loops. Optional exports to PDF/DOCX/PPTX may be created later, but Markdown is the source of truth.
 
@@ -43,7 +43,7 @@ If local source indexes are available, inspect:
 
 If the source indexes are unavailable, do not invent their contents. Mark them as unavailable and continue with repo-visible evidence.
 
-Treat weekly-input/ as the clean input layer for new progress, features, decisions, blockers, lessons, and product/business-model insights. Do not use raw Claude/Codex sessions as the primary source for recruiter-facing updates. If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant strategy/workflow document and add a decision-log entry when the change is meaningful.
+Treat weekly-input/ as the clean input layer for new progress, features, decisions, blockers, lessons, and product/business-model insights. Do not use raw Claude/Codex sessions as the primary source for recruiter-facing updates. If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant project-specific strategy/workflow document and add a decision-log entry when the change is meaningful. Product strategy belongs under `strategy/<project>/` using the canonical `product/`, `business/`, `market/`, and `decisions/` subfolders; portfolio evidence-layer strategy belongs under `strategy/portfolio-operating-system/`.
 
 Update or create:
 1. project proof-point map
@@ -82,10 +82,10 @@ Focus on:
 - automation as documented operating infrastructure, not the whole value proposition
 - measurable workflow improvement
 - AI-native operating model
-- value proposition
-- business model
-- pricing strategy
-- product strategy
+- project-level value propositions
+- project-level business models
+- project-level pricing strategy
+- project-level product strategy
 - technical architecture
 - ingestion model
 - autoresearch
@@ -98,6 +98,7 @@ Canonical positioning:
 - Job-agent is the lead proof point.
 - PKM and the household budget app are supporting proof points.
 - Automation, source indexes, weekly compiler, and review loops are important documented secondary proof points.
+- Do not frame this repository, compiler, or documentation automation as the product; frame them as the evidence and packaging layer for the product projects.
 - Recruiter-facing files should link to `SOURCE_MAP.md`, `PROJECT_STATUS.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md` rather than local-only internal index files.
 - Recruiter-facing review should remain easy for both humans and agents through `RECRUITER_ONE_PAGER.md`, `RECRUITER_AGENT_GUIDE.md`, `EVIDENCE_MATRIX.md`, and `ROLE_READING_PATHS.md`.
 

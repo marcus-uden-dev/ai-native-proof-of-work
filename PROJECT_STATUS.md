@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Recruiter-facing summary
 
 ## Purpose
@@ -11,12 +11,12 @@ It is a recruiter-safe status layer. It does not expose private local paths, raw
 
 ## Portfolio Status Snapshot
 
-| Project | Current State | Recent Progress | Main Open Work | Evidence Status |
+| Project / Layer | Current State | Recent Progress | Main Open Work | Evidence Status |
 |---|---|---|---|---|
 | Job-agent | MVP complete in local project status; career-ops tasks marked done; remaining work is mainly infra, production activation, pricing/legal decisions, and external verification | Shared job-postings cleanup, privacy/GDPR surfaces, feedback system, live local verification, discover regression fix, CI workflows, telemetry/billing planning, OAuth/social-auth code path | Production deploy, public backend origin, OTel/Grafana setup, Stripe live activation, final legal review, real third-party ATS smoke checks, selected public-safe screenshots/test references | Internal / Verified |
 | PKM | Knowledge-workflow product surfaces are represented, but operational blockers remain before full daily use | Ingestion/search/learning/feed/source/person/topic surfaces are represented; feature workflow is explicit; social feed feature is marked done in the queue; Chrome extension exists for browser capture | OpenAI billing/embedding quota, frontend URL cleanup, SMTP setup, Hetzner deployment, source/person/topic setup, search/flashcard/extension/MCP verification | Internal / Verified |
 | Household budget app | Active product with core surfaces and a large household/shared-account hardening track | Household scope is threaded across major pages; owner/member/admin flows, invite onboarding, shared-account ownership rules, read-model/view-model extraction, and mutation helper extraction have progressed significantly | Finish post-hardening household migration cleanup, remove legacy migration debt, validate ownership hardening end-to-end in Supabase, split future modeling into smaller landing slices | Internal / Verified |
-| Proof-of-work repository | GitHub-ready recruiter documentation layer | Project-first positioning, recruiter/agent review layer, evidence matrix, navigation hub, case studies, timeline, and diagram rendering fixes are in place | Add sanitized screenshots, safe test/commit excerpts, and first curated recruiter export after privacy review | Verified |
+| Portfolio evidence repository | GitHub-ready documentation and review layer for the product portfolio | Project-first positioning, recruiter/agent review layer, evidence matrix, navigation hub, case studies, timeline, and diagram rendering fixes are in place | Add sanitized screenshots, safe test/commit excerpts, and first curated recruiter export after privacy review | Verified |
 
 ## Job-Agent Status
 
@@ -70,7 +70,7 @@ Recruiter signal:
 
 - Shows careful modeling of household financial data, shared access, security boundaries, migration debt, and test-backed refactoring.
 
-## Proof-of-Work Repository Status
+## Portfolio Evidence Repository Status
 
 This repository is the evidence packaging layer, not the main product.
 

@@ -3,13 +3,14 @@
 Use this prompt in Codex on Marcus’s local machine, not in a remote-only environment.
 
 ```text
-Refresh local source indexes for the AI-native proof-of-work repository.
+Refresh local source indexes for the AI-native portfolio evidence repository.
 
 Target repo:
 https://github.com/TheOneDarkHorse/ai-native-proof-of-work
 
 Canonical positioning:
 - Local indexes are internal evidence infrastructure.
+- The repository and compiler are evidence infrastructure, not the product.
 - Recruiter-facing proof should be summarized through `SOURCE_MAP.md`, `PROJECT_STATUS.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md`.
 - Weekly deltas, insights, blockers, and strategy changes should be captured through `weekly-input/` before they are promoted into recruiter-facing files.
 - Job-agent is the lead project proof point.

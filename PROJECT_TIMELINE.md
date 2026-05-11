@@ -1,24 +1,24 @@
 # Project Timeline
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Living milestone log
 
 ## Purpose
 
-This timeline shows how the proof-of-work portfolio develops over time.
+This timeline shows how the product portfolio and its evidence layer develop over time.
 
-It is not a full changelog. It highlights recruiter-relevant milestones across job-agent, PKM, the household budget app, and the proof-of-work automation that packages the work.
+It is not a full changelog. It highlights recruiter-relevant milestones across job-agent, PKM, the household budget app, and the documentation automation that packages the work.
 
 ## Timeline View
 
 ```mermaid
 flowchart TD
-    M1["2026-03<br/>PKM and budget app evidence visible"]
-    M2["2026-04<br/>Job-agent becomes lead product proof point"]
-    M3["2026-05-08<br/>Proof-of-work repo and compiler scaffold"]
-    M4["2026-05-09<br/>Project-first portfolio positioning"]
-    M5["2026-05-09<br/>Recruiter and agent review layer"]
-    M6["2026-05-09<br/>Current project status layer"]
+    M1["2026-03<br/>PKM + budget<br/>evidence"]
+    M2["2026-04<br/>Job-agent<br/>lead proof"]
+    M3["2026-05-08<br/>Evidence repo<br/>scaffold"]
+    M4["2026-05-09<br/>Project-first<br/>positioning"]
+    M5["2026-05-09<br/>Recruiter<br/>review layer"]
+    M6["2026-05-09<br/>Project<br/>status layer"]
 
     M1 --> M2 --> M3 --> M4 --> M5 --> M6
 ```
@@ -31,7 +31,7 @@ flowchart TD
 | 2026-03 to 2026-04 | Household budget app develops product memory, domain spec, roadmap, import/review work, household access, and tests | Household budget app | Internal / Verified | Source summary in [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows financial domain modeling, security-aware shared data, and test-backed execution |
 | 2026-04 | Job-agent becomes a broad career workflow product | Job-agent | Internal / Verified | Source summary in [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows full-stack product execution in a career domain |
 | 2026-04 | Job-agent QA and privacy/trust work becomes a strong proof point | Job-agent | Internal / Verified | Source summary in [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows regression testing, Playwright coverage, GDPR/data-rights planning, and production-readiness thinking |
-| 2026-05-08 | Private proof-of-work repository scaffold created | Proof-of-work repo | Verified | Commit `1c74a04`, [README.md](README.md), [AGENTS.md](AGENTS.md) | Shows documentation architecture and evidence discipline |
+| 2026-05-08 | Private portfolio evidence repository scaffold created | Portfolio evidence layer | Verified | Commit `1c74a04`, [README.md](README.md), [AGENTS.md](AGENTS.md) | Shows documentation architecture and evidence discipline |
 | 2026-05-08 | Weekly compiler prompt and recruiter asset set created | Automation / documentation | Verified | [AUTOMATION_PROMPT.md](AUTOMATION_PROMPT.md), [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md), `recruiter-assets/` | Shows repeatable packaging of project evidence |
 | 2026-05-08 | Local source indexes created | Automation / source mapping | Internal / Verified | Summarized in [SOURCE_MAP.md](SOURCE_MAP.md) and [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows source separation and privacy-aware evidence extraction |
 | 2026-05-09 | Project-first repositioning completed | Portfolio positioning | Decision / Verified | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](PROOF_OF_WORK.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) | Makes job-agent the lead proof point while keeping automation documented as the operating layer |
@@ -64,4 +64,4 @@ Use evidence labels:
 |---|---|---|
 | Sanitized job-agent screenshots | Makes the strongest product proof point easier to inspect visually | 2-4 privacy-reviewed screenshots |
 | Selected safe test/commit excerpts | Strengthens verification beyond summarized internal status | Short copied test summaries or safe commit references |
-| Recruiter export packet | Tests whether the repo can become a shareable review packet | PDF or curated Markdown export after privacy review |
+| Recruiter export packet | Tests whether curated portfolio evidence can become a shareable review packet | PDF or curated Markdown export after privacy review |

@@ -1,6 +1,6 @@
 # Portfolio Case Study
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Project-focused
 
 ## Problem
@@ -13,7 +13,7 @@ This makes it harder to show practical execution to recruiters, hiring managers,
 
 The work spans job-agent, PKM, a household budget app, Claude, Codex, scheduled tasks, GitHub documentation, local project archives, reusable skills, research inputs, and recruiter-facing career materials.
 
-The main portfolio mistake to avoid is making the documentation automation look like the whole product story. The automation should be documented as the packaging and review layer. The projects are the primary proof.
+The main portfolio mistake to avoid is letting documentation automation overshadow the actual product projects. The automation should be documented as the packaging and review layer. The projects are the primary proof.
 
 ## Constraints
 
@@ -25,7 +25,7 @@ The main portfolio mistake to avoid is making the documentation automation look 
 
 ## Approach
 
-Create a private GitHub proof-of-work repository that foregrounds:
+Create a private GitHub evidence repository that foregrounds:
 
 - job-agent as the primary product proof point
 - PKM as supporting knowledge-system evidence
@@ -48,13 +48,13 @@ Use:
 
 ```mermaid
 flowchart TD
-    A[Project Work: Job-agent, PKM, Budget App] --> B[Capture]
-    B --> C[Classify]
-    C --> D[Extract Decisions]
-    D --> E[Generate Artifacts]
-    E --> F[Review]
-    F --> G[Private GitHub Repo]
-    G --> H[Recruiter / Portfolio / Interview Use]
+    A["Product work<br/>Job-agent, PKM,<br/>budget app"] --> B["Capture"]
+    B --> C["Classify"]
+    C --> D["Extract decisions"]
+    D --> E["Generate artifacts"]
+    E --> F["Review"]
+    F --> G["Evidence repo"]
+    G --> H["Recruiter,<br/>portfolio,<br/>interview use"]
 ```
 
 ## Strategic Decisions
@@ -81,11 +81,11 @@ flowchart TD
 
 ## Result
 
-Initial scaffold created and committed as `1c74a04` (`Bootstrap AI-native proof-of-work repository`). The first weekly compiler pass now treats the repository scaffold, decision standard, recruiter asset set, and automation prompt as verified repo-visible evidence.
+Initial scaffold created and committed as `1c74a04` (`Bootstrap AI-native proof-of-work repository`). The first weekly compiler pass treats the repository scaffold, decision standard, recruiter asset set, and automation prompt as verified evidence-layer work, not as a substitute for product proof.
 
 Local source indexes were then created as internal, gitignored artifacts. They keep Codex projects, Claude projects, and shared agent assets separate so future proof extraction can distinguish execution evidence from strategy/planning evidence and reusable workflow infrastructure.
 
-The repository has now been repositioned so job-agent, PKM, and the household budget app are the primary project evidence. The proof-of-work compiler remains documented as evidence of repeatable automation for extraction, review, privacy, and recruiter translation.
+The portfolio documentation has now been repositioned so job-agent, PKM, and the household budget app are the primary project evidence. The proof-of-work compiler remains documented as repeatable automation for extraction, review, privacy, and recruiter translation.
 
 ## What I Would Improve Next
 
@@ -97,7 +97,7 @@ The repository has now been repositioned so job-agent, PKM, and the household bu
 
 - workflow design
 - full-stack product execution
-- product strategy
+- project-scoped product strategy
 - documentation architecture
 - AI-native operating model design
 - technical communication

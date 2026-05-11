@@ -1,21 +1,21 @@
 # Architecture
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-11
 Status: Initial design
 
 ## Non-Technical Overview
 
-The system turns scattered work into structured proof.
+This documentation architecture turns scattered product work into structured proof.
 
 It starts with inputs such as chats, local project work, scheduled task outputs, research, job signals, and reusable skills. These are captured, summarized, classified, reviewed, and converted into recruiter-readable artifacts.
 
 ## Technical Overview
 
-The architecture is documentation-first and GitHub-native.
+The architecture is documentation-first and GitHub-native. It describes the portfolio evidence layer, not the product architecture of job-agent, PKM, or the household budget app.
 
 Markdown is the canonical storage format. Mermaid diagrams provide visual structure. Local source indexes help Codex find relevant project and skill context without repeatedly scanning the same folders.
 
-## System Layers
+## Portfolio Documentation Layers
 
 | Layer | Purpose | Examples |
 |---|---|---|
@@ -25,26 +25,20 @@ Markdown is the canonical storage format. Mermaid diagrams provide visual struct
 | Analysis Layer | Extracts meaning | strategy, decisions, patterns |
 | Artifact Layer | Creates outputs | docs, briefs, diagrams |
 | Review Layer | Human approval | keep, revise, archive |
-| Repository Layer | Stores proof of work | GitHub Markdown docs |
+| Repository Layer | Stores curated proof of work | GitHub Markdown docs |
 
 ## System Diagram
 
 ```mermaid
 flowchart TD
-    A[Input Sources] --> B[Source Discovery + Indexing]
-    B --> C[Ingestion Layer]
-    C --> D[Normalization + Metadata]
-    D --> E[Analysis Layer]
-    E --> F[Artifact Generation]
-    F --> G[Human Review]
-    G --> H[Private GitHub Proof-of-Work Repo]
-    H --> I[Recruiter / Portfolio / Interview Use]
-
-    A --> A1[Codex Projects]
-    A --> A2[Claude Projects]
-    A --> A3[Shared Skills]
-    A --> A4[Scripts + Docs]
-    A --> A5[Weekly Work]
+    A["Inputs<br/>project work, chats,<br/>skills, docs,<br/>weekly notes"] --> B["Source indexes"]
+    B --> C["Ingest"]
+    C --> D["Metadata"]
+    D --> E["Analyze"]
+    E --> F["Generate"]
+    F --> G["Human review"]
+    G --> H["Evidence repo"]
+    H --> I["Recruiter use"]
 ```
 
 ## Human Approval Points

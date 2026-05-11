@@ -4,7 +4,7 @@
 
 ### 1. Executive Summary
 
-Repositioned the repository so the main value proposition is concrete project execution, with proof-of-work automation documented as the operating method.
+Repositioned the portfolio evidence layer so the main value proposition is concrete project execution, with documentation automation described as the operating method.
 
 The lead proof point is now job-agent. PKM and the household budget app are supporting proof points. The compiler, source indexes, and weekly process remain documented infrastructure for packaging evidence, maintaining privacy, and improving recruiter readability.
 
@@ -14,7 +14,7 @@ The lead proof point is now job-agent. PKM and the household budget app are supp
 |---|---|---|---|---|
 | Project proof-point map | Documentation | Internal / Verified | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md) | Gives recruiters a project-first view |
 | Project timeline | Documentation | Internal / Verified | [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) | Shows progression over time instead of only current-state summaries |
-| Job-agent lead positioning | Recruiter asset / strategy | Internal / Verified | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md), [strategy/VALUE_PROPOSITION.md](../strategy/VALUE_PROPOSITION.md) | Makes strongest product evidence easier to find |
+| Job-agent lead positioning | Recruiter asset / strategy | Internal / Verified | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](../strategy/job-agent/product/VALUE_PROPOSITION.md) | Makes strongest product evidence easier to find |
 | PKM and budget app support positioning | Recruiter asset / strategy | Internal / Verified | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md) | Shows range beyond one product |
 | Compiler operating-layer framing | Strategy / documentation | Decision | [logs/DECISION_LOG.md](DECISION_LOG.md) | Documents automation while preventing it from overshadowing project work |
 
@@ -22,7 +22,7 @@ The lead proof point is now job-agent. PKM and the household budget app are supp
 
 | Before | After | Improvement | Evidence |
 |---|---|---|---|
-| Proof-of-work automation looked like the whole product story | Project work is the main evidence and automation is the documented packaging layer | Stronger recruiter signal | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md) |
+| Documentation automation overshadowed the actual projects | Project work is the main evidence and automation is the documented packaging layer | Stronger recruiter signal | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [RECRUITER_BRIEF.md](../RECRUITER_BRIEF.md) |
 
 ### 4. Decision
 
@@ -203,7 +203,7 @@ Populate the first evidence-backed proof points from actual local Codex, Claude,
 
 Ran the weekly Proof-of-Work Compiler from the canonical repository root after the bootstrap commit existed.
 
-This pass converted the initial scaffold from "verified once committed" into repo-visible evidence backed by commit `1c74a04` (`Bootstrap AI-native proof-of-work repository`). It did not invent unavailable local source index content.
+This pass converted the initial scaffold from "verified once committed" into repo-visible evidence-layer work backed by commit `1c74a04` (`Bootstrap AI-native proof-of-work repository`). It did not invent unavailable local source index content.
 
 ### 2. Work Added or Updated
 
@@ -272,7 +272,7 @@ The update keeps three evidence layers separate:
 
 | Source Layer | Finding | Status |
 |---|---|---|
-| Codex projects | 3 local Codex project folders observed, including this proof-of-work repo, a PKM project, and a household budget app | Internal / Verified |
+| Codex projects | 3 local Codex project folders observed, including this portfolio evidence repo, a PKM project, and a household budget app | Internal / Verified |
 | Claude projects | 23 local Claude project folders observed, including feature workflow, job-agent, PKM, prototype, memory, and worktree-derived traces | Internal / Verified |
 | Shared agent assets | 239 shared skill directories and 11 scheduled routine Markdown files observed | Internal / Verified |
 

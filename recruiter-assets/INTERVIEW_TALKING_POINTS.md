@@ -1,6 +1,6 @@
 # Interview Talking Points
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Project-focused
 
 ## 1. Job-agent as the lead proof point
@@ -13,9 +13,9 @@ I do not treat AI as a content shortcut. I use it as a layer for structuring pro
 
 ## 3. Proof of work over vague claims
 
-The repository is built around evidence: what was built, what changed, what tradeoff was made, what was tested, and what still needs validation.
+The portfolio repository is built around evidence: what was built, what changed, what tradeoff was made, what was tested, and what still needs validation.
 
-Current verified examples: job-agent, PKM, and household budget app are identified in internal source indexes, and the proof-of-work repository scaffold was committed as `1c74a04`.
+Current verified examples: job-agent, PKM, and household budget app are identified in internal source indexes, and the portfolio evidence scaffold was committed as `1c74a04`.
 
 ## 4. Claude + Codex split
 
@@ -31,7 +31,7 @@ The goal is not full autonomy. The goal is to automate repeatable work around re
 
 ## 7. Product + architecture thinking
 
-The repository connects product proof points, value proposition, business model, pricing, GTM, architecture, ingestion, and recursive workflows in one system.
+The portfolio docs connect project-level proof points, value propositions, business models, pricing hypotheses, GTM questions, architecture notes, ingestion, and recursive workflows without treating the docs as the product.
 
 ## 8. Privacy-aware workflow design
 

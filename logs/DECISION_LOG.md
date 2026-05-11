@@ -1,10 +1,50 @@
 # Decision Log
 
+## 2026-05-11 — Organize strategy by product project
+
+### Context
+
+The flat `strategy/` folder made several strategy documents read as if they described the portfolio evidence layer rather than the actual product projects. This blurred the distinction between job-agent, PKM, the household budget app, and the portfolio operating layer.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep flat strategy files | Fewer files and links to update | Continues confusing product strategy with portfolio strategy |
+| Add notes inside existing files | Low migration cost | Still leaves ambiguous file ownership |
+| Organize by project folder | Clear ownership and scalable for more repos | Requires link updates and a strategy index |
+
+### Decision
+
+Use project-scoped strategy folders under `strategy/`: job-agent, PKM, household budget app, and portfolio operating system.
+
+### Reasoning Trail
+
+```text
+Context → Strategy docs sounded like they described the portfolio evidence layer.
+Options Considered → Keep flat files, add clarifying notes, organize by project folder.
+Tradeoffs → Project folders require link updates but make strategy ownership explicit.
+Decision → Move strategy to project-scoped folders and make job-agent the primary strategy surface.
+Evidence → Existing docs and recruiter links pointed to flat strategy files that mixed product and portfolio language.
+Open Questions → Which supporting project strategy files should be expanded once more validated evidence is available.
+Next Action → Review recruiter-facing navigation after the next weekly run.
+```
+
+### Evidence
+
+[strategy/README.md](../strategy/README.md), [strategy/job-agent/README.md](../strategy/job-agent/README.md), [strategy/pkm/README.md](../strategy/pkm/README.md), [strategy/household-budget-app/README.md](../strategy/household-budget-app/README.md), [strategy/portfolio-operating-system/README.md](../strategy/portfolio-operating-system/README.md)
+
+### Status
+
+Decision
+
+---
+
 ## 2026-05-09 — Lead with concrete projects while documenting the automation
 
 ### Context
 
-The repository risked positioning the proof-of-work automation, weekly compiler, and source-indexing system as the whole value proposition. The stronger recruiter signal is the concrete product portfolio: job-agent first, with PKM and the household budget app as supporting proof points. The automation should remain documented as the operating method that makes the portfolio repeatable and credible.
+The documentation layer risked positioning the compiler, weekly review, and source-indexing system as the whole value proposition. The stronger recruiter signal is the concrete product portfolio: job-agent first, with PKM and the household budget app as supporting proof points. The automation should remain documented as the operating method that makes the portfolio repeatable and credible.
 
 ### Options Considered
 
@@ -32,7 +72,7 @@ Next Action → Create a job-agent case-study page with evidence labels.
 
 ### Evidence
 
-[PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [strategy/VALUE_PROPOSITION.md](../strategy/VALUE_PROPOSITION.md), internal source indexes
+[PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](../strategy/job-agent/product/VALUE_PROPOSITION.md), internal source indexes
 
 ### Status
 

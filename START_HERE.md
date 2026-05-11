@@ -1,26 +1,26 @@
 # Start Here
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Recruiter-facing
 
 ## One-Minute Overview
 
-This repository documents practical product work supported by AI-native workflow design, product strategy, architecture reasoning, and proof-of-work documentation.
+This repository documents practical product work supported by AI-native workflow design, project-scoped product strategy, architecture reasoning, and proof-of-work documentation.
 
-The main proof points are job-agent, PKM, and a household budget app. The documentation and automation system is also part of the proof, but its role is to make that project work clear, credible, repeatable, and privacy-safe.
+The main proof points are job-agent, PKM, and a household budget app. The documentation and automation layer supports that portfolio by making project work clear, credible, repeatable, and privacy-safe.
 
 ## Why This Exists
 
 Useful product work often disappears into codebases, chats, local projects, notes, and undocumented workflows.
 
-This repository turns that work into structured proof.
+This repository organizes and explains that work as structured proof.
 
 ## What This Repository Shows
 
 - AI-native workflow design
 - concrete product execution
 - structured thinking
-- product strategy
+- project-scoped product strategy
 - architecture reasoning
 - business model thinking
 - documentation discipline
@@ -51,7 +51,7 @@ If you are using an assistant or recruiter-side agent, start with [Recruiter Age
 - practical product execution
 - clear recruiter and agent reading paths
 - project progress over time
-- practical automation thinking as a documented support system for execution
+- practical automation thinking as a documented support layer for execution
 - clear before/after workflow improvements
 - documented tradeoffs
 - recruiter-relevant execution evidence

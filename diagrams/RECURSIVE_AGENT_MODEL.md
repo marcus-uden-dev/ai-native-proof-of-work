@@ -1,27 +1,16 @@
 # Recursive Agent Model
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-11
 Status: Active diagram
 
 ```mermaid
 flowchart TD
-    A[Work Output] --> B[Review Output]
-    B --> C[Extract Pattern]
-    C --> D{Repeated 2+ Times?}
-    D -->|No| E[Keep as Prompt or Archive]
-    D -->|Yes| F[Promotion Board]
-    F --> G{Best Destination?}
-    G --> H[Instruction]
-    G --> I[Checklist]
-    G --> J[Template]
-    G --> K[Scheduled Task]
-    G --> L[Skill]
-    G --> M[Source Index]
-    H --> N[Next Run]
-    I --> N
-    J --> N
-    K --> N
-    L --> N
-    M --> N
-    N --> A
+    A["Work output"] --> B["Review"]
+    B --> C["Extract pattern"]
+    C --> D{"Repeated?"}
+    D -->|No| E["Keep one-off"]
+    D -->|Yes| F["Promotion board"]
+    F --> G["Instruction, checklist,<br/>template, scheduled task,<br/>skill, or source index"]
+    G --> H["Next run"]
+    H --> A
 ```

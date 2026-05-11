@@ -1,7 +1,9 @@
 # System Boundaries
 
-Last updated: 2026-05-08  
+Last updated: 2026-05-11
 Status: Initial design
+
+These boundaries describe the portfolio documentation repository. They do not define the product boundaries of job-agent, PKM, or the household budget app.
 
 ## In Scope
 

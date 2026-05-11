@@ -1,6 +1,6 @@
 # Executive Summary
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Project-focused
 
 ## Positioning
@@ -13,7 +13,7 @@ AI is most useful when treated as an operating layer for real product work, not 
 
 ## What I Built / Designed
 
-This repository documents a project portfolio and the operating system around it.
+This repository documents a project portfolio and the evidence/operating layer around it.
 
 The lead proof point is job-agent. PKM and the household budget app provide supporting evidence across knowledge management and financial-product domains.
 
@@ -21,7 +21,7 @@ Current scaffold includes:
 
 - project proof points
 - proof-of-work evidence map
-- strategy documentation
+- project-scoped strategy documentation for the actual product projects
 - architecture documentation
 - Claude + Codex workflow model
 - weekly logs
@@ -46,11 +46,11 @@ Operational value:
 | Skill Area | Evidence |
 |---|---|
 | Product execution | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](PROOF_OF_WORK.md) |
-| Product thinking | [strategy/PRODUCT_STRATEGY.md](strategy/PRODUCT_STRATEGY.md), [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md) |
+| Product thinking | [strategy/job-agent/product/PRODUCT_STRATEGY.md](strategy/job-agent/product/PRODUCT_STRATEGY.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) |
 | Workflow automation | [workflows/SCHEDULED_TASKS_MODEL.md](workflows/SCHEDULED_TASKS_MODEL.md), [PROOF_OF_WORK.md](PROOF_OF_WORK.md) |
 | AI-native operating model | [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md) |
 | Architecture reasoning | [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md), [architecture/INGESTION_MODEL.md](architecture/INGESTION_MODEL.md) |
-| Business model thinking | [strategy/BUSINESS_MODEL.md](strategy/BUSINESS_MODEL.md), [strategy/PRICING_STRATEGY.md](strategy/PRICING_STRATEGY.md) |
+| Business model thinking | [strategy/job-agent/business/BUSINESS_MODEL.md](strategy/job-agent/business/BUSINESS_MODEL.md), [strategy/job-agent/business/PRICING_STRATEGY.md](strategy/job-agent/business/PRICING_STRATEGY.md) |
 | Documentation discipline | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md), [logs/CHANGELOG.md](logs/CHANGELOG.md) |
 | Strategic decision-making | [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 

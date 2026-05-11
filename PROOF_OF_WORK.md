@@ -1,13 +1,13 @@
 # Proof of Work
 
-Last updated: 2026-05-09
+Last updated: 2026-05-11
 Status: Active / Project-focused evidence map
 
 ## What This Demonstrates
 
 - full-stack product execution
 - AI-native workflow design applied to real projects
-- product strategy
+- project-scoped product strategy
 - technical architecture reasoning
 - test and QA discipline
 - privacy-aware product thinking
@@ -25,9 +25,9 @@ Status: Active / Project-focused evidence map
 | Recruiter agent guide | Agent-readable evaluation instructions | Verified | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) |
 | Project status | Current state, recent progress, and open work across projects | Internal / Verified | [PROJECT_STATUS.md](PROJECT_STATUS.md) |
 | Project proof points | Concrete project portfolio: job-agent, PKM, household budget app | Internal / Verified | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
-| Project timeline | Milestones across projects and proof-of-work automation | Internal / Verified | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) |
+| Project timeline | Milestones across products and the portfolio evidence layer | Internal / Verified | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) |
 | Weekly log | Execution cadence | Verified | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
-| Value proposition | Project-focused positioning | Hypothesis | [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md) |
+| Value proposition | Project-focused positioning | Hypothesis | [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) |
 | Architecture docs | Technical reasoning | Verified | [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md) |
 | Workflow model | Supporting operating model | Decision | [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
 | Recruiter brief | Communication clarity | Verified | [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md) |
@@ -37,11 +37,11 @@ Status: Active / Project-focused evidence map
 
 | Workflow | Before | After | Evidence |
 |---|---|---|---|
-| Weekly documentation | Scattered notes/chats/local projects | Structured GitHub archive | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md), commit `1c74a04` |
+| Weekly documentation | Scattered notes/chats/local projects | Structured portfolio evidence archive | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md), commit `1c74a04` |
 | Career assets | Rewritten manually | Generated from one source | `recruiter-assets/`, commit `1c74a04` |
 | Strategy decisions | Implicit | Decision trail with tradeoffs | [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | Local project context | Rediscovered repeatedly | Indexed source map split by Codex projects, Claude projects, and shared agent assets | Internal source summaries created 2026-05-08 |
-| Project positioning | Automation/compiler was treated as the whole value prop | Concrete product projects are now the main proof points, with automation documented as the operating method | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), [strategy/VALUE_PROPOSITION.md](strategy/VALUE_PROPOSITION.md) |
+| Project positioning | Automation/compiler was treated as the whole value prop | Concrete product projects are now the main proof points, with automation documented as the operating method | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) |
 
 ## Best Current Proof Points
 
@@ -75,10 +75,10 @@ Status: Active / Project-focused evidence map
 - Case study: [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md)
 - Recruiter relevance: Demonstrates product execution outside the AI/career domain, making the portfolio broader and more credible.
 
-### 4. Proof-of-work repository scaffold
+### 4. Portfolio evidence repository scaffold
 
 - What was done: Created a structured documentation architecture for proof-of-work artifacts.
-- Why it matters: Turns project work into a reusable evidence system and shows the automation discipline behind that evidence.
+- Why it matters: Turns product work into reusable evidence and shows the automation discipline behind that evidence without making the repository itself the product.
 - Status: Verified.
 - Evidence link: [README.md](README.md), [AGENTS.md](AGENTS.md), [START_HERE.md](START_HERE.md)
 - Commit evidence: `1c74a04` (`Bootstrap AI-native proof-of-work repository`)
