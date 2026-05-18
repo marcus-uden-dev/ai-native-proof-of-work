@@ -34,22 +34,26 @@ Recommended path:
 1. [Navigation Hub](NAVIGATION.md)
 2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
 3. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
-4. [Project Status](PROJECT_STATUS.md)
-5. [Evidence Matrix](EVIDENCE_MATRIX.md)
-6. [Project Timeline](PROJECT_TIMELINE.md)
-7. [Role Reading Paths](ROLE_READING_PATHS.md)
-8. [Executive Summary](EXECUTIVE_SUMMARY.md)
-9. [Proof of Work](PROOF_OF_WORK.md)
-10. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-11. [Weekly Log](logs/WEEKLY_LOG.md)
+4. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+5. [Project Status](PROJECT_STATUS.md)
+6. [Evidence Matrix](EVIDENCE_MATRIX.md)
+7. [Project Timeline](PROJECT_TIMELINE.md)
+8. [Role Reading Paths](ROLE_READING_PATHS.md)
+9. [Executive Summary](EXECUTIVE_SUMMARY.md)
+10. [Proof of Work](PROOF_OF_WORK.md)
+11. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+12. [Weekly Log](logs/WEEKLY_LOG.md)
 
 If you are using an assistant or recruiter-side agent, start with [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
+
+If you want to recreate this repository architecture for another person or organization, start with [Repository Seed Blueprint](REPO_SEED_BLUEPRINT.md). It is standalone, LLM-agnostic, and can be pasted into another assistant as the seed instruction.
 
 ## What to Look For
 
 - structured problem-solving
 - practical product execution
 - clear recruiter and agent reading paths
+- reproducible handoff for the lead product repo
 - project progress over time
 - practical automation thinking as a documented support layer for execution
 - clear before/after workflow improvements

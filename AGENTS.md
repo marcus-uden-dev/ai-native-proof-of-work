@@ -217,6 +217,7 @@ PROOF_OF_WORK.md
 PROJECT_PROOF_POINTS.md
 PROJECT_TIMELINE.md
 case-studies/JOB_AGENT_CASE_STUDY.md
+case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md
 case-studies/PKM_CASE_STUDY.md
 case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md
 RECRUITER_BRIEF.md
@@ -369,6 +370,7 @@ Create or update:
 17. project proof-point map updates if changed
 18. project status updates if current state, blockers, or progress changed
 19. project timeline updates if milestones changed
+20. install and LLM handoff guide updates for the lead source repo if setup, ports, dependencies, or agent boot sequence changed
 
 ## Quality Gate
 
@@ -405,17 +407,18 @@ Before completing any weekly run, verify:
 10. Mark uncertainty clearly.
 11. Keep recruiter-facing documents readable without technical background.
 12. Keep technical documents available for deeper review.
-13. Separate static strategy from weekly updates.
-14. Keep product strategy project-scoped under `strategy/<project>/` with the canonical `product/`, `business/`, `market/`, and `decisions/` subfolders; do not make strategy docs read as though the portfolio evidence layer is the product unless the file is explicitly about the portfolio operating system.
-15. Record meaningful strategy or architecture changes in the decision log.
-16. Prioritize substance over volume.
-17. Check source indexes before rescanning local roots.
-18. Refresh stale source indexes when necessary.
-19. Summarize local sources; do not dump raw content.
-20. Respect Marcus’s custom shared-skills setup.
-21. Treat `.agents` as potentially important but structurally non-standard.
-22. Treat `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` as the canonical repository.
-23. If not running inside the repo, report that limitation before attempting edits.
+13. Keep source-project install and LLM handoff instructions accurate enough that another user or assistant can reproduce the lead project locally.
+14. Separate static strategy from weekly updates.
+15. Keep product strategy project-scoped under `strategy/<project>/` with the canonical `product/`, `business/`, `market/`, and `decisions/` subfolders; do not make strategy docs read as though the portfolio evidence layer is the product unless the file is explicitly about the portfolio operating system.
+16. Record meaningful strategy or architecture changes in the decision log.
+17. Prioritize substance over volume.
+18. Check source indexes before rescanning local roots.
+19. Refresh stale source indexes when necessary.
+20. Summarize local sources; do not dump raw content.
+21. Respect Marcus’s custom shared-skills setup.
+22. Treat `.agents` as potentially important but structurally non-standard.
+23. Treat `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` as the canonical repository.
+24. If not running inside the repo, report that limitation before attempting edits.
 
 ## Weekly Final Response Format
 
@@ -499,6 +502,7 @@ A weekly run is complete only when:
 - [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) reflects the strongest current project evidence
 - [PROJECT_STATUS.md](PROJECT_STATUS.md) reflects meaningful changes in current state, progress, and blockers
 - [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) reflects any meaningful new milestones
+- [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) reflects the current install, service, port, validation, and LLM handoff model for the lead source repo
 - recruiter-facing assets are updated
 - any changed strategy or architecture docs have decision-log entries
 - diagrams are valid Mermaid

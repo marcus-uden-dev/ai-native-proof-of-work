@@ -20,6 +20,7 @@ Required root files:
 - README.md
 - NAVIGATION.md
 - START_HERE.md
+- REPO_SEED_BLUEPRINT.md
 - RECRUITER_ONE_PAGER.md
 - RECRUITER_AGENT_GUIDE.md
 - EXECUTIVE_SUMMARY.md
@@ -127,6 +128,7 @@ Required case studies:
 
 Required prompt files:
 - prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md
+- prompts/LLM_BOOTSTRAP_REPO_PROMPT.md
 - prompts/CODEX_BOOTSTRAP_REPO_PROMPT.md
 - prompts/SOURCE_INDEX_REFRESH_PROMPT.md
 

@@ -15,7 +15,7 @@ Use it if the file list feels overwhelming.
 |---|---|---|
 | 1 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Fast overview of the strongest proof points |
 | 2 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project proof point |
-| 3 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Visual map from capability to evidence |
+| 3 | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | How another user or LLM can run the lead product repo |
 
 ## If You Have 15 Minutes
 
@@ -24,9 +24,10 @@ Use it if the file list feels overwhelming.
 | 1 | [Start Here](START_HERE.md) | One-minute orientation |
 | 2 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Summary of positioning and proof |
 | 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Main product evidence |
-| 4 | [Project Status](PROJECT_STATUS.md) | Current state and open work |
-| 5 | [Project Timeline](PROJECT_TIMELINE.md) | Progression over time |
-| 6 | [Role Reading Paths](ROLE_READING_PATHS.md) | Choose the angle that fits the role |
+| 4 | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Reproducible setup path for the lead product |
+| 5 | [Project Status](PROJECT_STATUS.md) | Current state and open work |
+| 6 | [Project Timeline](PROJECT_TIMELINE.md) | Progression over time |
+| 7 | [Role Reading Paths](ROLE_READING_PATHS.md) | Choose the angle that fits the role |
 
 ## If You Have 30 Minutes
 
@@ -50,6 +51,7 @@ Use it if the file list feels overwhelming.
 | What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |
+| How can another user install the lead product? | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
 | What is the current project status? | [Project Status](PROJECT_STATUS.md) |
 | What capabilities are evidenced? | [Evidence Matrix](EVIDENCE_MATRIX.md) |
 | How did this develop over time? | [Project Timeline](PROJECT_TIMELINE.md) |
@@ -57,6 +59,7 @@ Use it if the file list feels overwhelming.
 | What changed and why? | [Decision Log](logs/DECISION_LOG.md) |
 | What evidence is private/internal? | [Source Map](SOURCE_MAP.md) |
 | Where is project strategy documented? | [Project Strategy Index](strategy/README.md) |
+| How can another person recreate this repository system? | [Repository Seed Blueprint](REPO_SEED_BLUEPRINT.md) |
 
 ## What Not To Start With
 
@@ -71,6 +74,7 @@ These file areas are useful, but they are not the best first read for a non-tech
 | [logs/](logs/) | Chronology and audit trail |
 | [weekly-input/](weekly-input/) | Weekly compiler input notes |
 | [internal/](internal/) | Local-only source maps and templates; not recruiter-facing |
+| [REPO_SEED_BLUEPRINT.md](REPO_SEED_BLUEPRINT.md) | Standalone, LLM-agnostic seed for cloning the architecture and automation model |
 
 ## Recommended Summary Path
 
@@ -78,8 +82,9 @@ These file areas are useful, but they are not the best first read for a non-tech
 flowchart TD
     A["Start Here"] --> B["Recruiter One-Pager"]
     B --> C["Job-Agent Case Study"]
-    C --> D["Project Status"]
-    D --> E["Evidence Matrix"]
-    E --> F["Project Timeline"]
-    F --> G["Role Reading Paths"]
+    C --> D["Job-Agent Install And Handoff"]
+    D --> E["Project Status"]
+    E --> F["Evidence Matrix"]
+    F --> G["Project Timeline"]
+    G --> H["Role Reading Paths"]
 ```

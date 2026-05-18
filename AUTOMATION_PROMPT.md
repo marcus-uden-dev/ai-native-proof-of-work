@@ -36,6 +36,7 @@ Before updating artifacts, inspect:
 21. architecture/
 22. workflows/
 23. diagrams/
+24. case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md
 
 If local source indexes are available, inspect:
 - internal/LOCAL_SOURCE_MAP.md
@@ -72,10 +73,12 @@ Update or create:
 24. Claude + Codex workflow philosophy updates if changed
 25. problem-solving log entries
 26. decision log entries
+27. lead source repo install and LLM handoff guide updates when setup, dependencies, ports, validation commands, or agent entrypoints changed
 
 Focus on:
 - practical execution
 - concrete project proof, especially job-agent
+- job-agent handoff quality, including whether another user or LLM can clone, configure, run, validate, and understand the source repo
 - supporting evidence from PKM and the household budget app
 - project milestones over time
 - weekly input notes as the source for new insights
@@ -99,6 +102,7 @@ Canonical positioning:
 - PKM and the household budget app are supporting proof points.
 - Automation, source indexes, weekly compiler, and review loops are important documented secondary proof points.
 - Do not frame this repository, compiler, or documentation automation as the product; frame them as the evidence and packaging layer for the product projects.
+- Keep `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md` current as the bridge from proof-of-work evidence to reproducible source-project setup.
 - Recruiter-facing files should link to `SOURCE_MAP.md`, `PROJECT_STATUS.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md` rather than local-only internal index files.
 - Recruiter-facing review should remain easy for both humans and agents through `RECRUITER_ONE_PAGER.md`, `RECRUITER_AGENT_GUIDE.md`, `EVIDENCE_MATRIX.md`, and `ROLE_READING_PATHS.md`.
 
@@ -140,5 +144,6 @@ Final output must list:
 8. key proof-of-work this week
 9. claims that need evidence
 10. problems/blockers
-11. one concrete next action
+11. lead source repo handoff status
+12. one concrete next action
 ```

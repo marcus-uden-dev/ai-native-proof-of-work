@@ -41,6 +41,7 @@ Before editing, inspect:
 21. architecture/
 22. workflows/
 23. diagrams/
+24. case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md
 
 If internal local source indexes are available, inspect them:
 - internal/LOCAL_SOURCE_MAP.md
@@ -78,10 +79,12 @@ Create or update:
 23. recursive workflow updates if changed
 24. Claude + Codex workflow philosophy updates if changed
 25. local source index updates if needed and available
+26. lead source repo install and LLM handoff guide updates when setup, dependencies, ports, validation commands, or agent entrypoints changed
 
 Focus on:
 - practical execution
 - concrete project proof, especially job-agent
+- job-agent handoff quality, including whether another user or LLM can clone, configure, run, validate, and understand the source repo
 - supporting evidence from PKM and the household budget app
 - project milestones over time
 - weekly input notes as the source for new insights
@@ -137,5 +140,6 @@ Final output must list:
 8. key proof-of-work this week
 9. claims that need evidence
 10. problems/blockers
-11. one concrete next action
+11. lead source repo handoff status
+12. one concrete next action
 ```

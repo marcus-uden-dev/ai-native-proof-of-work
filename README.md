@@ -59,6 +59,7 @@ flowchart TD
 |---|---|
 | [Navigation Hub](NAVIGATION.md) | Plain-English navigation hub for recruiters |
 | [START_HERE.md](START_HERE.md) | Fast recruiter-readable entry point |
+| [REPO_SEED_BLUEPRINT.md](REPO_SEED_BLUEPRINT.md) | Standalone, LLM-agnostic seed for recreating this repo architecture and automation model for another user |
 | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) | One-screen recruiter overview |
 | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) | Agent-readable guide for recruiter-side assistants |
 | [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | High-level positioning and current status |
@@ -69,7 +70,9 @@ flowchart TD
 | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) | Capability-to-evidence map with visual layout |
 | [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) | Role-specific reading paths |
 | [case-studies/](case-studies/) | Sanitized project case studies |
+| [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Practical install and LLM handoff guide for the lead product repo |
 | [weekly-input/](weekly-input/) | Clean weekly input layer for progress, decisions, blockers, and business insights |
+| [IMPORT_INSTRUCTIONS.md](IMPORT_INSTRUCTIONS.md) | Practical import and bootstrap instructions |
 | [strategy/](strategy/) | Project-scoped strategy for job-agent, PKM, household budget app, and the portfolio operating layer |
 | [architecture/](architecture/) | System design, ingestion, autoresearch, recursive workflows |
 | [workflows/](workflows/) | Claude/Codex workflow, AI operating model, scheduled tasks |
@@ -88,14 +91,15 @@ Recommended order:
 1. [START_HERE.md](START_HERE.md)
 2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
 3. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
-4. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-5. [PROJECT_STATUS.md](PROJECT_STATUS.md)
-6. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
-7. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
-8. [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)
-9. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
-10. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
-11. [diagrams/RECRUITER_VIEW.md](diagrams/RECRUITER_VIEW.md)
+4. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+5. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+6. [PROJECT_STATUS.md](PROJECT_STATUS.md)
+7. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+8. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
+9. [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)
+10. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
+11. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
+12. [diagrams/RECRUITER_VIEW.md](diagrams/RECRUITER_VIEW.md)
 
 ---
 
@@ -104,6 +108,7 @@ Recommended order:
 | Capability | How It Shows Up |
 |---|---|
 | Product execution | Job-agent, PKM, and household budget app case studies |
+| Reproducible handoff | Job-agent install guide, LLM boot sequence, ports, service map, and validation commands |
 | Recruiter skim-readability | One-pager, evidence matrix, role reading paths |
 | Agent readability | Recruiter agent guide and canonical reading order |
 | Progress over time | Project timeline and weekly logs |

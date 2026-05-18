@@ -1,5 +1,7 @@
 # Import Instructions
 
+For a standalone, LLM-agnostic seed that can recreate this repository architecture and automation model for another user, use [REPO_SEED_BLUEPRINT.md](REPO_SEED_BLUEPRINT.md).
+
 ## Option A — Use Codex locally
 
 Run these commands in **PowerShell** from the folder where you want to clone the repo:
