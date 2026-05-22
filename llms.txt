@@ -1,0 +1,68 @@
+# ai-native-proof-of-work
+
+> Machine-readable map for LLM assistants reviewing or maintaining this repository.
+
+This is a private, recruiter-shareable proof-of-work repository. It documents real product work, AI-native workflow design, architecture reasoning, project decisions, weekly execution, and reusable operating model patterns.
+
+The repository itself is not the product. Concrete projects are the primary proof. Job-agent is the lead proof point. PKM and the household budget app are supporting proof points. Automation, source indexes, weekly compiler prompts, and review loops are operating infrastructure.
+
+## Primary Recruiter Path
+
+- [START_HERE.md](START_HERE.md): one-minute orientation.
+- [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md): fastest summary of strongest proof points.
+- [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md): lead project case study.
+- [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md): capability-to-evidence map.
+- [PROJECT_STATUS.md](PROJECT_STATUS.md): current project state and blockers.
+- [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md): milestone history.
+- [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md): role-specific review paths.
+
+## Technical Reviewer / LLM Handoff Path
+
+- [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md): agent-readable review instructions.
+- [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md): install, services, ports, validation, and LLM entrypoints for job-agent.
+- [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md): architecture overview.
+- [architecture/DATA_FLOW.md](architecture/DATA_FLOW.md): data flow model.
+- [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md): AI operating model.
+- [workflows/SCHEDULED_TASKS_MODEL.md](workflows/SCHEDULED_TASKS_MODEL.md): scheduled task model.
+
+## Evidence And Strategy Reference
+
+- [PROOF_OF_WORK.md](PROOF_OF_WORK.md): central proof-of-work map.
+- [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md): strongest evidence by project.
+- [SOURCE_MAP.md](SOURCE_MAP.md): recruiter-safe source summary.
+- [strategy/README.md](strategy/README.md): strategy index.
+- [logs/DECISION_LOG.md](logs/DECISION_LOG.md): decision trail.
+- [logs/PROBLEM_SOLVING_LOG.md](logs/PROBLEM_SOLVING_LOG.md): problems and mitigations.
+- [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md): workflow improvements.
+
+## Template Adoption Path
+
+Use this only when the task is to clone, fork, or adapt the proof-of-work system for another user.
+
+- [template/README.md](template/README.md): template adoption kit.
+- [template/REPO_SEED_BLUEPRINT.md](template/REPO_SEED_BLUEPRINT.md): standalone LLM-agnostic seed.
+- [template/IMPORT_INSTRUCTIONS.md](template/IMPORT_INSTRUCTIONS.md): clone/fork/import flow.
+- [template/LLM_BOOTSTRAP_REPO_PROMPT.md](template/LLM_BOOTSTRAP_REPO_PROMPT.md): provider-neutral bootstrap prompt.
+- [template/WEEKLY_AUTOMATION_RUNBOOK.md](template/WEEKLY_AUTOMATION_RUNBOOK.md): weekly automation recreation path.
+
+## Prompt And Automation Files
+
+- [AGENTS.md](AGENTS.md): controlling repository instructions.
+- [AUTOMATION_PROMPT.md](AUTOMATION_PROMPT.md): scheduled weekly automation prompt.
+- [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md): weekly compiler prompt.
+- [prompts/SOURCE_INDEX_REFRESH_PROMPT.md](prompts/SOURCE_INDEX_REFRESH_PROMPT.md): local source index refresh prompt.
+
+## Ignore Unless Explicitly Asked
+
+- `internal/`: local-only source maps and indexes; not recruiter-facing.
+- `weekly-input/`: clean input layer for weekly updates; read only when compiling or auditing weekly work.
+- `exports/`: optional generated exports.
+- raw local source roots, chats, secrets, credentials, `.env` files, and scheduler runtime state.
+
+## Safety Rules
+
+- Do not fabricate evidence, metrics, dates, commits, screenshots, users, revenue, or outcomes.
+- Use evidence labels: Verified, Estimated, Planned, Open Question, Decision, Hypothesis, Rejected, Internal, Needs Review.
+- Keep recruiter-facing docs free of private local paths, raw chat logs, credentials, secrets, personal data, and sensitive third-party material.
+- Treat template files as reusable structure, not as permission to copy Marcus-specific evidence.
+- For weekly updates, prefer `weekly-input/`, repo-visible changes, safe source summaries, and explicit user-provided evidence.

@@ -2,6 +2,8 @@
 
 Use this as the scheduled task prompt.
 
+Active schedule and recreation details are documented in [template/WEEKLY_AUTOMATION_RUNBOOK.md](template/WEEKLY_AUTOMATION_RUNBOOK.md).
+
 ```text
 Run the weekly Proof-of-Work Compiler for my private GitHub portfolio evidence repository.
 
@@ -37,6 +39,7 @@ Before updating artifacts, inspect:
 22. workflows/
 23. diagrams/
 24. case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md
+25. template/
 
 If local source indexes are available, inspect:
 - internal/LOCAL_SOURCE_MAP.md
@@ -74,6 +77,7 @@ Update or create:
 25. problem-solving log entries
 26. decision log entries
 27. lead source repo install and LLM handoff guide updates when setup, dependencies, ports, validation commands, or agent entrypoints changed
+28. template adoption files under `template/` when clone/fork guidance, bootstrap prompts, automation recreation, or reusable-template rules change
 
 Focus on:
 - practical execution

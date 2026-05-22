@@ -1,13 +1,15 @@
 # Recruiter Agent Guide
 
-Last updated: 2026-05-09
+Last updated: 2026-05-18
 Status: Active / Agent-readable
 
 ## Purpose
 
-This file is for recruiter-side agents, hiring-manager assistants, or review bots that inspect this repository.
+This file is for recruiter-side agents, hiring-manager assistants, review bots, or LLM agents that inspect this repository.
 
 The repo is designed to be read directly in GitHub. It is not an application codebase and does not need installation for review.
+
+It also has a reusable template layer. If the goal is to recreate the proof-of-work system for another user, start from [template/](template/) instead of copying Marcus-specific evidence.
 
 ## Evaluation Goal
 
@@ -36,6 +38,22 @@ Assess Marcus’s practical evidence for:
 11. [Proof of Work](PROOF_OF_WORK.md)
 12. [Source Map](SOURCE_MAP.md)
 
+## Reuse / Template Reading Order
+
+Use this path when the goal is to adapt the repository architecture for another person, team, or LLM workflow:
+
+1. [Template Adoption Kit](template/README.md)
+2. [Repository Seed Blueprint](template/REPO_SEED_BLUEPRINT.md)
+3. [LLM-Agnostic Bootstrap Prompt](template/LLM_BOOTSTRAP_REPO_PROMPT.md)
+4. [Import Instructions](template/IMPORT_INSTRUCTIONS.md)
+5. [Weekly Automation Runbook](template/WEEKLY_AUTOMATION_RUNBOOK.md)
+6. [Scheduled Tasks Model](workflows/SCHEDULED_TASKS_MODEL.md)
+7. [Weekly Proof-of-Work Compiler Prompt](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md)
+8. [Source Index Refresh Prompt](prompts/SOURCE_INDEX_REFRESH_PROMPT.md)
+9. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) as an example of a lead-project handoff file
+
+Do not copy Marcus-specific claims, project evidence, screenshots, local paths, or source summaries into another user's repository. Use the structure, evidence labels, and maintenance loops as the reusable parts.
+
 ## Important Interpretation Rules
 
 - Treat job-agent as the lead proof point.
@@ -51,6 +69,7 @@ Assess Marcus’s practical evidence for:
 |---|---|
 | Product execution | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [PROJECT_STATUS.md](PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 | Reproducible product handoff | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [SOURCE_MAP.md](SOURCE_MAP.md) |
+| Reusable proof-of-work template | [template/README.md](template/README.md), [template/REPO_SEED_BLUEPRINT.md](template/REPO_SEED_BLUEPRINT.md), [template/LLM_BOOTSTRAP_REPO_PROMPT.md](template/LLM_BOOTSTRAP_REPO_PROMPT.md), [workflows/SCHEDULED_TASKS_MODEL.md](workflows/SCHEDULED_TASKS_MODEL.md) |
 | Product judgment | [strategy/job-agent/product/PRODUCT_STRATEGY.md](strategy/job-agent/product/PRODUCT_STRATEGY.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | QA discipline | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
 | AI-native workflow design | [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
@@ -73,3 +92,4 @@ Avoid:
 - citing local-only indexes as if they are public artifacts
 - overstating business impact
 - exposing private/sensitive source material
+- treating the template layer as permission to reuse private evidence

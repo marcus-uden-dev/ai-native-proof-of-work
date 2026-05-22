@@ -46,7 +46,7 @@ Recommended path:
 
 If you are using an assistant or recruiter-side agent, start with [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
 
-If you want to recreate this repository architecture for another person or organization, start with [Repository Seed Blueprint](REPO_SEED_BLUEPRINT.md). It is standalone, LLM-agnostic, and can be pasted into another assistant as the seed instruction.
+If you want to recreate this repository architecture for another person or organization, use the [Template Adoption Kit](template/README.md). It is the secondary clone/fork layer and keeps template material separate from the recruiter reading path.
 
 ## What to Look For
 

@@ -11,6 +11,8 @@ This repository is not a codebase and it is not the product.
 
 It is a polished, recruiter-shareable documentation repository showing concrete product execution first, especially job-agent, with PKM and the household budget app as supporting proof points. The repository is the evidence and packaging layer around those products. It also shows how Marcus thinks, builds, evaluates, documents, and improves workflows using Claude, Codex, scheduled tasks, GitHub, local project archives, shared skills, and structured review loops.
 
+Reusable clone/fork/template adoption material belongs under `template/` so the main repository surface stays recruiter-first.
+
 ## Target Repository
 
 Canonical GitHub repository:
@@ -223,6 +225,11 @@ case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md
 RECRUITER_BRIEF.md
 PORTFOLIO_CASE_STUDY.md
 DEMO_SCRIPT.md
+template/README.md
+template/REPO_SEED_BLUEPRINT.md
+template/IMPORT_INSTRUCTIONS.md
+template/LLM_BOOTSTRAP_REPO_PROMPT.md
+template/WEEKLY_AUTOMATION_RUNBOOK.md
 logs/WEEKLY_LOG.md
 logs/CHANGELOG.md
 logs/PROBLEM_SOLVING_LOG.md
@@ -246,10 +253,11 @@ If the repository is empty or incomplete:
 5. Add `.gitignore`.
 6. Add [START_HERE.md](START_HERE.md).
 7. Add initial Mermaid diagrams.
-8. Add placeholder sections where evidence is missing.
-9. Do not fabricate completed work.
-10. Mark unknowns clearly.
-11. Return a list of missing inputs needed for the next run.
+8. Add `template/` with clone/fork adoption instructions if the repository should be reusable by other users.
+9. Add placeholder sections where evidence is missing.
+10. Do not fabricate completed work.
+11. Mark unknowns clearly.
+12. Return a list of missing inputs needed for the next run.
 
 ## Evidence Labels
 
@@ -408,17 +416,18 @@ Before completing any weekly run, verify:
 11. Keep recruiter-facing documents readable without technical background.
 12. Keep technical documents available for deeper review.
 13. Keep source-project install and LLM handoff instructions accurate enough that another user or assistant can reproduce the lead project locally.
-14. Separate static strategy from weekly updates.
-15. Keep product strategy project-scoped under `strategy/<project>/` with the canonical `product/`, `business/`, `market/`, and `decisions/` subfolders; do not make strategy docs read as though the portfolio evidence layer is the product unless the file is explicitly about the portfolio operating system.
-16. Record meaningful strategy or architecture changes in the decision log.
-17. Prioritize substance over volume.
-18. Check source indexes before rescanning local roots.
-19. Refresh stale source indexes when necessary.
-20. Summarize local sources; do not dump raw content.
-21. Respect Marcus’s custom shared-skills setup.
-22. Treat `.agents` as potentially important but structurally non-standard.
-23. Treat `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` as the canonical repository.
-24. If not running inside the repo, report that limitation before attempting edits.
+14. Keep clone/fork/template adoption material under `template/` so the main root and recruiter navigation stay focused.
+15. Separate static strategy from weekly updates.
+16. Keep product strategy project-scoped under `strategy/<project>/` with the canonical `product/`, `business/`, `market/`, and `decisions/` subfolders; do not make strategy docs read as though the portfolio evidence layer is the product unless the file is explicitly about the portfolio operating system.
+17. Record meaningful strategy or architecture changes in the decision log.
+18. Prioritize substance over volume.
+19. Check source indexes before rescanning local roots.
+20. Refresh stale source indexes when necessary.
+21. Summarize local sources; do not dump raw content.
+22. Respect Marcus’s custom shared-skills setup.
+23. Treat `.agents` as potentially important but structurally non-standard.
+24. Treat `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` as the canonical repository.
+25. If not running inside the repo, report that limitation before attempting edits.
 
 ## Weekly Final Response Format
 

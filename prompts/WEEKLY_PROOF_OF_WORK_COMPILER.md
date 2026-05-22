@@ -2,6 +2,8 @@
 
 Use this prompt in Codex from the root of `TheOneDarkHorse/ai-native-proof-of-work`.
 
+The active weekly schedule and recreation contract are documented in [../template/WEEKLY_AUTOMATION_RUNBOOK.md](../template/WEEKLY_AUTOMATION_RUNBOOK.md).
+
 ```text
 Run the weekly Proof-of-Work Compiler for this private GitHub portfolio evidence repository.
 
@@ -42,6 +44,7 @@ Before editing, inspect:
 22. workflows/
 23. diagrams/
 24. case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md
+25. template/
 
 If internal local source indexes are available, inspect them:
 - internal/LOCAL_SOURCE_MAP.md
@@ -80,6 +83,7 @@ Create or update:
 24. Claude + Codex workflow philosophy updates if changed
 25. local source index updates if needed and available
 26. lead source repo install and LLM handoff guide updates when setup, dependencies, ports, validation commands, or agent entrypoints changed
+27. template adoption files under `template/` when clone/fork guidance, bootstrap prompts, automation recreation, or reusable-template rules change
 
 Focus on:
 - practical execution

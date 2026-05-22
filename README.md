@@ -59,7 +59,7 @@ flowchart TD
 |---|---|
 | [Navigation Hub](NAVIGATION.md) | Plain-English navigation hub for recruiters |
 | [START_HERE.md](START_HERE.md) | Fast recruiter-readable entry point |
-| [REPO_SEED_BLUEPRINT.md](REPO_SEED_BLUEPRINT.md) | Standalone, LLM-agnostic seed for recreating this repo architecture and automation model for another user |
+| [llms.txt](llms.txt) | Machine-readable repository map for LLM assistants |
 | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) | One-screen recruiter overview |
 | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) | Agent-readable guide for recruiter-side assistants |
 | [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | High-level positioning and current status |
@@ -72,7 +72,6 @@ flowchart TD
 | [case-studies/](case-studies/) | Sanitized project case studies |
 | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Practical install and LLM handoff guide for the lead product repo |
 | [weekly-input/](weekly-input/) | Clean weekly input layer for progress, decisions, blockers, and business insights |
-| [IMPORT_INSTRUCTIONS.md](IMPORT_INSTRUCTIONS.md) | Practical import and bootstrap instructions |
 | [strategy/](strategy/) | Project-scoped strategy for job-agent, PKM, household budget app, and the portfolio operating layer |
 | [architecture/](architecture/) | System design, ingestion, autoresearch, recursive workflows |
 | [workflows/](workflows/) | Claude/Codex workflow, AI operating model, scheduled tasks |
@@ -80,6 +79,7 @@ flowchart TD
 | [logs/](logs/) | Weekly diary, decisions, changelog, problem-solving log |
 | [recruiter-assets/](recruiter-assets/) | CV bullets, recruiter summary, LinkedIn drafts, interview talking points |
 | [exports/](exports/) | Optional recruiter-readable exports |
+| [template/](template/) | Secondary clone/fork adoption kit for users who want to reuse the system |
 | [internal/](internal/) | Local source maps and indexes; not recruiter-facing |
 
 ---

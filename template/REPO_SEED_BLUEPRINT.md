@@ -35,6 +35,48 @@ The target repository should document:
 
 This is not a codebase template. It is a documentation, evidence, and operating-system template.
 
+## One-Click Clone Goal State
+
+Goal state: a new user should be able to clone or fork this repository, give an LLM assistant one bootstrap instruction, and end up with the same kind of proof-of-work system.
+
+A clone can reproduce:
+
+- repository architecture
+- Markdown file structure
+- evidence labels
+- decision-trail format
+- recruiter and agent reading paths
+- weekly compiler prompts
+- source-indexing prompts and templates
+- automation runbooks
+- privacy and sharing rules
+- lead-project handoff pattern
+- reusable template guidance
+- the pattern for connecting the proof-of-work repo to the user's own product repositories
+
+A clone cannot automatically reproduce:
+
+- private product evidence
+- Marcus's product repositories or weekly updates
+- local source indexes
+- scheduler state from another machine
+- GitHub permissions
+- secrets, tokens, or credentials
+- local paths, worktrees, or raw chat histories
+- access to private source repositories
+
+The expected path is therefore:
+
+1. Clone or fork the repository.
+2. Replace user/project placeholders.
+3. Run the LLM-agnostic bootstrap prompt.
+4. Point the proof-of-work system at the user's own product repositories, case studies, screenshots, source roots, and weekly input.
+5. Add local source roots only if the user explicitly wants source indexing.
+6. Recreate the weekly automation from [WEEKLY_AUTOMATION_RUNBOOK.md](WEEKLY_AUTOMATION_RUNBOOK.md), using the user's own repository URL, source repos, and automation runner.
+7. Add real weekly input and evidence before promoting claims.
+
+The target is functional equivalence, not private-data equivalence.
+
 ## LLM-Agnostic Contract
 
 This seed should not depend on Codex, Claude, ChatGPT, Gemini, Cursor, GitHub Copilot, or any other specific model, agent, plugin, scheduler, operating system, or IDE.
@@ -88,10 +130,14 @@ Replace these placeholders for the target user:
 - USER_NAME: <user name>
 - CANONICAL_REPO_URL: <GitHub repository URL>
 - LEAD_PROJECT: <main proof-point project>
+- LEAD_PROJECT_REPO_URL: <main product/source repository URL>
 - SUPPORTING_PROJECT_1: <supporting project>
+- SUPPORTING_PROJECT_1_REPO_URL: <optional supporting product/source repository URL>
 - SUPPORTING_PROJECT_2: <supporting project>
+- SUPPORTING_PROJECT_2_REPO_URL: <optional supporting product/source repository URL>
 - TARGET_ROLES: <target roles or role families>
 - LOCAL_SOURCE_ROOTS: <optional local source folders to index, if available>
+- AUTOMATION_RUNNER: <scheduler or automation tool, if available>
 
 Repository positioning:
 - Concrete projects are the primary proof.
@@ -100,6 +146,8 @@ Repository positioning:
 - Automation, source indexes, weekly compiler, prompts, and review loops are documented operating infrastructure.
 - The repository is the evidence layer, not the product being evaluated.
 - Recruiter-facing files should summarize evidence without exposing private local material.
+- Weekly updates should come from the target user's own product repositories, weekly-input notes, screenshots, source summaries, commits, and explicit evidence.
+- Do not keep references to Marcus, TheOneDarkHorse/job-agent, PKM, or the household budget app unless the target user is intentionally documenting those exact projects.
 
 Create or update this root file scaffold:
 - .gitignore
@@ -107,8 +155,6 @@ Create or update this root file scaffold:
 - README.md
 - START_HERE.md
 - NAVIGATION.md
-- REPO_SEED_BLUEPRINT.md
-- IMPORT_INSTRUCTIONS.md
 - AUTOMATION_PROMPT.md
 - EXECUTIVE_SUMMARY.md
 - RECRUITER_ONE_PAGER.md
@@ -137,9 +183,17 @@ Create or update these folders:
 - prompts/
 - recruiter-assets/
 - strategy/
+- template/
 - tasks/
 - weekly-input/
 - workflows/
+
+Create clone/fork template files:
+- template/README.md
+- template/REPO_SEED_BLUEPRINT.md
+- template/IMPORT_INSTRUCTIONS.md
+- template/LLM_BOOTSTRAP_REPO_PROMPT.md
+- template/WEEKLY_AUTOMATION_RUNBOOK.md
 
 Create project strategy structure:
 - strategy/README.md
@@ -218,7 +272,6 @@ Create recruiter assets:
 Create prompt files:
 - prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md
 - prompts/SOURCE_INDEX_REFRESH_PROMPT.md
-- prompts/LLM_BOOTSTRAP_REPO_PROMPT.md
 - prompts/CODEX_BOOTSTRAP_REPO_PROMPT.md if the user specifically uses Codex
 
 Create internal templates:
@@ -293,9 +346,10 @@ Lead project handoff files must answer:
 Automations to document and seed:
 1. Weekly Proof-of-Work Compiler
    Purpose: turn weekly project progress into recruiter-readable evidence.
-   Input: weekly-input/, repo-visible changes, safe source summaries, logs, project docs.
+   Input: weekly-input/, target user's product repo changes, safe source summaries, logs, project docs, screenshots, and explicit user-provided evidence.
    Output: updated proof-of-work docs, recruiter assets, lead project install/handoff docs, weekly log, changelog, decision log when needed.
    Prompt file: prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md
+   Runbook: template/WEEKLY_AUTOMATION_RUNBOOK.md
    Schedule suggestion: weekly.
 
 2. Source Index Refresh
@@ -327,6 +381,7 @@ Weekly compiler behavior:
 - Inspect AGENTS.md first.
 - Inspect weekly-input/ before promoting new claims.
 - Cross-check SOURCE_MAP.md, PROJECT_STATUS.md, PROJECT_PROOF_POINTS.md, PROJECT_TIMELINE.md, PROOF_OF_WORK.md, EVIDENCE_MATRIX.md, ROLE_READING_PATHS.md, case-studies/, logs/, strategy/, architecture/, workflows/, and diagrams/.
+- Cross-check target user's own product repositories when available and authorized.
 - If no verified new source material exists, do not invent progress.
 - Add a weekly log entry only when there is verified input, repo-visible change, or an explicit "no verified new source material" record.
 - Static strategy files should change only when strategy, positioning, architecture, or operating assumptions changed.
@@ -346,7 +401,7 @@ Quality gate before completion:
 - Recruiter-facing docs do not expose private local paths or secrets.
 - Evidence claims are labeled.
 - Missing evidence is marked clearly.
-- Repository can be understood from START_HERE.md, NAVIGATION.md, and REPO_SEED_BLUEPRINT.md.
+- Repository can be understood from START_HERE.md, NAVIGATION.md, and template/README.md.
 - Automation prompts are present and reusable.
 - Final response lists updated files, new artifacts, verification run, failures, unverified items, and one next action.
 
@@ -363,7 +418,8 @@ If the target LLM has limited time, create these files first:
 | `README.md` | Public-facing repo overview |
 | `START_HERE.md` | Fast human entry point |
 | `NAVIGATION.md` | Reading map |
-| `REPO_SEED_BLUEPRINT.md` | Standalone reproduction seed |
+| `template/README.md` | Clone/fork adoption kit |
+| `template/REPO_SEED_BLUEPRINT.md` | Standalone reproduction seed |
 | `PROOF_OF_WORK.md` | Central evidence map |
 | `PROJECT_STATUS.md` | Current state by project |
 | `PROJECT_PROOF_POINTS.md` | Strongest evidence by project |
@@ -375,8 +431,9 @@ If the target LLM has limited time, create these files first:
 | `logs/DECISION_LOG.md` | Strategy and architecture decisions |
 | `prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md` | Recurring weekly compiler prompt |
 | `prompts/SOURCE_INDEX_REFRESH_PROMPT.md` | Local source indexing prompt |
-| `prompts/LLM_BOOTSTRAP_REPO_PROMPT.md` | Provider-neutral bootstrap prompt |
+| `template/LLM_BOOTSTRAP_REPO_PROMPT.md` | Provider-neutral bootstrap prompt |
 | `workflows/SCHEDULED_TASKS_MODEL.md` | Automation model |
+| `template/WEEKLY_AUTOMATION_RUNBOOK.md` | Weekly automation schedule and recreation path |
 
 ## Growth Model
 
@@ -403,11 +460,13 @@ flowchart TD
 When another user adopts this seed:
 
 - replace project names before creating strategy and case-study files
+- replace source repository URLs with the user's own repositories
+- point weekly automation at the user's own evidence sources, not Marcus's repositories
 - keep the proof-of-work repo separate from product repos
 - keep private source indexes out of recruiter-facing docs
 - use examples only as structure, not as copied evidence
 - replace tool-specific names with neutral concepts unless a tool-specific adapter is actually needed
-- update `REPO_SEED_BLUEPRINT.md` when the system learns a better bootstrapping pattern
+- update `template/REPO_SEED_BLUEPRINT.md` when the system learns a better bootstrapping pattern
 - keep the seed standalone so it can travel without the original repo
 
 ## Common Failure Modes
@@ -418,7 +477,7 @@ When another user adopts this seed:
 | Automation overshadows project work | Keep concrete projects as the primary proof |
 | Claims become inflated | Use evidence labels and avoid fake metrics |
 | Private context leaks | Keep raw source indexes internal and gitignored |
-| LLM cannot find the seed | Link this file from `README.md`, `START_HERE.md`, `NAVIGATION.md`, and `IMPORT_INSTRUCTIONS.md` |
+| LLM cannot find the seed | Link `template/README.md` from `README.md`, `START_HERE.md`, and `NAVIGATION.md` |
 | Seed becomes vendor-specific | Keep the core prompt provider-neutral and treat tool-specific files as adapters |
 | Strategy gets mixed across projects | Keep strategy under `strategy/<project>/` |
 | Weekly runs invent progress | Require weekly input, repo-visible changes, or explicit no-new-evidence status |
