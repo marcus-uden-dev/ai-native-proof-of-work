@@ -1,5 +1,56 @@
 # Weekly Log
 
+## Weekly Compiler Sync — 2026-05-24
+
+### 1. Executive Summary
+
+Ran the weekly Proof-of-Work Compiler using verified repo-visible changes plus direct source-file inspection of the local `job-agent` worktree.
+
+No dated weekly-input file existed for the current week, so this pass did not invent new project progress. It promoted only what could be verified from the two repository commits after the last run and from current `job-agent` source files, docs, and config.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| `job-agent` install and LLM handoff guide | Lead-project handoff | Verified | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Makes the strongest proof point easier for a reviewer or LLM to reproduce without guessing |
+| Template adoption layer | Reusable operating model | Verified | [template/README.md](../template/README.md), [template/REPO_SEED_BLUEPRINT.md](../template/REPO_SEED_BLUEPRINT.md), [template/WEEKLY_AUTOMATION_RUNBOOK.md](../template/WEEKLY_AUTOMATION_RUNBOOK.md) | Shows that the portfolio system is reusable without copying Marcus-specific evidence |
+| Machine-readable reviewer map | LLM navigation | Verified | [llms.txt](../llms.txt) | Helps technical reviewers and assistants inspect the repo quickly |
+| Project-first evidence docs | Documentation | Verified | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) | Keeps recruiter summaries aligned with the latest verified evidence |
+| Decision and problem logs | Governance | Decision / Verified | [logs/DECISION_LOG.md](DECISION_LOG.md), [logs/PROBLEM_SOLVING_LOG.md](PROBLEM_SOLVING_LOG.md) | Shows judgment about reuse boundaries and handoff-quality control |
+
+### 3. Workflow Improvement
+
+| Before | After | Improvement | Evidence |
+|---|---|---|---|
+| Lead-project handoff could drift from the actual source repo | Weekly compiler now re-checks actual source files before promoting setup claims | Lower risk of recruiter-facing setup drift | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/PROBLEM_SOLVING_LOG.md](PROBLEM_SOLVING_LOG.md) |
+| Reusable bootstrap material was present but under-documented in the weekly story | Template files, runbook, and `llms.txt` are now reflected in the evidence layer | Clearer separation between recruiter review and reusable system adoption | [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md), [logs/DECISION_LOG.md](DECISION_LOG.md) |
+
+### 4. Source Inputs Used
+
+| Source | Used? | Notes |
+|---|---|---|
+| `weekly-input/` dated file | No | No dated weekly-input file existed for the current week |
+| Repo-visible changes since last run | Yes | Commits `657754b` and `962e968` |
+| Internal source indexes | No | Templates exist, populated local indexes are unavailable in this repo |
+| Local `job-agent` source files | Yes | Verified docs, env examples, compose, Makefile, package metadata, requirements, and migrations |
+
+### 5. Key Verified Job-Agent Signals
+
+- `docs/operations/current-status.md` in the source repo reports MVP complete, career-ops done, and OAuth social auth landed on master across 2026-05-13 to 2026-05-16.
+- The inspected worktree contains root `.env.example`, `backend/.env.example`, `docker-compose.yml`, `Makefile`, `frontend/package.json`, backend requirements files, and the Alembic migration tree.
+- The inspected worktree does not contain `.claude/CLAUDE.md` or `docs/setup/llm-handoff.md`, so those claims were removed from the portfolio handoff guide.
+- Source-repo automation notes from 2026-05-18 flag remaining repo-ops cleanup: stale agent docs, a Windows local-env blocker for tests, and one hash-named migration anomaly that still needs investigation.
+
+### 6. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 7. Next Action
+
+Create one dated weekly-input file with a source-verified `job-agent` update and one recruiter-safe test or commit excerpt.
+
+---
+
 ## Project Positioning Correction — 2026-05-09
 
 ### 1. Executive Summary

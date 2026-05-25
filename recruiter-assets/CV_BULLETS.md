@@ -1,11 +1,12 @@
 # CV Bullets
 
-Last updated: 2026-05-11
+Last updated: 2026-05-24
 Status: Drafts / Project-focused
 
 ## Product Execution
 
 - Built and documented a job-agent career workflow product spanning CV generation, job discovery, application support, interview/practice flows, feedback capture, privacy/data-rights planning, QA coverage, deployment planning, telemetry, and billing considerations.
+- Maintained a source-verified install and LLM handoff path for the lead `job-agent` repo, covering Docker/local setup, env boundaries, service map, validation commands, and agent entrypoints.
 - Developed supporting product systems across a PKM app and household budget app, demonstrating knowledge ingestion/search workflows, financial domain modeling, shared household data access, import/review flows, and test-backed implementation.
 
 ## Product Operations
@@ -20,6 +21,7 @@ Status: Drafts / Project-focused
 
 - Designed an AI-native operating model using Claude, Codex, GitHub, scheduled reviews, and local source indexing to move from product work to evidence-backed documentation without exposing private project internals.
 - Created a local source-indexing model that separates project execution, planning, and reusable workflow infrastructure before promoting claims into recruiter-facing artifacts.
+- Built a provider-neutral template layer so the proof-of-work system can be reused without copying Marcus-specific evidence, local paths, or tool assumptions.
 
 ## Customer Outcome / AI Adoption
 

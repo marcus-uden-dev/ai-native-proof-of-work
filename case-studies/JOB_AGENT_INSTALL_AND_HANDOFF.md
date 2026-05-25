@@ -1,6 +1,6 @@
 # Job-Agent Install And Handoff Guide
 
-Last updated: 2026-05-18
+Last updated: 2026-05-24
 Status: Active / Recruiter-facing / LLM-readable
 
 ## Purpose
@@ -19,7 +19,7 @@ This file should stay safe to share. It summarizes install steps, expected local
 | Primary proof role | Lead product proof point |
 | Product type | Local-first job search automation app |
 | Main stack | FastAPI, PostgreSQL with pgvector, Redis/Celery, Next.js |
-| Evidence label | Verified from repo documentation |
+| Evidence label | Verified from inspected local source files on 2026-05-24 |
 
 ## What The App Contains
 
@@ -60,7 +60,7 @@ git clone https://github.com/TheOneDarkHorse/job-agent.git
 cd job-agent
 ```
 
-Create the root environment file:
+Create the root environment file for Docker Compose:
 
 ```powershell
 Copy-Item .env.example .env
@@ -107,19 +107,18 @@ If an LLM agent is entering the `job-agent` repo cold, start with these files:
 
 1. `AGENTS.md`
 2. `CLAUDE.md`
-3. `.claude/CLAUDE.md`
-4. `docs/overview/agent-context.md`
-5. `docs/operations/current-status.md`
-6. `docs/setup/llm-handoff.md`
-7. `DESIGN.md` before UI work
-8. `tasks/lessons.md` before changing an area with prior lessons
+3. `docs/overview/agent-context.md`
+4. `docs/operations/current-status.md`
+5. `docs/HANDOVER.md` for prior session context when needed
+6. `DESIGN.md` before UI work
+7. `tasks/lessons.md` before changing an area with prior lessons
 
 Then check actual state:
 
 ```powershell
 git status --short --branch
 git log --oneline -5
-Get-ChildItem backend\alembic\versions\*.py | Measure-Object
+(Get-ChildItem backend\alembic\versions\*.py | Measure-Object).Count
 ```
 
 ## Direct Backend Run
@@ -134,6 +133,12 @@ python -m venv .venv
 Copy-Item .env.example .env
 .\.venv\Scripts\python.exe -m alembic upgrade head
 .\.venv\Scripts\python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+```
+
+Create the backend environment file for host-based runs:
+
+```powershell
+Copy-Item .env.example .env
 ```
 
 For host-based backend runs, URLs should use `localhost`:
@@ -152,7 +157,7 @@ npm ci
 npm run dev
 ```
 
-Default frontend API origin is expected to be `http://localhost:8000`.
+The frontend reads `NEXT_PUBLIC_API_URL` and defaults to `http://localhost:8000`.
 
 If port `3000` is already busy:
 
@@ -198,8 +203,8 @@ Invoke-WebRequest http://localhost:8000/health
 | Backend in Docker cannot reach Postgres | `.env` uses `localhost` from inside a container | Use `db` as the host |
 | Host-based backend cannot reach Postgres | `.env` uses Compose hostname from outside Docker | Use `localhost` as the host |
 | Frontend points at the wrong API | missing or stale `NEXT_PUBLIC_API_URL` | set it to `http://localhost:8000` |
-| Migrations look inconsistent | docs or local branch are stale | check `backend/alembic/versions/` and run Alembic head |
-| Agent starts from raw files | skipped repo instructions | read `AGENTS.md`, `CLAUDE.md`, and `.claude/CLAUDE.md` first |
+| Migrations look inconsistent | docs or local branch are stale, or the migration tree needs review | check `backend/alembic/versions/`, run Alembic head, and verify the current-status note about the hash-named migration anomaly |
+| Agent starts from raw files | skipped repo instructions | read `AGENTS.md`, `CLAUDE.md`, `docs/overview/agent-context.md`, and `docs/operations/current-status.md` first |
 
 ## What Not To Copy
 
@@ -226,6 +231,16 @@ This handoff guide matters because it turns `job-agent` from a private source re
 - another LLM can enter the repo without guessing the first files to read
 - a collaborator can reproduce the setup path
 - the proof-of-work repository can point to product execution without dumping private local context
+
+## Source Verification Notes
+
+This guide was checked against the inspected `job-agent` source tree on 2026-05-24.
+
+- Verified present: `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`, `docs/overview/agent-context.md`, `docs/operations/current-status.md`, `docs/HANDOVER.md`, root `.env.example`, `backend/.env.example`, `docker-compose.yml`, `Makefile`, `frontend/package.json`, `backend/requirements.txt`, `backend/requirements-dev.txt`, and `backend/alembic/versions/`.
+- Verified absent in the inspected worktree: `.claude/CLAUDE.md` and `docs/setup/llm-handoff.md`.
+- Current repo-status docs report sequential Alembic head `0042_oauth_connections.py`; the source tree also contains one hash-named migration file that still needs repo-side investigation.
+
+If a future weekly run cannot verify these paths or commands from the source repo, mark the affected claim `Needs Review`.
 
 ## Maintenance Rule
 

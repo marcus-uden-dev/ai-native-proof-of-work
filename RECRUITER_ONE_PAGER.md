@@ -1,6 +1,6 @@
 # Recruiter One-Pager
 
-Last updated: 2026-05-11
+Last updated: 2026-05-24
 Status: Active / Recruiter-facing
 
 ## Positioning
@@ -11,16 +11,17 @@ AI-native product builder focused on career workflow products, knowledge systems
 
 | Proof Point | Why It Matters | Start Here |
 |---|---|---|
-| Job-agent | Strongest product evidence: career workflow product with CV, discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) |
+| Job-agent | Strongest product evidence: career workflow product with CV, discovery, application support, feedback, privacy, QA, deployment, telemetry, billing planning, and a reproducible handoff path | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) and [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
 | PKM | Shows knowledge workflow design, ingestion/search thinking, learning surfaces, feature lifecycle discipline, and prioritization | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) |
 | Household budget app | Shows financial domain modeling, shared household access, import/review flows, forecasting, goals, and test-backed product thinking | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
-| Portfolio evidence workflow | Shows how project evidence is captured, reviewed, summarized, and kept recruiter-safe over time | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md) |
+| Portfolio evidence workflow | Shows how project evidence is captured, reviewed, summarized, kept recruiter-safe over time, and adapted into a provider-neutral template layer | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [template/README.md](template/README.md) |
 
 ## What To Look For
 
 - Full-stack product execution, especially in job-agent.
 - Evidence discipline: claims are labeled as `Verified`, `Internal / Verified`, `Estimated`, `Hypothesis`, or `Open Question`.
 - Privacy-aware documentation: raw local paths, chats, and sensitive details are summarized rather than exposed.
+- Reproducible lead-project handoff: the job-agent setup and agent-entry files are checked against the source repo before they are promoted here.
 - AI-native operating method: Claude, Codex, source indexes, scheduled reviews, and decision logs are used as a practical workflow system.
 - Product judgment: open questions and blockers are shown instead of hidden.
 

@@ -1,5 +1,24 @@
 # Changelog
 
+## 2026-05-24 — Weekly proof-of-work sync and handoff verification
+
+### Added
+
+- Weekly compiler log entry for the 2026-05-24 run.
+- Decision-log entry for keeping the reusable seed template-scoped and provider-neutral.
+- Problem-solving log entry for source-verifying the `job-agent` handoff guide.
+- Lesson requiring source verification before updating lead-project handoff docs.
+
+### Changed
+
+- Re-verified [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) against inspected `job-agent` source files and removed nonexistent agent-entry claims.
+- Updated [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), and [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) to reflect the reusable template layer and the latest source-verified `job-agent` status.
+- Refreshed recruiter assets to mention the reproducible handoff layer and provider-neutral template model.
+
+### Notes
+
+No dated weekly-input file existed for the current week, so this sync used verified repo-visible changes plus inspected `job-agent` source files only.
+
 ## 2026-05-11 — Project-scoped strategy structure
 
 ### Added

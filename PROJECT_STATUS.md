@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-05-11
+Last updated: 2026-05-24
 Status: Active / Recruiter-facing summary
 
 ## Purpose
@@ -13,10 +13,10 @@ It is a recruiter-safe status layer. It does not expose private local paths, raw
 
 | Project / Layer | Current State | Recent Progress | Main Open Work | Evidence Status |
 |---|---|---|---|---|
-| Job-agent | MVP complete in local project status; career-ops tasks marked done; remaining work is mainly infra, production activation, pricing/legal decisions, and external verification | Shared job-postings cleanup, privacy/GDPR surfaces, feedback system, live local verification, discover regression fix, CI workflows, telemetry/billing planning, OAuth/social-auth code path | Production deploy, public backend origin, OTel/Grafana setup, Stripe live activation, final legal review, real third-party ATS smoke checks, selected public-safe screenshots/test references | Internal / Verified |
+| Job-agent | MVP complete in local project status; career-ops tasks marked done; remaining work is mainly infra, production activation, pricing/legal decisions, external verification, and a small repo-ops follow-up set | Shared job-postings cleanup, privacy/GDPR surfaces, feedback system, live local verification, discover regression fix, CI workflows, telemetry/billing planning, and OAuth/social-auth landing on master are reflected in the source-repo status docs | Production deploy, public backend origin, OTel/Grafana setup, Stripe live activation, final legal review, real third-party ATS smoke checks, selected public-safe screenshots/test references, and repo-side migration/doc-drift cleanup | Internal / Verified |
 | PKM | Knowledge-workflow product surfaces are represented, but operational blockers remain before full daily use | Ingestion/search/learning/feed/source/person/topic surfaces are represented; feature workflow is explicit; social feed feature is marked done in the queue; Chrome extension exists for browser capture | OpenAI billing/embedding quota, frontend URL cleanup, SMTP setup, Hetzner deployment, source/person/topic setup, search/flashcard/extension/MCP verification | Internal / Verified |
 | Household budget app | Active product with core surfaces and a large household/shared-account hardening track | Household scope is threaded across major pages; owner/member/admin flows, invite onboarding, shared-account ownership rules, read-model/view-model extraction, and mutation helper extraction have progressed significantly | Finish post-hardening household migration cleanup, remove legacy migration debt, validate ownership hardening end-to-end in Supabase, split future modeling into smaller landing slices | Internal / Verified |
-| Portfolio evidence repository | GitHub-ready documentation and review layer for the product portfolio | Project-first positioning, recruiter/agent review layer, evidence matrix, navigation hub, case studies, timeline, and diagram rendering fixes are in place | Add sanitized screenshots, safe test/commit excerpts, and first curated recruiter export after privacy review | Verified |
+| Portfolio evidence repository | GitHub-ready documentation and review layer for the product portfolio | Project-first positioning, recruiter/agent review layer, evidence matrix, navigation hub, case studies, a provider-neutral template kit, `llms.txt`, and source-verified handoff guidance are in place | Add sanitized screenshots, safe test/commit excerpts, and first curated recruiter export after privacy review | Verified |
 
 ## Job-Agent Status
 
@@ -30,6 +30,8 @@ Current status from local project status docs:
 - Privacy/GDPR work is locally implemented but still needs legal review before production enablement.
 - Feedback and UX signals are implemented across backend API, AI-output feedback, product rating, and admin visibility.
 - Local QA includes backend regression checks, Playwright coverage against real local services, discover regression tests, migration smokes, and CI workflow setup.
+- Source-repo status docs updated on 2026-05-17 report that OAuth social auth landed on master across six commits from 2026-05-13 to 2026-05-16.
+- Source-repo automation audit notes on 2026-05-18 flag remaining repo-ops cleanup: stale agent docs, a Windows local-env blocker for test loops, and one hash-named migration file that needs investigation.
 - Remaining work is mostly external or production-facing: hosting, domain, OTel/Grafana, Stripe live, OAuth credentials, legal review, and final destructive data-rights workflows.
 
 Recruiter signal:
@@ -82,6 +84,8 @@ Current status:
 - Evidence matrix, role reading paths, case studies, milestone timeline, and before/after snapshots are available.
 - Mermaid diagrams have been adjusted for safer GitHub rendering.
 - The weekly compiler and source-indexing automation remain documented as the operating layer.
+- The reusable `template/` adoption layer and weekly automation runbook now give another user a provider-neutral path to recreate the system without copying Marcus-specific evidence.
+- `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md` has been re-checked against inspected `job-agent` source files so it reflects actual setup files and avoids nonexistent agent-entrypoint claims.
 
 ## Evidence Boundaries
 

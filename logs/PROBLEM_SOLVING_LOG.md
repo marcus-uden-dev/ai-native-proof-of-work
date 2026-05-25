@@ -1,5 +1,38 @@
 # Problem-Solving Log
 
+## 2026-05-24 — Job-agent handoff drifted from the source repo
+
+### Problem
+
+The recruiter-facing handoff guide for `job-agent` referenced agent-entry files that are not present in the inspected source worktree and mixed together root, backend, and frontend setup assumptions.
+
+### Cause
+
+The handoff file had been updated faster than it was re-verified against the actual source repo. Older assumptions about `.claude/CLAUDE.md` and `docs/setup/llm-handoff.md` were carried forward without checking the current tree.
+
+### Attempted Fixes
+
+- Re-inspected the `job-agent` source tree directly.
+- Checked env examples, `docker-compose.yml`, `Makefile`, `frontend/package.json`, backend requirements, migration files, and current-status docs.
+- Removed nonexistent handoff entrypoints and clarified which env examples belong to Docker Compose versus host-based backend runs.
+- Added source-verification notes to the handoff guide so future runs can detect drift faster.
+
+### Resolution
+
+`case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md` now reflects the inspected source tree and explicitly marks what was verified present, what was absent, and which migration-status claim still needs repo-side investigation.
+
+### Lesson
+
+Lead-project handoff docs must be source-verified from actual files and config, not inferred from older repo conventions or adjacent docs.
+
+### Reusable Rule
+
+```text
+Before promoting setup or agent-entry claims into recruiter-facing handoff docs, verify the exact files, commands, env examples, ports, and validation paths from the current source repo.
+```
+
+---
+
 ## 2026-05-09 — Automation layer overshadowed project evidence
 
 ### Problem

@@ -1,6 +1,6 @@
 # Interview Talking Points
 
-Last updated: 2026-05-11
+Last updated: 2026-05-24
 Status: Active / Project-focused
 
 ## 1. Job-agent as the lead proof point
@@ -40,3 +40,7 @@ Sensitive information is excluded, redacted, or generalized before anything beco
 ## 9. Source separation
 
 I keep Codex execution evidence, Claude planning evidence, and shared skills/workflow infrastructure separate so claims can be traced to the right kind of source.
+
+## 10. Reproducible handoff discipline
+
+For the lead project, I keep a recruiter-safe install and LLM handoff guide current and re-check it against the actual source repo so the setup path does not drift into guesswork.

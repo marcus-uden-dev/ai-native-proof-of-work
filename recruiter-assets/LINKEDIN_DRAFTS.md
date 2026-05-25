@@ -1,6 +1,6 @@
 # LinkedIn Drafts
 
-Last updated: 2026-05-11
+Last updated: 2026-05-24
 Status: Drafts / Not published
 
 ## Draft — 2026-05-09
@@ -54,3 +54,54 @@ Low
 ### Evidence
 
 Verified by the committed private repository scaffold and internal project source indexes. Keep the post unpublished until the repo is reviewed for sharing and any private context is removed.
+
+## Draft — 2026-05-24
+
+### Topic
+
+Why a lead-project handoff guide matters in a proof-of-work repo.
+
+### Draft
+
+One failure mode in AI-assisted product work is that the story gets cleaner while the setup path gets fuzzier.
+
+That is a bad trade if you want another person to evaluate the work seriously.
+
+This week I tightened the handoff layer for the lead project in my proof-of-work repo by re-checking the actual source tree instead of trusting memory:
+
+- env examples
+- compose setup
+- Makefile commands
+- package metadata
+- backend requirements
+- migration tree
+- agent entry files
+
+The useful outcome is not "more docs."
+
+It is less drift between:
+
+```text
+what the portfolio claims
+and
+what the source repo actually supports
+```
+
+That is one of the most practical uses of AI in documentation work:
+
+- reduce repeated verification effort
+- keep claims attached to real files
+- make handoff reproducible
+- show uncertainty when something cannot be verified
+
+### Proof Point Used
+
+Source-verified `job-agent` install and LLM handoff update on 2026-05-24.
+
+### Claim Risk
+
+Low
+
+### Evidence
+
+Verified by the updated `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md`, weekly log, and direct source-file inspection. Keep unpublished unless the linked repo artifacts remain privacy-safe.

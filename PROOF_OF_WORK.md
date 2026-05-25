@@ -1,6 +1,6 @@
 # Proof of Work
 
-Last updated: 2026-05-11
+Last updated: 2026-05-24
 Status: Active / Project-focused evidence map
 
 ## What This Demonstrates
@@ -32,6 +32,7 @@ Status: Active / Project-focused evidence map
 | Workflow model | Supporting operating model | Decision | [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
 | Recruiter brief | Communication clarity | Verified | [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md) |
 | Local source index summaries | Ability to operationalize project context without exposing private paths | Internal / Verified | [SOURCE_MAP.md](SOURCE_MAP.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
+| Template adoption kit | Provider-neutral reuse path for the proof-of-work system | Verified | [template/README.md](template/README.md), [template/REPO_SEED_BLUEPRINT.md](template/REPO_SEED_BLUEPRINT.md), [template/WEEKLY_AUTOMATION_RUNBOOK.md](template/WEEKLY_AUTOMATION_RUNBOOK.md) |
 
 ## Workflow Improvements
 
@@ -42,17 +43,19 @@ Status: Active / Project-focused evidence map
 | Strategy decisions | Implicit | Decision trail with tradeoffs | [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | Local project context | Rediscovered repeatedly | Indexed source map split by Codex projects, Claude projects, and shared agent assets | Internal source summaries created 2026-05-08 |
 | Project positioning | Automation/compiler was treated as the whole value prop | Concrete product projects are now the main proof points, with automation documented as the operating method | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) |
+| Lead-project handoff | Recruiter-facing setup guidance could drift from the actual source repo | Weekly source verification now checks env files, compose, Makefile, package metadata, requirements, migrations, and agent entrypoints before promoting claims | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
 
 ## Best Current Proof Points
 
 ### 1. Job-agent career workflow product
 
 - What was done: Built and documented a career workflow product covering CV, job discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning.
-- Current status: Local project status marks MVP and career-ops tasks complete; remaining work is mainly production, infra, legal, and external verification.
+- Current status: Local project status marks MVP and career-ops tasks complete; OAuth social auth is reported landed in source-repo status docs; remaining work is mainly production, infra, legal, external verification, and a small amount of repo-ops hygiene.
 - Why it matters: Shows practical full-stack product execution in a domain directly related to job search, recruiter workflows, and AI-assisted career operations.
 - Status: Internal / Verified.
 - Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)
 - Case study: [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
+- Reproducible handoff: [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
 - Recruiter relevance: Strongest current proof point for product thinking, engineering execution, privacy awareness, and test discipline.
 
 ### 2. PKM product and knowledge workflow system

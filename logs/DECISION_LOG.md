@@ -40,6 +40,46 @@ Decision
 
 ---
 
+## 2026-05-24 — Keep the reusable seed template-scoped and provider-neutral
+
+### Context
+
+The repository now serves two readers at once: a recruiter reviewing Marcus's proof of work and another user who may want to reuse the system. Reuse material is useful, but it can blur the recruiter path or accidentally carry Marcus-specific assumptions into the seed.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep bootstrap and import files at the repo root | Easier to notice quickly | Pollutes the recruiter-facing surface and encourages copying Marcus-specific context |
+| Skip reusable template material entirely | Keeps recruiter path clean | Loses the system-reuse value and makes cloning the workflow harder |
+| Keep reusable seed material under `template/` and write it provider-neutral | Preserves reuse while keeping the main repo recruiter-first | Requires extra cross-links and maintenance |
+
+### Decision
+
+Keep the reusable seed under `template/`, keep the main repo recruiter-first, and write reusable prompts and runbooks in provider-neutral language with tool-specific files treated as adapters.
+
+### Reasoning Trail
+
+```text
+Context → The repo now has both recruiter-review and template-adoption audiences.
+Options Considered → Root-level reuse docs, no reuse layer, or template-scoped neutral seed.
+Tradeoffs → A template layer adds maintenance cost but avoids mixing Marcus-specific evidence into the reusable architecture.
+Decision → Keep reusable material under template/ and keep the seed provider-neutral by default.
+Evidence → template/*, llms.txt, navigation links, and the weekly automation runbook all separate reuse from recruiter review.
+Open Questions → Which additional tool-specific adapters belong in prompts/ versus template/ as the system grows.
+Next Action → Keep weekly runs updating template docs only when the reusable architecture actually changes.
+```
+
+### Evidence
+
+[template/README.md](../template/README.md), [template/REPO_SEED_BLUEPRINT.md](../template/REPO_SEED_BLUEPRINT.md), [template/IMPORT_INSTRUCTIONS.md](../template/IMPORT_INSTRUCTIONS.md), [template/LLM_BOOTSTRAP_REPO_PROMPT.md](../template/LLM_BOOTSTRAP_REPO_PROMPT.md), [template/WEEKLY_AUTOMATION_RUNBOOK.md](../template/WEEKLY_AUTOMATION_RUNBOOK.md), [llms.txt](../llms.txt)
+
+### Status
+
+Decision
+
+---
+
 ## 2026-05-09 — Lead with concrete projects while documenting the automation
 
 ### Context
