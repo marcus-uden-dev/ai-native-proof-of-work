@@ -1,6 +1,6 @@
 # Recruiter Summary
 
-Last updated: 2026-05-24
+Last updated: 2026-05-31
 Status: Active / Project-focused
 
 ## One-Sentence Positioning
@@ -21,7 +21,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 | Proof Point | Evidence | Relevance |
 |---|---|---|
 | Job-agent career workflow product | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Shows full-stack execution, privacy/trust thinking, QA discipline, and career-domain product judgment |
-| Job-agent reproducible handoff | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Shows that the lead product can be reviewed, cloned, configured, and understood without exposing private local context |
+| Job-agent reproducible handoff | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Shows that the lead product can be reviewed, cloned, configured, and understood without exposing private local context, while still preserving real setup/OAuth details |
 | PKM project | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Shows knowledge workflow design, ingestion/search thinking, and prioritization discipline |
 | Household budget app | [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Shows domain modeling, financial-product UX, shared-data/security thinking, and test-backed development |
 | Portfolio evidence architecture | [README.md](../README.md), [AGENTS.md](../AGENTS.md), [template/README.md](../template/README.md), commits `657754b` and `962e968` | Shows documentation discipline, reusable template design, and evidence packaging without treating the documentation layer as the product |

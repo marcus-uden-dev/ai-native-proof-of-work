@@ -1,6 +1,6 @@
 # Job-Agent Install And Handoff Guide
 
-Last updated: 2026-05-24
+Last updated: 2026-05-31
 Status: Active / Recruiter-facing / LLM-readable
 
 ## Purpose
@@ -19,7 +19,7 @@ This file should stay safe to share. It summarizes install steps, expected local
 | Primary proof role | Lead product proof point |
 | Product type | Local-first job search automation app |
 | Main stack | FastAPI, PostgreSQL with pgvector, Redis/Celery, Next.js |
-| Evidence label | Verified from inspected local source files on 2026-05-24 |
+| Evidence label | Verified from inspected local source files on 2026-05-31 |
 
 ## What The App Contains
 
@@ -66,11 +66,11 @@ Create the root environment file for Docker Compose:
 Copy-Item .env.example .env
 ```
 
-For Docker Compose, the database and Redis URLs should use service hostnames:
+For Docker Compose, the database and Redis URLs should use service hostnames instead of the `localhost` values shown in the checked-in root example:
 
 ```dotenv
 DATABASE_URL=postgresql+asyncpg://job_agent:secret@db:5432/job_agent
-SYNC_DATABASE_URL=postgresql+psycopg://job_agent:secret@db:5432/job_agent
+SYNC_DATABASE_URL=postgresql+psycopg2://job_agent:secret@db:5432/job_agent
 REDIS_URL=redis://redis:6379/0
 FRONTEND_URL=http://localhost:3000
 SECRET_KEY=change-me-to-a-32-char-random-string
@@ -107,11 +107,14 @@ If an LLM agent is entering the `job-agent` repo cold, start with these files:
 
 1. `AGENTS.md`
 2. `CLAUDE.md`
-3. `docs/overview/agent-context.md`
-4. `docs/operations/current-status.md`
-5. `docs/HANDOVER.md` for prior session context when needed
-6. `DESIGN.md` before UI work
-7. `tasks/lessons.md` before changing an area with prior lessons
+3. `.claude/CLAUDE.md`
+4. `docs/overview/agent-context.md`
+5. `docs/operations/current-status.md`
+6. `docs/operations/llm-handoff.md` for the latest repo-ops session state
+7. `docs/operations/job-agent-startup-skill-handoff.md` before local startup or OAuth verification work
+8. `docs/HANDOVER.md` for prior session context when needed
+9. `DESIGN.md` before UI work
+10. `tasks/lessons.md` before changing an area with prior lessons
 
 Then check actual state:
 
@@ -144,8 +147,9 @@ Copy-Item .env.example .env
 For host-based backend runs, URLs should use `localhost`:
 
 ```dotenv
-DATABASE_URL=postgresql+asyncpg://job_agent:secret@localhost:5432/job_agent
-SYNC_DATABASE_URL=postgresql+psycopg://job_agent:secret@localhost:5432/job_agent
+DATABASE_URL=postgresql+asyncpg://user:pass@localhost:5432/jobagent
+SYNC_DATABASE_URL=postgresql+psycopg2://user:pass@localhost:5432/jobagent
+TEST_DATABASE_URL=postgresql+asyncpg://job_agent:secret@localhost:5432/job_agent_test
 REDIS_URL=redis://localhost:6379/0
 ```
 
@@ -154,16 +158,17 @@ REDIS_URL=redis://localhost:6379/0
 ```powershell
 cd frontend
 npm ci
-npm run dev
+$env:NEXT_PUBLIC_API_URL="http://localhost:8000"
+npm run dev -- --port 3002
 ```
 
-The frontend reads `NEXT_PUBLIC_API_URL` and defaults to `http://localhost:8000`.
+The frontend reads `NEXT_PUBLIC_API_URL` and source-repo startup docs now treat `http://localhost:3002` as the canonical manual frontend port so OAuth callback routing stays predictable.
 
-If port `3000` is already busy:
+If you intentionally want the Next.js default instead:
 
 ```powershell
 $env:NEXT_PUBLIC_API_URL="http://localhost:8000"
-npm run dev -- --port 3002
+npm run dev
 ```
 
 ## Verification
@@ -196,15 +201,22 @@ Smoke check:
 Invoke-WebRequest http://localhost:8000/health
 ```
 
+Manual startup contract checks:
+
+```powershell
+Invoke-WebRequest http://localhost:3002
+```
+
 ## Common Setup Traps
 
 | Symptom | Likely Cause | Fix |
 |---|---|---|
 | Backend in Docker cannot reach Postgres | `.env` uses `localhost` from inside a container | Use `db` as the host |
-| Host-based backend cannot reach Postgres | `.env` uses Compose hostname from outside Docker | Use `localhost` as the host |
+| Host-based backend cannot reach Postgres | `.env` uses Compose hostname from outside Docker | Use `localhost` as the host and match `backend/.env.example` |
 | Frontend points at the wrong API | missing or stale `NEXT_PUBLIC_API_URL` | set it to `http://localhost:8000` |
+| OAuth redirects to the wrong frontend port | startup uses stale `FRONTEND_URL` or an old `3003` callback | use `http://localhost:3002` for manual frontend startup and verify the callback path explicitly |
 | Migrations look inconsistent | docs or local branch are stale, or the migration tree needs review | check `backend/alembic/versions/`, run Alembic head, and verify the current-status note about the hash-named migration anomaly |
-| Agent starts from raw files | skipped repo instructions | read `AGENTS.md`, `CLAUDE.md`, `docs/overview/agent-context.md`, and `docs/operations/current-status.md` first |
+| Agent starts from raw files | skipped repo instructions | read `AGENTS.md`, `CLAUDE.md`, `.claude/CLAUDE.md`, `docs/overview/agent-context.md`, and `docs/operations/current-status.md` first |
 
 ## What Not To Copy
 
@@ -234,11 +246,12 @@ This handoff guide matters because it turns `job-agent` from a private source re
 
 ## Source Verification Notes
 
-This guide was checked against the inspected `job-agent` source tree on 2026-05-24.
+This guide was checked against the inspected `job-agent` source tree on 2026-05-31.
 
-- Verified present: `AGENTS.md`, `CLAUDE.md`, `DESIGN.md`, `docs/overview/agent-context.md`, `docs/operations/current-status.md`, `docs/HANDOVER.md`, root `.env.example`, `backend/.env.example`, `docker-compose.yml`, `Makefile`, `frontend/package.json`, `backend/requirements.txt`, `backend/requirements-dev.txt`, and `backend/alembic/versions/`.
-- Verified absent in the inspected worktree: `.claude/CLAUDE.md` and `docs/setup/llm-handoff.md`.
-- Current repo-status docs report sequential Alembic head `0042_oauth_connections.py`; the source tree also contains one hash-named migration file that still needs repo-side investigation.
+- Verified present: `AGENTS.md`, `CLAUDE.md`, `.claude/CLAUDE.md`, `DESIGN.md`, `docs/overview/agent-context.md`, `docs/operations/current-status.md`, `docs/operations/llm-handoff.md`, `docs/operations/job-agent-startup-skill-handoff.md`, `docs/HANDOVER.md`, root `.env.example`, `backend/.env.example`, `docker-compose.yml`, `Makefile`, `frontend/package.json`, `backend/requirements.txt`, `backend/requirements-dev.txt`, and `backend/alembic/versions/`.
+- Verified absent in the inspected worktree: `docs/setup/llm-handoff.md`.
+- Current repo-status docs report sequential Alembic head `0042_oauth_connections.py`, 43 Python migration files in `backend/alembic/versions/`, one hash-named migration file that still needs repo-side investigation, and a Windows-local validation note of `391 passed, 7 skipped` on 2026-05-26.
+- Current source-repo ops docs also distinguish Docker Compose frontend `3000` from the canonical manual startup contract on frontend `3002`; this portfolio guide now preserves that difference explicitly.
 
 If a future weekly run cannot verify these paths or commands from the source repo, mark the affected claim `Needs Review`.
 

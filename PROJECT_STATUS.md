@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-05-24
+Last updated: 2026-05-31
 Status: Active / Recruiter-facing summary
 
 ## Purpose
@@ -13,7 +13,7 @@ It is a recruiter-safe status layer. It does not expose private local paths, raw
 
 | Project / Layer | Current State | Recent Progress | Main Open Work | Evidence Status |
 |---|---|---|---|---|
-| Job-agent | MVP complete in local project status; career-ops tasks marked done; remaining work is mainly infra, production activation, pricing/legal decisions, external verification, and a small repo-ops follow-up set | Shared job-postings cleanup, privacy/GDPR surfaces, feedback system, live local verification, discover regression fix, CI workflows, telemetry/billing planning, and OAuth/social-auth landing on master are reflected in the source-repo status docs | Production deploy, public backend origin, OTel/Grafana setup, Stripe live activation, final legal review, real third-party ATS smoke checks, selected public-safe screenshots/test references, and repo-side migration/doc-drift cleanup | Internal / Verified |
+| Job-agent | MVP complete in local project status; career-ops tasks marked done; remaining work is mainly infra, production activation, pricing/legal decisions, external verification, and a small repo-ops follow-up set | Source-repo status docs updated through 2026-05-26 now add nav integration on master, Windows local validation recovery (`391 passed, 7 skipped`), startup/LLM handoff notes, and repo-ops cleanup progress alongside the earlier privacy, feedback, QA, CI, telemetry, and OAuth work | Production deploy, public backend origin, OTel/Grafana setup, Stripe live activation, final legal review, real third-party ATS smoke checks, selected public-safe screenshots/test references, and verification of the hash-named migration chain | Internal / Verified |
 | PKM | Knowledge-workflow product surfaces are represented, but operational blockers remain before full daily use | Ingestion/search/learning/feed/source/person/topic surfaces are represented; feature workflow is explicit; social feed feature is marked done in the queue; Chrome extension exists for browser capture | OpenAI billing/embedding quota, frontend URL cleanup, SMTP setup, Hetzner deployment, source/person/topic setup, search/flashcard/extension/MCP verification | Internal / Verified |
 | Household budget app | Active product with core surfaces and a large household/shared-account hardening track | Household scope is threaded across major pages; owner/member/admin flows, invite onboarding, shared-account ownership rules, read-model/view-model extraction, and mutation helper extraction have progressed significantly | Finish post-hardening household migration cleanup, remove legacy migration debt, validate ownership hardening end-to-end in Supabase, split future modeling into smaller landing slices | Internal / Verified |
 | Portfolio evidence repository | GitHub-ready documentation and review layer for the product portfolio | Project-first positioning, recruiter/agent review layer, evidence matrix, navigation hub, case studies, a provider-neutral template kit, `llms.txt`, and source-verified handoff guidance are in place | Add sanitized screenshots, safe test/commit excerpts, and first curated recruiter export after privacy review | Verified |
@@ -31,8 +31,9 @@ Current status from local project status docs:
 - Feedback and UX signals are implemented across backend API, AI-output feedback, product rating, and admin visibility.
 - Local QA includes backend regression checks, Playwright coverage against real local services, discover regression tests, migration smokes, and CI workflow setup.
 - Source-repo status docs updated on 2026-05-17 report that OAuth social auth landed on master across six commits from 2026-05-13 to 2026-05-16.
-- Source-repo automation audit notes on 2026-05-18 flag remaining repo-ops cleanup: stale agent docs, a Windows local-env blocker for test loops, and one hash-named migration file that needs investigation.
-- Remaining work is mostly external or production-facing: hosting, domain, OTel/Grafana, Stripe live, OAuth credentials, legal review, and final destructive data-rights workflows.
+- Source-repo status docs updated on 2026-05-26 report that Windows local validation was recovered, `master` lint/build checks passed, and the repo now keeps explicit startup and LLM handoff docs under `docs/operations/`.
+- Source-repo ops notes on 2026-05-27 add a portable startup contract with canonical manual local ports `8000` / `3002` and explicit OAuth callback verification requirements.
+- Remaining work is mostly external or production-facing: hosting, domain, OTel/Grafana, Stripe live, OAuth credentials, legal review, final destructive data-rights workflows, and verification of the hash-named migration anomaly.
 
 Recruiter signal:
 
@@ -85,7 +86,7 @@ Current status:
 - Mermaid diagrams have been adjusted for safer GitHub rendering.
 - The weekly compiler and source-indexing automation remain documented as the operating layer.
 - The reusable `template/` adoption layer and weekly automation runbook now give another user a provider-neutral path to recreate the system without copying Marcus-specific evidence.
-- `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md` has been re-checked against inspected `job-agent` source files so it reflects actual setup files and avoids nonexistent agent-entrypoint claims.
+- `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md` has been re-checked against inspected `job-agent` source files so it reflects actual setup files, newly present repo-ops handoff docs, and the difference between Docker Compose frontend `3000` and the canonical manual startup port `3002`.
 
 ## Evidence Boundaries
 
@@ -93,3 +94,4 @@ Current status:
 - Exact user or business impact is not claimed.
 - Production readiness is not overstated when external blockers remain.
 - Local paths, raw logs, and sensitive implementation details are intentionally excluded.
+- Internal source indexes are available but stale relative to the 14-day refresh rule; this weekly sync used direct source-repo verification for job-agent instead of promoting fresh index claims.

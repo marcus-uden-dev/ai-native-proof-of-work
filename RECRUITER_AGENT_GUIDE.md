@@ -1,6 +1,6 @@
 # Recruiter Agent Guide
 
-Last updated: 2026-05-18
+Last updated: 2026-05-31
 Status: Active / Agent-readable
 
 ## Purpose
@@ -62,6 +62,7 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 - Do not assume local-only files, raw chats, private project folders, or internal indexes are available.
 - Do not infer exact metrics unless a file marks them as verified.
 - Prefer evidence-labeled claims over broad positioning statements.
+- For job-agent setup claims, prefer the latest source-verified handoff summary over older repo assumptions; the source repo now distinguishes Docker Compose defaults from the canonical manual startup contract.
 
 ## Capability Extraction Map
 

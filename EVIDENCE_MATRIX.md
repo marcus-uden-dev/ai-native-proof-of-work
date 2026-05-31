@@ -1,6 +1,6 @@
 # Evidence Matrix
 
-Last updated: 2026-05-11
+Last updated: 2026-05-31
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -31,6 +31,7 @@ flowchart TD
 | Knowledge workflow design | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) | Internal / Verified | Shows ingestion, search, learning, and prioritization thinking |
 | Financial domain modeling | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Internal / Verified | Shows careful modeling of household data, imports, goals, and forecasts |
 | QA and regression discipline | Job-agent and budget case studies | Internal / Verified | Shows attention to reliability and verification, not just ideation |
+| Reproducible product handoff | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [PROJECT_STATUS.md](PROJECT_STATUS.md) | Verified | Shows that setup claims are tied to source-verified env files, startup docs, ports, and validation paths rather than memory |
 | Privacy-aware execution | [SOURCE_MAP.md](SOURCE_MAP.md), [SHARING_CHECKLIST.md](SHARING_CHECKLIST.md) | Verified | Shows judgment about what should and should not be shared |
 | Structured decision-making | [logs/DECISION_LOG.md](logs/DECISION_LOG.md), [strategy/job-agent/decisions/DECISION_TRAIL.md](strategy/job-agent/decisions/DECISION_TRAIL.md) | Decision | Makes tradeoffs visible without exposing private reasoning |
 | Automation as operating layer | [AUTOMATION_PROMPT.md](AUTOMATION_PROMPT.md), [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md) | Verified | Shows repeatability, review discipline, and evidence packaging |

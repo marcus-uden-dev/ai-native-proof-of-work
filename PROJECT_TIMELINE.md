@@ -1,6 +1,6 @@
 # Project Timeline
 
-Last updated: 2026-05-24
+Last updated: 2026-05-31
 Status: Active / Living milestone log
 
 ## Purpose
@@ -21,8 +21,9 @@ flowchart TD
     M6["2026-05-09<br/>Project<br/>status layer"]
     M7["2026-05-18<br/>Reusable template<br/>and handoff layer"]
     M8["2026-05-24<br/>Source-verified<br/>weekly sync"]
+    M9["2026-05-26<br/>Job-agent ops +<br/>startup handoff refresh"]
 
-    M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8
+    M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9
 ```
 
 ## Milestone Log
@@ -41,6 +42,7 @@ flowchart TD
 | 2026-05-09 | Current project status layer added | Portfolio status | Internal / Verified | [PROJECT_STATUS.md](PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows what is complete, active, blocked, or pending across the project portfolio |
 | 2026-05-18 | Reusable template and handoff layer added | Portfolio operating layer | Verified | Commits `657754b` and `962e968`, [template/README.md](template/README.md), [template/REPO_SEED_BLUEPRINT.md](template/REPO_SEED_BLUEPRINT.md), [template/WEEKLY_AUTOMATION_RUNBOOK.md](template/WEEKLY_AUTOMATION_RUNBOOK.md), [llms.txt](llms.txt), [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Shows that the repo can explain both Marcus's evidence and a reusable, provider-neutral adoption path |
 | 2026-05-24 | Weekly compiler source-verifies the job-agent handoff and syncs the portfolio docs | Weekly evidence layer | Verified | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md), [logs/PROBLEM_SOLVING_LOG.md](logs/PROBLEM_SOLVING_LOG.md) | Improves reproducibility and reduces drift between the portfolio layer and the lead source repo |
+| 2026-05-26 to 2026-05-28 | Job-agent repo gains explicit ops-state, startup-contract, and LLM-handoff docs that the portfolio can verify against | Job-agent | Internal / Verified | Source-repo `docs/operations/current-status.md`, `docs/operations/llm-handoff.md`, and `docs/operations/job-agent-startup-skill-handoff.md`, summarized via [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Strengthens the lead proof point by making local setup, OAuth routing, and session handoff more reproducible |
 
 ## How To Maintain This
 

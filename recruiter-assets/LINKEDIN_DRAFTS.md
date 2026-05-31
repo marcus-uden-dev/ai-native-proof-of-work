@@ -1,6 +1,6 @@
 # LinkedIn Drafts
 
-Last updated: 2026-05-24
+Last updated: 2026-05-31
 Status: Drafts / Not published
 
 ## Draft — 2026-05-09
@@ -105,3 +105,43 @@ Low
 ### Evidence
 
 Verified by the updated `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md`, weekly log, and direct source-file inspection. Keep unpublished unless the linked repo artifacts remain privacy-safe.
+
+## Draft — 2026-05-31
+
+### Topic
+
+Why setup truth matters more than a clean architecture story.
+
+### Draft
+
+A common failure mode in documentation-heavy product work is that the story gets cleaner while the startup contract gets less true.
+
+This week I tightened the lead-project handoff again by checking the source repo's actual ops docs instead of flattening everything into one generic "run it locally" story.
+
+The useful nuance:
+
+- Docker Compose still exposes one frontend port
+- the manual dev startup contract uses another
+- OAuth callback routing only works if you treat that difference as real
+
+That is exactly the kind of detail that separates:
+
+```text
+documentation that sounds plausible
+from
+documentation another person can actually use
+```
+
+AI is useful here when it helps keep claims anchored to the source tree, not when it smooths over the sharp edges.
+
+### Proof Point Used
+
+Source-verified `job-agent` startup-contract and LLM handoff refresh on 2026-05-31.
+
+### Claim Risk
+
+Low
+
+### Evidence
+
+Verified by the updated `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md`, weekly log, and direct inspection of the source repo's `docs/operations/current-status.md`, `docs/operations/llm-handoff.md`, and `docs/operations/job-agent-startup-skill-handoff.md`.

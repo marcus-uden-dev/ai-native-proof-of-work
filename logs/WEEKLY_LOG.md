@@ -1,5 +1,54 @@
 # Weekly Log
 
+## Weekly Compiler Sync — 2026-05-31
+
+### 1. Executive Summary
+
+Ran the weekly Proof-of-Work Compiler using verified repo-visible changes plus direct source-file inspection of the local `job-agent` repo state on 2026-05-31.
+
+No dated weekly-input file existed for the current week, so this pass did not invent new product progress. It promoted only what could be verified from the current `job-agent` source docs, env examples, compose/Make targets, migration tree, and the local proof-of-work worktree.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| `job-agent` install and LLM handoff guide | Lead-project handoff | Verified | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Keeps the strongest proof point reproducible as the source repo's startup and handoff docs evolve |
+| Project-first evidence docs | Documentation | Verified | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) | Keeps recruiter summaries aligned with current verified lead-project evidence |
+| Recruiter-facing summaries | Recruiter asset | Verified | [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [EVIDENCE_MATRIX.md](../EVIDENCE_MATRIX.md), [ROLE_READING_PATHS.md](../ROLE_READING_PATHS.md) | Makes the setup/handoff signal easier for humans and agents to evaluate |
+| Weekly governance logs | Audit trail | Verified | [logs/CHANGELOG.md](CHANGELOG.md), [logs/PROBLEM_SOLVING_LOG.md](PROBLEM_SOLVING_LOG.md) | Records what changed and why this weekly sync stayed source-grounded |
+
+### 3. Workflow Improvement
+
+| Before | After | Improvement | Evidence |
+|---|---|---|---|
+| Lead-project handoff treated Docker Compose defaults and manual startup assumptions as one flow | Portfolio handoff now distinguishes Compose frontend `3000` from the source repo's canonical manual startup contract on `3002`, with explicit OAuth callback verification | Lower risk of setup drift and false "works on my machine" claims | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/PROBLEM_SOLVING_LOG.md](PROBLEM_SOLVING_LOG.md) |
+| LLM entry guidance lagged behind the source repo's newer ops docs | Portfolio handoff now includes `.claude/CLAUDE.md`, `docs/operations/llm-handoff.md`, and `docs/operations/job-agent-startup-skill-handoff.md` when cold-starting an agent | Better reproducibility for collaborators and reviewer-side agents | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
+
+### 4. Source Inputs Used
+
+| Source | Used? | Notes |
+|---|---|---|
+| `weekly-input/` dated file | No | No dated weekly-input file existed for the current week |
+| Repo-visible changes in this proof repo | Yes | Existing worktree now contains recruiter-facing demo/navigation changes and new `demos/` files, but they were treated as user work and not overwritten |
+| Internal source indexes | Yes, checked | Available but stale relative to the 14-day freshness rule; not refreshed this run |
+| Local `job-agent` source files | Yes | Verified current-status docs, LLM/startup handoff docs, env examples, compose, Makefile, package metadata, and migrations |
+
+### 5. Key Verified Job-Agent Signals
+
+- `docs/operations/current-status.md` in the source repo was updated on 2026-05-26 and reports MVP complete, nav integration shipped, OAuth social auth merged, Windows local validation recovered, and production infra still blocked on human setup.
+- `docs/operations/llm-handoff.md` is now present in the source repo and preserves recent repo-ops context for new agents.
+- `docs/operations/job-agent-startup-skill-handoff.md` is now present and defines a canonical manual startup contract with backend `8000`, frontend `3002`, and explicit OAuth callback checks.
+- The inspected source tree now includes `.claude/CLAUDE.md`; `docs/setup/llm-handoff.md` is still absent.
+- The source repo still contains the hash-named migration `3aac5340ec46_add_user_documents.py`, which remains flagged for chain verification.
+
+### 6. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 7. Next Action
+
+Create one dated weekly-input file and refresh the stale internal source indexes before the next weekly sync.
+
 ## Weekly Compiler Sync — 2026-05-24
 
 ### 1. Executive Summary

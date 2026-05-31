@@ -1,6 +1,6 @@
 # Role Reading Paths
 
-Last updated: 2026-05-09
+Last updated: 2026-05-31
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -40,6 +40,7 @@ Look for:
 - review loops
 - prioritization
 - handoff and documentation quality
+- startup-contract and validation discipline
 
 ## Technical Product / Product Strategy
 
@@ -57,6 +58,23 @@ Look for:
 - tradeoffs
 - MVP boundaries
 - architecture/product alignment
+
+## Technical Reviewer / Setup Reproduction
+
+Read:
+
+1. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+2. [PROJECT_STATUS.md](PROJECT_STATUS.md)
+3. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
+4. [SOURCE_MAP.md](SOURCE_MAP.md)
+5. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
+
+Look for:
+
+- source-verified setup claims
+- explicit env and port boundaries
+- OAuth/startup verification discipline
+- separation between recruiter-safe summaries and local-only source material
 
 ## Customer Success / Customer Outcome
 

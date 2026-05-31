@@ -1,6 +1,6 @@
 # Project Proof Points
 
-Last updated: 2026-05-24
+Last updated: 2026-05-31
 Status: Active / Evidence-backed summary
 
 ## Purpose
@@ -46,13 +46,13 @@ The stronger story is:
 | QA discipline | Backend tests, Playwright coverage, live frontend/backend verification notes, CI workflow references, and regression-focused docs are present in the source material | Internal / Verified |
 | Privacy and trust | GDPR/cookie consent, data-rights models, retention/anonymization planning, marketing-pixel guardrails, and legal-review blockers are tracked | Internal / Verified |
 | Product judgment | Open decisions include token pricing, referral economy, deployment activation, observability, Stripe live activation, and destructive data-rights workflows | Internal / Verified |
-| Reproducible handoff | The source repo now has a recruiter-safe install and LLM handoff layer that has been re-checked against actual env examples, compose, Makefile, package metadata, requirements, migrations, and current-status docs | Verified |
+| Reproducible handoff | The source repo now has a recruiter-safe install and LLM handoff layer that has been re-checked against actual env examples, compose, Makefile, package metadata, requirements, migrations, current-status docs, and the new repo-ops startup/LLM handoff files | Verified |
 
 ## Current Project Status Summary
 
 | Project | Current State | Open Work |
 |---|---|---|
-| Job-agent | Local status marks the MVP complete and career-ops tasks done; privacy, feedback, QA, discovery, shared-job cleanup, CI, telemetry, billing, deployment planning, and OAuth/social-auth landing are represented | Production activation, legal review, live Stripe, public backend origin, observability setup, public-safe evidence excerpts, and repo-side migration/doc-drift cleanup |
+| Job-agent | Local status marks the MVP complete and career-ops tasks done; privacy, feedback, QA, discovery, shared-job cleanup, CI, telemetry, billing, deployment planning, OAuth/social-auth landing, nav integration, and startup/LLM handoff docs are represented | Production activation, legal review, live Stripe, public backend origin, observability setup, public-safe evidence excerpts, and verification of the hash-named migration/doc-drift cleanup |
 | PKM | Knowledge-workflow product with ingestion/search/learning/feed/source/person/topic surfaces, feature lifecycle discipline, and a Chrome extension for browser capture | OpenAI billing/quota, SMTP, deployment, source/person/topic setup, and verification of search, flashcard, extension, and MCP paths |
 | Household budget app | Core budgeting surfaces plus substantial household/shared-account hardening, invite onboarding, ownership rules, read-model/view-model extraction, and mutation helper consolidation | Finish post-hardening migration cleanup, remove legacy bridge debt, validate Supabase ownership hardening, and split future modeling into smaller slices |
 

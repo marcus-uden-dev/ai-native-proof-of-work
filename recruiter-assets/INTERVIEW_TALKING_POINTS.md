@@ -1,6 +1,6 @@
 # Interview Talking Points
 
-Last updated: 2026-05-24
+Last updated: 2026-05-31
 Status: Active / Project-focused
 
 ## 1. Job-agent as the lead proof point
@@ -43,4 +43,4 @@ I keep Codex execution evidence, Claude planning evidence, and shared skills/wor
 
 ## 10. Reproducible handoff discipline
 
-For the lead project, I keep a recruiter-safe install and LLM handoff guide current and re-check it against the actual source repo so the setup path does not drift into guesswork.
+For the lead project, I keep a recruiter-safe install and LLM handoff guide current and re-check it against the actual source repo so the setup path does not drift into guesswork. A concrete recent example was separating Docker Compose defaults from the manual startup/OAuth port contract after the source repo made that distinction explicit.

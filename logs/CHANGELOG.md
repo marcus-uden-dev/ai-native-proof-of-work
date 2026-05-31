@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-05-31 — Weekly proof-of-work sync with startup-contract verification
+
+### Added
+
+- Weekly compiler log entry for the 2026-05-31 run.
+- Problem-solving log entry for separating Docker Compose defaults from the manual startup/OAuth contract in the `job-agent` handoff.
+- Recruiter-agent and role-reading updates that point reviewers to the stronger setup/handoff evidence.
+
+### Changed
+
+- Re-verified [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) against the current `job-agent` source tree, including `.claude/CLAUDE.md`, `docs/operations/llm-handoff.md`, and `docs/operations/job-agent-startup-skill-handoff.md`.
+- Updated [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), and [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) to reflect the 2026-05-26 source-repo status refresh and startup-contract evidence.
+- Refreshed recruiter-facing summaries and assets to describe the stronger source-verified handoff signal.
+
+### Notes
+
+No dated weekly-input file existed for the current week, so this sync relied on direct source verification plus existing repo-visible changes. Internal source indexes were available but stale and were not refreshed in this pass.
+
 ## 2026-05-24 — Weekly proof-of-work sync and handoff verification
 
 ### Added

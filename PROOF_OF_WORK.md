@@ -1,6 +1,6 @@
 # Proof of Work
 
-Last updated: 2026-05-24
+Last updated: 2026-05-31
 Status: Active / Project-focused evidence map
 
 ## What This Demonstrates
@@ -43,14 +43,14 @@ Status: Active / Project-focused evidence map
 | Strategy decisions | Implicit | Decision trail with tradeoffs | [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | Local project context | Rediscovered repeatedly | Indexed source map split by Codex projects, Claude projects, and shared agent assets | Internal source summaries created 2026-05-08 |
 | Project positioning | Automation/compiler was treated as the whole value prop | Concrete product projects are now the main proof points, with automation documented as the operating method | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) |
-| Lead-project handoff | Recruiter-facing setup guidance could drift from the actual source repo | Weekly source verification now checks env files, compose, Makefile, package metadata, requirements, migrations, and agent entrypoints before promoting claims | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
+| Lead-project handoff | Recruiter-facing setup guidance could drift from the actual source repo | Weekly source verification now checks env files, compose, Makefile, package metadata, requirements, migrations, agent entrypoints, and startup-port/OAuth routing notes before promoting claims | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
 
 ## Best Current Proof Points
 
 ### 1. Job-agent career workflow product
 
 - What was done: Built and documented a career workflow product covering CV, job discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning.
-- Current status: Local project status marks MVP and career-ops tasks complete; OAuth social auth is reported landed in source-repo status docs; remaining work is mainly production, infra, legal, external verification, and a small amount of repo-ops hygiene.
+- Current status: Local project status marks MVP and career-ops tasks complete; source-repo status docs updated on 2026-05-26 add shipped nav integration, Windows local validation recovery, startup/LLM handoff notes, and remaining production/legal blockers.
 - Why it matters: Shows practical full-stack product execution in a domain directly related to job search, recruiter workflows, and AI-assisted career operations.
 - Status: Internal / Verified.
 - Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)
@@ -120,3 +120,4 @@ Status: Active / Project-focused evidence map
 | PKM and household budget app are strong supporting projects | Internal / Verified | Add sanitized project case-study pages or selected commits/tests |
 | Weekly workflow improvement has measurable impact | Estimated / not directly tracked | Time saved, reuse count, or before/after workflow data |
 | Recruiter assets improve response or interview quality | Hypothesis | Recruiter feedback, interview outcomes, or sharing results |
+| Static demo portal is ready for external sharing | Needs Review | Privacy review plus commit/publish state for the new `demos/` files |
