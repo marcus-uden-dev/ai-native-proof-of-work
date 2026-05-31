@@ -5,6 +5,8 @@ Status: Privacy-safe synthetic demo data
 These screenshots were captured from the local project frontends with mocked API/Supabase responses.
 They are intended as representative portfolio visuals, not as evidence of real user data, real companies, personal finances, or private job-search material.
 
+The related [clickable demo portal](../../demos/index.html) uses the same privacy-safe posture and can be opened locally or published as static GitHub Pages/Netlify/Cloudflare Pages content.
+
 ## Current Set
 
 | File | Project | What It Shows |

@@ -59,6 +59,7 @@ flowchart TD
 |---|---|
 | [Navigation Hub](NAVIGATION.md) | Plain-English navigation hub for recruiters |
 | [START_HERE.md](START_HERE.md) | Fast recruiter-readable entry point |
+| [Clickable Demo Portal](demos/index.html) | Static recruiter-safe product demos for job-agent, PKM, and household budget app |
 | [llms.txt](llms.txt) | Machine-readable repository map for LLM assistants |
 | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) | One-screen recruiter overview |
 | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) | Agent-readable guide for recruiter-side assistants |
@@ -90,16 +91,17 @@ Recommended order:
 
 1. [START_HERE.md](START_HERE.md)
 2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-3. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
-4. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-5. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-6. [PROJECT_STATUS.md](PROJECT_STATUS.md)
-7. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
-8. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
-9. [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)
-10. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
-11. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
-12. [diagrams/RECRUITER_VIEW.md](diagrams/RECRUITER_VIEW.md)
+3. [demos/index.html](demos/index.html)
+4. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
+5. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+6. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+7. [PROJECT_STATUS.md](PROJECT_STATUS.md)
+8. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+9. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
+10. [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)
+11. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
+12. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
+13. [diagrams/RECRUITER_VIEW.md](diagrams/RECRUITER_VIEW.md)
 
 ---
 
@@ -108,6 +110,7 @@ Recommended order:
 | Capability | How It Shows Up |
 |---|---|
 | Product execution | Job-agent, PKM, and household budget app case studies |
+| Clickable review | Static demo portal with job-agent company research, synthetic KPI signals, and public-source labels |
 | Reproducible handoff | Job-agent install guide, LLM boot sequence, ports, service map, and validation commands |
 | Recruiter skim-readability | One-pager, evidence matrix, role reading paths |
 | Agent readability | Recruiter agent guide and canonical reading order |

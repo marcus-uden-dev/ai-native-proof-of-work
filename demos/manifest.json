@@ -1,0 +1,68 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2026-05-28",
+  "default_audience": "external",
+  "publishing": {
+    "local_entry": "demos/index.html",
+    "pages_ready": true,
+    "notes": "Pure static HTML/CSS/JS with relative paths. Can be served by GitHub Pages, Netlify, or Cloudflare Pages."
+  },
+  "snapshots": [
+    {
+      "project": "job-agent",
+      "snapshot_id": "job-agent-clickable-company-research",
+      "title": "Job-agent clickable demo with company research KPI cards",
+      "audience": "external",
+      "status": "recruiter-safe",
+      "date": "2026-05-28",
+      "commit": "current-worktree",
+      "branch": "main",
+      "data_class": "mixed",
+      "source_urls": [
+        "https://openai.com/about/",
+        "https://openai.com/jobs/",
+        "https://www.anthropic.com/company",
+        "https://www.anthropic.com/careers"
+      ],
+      "change_summary": "Creates a clickable static mock of job-agent with jobs, discovery, company research, apply/CV, feedback, and privacy flows.",
+      "why": "Company research shows the strongest product depth: public sources, demo-only KPI signals, and reviewable decision support.",
+      "rollback_note": "Use this as the baseline if later research UI becomes visually noisy or loses source labeling.",
+      "screenshot_path": "../assets/screenshots/job-agent-03-company-research-icons.png",
+      "demo_path": "index.html#job-agent"
+    },
+    {
+      "project": "pkm",
+      "snapshot_id": "pkm-clickable-knowledge-feed",
+      "title": "PKM knowledge feed mock",
+      "audience": "external",
+      "status": "recruiter-safe",
+      "date": "2026-05-28",
+      "commit": "current-worktree",
+      "branch": "main",
+      "data_class": "synthetic",
+      "source_urls": [],
+      "change_summary": "Adds a static clickable knowledge-feed and source-capture surface.",
+      "why": "Shows supporting proof around ingestion, source quality, tagging, and retrieval workflows.",
+      "rollback_note": "Keep as a lightweight supporting proof point; do not let it overshadow job-agent.",
+      "screenshot_path": "../assets/screenshots/pkm-01-knowledge-feed.png",
+      "demo_path": "index.html#pkm"
+    },
+    {
+      "project": "household-budget",
+      "snapshot_id": "household-budget-clickable-dashboard",
+      "title": "Household budget dashboard mock",
+      "audience": "external",
+      "status": "recruiter-safe",
+      "date": "2026-05-28",
+      "commit": "current-worktree",
+      "branch": "main",
+      "data_class": "synthetic",
+      "source_urls": [],
+      "change_summary": "Adds a static clickable dashboard with liquidity, budget, import review, and household-scope panels.",
+      "why": "Shows supporting proof around financial domain modeling and household/shared-account state.",
+      "rollback_note": "Use as the baseline sample-data demo for future budget-app screenshots.",
+      "screenshot_path": "../assets/screenshots/household-budget-01-dashboard.png",
+      "demo_path": "index.html#household-budget"
+    }
+  ]
+}

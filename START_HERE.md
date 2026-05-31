@@ -33,16 +33,17 @@ Recommended path:
 
 1. [Navigation Hub](NAVIGATION.md)
 2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
-3. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
-4. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-5. [Project Status](PROJECT_STATUS.md)
-6. [Evidence Matrix](EVIDENCE_MATRIX.md)
-7. [Project Timeline](PROJECT_TIMELINE.md)
-8. [Role Reading Paths](ROLE_READING_PATHS.md)
-9. [Executive Summary](EXECUTIVE_SUMMARY.md)
-10. [Proof of Work](PROOF_OF_WORK.md)
-11. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-12. [Weekly Log](logs/WEEKLY_LOG.md)
+3. [Clickable Demo Portal](demos/index.html)
+4. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
+5. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+6. [Project Status](PROJECT_STATUS.md)
+7. [Evidence Matrix](EVIDENCE_MATRIX.md)
+8. [Project Timeline](PROJECT_TIMELINE.md)
+9. [Role Reading Paths](ROLE_READING_PATHS.md)
+10. [Executive Summary](EXECUTIVE_SUMMARY.md)
+11. [Proof of Work](PROOF_OF_WORK.md)
+12. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+13. [Weekly Log](logs/WEEKLY_LOG.md)
 
 If you are using an assistant or recruiter-side agent, start with [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
 
@@ -52,6 +53,7 @@ If you want to recreate this repository architecture for another person or organ
 
 - structured problem-solving
 - practical product execution
+- clickable static product demos that do not require local app setup
 - clear recruiter and agent reading paths
 - reproducible handoff for the lead product repo
 - project progress over time

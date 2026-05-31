@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proof-of-Work Demo Portal</title>
+    <meta
+      name="description"
+      content="Static recruiter-safe demo portal for AI-native proof-of-work project snapshots."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" aria-label="Demo navigation">
+        <a class="brand" href="#overview" aria-label="Demo portal overview">
+          <span class="brand-mark">PW</span>
+          <span>
+            <strong>Demo Portal</strong>
+            <small>Proof-of-work snapshots</small>
+          </span>
+        </a>
+
+        <div class="mode-panel" aria-label="Audience filter">
+          <p class="eyebrow">Audience</p>
+          <div class="segmented" role="group" aria-label="Audience mode">
+            <button class="active" data-audience="external" type="button">External</button>
+            <button data-audience="all" type="button">All</button>
+          </div>
+          <p class="mode-note">
+            External mode shows only recruiter-safe snapshots.
+          </p>
+        </div>
+
+        <nav class="nav-list" aria-label="Project demos">
+          <a class="nav-item active" href="#overview" data-route="overview">Overview</a>
+          <a class="nav-item" href="#job-agent" data-route="job-agent">Job-agent</a>
+          <a class="nav-item" href="#pkm" data-route="pkm">PKM</a>
+          <a class="nav-item" href="#household-budget" data-route="household-budget">Household budget</a>
+          <a class="nav-item" href="#timeline" data-route="timeline">Design timeline</a>
+        </nav>
+
+        <div class="sidebar-footer">
+          <p>Status: static demo, no backend</p>
+          <p>Data: public-source + synthetic</p>
+        </div>
+      </aside>
+
+      <main class="main" id="main">
+        <section class="hero">
+          <div>
+            <p class="eyebrow">Static, clickable, recruiter-safe</p>
+            <h1>AI-native proof-of-work demos</h1>
+            <p>
+              Explore clickable mock product flows for job-agent, PKM, and the
+              household budget app. The job-agent company research view is the
+              lead demo because it shows the clearest product depth: sources,
+              signals, KPI chips, and reviewable company reasoning.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <a class="button primary" href="#job-agent" data-route="job-agent">Open job-agent demo</a>
+            <a class="button ghost" href="./manifest.json">View manifest</a>
+          </div>
+        </section>
+
+        <section id="view-root" aria-live="polite"></section>
+      </main>
+    </div>
+
+    <template id="icon-template"></template>
+    <script src="./app.js"></script>
+  </body>
+</html>

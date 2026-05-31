@@ -9,6 +9,12 @@ Job-agent is the lead proof point in this repository.
 
 It demonstrates product execution across career workflow automation: CV handling, job discovery, application support, feedback loops, privacy/data rights, QA, deployment planning, telemetry, and billing/product decisions.
 
+## Clickable Demo
+
+The [static job-agent demo](../demos/index.html#job-agent) gives recruiters and internal reviewers a no-install click-through of the main workflow surfaces.
+
+The strongest V1 surface is company research: it shows positive and warning signal chips, financial KPI rows, compensation signals, culture signals, evidence labels, and explicit `public_source`, `synthetic`, or `inferred_demo` data classes. OpenAI and Anthropic are used as public-source example companies, while uncertain scores, salary estimates, warning flags, and financial metrics are marked as demo data.
+
 ## Problem
 
 Job search work is fragmented across CVs, job boards, application portals, interviews, notes, feedback, and follow-ups. AI can help, but only if the workflow remains trustworthy, reviewable, and grounded in user control.

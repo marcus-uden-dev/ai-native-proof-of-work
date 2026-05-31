@@ -14,8 +14,9 @@ Use it if the file list feels overwhelming.
 | Step | Open | Why |
 |---|---|---|
 | 1 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Fast overview of the strongest proof points |
-| 2 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project proof point |
-| 3 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability-to-evidence map |
+| 2 | [Clickable Demo Portal](demos/index.html) | Quick product feel without installing anything |
+| 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project proof point |
+| 4 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability-to-evidence map |
 
 ## If You Have 15 Minutes
 
@@ -23,11 +24,12 @@ Use it if the file list feels overwhelming.
 |---|---|---|
 | 1 | [Start Here](START_HERE.md) | One-minute orientation |
 | 2 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Summary of positioning and proof |
-| 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Main product evidence |
-| 4 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
-| 5 | [Project Status](PROJECT_STATUS.md) | Current state and open work |
-| 6 | [Project Timeline](PROJECT_TIMELINE.md) | Progression over time |
-| 7 | [Role Reading Paths](ROLE_READING_PATHS.md) | Choose the angle that fits the role |
+| 3 | [Clickable Demo Portal](demos/index.html) | Static click-through for job-agent, PKM, and budget app |
+| 4 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Main product evidence |
+| 5 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
+| 6 | [Project Status](PROJECT_STATUS.md) | Current state and open work |
+| 7 | [Project Timeline](PROJECT_TIMELINE.md) | Progression over time |
+| 8 | [Role Reading Paths](ROLE_READING_PATHS.md) | Choose the angle that fits the role |
 
 ## If You Have 30 Minutes
 
@@ -59,6 +61,7 @@ Use it if the file list feels overwhelming.
 |---|---|
 | What is this repo? | [Start Here](START_HERE.md) |
 | What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
+| Where can I click through product demos? | [Clickable Demo Portal](demos/index.html) |
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |
 | How can another user install the lead product? | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
@@ -91,9 +94,10 @@ These file areas are useful, but they are not the best first read for a non-tech
 ```mermaid
 flowchart TD
     A["Start Here"] --> B["Recruiter One-Pager"]
-    B --> C["Job-Agent Case Study"]
-    C --> D["Evidence Matrix"]
-    D --> E["Project Status"]
-    E --> F["Project Timeline"]
-    F --> G["Role Reading Paths"]
+    B --> C["Clickable Demo Portal"]
+    C --> D["Job-Agent Case Study"]
+    D --> E["Evidence Matrix"]
+    E --> F["Project Status"]
+    F --> G["Project Timeline"]
+    G --> H["Role Reading Paths"]
 ```
