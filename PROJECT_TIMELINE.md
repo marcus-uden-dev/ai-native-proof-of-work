@@ -1,6 +1,6 @@
 # Project Timeline
 
-Last updated: 2026-05-31
+Last updated: 2026-06-01
 Status: Active / Living milestone log
 
 ## Purpose
@@ -22,8 +22,10 @@ flowchart TD
     M7["2026-05-18<br/>Reusable template<br/>and handoff layer"]
     M8["2026-05-24<br/>Source-verified<br/>weekly sync"]
     M9["2026-05-26<br/>Job-agent ops +<br/>startup handoff refresh"]
+    M10["2026-05-28<br/>Static demo<br/>portal"]
+    M11["2026-06-01<br/>Manual compiler<br/>run-now audit"]
 
-    M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9
+    M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9 --> M10 --> M11
 ```
 
 ## Milestone Log
@@ -43,6 +45,8 @@ flowchart TD
 | 2026-05-18 | Reusable template and handoff layer added | Portfolio operating layer | Verified | Commits `657754b` and `962e968`, [template/README.md](template/README.md), [template/REPO_SEED_BLUEPRINT.md](template/REPO_SEED_BLUEPRINT.md), [template/WEEKLY_AUTOMATION_RUNBOOK.md](template/WEEKLY_AUTOMATION_RUNBOOK.md), [llms.txt](llms.txt), [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Shows that the repo can explain both Marcus's evidence and a reusable, provider-neutral adoption path |
 | 2026-05-24 | Weekly compiler source-verifies the job-agent handoff and syncs the portfolio docs | Weekly evidence layer | Verified | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md), [logs/PROBLEM_SOLVING_LOG.md](logs/PROBLEM_SOLVING_LOG.md) | Improves reproducibility and reduces drift between the portfolio layer and the lead source repo |
 | 2026-05-26 to 2026-05-28 | Job-agent repo gains explicit ops-state, startup-contract, and LLM-handoff docs that the portfolio can verify against | Job-agent | Internal / Verified | Source-repo `docs/operations/current-status.md`, `docs/operations/llm-handoff.md`, and `docs/operations/job-agent-startup-skill-handoff.md`, summarized via [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Strengthens the lead proof point by making local setup, OAuth routing, and session handoff more reproducible |
+| 2026-05-28 to 2026-05-31 | Static clickable demo portal added and committed | Portfolio evidence layer | Verified / Needs sharing review | [demos/index.html](demos/index.html), [demos/manifest.json](demos/manifest.json), commit `1e9511c` | Gives recruiters a no-install way to inspect job-agent, PKM, and household budget snapshots |
+| 2026-06-01 | Manual run-now audit of the scheduled compiler contract refreshed stale entry points and internal source index freshness | Portfolio operating layer | Verified | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md), [SOURCE_MAP.md](SOURCE_MAP.md), internal source index metadata | Confirms the scheduled task exists and closes navigation/status drift noted during review |
 
 ## How To Maintain This
 
@@ -68,6 +72,7 @@ Use evidence labels:
 
 | Planned Milestone | Why It Matters | Suggested Evidence |
 |---|---|---|
-| Sanitized job-agent screenshots | Makes the strongest product proof point easier to inspect visually | 2-4 privacy-reviewed screenshots |
+| Privacy-reviewed job-agent screenshots | Makes the strongest product proof point easier to inspect visually | 2-4 privacy-reviewed screenshots |
 | Selected safe test/commit excerpts | Strengthens verification beyond summarized internal status | Short copied test summaries or safe commit references |
 | Recruiter export packet | Tests whether curated portfolio evidence can become a shareable review packet | PDF or curated Markdown export after privacy review |
+| Dated weekly-input file | Gives the compiler a clean source for new progress instead of relying on repo-visible drift | `weekly-input/YYYY-W##.md` |

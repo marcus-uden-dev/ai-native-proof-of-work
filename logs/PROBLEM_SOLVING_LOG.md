@@ -1,5 +1,30 @@
 # Problem-Solving Log
 
+## 2026-06-01 — Scheduled task needed a manual run-now equivalent
+
+### Problem
+
+The user asked to run the Codex scheduled task immediately and then verify the drift called out in the prior review.
+
+### Cause
+
+The available automation tool exposes viewing and schedule management, but not a direct run-now mode in the callable schema. The active automation itself exists and is scheduled weekly.
+
+### Attempted Fixes
+
+- Confirmed the active task named `ai-native-proof-of-work` exists and is `ACTIVE`.
+- Read the scheduled automation prompt and weekly compiler prompt.
+- Ran the same compiler contract manually from the repository root.
+- Updated only source-grounded drift: entry-point freshness, source-index metadata, demo portal evidence, supporting-project maintenance signals, and logs.
+
+### Resolution
+
+The manual run-now equivalent completed without inventing new product progress. The scheduled task remains active for the normal Sunday 22:00 cadence.
+
+### Lesson
+
+If a scheduler lacks a callable run-now action, use the checked-in automation prompt as the execution contract, record the run in the weekly log, and clearly distinguish manual execution from the recurring schedule.
+
 ## 2026-05-31 — Job-agent startup contract drifted from the simpler handoff summary
 
 ### Problem

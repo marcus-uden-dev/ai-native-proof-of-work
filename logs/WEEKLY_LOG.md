@@ -1,5 +1,55 @@
 # Weekly Log
 
+## Manual Compiler Run-Now Audit — 2026-06-01
+
+### 1. Executive Summary
+
+Ran the scheduled Proof-of-Work Compiler contract manually from the repository root after confirming the Codex automation exists and is active.
+
+No dated weekly-input file existed for the current week, so this pass did not invent new product progress. It updated only the drift found during the review: stale entry-point dates, demo portal status, source-index freshness, PKM/budget maintenance signals, and the project timeline.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Source index freshness | Internal index | Internal / Verified | `internal/LOCAL_SOURCE_MAP.md`, `internal/source-indexes/` | Reduces stale-source risk before the next weekly compiler run |
+| Entry-point navigation refresh | Recruiter navigation | Verified | [START_HERE.md](../START_HERE.md), [NAVIGATION.md](../NAVIGATION.md), [EXECUTIVE_SUMMARY.md](../EXECUTIVE_SUMMARY.md) | Makes the first-read path match the current repo state |
+| Static demo portal milestone | Portfolio evidence | Verified / Needs sharing review | [demos/index.html](../demos/index.html), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) | Gives recruiters a no-install product snapshot while preserving privacy checks |
+| Supporting project maintenance signals | Project status | Internal / Verified | [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), case studies | Keeps PKM and budget app status current without overstating dependency updates |
+
+### 3. Workflow Improvement
+
+| Before | After | Improvement | Evidence |
+|---|---|---|---|
+| Several entry points still looked like 2026-05-11/2026-05-18 snapshots | Entry points now reflect the 2026-06-01 audit and point to current status, timeline, demo, and automation docs | Less navigation drift for recruiters and agents | [START_HERE.md](../START_HERE.md), [NAVIGATION.md](../NAVIGATION.md), [EXECUTIVE_SUMMARY.md](../EXECUTIVE_SUMMARY.md) |
+| Demo portal existed but was weakly represented in timeline/proof status | Demo portal is now a verified created artifact with external sharing still marked for review | More accurate evidence labeling | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) |
+| Internal source indexes were stale relative to the 14-day rule | Index metadata refreshed at a high level | Future compiler runs have a fresher source map without exposing raw local source material | [SOURCE_MAP.md](../SOURCE_MAP.md) |
+
+### 4. Source Inputs Used
+
+| Source | Used? | Notes |
+|---|---|---|
+| `weekly-input/` dated file | No | No dated weekly-input file existed for the current week |
+| Active Codex automation config | Yes | Confirmed active weekly task named `ai-native-proof-of-work`, Sunday 22:00 |
+| Repo-visible proof-of-work changes | Yes | Demo portal and current documentation state |
+| Internal source indexes | Yes, refreshed | High-level freshness refresh only; raw local paths remain internal |
+| Local product repos | Yes, limited | Job-agent source docs/status checked; PKM and budget app latest commits checked as maintenance signals |
+
+### 5. Key Verified Signals
+
+- The active Codex scheduled task is `ai-native-proof-of-work`, weekly Sunday at 22:00.
+- The static demo portal is committed and linked, but external sharing still needs privacy/publish review.
+- PKM and household budget app each have a latest observed 2026-05-26 dependency-maintenance commit; this is maintenance freshness, not a product milestone.
+- Job-agent remains the strongest and freshest source-verified proof point.
+
+### 6. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 7. Next Action
+
+Create one dated weekly-input file before the next scheduled Sunday run.
+
 ## Weekly Compiler Sync — 2026-05-31
 
 ### 1. Executive Summary

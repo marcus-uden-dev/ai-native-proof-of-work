@@ -1,6 +1,6 @@
 # Job-Agent Case Study
 
-Last updated: 2026-05-24
+Last updated: 2026-06-01
 Status: Active / Lead proof point / Internal evidence summarized
 
 ## Executive Summary
@@ -35,10 +35,10 @@ Job search work is fragmented across CVs, job boards, application portals, inter
 
 | Area | Current State | Remaining Work |
 |---|---|---|
-| MVP / career-ops | Local status marks MVP complete and career-ops tasks done; source-repo status docs now also report OAuth social auth landed on master | Public-safe proof still needs screenshots or selected excerpts |
+| MVP / career-ops | Local status marks MVP complete and career-ops tasks done; source-repo status docs also report OAuth social auth, nav integration, repo-ops status refreshes, and LLM handoff context | Public-safe proof still needs screenshots or selected excerpts |
 | Privacy / GDPR | Consent, data-rights, export/delete request UX, retention planning, and marketing-pixel guardrails are locally represented | Legal review and final production policy decisions |
 | QA | Backend checks, Playwright coverage, discover regression coverage, migration smokes, and CI workflows are represented in local docs | Full production-like verification and selected recruiter-safe evidence |
-| Production | Hosting architecture and observability plans exist | Domain/server setup, public backend origin, OTel/Grafana, Stripe live, OAuth credentials, and small repo-ops cleanup around doc drift and migration audit follow-up |
+| Production | Hosting architecture and observability plans exist | Domain/server setup, public backend origin, OTel/Grafana, Stripe live, OAuth credentials, and publish-safe confirmation of branch/repo-ops state |
 | Product economics | Billing, credits, referrals, and telemetry are planned or represented | Final pricing and live-market validation |
 
 ## Workflow Model
@@ -61,7 +61,7 @@ flowchart TD
 | Options Considered | Build only content generation, build a full autonomous applier, or build a reviewed career workflow product |
 | Tradeoffs | More workflow coverage increases complexity, privacy burden, and QA needs |
 | Decision | Treat job-agent as a career workflow product, not a simple content generator |
-| Evidence | Internal project summaries show product surfaces, QA notes, privacy planning, and production blockers |
+| Evidence | Internal project summaries show product surfaces, QA notes, privacy planning, production blockers, static demo snapshots, and source-checked handoff docs |
 | Open Questions | Pricing, referral economy, production activation, legal/privacy review, and safe destructive data-rights workflows |
 | Next Action | Add sanitized screenshots and selected safe test/commit references |
 

@@ -1,6 +1,6 @@
 # Weekly Automation Runbook
 
-Last updated: 2026-05-18
+Last updated: 2026-06-01
 Status: Active / Internal operating documentation
 
 ## Purpose
@@ -21,10 +21,12 @@ This supports the one-click clone goal state: the repository should carry enough
 | Schedule | Sunday at 22:00 |
 | Schedule rule | `RRULE:FREQ=WEEKLY;BYHOUR=22;BYMINUTE=0;BYDAY=SU` |
 | Target repository | `TheOneDarkHorse/ai-native-proof-of-work` |
-| Execution model | Worktree-based documentation update |
+| Execution model | Local documentation update |
 | Primary prompt source | [AUTOMATION_PROMPT.md](../AUTOMATION_PROMPT.md) |
 | Supporting prompt | [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](../prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md) |
 | Template prompt | [LLM_BOOTSTRAP_REPO_PROMPT.md](LLM_BOOTSTRAP_REPO_PROMPT.md) |
+
+Last confirmed from local Codex automation config: 2026-06-01.
 
 Do not commit local scheduler state files, machine-specific paths, credentials, logs, or automation runtime metadata.
 
@@ -88,7 +90,7 @@ If the scheduled automation is missing, recreate it with these settings:
 | Schedule | Weekly, Sunday, 22:00 |
 | RRULE | `RRULE:FREQ=WEEKLY;BYHOUR=22;BYMINUTE=0;BYDAY=SU` |
 | Repository root | The local clone of `TheOneDarkHorse/ai-native-proof-of-work` |
-| Environment | Worktree or equivalent isolated working copy |
+| Environment | Local clone or equivalent isolated working copy |
 | Status | Active |
 
 If the automation runner does not support RRULE, use the closest weekly schedule available.

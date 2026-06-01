@@ -1,5 +1,23 @@
 # Changelog
 
+## 2026-06-01 — Manual compiler run-now audit
+
+### Added
+
+- Weekly log entry for the manual run-now audit of the active scheduled compiler contract.
+- Timeline milestone for the static demo portal and the manual compiler audit.
+- Source-map note showing that internal source indexes were refreshed at a high level on 2026-06-01.
+
+### Changed
+
+- Refreshed stale entry-point files: [START_HERE.md](../START_HERE.md), [NAVIGATION.md](../NAVIGATION.md), [EXECUTIVE_SUMMARY.md](../EXECUTIVE_SUMMARY.md), and [BEFORE_AFTER_SNAPSHOTS.md](../BEFORE_AFTER_SNAPSHOTS.md).
+- Updated [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), and [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) to reflect the demo portal, active automation check, refreshed index freshness, and PKM/budget maintenance signals.
+- Updated PKM and household budget case studies with demo links and maintenance-freshness boundaries.
+
+### Notes
+
+No dated weekly-input file existed, so this run did not promote new product progress beyond source-verified status, repo-visible demo work, and dependency-maintenance signals.
+
 ## 2026-05-31 — Weekly proof-of-work sync with startup-contract verification
 
 ### Added

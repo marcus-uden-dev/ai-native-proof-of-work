@@ -1,6 +1,6 @@
 # Before / After Snapshots
 
-Last updated: 2026-05-11
+Last updated: 2026-06-01
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -16,6 +16,7 @@ It is designed to make progression visible without requiring a recruiter to read
 | Documentation automation could overshadow the actual projects | Job-agent is now the lead proof point, with PKM and the budget app as supporting evidence | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | Project evidence was spread across local contexts | Recruiter-facing summaries now point to safe project proof points | [SOURCE_MAP.md](SOURCE_MAP.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 | Progress was visible mostly through logs | A milestone timeline now shows the arc over time | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) |
+| Product surfaces were described mostly as summaries | A static demo portal now gives a no-install click-through for job-agent, PKM, and household budget snapshots | [demos/index.html](demos/index.html), [demos/manifest.json](demos/manifest.json) |
 
 ## Evidence Quality
 
@@ -35,4 +36,4 @@ It is designed to make progression visible without requiring a recruiter to read
 
 ## Next Snapshot To Add
 
-Add a new snapshot when the sanitized job-agent case study gets stronger evidence, screenshots, or safe commit/test references.
+Add the next snapshot when privacy-reviewed screenshots, selected safe test excerpts, or recruiter feedback are added.

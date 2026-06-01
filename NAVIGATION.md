@@ -1,6 +1,6 @@
 # Navigation Hub
 
-Last updated: 2026-05-18
+Last updated: 2026-06-01
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -17,6 +17,8 @@ Use it if the file list feels overwhelming.
 | 2 | [Clickable Demo Portal](demos/index.html) | Quick product feel without installing anything |
 | 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project proof point |
 | 4 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability-to-evidence map |
+
+Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Timeline](PROJECT_TIMELINE.md).
 
 ## If You Have 15 Minutes
 
@@ -73,6 +75,7 @@ Use it if the file list feels overwhelming.
 | What evidence is private/internal? | [Source Map](SOURCE_MAP.md) |
 | Where is project strategy documented? | [Project Strategy Index](strategy/README.md) |
 | How can another person recreate this repository system? | [Template Adoption Kit](template/README.md) |
+| Is the weekly compiler scheduled? | [Weekly Automation Runbook](template/WEEKLY_AUTOMATION_RUNBOOK.md) |
 
 ## What Not To Start With
 

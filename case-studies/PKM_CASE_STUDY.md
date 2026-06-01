@@ -1,6 +1,6 @@
 # PKM Case Study
 
-Last updated: 2026-05-11
+Last updated: 2026-06-01
 Status: Supporting proof point / Internal evidence summarized
 
 ## Executive Summary
@@ -33,6 +33,11 @@ Personal knowledge work can become a pile of notes, links, fragments, and half-p
 | Social feed | Marked `done` in the local feature queue | Needs operational source setup and usage validation before impact claims |
 | Search / AI enrichment | Hybrid search and AI enrichment are part of the product direction | OpenAI billing/quota and re-embedding behavior need cleanup |
 | Operations | Local setup and deployment docs exist | SMTP, frontend URL cleanup, Hetzner deployment, Discord digest, extension, and MCP verification |
+| Maintenance freshness | Latest observed repo signal is a 2026-05-26 frontend dependency-maintenance commit | Treat as maintenance evidence only; do not claim user impact from it |
+
+## Clickable Demo
+
+The [static PKM demo](../demos/index.html#pkm) gives a lightweight, recruiter-safe snapshot of the knowledge-feed and source-capture concept. It uses synthetic/demo data and should support the main job-agent story rather than replacing it.
 
 ## Workflow Model
 

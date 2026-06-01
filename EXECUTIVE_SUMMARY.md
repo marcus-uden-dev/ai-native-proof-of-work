@@ -1,6 +1,6 @@
 # Executive Summary
 
-Last updated: 2026-05-11
+Last updated: 2026-06-01
 Status: Active / Project-focused
 
 ## Positioning
@@ -22,6 +22,8 @@ Current scaffold includes:
 - project proof points
 - proof-of-work evidence map
 - project-scoped strategy documentation for the actual product projects
+- sanitized case studies for job-agent, PKM, and the household budget app
+- static clickable demo portal for recruiter-safe project snapshots
 - architecture documentation
 - Claude + Codex workflow model
 - weekly logs
@@ -58,22 +60,24 @@ Operational value:
 
 ### Verified
 
-- Repository scaffold created.
-- Documentation architecture defined.
-- Recruiter reading path defined.
-- Internal source indexes identify job-agent, PKM, and the household budget app as core project evidence.
+- Repository scaffold, navigation, and recruiter reading path exist.
+- Project-first proof files identify job-agent as the lead proof point, with PKM and the household budget app as supporting evidence.
+- Case studies exist for all three projects.
+- Static demo portal exists for no-install review of job-agent, PKM, and household budget snapshots.
+- Job-agent install and LLM handoff guide was source-checked on 2026-05-31.
+- Internal source indexes were refreshed at a high level on 2026-06-01.
 
 ### Planned
 
-- Add sanitized project case studies for job-agent first.
-- Select safe public/recruiter excerpts from PKM and the household budget app.
-- Add evidence-backed CV bullets tied to project outcomes rather than the compiler.
+- Add privacy-reviewed public-safe screenshots and selected test/commit excerpts.
+- Create a dated weekly-input file before the next compiler run so new work can be promoted without relying on raw session history.
+- Publish or export the demo/recruiter packet only after the sharing checklist passes.
 
 ### Open Questions
 
-- Which job-agent proof points should be prioritized first?
-- Which local folders contain the strongest recruiter-relevant evidence?
+- Which job-agent screenshots and test excerpts are safe enough to share externally?
 - Which artifacts should be safe to share externally?
+- Which PKM and household budget proof points deserve deeper case-study refreshes after the dependency-maintenance commits?
 
 ### Rejected or Deferred
 

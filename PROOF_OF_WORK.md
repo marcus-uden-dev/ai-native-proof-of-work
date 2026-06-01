@@ -1,6 +1,6 @@
 # Proof of Work
 
-Last updated: 2026-05-31
+Last updated: 2026-06-01
 Status: Active / Project-focused evidence map
 
 ## What This Demonstrates
@@ -27,6 +27,7 @@ Status: Active / Project-focused evidence map
 | Project proof points | Concrete project portfolio: job-agent, PKM, household budget app | Internal / Verified | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 | Project timeline | Milestones across products and the portfolio evidence layer | Internal / Verified | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) |
 | Weekly log | Execution cadence | Verified | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
+| Static demo portal | No-install click-through for job-agent, PKM, and household budget snapshots | Verified / Needs sharing review | [demos/index.html](demos/index.html), [demos/manifest.json](demos/manifest.json) |
 | Value proposition | Project-focused positioning | Hypothesis | [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) |
 | Architecture docs | Technical reasoning | Verified | [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md) |
 | Workflow model | Supporting operating model | Decision | [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
@@ -120,4 +121,5 @@ Status: Active / Project-focused evidence map
 | PKM and household budget app are strong supporting projects | Internal / Verified | Add sanitized project case-study pages or selected commits/tests |
 | Weekly workflow improvement has measurable impact | Estimated / not directly tracked | Time saved, reuse count, or before/after workflow data |
 | Recruiter assets improve response or interview quality | Hypothesis | Recruiter feedback, interview outcomes, or sharing results |
-| Static demo portal is ready for external sharing | Needs Review | Privacy review plus commit/publish state for the new `demos/` files |
+| Static demo portal can be shared externally | Needs Review | Privacy review, publish target, and final screenshot/content check |
+| Latest product progress after 2026-05-31 | Needs Review | Add a dated weekly-input file or source-verified product commits before promoting new claims |

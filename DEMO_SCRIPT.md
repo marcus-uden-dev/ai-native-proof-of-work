@@ -1,6 +1,6 @@
 # Demo Script
 
-Last updated: 2026-05-11
+Last updated: 2026-06-01
 Status: Active / Project-focused
 
 ## 1. Opening
@@ -14,6 +14,7 @@ Useful product work often gets scattered across codebases, chats, local projects
 Open:
 
 - [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
+- [demos/index.html](demos/index.html)
 - [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
 - [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
 
@@ -41,11 +42,12 @@ Open [PROOF_OF_WORK.md](PROOF_OF_WORK.md).
 Show:
 
 - evidence map
+- static demo portal artifact
 - workflow improvements
 - proof points
 - status labels
 
-Explain that claims are marked as verified, estimated, planned, or open questions. The current lead proof point is job-agent, supported by PKM and the household budget app. The committed repository scaffold (`1c74a04`) and internal source indexes are supporting evidence infrastructure.
+Explain that claims are marked as verified, estimated, planned, open questions, or needs review. The current lead proof point is job-agent, supported by PKM and the household budget app. The committed repository scaffold (`1c74a04`), static demo portal (`1e9511c`), and internal source indexes are supporting evidence infrastructure.
 
 ## 5. Project Proof Points
 
@@ -62,6 +64,10 @@ Open [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md
 
 Show job-agent as the lead proof point.
 
+Open [demos/index.html](demos/index.html).
+
+Show the static job-agent company research surface first, then briefly show PKM and household budget as supporting snapshots. Call out that demo-only data is labeled and that external sharing still needs a privacy/publish check.
+
 Open [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md).
 
 Show how milestones build over time:
@@ -69,6 +75,8 @@ Show how milestones build over time:
 - project evidence appears first
 - job-agent becomes the lead proof point
 - the portfolio evidence layer and compiler then package the evidence
+- the static demo portal adds a no-install product review path
+- the active scheduled compiler keeps the review loop repeatable
 - future milestones can be added without rewriting the whole portfolio
 
 ## 6. Strategy
@@ -118,7 +126,7 @@ Open:
 - [logs/PROBLEM_SOLVING_LOG.md](logs/PROBLEM_SOLVING_LOG.md)
 
 Show how weekly work becomes evidence.
-Point out that the first weekly run distinguishes between repository evidence, internal source indexes, and claims that still need measured outcomes.
+Point out that the weekly log distinguishes between repository-visible evidence, internal source indexes, source-verified claims, and claims that still need measured outcomes or privacy review.
 
 ## 10. Recruiter Relevance
 
@@ -141,3 +149,4 @@ The project portfolio demonstrates:
 - documentation discipline
 - ability to work with AI tools as an operating system
 - ability to organize messy local knowledge into reusable proof
+- ability to keep evidence current through scheduled review without inventing progress

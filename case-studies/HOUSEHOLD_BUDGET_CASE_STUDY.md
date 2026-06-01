@@ -1,6 +1,6 @@
 # Household Budget App Case Study
 
-Last updated: 2026-05-09
+Last updated: 2026-06-01
 Status: Supporting proof point / Internal evidence summarized
 
 ## Executive Summary
@@ -31,6 +31,11 @@ Household budgeting is not only category totals. A useful product needs shared h
 | Read/write safety | Household-aware read scopes, ownership checks, and migration-safe guards are represented across major surfaces | Validate end-to-end in Supabase after cleanup |
 | Architecture hygiene | Large page-local logic is being moved into read models, view models, workflow helpers, and mutation helpers | Split future-modeling work into smaller landing slices |
 | Verification | Local status reports latest committed feature milestones passing `npm test` and `npm run lint` | Add selected safe test excerpts if this becomes externally shared |
+| Maintenance freshness | Latest observed repo signal is a 2026-05-26 app dependency-maintenance commit | Treat as maintenance evidence only; do not claim user impact from it |
+
+## Clickable Demo
+
+The [static household budget demo](../demos/index.html#household-budget) gives a lightweight, recruiter-safe snapshot of the dashboard, liquidity, budget, import-review, and household-scope concepts. It uses synthetic/demo data and should be privacy-reviewed before public sharing.
 
 ## Domain Model View
 

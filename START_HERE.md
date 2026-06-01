@@ -1,6 +1,6 @@
 # Start Here
 
-Last updated: 2026-05-11
+Last updated: 2026-06-01
 Status: Active / Recruiter-facing
 
 ## One-Minute Overview
@@ -8,6 +8,12 @@ Status: Active / Recruiter-facing
 This repository documents practical product work supported by AI-native workflow design, project-scoped product strategy, architecture reasoning, and proof-of-work documentation.
 
 The main proof points are job-agent, PKM, and a household budget app. The documentation and automation layer supports that portfolio by making project work clear, credible, repeatable, and privacy-safe.
+
+Current strongest fresh signals:
+
+- job-agent has the most current source-verified status and handoff evidence.
+- the static demo portal gives a no-install click-through for the three project snapshots.
+- internal source indexes were refreshed at a high level on 2026-06-01, while new product progress still needs weekly-input notes or source-verified commits.
 
 ## Why This Exists
 
@@ -26,6 +32,7 @@ This repository organizes and explains that work as structured proof.
 - documentation discipline
 - weekly execution
 - practical use of Claude and Codex
+- a scheduled weekly compiler loop for keeping proof-of-work artifacts current
 
 ## How to Read This Repository
 

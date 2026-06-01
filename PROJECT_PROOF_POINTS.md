@@ -1,6 +1,6 @@
 # Project Proof Points
 
-Last updated: 2026-05-31
+Last updated: 2026-06-01
 Status: Active / Evidence-backed summary
 
 ## Purpose
@@ -46,15 +46,16 @@ The stronger story is:
 | QA discipline | Backend tests, Playwright coverage, live frontend/backend verification notes, CI workflow references, and regression-focused docs are present in the source material | Internal / Verified |
 | Privacy and trust | GDPR/cookie consent, data-rights models, retention/anonymization planning, marketing-pixel guardrails, and legal-review blockers are tracked | Internal / Verified |
 | Product judgment | Open decisions include token pricing, referral economy, deployment activation, observability, Stripe live activation, and destructive data-rights workflows | Internal / Verified |
-| Reproducible handoff | The source repo now has a recruiter-safe install and LLM handoff layer that has been re-checked against actual env examples, compose, Makefile, package metadata, requirements, migrations, current-status docs, and the new repo-ops startup/LLM handoff files | Verified |
+| Reproducible handoff | The source repo now has a recruiter-safe install and LLM handoff layer that has been re-checked against actual env examples, compose, Makefile, package metadata, requirements, migrations, current-status docs, and repo-ops startup/LLM handoff files | Verified |
+| Static demo portal | Recruiter-safe static click-through exists for job-agent, with company research as the strongest surface and explicit public-source/synthetic/inferred-demo labels | Verified / Needs sharing review |
 
 ## Current Project Status Summary
 
 | Project | Current State | Open Work |
 |---|---|---|
-| Job-agent | Local status marks the MVP complete and career-ops tasks done; privacy, feedback, QA, discovery, shared-job cleanup, CI, telemetry, billing, deployment planning, OAuth/social-auth landing, nav integration, and startup/LLM handoff docs are represented | Production activation, legal review, live Stripe, public backend origin, observability setup, public-safe evidence excerpts, and verification of the hash-named migration/doc-drift cleanup |
-| PKM | Knowledge-workflow product with ingestion/search/learning/feed/source/person/topic surfaces, feature lifecycle discipline, and a Chrome extension for browser capture | OpenAI billing/quota, SMTP, deployment, source/person/topic setup, and verification of search, flashcard, extension, and MCP paths |
-| Household budget app | Core budgeting surfaces plus substantial household/shared-account hardening, invite onboarding, ownership rules, read-model/view-model extraction, and mutation helper consolidation | Finish post-hardening migration cleanup, remove legacy bridge debt, validate Supabase ownership hardening, and split future modeling into smaller slices |
+| Job-agent | Local status marks the MVP complete and career-ops tasks done; privacy, feedback, QA, discovery, shared-job cleanup, CI, telemetry, billing, deployment planning, OAuth/social-auth landing, nav integration, startup/LLM handoff docs, and repo-ops handoff refreshes are represented | Production activation, legal review, live Stripe, public backend origin, observability setup, public-safe evidence excerpts, and publish-safe confirmation of branch/repo-ops state |
+| PKM | Knowledge-workflow product with ingestion/search/learning/feed/source/person/topic surfaces, feature lifecycle discipline, a Chrome extension for browser capture, and a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/quota, SMTP, deployment, source/person/topic setup, and verification of search, flashcard, extension, and MCP paths |
+| Household budget app | Core budgeting surfaces plus substantial household/shared-account hardening, invite onboarding, ownership rules, read-model/view-model extraction, mutation helper consolidation, and a 2026-05-26 app dependency-maintenance commit | Finish post-hardening migration cleanup, remove legacy bridge debt, validate Supabase ownership hardening, and split future modeling into smaller slices |
 
 ## Supporting Project Signals
 
@@ -63,6 +64,7 @@ The stronger story is:
 - Uses feature queues, brainstorm queues, ICE scoring, and explicit lifecycle states.
 - Contains backend/frontend structure, ingestion routes, search, embeddings, learning routes, feed/social tests, and a browser extension.
 - Social feed work is marked `done` in the local feature queue, while full daily-use readiness still depends on operational setup and verification.
+- Latest observed repo signal is dependency maintenance on 2026-05-26; do not present it as product-outcome validation.
 - Demonstrates knowledge workflow design rather than generic note-taking.
 
 ### Household Budget App
@@ -70,6 +72,7 @@ The stronger story is:
 - Defines a desktop-first Swedish household budgeting product with shared household, imports, review queues, liquidity forecasting, goals, credit-card handling, and category/rule logic.
 - Maintains durable product memory, roadmap/status docs, handoff docs, and a broad test surface.
 - Recent status emphasizes household-scoped reads/writes, shared-account ownership hardening, invite onboarding, and moving complex page logic into dedicated read models, view models, workflow helpers, and mutation helpers.
+- Latest observed repo signal is dependency maintenance on 2026-05-26; do not present it as product-outcome validation.
 - Demonstrates careful domain modeling and security-aware household data access.
 
 ## How The Automation Fits

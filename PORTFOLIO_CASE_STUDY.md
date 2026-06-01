@@ -1,6 +1,6 @@
 # Portfolio Case Study
 
-Last updated: 2026-05-11
+Last updated: 2026-06-01
 Status: Active / Project-focused
 
 ## Problem
@@ -40,6 +40,7 @@ Use:
 - strategy docs
 - architecture docs
 - recruiter assets
+- static clickable demos
 - source maps
 - privacy rules
 - evidence labels
@@ -87,10 +88,12 @@ Local source indexes were then created as internal, gitignored artifacts. They k
 
 The portfolio documentation has now been repositioned so job-agent, PKM, and the household budget app are the primary project evidence. The proof-of-work compiler remains documented as repeatable automation for extraction, review, privacy, and recruiter translation.
 
+The repository now also includes a static demo portal for no-install review of job-agent, PKM, and household budget snapshots. The demo portal is a verified artifact, while external sharing still requires the normal privacy and publish review.
+
 ## What I Would Improve Next
 
-1. Create a sanitized job-agent case-study page with evidence labels.
-2. Add shorter supporting case-study notes for PKM and the household budget app.
+1. Add privacy-reviewed screenshots and selected safe test/commit excerpts.
+2. Create a dated weekly-input file before the next scheduled compiler run.
 3. Create a first export PDF after the repo passes the sharing checklist.
 
 ## Recruiter-Relevant Skills Demonstrated
