@@ -5,7 +5,11 @@
   "publishing": {
     "local_entry": "demos/index.html",
     "pages_ready": true,
-    "notes": "Pure static HTML/CSS/JS with relative paths. Can be served by GitHub Pages, Netlify, or Cloudflare Pages."
+    "published_url": "https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/",
+    "published_repo": "https://github.com/TheOneDarkHorse/ai-native-proof-of-work-demo",
+    "published_status": "live",
+    "published_at": "2026-06-01",
+    "notes": "Pure static HTML/CSS/JS with relative paths. Published from a separate public demo repository so the private proof-of-work repository stays private."
   },
   "snapshots": [
     {
@@ -28,7 +32,8 @@
       "why": "Company research shows the strongest product depth: public sources, demo-only KPI signals, and reviewable decision support.",
       "rollback_note": "Use this as the baseline if later research UI becomes visually noisy or loses source labeling.",
       "screenshot_path": "../assets/screenshots/job-agent-03-company-research-icons.png",
-      "demo_path": "index.html#job-agent"
+      "demo_path": "index.html#job-agent",
+      "published_url": "https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/index.html#job-agent"
     },
     {
       "project": "pkm",
@@ -45,7 +50,8 @@
       "why": "Shows supporting proof around ingestion, source quality, tagging, and retrieval workflows.",
       "rollback_note": "Keep as a lightweight supporting proof point; do not let it overshadow job-agent.",
       "screenshot_path": "../assets/screenshots/pkm-01-knowledge-feed.png",
-      "demo_path": "index.html#pkm"
+      "demo_path": "index.html#pkm",
+      "published_url": "https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/index.html#pkm"
     },
     {
       "project": "household-budget",
@@ -62,7 +68,8 @@
       "why": "Shows supporting proof around financial domain modeling and household/shared-account state.",
       "rollback_note": "Use as the baseline sample-data demo for future budget-app screenshots.",
       "screenshot_path": "../assets/screenshots/household-budget-01-dashboard.png",
-      "demo_path": "index.html#household-budget"
+      "demo_path": "index.html#household-budget",
+      "published_url": "https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/index.html#household-budget"
     }
   ]
 }

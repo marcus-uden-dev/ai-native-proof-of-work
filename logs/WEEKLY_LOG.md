@@ -1,5 +1,33 @@
 # Weekly Log
 
+## Public Demo Portal Publish — 2026-06-01
+
+### 1. Executive Summary
+
+Created a separate public GitHub repository for the static demo portal and enabled GitHub Pages.
+
+The private proof-of-work repository remains private. The public repository contains only the demo portal files and required screenshot assets.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Public demo repository | Publishing | Verified | [TheOneDarkHorse/ai-native-proof-of-work-demo](https://github.com/TheOneDarkHorse/ai-native-proof-of-work-demo) | Keeps public demo separate from private evidence repo |
+| GitHub Pages demo | Public prototype | Verified | [Published demo](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) | Gives recruiters a no-install click-through |
+| Proof repo links | Documentation | Verified | [README.md](../README.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) | Makes the live prototype discoverable from the private evidence repo |
+
+### 3. Validation
+
+| Check | Result |
+|---|---|
+| GitHub Pages API status | `built` |
+| Public demo HTTP check | `200` |
+| Live Playwright smoke | `2 passed` |
+
+### 4. Next Action
+
+Add the published demo link to recruiter outreach materials when sharing the portfolio.
+
 ## Manual Compiler Run-Now Audit — 2026-06-01
 
 ### 1. Executive Summary
@@ -14,7 +42,7 @@ No dated weekly-input file existed for the current week, so this pass did not in
 |---|---|---|---|---|
 | Source index freshness | Internal index | Internal / Verified | `internal/LOCAL_SOURCE_MAP.md`, `internal/source-indexes/` | Reduces stale-source risk before the next weekly compiler run |
 | Entry-point navigation refresh | Recruiter navigation | Verified | [START_HERE.md](../START_HERE.md), [NAVIGATION.md](../NAVIGATION.md), [EXECUTIVE_SUMMARY.md](../EXECUTIVE_SUMMARY.md) | Makes the first-read path match the current repo state |
-| Static demo portal milestone | Portfolio evidence | Verified / Needs sharing review | [demos/index.html](../demos/index.html), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) | Gives recruiters a no-install product snapshot while preserving privacy checks |
+| Static demo portal milestone | Portfolio evidence | Verified | [Published demo](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) | Gives recruiters a no-install product snapshot while keeping the private evidence repo separate |
 | Supporting project maintenance signals | Project status | Internal / Verified | [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), case studies | Keeps PKM and budget app status current without overstating dependency updates |
 
 ### 3. Workflow Improvement
@@ -22,7 +50,7 @@ No dated weekly-input file existed for the current week, so this pass did not in
 | Before | After | Improvement | Evidence |
 |---|---|---|---|
 | Several entry points still looked like 2026-05-11/2026-05-18 snapshots | Entry points now reflect the 2026-06-01 audit and point to current status, timeline, demo, and automation docs | Less navigation drift for recruiters and agents | [START_HERE.md](../START_HERE.md), [NAVIGATION.md](../NAVIGATION.md), [EXECUTIVE_SUMMARY.md](../EXECUTIVE_SUMMARY.md) |
-| Demo portal existed but was weakly represented in timeline/proof status | Demo portal is now a verified created artifact with external sharing still marked for review | More accurate evidence labeling | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) |
+| Demo portal existed but was weakly represented in timeline/proof status | Demo portal is now a verified created and published artifact | More accurate evidence labeling | [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) |
 | Internal source indexes were stale relative to the 14-day rule | Index metadata refreshed at a high level | Future compiler runs have a fresher source map without exposing raw local source material | [SOURCE_MAP.md](../SOURCE_MAP.md) |
 
 ### 4. Source Inputs Used
@@ -38,7 +66,7 @@ No dated weekly-input file existed for the current week, so this pass did not in
 ### 5. Key Verified Signals
 
 - The active Codex scheduled task is `ai-native-proof-of-work`, weekly Sunday at 22:00.
-- The static demo portal is committed and linked, but external sharing still needs privacy/publish review.
+- The static demo portal is committed, published through a separate public repo, and live-smoke-tested.
 - PKM and household budget app each have a latest observed 2026-05-26 dependency-maintenance commit; this is maintenance freshness, not a product milestone.
 - Job-agent remains the strongest and freshest source-verified proof point.
 

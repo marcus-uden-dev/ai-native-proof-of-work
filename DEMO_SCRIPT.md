@@ -14,7 +14,7 @@ Useful product work often gets scattered across codebases, chats, local projects
 Open:
 
 - [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-- [demos/index.html](demos/index.html)
+- [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/)
 - [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
 - [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
 
@@ -64,9 +64,9 @@ Open [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md
 
 Show job-agent as the lead proof point.
 
-Open [demos/index.html](demos/index.html).
+Open the [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/).
 
-Show the static job-agent company research surface first, then briefly show PKM and household budget as supporting snapshots. Call out that demo-only data is labeled and that external sharing still needs a privacy/publish check.
+Show the static job-agent company research surface first, then briefly show PKM and household budget as supporting snapshots. Call out that demo-only data is labeled and that the public repo intentionally contains only demo files, not the private proof-of-work source repository.
 
 Open [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md).
 

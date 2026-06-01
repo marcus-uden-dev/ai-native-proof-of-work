@@ -14,7 +14,7 @@ Use it if the file list feels overwhelming.
 | Step | Open | Why |
 |---|---|---|
 | 1 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Fast overview of the strongest proof points |
-| 2 | [Clickable Demo Portal](demos/index.html) | Quick product feel without installing anything |
+| 2 | [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) | Quick product feel without installing anything |
 | 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project proof point |
 | 4 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability-to-evidence map |
 
@@ -26,7 +26,7 @@ Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Ti
 |---|---|---|
 | 1 | [Start Here](START_HERE.md) | One-minute orientation |
 | 2 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Summary of positioning and proof |
-| 3 | [Clickable Demo Portal](demos/index.html) | Static click-through for job-agent, PKM, and budget app |
+| 3 | [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) | Static click-through for job-agent, PKM, and budget app |
 | 4 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Main product evidence |
 | 5 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
 | 6 | [Project Status](PROJECT_STATUS.md) | Current state and open work |
@@ -63,7 +63,7 @@ Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Ti
 |---|---|
 | What is this repo? | [Start Here](START_HERE.md) |
 | What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
-| Where can I click through product demos? | [Clickable Demo Portal](demos/index.html) |
+| Where can I click through product demos? | [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) |
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |
 | How can another user install the lead product? | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |

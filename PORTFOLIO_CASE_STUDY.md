@@ -88,7 +88,7 @@ Local source indexes were then created as internal, gitignored artifacts. They k
 
 The portfolio documentation has now been repositioned so job-agent, PKM, and the household budget app are the primary project evidence. The proof-of-work compiler remains documented as repeatable automation for extraction, review, privacy, and recruiter translation.
 
-The repository now also includes a static demo portal for no-install review of job-agent, PKM, and household budget snapshots. The demo portal is a verified artifact, while external sharing still requires the normal privacy and publish review.
+The repository now also has a [published static demo portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) for no-install review of job-agent, PKM, and household budget snapshots. It is published from a separate public demo repository so the private proof-of-work evidence repository remains private.
 
 ## What I Would Improve Next
 

@@ -47,7 +47,7 @@ The stronger story is:
 | Privacy and trust | GDPR/cookie consent, data-rights models, retention/anonymization planning, marketing-pixel guardrails, and legal-review blockers are tracked | Internal / Verified |
 | Product judgment | Open decisions include token pricing, referral economy, deployment activation, observability, Stripe live activation, and destructive data-rights workflows | Internal / Verified |
 | Reproducible handoff | The source repo now has a recruiter-safe install and LLM handoff layer that has been re-checked against actual env examples, compose, Makefile, package metadata, requirements, migrations, current-status docs, and repo-ops startup/LLM handoff files | Verified |
-| Static demo portal | Recruiter-safe static click-through exists for job-agent, with company research as the strongest surface and explicit public-source/synthetic/inferred-demo labels | Verified / Needs sharing review |
+| Static demo portal | Recruiter-safe static click-through is published publicly from a separate demo repo, with job-agent company research as the strongest surface and explicit public-source/synthetic/inferred-demo labels | Verified |
 
 ## Current Project Status Summary
 

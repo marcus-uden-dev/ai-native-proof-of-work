@@ -12,7 +12,7 @@ The main proof points are job-agent, PKM, and a household budget app. The docume
 Current strongest fresh signals:
 
 - job-agent has the most current source-verified status and handoff evidence.
-- the static demo portal gives a no-install click-through for the three project snapshots.
+- the published static demo portal gives a no-install click-through for the three project snapshots.
 - internal source indexes were refreshed at a high level on 2026-06-01, while new product progress still needs weekly-input notes or source-verified commits.
 
 ## Why This Exists
@@ -40,7 +40,7 @@ Recommended path:
 
 1. [Navigation Hub](NAVIGATION.md)
 2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
-3. [Clickable Demo Portal](demos/index.html)
+3. [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/)
 4. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
 5. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
 6. [Project Status](PROJECT_STATUS.md)

@@ -35,7 +35,7 @@ Household budgeting is not only category totals. A useful product needs shared h
 
 ## Clickable Demo
 
-The [static household budget demo](../demos/index.html#household-budget) gives a lightweight, recruiter-safe snapshot of the dashboard, liquidity, budget, import-review, and household-scope concepts. It uses synthetic/demo data and should be privacy-reviewed before public sharing.
+The [published static household budget demo](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/index.html#household-budget) gives a lightweight, recruiter-safe snapshot of the dashboard, liquidity, budget, import-review, and household-scope concepts. It uses synthetic/demo data and is published from a demo-only public repository.
 
 ## Domain Model View
 

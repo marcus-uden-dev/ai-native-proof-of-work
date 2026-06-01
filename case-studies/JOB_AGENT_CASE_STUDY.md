@@ -11,7 +11,7 @@ It demonstrates product execution across career workflow automation: CV handling
 
 ## Clickable Demo
 
-The [static job-agent demo](../demos/index.html#job-agent) gives recruiters and internal reviewers a no-install click-through of the main workflow surfaces.
+The [published static job-agent demo](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/index.html#job-agent) gives recruiters and internal reviewers a no-install click-through of the main workflow surfaces.
 
 The strongest V1 surface is company research: it shows positive and warning signal chips, financial KPI rows, compensation signals, culture signals, evidence labels, and explicit `public_source`, `synthetic`, or `inferred_demo` data classes. OpenAI and Anthropic are used as public-source example companies, while uncertain scores, salary estimates, warning flags, and financial metrics are marked as demo data.
 

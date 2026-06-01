@@ -37,7 +37,7 @@ Personal knowledge work can become a pile of notes, links, fragments, and half-p
 
 ## Clickable Demo
 
-The [static PKM demo](../demos/index.html#pkm) gives a lightweight, recruiter-safe snapshot of the knowledge-feed and source-capture concept. It uses synthetic/demo data and should support the main job-agent story rather than replacing it.
+The [published static PKM demo](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/index.html#pkm) gives a lightweight, recruiter-safe snapshot of the knowledge-feed and source-capture concept. It uses synthetic/demo data and should support the main job-agent story rather than replacing it.
 
 ## Workflow Model
 

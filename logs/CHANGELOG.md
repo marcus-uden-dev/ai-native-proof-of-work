@@ -1,5 +1,22 @@
 # Changelog
 
+## 2026-06-01 — Public demo portal published
+
+### Added
+
+- Public repository `TheOneDarkHorse/ai-native-proof-of-work-demo` containing only the static demo portal and required screenshot assets.
+- GitHub Pages deployment for the demo portal: `https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/`.
+
+### Changed
+
+- Updated recruiter-facing navigation, proof, status, timeline, case-study, and demo manifest files with the live demo URL.
+- Kept the private proof-of-work evidence repository separate from the public demo repository.
+
+### Validation
+
+- GitHub Pages status: built.
+- Live Playwright smoke: 2 passed against the public demo URL and public manifest.
+
 ## 2026-06-01 — Manual compiler run-now audit
 
 ### Added

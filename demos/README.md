@@ -2,7 +2,14 @@
 
 Status: Static / recruiter-safe demo
 
-Open [index.html](index.html) directly in a browser, or publish the `demos/` folder through GitHub Pages, Netlify, or Cloudflare Pages.
+Open [index.html](index.html) directly in a browser.
+
+Published public demo:
+
+- [Proof-of-Work Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/)
+- Public demo repo: [TheOneDarkHorse/ai-native-proof-of-work-demo](https://github.com/TheOneDarkHorse/ai-native-proof-of-work-demo)
+
+The public repo intentionally contains only this static demo portal and required screenshot assets. The private proof-of-work evidence repository remains separate.
 
 ## Scope
 

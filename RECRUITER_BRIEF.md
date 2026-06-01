@@ -23,7 +23,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 | Job-agent career workflow product | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows full-stack product execution, privacy/trust thinking, QA discipline, and career-domain judgment |
 | PKM project | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows knowledge workflow design, ingestion/search thinking, and feature prioritization |
 | Household budget app | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Shows domain modeling, financial-product UX, shared-data/security thinking, and test-backed development |
-| Static demo portal | [demos/index.html](demos/index.html), [demos/manifest.json](demos/manifest.json) | Gives a no-install, recruiter-safe way to inspect project surfaces before deeper review |
+| Static demo portal | [Published demo](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/), [demos/manifest.json](demos/manifest.json) | Gives a no-install, recruiter-safe way to inspect project surfaces before deeper review |
 | Evidence matrix | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) | Maps capabilities to evidence for fast review |
 | Portfolio evidence architecture | [README.md](README.md), [AGENTS.md](AGENTS.md), commit `1c74a04` | Shows ability to turn product work into shareable evidence without making the documentation layer the product |
 | Decision-trail format | [logs/DECISION_LOG.md](logs/DECISION_LOG.md) | Shows structured judgment |

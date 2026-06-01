@@ -59,7 +59,7 @@ flowchart TD
 |---|---|
 | [Navigation Hub](NAVIGATION.md) | Plain-English navigation hub for recruiters |
 | [START_HERE.md](START_HERE.md) | Fast recruiter-readable entry point |
-| [Clickable Demo Portal](demos/index.html) | Static recruiter-safe product demos for job-agent, PKM, and household budget app |
+| [Clickable Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) | Published static recruiter-safe product demos for job-agent, PKM, and household budget app |
 | [llms.txt](llms.txt) | Machine-readable repository map for LLM assistants |
 | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) | One-screen recruiter overview |
 | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) | Agent-readable guide for recruiter-side assistants |
@@ -91,7 +91,7 @@ Recommended order:
 
 1. [START_HERE.md](START_HERE.md)
 2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-3. [demos/index.html](demos/index.html)
+3. [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/)
 4. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
 5. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
 6. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
@@ -110,7 +110,7 @@ Recommended order:
 | Capability | How It Shows Up |
 |---|---|
 | Product execution | Job-agent, PKM, and household budget app case studies |
-| Clickable review | Static demo portal with job-agent company research, synthetic KPI signals, and public-source labels |
+| Clickable review | Published static demo portal with job-agent company research, synthetic KPI signals, and public-source labels |
 | Reproducible handoff | Job-agent install guide, LLM boot sequence, ports, service map, and validation commands |
 | Recruiter skim-readability | One-pager, evidence matrix, role reading paths |
 | Agent readability | Recruiter agent guide and canonical reading order |

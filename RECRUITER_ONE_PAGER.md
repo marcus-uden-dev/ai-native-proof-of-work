@@ -1,6 +1,6 @@
 # Recruiter One-Pager
 
-Last updated: 2026-05-31
+Last updated: 2026-06-01
 Status: Active / Recruiter-facing
 
 ## Positioning
@@ -19,6 +19,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 ## What To Look For
 
 - Full-stack product execution, especially in job-agent.
+- Published static demo: [Proof-of-Work Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/).
 - Evidence discipline: claims are labeled as `Verified`, `Internal / Verified`, `Estimated`, `Hypothesis`, or `Open Question`.
 - Privacy-aware documentation: raw local paths, chats, and sensitive details are summarized rather than exposed.
 - Reproducible lead-project handoff: the job-agent setup, agent-entry files, startup-port contract, and OAuth-routing notes are checked against the source repo before they are promoted here.

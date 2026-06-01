@@ -46,7 +46,7 @@ Recent source signals from this check:
 
 - Job-agent source status and handoff docs had 2026-05-31 updates, including repo-ops and handoff context that should remain source-verified before future promotion.
 - PKM and the household budget app each have 2026-05-26 dependency-maintenance commits; these are maintenance signals, not new product-outcome claims.
-- The proof-of-work repo now has a committed static demo portal, but external sharing still needs the normal privacy review/publish check.
+- The proof-of-work repo now has a committed static demo portal and a separate public demo repository: `https://github.com/TheOneDarkHorse/ai-native-proof-of-work-demo`.
 
 ## Evidence Rule
 
