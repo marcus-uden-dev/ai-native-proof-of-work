@@ -1,6 +1,6 @@
 # Role Reading Paths
 
-Last updated: 2026-06-01
+Last updated: 2026-06-14
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -11,17 +11,20 @@ Different recruiters look for different signals. This file gives role-specific p
 
 Read:
 
-1. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-2. [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md)
-3. [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md)
-4. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-5. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+1. [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md) if using an assistant
+2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
+3. [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md)
+4. [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md)
+5. [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
+6. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+7. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
 
 Look for:
 
 - AI as an operating layer
 - human review and evidence labels
 - repeatable workflow design
+- custom skills as reusable problem/solution workflows
 - privacy-aware documentation
 
 ## Product Operations
@@ -32,7 +35,8 @@ Read:
 2. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
 3. [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
 4. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
-5. [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md)
+5. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+6. [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md)
 
 Look for:
 
@@ -63,11 +67,12 @@ Look for:
 
 Read:
 
-1. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-2. [PROJECT_STATUS.md](PROJECT_STATUS.md)
-3. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
-4. [SOURCE_MAP.md](SOURCE_MAP.md)
-5. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
+1. [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md) if producing an assessment report
+2. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+3. [PROJECT_STATUS.md](PROJECT_STATUS.md)
+4. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
+5. [SOURCE_MAP.md](SOURCE_MAP.md)
+6. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
 
 Look for:
 

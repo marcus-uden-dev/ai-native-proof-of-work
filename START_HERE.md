@@ -1,6 +1,6 @@
 # Start Here
 
-Last updated: 2026-06-01
+Last updated: 2026-06-02
 Status: Active / Recruiter-facing
 
 ## One-Minute Overview
@@ -8,6 +8,8 @@ Status: Active / Recruiter-facing
 This repository documents practical product work supported by AI-native workflow design, project-scoped product strategy, architecture reasoning, and proof-of-work documentation.
 
 The main proof points are job-agent, PKM, and a household budget app. The documentation and automation layer supports that portfolio by making project work clear, credible, repeatable, and privacy-safe.
+
+If you are using an LLM or recruiter-side assistant to assess Marcus, start with [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md). It tells the assistant how to create a fair, evidence-grounded report without overstating claims.
 
 Current strongest fresh signals:
 
@@ -40,7 +42,7 @@ Recommended path:
 
 1. [Navigation Hub](NAVIGATION.md)
 2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
-3. [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/)
+3. [Job-Agent UX Snapshot](demos/job-agent/index.html)
 4. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
 5. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
 6. [Project Status](PROJECT_STATUS.md)
@@ -52,7 +54,7 @@ Recommended path:
 12. [Project Proof Points](PROJECT_PROOF_POINTS.md)
 13. [Weekly Log](logs/WEEKLY_LOG.md)
 
-If you are using an assistant or recruiter-side agent, start with [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
+If you are using an assistant or recruiter-side agent, start with [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md), then use [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
 
 If you want to recreate this repository architecture for another person or organization, use the [Template Adoption Kit](template/README.md). It is the secondary clone/fork layer and keeps template material separate from the recruiter reading path.
 

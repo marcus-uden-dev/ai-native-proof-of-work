@@ -1,5 +1,83 @@
 # Decision Log
 
+## 2026-06-14 — Use direct source verification when lead-project status docs lag
+
+### Context
+
+The portfolio repo depends on `job-agent` status and handoff freshness, but the source repo's `docs/operations/current-status.md` can lag the actual git HEAD after small commit bursts or docs follow-ups.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Trust the source status doc date as the freshness boundary | Simple and easy to explain | Can understate or misdate current evidence |
+| Ignore status docs and use git/files only | Freshest possible boundary | Loses useful curated context from the source repo |
+| Use status docs as context but let direct git/file verification override stale dates | Preserves curated context and freshness | Requires extra weekly verification work |
+
+### Decision
+
+Use source status docs as context, but treat the direct source-verification date from git/file inspection as authoritative when the status doc date lags.
+
+### Reasoning Trail
+
+```text
+Context -> The lead product can move faster than its status summary.
+Options Considered -> Trust the status doc, ignore it entirely, or combine it with direct verification.
+Tradeoffs -> Direct verification adds weekly work but avoids stale recruiter-facing freshness claims.
+Decision -> Keep the status doc as context and let direct verification override stale dates.
+Evidence -> The 2026-06-14 job-agent verification found newer commits than the dated triage header in docs/operations/current-status.md.
+Open Questions -> Whether the source repo should add an explicit "verified against HEAD" field in its own ops docs.
+Next Action -> Keep the handoff guide and recruiter-agent/report guidance aligned with the direct verification rule.
+```
+
+### Evidence
+
+[case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](../logs/WEEKLY_LOG.md), [logs/PROBLEM_SOLVING_LOG.md](../logs/PROBLEM_SOLVING_LOG.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md)
+
+### Status
+
+Decision
+
+## 2026-06-02 — Add workflow implementation cases as supporting proof
+
+### Context
+
+The repository already leads with product case studies, but many practical improvements happen in the operating layer: Claude artifacts, Codex intake flows, `tasks/lessons.md`, design rules, frequent skills, automations, global logs, and template materials. Those workflows are evidence of implementation quality when they are tied to concrete artifacts.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep workflow evidence only inside logs and prompts | Avoids adding another case-study surface | Makes implemented workflow improvements hard to find |
+| Promote workflows as main case studies | Shows AI-native operating-system depth | Risks making the portfolio feel too meta again |
+| Add a supporting workflow-case index | Makes the evidence visible while preserving product-first positioning | Requires careful evidence labels per workflow |
+
+### Decision
+
+Add workflow implementation cases as supporting proof points under `case-studies/`, linked from navigation and evidence maps.
+
+### Reasoning Trail
+
+```text
+Context -> Workflow implementation evidence is real but scattered.
+Options Considered -> Leave scattered, make workflows primary, or add a supporting workflow-case index.
+Tradeoffs -> A workflow index adds maintenance but keeps product projects as the lead proof.
+Decision -> Create a supporting workflow implementation case-study index.
+Evidence -> Existing prompts, lessons, logs, workflow docs, source map, and template docs already document parts of this system.
+Open Questions -> Which cases should be expanded into full before/after narratives after more source evidence is sanitized.
+Next Action -> Expand the weekly proof-of-work compiler case first.
+```
+
+### Evidence
+
+[case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md), [tasks/lessons.md](../tasks/lessons.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](../workflows/CLAUDE_CODEX_WORKFLOW.md), [template/README.md](../template/README.md)
+
+### Status
+
+Decision
+
+---
+
 ## 2026-05-11 — Organize strategy by product project
 
 ### Context

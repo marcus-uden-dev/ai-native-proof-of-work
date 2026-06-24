@@ -1,6 +1,6 @@
 # Executive Summary
 
-Last updated: 2026-06-01
+Last updated: 2026-06-02
 Status: Active / Project-focused
 
 ## Positioning
@@ -29,6 +29,7 @@ Current scaffold includes:
 - weekly logs
 - decision logs
 - recruiter-facing assets
+- recruiter-side LLM report guidance
 - Mermaid diagrams
 
 ## Why It Matters
@@ -61,6 +62,7 @@ Operational value:
 ### Verified
 
 - Repository scaffold, navigation, and recruiter reading path exist.
+- Recruiter-side LLM report guidance exists and is linked from the main entry points.
 - Project-first proof files identify job-agent as the lead proof point, with PKM and the household budget app as supporting evidence.
 - Case studies exist for all three projects.
 - Static demo portal exists for no-install review of job-agent, PKM, and household budget snapshots.

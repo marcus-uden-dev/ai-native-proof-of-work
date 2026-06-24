@@ -1,5 +1,86 @@
 # Changelog
 
+## 2026-06-23 — Weekly compiler boundary refresh without new milestone claims
+
+### Added
+
+- Weekly log entry for the 2026-06-23 compiler run.
+- Timeline milestone showing that the lead-project source boundary was refreshed again without inventing a new shipped milestone.
+
+### Changed
+
+- Re-verified [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) against the current `job-agent` source tree and corrected the migration snapshot to 46 files with named head `0045`.
+- Refreshed [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md), and [SOURCE_MAP.md](../SOURCE_MAP.md) so the lead proof point is now anchored to a direct source verification on 2026-06-23.
+
+### Notes
+
+No dated weekly-input file existed for the current week, so this sync promoted only direct source-verified repo state, noted that PR #6 remains open, and did not invent a new product milestone.
+
+## 2026-06-14 — Weekly compiler direct-source refresh
+
+### Added
+
+- Weekly log entry for the 2026-06-14 compiler run.
+- Timeline milestone for the refreshed `job-agent` privacy-retention and direct source-verification boundary.
+- Problem-solving entry and decision-log entry covering how to handle lagging source-repo status docs.
+
+### Changed
+
+- Re-verified [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) against the current `job-agent` source tree and git history.
+- Refreshed [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md), and [SOURCE_MAP.md](../SOURCE_MAP.md) so the lead proof point is now anchored to a direct source verification on 2026-06-14 instead of 2026-05-31.
+- Updated recruiter/agent reading surfaces to clarify that direct source-verification dates override lagging source-repo status-doc dates.
+
+### Notes
+
+No dated weekly-input file existed for the current week, so this sync promoted only direct source-verified repo state and did not invent a higher-level weekly narrative.
+
+## 2026-06-07 — Weekly compiler no-new-evidence sync
+
+### Added
+
+- Weekly log entry for the 2026-06-07 compiler run.
+- Lesson covering how weekly runs should handle an inaccessible lead source repo without inventing freshness.
+
+### Changed
+
+- Refreshed [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), and [SOURCE_MAP.md](../SOURCE_MAP.md) so they explicitly keep `job-agent` freshness bounded to the last direct source verification on 2026-05-31.
+
+### Notes
+
+No dated weekly-input file existed for the current week, and the `job-agent` source repo was not directly accessible from this workspace, so no new product-progress claims were promoted.
+
+## 2026-06-03 — Weekly automation prompt synced with new review surfaces
+
+### Changed
+
+- Updated the active Codex automation `ai-native-proof-of-work` so it explicitly inspects and maintains [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md) and [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md).
+- Added an explicit dependency and cross-reference maintenance rule so the automation updates indexes, reading paths, prompt inspection lists, runbooks, source maps, and local Markdown links when docs are added, moved, renamed, removed, or repositioned.
+- Updated [template/WEEKLY_AUTOMATION_RUNBOOK.md](../template/WEEKLY_AUTOMATION_RUNBOOK.md) and [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](../prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md) to match the active automation contract.
+- Synced the portable shared-routine Markdown copy for the automation.
+
+### Validation
+
+- Confirmed the active automation prompt contains the new recruiter LLM report brief and workflow implementation case responsibilities.
+- Confirmed the active automation prompt contains dependency/cross-reference, link-check, and orphan-doc checks.
+- Ran targeted link and diff validation after the update.
+
+## 2026-06-02 — Recruiter LLM report brief and workflow-case routing
+
+### Added
+
+- [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md) as the first-class report format for recruiter-side LLMs.
+- [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) as a supporting workflow implementation case index.
+
+### Changed
+
+- Linked the report brief from README, Start Here, navigation, recruiter agent guide, and `llms.txt`.
+- Updated proof, evidence, status, timeline, source-map, role-path, and automation-maintenance docs so the report brief and workflow cases are maintained by future progress runs.
+
+### Validation
+
+- Local Markdown link audit passed for recruiter-facing files.
+- Recruiter-facing privacy scan found no local private paths in the newly touched public files.
+
 ## 2026-06-01 — Public demo portal published
 
 ### Added

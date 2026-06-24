@@ -1,6 +1,6 @@
 # Navigation Hub
 
-Last updated: 2026-06-01
+Last updated: 2026-06-02
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -14,7 +14,7 @@ Use it if the file list feels overwhelming.
 | Step | Open | Why |
 |---|---|---|
 | 1 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Fast overview of the strongest proof points |
-| 2 | [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) | Quick product feel without installing anything |
+| 2 | [Job-Agent UX Snapshot](demos/job-agent/index.html) | Quick product feel without installing anything |
 | 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project proof point |
 | 4 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability-to-evidence map |
 
@@ -26,7 +26,7 @@ Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Ti
 |---|---|---|
 | 1 | [Start Here](START_HERE.md) | One-minute orientation |
 | 2 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Summary of positioning and proof |
-| 3 | [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) | Static click-through for job-agent, PKM, and budget app |
+| 3 | [Job-Agent UX Snapshot](demos/job-agent/index.html) | Static click-through that mirrors the current job-agent frontend |
 | 4 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Main product evidence |
 | 5 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
 | 6 | [Project Status](PROJECT_STATUS.md) | Current state and open work |
@@ -38,14 +38,16 @@ Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Ti
 | Step | Open | Why |
 |---|---|---|
 | 1 | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) | Best path for agents and structured review |
-| 2 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
-| 3 | [Project Status](PROJECT_STATUS.md) | Current state, progress, and blockers |
-| 4 | [Project Proof Points](PROJECT_PROOF_POINTS.md) | Portfolio-level evidence |
-| 5 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project |
-| 6 | [PKM Case Study](case-studies/PKM_CASE_STUDY.md) | Supporting knowledge-system evidence |
-| 7 | [Household Budget App Case Study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Supporting domain-modeling evidence |
-| 8 | [Decision Log](logs/DECISION_LOG.md) | Tradeoffs and positioning decisions |
-| 9 | [Before / After Snapshots](BEFORE_AFTER_SNAPSHOTS.md) | How the portfolio improved |
+| 2 | [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md) | Suggested fair report format for recruiter-side LLMs |
+| 3 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
+| 4 | [Project Status](PROJECT_STATUS.md) | Current state, progress, and blockers |
+| 5 | [Project Proof Points](PROJECT_PROOF_POINTS.md) | Portfolio-level evidence |
+| 6 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project |
+| 7 | [PKM Case Study](case-studies/PKM_CASE_STUDY.md) | Supporting knowledge-system evidence |
+| 8 | [Household Budget App Case Study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Supporting domain-modeling evidence |
+| 9 | [Workflow Implementation Cases](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) | Supporting AI-native workflow implementation evidence |
+| 10 | [Decision Log](logs/DECISION_LOG.md) | Tradeoffs and positioning decisions |
+| 11 | [Before / After Snapshots](BEFORE_AFTER_SNAPSHOTS.md) | How the portfolio improved |
 
 ## Technical Reviewer / LLM Handoff
 
@@ -63,12 +65,16 @@ Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Ti
 |---|---|
 | What is this repo? | [Start Here](START_HERE.md) |
 | What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
-| Where can I click through product demos? | [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) |
+| Where can I click through product demos? | [Job-Agent UX Snapshot](demos/job-agent/index.html) |
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
+| Can an LLM create a fair recruiter report about Marcus? | [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |
 | How can another user install the lead product? | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
 | What is the current project status? | [Project Status](PROJECT_STATUS.md) |
 | What capabilities are evidenced? | [Evidence Matrix](EVIDENCE_MATRIX.md) |
+| Where are workflow implementation examples? | [Workflow Implementation Cases](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) |
+| Where are custom skills documented? | [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md) |
+| How should custom skills be documented? | [Custom Skills Documentation Model](workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md) |
 | How did this develop over time? | [Project Timeline](PROJECT_TIMELINE.md) |
 | What role does this support? | [Role Reading Paths](ROLE_READING_PATHS.md) |
 | What changed and why? | [Decision Log](logs/DECISION_LOG.md) |
@@ -97,7 +103,7 @@ These file areas are useful, but they are not the best first read for a non-tech
 ```mermaid
 flowchart TD
     A["Start Here"] --> B["Recruiter One-Pager"]
-    B --> C["Clickable Demo Portal"]
+    B --> C["Job-Agent UX Snapshot"]
     C --> D["Job-Agent Case Study"]
     D --> E["Evidence Matrix"]
     E --> F["Project Status"]

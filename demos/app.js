@@ -25,7 +25,7 @@ const MANIFEST = [
   {
     project: "job-agent",
     snapshot_id: "job-agent-clickable-company-research",
-    title: "Job-agent clickable demo with company research KPI cards",
+    title: "Job-agent current-UX snapshot with company research KPI cards",
     audience: "external",
     status: "recruiter-safe",
     date: VERIFIED_DATE,
@@ -39,13 +39,13 @@ const MANIFEST = [
       "https://www.anthropic.com/careers",
     ],
     change_summary:
-      "Clickable static mock of job-agent with jobs, discovery, company research, apply/CV, feedback, and privacy flows.",
+      "Static clickable UX snapshot modeled on the current Next.js job-agent frontend: Today, Find, job detail tabs, company research, Apply/CV, and supporting surfaces.",
     why:
-      "Company research shows product depth: public sources, demo-only KPI signals, and reviewable decision support.",
+      "Reviewers need to see how the working application actually looks, not a separate conceptual portfolio UI.",
     rollback_note:
-      "Use this as the baseline if later research UI becomes visually noisy or loses source labeling.",
+      "Keep this as the app-faithful baseline; use the older portal framing only as an index if the app snapshot becomes too broad.",
     screenshot_path: "../assets/screenshots/job-agent-03-company-research-icons.png",
-    demo_path: "index.html#job-agent",
+    demo_path: "job-agent/index.html#today",
   },
   {
     project: "pkm",
@@ -802,7 +802,13 @@ function renderTimeline() {
 
 function bindDynamicEvents(root) {
   root.querySelectorAll("[data-open-route]").forEach((button) => {
-    button.addEventListener("click", () => setRoute(button.dataset.openRoute));
+    button.addEventListener("click", () => {
+      if (button.dataset.openRoute === "job-agent") {
+        window.location.href = "job-agent/index.html#today";
+        return;
+      }
+      setRoute(button.dataset.openRoute);
+    });
   });
   root.querySelectorAll("[data-job-flow]").forEach((button) => {
     button.addEventListener("click", () => {

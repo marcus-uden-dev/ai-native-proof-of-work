@@ -1,6 +1,6 @@
 # Project Timeline
 
-Last updated: 2026-06-01
+Last updated: 2026-06-23
 Status: Active / Living milestone log
 
 ## Purpose
@@ -25,8 +25,12 @@ flowchart TD
     M10["2026-05-28<br/>Static demo<br/>portal"]
     M11["2026-06-01<br/>Manual compiler<br/>run-now audit"]
     M12["2026-06-01<br/>Public demo<br/>published"]
+    M13["2026-06-02<br/>Recruiter LLM<br/>report brief"]
+    M14["2026-06-03<br/>Automation prompt<br/>sync"]
+    M15["2026-06-13 to 2026-06-14<br/>Job-agent privacy retention<br/>and source refresh"]
+    M16["2026-06-23<br/>Direct source boundary<br/>refresh without overclaiming"]
 
-    M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9 --> M10 --> M11 --> M12
+    M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9 --> M10 --> M11 --> M12 --> M13 --> M14 --> M15 --> M16
 ```
 
 ## Milestone Log
@@ -49,6 +53,10 @@ flowchart TD
 | 2026-05-28 to 2026-05-31 | Static clickable demo portal added and committed | Portfolio evidence layer | Verified | [demos/index.html](demos/index.html), [demos/manifest.json](demos/manifest.json), commit `1e9511c` | Created the no-install product snapshot that was later published through the separate public demo repo |
 | 2026-06-01 | Manual run-now audit of the scheduled compiler contract refreshed stale entry points and internal source index freshness | Portfolio operating layer | Verified | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md), [SOURCE_MAP.md](SOURCE_MAP.md), internal source index metadata | Confirms the scheduled task exists and closes navigation/status drift noted during review |
 | 2026-06-01 | Public demo portal published through a separate public repository | Portfolio evidence layer | Verified | [Published demo](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/), [public demo repo](https://github.com/TheOneDarkHorse/ai-native-proof-of-work-demo) | Lets recruiters click through product snapshots without exposing the private evidence repository |
+| 2026-06-02 | Recruiter-side LLM report brief added and linked from the main entry points | Recruiter / agent review layer | Verified | [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md), [README.md](README.md), [START_HERE.md](START_HERE.md), [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md), [llms.txt](llms.txt) | Helps recruiter-side LLMs create balanced, evidence-grounded reports instead of generic summaries |
+| 2026-06-03 | Active weekly automation prompt synced with the new report brief and workflow case surfaces | Portfolio operating layer | Verified | [template/WEEKLY_AUTOMATION_RUNBOOK.md](template/WEEKLY_AUTOMATION_RUNBOOK.md), [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) | Ensures future scheduled runs inspect and maintain the new recruiter LLM and workflow-case artifacts |
+| 2026-06-13 to 2026-06-14 | Job-agent repo adds committed retention-policy implementation/testing updates and the portfolio refreshes its direct source-verification boundary | Job-agent / portfolio evidence layer | Internal / Verified | Source-repo commits `2d6057f`, `0c67f35`, `e222da4`, `e3b3b8f`, plus [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) and [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) | Keeps the lead proof point fresh with concrete privacy/trust and editing-workflow evidence instead of leaving recruiter docs anchored to late May |
+| 2026-06-23 | Weekly compiler refreshes the direct `job-agent` source boundary again without inventing a new product milestone | Job-agent / portfolio evidence layer | Internal / Verified | Source-repo `docs/operations/current-status-history.md` review window 2026-06-12 to 2026-06-23, [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) | Shows evidence discipline: the lead proof point stays fresh even when the week adds verification context rather than a newly merged product milestone |
 
 ## How To Maintain This
 

@@ -1,9 +1,9 @@
 {
   "version": "1.0.0",
-  "last_updated": "2026-05-28",
+  "last_updated": "2026-06-01",
   "default_audience": "external",
   "publishing": {
-    "local_entry": "demos/index.html",
+    "local_entry": "demos/job-agent/index.html",
     "pages_ready": true,
     "published_url": "https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/",
     "published_repo": "https://github.com/TheOneDarkHorse/ai-native-proof-of-work-demo",
@@ -15,7 +15,7 @@
     {
       "project": "job-agent",
       "snapshot_id": "job-agent-clickable-company-research",
-      "title": "Job-agent clickable demo with company research KPI cards",
+      "title": "Job-agent current-UX snapshot with company research KPI cards",
       "audience": "external",
       "status": "recruiter-safe",
       "date": "2026-05-28",
@@ -28,12 +28,12 @@
         "https://www.anthropic.com/company",
         "https://www.anthropic.com/careers"
       ],
-      "change_summary": "Creates a clickable static mock of job-agent with jobs, discovery, company research, apply/CV, feedback, and privacy flows.",
-      "why": "Company research shows the strongest product depth: public sources, demo-only KPI signals, and reviewable decision support.",
-      "rollback_note": "Use this as the baseline if later research UI becomes visually noisy or loses source labeling.",
+      "change_summary": "Creates a static clickable UX snapshot modeled on the current Next.js job-agent frontend: Today, Find, job detail tabs, company research, Apply/CV, and supporting surfaces.",
+      "why": "Reviewers need to see how the working application actually looks, not a separate conceptual portfolio UI.",
+      "rollback_note": "Keep this as the app-faithful baseline; use the older portal framing only as an index if the app snapshot becomes too broad.",
       "screenshot_path": "../assets/screenshots/job-agent-03-company-research-icons.png",
-      "demo_path": "index.html#job-agent",
-      "published_url": "https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/index.html#job-agent"
+      "demo_path": "job-agent/index.html#today",
+      "published_url": "https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/job-agent/index.html"
     },
     {
       "project": "pkm",

@@ -1,5 +1,67 @@
 # Problem-Solving Log
 
+## 2026-06-14 — Source-repo status docs lagged the actual job-agent HEAD
+
+### Problem
+
+The weekly compiler needed a fresh `job-agent` status boundary, but `docs/operations/current-status.md` in the source repo still carried a 2026-06-12 triage header even though the repo had newer committed work on 2026-06-13 and 2026-06-14.
+
+### Cause
+
+The source repo's status doc is helpful but not guaranteed to be the freshest artifact after branch-local work, docs follow-ups, or small commit bursts.
+
+### Attempted Fixes
+
+- Checked the actual `job-agent` worktree state with `git status --short --branch`.
+- Read the current setup and ops docs that the handoff depends on.
+- Compared the status doc against `git log --oneline -10`.
+- Promoted only the changes that were grounded in committed source files and commits, not untracked ops-run artifacts.
+
+### Resolution
+
+The portfolio sync now treats the direct source-verification date as authoritative when a source-repo status doc header lags the actual HEAD. Recruiter-facing guidance was updated to say so explicitly.
+
+### Lesson
+
+Lead-project freshness should come from direct source verification, not from a status doc date alone.
+
+### Reusable Rule
+
+```text
+If the lead source repo is accessible but its status summary lags the actual HEAD, use direct git/file verification for freshness and treat the status doc as supporting context, not the sole authority.
+```
+
+## 2026-06-07 — Weekly compiler had no direct access to the lead source repo
+
+### Problem
+
+The weekly compiler run needed to maintain `job-agent` status and handoff boundaries, but the lead source repository was not directly accessible from the current workspace.
+
+### Cause
+
+This proof-of-work repository workspace contains the evidence layer and internal indexes, but not the `job-agent` source tree itself.
+
+### Attempted Fixes
+
+- Checked `weekly-input/` for a fresh dated source summary.
+- Reused the latest available internal source-index freshness notes from 2026-06-01.
+- Kept the latest direct source-verification date at 2026-05-31 instead of promoting newer implied product progress.
+- Updated recruiter-safe docs to state the evidence boundary explicitly.
+
+### Resolution
+
+The run completed as a bounded no-new-evidence sync. Product-progress claims stayed anchored to the last direct source verification and existing internal source-index summaries.
+
+### Lesson
+
+When a weekly proof-of-work run cannot access the lead source repo directly, it should preserve the last verified source date, mark newer product progress `Needs Review`, and avoid inventing freshness from adjacent portfolio-doc changes.
+
+### Reusable Rule
+
+```text
+If a weekly sync cannot directly inspect the lead source repo, keep the last verified source date explicit and downgrade fresher product-status claims to Needs Review until a dated source summary or direct verification exists.
+```
+
 ## 2026-06-01 — Scheduled task needed a manual run-now equivalent
 
 ### Problem

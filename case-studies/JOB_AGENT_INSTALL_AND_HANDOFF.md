@@ -1,6 +1,6 @@
 # Job-Agent Install And Handoff Guide
 
-Last updated: 2026-05-31
+Last updated: 2026-06-23
 Status: Active / Recruiter-facing / LLM-readable
 
 ## Purpose
@@ -19,7 +19,7 @@ This file should stay safe to share. It summarizes install steps, expected local
 | Primary proof role | Lead product proof point |
 | Product type | Local-first job search automation app |
 | Main stack | FastAPI, PostgreSQL with pgvector, Redis/Celery, Next.js |
-| Evidence label | Verified from inspected local source files on 2026-05-31 |
+| Evidence label | Verified from inspected local source files on 2026-06-23 |
 
 ## What The App Contains
 
@@ -246,12 +246,19 @@ This handoff guide matters because it turns `job-agent` from a private source re
 
 ## Source Verification Notes
 
-This guide was checked against the inspected `job-agent` source tree on 2026-05-31.
+This guide was checked against the inspected `job-agent` source tree on 2026-06-23.
 
 - Verified present: `AGENTS.md`, `CLAUDE.md`, `.claude/CLAUDE.md`, `DESIGN.md`, `docs/overview/agent-context.md`, `docs/operations/current-status.md`, `docs/operations/llm-handoff.md`, `docs/operations/job-agent-startup-skill-handoff.md`, `docs/HANDOVER.md`, root `.env.example`, `backend/.env.example`, `docker-compose.yml`, `Makefile`, `frontend/package.json`, `backend/requirements.txt`, `backend/requirements-dev.txt`, and `backend/alembic/versions/`.
 - Verified absent in the inspected worktree: `docs/setup/llm-handoff.md`.
-- Current repo-status docs report sequential Alembic head `0042_oauth_connections.py`, 43 Python migration files in `backend/alembic/versions/`, one hash-named migration file that still needs repo-side investigation, and a Windows-local validation note of `391 passed, 7 skipped` on 2026-05-26.
+- Current source verification also confirms:
+  - 46 Python migration files in `backend/alembic/versions/`, with sequential named head `0045_cv_variant_blueprint.py` plus one older hash-named anomaly `3aac5340ec46_add_user_documents.py`
+  - committed privacy-retention work at `2d6057f` plus follow-up retention tests at `0c67f35`
+  - committed CV variant name editing and `/find` workspace refactor at `e222da4`
+  - a docs-only follow-up at `e3b3b8f` aligning the current privacy-retention summary
+  - CV template marketplace Phase 1 source work at `a8c07fc`, `c7f33bc`, and `d104001`
+  - source-repo changelog review for 2026-06-12 to 2026-06-23 showing PR #6 still open and no merged PRs in that review window
 - Current source-repo ops docs also distinguish Docker Compose frontend `3000` from the canonical manual startup contract on frontend `3002`; this portfolio guide now preserves that difference explicitly.
+- `docs/operations/current-status.md` was still useful, but its dated triage header lagged the actual repo HEAD during this verification. This portfolio sync therefore used both repo docs and direct `git log` / file inspection instead of trusting the status doc date alone.
 
 If a future weekly run cannot verify these paths or commands from the source repo, mark the affected claim `Needs Review`.
 

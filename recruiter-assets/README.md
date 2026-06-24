@@ -12,3 +12,4 @@ Status: Active / Recruiter-facing
 | [Interview Talking Points](INTERVIEW_TALKING_POINTS.md) | Suggested interview narratives |
 | [LinkedIn Drafts](LINKEDIN_DRAFTS.md) | Draft public-facing posts |
 | [Screenshot Sharing Plan](SCREENSHOT_SHARING_PLAN.md) | Privacy-safe plan for future visuals |
+| [Information Diet](INFORMATION_DIET.md) | Recruiter-safe summary of podcast subscriptions and future learning-source metadata |

@@ -44,9 +44,15 @@ Create or verify:
 - prompts/SOURCE_INDEX_REFRESH_PROMPT.md
 - template/LLM_BOOTSTRAP_REPO_PROMPT.md
 - template/WEEKLY_AUTOMATION_RUNBOOK.md
+- template/CUSTOM_SKILL_CASE_TEMPLATE.md
 - workflows/SCHEDULED_TASKS_MODEL.md
+- workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md
+- case-studies/WORKFLOW_IMPLEMENTATION_CASES.md
+- case-studies/CUSTOM_SKILLS_CASE_STUDY.md
 
 The lead-project install and handoff file should explain setup prerequisites, local services, ports, environment-variable placeholders, validation commands, LLM entrypoint files, and what not to copy.
+
+Custom skills should be documented as sanitized problem/solution workflow cases. Do not copy raw local skill prompts, private local paths, raw chat logs, account identifiers, credentials, or secrets.
 
 Do not fabricate evidence. Use placeholders and evidence labels where source material is missing.
 

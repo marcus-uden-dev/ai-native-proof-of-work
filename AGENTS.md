@@ -1,6 +1,6 @@
 # AGENTS.md — AI-Native Proof-of-Work Repository Compiler
 
-Last updated: 2026-05-11
+Last updated: 2026-06-02
 Status: Active instruction
 
 ## Mission
@@ -210,6 +210,7 @@ Weekly dynamic output files update every weekly run when there is verified new m
 
 ```text
 RECRUITER_ONE_PAGER.md
+RECRUITER_LLM_REPORT_BRIEF.md
 RECRUITER_AGENT_GUIDE.md
 NAVIGATION.md
 EVIDENCE_MATRIX.md
@@ -220,6 +221,7 @@ PROJECT_PROOF_POINTS.md
 PROJECT_TIMELINE.md
 case-studies/JOB_AGENT_CASE_STUDY.md
 case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md
+case-studies/WORKFLOW_IMPLEMENTATION_CASES.md
 case-studies/PKM_CASE_STUDY.md
 case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md
 RECRUITER_BRIEF.md
@@ -333,11 +335,12 @@ Before updating artifacts, inspect:
 10. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
 11. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
 12. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-13. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
-14. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-15. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
-16. case studies under `case-studies/`
-17. newly added or changed files since the last run
+13. [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md)
+14. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
+15. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+16. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
+17. case studies under `case-studies/`
+18. newly added or changed files since the last run
 
 Weekly input rule:
 
@@ -366,6 +369,7 @@ Create or update:
 5. portfolio case-study note
 6. demo script
 7. recruiter-facing summary
+7a. recruiter-side LLM report brief if report structure, evidence boundaries, or reading order changed
 8. product strategy updates if changed
 9. value proposition updates if changed
 10. business model updates if changed
@@ -513,6 +517,7 @@ A weekly run is complete only when:
 - [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) reflects any meaningful new milestones
 - [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) reflects the current install, service, port, validation, and LLM handoff model for the lead source repo
 - recruiter-facing assets are updated
+- recruiter-side LLM report guidance is current when the review path changes
 - any changed strategy or architecture docs have decision-log entries
 - diagrams are valid Mermaid
 - no sensitive/private material is included

@@ -1,6 +1,6 @@
 # Recruiter Agent Guide
 
-Last updated: 2026-05-31
+Last updated: 2026-06-14
 Status: Active / Agent-readable
 
 ## Purpose
@@ -10,6 +10,8 @@ This file is for recruiter-side agents, hiring-manager assistants, review bots, 
 The repo is designed to be read directly in GitHub. It is not an application codebase and does not need installation for review.
 
 It also has a reusable template layer. If the goal is to recreate the proof-of-work system for another user, start from [template/](template/) instead of copying Marcus-specific evidence.
+
+If your task is to create a report about Marcus, start with [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md). It defines the expected report structure, source priority, evidence boundaries, and interpretation rules.
 
 ## Evaluation Goal
 
@@ -25,18 +27,21 @@ Assess Marcus’s practical evidence for:
 
 ## Canonical Reading Order
 
-1. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
-2. [Navigation Hub](NAVIGATION.md)
-3. [Start Here](START_HERE.md)
-4. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
-5. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-6. [Project Status](PROJECT_STATUS.md)
-7. [Evidence Matrix](EVIDENCE_MATRIX.md)
-8. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-9. [Project Timeline](PROJECT_TIMELINE.md)
-10. [Role Reading Paths](ROLE_READING_PATHS.md)
-11. [Proof of Work](PROOF_OF_WORK.md)
-12. [Source Map](SOURCE_MAP.md)
+1. [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md)
+2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
+3. [Navigation Hub](NAVIGATION.md)
+4. [Start Here](START_HERE.md)
+5. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
+6. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+7. [Project Status](PROJECT_STATUS.md)
+8. [Evidence Matrix](EVIDENCE_MATRIX.md)
+9. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+10. [Project Timeline](PROJECT_TIMELINE.md)
+11. [Role Reading Paths](ROLE_READING_PATHS.md)
+12. [Proof of Work](PROOF_OF_WORK.md)
+13. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+14. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
+15. [Source Map](SOURCE_MAP.md)
 
 ## Reuse / Template Reading Order
 
@@ -50,7 +55,9 @@ Use this path when the goal is to adapt the repository architecture for another 
 6. [Scheduled Tasks Model](workflows/SCHEDULED_TASKS_MODEL.md)
 7. [Weekly Proof-of-Work Compiler Prompt](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md)
 8. [Source Index Refresh Prompt](prompts/SOURCE_INDEX_REFRESH_PROMPT.md)
-9. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) as an example of a lead-project handoff file
+9. [Custom Skill Case Template](template/CUSTOM_SKILL_CASE_TEMPLATE.md)
+10. [Custom Skills Documentation Model](workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md)
+11. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) as an example of a lead-project handoff file
 
 Do not copy Marcus-specific claims, project evidence, screenshots, local paths, or source summaries into another user's repository. Use the structure, evidence labels, and maintenance loops as the reusable parts.
 
@@ -63,6 +70,7 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 - Do not infer exact metrics unless a file marks them as verified.
 - Prefer evidence-labeled claims over broad positioning statements.
 - For job-agent setup claims, prefer the latest source-verified handoff summary over older repo assumptions; the source repo now distinguishes Docker Compose defaults from the canonical manual startup contract.
+- If a source-repo status doc date lags the actual git HEAD, prefer the direct source-verification date recorded in the handoff guide or weekly log.
 
 ## Capability Extraction Map
 
@@ -71,6 +79,7 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 | Product execution | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [PROJECT_STATUS.md](PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 | Reproducible product handoff | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [SOURCE_MAP.md](SOURCE_MAP.md) |
 | Reusable proof-of-work template | [template/README.md](template/README.md), [template/REPO_SEED_BLUEPRINT.md](template/REPO_SEED_BLUEPRINT.md), [template/LLM_BOOTSTRAP_REPO_PROMPT.md](template/LLM_BOOTSTRAP_REPO_PROMPT.md), [workflows/SCHEDULED_TASKS_MODEL.md](workflows/SCHEDULED_TASKS_MODEL.md) |
+| Custom skill design | [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md), [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md), [template/CUSTOM_SKILL_CASE_TEMPLATE.md](template/CUSTOM_SKILL_CASE_TEMPLATE.md) |
 | Product judgment | [strategy/job-agent/product/PRODUCT_STRATEGY.md](strategy/job-agent/product/PRODUCT_STRATEGY.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | QA discipline | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
 | AI-native workflow design | [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
@@ -79,7 +88,9 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 
 ## Suggested Output For A Recruiter Agent
 
-Summarize:
+Use [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md) for the full report format.
+
+At minimum, summarize:
 
 1. strongest role fit
 2. top three proof points

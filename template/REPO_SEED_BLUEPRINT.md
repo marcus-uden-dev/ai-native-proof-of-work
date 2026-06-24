@@ -1,6 +1,6 @@
 # Repository Seed Blueprint
 
-Last updated: 2026-05-17
+Last updated: 2026-06-09
 Status: Active / Standalone LLM-agnostic seed
 
 ## Purpose
@@ -49,6 +49,7 @@ A clone can reproduce:
 - weekly compiler prompts
 - source-indexing prompts and templates
 - automation runbooks
+- custom skill documentation model and case template
 - privacy and sharing rules
 - lead-project handoff pattern
 - reusable template guidance
@@ -194,6 +195,7 @@ Create clone/fork template files:
 - template/IMPORT_INSTRUCTIONS.md
 - template/LLM_BOOTSTRAP_REPO_PROMPT.md
 - template/WEEKLY_AUTOMATION_RUNBOOK.md
+- template/CUSTOM_SKILL_CASE_TEMPLATE.md
 
 Create project strategy structure:
 - strategy/README.md
@@ -239,6 +241,7 @@ Create workflow files:
 - workflows/SCHEDULED_TASKS_MODEL.md
 - workflows/REVIEW_AND_PROMOTION_LOOP.md
 - workflows/SOURCE_QUALITY_MODEL.md
+- workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md
 
 Create diagram files:
 - diagrams/USER_FLOW.md
@@ -260,6 +263,8 @@ Create case studies:
 - case-studies/LEAD_PROJECT_INSTALL_AND_HANDOFF.md
 - case-studies/SUPPORTING_PROJECT_1_CASE_STUDY.md
 - case-studies/SUPPORTING_PROJECT_2_CASE_STUDY.md
+- case-studies/WORKFLOW_IMPLEMENTATION_CASES.md
+- case-studies/CUSTOM_SKILLS_CASE_STUDY.md
 
 Create recruiter assets:
 - recruiter-assets/README.md
@@ -381,6 +386,7 @@ Weekly compiler behavior:
 - Inspect AGENTS.md first.
 - Inspect weekly-input/ before promoting new claims.
 - Cross-check SOURCE_MAP.md, PROJECT_STATUS.md, PROJECT_PROOF_POINTS.md, PROJECT_TIMELINE.md, PROOF_OF_WORK.md, EVIDENCE_MATRIX.md, ROLE_READING_PATHS.md, case-studies/, logs/, strategy/, architecture/, workflows/, and diagrams/.
+- Cross-check case-studies/CUSTOM_SKILLS_CASE_STUDY.md, workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md, and template/CUSTOM_SKILL_CASE_TEMPLATE.md when a custom skill, reusable agent workflow, or skill documentation rule changes.
 - Cross-check target user's own product repositories when available and authorized.
 - If no verified new source material exists, do not invent progress.
 - Add a weekly log entry only when there is verified input, repo-visible change, or an explicit "no verified new source material" record.
@@ -403,6 +409,7 @@ Quality gate before completion:
 - Missing evidence is marked clearly.
 - Repository can be understood from START_HERE.md, NAVIGATION.md, and template/README.md.
 - Automation prompts are present and reusable.
+- Custom skills are documented as sanitized problem/solution cases, not raw local prompt dumps.
 - Final response lists updated files, new artifacts, verification run, failures, unverified items, and one next action.
 
 Start by inspecting the current repository state. Then create the scaffold and seed content.

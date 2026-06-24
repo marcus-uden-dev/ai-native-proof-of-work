@@ -17,6 +17,7 @@ The main repository audience remains recruiters, hiring managers, and collaborat
 | [IMPORT_INSTRUCTIONS.md](IMPORT_INSTRUCTIONS.md) | Clone/fork/import flow and adoption caveats |
 | [LLM_BOOTSTRAP_REPO_PROMPT.md](LLM_BOOTSTRAP_REPO_PROMPT.md) | Short provider-neutral prompt for bootstrapping a similar repo |
 | [WEEKLY_AUTOMATION_RUNBOOK.md](WEEKLY_AUTOMATION_RUNBOOK.md) | Weekly automation schedule, validation, and recreation path |
+| [CUSTOM_SKILL_CASE_TEMPLATE.md](CUSTOM_SKILL_CASE_TEMPLATE.md) | Reusable problem/solution template for documenting custom skills as proof-of-work cases |
 
 ## Adoption Rule
 
@@ -32,4 +33,3 @@ When another user adopts this template, they should replace Marcus-specific proj
 - recruiter-facing claims
 
 Use this repository as structure and operating model, not as copied evidence.
-

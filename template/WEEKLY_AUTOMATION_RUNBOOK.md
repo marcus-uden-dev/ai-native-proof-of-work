@@ -1,6 +1,6 @@
 # Weekly Automation Runbook
 
-Last updated: 2026-06-01
+Last updated: 2026-06-09
 Status: Active / Internal operating documentation
 
 ## Purpose
@@ -26,7 +26,7 @@ This supports the one-click clone goal state: the repository should carry enough
 | Supporting prompt | [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](../prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md) |
 | Template prompt | [LLM_BOOTSTRAP_REPO_PROMPT.md](LLM_BOOTSTRAP_REPO_PROMPT.md) |
 
-Last confirmed from local Codex automation config: 2026-06-01.
+Last confirmed from local Codex automation config: 2026-06-03.
 
 Do not commit local scheduler state files, machine-specific paths, credentials, logs, or automation runtime metadata.
 
@@ -38,8 +38,13 @@ It should:
 
 - update job-agent evidence into this repository
 - keep [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) current
+- keep [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md) current as the first-class report guide for recruiter-side LLMs
+- keep [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) current as the supporting workflow implementation case index
+- keep [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](../case-studies/CUSTOM_SKILLS_CASE_STUDY.md) current as the sanitized proof layer for Marcus-created custom skills
+- keep [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](../workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md) and [CUSTOM_SKILL_CASE_TEMPLATE.md](CUSTOM_SKILL_CASE_TEMPLATE.md) current when the skill documentation standard changes
 - maintain [REPO_SEED_BLUEPRINT.md](REPO_SEED_BLUEPRINT.md) as a reusable, LLM-agnostic template seed
 - maintain [LLM_BOOTSTRAP_REPO_PROMPT.md](LLM_BOOTSTRAP_REPO_PROMPT.md)
+- maintain dependent indexes, reading paths, prompt inspection lists, runbooks, source maps, and local Markdown links whenever files are added, removed, renamed, moved, or repositioned
 - update recruiter-facing proof files only when there is verified new material
 - keep product strategy under `strategy/<project>/`
 - keep portfolio operating strategy under `strategy/portfolio-operating-system/`
@@ -66,16 +71,21 @@ Before editing, the automation should inspect:
 13. [PROJECT_STATUS.md](../PROJECT_STATUS.md)
 14. [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md)
 15. [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md)
-16. [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md)
-17. [case-studies/](../case-studies/)
-18. [logs/](../logs/)
-19. [recruiter-assets/](../recruiter-assets/)
-20. [strategy/](../strategy/)
-21. [architecture/](../architecture/)
-22. [workflows/](../workflows/)
-23. [diagrams/](../diagrams/)
-24. [weekly-input/](../weekly-input/)
-25. [tasks/lessons.md](../tasks/lessons.md)
+16. [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md)
+17. [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md)
+18. [case-studies/](../case-studies/)
+19. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+20. [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](../case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
+21. [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](../workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md)
+22. [CUSTOM_SKILL_CASE_TEMPLATE.md](CUSTOM_SKILL_CASE_TEMPLATE.md)
+23. [logs/](../logs/)
+24. [recruiter-assets/](../recruiter-assets/)
+25. [strategy/](../strategy/)
+26. [architecture/](../architecture/)
+27. [workflows/](../workflows/)
+28. [diagrams/](../diagrams/)
+29. [weekly-input/](../weekly-input/)
+30. [tasks/lessons.md](../tasks/lessons.md)
 
 If local source indexes are available, inspect `internal/LOCAL_SOURCE_MAP.md` and `internal/source-indexes/*.md`. If unavailable, continue without inventing their contents.
 
@@ -107,11 +117,17 @@ Each run should report:
 - new artifacts
 - static files changed
 - job-agent handoff status
+- recruiter LLM report brief status
+- workflow implementation case status
+- custom skill documentation status
 - reusable-template updates
 - weekly input used or missing
 - project proof-point updates
 - timeline updates
 - source index status
+- dependency and cross-reference updates
+- Markdown link-check result
+- orphan-doc check result
 - validation run and result
 - commit and push status
 - blockers
@@ -125,7 +141,7 @@ git status --short --branch
 git diff --check
 ```
 
-For changed Markdown files, perform targeted link checks. For changed recruiter-facing files, scan for private paths, secrets, raw chats, credentials, and sensitive personal data.
+For changed Markdown files, perform targeted link checks. When files are added, removed, renamed, moved, or repositioned, also perform a repo-wide local Markdown link check and an orphan-doc discoverability check. For changed recruiter-facing files, scan for private paths, secrets, raw chats, credentials, and sensitive personal data.
 
 ## Safety Rules
 

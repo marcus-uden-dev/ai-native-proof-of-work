@@ -1,6 +1,6 @@
 # Job-Agent Case Study
 
-Last updated: 2026-06-01
+Last updated: 2026-06-14
 Status: Active / Lead proof point / Internal evidence summarized
 
 ## Executive Summary
@@ -11,7 +11,7 @@ It demonstrates product execution across career workflow automation: CV handling
 
 ## Clickable Demo
 
-The [published static job-agent demo](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/index.html#job-agent) gives recruiters and internal reviewers a no-install click-through of the main workflow surfaces.
+The [static job-agent UX snapshot](../demos/job-agent/index.html) gives recruiters and internal reviewers a no-install click-through of the main workflow surfaces as they appear in the current frontend.
 
 The strongest V1 surface is company research: it shows positive and warning signal chips, financial KPI rows, compensation signals, culture signals, evidence labels, and explicit `public_source`, `synthetic`, or `inferred_demo` data classes. OpenAI and Anthropic are used as public-source example companies, while uncertain scores, salary estimates, warning flags, and financial metrics are marked as demo data.
 
@@ -36,8 +36,8 @@ Job search work is fragmented across CVs, job boards, application portals, inter
 | Area | Current State | Remaining Work |
 |---|---|---|
 | MVP / career-ops | Local status marks MVP complete and career-ops tasks done; source-repo status docs also report OAuth social auth, nav integration, repo-ops status refreshes, and LLM handoff context | Public-safe proof still needs screenshots or selected excerpts |
-| Privacy / GDPR | Consent, data-rights, export/delete request UX, retention planning, and marketing-pixel guardrails are locally represented | Legal review and final production policy decisions |
-| QA | Backend checks, Playwright coverage, discover regression coverage, migration smokes, and CI workflows are represented in local docs | Full production-like verification and selected recruiter-safe evidence |
+| Privacy / GDPR | Consent, data-rights, export/delete request UX, retention planning, marketing-pixel guardrails, and committed apply-session retention/export-delete implementation are locally represented | Legal review and final production policy decisions |
+| QA | Backend checks, Playwright coverage, discover regression coverage, migration smokes, CI workflows, and follow-up retention tests are represented in local docs | Full production-like verification and selected recruiter-safe evidence |
 | Production | Hosting architecture and observability plans exist | Domain/server setup, public backend origin, OTel/Grafana, Stripe live, OAuth credentials, and publish-safe confirmation of branch/repo-ops state |
 | Product economics | Billing, credits, referrals, and telemetry are planned or represented | Final pricing and live-market validation |
 

@@ -1,6 +1,6 @@
 # Proof of Work
 
-Last updated: 2026-06-01
+Last updated: 2026-06-23
 Status: Active / Project-focused evidence map
 
 ## What This Demonstrates
@@ -19,6 +19,7 @@ Status: Active / Project-focused evidence map
 | Artifact | What It Shows | Status | Link |
 |---|---|---|---|
 | Recruiter one-pager | Fast skim path and top proof points | Verified | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) |
+| Recruiter LLM report brief | Fair report format, source priority, and overclaiming guardrails for recruiter-side assistants | Verified | [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md) |
 | Job-agent case study | Lead product proof point | Internal / Verified | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) |
 | Evidence matrix | Capability-to-evidence map | Verified | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) |
 | Role reading paths | Role-specific recruiter navigation | Verified | [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) |
@@ -31,6 +32,8 @@ Status: Active / Project-focused evidence map
 | Value proposition | Project-focused positioning | Hypothesis | [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) |
 | Architecture docs | Technical reasoning | Verified | [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md) |
 | Workflow model | Supporting operating model | Decision | [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
+| Workflow implementation cases | Supporting proof of implemented intake, lessons, skills, automations, logs, and templates | Verified / Needs Review by case | [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) |
+| Custom skills case study | Sanitized problem/solution documentation for Marcus-created reusable skills | Verified / Needs Review by skill | [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md) |
 | Recruiter brief | Communication clarity | Verified | [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md) |
 | Local source index summaries | Ability to operationalize project context without exposing private paths | Internal / Verified | [SOURCE_MAP.md](SOURCE_MAP.md), [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 | Template adoption kit | Provider-neutral reuse path for the proof-of-work system | Verified | [template/README.md](template/README.md), [template/REPO_SEED_BLUEPRINT.md](template/REPO_SEED_BLUEPRINT.md), [template/WEEKLY_AUTOMATION_RUNBOOK.md](template/WEEKLY_AUTOMATION_RUNBOOK.md) |
@@ -45,13 +48,15 @@ Status: Active / Project-focused evidence map
 | Local project context | Rediscovered repeatedly | Indexed source map split by Codex projects, Claude projects, and shared agent assets | Internal source summaries created 2026-05-08 |
 | Project positioning | Automation/compiler was treated as the whole value prop | Concrete product projects are now the main proof points, with automation documented as the operating method | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) |
 | Lead-project handoff | Recruiter-facing setup guidance could drift from the actual source repo | Weekly source verification now checks env files, compose, Makefile, package metadata, requirements, migrations, agent entrypoints, and startup-port/OAuth routing notes before promoting claims | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
+| Workflow implementation evidence | Workflow improvements were scattered across prompts, lessons, logs, skills, automation notes, and templates | Supporting workflow cases now identify which operating-system improvements should become recruiter-readable proof points | [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) |
+| Custom skill documentation | Marcus-created skills were visible mainly as internal source-index summaries or local tool assets | Custom skills now have a recruiter-safe case-study model with problem, solution, evidence, tradeoff, and redaction boundaries | [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md), [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md), [template/CUSTOM_SKILL_CASE_TEMPLATE.md](template/CUSTOM_SKILL_CASE_TEMPLATE.md) |
 
 ## Best Current Proof Points
 
 ### 1. Job-agent career workflow product
 
 - What was done: Built and documented a career workflow product covering CV, job discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning.
-- Current status: Local project status marks MVP and career-ops tasks complete; source-repo status docs updated on 2026-05-26 add shipped nav integration, Windows local validation recovery, startup/LLM handoff notes, and remaining production/legal blockers.
+- Current status: Local project status marks MVP and career-ops tasks complete; direct source verification on 2026-06-23 also confirms committed max-retention GDPR/apply-session export-delete work, follow-up retention tests, current startup/LLM handoff docs, CV variant name editing plus `/find` workspace cleanup, the CV template marketplace Phase 1 source state, and a no-merged-PR changelog review for the 2026-06-12 to 2026-06-23 window.
 - Why it matters: Shows practical full-stack product execution in a domain directly related to job search, recruiter workflows, and AI-assisted career operations.
 - Status: Internal / Verified.
 - Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)
@@ -108,9 +113,11 @@ Status: Active / Project-focused evidence map
 ### 7. Shared skills and routines inventory
 
 - What was done: Indexed the shared skills/workflows layer as reusable operating infrastructure.
-- Why it matters: Shows that repeatable workflows are maintained as skills, scripts, scheduled routines, and lessons rather than one-off prompts.
+- Why it matters: Shows that repeatable workflows are maintained as skills, scripts, scheduled routines, and lessons rather than one-off prompts. The strongest custom skill examples now have a recruiter-safe documentation path.
 - Status: Internal / Verified.
 - Evidence summary: 239 shared skill directories and 11 scheduled routine Markdown files observed.
+- Case study: [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
+- Documentation model: [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md)
 - Recruiter relevance: Shows systematic workflow design and reusable automation thinking.
 
 ## Current Evidence Gaps
@@ -122,4 +129,4 @@ Status: Active / Project-focused evidence map
 | Weekly workflow improvement has measurable impact | Estimated / not directly tracked | Time saved, reuse count, or before/after workflow data |
 | Recruiter assets improve response or interview quality | Hypothesis | Recruiter feedback, interview outcomes, or sharing results |
 | Static demo portal publication | Verified | Published through separate public repo [TheOneDarkHorse/ai-native-proof-of-work-demo](https://github.com/TheOneDarkHorse/ai-native-proof-of-work-demo) and smoke-tested live |
-| Latest product progress after 2026-05-31 | Needs Review | Add a dated weekly-input file or source-verified product commits before promoting new claims |
+| Weekly narrative for the 2026-06-23 source boundary | Needs Review | Direct source verification exists through 2026-06-23, but there is still no dated `weekly-input/` note explaining user-visible outcomes or decision context for the latest job-agent changes |

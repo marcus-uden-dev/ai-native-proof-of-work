@@ -1,6 +1,6 @@
 # Project Proof Points
 
-Last updated: 2026-06-01
+Last updated: 2026-06-23
 Status: Active / Evidence-backed summary
 
 ## Purpose
@@ -44,16 +44,16 @@ The stronger story is:
 | Product scope | Career workflow product covering CV pipeline, job discovery, application assistant, interview/practice flows, feedback, privacy, and settings/billing surfaces | Internal / Verified |
 | Execution system | Career-ops tasks separate architecture decisions, implementation instructions, acceptance checklists, and validation steps | Internal / Verified |
 | QA discipline | Backend tests, Playwright coverage, live frontend/backend verification notes, CI workflow references, and regression-focused docs are present in the source material | Internal / Verified |
-| Privacy and trust | GDPR/cookie consent, data-rights models, retention/anonymization planning, marketing-pixel guardrails, and legal-review blockers are tracked | Internal / Verified |
+| Privacy and trust | GDPR/cookie consent, data-rights models, retention/anonymization planning, marketing-pixel guardrails, legal-review blockers, and now committed max-retention/apply-session export-delete implementation are tracked | Internal / Verified |
 | Product judgment | Open decisions include token pricing, referral economy, deployment activation, observability, Stripe live activation, and destructive data-rights workflows | Internal / Verified |
-| Reproducible handoff | The source repo now has a recruiter-safe install and LLM handoff layer that has been re-checked against actual env examples, compose, Makefile, package metadata, requirements, migrations, current-status docs, and repo-ops startup/LLM handoff files | Verified |
+| Reproducible handoff | The source repo now has a recruiter-safe install and LLM handoff layer that has been re-checked against actual env examples, compose, Makefile, package metadata, requirements, migrations, current-status docs, repo-ops startup/LLM handoff files, and actual source HEAD when the status doc date lags; the latest direct verification is 2026-06-23 with 46 migration files and named head `0045` plus one older hash anomaly | Verified |
 | Static demo portal | Recruiter-safe static click-through is published publicly from a separate demo repo, with job-agent company research as the strongest surface and explicit public-source/synthetic/inferred-demo labels | Verified |
 
 ## Current Project Status Summary
 
 | Project | Current State | Open Work |
 |---|---|---|
-| Job-agent | Local status marks the MVP complete and career-ops tasks done; privacy, feedback, QA, discovery, shared-job cleanup, CI, telemetry, billing, deployment planning, OAuth/social-auth landing, nav integration, startup/LLM handoff docs, and repo-ops handoff refreshes are represented | Production activation, legal review, live Stripe, public backend origin, observability setup, public-safe evidence excerpts, and publish-safe confirmation of branch/repo-ops state |
+| Job-agent | Local status marks the MVP complete and career-ops tasks done; privacy, feedback, QA, discovery, shared-job cleanup, CI, telemetry, billing, deployment planning, OAuth/social-auth landing, nav integration, startup/LLM handoff docs, committed max-retention/apply-session export-delete work, CV variant editing, and CV template marketplace Phase 1 are represented, with direct source verification refreshed on 2026-06-23 | Production activation, legal review, live Stripe, public backend origin, observability setup, public-safe evidence excerpts, and publish-safe confirmation of branch/repo-ops state |
 | PKM | Knowledge-workflow product with ingestion/search/learning/feed/source/person/topic surfaces, feature lifecycle discipline, a Chrome extension for browser capture, and a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/quota, SMTP, deployment, source/person/topic setup, and verification of search, flashcard, extension, and MCP paths |
 | Household budget app | Core budgeting surfaces plus substantial household/shared-account hardening, invite onboarding, ownership rules, read-model/view-model extraction, mutation helper consolidation, and a 2026-05-26 app dependency-maintenance commit | Finish post-hardening migration cleanup, remove legacy bridge debt, validate Supabase ownership hardening, and split future modeling into smaller slices |
 

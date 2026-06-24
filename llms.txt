@@ -8,6 +8,7 @@ The repository itself is not the product. Concrete projects are the primary proo
 
 ## Primary Recruiter Path
 
+- [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md): fair report format for recruiter-side LLMs.
 - [START_HERE.md](START_HERE.md): one-minute orientation.
 - [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md): fastest summary of strongest proof points.
 - [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md): lead project case study.
@@ -24,6 +25,7 @@ The repository itself is not the product. Concrete projects are the primary proo
 - [architecture/DATA_FLOW.md](architecture/DATA_FLOW.md): data flow model.
 - [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md): AI operating model.
 - [workflows/SCHEDULED_TASKS_MODEL.md](workflows/SCHEDULED_TASKS_MODEL.md): scheduled task model.
+- [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md): custom skill documentation rules.
 
 ## Evidence And Strategy Reference
 
@@ -34,6 +36,7 @@ The repository itself is not the product. Concrete projects are the primary proo
 - [logs/DECISION_LOG.md](logs/DECISION_LOG.md): decision trail.
 - [logs/PROBLEM_SOLVING_LOG.md](logs/PROBLEM_SOLVING_LOG.md): problems and mitigations.
 - [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md): workflow improvements.
+- [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md): sanitized case study for Marcus-created reusable skills.
 
 ## Template Adoption Path
 
@@ -44,6 +47,7 @@ Use this only when the task is to clone, fork, or adapt the proof-of-work system
 - [template/IMPORT_INSTRUCTIONS.md](template/IMPORT_INSTRUCTIONS.md): clone/fork/import flow.
 - [template/LLM_BOOTSTRAP_REPO_PROMPT.md](template/LLM_BOOTSTRAP_REPO_PROMPT.md): provider-neutral bootstrap prompt.
 - [template/WEEKLY_AUTOMATION_RUNBOOK.md](template/WEEKLY_AUTOMATION_RUNBOOK.md): weekly automation recreation path.
+- [template/CUSTOM_SKILL_CASE_TEMPLATE.md](template/CUSTOM_SKILL_CASE_TEMPLATE.md): problem/solution template for documenting custom skills.
 
 ## Prompt And Automation Files
 

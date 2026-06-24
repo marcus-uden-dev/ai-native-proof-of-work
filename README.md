@@ -8,6 +8,8 @@ This repository is not a codebase.
 
 It is a structured proof-of-work portfolio showing concrete product work first, especially job-agent, with PKM and a household budget app as supporting evidence. Claude, Codex, scheduled routines, GitHub-based documentation, local project archives, and reusable skills are the operating layer that helps package and improve that work.
 
+If you are a recruiter or using an LLM to evaluate this repository, start with [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md). It defines the fair report format, evidence rules, and what not to overclaim.
+
 ---
 
 ## What This Repository Shows
@@ -59,8 +61,9 @@ flowchart TD
 |---|---|
 | [Navigation Hub](NAVIGATION.md) | Plain-English navigation hub for recruiters |
 | [START_HERE.md](START_HERE.md) | Fast recruiter-readable entry point |
-| [Clickable Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) | Published static recruiter-safe product demos for job-agent, PKM, and household budget app |
+| [Job-Agent UX Snapshot](demos/job-agent/index.html) | Static recruiter-safe click-through that mirrors the current job-agent frontend |
 | [llms.txt](llms.txt) | Machine-readable repository map for LLM assistants |
+| [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md) | Suggested report brief for recruiter-side LLMs |
 | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) | One-screen recruiter overview |
 | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) | Agent-readable guide for recruiter-side assistants |
 | [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | High-level positioning and current status |
@@ -72,6 +75,7 @@ flowchart TD
 | [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) | Role-specific reading paths |
 | [case-studies/](case-studies/) | Sanitized project case studies |
 | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Practical install and LLM handoff guide for the lead product repo |
+| [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md) | Sanitized problem/solution case study for Marcus-created reusable skills |
 | [weekly-input/](weekly-input/) | Clean weekly input layer for progress, decisions, blockers, and business insights |
 | [strategy/](strategy/) | Project-scoped strategy for job-agent, PKM, household budget app, and the portfolio operating layer |
 | [architecture/](architecture/) | System design, ingestion, autoresearch, recursive workflows |
@@ -91,7 +95,7 @@ Recommended order:
 
 1. [START_HERE.md](START_HERE.md)
 2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-3. [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/)
+3. [Job-Agent UX Snapshot](demos/job-agent/index.html)
 4. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
 5. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
 6. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
@@ -110,7 +114,7 @@ Recommended order:
 | Capability | How It Shows Up |
 |---|---|
 | Product execution | Job-agent, PKM, and household budget app case studies |
-| Clickable review | Published static demo portal with job-agent company research, synthetic KPI signals, and public-source labels |
+| Clickable review | Static job-agent UX snapshot with company research, synthetic KPI signals, and public-source labels |
 | Reproducible handoff | Job-agent install guide, LLM boot sequence, ports, service map, and validation commands |
 | Recruiter skim-readability | One-pager, evidence matrix, role reading paths |
 | Agent readability | Recruiter agent guide and canonical reading order |
