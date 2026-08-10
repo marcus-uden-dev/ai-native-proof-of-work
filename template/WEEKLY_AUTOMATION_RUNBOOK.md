@@ -34,11 +34,29 @@ Do not commit local scheduler state files, machine-specific paths, credentials, 
 
 The weekly automation should run the Proof-of-Work Compiler for this repository.
 
+### Clean-State Contract
+
+Run this preflight from the repository root before making any edits:
+
+```powershell
+pwsh -NoProfile -File scripts/Test-CleanGitState.ps1
+```
+
+If it fails, stop without editing and report the existing changes as the blocker. This prevents later weekly runs from accumulating on top of unfinished work.
+
+After editing and validation:
+
+1. Stage only the exact files produced by the current run. Do not use `git add -A` or another broad pathspec.
+2. Inspect `git diff --cached` and confirm it contains only the intended weekly output.
+3. Create one dated documentation commit.
+4. Run `pwsh -NoProfile -File scripts/Test-CleanGitState.ps1` again.
+5. Report the run as complete only when the final check passes. Push only when the automation already has explicit authorization and a configured remote.
+
 It should:
 
 - update job-agent evidence into this repository
 - keep [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) current
-- keep [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md) current as the first-class report guide for recruiter-side LLMs
+- keep [docs/reports/recruiter-llm-report-brief.md](../docs/reports/recruiter-llm-report-brief.md) current as the first-class report guide for recruiter-side LLMs
 - keep [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) current as the supporting workflow implementation case index
 - keep [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](../case-studies/CUSTOM_SKILLS_CASE_STUDY.md) current as the sanitized proof layer for Marcus-created custom skills
 - keep [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](../workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md) and [CUSTOM_SKILL_CASE_TEMPLATE.md](CUSTOM_SKILL_CASE_TEMPLATE.md) current when the skill documentation standard changes
@@ -71,7 +89,7 @@ Before editing, the automation should inspect:
 13. [PROJECT_STATUS.md](../PROJECT_STATUS.md)
 14. [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md)
 15. [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md)
-16. [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md)
+16. [docs/reports/recruiter-llm-report-brief.md](../docs/reports/recruiter-llm-report-brief.md)
 17. [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md)
 18. [case-studies/](../case-studies/)
 19. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
@@ -130,6 +148,7 @@ Each run should report:
 - orphan-doc check result
 - validation run and result
 - commit and push status
+- final clean-state check and local commit SHA
 - blockers
 - open questions
 - one concrete next action
@@ -147,6 +166,8 @@ For changed Markdown files, perform targeted link checks. When files are added, 
 
 - Do not stage unrelated user changes.
 - Do not use broad staging such as `git add -A`.
+- Do not begin a weekly update when the clean-state preflight fails.
+- Do not report a run as complete until its intended output is committed and the final clean-state check passes.
 - Do not commit local source indexes unless explicitly approved.
 - Do not commit `.env`, credentials, raw logs, runtime state, or private local paths.
 - Do not claim new progress without verified input, repo-visible changes, or explicit user-provided evidence.

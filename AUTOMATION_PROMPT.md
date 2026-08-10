@@ -14,6 +14,13 @@ The repo is recruiter-shareable and documents concrete product execution first, 
 
 This is not a code repo. The main output should be Markdown files readable directly in GitHub. Use Mermaid diagrams for user flows, functional models, technical architecture, and recursive agent/workflow loops. Optional exports to PDF/DOCX/PPTX may be created later, but Markdown is the source of truth.
 
+Clean-state contract:
+- Before editing, run `pwsh -NoProfile -File scripts/Test-CleanGitState.ps1` from the repository root.
+- If the preflight fails, stop without editing and report the existing changes as the blocker. Do not stack a new weekly run onto a dirty worktree.
+- After editing and validation, stage only the exact files produced by this run, inspect `git diff --cached`, and create one dated documentation commit. Never use broad staging such as `git add -A`.
+- Run `pwsh -NoProfile -File scripts/Test-CleanGitState.ps1` again after the commit. Do not report the run as complete while staged, unstaged, or untracked files remain.
+- Push only when the automation already has explicit authorization and the remote is configured; otherwise report the clean local commit and its SHA.
+
 Before updating artifacts, inspect:
 1. AGENTS.md
 2. weekly-input/
@@ -25,7 +32,7 @@ Before updating artifacts, inspect:
 8. PROJECT_PROOF_POINTS.md
 9. PROJECT_TIMELINE.md
 10. RECRUITER_ONE_PAGER.md
-11. RECRUITER_LLM_REPORT_BRIEF.md
+11. docs/reports/recruiter-llm-report-brief.md
 12. RECRUITER_AGENT_GUIDE.md
 13. EVIDENCE_MATRIX.md
 14. ROLE_READING_PATHS.md
@@ -121,7 +128,7 @@ Canonical positioning:
 - Do not frame this repository, compiler, or documentation automation as the product; frame them as the evidence and packaging layer for the product projects.
 - Keep `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md` current as the bridge from proof-of-work evidence to reproducible source-project setup.
 - Recruiter-facing files should link to `SOURCE_MAP.md`, `PROJECT_STATUS.md`, `PROJECT_PROOF_POINTS.md`, and `PROJECT_TIMELINE.md` rather than local-only internal index files.
-- Recruiter-facing review should remain easy for both humans and agents through `RECRUITER_ONE_PAGER.md`, `RECRUITER_LLM_REPORT_BRIEF.md`, `RECRUITER_AGENT_GUIDE.md`, `EVIDENCE_MATRIX.md`, and `ROLE_READING_PATHS.md`.
+- Recruiter-facing review should remain easy for both humans and agents through `RECRUITER_ONE_PAGER.md`, `docs/reports/recruiter-llm-report-brief.md`, `RECRUITER_AGENT_GUIDE.md`, `EVIDENCE_MATRIX.md`, and `ROLE_READING_PATHS.md`.
 - New recruiter-facing docs must be discoverable from the nearest index and at least one top-level reading path when they affect recruiter, agent, template, workflow, status, or evidence review.
 
 Avoid:
@@ -168,4 +175,5 @@ Final output must list:
 14. Markdown link-check result
 15. orphan-doc check result
 16. one concrete next action
+17. final clean-state check result and local commit SHA
 ```

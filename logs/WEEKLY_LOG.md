@@ -1,5 +1,173 @@
 # Weekly Log
 
+## Weekly Compiler Sync — 2026-08-09
+
+### 1. Executive Summary
+
+Ran the weekly Proof-of-Work Compiler from the current proof-of-work repository state.
+
+No dated weekly-input file existed for this week, but the `job-agent` source repository was directly accessible from this workspace. This run therefore refreshed the lead-project evidence boundary through direct source verification on 2026-08-09 and promoted only what could be grounded in committed source files, current repo docs, git history, and the currently accessible redesign branch state.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Weekly compiler audit entry | Weekly governance | Verified | [logs/WEEKLY_LOG.md](WEEKLY_LOG.md) | Preserves a dated audit trail for a no-weekly-input but fresher source-boundary week |
+| Job-agent handoff refresh | Lead-project handoff | Verified | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Corrects the lead-project setup snapshot to the current committed branch head and latest committed product-code boundary |
+| Job-agent freshness refresh | Project evidence | Internal / Verified | [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Keeps the strongest proof point aligned with the latest verifiable redesign-branch state without promoting dirty local M2 work |
+| Recruiter-facing evidence-boundary refresh | Documentation hygiene | Verified | [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [docs/reports/recruiter-llm-report-brief.md](../docs/reports/recruiter-llm-report-brief.md), [EVIDENCE_MATRIX.md](../EVIDENCE_MATRIX.md), [ROLE_READING_PATHS.md](../ROLE_READING_PATHS.md) | Makes the committed-product-code versus later docs/ops boundary explicit for technical reviewers and recruiter-side agents |
+| Recruiter asset refresh | Recruiter packaging | Verified | [recruiter-assets/CV_BULLETS.md](../recruiter-assets/CV_BULLETS.md), [recruiter-assets/LINKEDIN_DRAFTS.md](../recruiter-assets/LINKEDIN_DRAFTS.md), [recruiter-assets/RECRUITER_SUMMARY.md](../recruiter-assets/RECRUITER_SUMMARY.md), [recruiter-assets/INTERVIEW_TALKING_POINTS.md](../recruiter-assets/INTERVIEW_TALKING_POINTS.md) | Keeps the human-facing summary layer aligned with the current committed evidence boundary |
+
+### 3. Validation
+
+| Check | Result |
+|---|---|
+| `weekly-input/` current-week file check | No dated weekly-input file present |
+| Direct `job-agent` committed source verification | Passed |
+| Dirty-worktree check before commit decision | Passed |
+| Targeted recruiter-facing link/path checks after edits | Passed |
+| Repo-wide local Markdown link check for public docs | Passed |
+| Recruiter-facing private-path scan | Passed |
+
+### 4. Source Inputs Used
+
+| Source | Used? | Notes |
+|---|---|---|
+| `weekly-input/` dated file | No | No dated weekly-input file exists in `weekly-input/` |
+| Repo-visible proof-of-work files | Yes | Used as the primary source for this run |
+| Internal source indexes | Yes | Reused the 2026-06-01 high-level freshness notes |
+| Direct `job-agent` committed source files | Yes | Verified current setup docs, env examples, compose, Makefile, package metadata, requirements, migrations, and committed status/orientation docs |
+| `job-agent` git history | Yes | Used to anchor fresh claims to commits `19c3525`, `dd29f6d`, `38cefcb`, `cfb91bc`, `8b9486e`, and `bc10287` |
+| Dirty local `job-agent` working tree | No for promotion | Observed for boundary-setting only; not promoted as shipped evidence |
+
+### 5. Problems / Blockers
+
+| Problem | Current Handling | Next Action |
+|---|---|---|
+| No clean weekly input for the current week | Promoted only source-verified repo state and avoided inventing a higher-level narrative | Add one dated `weekly-input/YYYY-W##.md` note |
+| The accessible `job-agent` branch is still branch-local relative to `origin/master` | Kept the redesign-branch evidence explicit without presenting it as merged production state | Refresh again after the branch is merged, rebased, or otherwise stabilized |
+| The `job-agent` worktree is dirty | Used committed `HEAD` content only and excluded local M2 follow-up work from recruiter-facing claims | Clean or commit the source repo before a future sync if the local edits matter |
+| Proof-of-work worktree still contains earlier doc-only changes | Avoided commit/push and limited this run to evidence refresh and validation | Review/stage intentionally once the full doc set is confirmed ready |
+
+### 6. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 7. Next Action
+
+Create one dated weekly-input file that explains whether the redesign branch should be treated as branch-local exploration, imminent merge work, or a new recruiter-facing milestone.
+
+## Weekly Compiler Sync — 2026-08-05
+
+### 1. Executive Summary
+
+Ran the weekly Proof-of-Work Compiler from the current proof-of-work repository state.
+
+No dated weekly-input file existed for this week, but the `job-agent` source repository was directly accessible from this workspace. This run therefore refreshed the lead-project evidence boundary through direct source verification on 2026-08-05 and promoted only what could be grounded in committed source files, current repo docs, git history, and the currently accessible July branch state.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Weekly compiler audit entry | Weekly governance | Verified | [logs/WEEKLY_LOG.md](WEEKLY_LOG.md) | Preserves a dated audit trail for a branch-correction week |
+| Job-agent handoff refresh | Lead-project handoff | Verified | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Corrects the lead-project setup snapshot to the currently accessible committed branch |
+| Job-agent freshness refresh | Project evidence | Internal / Verified | [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Keeps the strongest proof point aligned with the latest verifiable committed source boundary |
+| Recruiter-facing evidence-boundary refresh | Documentation hygiene | Verified | [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [docs/reports/recruiter-llm-report-brief.md](../docs/reports/recruiter-llm-report-brief.md), [EVIDENCE_MATRIX.md](../EVIDENCE_MATRIX.md), [ROLE_READING_PATHS.md](../ROLE_READING_PATHS.md) | Makes the branch-versus-dirty-worktree boundary explicit for technical reviewers and recruiter-side agents |
+| Recruiter asset refresh | Recruiter packaging | Verified | [recruiter-assets/CV_BULLETS.md](../recruiter-assets/CV_BULLETS.md), [recruiter-assets/LINKEDIN_DRAFTS.md](../recruiter-assets/LINKEDIN_DRAFTS.md), [recruiter-assets/RECRUITER_SUMMARY.md](../recruiter-assets/RECRUITER_SUMMARY.md), [recruiter-assets/INTERVIEW_TALKING_POINTS.md](../recruiter-assets/INTERVIEW_TALKING_POINTS.md) | Keeps the human-facing summary layer aligned with the current committed evidence |
+
+### 3. Validation
+
+| Check | Result |
+|---|---|
+| `weekly-input/` current-week file check | No dated weekly-input file present |
+| Direct `job-agent` committed source verification | Passed |
+| Dirty-worktree check before commit decision | Passed |
+| Targeted recruiter-facing link/path checks after edits | Passed |
+| Repo-wide local Markdown link check for public docs | Passed |
+| Recruiter-facing private-path scan | Passed |
+
+### 4. Source Inputs Used
+
+| Source | Used? | Notes |
+|---|---|---|
+| `weekly-input/` dated file | No | Only `README.md` and `TEMPLATE.md` exist in `weekly-input/` |
+| Repo-visible proof-of-work files | Yes | Used as the primary source for this run |
+| Internal source indexes | Yes | Reused the 2026-06-01 high-level freshness notes |
+| Direct `job-agent` committed source files | Yes | Verified current setup docs, env examples, compose, Makefile, package metadata, requirements, migrations, and committed status/orientation docs |
+| `job-agent` git history | Yes | Used to anchor fresh claims to commits `19c3525`, `dd29f6d`, `38cefcb`, and `852a191` |
+| Dirty local `job-agent` working tree | No for promotion | Observed for boundary-setting only; not promoted as shipped evidence |
+
+### 5. Problems / Blockers
+
+| Problem | Current Handling | Next Action |
+|---|---|---|
+| No clean weekly input for the current week | Promoted only source-verified repo state and avoided inventing a higher-level narrative | Add one dated `weekly-input/YYYY-W##.md` note |
+| The accessible `job-agent` branch differs from the older verified portfolio snapshot | Corrected the portfolio to the currently accessible committed July branch state | Refresh again after the redesign branch is cleaned, merged, or otherwise stabilized |
+| The `job-agent` worktree is dirty | Used committed `HEAD` content only and excluded local WIP from recruiter-facing claims | Clean or commit the source repo before a future sync if the local edits matter |
+| Proof-of-work worktree still contains unrelated changes | Avoided commit/push and limited edits to this run's doc sync | Review/stage intentionally once the worktree is stable |
+
+### 6. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 7. Next Action
+
+Create one dated weekly-input file that explains the July redesign branch changes and whether they should be treated as branch-local exploration, imminent merge work, or a new recruiter-facing milestone.
+
+## Weekly Compiler Sync — 2026-06-28
+
+### 1. Executive Summary
+
+Ran the weekly Proof-of-Work Compiler from the current proof-of-work repository state.
+
+No dated weekly-input file existed for this week, but the `job-agent` source repository was directly accessible from this workspace. This run therefore refreshed the lead-project evidence boundary through direct source verification on 2026-06-28 and promoted only what could be grounded in committed source files, current repo docs, git history, and the source repo's updated orientation/status hierarchy.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Weekly compiler audit entry | Weekly governance | Verified | [logs/WEEKLY_LOG.md](WEEKLY_LOG.md) | Preserves a dated audit trail for another verification-first week |
+| Job-agent handoff refresh | Lead-project handoff | Verified | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Keeps setup, orientation order, ports, and source freshness aligned with the actual source repo |
+| Job-agent freshness refresh | Project evidence | Internal / Verified | [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Prevents the strongest proof point from drifting behind the latest verified source boundary |
+| Recruiter-facing evidence-boundary refresh | Documentation hygiene | Verified | [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [EVIDENCE_MATRIX.md](../EVIDENCE_MATRIX.md), [ROLE_READING_PATHS.md](../ROLE_READING_PATHS.md) | Makes the newer source hierarchy explicit for technical reviewers and recruiter-side agents |
+
+### 3. Validation
+
+| Check | Result |
+|---|---|
+| `weekly-input/` current-week file check | No dated weekly-input file present |
+| Direct `job-agent` source verification | Passed |
+| Dirty-worktree check before commit decision | Passed |
+| Targeted recruiter-facing link/path checks after edits | Passed |
+| Repo-wide local Markdown link check for public docs | Passed |
+| Recruiter-facing private-path scan | Passed |
+
+### 4. Source Inputs Used
+
+| Source | Used? | Notes |
+|---|---|---|
+| `weekly-input/` dated file | No | Only `README.md` and `TEMPLATE.md` exist in `weekly-input/` |
+| Repo-visible proof-of-work files | Yes | Used as the primary source for this run |
+| Internal source indexes | Yes | Reused the 2026-06-01 high-level freshness notes |
+| Direct `job-agent` source files | Yes | Verified current setup docs, env examples, compose, Makefile, package metadata, requirements, migrations, and the latest ops/orientation docs |
+| `job-agent` git history and changelog surface | Yes | Used to anchor fresh claims to commits `7c9734c`, `5db5f44`, `91af9dd`, `be764d5`, and `8992dd3`, plus the 2026-06-26 `current-status-history` review window |
+
+### 5. Problems / Blockers
+
+| Problem | Current Handling | Next Action |
+|---|---|---|
+| No clean weekly input for the current week | Promoted only source-verified repo state and avoided inventing a higher-level narrative | Add one dated `weekly-input/YYYY-W##.md` note |
+| `job-agent` status docs still need direct freshness checks against HEAD | Used the source repo's own hierarchy: `agent-context` for orientation, `current-status` for durable state, and git/file inspection for final freshness | Keep using direct source verification and explicit evidence labels |
+| Worktree contains unrelated uncommitted changes | Avoided commit/push and limited edits to this run's doc sync | Review/stage intentionally once the worktree is stable |
+
+### 6. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 7. Next Action
+
+Create one dated weekly-input file that explains the latest verified `job-agent` source-doc and OAuth/CV follow-through in recruiter-safe language before the next scheduled run.
+
 ## Weekly Compiler Sync — 2026-06-23
 
 ### 1. Executive Summary
@@ -68,7 +236,7 @@ No dated weekly-input file existed for this week, but the `job-agent` source rep
 | Weekly compiler audit entry | Weekly governance | Verified | [logs/WEEKLY_LOG.md](WEEKLY_LOG.md) | Preserves a dated audit trail for a source-verified week |
 | Job-agent handoff refresh | Lead-project handoff | Verified | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Keeps setup, ports, migration counts, and source freshness aligned with the actual source repo |
 | Job-agent freshness refresh | Project evidence | Internal / Verified | [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md) | Prevents the strongest proof point from staying anchored to late-May evidence |
-| Recruiter/agent evidence-boundary refresh | Documentation hygiene | Verified | [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md), [EVIDENCE_MATRIX.md](../EVIDENCE_MATRIX.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Makes the review path explicit when source-repo status docs lag actual HEAD |
+| Recruiter/agent evidence-boundary refresh | Documentation hygiene | Verified | [RECRUITER_ONE_PAGER.md](../RECRUITER_ONE_PAGER.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [docs/reports/recruiter-llm-report-brief.md](../docs/reports/recruiter-llm-report-brief.md), [EVIDENCE_MATRIX.md](../EVIDENCE_MATRIX.md), [SOURCE_MAP.md](../SOURCE_MAP.md) | Makes the review path explicit when source-repo status docs lag actual HEAD |
 
 ### 3. Validation
 
@@ -178,7 +346,7 @@ The automation contract now also says future runs must maintain dependent indexe
 
 | Check | Result |
 |---|---|
-| Active automation prompt contains `RECRUITER_LLM_REPORT_BRIEF.md` | Passed |
+| Active automation prompt contains `docs/reports/recruiter-llm-report-brief.md` | Passed |
 | Active automation prompt contains `case-studies/WORKFLOW_IMPLEMENTATION_CASES.md` | Passed |
 | Active automation prompt contains dependency/cross-reference, link-check, and orphan-doc checks | Passed |
 | Runbook and weekly compiler prompt include new surfaces | Passed |
@@ -199,7 +367,7 @@ This is not a product milestone. It is a recruiter-review and portfolio-operatin
 
 | Item | Type | Status | Evidence | Recruiter Relevance |
 |---|---|---|---|---|
-| Recruiter LLM report brief | Recruiter / agent review | Verified | [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md) | Helps recruiter-side LLMs create fair, evidence-grounded reports |
+| Recruiter LLM report brief | Recruiter / agent review | Verified | [docs/reports/recruiter-llm-report-brief.md](../docs/reports/recruiter-llm-report-brief.md) | Helps recruiter-side LLMs create fair, evidence-grounded reports |
 | Workflow implementation cases | Supporting workflow evidence | Verified / Internal by case | [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) | Makes implemented workflow improvements visible without replacing product proof |
 | Maintenance routing | Progress-update hygiene | Verified | [AGENTS.md](../AGENTS.md), [AUTOMATION_PROMPT.md](../AUTOMATION_PROMPT.md) | Ensures future weekly/compiler runs inspect and update the new review surfaces |
 

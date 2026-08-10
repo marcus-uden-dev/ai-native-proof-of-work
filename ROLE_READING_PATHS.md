@@ -1,6 +1,6 @@
 # Role Reading Paths
 
-Last updated: 2026-06-14
+Last updated: 2026-08-09
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -11,7 +11,7 @@ Different recruiters look for different signals. This file gives role-specific p
 
 Read:
 
-1. [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md) if using an assistant
+1. [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md) if using an assistant
 2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
 3. [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md)
 4. [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md)
@@ -67,7 +67,7 @@ Look for:
 
 Read:
 
-1. [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md) if producing an assessment report
+1. [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md) if producing an assessment report
 2. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
 3. [PROJECT_STATUS.md](PROJECT_STATUS.md)
 4. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
@@ -79,6 +79,8 @@ Look for:
 - source-verified setup claims
 - explicit env and port boundaries
 - OAuth/startup verification discipline
+- current-status, handoff docs, repo map, and direct-HEAD freshness checks in the right order
+- committed-branch evidence versus uncommitted local WIP boundary
 - separation between recruiter-safe summaries and local-only source material
 
 ## Customer Success / Customer Outcome

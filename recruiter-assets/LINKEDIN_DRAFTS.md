@@ -1,6 +1,6 @@
 # LinkedIn Drafts
 
-Last updated: 2026-05-31
+Last updated: 2026-08-09
 Status: Drafts / Not published
 
 ## Draft — 2026-05-09
@@ -145,3 +145,65 @@ Low
 ### Evidence
 
 Verified by the updated `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md`, weekly log, and direct inspection of the source repo's `docs/operations/current-status.md`, `docs/operations/llm-handoff.md`, and `docs/operations/job-agent-startup-skill-handoff.md`.
+
+## Draft — 2026-08-05
+
+### Topic
+
+Why branch boundaries matter in proof-of-work docs.
+
+### Draft
+
+A useful documentation habit in AI-assisted product work is to separate:
+
+```text
+what is committed and reviewable
+from
+what is only local and still in motion
+```
+
+This week I refreshed the lead-project evidence in my proof-of-work repo by checking the currently accessible committed `job-agent` branch again.
+
+What changed was not just a date.
+
+The accessible branch had moved to a July frontend redesign package:
+
+- UX audit and alternatives
+- implementation plan
+- UI foundations
+- sidebar shell and route redirects
+
+At the same time, the local worktree also had newer uncommitted edits.
+
+The useful proof point is not "latest possible state."
+
+It is:
+
+```text
+the newest state another reviewer can actually verify
+without pretending local WIP is shipped
+```
+
+That sounds small, but it is the difference between credible portfolio evidence and polished drift.
+
+### Proof Point Used
+
+2026-08-05 weekly proof-of-work sync and committed July `job-agent` redesign branch evidence.
+
+### Claim Risk
+
+Low
+
+### Evidence
+
+Verified by `PROJECT_STATUS.md`, `SOURCE_MAP.md`, `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md`, and the 2026-08-05 weekly log entry.
+
+## Draft — 2026-08-09
+
+This week’s proof-of-work sync was another reminder that evidence quality matters as much as shipping velocity.
+
+The lead `job-agent` proof point moved again in committed source, so I refreshed the portfolio to the current redesign-branch head and made one distinction explicit: the latest committed product-code signal is the August 8 shell-polish commit, while later commits are docs/ops follow-through. I also kept newer dirty M2 work out of recruiter-facing claims instead of blurring “local WIP” into “shipped proof.”
+
+That may sound small, but it is the operating model I care about: use AI tools and automation to keep real work reviewable, current, and honest, not just summarized.
+
+Verified by `PROJECT_STATUS.md`, `PROJECT_TIMELINE.md`, `SOURCE_MAP.md`, `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md`, and the 2026-08-09 weekly log entry.

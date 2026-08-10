@@ -8,7 +8,7 @@ This repository is not a codebase.
 
 It is a structured proof-of-work portfolio showing concrete product work first, especially job-agent, with PKM and a household budget app as supporting evidence. Claude, Codex, scheduled routines, GitHub-based documentation, local project archives, and reusable skills are the operating layer that helps package and improve that work.
 
-If you are a recruiter or using an LLM to evaluate this repository, start with [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md). It defines the fair report format, evidence rules, and what not to overclaim.
+If you are a recruiter or using an LLM to evaluate this repository, start with [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md). It defines the fair report format, evidence rules, and what not to overclaim.
 
 ---
 
@@ -63,7 +63,7 @@ flowchart TD
 | [START_HERE.md](START_HERE.md) | Fast recruiter-readable entry point |
 | [Job-Agent UX Snapshot](demos/job-agent/index.html) | Static recruiter-safe click-through that mirrors the current job-agent frontend |
 | [llms.txt](llms.txt) | Machine-readable repository map for LLM assistants |
-| [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md) | Suggested report brief for recruiter-side LLMs |
+| [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md) | Suggested report brief for recruiter-side LLMs |
 | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) | One-screen recruiter overview |
 | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) | Agent-readable guide for recruiter-side assistants |
 | [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | High-level positioning and current status |

@@ -1,6 +1,6 @@
 # Recruiter Agent Guide
 
-Last updated: 2026-06-14
+Last updated: 2026-08-09
 Status: Active / Agent-readable
 
 ## Purpose
@@ -11,7 +11,7 @@ The repo is designed to be read directly in GitHub. It is not an application cod
 
 It also has a reusable template layer. If the goal is to recreate the proof-of-work system for another user, start from [template/](template/) instead of copying Marcus-specific evidence.
 
-If your task is to create a report about Marcus, start with [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md). It defines the expected report structure, source priority, evidence boundaries, and interpretation rules.
+If your task is to create a report about Marcus, start with [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md). It defines the expected report structure, source priority, evidence boundaries, and interpretation rules.
 
 ## Evaluation Goal
 
@@ -27,7 +27,7 @@ Assess Marcus’s practical evidence for:
 
 ## Canonical Reading Order
 
-1. [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md)
+1. [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md)
 2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
 3. [Navigation Hub](NAVIGATION.md)
 4. [Start Here](START_HERE.md)
@@ -70,6 +70,8 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 - Do not infer exact metrics unless a file marks them as verified.
 - Prefer evidence-labeled claims over broad positioning statements.
 - For job-agent setup claims, prefer the latest source-verified handoff summary over older repo assumptions; the source repo now distinguishes Docker Compose defaults from the canonical manual startup contract.
+- For job-agent repo reading order, use the committed branch's own contract: `docs/operations/current-status.md` first for active status, `docs/operations/llm-handoff.md` when present for session carry-over, `docs/overview/agent-context.md` for the deeper repo/module map, and direct git/file verification when commits are newer than those docs.
+- Treat committed branch evidence as safer than dirty local worktree state. The 2026-08-09 weekly refresh intentionally excludes uncommitted `job-agent` changes from recruiter-facing proof and separates the latest committed product-code signal (`cfb91bc`) from later ops/doc commits.
 - If a source-repo status doc date lags the actual git HEAD, prefer the direct source-verification date recorded in the handoff guide or weekly log.
 
 ## Capability Extraction Map
@@ -88,7 +90,7 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 
 ## Suggested Output For A Recruiter Agent
 
-Use [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md) for the full report format.
+Use [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) for the full report format.
 
 At minimum, summarize:
 

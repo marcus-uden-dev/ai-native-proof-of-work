@@ -8,7 +8,7 @@ The repository itself is not the product. Concrete projects are the primary proo
 
 ## Primary Recruiter Path
 
-- [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md): fair report format for recruiter-side LLMs.
+- [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md): fair report format for recruiter-side LLMs.
 - [START_HERE.md](START_HERE.md): one-minute orientation.
 - [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md): fastest summary of strongest proof points.
 - [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md): lead project case study.

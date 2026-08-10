@@ -38,7 +38,7 @@ Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Ti
 | Step | Open | Why |
 |---|---|---|
 | 1 | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) | Best path for agents and structured review |
-| 2 | [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md) | Suggested fair report format for recruiter-side LLMs |
+| 2 | [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) | Suggested fair report format for recruiter-side LLMs |
 | 3 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
 | 4 | [Project Status](PROJECT_STATUS.md) | Current state, progress, and blockers |
 | 5 | [Project Proof Points](PROJECT_PROOF_POINTS.md) | Portfolio-level evidence |
@@ -67,7 +67,7 @@ Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Ti
 | What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
 | Where can I click through product demos? | [Job-Agent UX Snapshot](demos/job-agent/index.html) |
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
-| Can an LLM create a fair recruiter report about Marcus? | [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md) |
+| Can an LLM create a fair recruiter report about Marcus? | [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |
 | How can another user install the lead product? | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
 | What is the current project status? | [Project Status](PROJECT_STATUS.md) |

@@ -1,6 +1,6 @@
 # Interview Talking Points
 
-Last updated: 2026-05-31
+Last updated: 2026-08-09
 Status: Active / Project-focused
 
 ## 1. Job-agent as the lead proof point
@@ -44,3 +44,7 @@ I keep Codex execution evidence, Claude planning evidence, and shared skills/wor
 ## 10. Reproducible handoff discipline
 
 For the lead project, I keep a recruiter-safe install and LLM handoff guide current and re-check it against the actual source repo so the setup path does not drift into guesswork. A concrete recent example was separating Docker Compose defaults from the manual startup/OAuth port contract after the source repo made that distinction explicit.
+
+## 11. Evidence boundary discipline
+
+When the accessible lead-project source branch changes, I correct the portfolio to the currently verifiable committed branch state rather than carrying forward an older snapshot or overstating dirty local worktree edits as shipped proof. A concrete recent example is the 2026-08-09 refresh that re-anchored `job-agent` to the committed redesign branch through the August 8 shell-polish commit while still fencing off newer dirty M2 work.

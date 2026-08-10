@@ -1,12 +1,13 @@
 # CV Bullets
 
-Last updated: 2026-05-31
+Last updated: 2026-08-09
 Status: Drafts / Project-focused
 
 ## Product Execution
 
 - Built and documented a job-agent career workflow product spanning CV generation, job discovery, application support, interview/practice flows, feedback capture, privacy/data-rights planning, QA coverage, deployment planning, telemetry, and billing considerations.
 - Maintained a source-verified install and LLM handoff path for the lead `job-agent` repo, covering Docker vs manual startup boundaries, env/port contracts, OAuth verification, validation commands, and agent entrypoints.
+- Added recruiter-safe portfolio evidence for committed `job-agent` redesign work, including UX audit/alternatives, implementation planning, motion-token/UI foundations, a sidebar-shell/legacy-redirect frontend pass, and August 8 shell polish on a branch that is explicitly not overstated as merged production state.
 - Developed supporting product systems across a PKM app and household budget app, demonstrating knowledge ingestion/search workflows, financial domain modeling, shared household data access, import/review flows, and test-backed implementation.
 
 ## Product Operations

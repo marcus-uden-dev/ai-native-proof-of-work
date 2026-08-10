@@ -210,7 +210,7 @@ Weekly dynamic output files update every weekly run when there is verified new m
 
 ```text
 RECRUITER_ONE_PAGER.md
-RECRUITER_LLM_REPORT_BRIEF.md
+docs/reports/recruiter-llm-report-brief.md
 RECRUITER_AGENT_GUIDE.md
 NAVIGATION.md
 EVIDENCE_MATRIX.md
@@ -335,7 +335,7 @@ Before updating artifacts, inspect:
 10. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
 11. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
 12. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-13. [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md)
+13. [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md)
 14. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
 15. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
 16. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)

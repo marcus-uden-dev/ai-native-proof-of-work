@@ -1,5 +1,98 @@
 # Problem-Solving Log
 
+## 2026-08-09 — The committed `job-agent` source moved again, but only part of that movement is product-code evidence
+
+### Problem
+
+The proof-of-work repo already had an August 5 boundary correction in progress, but the committed `job-agent` redesign branch moved again by August 9. A naive refresh would either miss the latest committed source state or overstate docs/ops commits and dirty M2 follow-up work as equivalent to landed product progress.
+
+### Cause
+
+The redesign branch kept advancing with a mix of product-code, ops, and docs commits, while the local worktree also accumulated uncommitted M2 follow-up work.
+
+### Attempted Fixes
+
+- Re-checked the actual `job-agent` branch head, ahead/behind count, and recent log window.
+- Verified the latest committed product-code change separately from later docs/ops commits.
+- Re-read committed status and startup docs, migration counts, env examples, compose, and package metadata before promoting any refreshed handoff claims.
+- Updated recruiter-facing proof surfaces to name the latest product-code signal while keeping dirty local work out of scope.
+
+### Resolution
+
+The portfolio sync now reflects the source state that is actually verifiable on 2026-08-09: committed redesign-branch evidence through `bc10287`, with August 8 shell polish at `cfb91bc` called out as the latest committed product-code signal and dirty M2 follow-up work excluded.
+
+### Lesson
+
+When a lead source repo advances with mixed commit types, separate the latest committed product-code milestone from later docs/ops commits instead of flattening them into one vague "latest update" claim.
+
+### Reusable Rule
+
+```text
+For weekly proof syncs, refresh to the current committed source boundary, but identify the latest committed product-code milestone separately when later commits are docs/ops follow-through.
+```
+
+## 2026-08-05 — Job-agent's current committed branch no longer matches the older verified handoff snapshot
+
+### Problem
+
+The weekly compiler needed a fresh `job-agent` evidence boundary, but the currently accessible committed branch in this workspace is now `feat/frontend-redesign-shell` with 44 migrations and July redesign work, while the existing portfolio handoff docs still described an older June branch state with 46 migrations and different source-doc precedence claims.
+
+### Cause
+
+Prior weekly runs verified a different accessible source snapshot. By 2026-08-05, the local `job-agent` clone also contained dirty uncommitted status-doc and frontend changes, which made "latest local state" an unsafe default for recruiter-facing proof.
+
+### Attempted Fixes
+
+- Re-checked the actual `job-agent` worktree state with `git status --short`, `git log --pretty=format`, branch/ahead-behind checks, and direct file inspection.
+- Read the committed `HEAD` versions of `docs/operations/current-status.md`, `docs/operations/current-status-history.md`, `docs/overview/agent-context.md`, and `.claude/CLAUDE.md` instead of trusting dirty working-tree files.
+- Recounted committed migrations from `HEAD` and `origin/master`.
+- Updated the portfolio handoff, proof, recruiter, and source-map surfaces to reflect the committed July branch state and to exclude dirty local worktree changes from shipped evidence.
+
+### Resolution
+
+The portfolio sync now reflects the source state that is actually verifiable on 2026-08-05: committed July redesign evidence on `feat/frontend-redesign-shell`, 44 migrations with named head `0043`, and an explicit note that dirty local worktree edits were not promoted.
+
+### Lesson
+
+When a lead source repo is accessible on a different committed branch than the one used in a prior verification, the portfolio should correct its snapshot to the currently verifiable branch and explicitly fence off any dirty local WIP.
+
+### Reusable Rule
+
+```text
+For weekly proof syncs, prefer the currently accessible committed branch state over older verified snapshots, and never promote dirty local worktree changes as shipped recruiter-facing evidence.
+```
+
+## 2026-06-28 — Job-agent source orientation, status, and HEAD no longer map to one document
+
+### Problem
+
+The weekly compiler needed to refresh `job-agent` evidence, but the source repo now spreads truth across multiple artifacts: `agent-context` for orientation, `current-status` for durable state, `current-status-history` for review windows, and git HEAD for the latest follow-up commit. Treating one file as the whole truth risked either stale freshness or a muddled handoff order.
+
+### Cause
+
+The source repo's documentation improved after 2026-06-23, but the portfolio layer was still largely phrased as if one status document carried both setup orientation and freshness.
+
+### Attempted Fixes
+
+- Re-checked the actual `job-agent` worktree state with `git status --short`, `git log --oneline -5`, and direct file inspection.
+- Read `docs/operations/current-status.md`, `docs/operations/current-status-history.md`, `docs/overview/agent-context.md`, `.claude/CLAUDE.md`, and the startup/handoff docs together.
+- Promoted only the changes grounded in committed source files and commits, not untracked ops-run artifacts.
+- Updated the portfolio handoff and recruiter-agent wording to reflect the clearer source hierarchy.
+
+### Resolution
+
+The portfolio sync now preserves the source repo's own document roles: `agent-context` for orientation, `current-status` for durable product state, and direct git/file verification for final freshness when follow-up commits land afterward.
+
+### Lesson
+
+Lead-project handoff quality improves when the portfolio mirrors the source repo's own document hierarchy instead of compressing it into one generic status summary.
+
+### Reusable Rule
+
+```text
+When a lead source repo separates orientation docs, durable status docs, and dated review-history docs, preserve that hierarchy in recruiter-safe handoff material and use direct git/file checks only for the final freshness boundary.
+```
+
 ## 2026-06-14 — Source-repo status docs lagged the actual job-agent HEAD
 
 ### Problem

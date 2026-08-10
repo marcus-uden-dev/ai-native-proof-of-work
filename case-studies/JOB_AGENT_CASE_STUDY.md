@@ -1,6 +1,6 @@
 # Job-Agent Case Study
 
-Last updated: 2026-06-14
+Last updated: 2026-08-09
 Status: Active / Lead proof point / Internal evidence summarized
 
 ## Executive Summary
@@ -35,7 +35,7 @@ Job search work is fragmented across CVs, job boards, application portals, inter
 
 | Area | Current State | Remaining Work |
 |---|---|---|
-| MVP / career-ops | Local status marks MVP complete and career-ops tasks done; source-repo status docs also report OAuth social auth, nav integration, repo-ops status refreshes, and LLM handoff context | Public-safe proof still needs screenshots or selected excerpts |
+| MVP / career-ops | Committed source status still marks MVP complete and career-ops tasks done; direct source verification through 2026-08-09 also covers a committed redesign package on `feat/frontend-redesign-shell` with UX audit, alternatives, M0 UI foundations, M1 shell/IA redirects, and August 8 shell polish, while explicitly excluding dirty local worktree changes from shipped proof | Public-safe proof still needs screenshots or selected excerpts |
 | Privacy / GDPR | Consent, data-rights, export/delete request UX, retention planning, marketing-pixel guardrails, and committed apply-session retention/export-delete implementation are locally represented | Legal review and final production policy decisions |
 | QA | Backend checks, Playwright coverage, discover regression coverage, migration smokes, CI workflows, and follow-up retention tests are represented in local docs | Full production-like verification and selected recruiter-safe evidence |
 | Production | Hosting architecture and observability plans exist | Domain/server setup, public backend origin, OTel/Grafana, Stripe live, OAuth credentials, and publish-safe confirmation of branch/repo-ops state |

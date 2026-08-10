@@ -1,6 +1,6 @@
 # Recruiter LLM Report Brief
 
-Last updated: 2026-06-14
+Last updated: 2026-08-09
 Status: Active / Recruiter-facing / LLM-readable
 
 ## Purpose
@@ -21,16 +21,16 @@ What does this repository fairly demonstrate about Marcus, what is strongest, wh
 
 Read in this order:
 
-1. [START_HERE.md](START_HERE.md)
-2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-3. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
-4. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
-5. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-6. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
-7. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
-8. [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
-9. [SOURCE_MAP.md](SOURCE_MAP.md)
-10. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
+1. [START_HERE.md](../../START_HERE.md)
+2. [RECRUITER_ONE_PAGER.md](../../RECRUITER_ONE_PAGER.md)
+3. [case-studies/JOB_AGENT_CASE_STUDY.md](../../case-studies/JOB_AGENT_CASE_STUDY.md)
+4. [PROJECT_PROOF_POINTS.md](../../PROJECT_PROOF_POINTS.md)
+5. [EVIDENCE_MATRIX.md](../../EVIDENCE_MATRIX.md)
+6. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+7. [PROJECT_TIMELINE.md](../../PROJECT_TIMELINE.md)
+8. [logs/DECISION_LOG.md](../../logs/DECISION_LOG.md)
+9. [SOURCE_MAP.md](../../SOURCE_MAP.md)
+10. [RECRUITER_AGENT_GUIDE.md](../../RECRUITER_AGENT_GUIDE.md)
 
 ## Interpretation Rules
 
@@ -42,6 +42,7 @@ Read in this order:
 - Do not expose private local paths, raw chats, internal indexes, credentials, personal data, or sensitive source details.
 - Distinguish `Verified`, `Internal / Verified`, `Hypothesis`, `Estimated`, `Needs Review`, and `Open Question` claims.
 - When job-agent source status docs lag actual repo HEAD, use the direct source-verification date and cited commits from the portfolio handoff/log files instead of assuming the status doc is freshest.
+- Do not treat dirty local source worktree changes as shipped evidence. On 2026-08-09, the fair `job-agent` boundary is the committed redesign branch state through `bc10287`, including the latest committed product-code signal `cfb91bc`, plus an explicit note that newer local edits were not promoted.
 
 ## Suggested Report Layout
 
@@ -118,5 +119,5 @@ Give a balanced final assessment: strengths, risks, and what evidence would make
 ## One-Line Prompt
 
 ```text
-Using this repository, create a fair recruiter assessment report about Marcus following RECRUITER_LLM_REPORT_BRIEF.md. Ground every major claim in linked evidence, separate verified evidence from hypotheses or internal summaries, and include interview questions for unresolved gaps.
+Using this repository, create a fair recruiter assessment report about Marcus following docs/reports/recruiter-llm-report-brief.md. Ground every major claim in linked evidence, separate verified evidence from hypotheses or internal summaries, and include interview questions for unresolved gaps.
 ```

@@ -1,6 +1,6 @@
 # Job-Agent Install And Handoff Guide
 
-Last updated: 2026-06-23
+Last updated: 2026-08-09
 Status: Active / Recruiter-facing / LLM-readable
 
 ## Purpose
@@ -19,7 +19,7 @@ This file should stay safe to share. It summarizes install steps, expected local
 | Primary proof role | Lead product proof point |
 | Product type | Local-first job search automation app |
 | Main stack | FastAPI, PostgreSQL with pgvector, Redis/Celery, Next.js |
-| Evidence label | Verified from inspected local source files on 2026-06-23 |
+| Evidence label | Verified from inspected local source files on 2026-08-09 |
 
 ## What The App Contains
 
@@ -108,13 +108,19 @@ If an LLM agent is entering the `job-agent` repo cold, start with these files:
 1. `AGENTS.md`
 2. `CLAUDE.md`
 3. `.claude/CLAUDE.md`
-4. `docs/overview/agent-context.md`
-5. `docs/operations/current-status.md`
-6. `docs/operations/llm-handoff.md` for the latest repo-ops session state
+4. `docs/operations/current-status.md`
+5. `docs/operations/llm-handoff.md` for the latest repo-ops session state
+6. `docs/overview/agent-context.md` for the deeper repo/module map
 7. `docs/operations/job-agent-startup-skill-handoff.md` before local startup or OAuth verification work
 8. `docs/HANDOVER.md` for prior session context when needed
 9. `DESIGN.md` before UI work
 10. `tasks/lessons.md` before changing an area with prior lessons
+
+In the currently accessible committed branch, `.claude/CLAUDE.md` routes cold starts
+to `docs/operations/current-status.md` first, then optional session handoff, with
+`docs/overview/agent-context.md` as the deeper repo/module map. If a small follow-up
+commit lands after those docs, use direct git/file verification for freshness and do
+not treat dirty local worktree state as shipped evidence.
 
 Then check actual state:
 
@@ -246,19 +252,21 @@ This handoff guide matters because it turns `job-agent` from a private source re
 
 ## Source Verification Notes
 
-This guide was checked against the inspected `job-agent` source tree on 2026-06-23.
+This guide was checked against the inspected `job-agent` source tree on 2026-08-09.
 
 - Verified present: `AGENTS.md`, `CLAUDE.md`, `.claude/CLAUDE.md`, `DESIGN.md`, `docs/overview/agent-context.md`, `docs/operations/current-status.md`, `docs/operations/llm-handoff.md`, `docs/operations/job-agent-startup-skill-handoff.md`, `docs/HANDOVER.md`, root `.env.example`, `backend/.env.example`, `docker-compose.yml`, `Makefile`, `frontend/package.json`, `backend/requirements.txt`, `backend/requirements-dev.txt`, and `backend/alembic/versions/`.
 - Verified absent in the inspected worktree: `docs/setup/llm-handoff.md`.
 - Current source verification also confirms:
-  - 46 Python migration files in `backend/alembic/versions/`, with sequential named head `0045_cv_variant_blueprint.py` plus one older hash-named anomaly `3aac5340ec46_add_user_documents.py`
-  - committed privacy-retention work at `2d6057f` plus follow-up retention tests at `0c67f35`
-  - committed CV variant name editing and `/find` workspace refactor at `e222da4`
-  - a docs-only follow-up at `e3b3b8f` aligning the current privacy-retention summary
-  - CV template marketplace Phase 1 source work at `a8c07fc`, `c7f33bc`, and `d104001`
-  - source-repo changelog review for 2026-06-12 to 2026-06-23 showing PR #6 still open and no merged PRs in that review window
+  - active committed branch `feat/frontend-redesign-shell` at `bc10287`, twelve commits ahead of `origin/master`
+  - 44 Python migration files in `backend/alembic/versions/`, with sequential named head `0043_snippet_source_metadata.py` plus one older hash-named anomaly `3aac5340ec46_add_user_documents.py`
+  - committed frontend redesign planning at `19c3525`
+  - committed M0 UI foundations at `dd29f6d`
+  - committed M1 sidebar shell, one IA, and legacy redirects at `38cefcb`
+  - committed M1 shell polish at `cfb91bc`
+  - later docs/ops follow-through at `8b9486e` and `bc10287`
+  - committed status docs still describe PR #6 as awaiting human merge decision and the frontend redesign as the newest active product direction on this branch, but the status file's triage table can lag the latest docs-only commit and should still be cross-checked against git
 - Current source-repo ops docs also distinguish Docker Compose frontend `3000` from the canonical manual startup contract on frontend `3002`; this portfolio guide now preserves that difference explicitly.
-- `docs/operations/current-status.md` was still useful, but its dated triage header lagged the actual repo HEAD during this verification. This portfolio sync therefore used both repo docs and direct `git log` / file inspection instead of trusting the status doc date alone.
+- The local `job-agent` worktree is dirty on 2026-08-09, including uncommitted M2 `JourneyBar` / Today rebuild work, a backend funnel summary API, and related docs/frontend changes plus untracked ops-run files. This portfolio sync used committed `HEAD` content only and did not promote those local working-tree changes as shipped evidence.
 
 If a future weekly run cannot verify these paths or commands from the source repo, mark the affected claim `Needs Review`.
 

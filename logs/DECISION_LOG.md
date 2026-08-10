@@ -1,5 +1,113 @@
 # Decision Log
 
+## 2026-08-09 — Separate committed product-code freshness from later docs/ops commits
+
+### Context
+
+The `job-agent` redesign branch moved forward again after the 2026-08-05 proof sync. By 2026-08-09, `HEAD` is `bc10287`, twelve commits ahead of `origin/master`, but the newest landed product-code signal is `cfb91bc` from 2026-08-08 while later commits are docs/ops follow-through. The local worktree is also still dirty with newer M2 follow-up work.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Treat the latest committed `HEAD` as pure product progress | Simple story | Blurs product-code evidence with docs/ops maintenance commits |
+| Ignore the August 8 to August 9 movement because no weekly input exists | Avoids another wording pass | Leaves the portfolio one source boundary behind the current committed repo state |
+| Refresh to the current committed branch head but call out the latest committed product-code commit separately | Keeps freshness accurate without overstating what kind of work actually landed | Requires more precise recruiter-facing wording |
+
+### Tradeoffs
+
+This adds nuance to the status summary, but it keeps the strongest proof point honest. Reviewers get the latest source boundary and still know which commit materially changed the product surface.
+
+### Decision
+
+For the 2026-08-09 weekly sync, refresh the portfolio to the current committed branch head, explicitly identify `cfb91bc` as the latest committed product-code signal, and continue to exclude dirty local follow-up work from recruiter-facing proof.
+
+### Evidence
+
+Context -> `job-agent` `HEAD` is `bc10287`, `origin/master` is `b38596e`, and the branch is twelve commits ahead.
+Options Considered -> Treat all commits as product progress, freeze the 2026-08-05 snapshot, or separate product-code freshness from docs/ops follow-through.
+Tradeoffs -> Slightly more complex wording in exchange for a more truthful boundary.
+Decision -> Refresh to `bc10287` while naming `cfb91bc` as the latest committed product-code signal.
+Evidence -> 2026-08-09 verification found `cfb91bc` followed by docs/ops commits `8b9486e` and `bc10287`, with the worktree still dirty beyond `HEAD`.
+Open Questions -> Whether the redesign branch will be merged as-is, rebased, or superseded by later M2 work.
+Next Action -> Keep using direct git/file verification until the branch state is simplified by a clean merge or another verified milestone.
+
+## 2026-08-05 — Prefer the currently accessible committed branch over older verified snapshots or dirty local WIP
+
+### Context
+
+The `job-agent` source repo was directly accessible again, but the currently available committed branch is `feat/frontend-redesign-shell` at `852a191`, not the older June branch state reflected in prior portfolio handoff snapshots. The local worktree is also dirty, so uncommitted edits and untracked ops-run files are present beside the committed July redesign work.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep the older June 46-migration snapshot because it was previously verified | Avoids rewriting earlier proof surfaces | Becomes false for the currently accessible source state |
+| Promote the dirty local July/August worktree as the newest truth | Captures the latest local edits | Overstates uncommitted work as shipped evidence |
+| Re-anchor to the currently accessible committed branch and exclude dirty local WIP | Matches the actual verifiable source state and keeps the boundary honest | Requires correcting prior handoff and status wording |
+
+### Decision
+
+For the 2026-08-05 weekly sync, use the currently accessible committed `job-agent` branch as the source of truth, explicitly note the dirty worktree boundary, and stop carrying forward the older June migration/head snapshot as if it were still current.
+
+### Reasoning Trail
+
+```text
+Context -> The accessible source branch changed and the worktree is dirty.
+Options Considered -> Keep the old snapshot, trust dirty local WIP, or re-anchor to the committed branch only.
+Tradeoffs -> The committed-branch-only path is slightly less fresh than raw local WIP but much more defensible.
+Decision -> Promote only the accessible committed branch state and mark dirty local edits out of scope.
+Evidence -> 2026-08-05 verification found `feat/frontend-redesign-shell` at `852a191`, four commits ahead of `origin/master`, with 44 migrations and committed July redesign work, while the local worktree still has uncommitted docs/frontend edits.
+Open Questions -> Whether a future sync should verify both `origin/master` and the active feature branch when they diverge materially.
+Next Action -> Refresh again after the lead repo is either cleaned or the redesign branch state is merged or otherwise stabilized.
+```
+
+### Evidence
+
+[case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [PROJECT_STATUS.md](../PROJECT_STATUS.md), [SOURCE_MAP.md](../SOURCE_MAP.md), [logs/WEEKLY_LOG.md](../logs/WEEKLY_LOG.md)
+
+### Status
+
+Decision
+
+## 2026-06-28 — Use the source repo's own handoff hierarchy before falling back to raw freshness checks
+
+### Context
+
+The `job-agent` source repo now distinguishes three different kinds of truth: `docs/overview/agent-context.md` for repo orientation, `docs/operations/current-status.md` for durable product state, and direct git/file inspection for the freshest commit boundary. The portfolio repo needs to preserve that hierarchy instead of flattening everything into one generic "status doc".
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep treating all source docs as one status surface | Simple wording in portfolio docs | Hides the clearer source-repo contract and can confuse setup versus progress reading order |
+| Trust only git HEAD and ignore source docs | Freshest possible evidence | Loses curated repo-orientation and durable-status context |
+| Preserve the source repo's own hierarchy and still use direct verification for final freshness | Matches the source repo's intended handoff model and keeps freshness honest | Requires slightly more explanation in handoff docs |
+
+### Decision
+
+For `job-agent`, treat `agent-context` as the canonical orientation doc, `current-status` as the durable state summary, and direct git/file inspection as the freshness override when newer follow-up commits land.
+
+### Reasoning Trail
+
+```text
+Context -> The source repo now encodes different roles for orientation, durable state, and freshness.
+Options Considered -> Flatten all docs, trust git only, or preserve the source repo's own hierarchy plus direct verification.
+Tradeoffs -> A clearer hierarchy adds wording overhead but lowers setup and interpretation ambiguity.
+Decision -> Mirror the source repo's hierarchy in the portfolio handoff and reviewer guidance.
+Evidence -> The 2026-06-28 verification found `agent-context` refreshed on 2026-06-27, `current-status-history` refreshed on 2026-06-26, and `.claude/CLAUDE.md` updated on 2026-06-28 to spell out the precedence explicitly.
+Open Questions -> Whether the source repo should also add an explicit "verified against HEAD" field inside `current-status.md`.
+Next Action -> Keep recruiter-agent and handoff docs aligned with this hierarchy on future weekly runs.
+```
+
+### Evidence
+
+[case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](../logs/WEEKLY_LOG.md), [logs/PROBLEM_SOLVING_LOG.md](../logs/PROBLEM_SOLVING_LOG.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [PROJECT_STATUS.md](../PROJECT_STATUS.md)
+
+### Status
+
+Decision
+
 ## 2026-06-14 — Use direct source verification when lead-project status docs lag
 
 ### Context
@@ -32,7 +140,7 @@ Next Action -> Keep the handoff guide and recruiter-agent/report guidance aligne
 
 ### Evidence
 
-[case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](../logs/WEEKLY_LOG.md), [logs/PROBLEM_SOLVING_LOG.md](../logs/PROBLEM_SOLVING_LOG.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md)
+[case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](../logs/WEEKLY_LOG.md), [logs/PROBLEM_SOLVING_LOG.md](../logs/PROBLEM_SOLVING_LOG.md), [RECRUITER_AGENT_GUIDE.md](../RECRUITER_AGENT_GUIDE.md), [docs/reports/recruiter-llm-report-brief.md](../docs/reports/recruiter-llm-report-brief.md)
 
 ### Status
 

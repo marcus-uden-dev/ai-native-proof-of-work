@@ -1,6 +1,6 @@
 # Evidence Matrix
 
-Last updated: 2026-06-14
+Last updated: 2026-08-09
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -31,7 +31,7 @@ flowchart TD
 | Knowledge workflow design | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) | Internal / Verified | Shows ingestion, search, learning, and prioritization thinking |
 | Financial domain modeling | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Internal / Verified | Shows careful modeling of household data, imports, goals, and forecasts |
 | QA and regression discipline | Job-agent and budget case studies | Internal / Verified | Shows attention to reliability and verification, not just ideation |
-| Reproducible product handoff | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [PROJECT_STATUS.md](PROJECT_STATUS.md) | Verified | Shows that setup claims are tied to source-verified env files, startup docs, ports, validation paths, and actual source HEAD rather than memory or stale status summaries |
+| Reproducible product handoff | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [PROJECT_STATUS.md](PROJECT_STATUS.md) | Verified | Shows that setup claims are tied to source-verified env files, startup docs, ports, validation paths, the currently accessible committed branch contract, and actual source HEAD rather than memory, stale status summaries, or dirty local WIP |
 | Published product snapshots | [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) | Verified | Gives reviewers a no-install way to inspect the main product surfaces before reading deeper docs |
 | Privacy-aware execution | [SOURCE_MAP.md](SOURCE_MAP.md), [SHARING_CHECKLIST.md](SHARING_CHECKLIST.md) | Verified | Shows judgment about what should and should not be shared |
 | Learning signal and source taste | [recruiter-assets/INFORMATION_DIET.md](recruiter-assets/INFORMATION_DIET.md) | Verified subscription and aggregate listening time / category share unavailable | Shows external signal intake across AI, startups, business, science, and institutions without overstating category-level learning |
@@ -39,7 +39,7 @@ flowchart TD
 | Automation as operating layer | [AUTOMATION_PROMPT.md](AUTOMATION_PROMPT.md), [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md) | Verified | Shows repeatability, review discipline, and evidence packaging |
 | Workflow implementation | [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md), [tasks/lessons.md](tasks/lessons.md), [template/README.md](template/README.md) | Verified / Needs Review by case | Shows how repeated AI-assisted workflows become durable repo assets instead of one-off conversations |
 | Custom skill design | [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md), [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md), [template/CUSTOM_SKILL_CASE_TEMPLATE.md](template/CUSTOM_SKILL_CASE_TEMPLATE.md) | Verified / Needs Review by skill | Shows how Marcus-created skills are documented as reusable, redacted problem/solution workflows rather than raw prompts |
-| Recruiter communication | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md), [RECRUITER_LLM_REPORT_BRIEF.md](RECRUITER_LLM_REPORT_BRIEF.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), recruiter assets | Verified | Makes the portfolio easier to evaluate quickly and helps recruiter-side LLMs produce balanced reports |
+| Recruiter communication | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md), [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), recruiter assets | Verified | Makes the portfolio easier to evaluate quickly and helps recruiter-side LLMs produce balanced reports |
 
 ## Evidence Gaps To Close Next
 

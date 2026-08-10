@@ -1,5 +1,54 @@
 # Changelog
 
+## 2026-08-09 — Weekly compiler boundary refresh to the current redesign-branch head
+
+### Added
+
+- Weekly log entry for the 2026-08-09 compiler run.
+- Timeline milestone for August 8 to August 9 committed shell polish plus evidence-boundary refresh.
+
+### Changed
+
+- Refreshed [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md), and [SOURCE_MAP.md](../SOURCE_MAP.md) so the lead proof point is now anchored to a direct source verification on 2026-08-09.
+- Updated recruiter-facing review surfaces to mention the current committed branch head `bc10287`, the latest committed product-code signal `cfb91bc`, and the explicit boundary that excludes dirty local `job-agent` worktree changes from recruiter-facing proof.
+- Refreshed the recruiter-safe handoff guide to preserve the startup contract while distinguishing committed shell polish from later dirty M2 follow-up work.
+
+## 2026-08-05 — Weekly compiler branch-boundary correction
+
+### Added
+
+- Weekly log entry for the 2026-08-05 compiler run.
+- Timeline milestones covering the committed July `job-agent` redesign package and the August boundary correction.
+- Decision-log and problem-solving entries covering how to handle a dirty lead-project worktree when the accessible committed branch diverges from an older verified snapshot.
+
+### Changed
+
+- Re-verified [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) against the current committed `job-agent` source tree and corrected the migration/head snapshot from the older June branch state to the current July branch state.
+- Refreshed [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md), and [SOURCE_MAP.md](../SOURCE_MAP.md) so the lead proof point is now anchored to a direct source verification on 2026-08-05.
+- Updated recruiter-facing review surfaces to mention the committed July redesign evidence and the explicit boundary that excludes dirty local `job-agent` worktree changes from recruiter-facing proof.
+
+### Notes
+
+No dated weekly-input file existed for the current week, so this sync promoted only direct source-verified committed repo state and did not invent a higher-level weekly narrative.
+
+## 2026-06-28 — Weekly compiler source-hierarchy refresh
+
+### Added
+
+- Weekly log entry for the 2026-06-28 compiler run.
+- Timeline milestone showing that the lead-project source hierarchy was clarified and the direct source boundary was refreshed again without inventing a new shipped milestone.
+- Decision-log and problem-solving entries covering how to interpret `job-agent` `agent-context`, `current-status`, and direct HEAD together.
+
+### Changed
+
+- Re-verified [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) against the current `job-agent` source tree and clarified the orientation-versus-status reading order.
+- Refreshed [PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), [PROJECT_TIMELINE.md](../PROJECT_TIMELINE.md), and [SOURCE_MAP.md](../SOURCE_MAP.md) so the lead proof point is now anchored to a direct source verification on 2026-06-28.
+- Updated recruiter-facing review surfaces to mention the newer `job-agent` source hierarchy and the verification-only nature of this week's freshness refresh.
+
+### Notes
+
+No dated weekly-input file existed for the current week, so this sync promoted only direct source-verified repo state, noted the newer `job-agent` docs and follow-through commits, and did not invent a new product milestone.
+
 ## 2026-06-23 — Weekly compiler boundary refresh without new milestone claims
 
 ### Added
@@ -53,7 +102,7 @@ No dated weekly-input file existed for the current week, and the `job-agent` sou
 
 ### Changed
 
-- Updated the active Codex automation `ai-native-proof-of-work` so it explicitly inspects and maintains [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md) and [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md).
+- Updated the active Codex automation `ai-native-proof-of-work` so it explicitly inspects and maintains [docs/reports/recruiter-llm-report-brief.md](../docs/reports/recruiter-llm-report-brief.md) and [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md).
 - Added an explicit dependency and cross-reference maintenance rule so the automation updates indexes, reading paths, prompt inspection lists, runbooks, source maps, and local Markdown links when docs are added, moved, renamed, removed, or repositioned.
 - Updated [template/WEEKLY_AUTOMATION_RUNBOOK.md](../template/WEEKLY_AUTOMATION_RUNBOOK.md) and [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](../prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md) to match the active automation contract.
 - Synced the portable shared-routine Markdown copy for the automation.
@@ -68,7 +117,7 @@ No dated weekly-input file existed for the current week, and the `job-agent` sou
 
 ### Added
 
-- [RECRUITER_LLM_REPORT_BRIEF.md](../RECRUITER_LLM_REPORT_BRIEF.md) as the first-class report format for recruiter-side LLMs.
+- [docs/reports/recruiter-llm-report-brief.md](../docs/reports/recruiter-llm-report-brief.md) as the first-class report format for recruiter-side LLMs.
 - [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) as a supporting workflow implementation case index.
 
 ### Changed

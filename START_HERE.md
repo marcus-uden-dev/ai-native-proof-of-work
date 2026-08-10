@@ -9,7 +9,7 @@ This repository documents practical product work supported by AI-native workflow
 
 The main proof points are job-agent, PKM, and a household budget app. The documentation and automation layer supports that portfolio by making project work clear, credible, repeatable, and privacy-safe.
 
-If you are using an LLM or recruiter-side assistant to assess Marcus, start with [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md). It tells the assistant how to create a fair, evidence-grounded report without overstating claims.
+If you are using an LLM or recruiter-side assistant to assess Marcus, start with [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md). It tells the assistant how to create a fair, evidence-grounded report without overstating claims.
 
 Current strongest fresh signals:
 
@@ -54,7 +54,7 @@ Recommended path:
 12. [Project Proof Points](PROJECT_PROOF_POINTS.md)
 13. [Weekly Log](logs/WEEKLY_LOG.md)
 
-If you are using an assistant or recruiter-side agent, start with [Recruiter LLM Report Brief](RECRUITER_LLM_REPORT_BRIEF.md), then use [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
+If you are using an assistant or recruiter-side agent, start with [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md), then use [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
 
 If you want to recreate this repository architecture for another person or organization, use the [Template Adoption Kit](template/README.md). It is the secondary clone/fork layer and keeps template material separate from the recruiter reading path.
 
