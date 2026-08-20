@@ -6,7 +6,8 @@ const manifest = JSON.parse(readFileSync('site/evidence/releases/job-agent-v1.js
 const fixture = JSON.parse(readFileSync('site/evidence/fixtures/job-agent-company-v1.json', 'utf8'));
 const repeatedFactFiles = [
   'site/recruiter-agent-guide.md',
-  'site/recruiter-report-brief.md'
+  'site/recruiter-report-brief.md',
+  'site/proof/job-agent/index.html'
 ];
 
 const facts = {
@@ -50,6 +51,16 @@ test('release-one company evidence is synthetic-only and field-labelled', () => 
   }
 });
 
+test('case-study research fields repeat the governed fixture values and labels', () => {
+  const caseStudy = readFileSync('site/proof/job-agent/index.html', 'utf8');
+  assert.ok(caseStudy.includes(fixture.company.name));
+  for (const field of fixture.researchFields) {
+    assert.ok(caseStudy.includes(field.value), `case study must contain ${field.id} value`);
+    assert.ok(caseStudy.includes(field.sourceLabel), `case study must contain ${field.id} source label`);
+    assert.ok(caseStudy.includes(field.decisionUse), `case study must contain ${field.id} decision use`);
+  }
+});
+
 test('source-class vocabulary remains stable', () => {
   assert.deepEqual(
     manifest.sourceClasses.map(({ id, label }) => ({ id, label })),
@@ -69,4 +80,3 @@ test('agent guide defines citations, inference limits, missing sources, and untr
   assert.match(guide, /Link each material finding/);
   assert.match(guide, /Do not include confidential or personal data/);
 });
-
