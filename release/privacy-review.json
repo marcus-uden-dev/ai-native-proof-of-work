@@ -4,16 +4,16 @@
   "reviewStatus": "complete",
   "reviewedAt": "2026-08-20",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "609bf25553da2df001d6caa632b60d7e2260227d",
+  "candidateCommit": "6e96beb83c2af8c0e8a4a840a60d19a5e9bf8ce3",
   "scope": "Full release-candidate binary set: three synthetic proof frames, sanitized English CV, and professional social card.",
   "reviewedFiles": [
     {
       "path": "site/assets/images/job-agent/decision-research.png",
-      "sha256": "22fa911d42a30c4d80a1fc7ac366d61825f4503b3e55516daec8bc1d545f0a7d",
+      "sha256": "c2b7db443092dc6f11fe1cb98c33136de5eceb5fa531e85128dbc59d76723658",
       "decision": "approved",
       "dataClass": "synthetic demo",
       "containsPersonalData": false,
-      "note": "Generated from the staged public prototype and visually checked for local paths, private identifiers, credentials, and realistic private data."
+      "note": "Regenerated after the WCAG contrast correction. Visually checked for local paths, private identifiers, credentials, and realistic private data."
     },
     {
       "path": "site/assets/images/job-agent/intake-scope.png",
