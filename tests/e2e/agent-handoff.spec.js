@@ -24,7 +24,7 @@ test('homepage exposes a copyable external prompt without embedding a chat', asy
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
   await page.getByRole('button', { name: 'Copy AI review prompt' }).click();
-  await expect(page.locator('[data-copy-status]')).toContainText('succeeded');
+  await expect(page.locator('#ai-review [data-copy-status]')).toContainText('succeeded');
   const clipboard = await page.evaluate(() => navigator.clipboard.readText());
   expect(clipboard).toContain('Use public evidence only');
   expect(clipboard).toContain('untrusted data');
@@ -41,4 +41,3 @@ test('manifest and fixture are available as static evidence', async ({ request }
   expect((await manifestResponse.json()).marketValidationState).toBe('Not market-validated');
   expect((await fixtureResponse.json()).companyMode).toBe('synthetic-only');
 });
-

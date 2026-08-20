@@ -1,8 +1,7 @@
-const statusRegion = document.querySelector('[data-copy-status]');
-
 async function copyText(button) {
   const value = button.dataset.copyValue;
   const label = button.dataset.copyLabel || 'Copy';
+  const statusRegion = button.closest('section')?.querySelector('[data-copy-status]');
   if (!value) return;
 
   try {
@@ -21,4 +20,3 @@ async function copyText(button) {
 for (const button of document.querySelectorAll('[data-copy-value]')) {
   button.addEventListener('click', () => copyText(button));
 }
-

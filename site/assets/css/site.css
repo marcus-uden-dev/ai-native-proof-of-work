@@ -567,6 +567,12 @@ h3 {
   color: var(--muted);
 }
 
+.contact-panel .contact-email {
+  margin-bottom: 0;
+  color: var(--teal);
+  font-weight: 700;
+}
+
 .review-panel__actions,
 .contact-panel__actions {
   display: flex;
@@ -583,6 +589,11 @@ h3 {
   font-size: 0.9rem;
   font-weight: 650;
   text-align: right;
+}
+
+.contact-panel__actions .copy-status {
+  margin: 0;
+  text-align: center;
 }
 
 .text-button {
