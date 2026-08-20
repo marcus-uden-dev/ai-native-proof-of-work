@@ -49,6 +49,18 @@ test('print mode keeps evidence and hides navigation controls', async ({ page })
   await expect(page.getByText('Job-agent', { exact: true })).toBeVisible();
 });
 
+test('reduced-motion preference removes smooth movement', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/');
+  expect(await page.evaluate(() => matchMedia('(prefers-reduced-motion: reduce)').matches)).toBe(true);
+  const motion = await page.locator('.button').first().evaluate((element) => ({
+    scrollBehavior: getComputedStyle(document.documentElement).scrollBehavior,
+    transitionDuration: Number.parseFloat(getComputedStyle(element).transitionDuration)
+  }));
+  expect(motion.scrollBehavior).toBe('auto');
+  expect(motion.transitionDuration).toBeLessThanOrEqual(0.001);
+});
+
 test('project subpath and the recovery page resolve', async ({ page }) => {
   await page.goto('/ai-native-proof-of-work/');
   await expect(page.locator('h1')).toContainText('messy operational problems');
@@ -57,4 +69,3 @@ test('project subpath and the recovery page resolve', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'This page is not part of the current public release.' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Return to the hiring brief' })).toBeVisible();
 });
-
