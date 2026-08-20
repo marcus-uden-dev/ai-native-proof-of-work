@@ -28,6 +28,16 @@ test('home exposes valid Person structured data with the professional GitHub onl
   expect(data.mainEntity.sameAs).toEqual(['https://github.com/marcus-uden-dev']);
 });
 
+test('404 recovery has a unique title, one H1, and noindex policy', async ({ page }) => {
+  const response = await page.goto('/not-a-public-route');
+  expect(response?.status()).toBe(404);
+  await expect(page).toHaveTitle('Page not found — Marcus Udén');
+  await expect(page.locator('h1:visible')).toHaveCount(1);
+  await expect(page.locator('meta[name="description"]')).toHaveAttribute('content', /not part of the current Marcus Udén public proof release/);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', 'noindex');
+  await expect(page.locator('link[rel="canonical"]')).toHaveCount(0);
+});
+
 test('robots and sitemap publish one canonical identity', async ({ request }) => {
   const robots = await (await request.get('/robots.txt')).text();
   const sitemap = await (await request.get('/sitemap.xml')).text();
@@ -56,4 +66,3 @@ test('project-subpath navigation keeps relative assets and downloads valid', asy
   await expect(page).toHaveURL(/\/ai-native-proof-of-work\/proof\/job-agent\/$/);
   await expect(page.getByRole('link', { name: 'Download CV' })).toHaveAttribute('href', '../../assets/cv/marcus-uden-cv.pdf');
 });
-

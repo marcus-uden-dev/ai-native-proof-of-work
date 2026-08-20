@@ -12,7 +12,7 @@ Use this structure with the [recruiter agent guide](https://marcus.uden.dev/recr
 - Market validation: `Not market-validated`
 - Outcomes: `No measured market outcomes`
 - Next test: `Moderated recruiter review of the synthetic company-research decision flow`
-- Privacy: `Screenshot privacy review complete; full release review pending`
+- Privacy: `Release privacy review complete`
 
 ## Required report
 

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "releaseId": "job-agent-v1-screenshots",
+  "releaseId": "job-agent-v1-release-candidate",
   "reviewStatus": "complete",
   "reviewedAt": "2026-08-20",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "826f7ce9bb730f2aad929d62e18f5b4c2893000c",
-  "scope": "Three proof frames generated from the recruiter-safe synthetic prototype. CV and social-card review remain outside this record.",
+  "candidateCommit": "609bf25553da2df001d6caa632b60d7e2260227d",
+  "scope": "Full release-candidate binary set: three synthetic proof frames, sanitized English CV, and professional social card.",
   "reviewedFiles": [
     {
       "path": "site/assets/images/job-agent/decision-research.png",
@@ -30,6 +30,33 @@
       "dataClass": "synthetic demo",
       "containsPersonalData": false,
       "note": "Generated from the staged public prototype and visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
+      "path": "site/assets/cv/marcus-uden-cv.pdf",
+      "sha256": "61a5f2378b8cc553b2eae6c224acc970f03765f1256a81c6027ee675a3adad90",
+      "decision": "approved",
+      "dataClass": "public professional document",
+      "containsPersonalData": true,
+      "approvedPersonalData": [
+        "Marcus Udén",
+        "Stockholm, Sweden",
+        "marcus.uden.dev@gmail.com",
+        "public professional history"
+      ],
+      "note": "Rendered as a two-page selectable-text PDF. The old email, phone number, LinkedIn, and local source paths are absent."
+    },
+    {
+      "path": "site/assets/social-card.png",
+      "sha256": "7e4c43b88812318e761415245ed4ee19747b81fbc370c89fcb1f8979b7fdd468",
+      "decision": "approved",
+      "dataClass": "public professional identity",
+      "containsPersonalData": true,
+      "approvedPersonalData": [
+        "Marcus Udén",
+        "marcus.uden.dev",
+        "public positioning"
+      ],
+      "note": "Generated from the public design system and visually checked. No photo, private identifier, local path, or unapproved contact detail is present."
     }
   ]
 }

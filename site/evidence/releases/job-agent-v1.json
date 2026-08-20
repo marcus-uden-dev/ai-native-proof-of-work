@@ -10,7 +10,7 @@
   "marketValidationState": "Not market-validated",
   "outcomeMeasurementState": "No measured market outcomes",
   "nextTest": "Moderated recruiter review of the synthetic company-research decision flow",
-  "privacyState": "Screenshot privacy review complete; full release review pending",
+  "privacyState": "Release privacy review complete",
   "canonicalUrl": "https://marcus.uden.dev/proof/job-agent/",
   "fixture": {
     "id": "job-agent-company-v1",

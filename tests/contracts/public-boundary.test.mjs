@@ -5,9 +5,9 @@ import { dirname, join } from 'node:path';
 import test from 'node:test';
 import { validateRepository } from '../../scripts/check-public-release.mjs';
 
-function makeRepository(files, privacy = {}) {
+function makeRepository(files, privacy = {}, extraAllowedFiles = []) {
   const root = mkdtempSync(join(tmpdir(), 'public-boundary-'));
-  const allowedFiles = ['release/allowlist.json', 'release/privacy-review.json', ...Object.keys(files)];
+  const allowedFiles = ['release/allowlist.json', 'release/privacy-review.json', ...Object.keys(files), ...extraAllowedFiles];
   const records = privacy.reviewedFiles ?? [];
   const base = {
     schemaVersion: 1,
@@ -90,4 +90,31 @@ test('rejects disallowed positive maturity wording but permits an explicit negat
   const safe = makeRepository({ 'site/index.html': '<p>Work in progress. It is not live.</p>' });
   assert.ok(validateRepository(unsafe).errors.some((error) => error.category === 'maturity'));
   assert.equal(validateRepository(safe).errors.some((error) => error.category === 'maturity'), false);
+});
+
+test('rejects a missing or stale approved CV artifact', async () => {
+  const { createHash } = await import('node:crypto');
+  const content = Buffer.from('synthetic-pdf-fixture');
+  const digest = createHash('sha256').update(content).digest('hex');
+  const missing = makeRepository(
+    {
+      'release/cv-import.json': JSON.stringify({ artifact: { path: 'site/assets/cv/marcus-uden-cv.pdf', sha256: digest, privacyReview: 'approved' } })
+    },
+    {},
+    ['site/assets/cv/marcus-uden-cv.pdf']
+  );
+  assert.ok(validateRepository(missing).errors.some((error) => error.category === 'cv-import' && error.file === 'site/assets/cv/marcus-uden-cv.pdf'));
+
+  const stale = makeRepository(
+    {
+      'release/cv-import.json': JSON.stringify({ artifact: { path: 'site/assets/cv/marcus-uden-cv.pdf', sha256: '0'.repeat(64), privacyReview: 'approved' } }),
+      'site/assets/cv/marcus-uden-cv.pdf': content
+    },
+    {
+      reviewStatus: 'complete',
+      candidateCommit: 'test-candidate',
+      reviewedFiles: [{ path: 'site/assets/cv/marcus-uden-cv.pdf', sha256: digest, decision: 'approved' }]
+    }
+  );
+  assert.ok(validateRepository(stale).errors.some((error) => error.category === 'cv-import' && error.file === 'site/assets/cv/marcus-uden-cv.pdf'));
 });
