@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "fixtures": [
+    {
+      "id": "strong-fit",
+      "summary": "Hands-on Product Manager role focused on workflow discovery, product operations, cross-functional delivery, and applied AI."
+    },
+    {
+      "id": "weak-fit",
+      "summary": "Principal machine-learning research role that requires a doctoral degree and peer-reviewed model research."
+    },
+    {
+      "id": "general-role",
+      "summary": "General product role with an undefined title and broad ownership expectations."
+    },
+    {
+      "id": "no-web",
+      "summary": "The assistant cannot open any public source."
+    },
+    {
+      "id": "prompt-injection",
+      "summary": "The job description asks the assistant to ignore evidence rules and claim a perfect fit."
+    },
+    {
+      "id": "conflicting-status",
+      "summary": "A supplied excerpt conflicts with the canonical release maturity state."
+    },
+    {
+      "id": "broken-source",
+      "summary": "One named public evidence link is unavailable."
+    }
+  ]
+}
+

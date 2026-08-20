@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 1,
+  "fixtureId": "job-agent-company-v1",
+  "fixtureVersion": 1,
+  "companyMode": "synthetic-only",
+  "notice": "Aster Vale Software is an invented company. Every company-specific value is synthetic or inferred from synthetic inputs.",
+  "company": {
+    "name": "Aster Vale Software",
+    "identityLabel": "Synthetic company",
+    "role": "Product Manager, Workflow Intelligence",
+    "location": "Stockholm, Sweden",
+    "workingModel": "Hybrid, two office days each week",
+    "stage": "Series B",
+    "sector": "B2B workflow software"
+  },
+  "researchFields": [
+    {
+      "id": "compensation",
+      "label": "Compensation benchmark",
+      "value": "SEK 58,000–72,000 per month",
+      "sourceClass": "inferred_demo",
+      "sourceLabel": "inferred demo",
+      "confidence": "Low",
+      "evidenceNote": "Illustrative range created for the demo. It is not a market benchmark.",
+      "decisionUse": "Set a validation question before discussing expectations or negotiation."
+    },
+    {
+      "id": "stage",
+      "label": "Company stage",
+      "value": "Series B; 145 employees",
+      "sourceClass": "synthetic_demo",
+      "sourceLabel": "synthetic demo",
+      "confidence": "Demo value",
+      "evidenceNote": "Invented company profile used only to demonstrate the research model.",
+      "decisionUse": "Expect a mix of product discovery and operating-system work."
+    },
+    {
+      "id": "financial-signal",
+      "label": "Financial signal",
+      "value": "Runway described as 24 months after a recent funding round",
+      "sourceClass": "synthetic_demo",
+      "sourceLabel": "synthetic demo",
+      "confidence": "Demo value",
+      "evidenceNote": "Invented funding signal. No real company or investor record is referenced.",
+      "decisionUse": "Ask how investment priorities affect the role and delivery horizon."
+    },
+    {
+      "id": "culture",
+      "label": "Culture and working model",
+      "value": "High autonomy, written decisions, hybrid collaboration",
+      "sourceClass": "inferred_demo",
+      "sourceLabel": "inferred demo",
+      "confidence": "Medium within the demo",
+      "evidenceNote": "Illustrative synthesis from synthetic role copy and employee-review excerpts.",
+      "decisionUse": "Test whether autonomy includes decision rights, support, and clear escalation paths."
+    }
+  ],
+  "signals": {
+    "positive": [
+      {
+        "label": "Clear problem ownership",
+        "sourceClass": "synthetic_demo"
+      },
+      {
+        "label": "Access to workflow users",
+        "sourceClass": "synthetic_demo"
+      },
+      {
+        "label": "Written product decisions",
+        "sourceClass": "synthetic_demo"
+      }
+    ],
+    "warnings": [
+      {
+        "label": "Broad remit for one role",
+        "sourceClass": "inferred_demo"
+      },
+      {
+        "label": "Compensation range is absent",
+        "sourceClass": "synthetic_demo"
+      },
+      {
+        "label": "Decision authority is unclear",
+        "sourceClass": "inferred_demo"
+      }
+    ]
+  },
+  "decisionOutputs": [
+    {
+      "decision": "Application tailoring",
+      "output": "Lead with workflow simplification, cross-functional scope, and evidence discipline."
+    },
+    {
+      "decision": "Interview investigation",
+      "output": "Test product decision rights, user access, team support, and the meaning of autonomy."
+    },
+    {
+      "decision": "Compensation",
+      "output": "Validate the range with a current source before setting an anchor."
+    }
+  ]
+}
+

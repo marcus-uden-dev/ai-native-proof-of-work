@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "artifactId": "job-agent",
+  "releaseId": "job-agent-v1",
+  "productVersion": "0.1.0-public-proof",
+  "evidenceDate": "2026-08-20",
+  "implementationState": "Prototype under active development",
+  "publicAvailability": "Local recruiter-safe preview only",
+  "maturity": "Work in progress",
+  "marketValidationState": "Not market-validated",
+  "outcomeMeasurementState": "No measured market outcomes",
+  "nextTest": "Moderated recruiter review of the synthetic company-research decision flow",
+  "privacyState": "Pending release-candidate review",
+  "canonicalUrl": "https://marcus.uden.dev/proof/job-agent/",
+  "fixture": {
+    "id": "job-agent-company-v1",
+    "version": 1,
+    "path": "../fixtures/job-agent-company-v1.json",
+    "companyMode": "synthetic-only"
+  },
+  "sourceClasses": [
+    {
+      "id": "public_source",
+      "label": "public source",
+      "meaning": "A traceable fact from a named public source. No release-one company field uses this class."
+    },
+    {
+      "id": "synthetic_demo",
+      "label": "synthetic demo",
+      "meaning": "Invented data used to demonstrate product behaviour."
+    },
+    {
+      "id": "inferred_demo",
+      "label": "inferred demo",
+      "meaning": "An illustrative interpretation derived only from synthetic demo inputs."
+    }
+  ],
+  "limitations": [
+    "The release-one company and all company-specific values are synthetic.",
+    "The prototype has no production service or public user data.",
+    "Recruiter response, job-search impact, and market outcomes are not measured.",
+    "The next test evaluates decision clarity and trust, not product-market fit."
+  ]
+}
+
