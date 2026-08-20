@@ -1,0 +1,21 @@
+{
+  "name": "marcus-uden-proof-of-work",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Recruiter-first public proof of work for Marcus Udén",
+  "scripts": {
+    "serve": "node scripts/serve-static.mjs",
+    "test": "npm run test:contracts && npm run test:e2e",
+    "test:contracts": "node --test tests/contracts/*.test.mjs",
+    "test:e2e": "playwright test",
+    "release:validate": "node scripts/check-public-release.mjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.1",
+    "axe-core": "4.10.3"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

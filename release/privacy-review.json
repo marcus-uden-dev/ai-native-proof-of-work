@@ -1,0 +1,11 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "scaffold",
+  "reviewStatus": "scaffold",
+  "reviewedAt": "2026-08-20",
+  "reviewer": "Marcus Udén (Codex)",
+  "candidateCommit": null,
+  "scope": "Repository scaffold only. No public binary artifacts are present.",
+  "reviewedFiles": []
+}
+
