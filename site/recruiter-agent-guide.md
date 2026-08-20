@@ -14,7 +14,7 @@ The public evidence manifest is the authority for Job-agent status and provenanc
 - Market validation: `Not market-validated`
 - Outcomes: `No measured market outcomes`
 - Next test: `Moderated recruiter review of the synthetic company-research decision flow`
-- Privacy: `Pending release-candidate review`
+- Privacy: `Screenshot privacy review complete; full release review pending`
 
 ## Allowed public sources
 
@@ -61,4 +61,3 @@ Return:
 JOB DESCRIPTION
 [Paste a non-confidential job description here]
 ```
-

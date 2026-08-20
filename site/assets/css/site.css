@@ -768,6 +768,46 @@ h3 {
   font-size: 0.9rem;
 }
 
+.visual-proof-grid {
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.visual-proof-grid figure {
+  min-width: 0;
+  margin: 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.visual-proof-grid a {
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  border-bottom: 1px solid var(--line);
+}
+
+.visual-proof-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.visual-proof-grid figcaption {
+  padding: 1rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.visual-proof-grid figcaption strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--gold);
+}
+
 .research-section {
   padding-block: clamp(4.5rem, 10vw, 8rem);
   background: var(--dark);
@@ -1098,6 +1138,7 @@ h3 {
   }
 
   .proof-sequence,
+  .visual-proof-grid,
   .research-grid,
   .signal-columns,
   .decision-grid,

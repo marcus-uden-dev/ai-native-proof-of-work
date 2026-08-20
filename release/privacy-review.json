@@ -1,11 +1,35 @@
 {
   "schemaVersion": 1,
-  "releaseId": "scaffold",
-  "reviewStatus": "scaffold",
+  "releaseId": "job-agent-v1-screenshots",
+  "reviewStatus": "complete",
   "reviewedAt": "2026-08-20",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": null,
-  "scope": "Repository scaffold only. No public binary artifacts are present.",
-  "reviewedFiles": []
+  "candidateCommit": "826f7ce9bb730f2aad929d62e18f5b4c2893000c",
+  "scope": "Three proof frames generated from the recruiter-safe synthetic prototype. CV and social-card review remain outside this record.",
+  "reviewedFiles": [
+    {
+      "path": "site/assets/images/job-agent/decision-research.png",
+      "sha256": "22fa911d42a30c4d80a1fc7ac366d61825f4503b3e55516daec8bc1d545f0a7d",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Generated from the staged public prototype and visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
+      "path": "site/assets/images/job-agent/intake-scope.png",
+      "sha256": "f34f415d33efd532fcdd0c39e55b095bdf5ecc8f0559f16bcc6d027e48441020",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Generated from the staged public prototype and visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
+      "path": "site/assets/images/job-agent/tailored-action.png",
+      "sha256": "d6b7c9aa82089522a3db6076d77b7ed33995f4e1f0d1e5fb9f6cba359c28f944",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Generated from the staged public prototype and visually checked for local paths, private identifiers, credentials, and realistic private data."
+    }
+  ]
 }
-

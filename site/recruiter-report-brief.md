@@ -12,7 +12,7 @@ Use this structure with the [recruiter agent guide](https://marcus.uden.dev/recr
 - Market validation: `Not market-validated`
 - Outcomes: `No measured market outcomes`
 - Next test: `Moderated recruiter review of the synthetic company-research decision flow`
-- Privacy: `Pending release-candidate review`
+- Privacy: `Screenshot privacy review complete; full release review pending`
 
 ## Required report
 
@@ -24,4 +24,3 @@ Use this structure with the [recruiter agent guide](https://marcus.uden.dev/recr
 6. **Fit assessment** — Give a short conclusion with confidence and limitations.
 
 Do not use synthetic company data as evidence about a real employer or a measured result. Do not paste confidential or personal data into the assessment.
-

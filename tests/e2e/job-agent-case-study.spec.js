@@ -44,6 +44,16 @@ test('research includes the required decision signals and outputs', async ({ pag
   }
 });
 
+test('three proof frames use reviewed synthetic prototype images', async ({ page }) => {
+  await page.goto('/proof/job-agent/#proof-sequence');
+  const figures = page.locator('.visual-proof-grid figure');
+  await expect(figures).toHaveCount(3);
+  for (const image of await figures.locator('img').all()) {
+    await expect(image).toBeVisible();
+    expect(await image.getAttribute('alt')).toBeTruthy();
+  }
+});
+
 test('the guided reading order remains stable and printable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   const ids = await page.locator('main > section[id]').evaluateAll((sections) => sections.map((section) => section.id));
