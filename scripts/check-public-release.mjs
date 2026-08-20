@@ -56,6 +56,9 @@ export function validateRepository(root = repositoryRoot, options = {}) {
   const allowlist = readJson(root, 'release/allowlist.json', errors, 'allowlist');
   const privacy = readJson(root, 'release/privacy-review.json', errors, 'privacy-record');
   const allowed = new Set(allowlist?.allowedFiles ?? []);
+  const cvImport = allowed.has('release/cv-import.json')
+    ? readJson(root, 'release/cv-import.json', errors, 'cv-import')
+    : null;
 
   for (const file of files) {
     if (!allowed.has(file)) addMatch(errors, 'unexpected-path', file, 'The file is not in the public release allowlist.');
@@ -129,6 +132,16 @@ export function validateRepository(root = repositoryRoot, options = {}) {
   }
   if (privacy?.reviewStatus === 'complete' && !privacy.candidateCommit) {
     addMatch(errors, 'privacy-record', 'release/privacy-review.json', 'A completed review must name its candidate commit.');
+  }
+  const cvPath = 'site/assets/cv/marcus-uden-cv.pdf';
+  if (allowed.has(cvPath)) {
+    if (!files.includes(cvPath)) {
+      addMatch(errors, 'cv-import', cvPath, 'The approved public CV is missing.');
+    } else if (!cvImport || cvImport.artifact?.path !== cvPath || cvImport.artifact?.privacyReview !== 'approved') {
+      addMatch(errors, 'cv-import', 'release/cv-import.json', 'The CV import record is missing, incomplete, or not privacy-approved.');
+    } else if (cvImport.artifact.sha256 !== sha256(resolve(root, cvPath))) {
+      addMatch(errors, 'cv-import', cvPath, 'The CV digest does not match the approved import record.');
+    }
   }
 
   const remote = git(root, ['remote', '-v']);

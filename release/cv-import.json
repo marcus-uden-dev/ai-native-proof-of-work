@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "importId": "marcus-uden-cv-2026-08-20",
+  "source": {
+    "fileName": "CV Marcus Uden English.pdf",
+    "role": "Latest English factual baseline and layout reference",
+    "sha256": "f76178e81e489353e1a80e2561fc56b2543aefe1fe8ce1117b683611687ddbb0",
+    "sourceModified": "2026-06-02"
+  },
+  "artifact": {
+    "path": "site/assets/cv/marcus-uden-cv.pdf",
+    "sha256": "61a5f2378b8cc553b2eae6c224acc970f03765f1256a81c6027ee675a3adad90",
+    "generatedAt": "2026-08-20",
+    "language": "en",
+    "pageCount": 2,
+    "minimumBodyPointSize": 9.5,
+    "selectableTextVerified": true,
+    "visualReview": "complete",
+    "privacyReview": "approved"
+  },
+  "sanitization": {
+    "approvedPublicEmail": "marcus.uden.dev@gmail.com",
+    "phonePublished": false,
+    "olderEmailPublished": false,
+    "linkedInPublished": false,
+    "localPathPublished": false
+  },
+  "claimPolicy": "Employment and education facts derive from the supplied English source. Public proof wording follows the governed Job-agent release and makes outcome limits explicit."
+}
+

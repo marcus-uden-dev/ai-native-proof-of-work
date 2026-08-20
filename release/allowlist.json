@@ -15,6 +15,7 @@
     "release/cv-import.json",
     "release/privacy-review.json",
     "scripts/check-public-release.mjs",
+    "scripts/render-cv.mjs",
     "scripts/serve-static.mjs",
     "site/404.html",
     "site/assets/css/site.css",
@@ -49,4 +50,3 @@
     "tests/evaluation/rubric.md"
   ]
 }
-
