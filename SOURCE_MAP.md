@@ -13,7 +13,7 @@ It does not expose private local paths or sensitive material.
 
 | Item | Location | Notes |
 |---|---|---|
-| Portfolio evidence repository | `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` | Main private recruiter-shareable archive |
+| Portfolio evidence repository | `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` | Main public recruiter-shareable archive; sensitive local sources remain excluded |
 
 ## Source Categories
 

@@ -2,7 +2,7 @@
 
 > Canonical repo: `TheOneDarkHorse/ai-native-proof-of-work`
 
-A private, recruiter-shareable archive documenting practical product work, AI-native execution, project-scoped product strategy, architecture reasoning, and execution discipline.
+A public, recruiter-shareable archive documenting practical product work, AI-native execution, project-scoped product strategy, architecture reasoning, and execution discipline.
 
 This repository is not a codebase.
 
@@ -61,7 +61,7 @@ flowchart TD
 |---|---|
 | [Navigation Hub](NAVIGATION.md) | Plain-English navigation hub for recruiters |
 | [START_HERE.md](START_HERE.md) | Fast recruiter-readable entry point |
-| [Job-Agent UX Snapshot](demos/job-agent/index.html) | Static recruiter-safe click-through that mirrors the current job-agent frontend |
+| [Published Job-Agent UX Snapshot (archived V1)](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/job-agent/index.html) | No-install historical preview; the local snapshot is more current and app-faithful |
 | [llms.txt](llms.txt) | Machine-readable repository map for LLM assistants |
 | [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md) | Suggested report brief for recruiter-side LLMs |
 | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) | One-screen recruiter overview |
@@ -93,19 +93,11 @@ flowchart TD
 
 Recommended order:
 
-1. [START_HERE.md](START_HERE.md)
-2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-3. [Job-Agent UX Snapshot](demos/job-agent/index.html)
-4. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
-5. [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-6. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-7. [PROJECT_STATUS.md](PROJECT_STATUS.md)
-8. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
-9. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
-10. [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md)
-11. [PROOF_OF_WORK.md](PROOF_OF_WORK.md)
-12. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
-13. [diagrams/RECRUITER_VIEW.md](diagrams/RECRUITER_VIEW.md)
+1. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
+2. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
+3. [Project Status](PROJECT_STATUS.md)
+
+Use [START_HERE.md](START_HERE.md) for a guided introduction or [NAVIGATION.md](NAVIGATION.md) for the complete repository map.
 
 ---
 
@@ -169,7 +161,7 @@ Context → Options Considered → Tradeoffs → Decision → Evidence → Open 
 
 ## Privacy and Sharing
 
-This repository is private by default.
+This repository is public. Recruiter-facing files are written for public sharing, while local source indexes and sensitive source material remain untracked or excluded.
 
 Recruiter-facing files should not contain private local paths, raw chat logs, private emails, credentials, API keys, personal addresses, sensitive personal data, confidential third-party material, or internal-only operational details.
 
@@ -179,7 +171,7 @@ Recruiter-facing files should not contain private local paths, raw chat logs, pr
 
 ```text
 Status: Active
-Repository type: Private proof-of-work archive
+Repository type: Public recruiter proof-of-work archive
 Primary audience: Recruiters, hiring managers, collaborators
 Canonical format: Markdown
 Diagrams: Mermaid

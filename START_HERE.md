@@ -1,73 +1,61 @@
 # Start Here
 
-Last updated: 2026-06-02
+Last updated: 2026-08-15
 Status: Active / Recruiter-facing
 
 ## One-Minute Overview
 
-This repository documents practical product work supported by AI-native workflow design, project-scoped product strategy, architecture reasoning, and proof-of-work documentation.
+Marcus uses AI-assisted workflows to design, build, test, and explain real products. The lead proof point is **Job-agent**, a career-workflow product that covers CV handling, job discovery, application support, feedback, privacy, QA, deployment planning, telemetry, and billing decisions.
 
-The main proof points are job-agent, PKM, and a household budget app. The documentation and automation layer supports that portfolio by making project work clear, credible, repeatable, and privacy-safe.
+Two supporting projects show range:
 
-If you are using an LLM or recruiter-side assistant to assess Marcus, start with [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md). It tells the assistant how to create a fair, evidence-grounded report without overstating claims.
+- **PKM (personal knowledge management)** explores capture, ingestion, search, learning, and knowledge retrieval.
+- **Household Budget** explores shared financial workflows, imports, forecasting, goals, permissions, and migration-safe domain modeling.
 
-Current strongest fresh signals:
+This repository is the evidence and explanation layer around those products. It is not the product itself.
 
-- job-agent has the most current source-verified status and handoff evidence.
-- the published static demo portal gives a no-install click-through for the three project snapshots.
-- internal source indexes were refreshed at a high level on 2026-06-01, while new product progress still needs weekly-input notes or source-verified commits.
+Evidence was checked on 2026-08-15 against this repository and the source-verified project status recorded through 2026-08-09. Later uncommitted product work is not presented as shipped evidence.
 
-## Why This Exists
+## Best Three Links
 
-Useful product work often disappears into codebases, chats, local projects, notes, and undocumented workflows.
+1. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) — the fastest overview of positioning and proof.
+2. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) — the strongest product story.
+3. [Project Status](PROJECT_STATUS.md) — current state, evidence boundaries, and open work.
 
-This repository organizes and explains that work as structured proof.
+## Verify the Main Claims in 60 Seconds
 
-## What This Repository Shows
+| Check | Evidence |
+|---|---|
+| Is Job-agent the lead proof point? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Status](PROJECT_STATUS.md) |
+| Is the implementation handoff reproducible? | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
+| Are claims separated from estimates and open questions? | [Evidence Matrix](EVIDENCE_MATRIX.md) and [Source Map](SOURCE_MAP.md) |
 
-- AI-native workflow design
-- concrete product execution
-- structured thinking
-- project-scoped product strategy
-- architecture reasoning
-- business model thinking
-- documentation discipline
-- weekly execution
-- practical use of Claude and Codex
-- a scheduled weekly compiler loop for keeping proof-of-work artifacts current
+Demo status: the [published Job-agent V1 snapshot](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/job-agent/index.html) is an archived, no-install preview. The local snapshot is more current and app-faithful. The published PKM and Household Budget snapshots are lightweight concept previews, not current product builds.
 
-## How to Read This Repository
+## Go Deeper
 
-Recommended path:
+| Need | Best Source |
+|---|---|
+| Capability-to-evidence map | [Evidence Matrix](EVIDENCE_MATRIX.md) |
+| Milestones and progression | [Project Timeline](PROJECT_TIMELINE.md) |
+| Reading paths for different roles | [Role Reading Paths](ROLE_READING_PATHS.md) |
+| Decisions and tradeoffs | [Decision Log](logs/DECISION_LOG.md) |
+| Full repository map | [Navigation Hub](NAVIGATION.md) |
 
-1. [Navigation Hub](NAVIGATION.md)
-2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
-3. [Job-Agent UX Snapshot](demos/job-agent/index.html)
-4. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
-5. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-6. [Project Status](PROJECT_STATUS.md)
-7. [Evidence Matrix](EVIDENCE_MATRIX.md)
-8. [Project Timeline](PROJECT_TIMELINE.md)
-9. [Role Reading Paths](ROLE_READING_PATHS.md)
-10. [Executive Summary](EXECUTIVE_SUMMARY.md)
-11. [Proof of Work](PROOF_OF_WORK.md)
-12. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-13. [Weekly Log](logs/WEEKLY_LOG.md)
+## What the Work Demonstrates
 
-If you are using an assistant or recruiter-side agent, start with [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md), then use [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md).
+| Capability | Visible Evidence |
+|---|---|
+| Product execution | Job-agent product scope, implementation history, QA, and handoff material |
+| Product judgment | Explicit tradeoffs, open questions, evidence labels, and rejected assumptions |
+| Systems thinking | Architecture, domain modeling, source boundaries, and reusable workflows |
+| AI-native execution | Claude and Codex used as operating tools for building, testing, reviewing, and documentation |
+| Communication | Recruiter-readable summaries backed by deeper technical evidence |
 
-If you want to recreate this repository architecture for another person or organization, use the [Template Adoption Kit](template/README.md). It is the secondary clone/fork layer and keeps template material separate from the recruiter reading path.
+## For Recruiter-Side Assistants
 
-## What to Look For
+Start with the [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md), then use the [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md). These files define evidence boundaries and prevent unsupported claims.
 
-- structured problem-solving
-- practical product execution
-- clickable static product demos that do not require local app setup
-- clear recruiter and agent reading paths
-- reproducible handoff for the lead product repo
-- project progress over time
-- practical automation thinking as a documented support layer for execution
-- clear before/after workflow improvements
-- documented tradeoffs
-- recruiter-relevant execution evidence
-- sober claims with explicit uncertainty where needed
+## Secondary Audience
+
+The [Template Adoption Kit](template/README.md) explains how another person or organization can reuse the repository structure. It is separate from the recruiter path.

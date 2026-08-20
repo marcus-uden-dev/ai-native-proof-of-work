@@ -19,7 +19,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 ## What To Look For
 
 - Full-stack product execution, especially in job-agent.
-- Published static demo: [Proof-of-Work Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/).
+- Published historical preview: [Proof-of-Work Demo Portal (V1)](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/). The local Job-agent snapshot is more current; the published PKM and Household Budget snapshots are lightweight concept previews.
 - Evidence discipline: claims are labeled as `Verified`, `Internal / Verified`, `Estimated`, `Hypothesis`, or `Open Question`.
 - Privacy-aware documentation: raw local paths, chats, and sensitive details are summarized rather than exposed.
 - Reproducible lead-project handoff: the job-agent setup, agent-entry files, startup-port contract, OAuth-routing notes, and direct source-verification date are checked against the source repo before they are promoted here.
@@ -29,14 +29,11 @@ AI-native product builder focused on career workflow products, knowledge systems
 
 ## Fast Reading Path
 
-1. [START_HERE.md](START_HERE.md)
-2. [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md) if using an LLM or assistant
-3. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-4. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
-5. [PROJECT_STATUS.md](PROJECT_STATUS.md)
-6. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-7. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
-8. [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md)
+1. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
+2. [Project Status](PROJECT_STATUS.md)
+3. [Evidence Matrix](EVIDENCE_MATRIX.md)
+
+For an LLM-assisted review, use the [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md).
 
 ## Best Interview Angles
 

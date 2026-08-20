@@ -1,6 +1,6 @@
 # Navigation Hub
 
-Last updated: 2026-06-02
+Last updated: 2026-08-15
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -14,11 +14,10 @@ Use it if the file list feels overwhelming.
 | Step | Open | Why |
 |---|---|---|
 | 1 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Fast overview of the strongest proof points |
-| 2 | [Job-Agent UX Snapshot](demos/job-agent/index.html) | Quick product feel without installing anything |
-| 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project proof point |
-| 4 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability-to-evidence map |
+| 2 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project proof point |
+| 3 | [Project Status](PROJECT_STATUS.md) | Current state and evidence boundaries |
 
-Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Timeline](PROJECT_TIMELINE.md).
+Optional historical preview: [published Job-Agent V1 snapshot](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/job-agent/index.html). The local snapshot is more current.
 
 ## If You Have 15 Minutes
 
@@ -26,19 +25,17 @@ Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Ti
 |---|---|---|
 | 1 | [Start Here](START_HERE.md) | One-minute orientation |
 | 2 | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) | Summary of positioning and proof |
-| 3 | [Job-Agent UX Snapshot](demos/job-agent/index.html) | Static click-through that mirrors the current job-agent frontend |
-| 4 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Main product evidence |
+| 3 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Main product evidence |
+| 4 | [Project Status](PROJECT_STATUS.md) | Current state and open work |
 | 5 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
-| 6 | [Project Status](PROJECT_STATUS.md) | Current state and open work |
-| 7 | [Project Timeline](PROJECT_TIMELINE.md) | Progression over time |
-| 8 | [Role Reading Paths](ROLE_READING_PATHS.md) | Choose the angle that fits the role |
+| 6 | [Project Timeline](PROJECT_TIMELINE.md) | Progression over time |
 
 ## If You Have 30 Minutes
 
 | Step | Open | Why |
 |---|---|---|
-| 1 | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) | Best path for agents and structured review |
-| 2 | [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) | Suggested fair report format for recruiter-side LLMs |
+| 1 | [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) | Suggested fair report format and evidence boundaries for recruiter-side LLMs |
+| 2 | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) | Detailed path for agents and structured review |
 | 3 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
 | 4 | [Project Status](PROJECT_STATUS.md) | Current state, progress, and blockers |
 | 5 | [Project Proof Points](PROJECT_PROOF_POINTS.md) | Portfolio-level evidence |
@@ -65,7 +62,7 @@ Best freshest status check: [Project Status](PROJECT_STATUS.md) plus [Project Ti
 |---|---|
 | What is this repo? | [Start Here](START_HERE.md) |
 | What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
-| Where can I click through product demos? | [Job-Agent UX Snapshot](demos/job-agent/index.html) |
+| Where can I see the published historical demo? | [Job-Agent V1 Snapshot](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/job-agent/index.html) |
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
 | Can an LLM create a fair recruiter report about Marcus? | [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |
@@ -103,10 +100,8 @@ These file areas are useful, but they are not the best first read for a non-tech
 ```mermaid
 flowchart TD
     A["Start Here"] --> B["Recruiter One-Pager"]
-    B --> C["Job-Agent UX Snapshot"]
-    C --> D["Job-Agent Case Study"]
+    B --> C["Job-Agent Case Study"]
+    C --> D["Project Status"]
     D --> E["Evidence Matrix"]
-    E --> F["Project Status"]
-    F --> G["Project Timeline"]
-    G --> H["Role Reading Paths"]
+    E --> F["Project Timeline"]
 ```
