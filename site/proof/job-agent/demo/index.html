@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Job-agent recruiter-safe prototype — Marcus Udén</title>
+    <meta name="description" content="A recruiter-safe, synthetic Job-agent prototype showing the decision flow from discovery to interview preparation.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" type="module"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#prototype-main">Skip to the prototype</a>
+
+    <header class="context-bar">
+      <div class="context-bar__inner">
+        <a class="back-link" href="../">← Job-agent case study</a>
+        <p><strong>Prototype proof</strong><span>Work in progress</span><span>Not live</span><span>Synthetic-only company</span></p>
+      </div>
+    </header>
+
+    <section class="entry-notice" aria-labelledby="entry-notice-title">
+      <div>
+        <p class="eyebrow">Evidence boundary</p>
+        <h1 id="entry-notice-title">Inspect the workflow, not a market outcome.</h1>
+      </div>
+      <p><strong>Aster Vale Software is invented.</strong> Every company-specific value is synthetic or inferred from synthetic inputs. This prototype has no production service or public user data.</p>
+    </section>
+
+    <main id="prototype-main" class="app-shell">
+      <aside class="app-sidebar" aria-label="Prototype identity">
+        <a class="app-brand" href="#today" data-view-link="today" aria-label="Job-agent prototype, Today view">
+          <span aria-hidden="true">JA</span>
+          <strong>Job-agent</strong>
+        </a>
+        <div class="app-sidebar__meta">
+          <p>Public proof release</p>
+          <strong>0.1.0</strong>
+        </div>
+      </aside>
+
+      <div class="app-workspace">
+        <nav class="view-tabs" aria-label="Prototype views">
+          <div role="tablist" aria-label="Job-agent workflow">
+            <a role="tab" id="tab-today" aria-controls="view-today" aria-selected="true" tabindex="0" href="#today" data-view-link="today">Today</a>
+            <a role="tab" id="tab-discover" aria-controls="view-discover" aria-selected="false" tabindex="-1" href="#discover" data-view-link="discover">Discover</a>
+            <a role="tab" id="tab-job" aria-controls="view-job" aria-selected="false" tabindex="-1" href="#job" data-view-link="job">Job</a>
+            <a role="tab" id="tab-research" aria-controls="view-research" aria-selected="false" tabindex="-1" href="#research" data-view-link="research">Company research</a>
+            <a role="tab" id="tab-tailor" aria-controls="view-tailor" aria-selected="false" tabindex="-1" href="#tailor" data-view-link="tailor">Tailor</a>
+            <a role="tab" id="tab-cv" aria-controls="view-cv" aria-selected="false" tabindex="-1" href="#cv" data-view-link="cv">CV</a>
+            <a role="tab" id="tab-prepare" aria-controls="view-prepare" aria-selected="false" tabindex="-1" href="#prepare" data-view-link="prepare">Prepare</a>
+          </div>
+        </nav>
+
+        <p class="view-status" aria-live="polite" data-view-status>Today view selected.</p>
+
+        <section class="view-panel" id="view-today" role="tabpanel" aria-labelledby="tab-today" data-view="today">
+          <div class="view-heading">
+            <div><p class="eyebrow">Today</p><h2>Choose the next best move.</h2></div>
+            <p>Three items need attention. Company research has the highest decision value.</p>
+          </div>
+          <div class="metric-row" aria-label="Today queue summary">
+            <div><span>New roles</span><strong>3</strong></div>
+            <div><span>Need research</span><strong>1</strong></div>
+            <div><span>Ready to tailor</span><strong>1</strong></div>
+          </div>
+          <article class="priority-card">
+            <div class="priority-card__rank">01</div>
+            <div>
+              <p class="mini-label">Highest decision value</p>
+              <h3>Product Manager, Workflow Intelligence</h3>
+              <p><strong data-company-name>Aster Vale Software</strong> · Stockholm · Hybrid</p>
+              <div class="signal-row"><span>Strong workflow fit</span><span>Compensation unknown</span><span>Decision rights unclear</span></div>
+            </div>
+            <a class="action-link" href="#job" data-view-link="job">Open job brief →</a>
+          </article>
+        </section>
+
+        <section class="view-panel" id="view-discover" role="tabpanel" aria-labelledby="tab-discover" data-view="discover" hidden>
+          <div class="view-heading">
+            <div><p class="eyebrow">Discover</p><h2>Make search criteria explicit.</h2></div>
+            <p>Discovery uses a saved decision boundary. It does not imply automated job coverage.</p>
+          </div>
+          <div class="criteria-board">
+            <div><p class="mini-label">Role themes</p><ul class="chip-list"><li>Product management</li><li>Workflow systems</li><li>Product operations</li></ul></div>
+            <div><p class="mini-label">Working model</p><ul class="chip-list"><li>Stockholm</li><li>Hybrid</li><li>Remote</li></ul></div>
+            <div><p class="mini-label">Decision rule</p><p>Keep roles that combine user discovery, operating depth, and practical delivery. Flag unclear authority or compensation.</p></div>
+          </div>
+          <div class="result-row">
+            <span class="score">82</span>
+            <div><h3>Product Manager, Workflow Intelligence</h3><p><strong data-company-name>Aster Vale Software</strong> · Synthetic company</p></div>
+            <a class="action-link" href="#job" data-view-link="job">Review match →</a>
+          </div>
+        </section>
+
+        <section class="view-panel" id="view-job" role="tabpanel" aria-labelledby="tab-job" data-view="job" hidden>
+          <div class="view-heading">
+            <div><p class="eyebrow">Job brief</p><h2>Product Manager, Workflow Intelligence</h2></div>
+            <p><strong data-company-name>Aster Vale Software</strong> · Stockholm · Hybrid · Synthetic company</p>
+          </div>
+          <div class="job-layout">
+            <article>
+              <p class="mini-label">Problem ownership</p>
+              <h3>Help operations teams turn repeated manual work into trusted product workflows.</h3>
+              <p>The role combines discovery, workflow design, cross-functional delivery, and applied AI. The scope is attractive, but decision authority needs validation.</p>
+            </article>
+            <aside>
+              <p class="mini-label">Match hypothesis</p>
+              <strong>Strong enough to research</strong>
+              <ul><li>Operational problem depth</li><li>Hands-on product execution</li><li>AI-supported workflow design</li></ul>
+            </aside>
+          </div>
+          <a class="action-link action-link--large" href="#research" data-view-link="research">Review company research →</a>
+        </section>
+
+        <section class="view-panel" id="view-research" role="tabpanel" aria-labelledby="tab-research" data-view="research" hidden>
+          <div class="view-heading">
+            <div><p class="eyebrow">Company research</p><h2>Is this company and role worth my time?</h2></div>
+            <p><strong data-company-name>Aster Vale Software</strong> · Synthetic company</p>
+          </div>
+          <div class="decision-banner"><span>Decision</span><strong>Investigate before pursuing</strong><p>Problem ownership looks promising. Verify authority and compensation.</p></div>
+          <div class="demo-research-grid" data-research-fields></div>
+          <div class="demo-signal-grid">
+            <section><p class="signal-title signal-title--positive">Positive signals</p><ul data-positive-signals></ul></section>
+            <section><p class="signal-title signal-title--warning">Warning signals</p><ul data-warning-signals></ul></section>
+          </div>
+          <a class="action-link action-link--large" href="#tailor" data-view-link="tailor">Use research in the application →</a>
+        </section>
+
+        <section class="view-panel" id="view-tailor" role="tabpanel" aria-labelledby="tab-tailor" data-view="tailor" hidden>
+          <div class="view-heading">
+            <div><p class="eyebrow">Application tailoring</p><h2>Change emphasis, not the evidence.</h2></div>
+            <p>Recommendations come from the synthetic research fields. They are not generated employer facts.</p>
+          </div>
+          <div class="tailor-grid">
+            <article><span>Lead with</span><h3>Workflow simplification</h3><p>Connect operational depth to clear product scope and practical delivery.</p></article>
+            <article><span>Support with</span><h3>Evidence discipline</h3><p>Show how source classes, confidence, and limitations keep decisions honest.</p></article>
+            <article><span>Validate in interview</span><h3>Decision rights</h3><p>Ask who owns priorities, research access, escalation, and final trade-offs.</p></article>
+          </div>
+          <a class="action-link action-link--large" href="#cv" data-view-link="cv">Check CV emphasis →</a>
+        </section>
+
+        <section class="view-panel" id="view-cv" role="tabpanel" aria-labelledby="tab-cv" data-view="cv" hidden>
+          <div class="view-heading">
+            <div><p class="eyebrow">CV evidence check</p><h2>Use the CV as evidence, not decoration.</h2></div>
+            <p>This view identifies what the application should make easy to verify.</p>
+          </div>
+          <ol class="cv-checks">
+            <li><span>01</span><div><h3>Operational depth</h3><p>Make complex service and frontline operating experience legible as product context.</p></div></li>
+            <li><span>02</span><div><h3>Product execution</h3><p>Connect decisions, prototypes, validation, and delivery artifacts to named proof.</p></div></li>
+            <li><span>03</span><div><h3>AI-native leverage</h3><p>Show accelerated research and build loops while keeping human judgment explicit.</p></div></li>
+          </ol>
+          <a class="action-link action-link--large" href="#prepare" data-view-link="prepare">Prepare interview questions →</a>
+        </section>
+
+        <section class="view-panel" id="view-prepare" role="tabpanel" aria-labelledby="tab-prepare" data-view="prepare" hidden>
+          <div class="view-heading">
+            <div><p class="eyebrow">Interview preparation</p><h2>Turn uncertainty into useful questions.</h2></div>
+            <p>These questions test the largest decision gaps in the synthetic research.</p>
+          </div>
+          <ol class="question-list">
+            <li><span>01</span><p>Which product decisions would this role own during the first six months?</p></li>
+            <li><span>02</span><p>How often can the product team observe or interview workflow users?</p></li>
+            <li><span>03</span><p>What support exists when autonomy meets cross-functional disagreement?</p></li>
+            <li><span>04</span><p>Which outcome would make this hire successful after one year?</p></li>
+            <li><span>05</span><p>What compensation range and level are approved for the role?</p></li>
+          </ol>
+          <a class="action-link action-link--large" href="../#limitations">Return to evidence limitations →</a>
+        </section>
+      </div>
+    </main>
+
+    <footer class="demo-footer">
+      <p>Work in progress · Not live · Not market-validated · No measured market outcomes</p>
+      <p><a href="../../../evidence/releases/job-agent-v1.json">Release manifest</a> · <a href="../">Case study</a></p>
+    </footer>
+  </body>
+</html>
+
