@@ -1,7 +1,7 @@
 import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
-import { extname, relative, resolve, sep } from 'node:path';
+import { dirname, extname, relative, resolve, sep } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const repositoryRoot = resolve(fileURLToPath(new URL('..', import.meta.url)));
@@ -50,6 +50,39 @@ function addMatch(errors, category, file, message) {
   errors.push({ category, file, message });
 }
 
+function validateInternalLinks(root, files, errors) {
+  const siteRoot = resolve(root, 'site');
+  for (const file of files.filter((path) => path.startsWith('site/') && extname(path).toLowerCase() === '.html')) {
+    const absolute = resolve(root, file);
+    const content = readFileSync(absolute, 'utf8');
+    const references = [...content.matchAll(/\b(?:href|src)="([^"]+)"/g)].map((match) => match[1]);
+    for (const reference of references) {
+      if (/^(?:https?:|mailto:|data:)/i.test(reference)) continue;
+      if (reference.startsWith('/')) {
+        addMatch(errors, 'broken-link', file, 'Root-relative internal links are not allowed because the site must work under a project subpath.');
+        continue;
+      }
+      const [pathPart, fragment] = reference.split('#', 2);
+      let target = pathPart ? resolve(dirname(absolute), decodeURIComponent(pathPart)) : absolute;
+      if (!target.startsWith(siteRoot)) {
+        addMatch(errors, 'broken-link', file, 'An internal link escapes the public site root.');
+        continue;
+      }
+      if (existsSync(target) && statSync(target).isDirectory()) target = resolve(target, 'index.html');
+      if (!existsSync(target)) {
+        addMatch(errors, 'broken-link', file, `An internal link target is missing: ${reference}`);
+        continue;
+      }
+      if (fragment && extname(target).toLowerCase() === '.html') {
+        const targetContent = readFileSync(target, 'utf8');
+        const escaped = fragment.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const anchorPattern = new RegExp(`(?:id|data-view|data-view-link)="${escaped}"`);
+        if (!anchorPattern.test(targetContent)) addMatch(errors, 'broken-link', file, `An internal anchor target is missing: ${reference}`);
+      }
+    }
+  }
+}
+
 export function validateRepository(root = repositoryRoot, options = {}) {
   const errors = [];
   const files = listFiles(root);
@@ -63,6 +96,7 @@ export function validateRepository(root = repositoryRoot, options = {}) {
   for (const file of files) {
     if (!allowed.has(file)) addMatch(errors, 'unexpected-path', file, 'The file is not in the public release allowlist.');
   }
+  validateInternalLinks(root, files, errors);
 
   const environmentTokens = (options.forbiddenIdentities ?? process.env.PUBLIC_RELEASE_FORBIDDEN_IDENTITIES ?? '')
     .split(';')
@@ -145,7 +179,13 @@ export function validateRepository(root = repositoryRoot, options = {}) {
   }
 
   const remote = git(root, ['remote', '-v']);
-  if (remote) addMatch(errors, 'git-remote', '.git/config', 'The local staging repository must not have a remote before approval.');
+  if (remote) {
+    const approvedRemote = /^https:\/\/github\.com\/marcus-uden-dev\/ai-native-proof-of-work(?:\.git)?$/i;
+    const remoteUrls = [...new Set(remote.split(/\r?\n/).map((line) => line.split(/\s+/)[1]).filter(Boolean))];
+    if (remoteUrls.some((url) => !approvedRemote.test(url))) {
+      addMatch(errors, 'git-remote', '.git/config', 'The repository contains a remote outside the approved professional public repository.');
+    }
+  }
   const head = git(root, ['rev-parse', '--verify', 'HEAD']);
   if (head) {
     const roots = git(root, ['rev-list', '--max-parents=0', 'HEAD']).split(/\r?\n/).filter(Boolean);

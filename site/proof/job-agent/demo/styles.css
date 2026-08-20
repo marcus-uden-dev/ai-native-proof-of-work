@@ -98,7 +98,7 @@ h3 { font-size: 1.2rem; }
 .demo-research-field h3 { margin-block: 1rem 0.5rem; }
 .demo-research-field > p { min-height: 2.7rem; color: var(--muted); font-size: 0.82rem; }
 .demo-research-field dl { display: grid; margin: 1rem 0 0; padding-top: 0.8rem; border-top: 1px solid var(--line); grid-template-columns: 0.35fr 1fr; gap: 0.4rem 0.8rem; }
-.demo-research-field dt { color: #817c70; font-size: 0.67rem; font-weight: 750; text-transform: uppercase; }
+.demo-research-field dt { color: #918b7e; font-size: 0.67rem; font-weight: 750; text-transform: uppercase; }
 .demo-research-field dd { margin: 0; color: var(--muted); font-size: 0.78rem; }
 .data-source { display: inline-flex; padding: 0.22rem 0.5rem; border: 1px solid; border-radius: 999px; font-size: 0.65rem; font-weight: 720; }
 .data-source--synthetic { border-color: #416f61; color: var(--teal); }
@@ -150,4 +150,3 @@ h3 { font-size: 1.2rem; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; transition-duration: 0.01ms !important; }
 }
-

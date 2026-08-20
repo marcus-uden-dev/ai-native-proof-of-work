@@ -118,3 +118,10 @@ test('rejects a missing or stale approved CV artifact', async () => {
   );
   assert.ok(validateRepository(stale).errors.some((error) => error.category === 'cv-import' && error.file === 'site/assets/cv/marcus-uden-cv.pdf'));
 });
+
+test('rejects broken and root-relative internal links', () => {
+  const broken = makeRepository({ 'site/index.html': '<a href="missing/">Missing</a>' });
+  const rooted = makeRepository({ 'site/index.html': '<a href="/proof/">Rooted</a>' });
+  assert.ok(validateRepository(broken).errors.some((error) => error.category === 'broken-link'));
+  assert.ok(validateRepository(rooted).errors.some((error) => error.category === 'broken-link'));
+});

@@ -40,6 +40,7 @@
     "tests/contracts/evidence-consistency.test.mjs",
     "tests/contracts/public-boundary.test.mjs",
     "tests/e2e/agent-handoff.spec.js",
+    "tests/e2e/accessibility.spec.js",
     "tests/e2e/discoverability-and-conversion.spec.js",
     "tests/e2e/job-agent-case-study.spec.js",
     "tests/e2e/job-agent-demo.spec.js",

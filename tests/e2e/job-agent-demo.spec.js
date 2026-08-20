@@ -1,4 +1,6 @@
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 test('first entry shows WIP and synthetic context before prototype data', async ({ page }) => {
   await page.goto('/proof/job-agent/demo/');
@@ -43,7 +45,7 @@ test('direct project-subpath deep link survives refresh', async ({ page }) => {
   await expect(page.getByRole('tab', { name: 'Prepare' })).toHaveAttribute('aria-selected', 'true');
 });
 
-test('prototype contains no dead controls or disallowed positive maturity wording', async ({ page, request }) => {
+test('prototype contains no dead controls or disallowed positive maturity wording', async ({ page }) => {
   await page.goto('/proof/job-agent/demo/');
   await expect(page.locator('button')).toHaveCount(0);
   for (const link of await page.locator('a').all()) {
@@ -51,7 +53,10 @@ test('prototype contains no dead controls or disallowed positive maturity wordin
     expect(href).toBeTruthy();
     expect(href).not.toBe('#');
   }
-  const source = `${await (await request.get('/proof/job-agent/demo/index.html')).text()}\n${await (await request.get('/proof/job-agent/demo/app.js')).text()}`;
+  const source = [
+    'site/proof/job-agent/demo/index.html',
+    'site/proof/job-agent/demo/app.js'
+  ].map((path) => readFileSync(resolve(path), 'utf8')).join('\n');
   for (const phrase of ['current-UX', 'working application', 'verified demo snapshot', 'live-verifiable']) {
     expect(source).not.toContain(phrase);
   }
@@ -67,4 +72,3 @@ test('all seven views work without horizontal page overflow on mobile', async ({
     expect(overflow).toBeLessThanOrEqual(0);
   }
 });
-
