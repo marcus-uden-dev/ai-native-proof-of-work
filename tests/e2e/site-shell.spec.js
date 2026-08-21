@@ -57,7 +57,8 @@ test('print mode keeps evidence and hides navigation controls', async ({ page })
   await page.emulateMedia({ media: 'print' });
   await expect(page.locator('.masthead')).toBeHidden();
   await expect(page.getByRole('heading', { name: 'Why Marcus for hands-on product work?' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Job-agent Working title' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Job-agent', exact: true })).toBeVisible();
+  await expect(page.getByText('Working title', { exact: true })).toBeVisible();
 });
 
 test('reduced-motion preference removes smooth movement', async ({ page }) => {
