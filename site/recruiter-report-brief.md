@@ -1,6 +1,6 @@
 # Recruiter assessment brief
 
-Use this structure with the [recruiter agent guide](https://marcus.uden.dev/recruiter-agent-guide.md).
+Use this structure with the [recruiter agent guide](https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-agent-guide.md).
 
 ## Canonical Job-agent release facts
 
