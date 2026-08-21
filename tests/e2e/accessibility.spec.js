@@ -5,7 +5,8 @@ const axePath = resolve('node_modules/axe-core/axe.min.js');
 const routes = [
   '/',
   '/proof/job-agent/',
-  '/proof/job-agent/demo/#research'
+  '/proof/job-agent/demo/#research',
+  '/proof/recursive-workflow/'
 ];
 
 for (const route of routes) {

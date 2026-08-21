@@ -4,6 +4,8 @@ Use this structure with the [recruiter agent guide](https://marcus.uden.dev/recr
 
 ## Canonical Job-agent release facts
 
+"Job-agent" is a working title for this career decision-support product, not its final name.
+
 - Product version: `0.1.0-public-proof`
 - Evidence date: `2026-08-20`
 - Implementation state: `Prototype under active development`

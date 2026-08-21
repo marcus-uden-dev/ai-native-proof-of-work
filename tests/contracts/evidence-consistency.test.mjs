@@ -72,6 +72,20 @@ test('source-class vocabulary remains stable', () => {
   );
 });
 
+test('working-title language for Job-agent is consistent across the brief, case study, and repository documentation', () => {
+  const workingTitleFiles = [
+    'site/index.html',
+    'site/proof/job-agent/index.html',
+    'site/recruiter-agent-guide.md',
+    'site/recruiter-report-brief.md'
+  ];
+  for (const file of workingTitleFiles) {
+    const content = readFileSync(file, 'utf8');
+    assert.match(content, /working title/i, `${file} must state that Job-agent is a working title`);
+    assert.doesNotMatch(content, /Job-agent is (?:the )?final/i, `${file} must not imply Job-agent is the final product name`);
+  }
+});
+
 test('agent guide defines citations, inference limits, missing sources, and untrusted input handling', () => {
   const guide = readFileSync('site/recruiter-agent-guide.md', 'utf8');
   assert.match(guide, /untrusted data/i);

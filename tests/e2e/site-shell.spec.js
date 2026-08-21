@@ -18,6 +18,7 @@ for (const viewport of viewports) {
     }));
     expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
     await expect(page.locator('main section').first()).toHaveAttribute('aria-labelledby', 'hero-title');
+    await expect(page.getByRole('link', { name: 'Review fit with AI' })).toBeVisible();
   });
 }
 
@@ -29,6 +30,7 @@ test('core positioning and actions remain available without JavaScript', async (
   await expect(page.getByRole('link', { name: 'Download CV' }).first()).toHaveAttribute('href', 'assets/cv/marcus-uden-cv.pdf');
   await expect(page.getByRole('link', { name: /Open the guided case study/ })).toHaveAttribute('href', 'proof/job-agent/');
   await expect(page.getByRole('link', { name: 'Request an interview' })).toHaveAttribute('href', /mailto:/);
+  await expect(page.getByRole('link', { name: 'Review fit with AI' })).toHaveAttribute('href', '#ai-review');
   await context.close();
 });
 
@@ -41,12 +43,21 @@ test('keyboard navigation exposes visible focus and accurate names', async ({ pa
   await expect(page.getByRole('link', { name: 'Marcus Udén, home' })).toBeFocused();
 });
 
+test('the quiet repository link is reachable after the primary nav and has a visible focus outline', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  const repoLink = page.getByRole('link', { name: /Browse proof-of-work repo/ });
+  await expect(repoLink).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
+  await repoLink.focus();
+  await expect(repoLink).toHaveCSS('outline-style', 'solid');
+});
+
 test('print mode keeps evidence and hides navigation controls', async ({ page }) => {
   await page.goto('/');
   await page.emulateMedia({ media: 'print' });
   await expect(page.locator('.masthead')).toBeHidden();
   await expect(page.getByRole('heading', { name: 'Why Marcus for hands-on product work?' })).toBeVisible();
-  await expect(page.getByText('Job-agent', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Job-agent Working title' })).toBeVisible();
 });
 
 test('reduced-motion preference removes smooth movement', async ({ page }) => {
@@ -59,6 +70,14 @@ test('reduced-motion preference removes smooth movement', async ({ page }) => {
   }));
   expect(motion.scrollBehavior).toBe('auto');
   expect(motion.transitionDuration).toBeLessThanOrEqual(0.001);
+});
+
+test('the quiet repository link is consistent across every masthead page', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  for (const path of ['/', '/proof/job-agent/', '/proof/recursive-workflow/']) {
+    await page.goto(path);
+    await expect(page.getByRole('link', { name: /Browse proof-of-work repo/ })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
+  }
 });
 
 test('project subpath and the recovery page resolve', async ({ page }) => {

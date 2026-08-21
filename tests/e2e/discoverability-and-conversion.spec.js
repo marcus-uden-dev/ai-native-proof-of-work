@@ -3,7 +3,8 @@ import { expect, test } from '@playwright/test';
 const pages = [
   { path: '/', canonical: 'https://marcus.uden.dev/', title: 'Marcus Udén — Product judgment, execution, and AI-native leverage' },
   { path: '/proof/job-agent/', canonical: 'https://marcus.uden.dev/proof/job-agent/', title: 'Job-agent case study — Marcus Udén' },
-  { path: '/proof/job-agent/demo/', canonical: 'https://marcus.uden.dev/proof/job-agent/demo/', title: 'Job-agent recruiter-safe prototype — Marcus Udén' }
+  { path: '/proof/job-agent/demo/', canonical: 'https://marcus.uden.dev/proof/job-agent/demo/', title: 'Job-agent recruiter-safe prototype — Marcus Udén' },
+  { path: '/proof/recursive-workflow/', canonical: 'https://marcus.uden.dev/proof/recursive-workflow/', title: 'Recursive workflow system — Marcus Udén' }
 ];
 
 for (const target of pages) {

@@ -57,10 +57,12 @@ Use a centered 1120-pixel content column. Use a 12-column grid on wide screens a
 - Identity block: role posture, value statement, and the three-part support line.
 - Hiring brief: fit for hands-on product work before employment chronology.
 - Claim-to-evidence card: one precise claim, one interpretation, and one evidence link.
-- Proof card: problem, decision, evidence status, and next action.
-- Process strip: Discover → Define → Build → Improve.
-- AI review prompt: public evidence only, evidence separated from inference.
+- Proof card: problem, decision, evidence status, and next action. A second, subordinate proof card uses a "Supporting proof" pill instead of "Lead proof" and omits the primary pill entirely.
+- Process strip: Discover → Define → Build → Improve. A second, human-gated system-loop strip can sit beneath it: Execute → Review → Detect pattern → Human gate → Promote → Next cycle.
+- AI review prompt: public evidence only, evidence separated from inference. The hero can offer a secondary "Review fit with AI" action beside the primary CV action, linking to this section rather than duplicating its copy control.
 - Contact panel: CV download, interview request, email, and copy-email fallback.
+- Header repository link: a quiet, muted-color link in the masthead pointing to the public GitHub repository. It never competes visually with the primary conversion actions and is hidden below 760 pixels.
+- Status labels: compact pills for evidence and product maturity. Known values: "Work in progress", "Lead proof", "Supporting proof", "Working title" (labels a product name as temporary, not final).
 
 ## Print
 

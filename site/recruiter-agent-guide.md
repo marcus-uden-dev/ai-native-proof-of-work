@@ -4,7 +4,7 @@ Use this guide when you assess Marcus Udén against a job description.
 
 ## Evidence contract
 
-The public evidence manifest is the authority for Job-agent status and provenance.
+The public evidence manifest is the authority for Job-agent status and provenance. "Job-agent" is a working title for this career decision-support product, not its final name.
 
 - Product version: `0.1.0-public-proof`
 - Evidence date: `2026-08-20`
