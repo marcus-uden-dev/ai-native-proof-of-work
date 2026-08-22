@@ -1166,6 +1166,107 @@ h3 {
   font-weight: 760;
 }
 
+.limitations-list--stacked {
+  grid-template-columns: 1fr;
+}
+
+.limitations-list--stacked li:nth-child(even) {
+  border-left: 1px solid var(--line);
+}
+
+.limitations-list--stacked li:nth-child(n + 2) {
+  border-top: 0;
+}
+
+.promotion-example {
+  margin: 1.5rem 0 0;
+  color: var(--muted);
+}
+
+.promotion-subhead {
+  margin: 2rem 0 1rem;
+}
+
+.loop-diagram {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.loop-diagram__steps {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  gap: 0.5rem;
+  list-style: none;
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+.loop-diagram__steps li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.loop-diagram__steps li:not(:last-child)::after {
+  margin-left: 0.5rem;
+  color: var(--muted);
+  content: "\2192";
+  font-weight: 400;
+}
+
+.loop-diagram__num {
+  color: var(--gold);
+  font-size: 0.75rem;
+  font-weight: 760;
+}
+
+.loop-diagram__branch {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+
+.loop-diagram__path {
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
+.loop-diagram__path--promote {
+  border-color: var(--teal);
+}
+
+.loop-diagram__path--discard {
+  border-color: var(--muted);
+}
+
+.loop-diagram__path-label {
+  margin: 0 0 0.3rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.loop-diagram__path-outcome {
+  margin: 0;
+  font-weight: 650;
+}
+
+@media (max-width: 47.5rem) {
+  .loop-diagram__branch {
+    grid-template-columns: 1fr;
+  }
+}
+
 .technical-appendix {
   margin-top: 2rem;
   border: 1px solid var(--line);

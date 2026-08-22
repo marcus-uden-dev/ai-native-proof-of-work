@@ -79,6 +79,24 @@
             <p>Do the work, check the output, spot what repeats, let a person decide, then turn confirmed patterns into reusable infrastructure.</p>
           </article>
         </div>
+        <div class="loop-diagram">
+          <ol class="loop-diagram__steps">
+            <li><span class="loop-diagram__num">01</span> Execute</li>
+            <li><span class="loop-diagram__num">02</span> Review</li>
+            <li><span class="loop-diagram__num">03</span> Detect pattern</li>
+            <li><span class="loop-diagram__num">04</span> Human gate</li>
+          </ol>
+          <div class="loop-diagram__branch">
+            <div class="loop-diagram__path loop-diagram__path--promote">
+              <p class="loop-diagram__path-label">Confirmed pattern</p>
+              <p class="loop-diagram__path-outcome">Promote → next cycle</p>
+            </div>
+            <div class="loop-diagram__path loop-diagram__path--discard">
+              <p class="loop-diagram__path-label">One-off</p>
+              <p class="loop-diagram__path-outcome">Not promoted, discarded</p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section class="section section--ruled shell" id="autoresearch" aria-labelledby="autoresearch-title">
@@ -93,7 +111,7 @@
           <article>
             <span>What it filters</span>
             <h3>Source quality before insight</h3>
-            <p>A finding only reaches a decision log after a quality filter checks it — otherwise it is archived, not acted on.</p>
+            <p>A finding only reaches a decision log after it clears explicit criteria — primary source, reproducible, practical, relevant, and low-hype — otherwise it is archived, not acted on.</p>
           </article>
           <article>
             <span>Example</span>
@@ -120,7 +138,7 @@
           <article>
             <span>Example</span>
             <h3>Evidence, not invented progress</h3>
-            <p>A weekly compiler turns confirmed product work into evidence artifacts for this site. If a run finds no verified new material, it says so directly instead of inventing progress.</p>
+            <p>A daily verifier checks prior outputs before anything ships, a weekly compiler turns confirmed product work into evidence artifacts for this site, and a kill-switch review retires routines that stop producing value. If a run finds no verified new material, it says so directly instead of inventing progress.</p>
           </article>
         </div>
       </section>
@@ -133,6 +151,13 @@
           </div>
           <p>Repeated friction converts into reusable infrastructure — an instruction, a checklist, a template, or a scheduled task — but only after review confirms it is a genuine pattern, not a one-off.</p>
         </div>
+        <p class="promotion-example"><strong>Example:</strong> A recurring project mistake became a lessons file — durable project rules that turn repeated mistakes into prevention checks, so the same error doesn't happen twice.</p>
+        <p class="kicker promotion-subhead">What becomes what</p>
+        <ul class="limitations-list limitations-list--stacked">
+          <li>A repeated prompt becomes a template or instruction.</li>
+          <li>A repeated review step becomes a checklist.</li>
+          <li>A repeated schedule need becomes a scheduled task.</li>
+        </ul>
         <ul class="limitations-list">
           <li>No important instruction is updated without human review — the system does not approve its own changes.</li>
           <li>A confirmed pattern is promoted to the smallest durable form that fits it: an instruction, a checklist, a template, or a scheduled task.</li>

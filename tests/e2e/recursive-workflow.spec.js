@@ -32,8 +32,51 @@ test('the supporting-proof page states both loops, Autoresearch, daily automatio
   await expect(page.getByRole('heading', { name: 'Broad discovery filtered into decision-relevant evidence.' })).toBeVisible();
   await expect(page.getByText(/scheduled, semi-automated research loop/)).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Health, drift, and opportunities become bounded next actions.' })).toBeVisible();
-  await expect(page.getByText(/kill-switch review/i)).toBeVisible();
   await expect(page.getByText(/No important instruction is updated without human review/)).toBeVisible();
+});
+
+test('the Autoresearch section names the actual quality-filter criteria', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const autoresearch = page.locator('#autoresearch');
+  for (const criterion of ['primary source', 'reproducible', 'practical', 'relevant', 'low-hype']) {
+    await expect(autoresearch).toContainText(criterion);
+  }
+  // U1 regression: the existing example article is untouched by this unit
+  await expect(autoresearch).toContainText('A pattern, not a headline');
+  await expect(autoresearch).toContainText('A recurring signal found during research');
+});
+
+test('the daily-automation section names at least three task layers', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const automation = page.locator('section[aria-labelledby="automation-title"]');
+  await expect(automation).toContainText('daily verifier');
+  await expect(automation).toContainText('weekly compiler');
+  await expect(automation).toContainText(/kill-switch review/i);
+});
+
+test('the promotion section states a named example and the pattern-to-destination mapping', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const promotion = page.locator('#promotion');
+  await expect(promotion).toContainText('lessons file');
+  await expect(promotion).toContainText('prevention checks');
+  await expect(promotion.getByText('A repeated prompt becomes a template or instruction.')).toBeVisible();
+  await expect(promotion.getByText('A repeated review step becomes a checklist.')).toBeVisible();
+  await expect(promotion.getByText('A repeated schedule need becomes a scheduled task.')).toBeVisible();
+  // existing human-gate/kill-switch rules remain present, not crowded out
+  await expect(promotion.getByText(/No important instruction is updated without human review/)).toBeVisible();
+});
+
+test('the loops section carries a two-loop diagram with a labeled human-gate branch', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const diagram = page.locator('.loop-diagram');
+  await expect(diagram).toBeVisible();
+  for (const step of ['Execute', 'Review', 'Detect pattern', 'Human gate']) {
+    await expect(diagram).toContainText(step);
+  }
+  await expect(diagram.getByText('Confirmed pattern', { exact: true })).toBeVisible();
+  await expect(diagram.getByText('Promote → next cycle', { exact: true })).toBeVisible();
+  await expect(diagram.getByText('One-off', { exact: true })).toBeVisible();
+  await expect(diagram.getByText('Not promoted, discarded', { exact: true })).toBeVisible();
 });
 
 test('the supporting-proof page only uses "autonomous" to deny self-modification, never to claim it', async ({ page }) => {

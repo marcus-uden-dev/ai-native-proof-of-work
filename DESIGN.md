@@ -59,6 +59,7 @@ Use a centered 1120-pixel content column. Use a 12-column grid on wide screens a
 - Claim-to-evidence card: one precise claim, one interpretation, and one evidence link.
 - Proof card: problem, decision, evidence status, and next action. A second, subordinate proof card uses a "Supporting proof" pill instead of "Lead proof" and omits the primary pill entirely.
 - Process strip: Discover → Define → Build → Improve. A second, human-gated system-loop strip can sit beneath it: Execute → Review → Detect pattern → Human gate → Promote → Next cycle.
+- Loop diagram: the light-context counterpart to the system-loop strip, used on the recursive-workflow supporting-proof page (not inside a dark section). A numbered step list plus a two-path branch card (confirmed pattern vs. one-off) showing the human-gate outcome. Uses root tokens only (`--gold`, `--teal`, `--line`, `--surface`, `--muted`) — never the process strip's dark-only hardcoded colors, since this component can appear on a light `.section`.
 - AI review prompt: public evidence only, evidence separated from inference. The hero can offer a secondary "Review fit with AI" action beside the primary CV action, linking to this section rather than duplicating its copy control.
 - Contact panel: CV download, interview request, email, and copy-email fallback.
 - Header repository link: a quiet, muted-color link in the masthead pointing to the public GitHub repository. It never competes visually with the primary conversion actions and is hidden below 760 pixels.
