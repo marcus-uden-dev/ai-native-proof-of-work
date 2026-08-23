@@ -28,6 +28,8 @@ Use only these public sources:
 6. `https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/fixtures/job-agent-company-v1.json`
 7. `https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-report-brief.md`
 8. `https://github.com/marcus-uden-dev`
+9. `https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json`
+10. `https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json`
 
 Do not search for, infer, or link to non-public repositories, identities, local files, cached content, or private personal data.
 

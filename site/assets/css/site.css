@@ -1178,6 +1178,43 @@ h3 {
   border-top: 0;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.decision-log-list {
+  margin-top: 1.5rem;
+}
+
+.decision-log-entry__date {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 750;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.decision-log-entry__tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 0.6rem;
+  gap: 0.4rem;
+}
+
+.decision-log-entry__why,
+.decision-log-entry__demonstrates {
+  margin: 0.3rem 0 0;
+}
+
 .promotion-example {
   margin: 1.5rem 0 0;
   color: var(--muted);

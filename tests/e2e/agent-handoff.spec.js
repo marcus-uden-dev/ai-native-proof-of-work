@@ -41,3 +41,20 @@ test('manifest and fixture are available as static evidence', async ({ request }
   expect((await manifestResponse.json()).marketValidationState).toBe('Not market-validated');
   expect((await fixtureResponse.json()).companyMode).toBe('synthetic-only');
 });
+
+test('decision log evidence files are available as static evidence and registered as allowed sources', async ({ request }) => {
+  const logResponse = await request.get('/evidence/decision-log.json');
+  const tagsResponse = await request.get('/evidence/decision-log-tags.json');
+  expect(logResponse.ok()).toBeTruthy();
+  expect(tagsResponse.ok()).toBeTruthy();
+  expect(Array.isArray(await logResponse.json())).toBe(true);
+  expect(Array.isArray(await tagsResponse.json())).toBe(true);
+
+  const llmsText = await (await request.get('/llms.txt')).text();
+  expect(llmsText).toContain('evidence/decision-log.json');
+  expect(llmsText).toContain('evidence/decision-log-tags.json');
+
+  const guideText = await (await request.get('/recruiter-agent-guide.md')).text();
+  expect(guideText).toContain('evidence/decision-log.json');
+  expect(guideText).toContain('evidence/decision-log-tags.json');
+});

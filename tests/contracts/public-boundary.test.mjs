@@ -58,6 +58,13 @@ test('rejects local machine paths', () => {
   assert.ok(result.errors.some((error) => error.category === 'local-path' && error.file === 'README.md'));
 });
 
+test('scans .mjs files for protected identities, not only .md/.html/.js/.json', () => {
+  const marker = 'forbidden-private-identity';
+  const root = makeRepository({ 'tests/contracts/example.test.mjs': `// ${marker}` });
+  const result = validateRepository(root, { forbiddenIdentities: marker });
+  assert.ok(result.errors.some((error) => error.category === 'private-identity' && error.file === 'tests/contracts/example.test.mjs'));
+});
+
 test('rejects unreviewed binary artifacts', () => {
   const root = makeRepository({ 'site/assets/images/job-agent/test.png': Buffer.from('not-a-real-image') });
   const result = validateRepository(root);

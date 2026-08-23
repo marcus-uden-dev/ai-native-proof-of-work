@@ -97,3 +97,36 @@ test('the supporting-proof page carries unique identity metadata and a working C
   await expect(page.getByRole('link', { name: 'Download CV' })).toHaveAttribute('href', '../../assets/cv/marcus-uden-cv.pdf');
   await expect(page.getByRole('link', { name: 'Return to the hiring brief' })).toHaveAttribute('href', '../../');
 });
+
+test('the decision log content is present in the raw HTML response, with no JavaScript required', async ({ request }) => {
+  const response = await request.get('/proof/recursive-workflow/');
+  expect(response.ok()).toBeTruthy();
+  const html = await response.text();
+  expect(html).toContain('id="decision-log"');
+  expect(html).toContain('<!-- DECISION_LOG_ENTRIES:BEGIN -->');
+  expect(html).toContain('<!-- DECISION_LOG_ENTRIES:END -->');
+  expect(html).toContain('No entries yet — check back after the next weekly run.');
+  expect(html).toContain('evidence/decision-log.json');
+  expect(html).toContain('evidence/decision-log-tags.json');
+});
+
+test('the decision log reuses the limitations-list--stacked component rather than a bespoke card grid', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const list = page.locator('#decision-log ul');
+  await expect(list).toHaveClass(/limitations-list/);
+  await expect(list).toHaveClass(/limitations-list--stacked/);
+});
+
+test('the decision log renders its explicit empty state (currently the live, correct state)', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const section = page.locator('#decision-log');
+  await expect(section).toBeVisible();
+  await expect(section.getByText('No entries yet — check back after the next weekly run.')).toBeVisible();
+});
+
+test('the decision log links to its structured evidence files with working relative paths', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const section = page.locator('#decision-log');
+  await expect(section.getByRole('link', { name: 'decision-log.json' })).toHaveAttribute('href', '../../evidence/decision-log.json');
+  await expect(section.getByRole('link', { name: 'capability tag taxonomy' })).toHaveAttribute('href', '../../evidence/decision-log-tags.json');
+});
