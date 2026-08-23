@@ -8,6 +8,9 @@ tmp/
 .DS_Store
 Thumbs.db
 
+# Local Claude Code session tooling (browser-preview launch config, etc.) -- not repo content
+.claude/
+
 # Secrets
 .env
 .env.*
