@@ -4,7 +4,7 @@ type: feat
 date: 2026-08-24
 topic: historical-decision-harness-backfill
 execution: code
-status: planned
+status: in-progress
 ---
 
 # Historical Decision and Personal AI Harness Backfill
@@ -19,6 +19,12 @@ Build a bounded backfill process that reconstructs the historical decision trail
 The result is a reviewed, chronologically ordered decision inventory. Each record has one primary project tag, optional secondary tags, a lifecycle status, evidence boundaries, and a public eligibility decision. Only sanitized and sufficiently supported records may reach the recruiter-facing decision log.
 
 This is a backfill plan, not an instruction to publish every historical artifact. Raw conversations, private paths, secrets, unverified claims, and inferred dates remain internal or are excluded.
+
+## Current Backfill Result
+
+The first execution pass produced 15 inventory records and 12 sanitized profile-oracle decisions. Sources included the repository decision log, project strategy trails, repository plans, `tasks/lessons.md`, and selected shared harness plans, durable lessons, and incident summaries.
+
+The profile oracle contains only records with a usable public summary and stable project assignment. Records marked `eligible-after-redaction`, `eligible-after-implementation`, or `planned` remain bounded claims and require the normal human review or implementation gate before publication.
 
 ## Problem Frame
 

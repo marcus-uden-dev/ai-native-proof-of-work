@@ -55,6 +55,8 @@ Optional historical preview: [published Job-Agent V1 snapshot](https://theonedar
 | 3 | [Architecture Overview](architecture/ARCHITECTURE.md) | Technical model |
 | 4 | [AI Operating Model](workflows/AI_OPERATING_MODEL.md) | How the workflow layer works |
 | 5 | [llms.txt](llms.txt) | Machine-readable repository map |
+| 6 | [Profile Oracle](profile-oracle.json) | Compact agent-friendly profile projection |
+| 7 | [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json) | Backfill source boundary and lifecycle classification |
 
 ## By Question
 
@@ -64,6 +66,8 @@ Optional historical preview: [published Job-Agent V1 snapshot](https://theonedar
 | What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
 | Where can I see the published historical demo? | [Job-Agent V1 Snapshot](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/job-agent/index.html) |
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
+| What can an agent answer about Marcus? | [Profile Oracle](profile-oracle.json) |
+| Which historical decisions were backfilled? | [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json) |
 | Can an LLM create a fair recruiter report about Marcus? | [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |
 | How can another user install the lead product? | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |

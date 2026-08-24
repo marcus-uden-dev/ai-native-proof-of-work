@@ -1,6 +1,6 @@
 # Recruiter Agent Guide
 
-Last updated: 2026-08-09
+Last updated: 2026-08-25
 Status: Active / Agent-readable
 
 ## Purpose
@@ -12,6 +12,8 @@ The repo is designed to be read directly in GitHub. It is not an application cod
 It also has a reusable template layer. If the goal is to recreate the proof-of-work system for another user, start from [template/](template/) instead of copying Marcus-specific evidence.
 
 If your task is to create a report about Marcus, start with [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md). It defines the expected report structure, source priority, evidence boundaries, and interpretation rules.
+
+For direct questions about Marcus's projects, decisions, capabilities, or working model, read [profile-oracle.json](profile-oracle.json) first. It is the compact machine-readable profile projection. Use the [historical decision inventory](docs/evidence/historical-decision-inventory.json) to inspect the backfill source boundary and lifecycle status before making a stronger claim.
 
 ## Evaluation Goal
 
@@ -42,6 +44,8 @@ Assess Marcus’s practical evidence for:
 13. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
 14. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
 15. [Source Map](SOURCE_MAP.md)
+16. [Profile Oracle](profile-oracle.json)
+17. [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json)
 
 ## Reuse / Template Reading Order
 
@@ -66,6 +70,7 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 - Treat job-agent as the lead proof point.
 - Treat PKM and the household budget app as supporting proof points.
 - Treat automation, source indexes, weekly compiler, and review loops as documented operating infrastructure and secondary proof points.
+- Treat Personal AI Harness as the operating layer behind the product work, not as a substitute for the concrete product proof points.
 - Do not assume local-only files, raw chats, private project folders, or internal indexes are available.
 - Do not infer exact metrics unless a file marks them as verified.
 - Prefer evidence-labeled claims over broad positioning statements.
@@ -73,6 +78,8 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 - For job-agent repo reading order, use the committed branch's own contract: `docs/operations/current-status.md` first for active status, `docs/operations/llm-handoff.md` when present for session carry-over, `docs/overview/agent-context.md` for the deeper repo/module map, and direct git/file verification when commits are newer than those docs.
 - Treat committed branch evidence as safer than dirty local worktree state. The 2026-08-09 weekly refresh intentionally excludes uncommitted `job-agent` changes from recruiter-facing proof and separates the latest committed product-code signal (`cfb91bc`) from later ops/doc commits.
 - If a source-repo status doc date lags the actual git HEAD, prefer the direct source-verification date recorded in the handoff guide or weekly log.
+- Prefer `Verified` records in the profile oracle. Treat `Planned`, `Needs Review`, and `eligible-after-redaction` records as bounded evidence, not completed public claims.
+- Use the primary project field and stable capability tags when explaining which project demonstrates a capability.
 
 ## Capability Extraction Map
 

@@ -11,6 +11,8 @@ The repository itself is not the product. Concrete projects are the primary proo
 - [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md): fair report format for recruiter-side LLMs.
 - [START_HERE.md](START_HERE.md): one-minute orientation.
 - [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md): fastest summary of strongest proof points.
+- [profile-oracle.json](profile-oracle.json): machine-readable, evidence-bounded profile facts, project map, capabilities, and reviewed decisions.
+- [docs/evidence/historical-decision-inventory.json](docs/evidence/historical-decision-inventory.json): backfill inventory with source boundaries, lifecycle status, and public eligibility.
 - [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md): lead project case study.
 - [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md): capability-to-evidence map.
 - [PROJECT_STATUS.md](PROJECT_STATUS.md): current project state and blockers.
@@ -34,6 +36,7 @@ The repository itself is not the product. Concrete projects are the primary proo
 - [SOURCE_MAP.md](SOURCE_MAP.md): recruiter-safe source summary.
 - [strategy/README.md](strategy/README.md): strategy index.
 - [logs/DECISION_LOG.md](logs/DECISION_LOG.md): decision trail.
+- [logs/DECISION_LOG_TAGS.md](logs/DECISION_LOG_TAGS.md): controlled capability-tag taxonomy and assignment rules.
 - [logs/PROBLEM_SOLVING_LOG.md](logs/PROBLEM_SOLVING_LOG.md): problems and mitigations.
 - [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md): workflow improvements.
 - [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md): sanitized case study for Marcus-created reusable skills.
@@ -67,6 +70,8 @@ Use this only when the task is to clone, fork, or adapt the proof-of-work system
 
 - Do not fabricate evidence, metrics, dates, commits, screenshots, users, revenue, or outcomes.
 - Use evidence labels: Verified, Estimated, Planned, Open Question, Decision, Hypothesis, Rejected, Internal, Needs Review.
+- For questions about Marcus, read `profile-oracle.json` first, then follow its evidence links and use the deeper recruiter path for context.
+- Treat `docs/evidence/historical-decision-inventory.json` as a reviewed backfill draft. Do not treat every candidate as public or implemented.
 - Keep recruiter-facing docs free of private local paths, raw chat logs, credentials, secrets, personal data, and sensitive third-party material.
 - Treat template files as reusable structure, not as permission to copy Marcus-specific evidence.
 - For weekly updates, prefer `weekly-input/`, repo-visible changes, safe source summaries, and explicit user-provided evidence.

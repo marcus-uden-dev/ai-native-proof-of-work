@@ -1,0 +1,186 @@
+{
+  "created": "2026-08-25",
+  "author": "Marcus Udén (Codex)",
+  "source_tool": "Codex Desktop",
+  "source": "reviewed projection of repository and harness evidence",
+  "type": "profile-oracle",
+  "status": "draft",
+  "review_status": "needs-human-review",
+  "tags": ["profile", "oracle", "agent-friendly", "recruiter-evidence"],
+  "purpose": "Machine-readable, evidence-bounded answers about Marcus's projects, decisions, working methods, and AI-native operating layer.",
+  "reading_rules": [
+    "Prefer Verified records over Planned records.",
+    "Do not infer metrics, adoption, revenue, or completed implementation from a plan alone.",
+    "Treat Personal AI Harness as supporting operating infrastructure, not the primary product proof.",
+    "Use the primary_project field when answering which project demonstrates a capability.",
+    "Use evidence_refs for traceability and report uncertainty when a record is marked Needs Review."
+  ],
+  "projects": [
+    {
+      "id": "job-agent",
+      "role": "lead-proof-point",
+      "summary": "A structured, human-reviewed career workflow product with explicit handoff, status, and evidence boundaries.",
+      "status": "work-in-progress",
+      "evidence_refs": ["PROJECT_STATUS.md", "PROJECT_PROOF_POINTS.md", "case-studies/JOB_AGENT_CASE_STUDY.md"]
+    },
+    {
+      "id": "pkm",
+      "role": "supporting-proof-point",
+      "summary": "Knowledge and personal information management work presented conservatively until sustained daily-use value is validated.",
+      "status": "supporting-evidence",
+      "evidence_refs": ["strategy/pkm/README.md", "case-studies/PKM_CASE_STUDY.md"]
+    },
+    {
+      "id": "household-budget",
+      "role": "supporting-proof-point",
+      "summary": "Shared-domain modeling evidence involving imports, roles, review flows, forecasts, and privacy-sensitive data.",
+      "status": "supporting-evidence",
+      "evidence_refs": ["strategy/household-budget-app/README.md", "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md"]
+    },
+    {
+      "id": "personal-ai-harness",
+      "role": "operating-layer",
+      "summary": "The memory, agent, automation, and improvement layer behind the work. It is continuously refined by adding useful capabilities and pruning what no longer earns its place.",
+      "status": "continuously-evolving",
+      "evidence_refs": ["strategy/personal-ai-harness/README.md", "case-studies/WORKFLOW_IMPLEMENTATION_CASES.md", "workflows/SCHEDULED_TASKS_MODEL.md"]
+    }
+  ],
+  "capabilities": [
+    {"tag":"product-judgment","shows":"Makes product decisions under uncertainty with explicit scope, sequencing, and trade-offs."},
+    {"tag":"systems-thinking","shows":"Understands dependencies, feedback loops, and second-order effects across products and workflows."},
+    {"tag":"evidence-driven","shows":"Separates facts, assumptions, interpretation, and verified source boundaries."},
+    {"tag":"workflow-automation","shows":"Turns repeatable work into controlled, reviewable automated workflows."},
+    {"tag":"ai-native-workflows","shows":"Redesigns work around AI capabilities instead of only adding AI to manual processes."},
+    {"tag":"continuous-improvement","shows":"Uses outcomes, failures, and lessons to improve future iterations."},
+    {"tag":"decision-traceability","shows":"Preserves links between context, options, trade-offs, decisions, evidence, and next actions."},
+    {"tag":"quality-gate","shows":"Uses explicit checks and pass/fail boundaries before changes are published."},
+    {"tag":"human-in-the-loop","shows":"Places human review where automation should not act autonomously."},
+    {"tag":"reusable-systems","shows":"Converts repeated solutions and lessons into reusable systems, templates, and workflows."}
+  ],
+  "decisions": [
+    {
+      "id":"decision-2026-08-24-personal-ai-harness-name",
+      "date":"2026-08-24",
+      "project":"personal-ai-harness",
+      "status":"Verified",
+      "title":"Name the operating layer Personal AI Harness",
+      "summary":"The system is framed as the evolving operating layer behind the products, not as the product portfolio itself.",
+      "tags":["product-judgment","systems-thinking","context-engineering","continuous-improvement"],
+      "evidence_refs":["strategy/personal-ai-harness/README.md","README.md"]
+    },
+    {
+      "id":"decision-2026-08-20-scheduled-finding-canary",
+      "date":"2026-08-20",
+      "project":"personal-ai-harness",
+      "status":"Verified",
+      "title":"Test scheduled finding intake with a bounded canary first",
+      "summary":"A 14-day canary was chosen before expanding to a full cross-runtime reporting architecture.",
+      "tags":["prioritization","automation-judgment","workflow-automation","validation"],
+      "evidence_refs":["Shared harness plan: scheduled finding intake path decision, dated 2026-08-15"]
+    },
+    {
+      "id":"decision-2026-08-10-shared-skill-runtime-neutrality",
+      "date":"2026-08-10",
+      "project":"personal-ai-harness",
+      "status":"Verified",
+      "title":"Keep reusable skill source runtime-neutral",
+      "summary":"Shared skill source and runtime-specific adaptations were separated to survive upgrades and support multiple runtimes.",
+      "tags":["reusable-infrastructure","governance-architecture","risk-controls","reusable-systems"],
+      "evidence_refs":["Shared incident: shared skill installer runtime drift, dated 2026-08-10"]
+    },
+    {
+      "id":"decision-2026-08-09-product-code-freshness-boundary",
+      "date":"2026-08-09",
+      "project":"job-agent",
+      "status":"Verified",
+      "title":"Separate product-code freshness from later documentation work",
+      "summary":"The portfolio names the latest product-code signal separately from later documentation and operations commits.",
+      "tags":["evidence-driven","decision-traceability","research-judgment"],
+      "evidence_refs":["logs/DECISION_LOG.md","PROJECT_STATUS.md"]
+    },
+    {
+      "id":"decision-2026-08-05-committed-branch-over-dirty-wip",
+      "date":"2026-08-05",
+      "project":"job-agent",
+      "status":"Verified",
+      "title":"Use committed source state and exclude dirty work in recruiter proof",
+      "summary":"Recruiter-facing claims are anchored to committed source state rather than uncommitted local work.",
+      "tags":["risk-awareness","evidence-driven","quality-assurance"],
+      "evidence_refs":["logs/DECISION_LOG.md","RECRUITER_AGENT_GUIDE.md"]
+    },
+    {
+      "id":"decision-2026-06-28-job-agent-handoff-hierarchy",
+      "date":"2026-06-28",
+      "project":"job-agent",
+      "status":"Verified",
+      "title":"Preserve the source repository handoff hierarchy",
+      "summary":"Orientation, durable status, and direct freshness verification retain distinct roles in the product handoff.",
+      "tags":["systems-thinking","decision-support","knowledge-management"],
+      "evidence_refs":["logs/DECISION_LOG.md","RECRUITER_AGENT_GUIDE.md","case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md"]
+    },
+    {
+      "id":"lesson-2026-06-25-repo-docs-stay-with-repo",
+      "date":"2026-06-25",
+      "project":"personal-ai-harness",
+      "status":"Verified",
+      "title":"Keep repo-owned durable documents with the owning repository",
+      "summary":"Repo-specific durable documents stay with their owning project, while shared agent docs remain focused on cross-runtime coordination.",
+      "tags":["knowledge-management","governance-architecture","reusable-systems"],
+      "evidence_refs":["Shared lesson: repo docs stay with the owning repository, dated 2026-06-25"]
+    },
+    {
+      "id":"lesson-2026-06-24-decision-first-reporting",
+      "date":"2026-06-24",
+      "project":"personal-ai-harness",
+      "status":"Verified",
+      "title":"Make decision-heavy reports decision-first",
+      "summary":"Put the decision, recommended action, reply options, and concise evidence near the top so a reader can act quickly.",
+      "tags":["decision-support","research-synthesis","stakeholder-understanding"],
+      "evidence_refs":["Shared lesson: decision-first report format, dated 2026-06-24"]
+    },
+    {
+      "id":"decision-2026-06-02-workflow-cases-supporting-proof",
+      "date":"2026-06-02",
+      "project":"personal-ai-harness",
+      "status":"Verified",
+      "title":"Show workflow improvements as supporting cases",
+      "summary":"Lessons, skills, automations, and templates become supporting workflow cases while products remain the lead proof.",
+      "tags":["reusable-systems","ai-native-workflows","product-judgment"],
+      "evidence_refs":["logs/DECISION_LOG.md","case-studies/WORKFLOW_IMPLEMENTATION_CASES.md"]
+    },
+    {
+      "id":"decision-2026-05-11-product-first-proof-points",
+      "date":"2026-05-11",
+      "project":"personal-ai-harness",
+      "status":"Verified",
+      "title":"Keep concrete products ahead of the operating layer",
+      "summary":"Job-agent leads the portfolio, with PKM and household budgeting as supporting product evidence and the harness as the enabling layer.",
+      "tags":["product-taste","prioritization","stakeholder-understanding"],
+      "evidence_refs":["README.md","PROJECT_PROOF_POINTS.md"]
+    },
+    {
+      "id":"decision-2026-05-11-pkm-evidence-boundary",
+      "date":"2026-05-11",
+      "project":"pkm",
+      "status":"Verified",
+      "title":"Keep PKM supporting until sustained value is validated",
+      "summary":"PKM is presented as supporting evidence without claiming validated adoption or daily-use outcomes.",
+      "tags":["research-judgment","product-judgment","evidence-driven"],
+      "evidence_refs":["strategy/pkm/README.md","PROJECT_PROOF_POINTS.md"]
+    },
+    {
+      "id":"decision-2026-05-11-household-budget-domain-modeling",
+      "date":"2026-05-11",
+      "project":"household-budget",
+      "status":"Verified",
+      "title":"Use household budgeting as shared-domain modeling evidence",
+      "summary":"The budget app demonstrates shared roles, imports, review flows, forecasts, and privacy-sensitive domain modeling.",
+      "tags":["systems-thinking","problem-framing","stakeholder-understanding"],
+      "evidence_refs":["strategy/household-budget-app/README.md","PROJECT_PROOF_POINTS.md"]
+    }
+  ],
+  "public_boundary": {
+    "allowed": ["sanitized summaries", "stable project IDs", "capability tags", "repo-relative evidence links", "verified or explicitly planned statuses"],
+    "excluded": ["raw conversations", "private local paths", "secrets", "personal financial details", "unverified metrics", "internal runtime mechanics"]
+  }
+}
