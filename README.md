@@ -1,6 +1,6 @@
 # AI-Native Proof of Work
 
-> Canonical repo: `TheOneDarkHorse/ai-native-proof-of-work`
+> Canonical repo: `marcus-uden-dev/ai-native-proof-of-work`
 
 A public, recruiter-shareable archive documenting practical product work, AI-native execution, project-scoped product strategy, architecture reasoning, and execution discipline.
 

@@ -128,5 +128,5 @@ Status: Active / Project-focused evidence map
 | PKM and household budget app are strong supporting projects | Internal / Verified | Add sanitized project case-study pages or selected commits/tests |
 | Weekly workflow improvement has measurable impact | Estimated / not directly tracked | Time saved, reuse count, or before/after workflow data |
 | Recruiter assets improve response or interview quality | Hypothesis | Recruiter feedback, interview outcomes, or sharing results |
-| Static demo portal publication | Verified | Published through separate public repo [TheOneDarkHorse/ai-native-proof-of-work-demo](https://github.com/TheOneDarkHorse/ai-native-proof-of-work-demo) and smoke-tested live |
+| Static demo portal publication | Verified | Published through separate public repo [marcus-uden-dev/ai-native-proof-of-work-demo](https://github.com/marcus-uden-dev/ai-native-proof-of-work-demo) and smoke-tested live |
 | Weekly narrative for the 2026-08-09 source boundary | Needs Review | Direct source verification exists through 2026-08-09, but there is still no dated `weekly-input/` note explaining user-visible outcomes or decision context for the latest job-agent redesign branch changes |

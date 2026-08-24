@@ -4,7 +4,7 @@ Use this prompt in Codex if the repository is empty or only partially scaffolded
 
 ```text
 Bootstrap the private GitHub portfolio evidence repository:
-https://github.com/TheOneDarkHorse/ai-native-proof-of-work
+https://github.com/marcus-uden-dev/ai-native-proof-of-work
 
 Run from the repository root.
 

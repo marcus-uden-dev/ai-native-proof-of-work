@@ -371,7 +371,7 @@ Context → Need recruiter-readable proof.
 Options Considered → GitHub, Drive, PDF, website.
 Tradeoffs → GitHub is less polished than a website but more versioned and operational.
 Decision → Use private GitHub repo.
-Evidence → Repository exists: TheOneDarkHorse/ai-native-proof-of-work.
+Evidence → Repository exists: marcus-uden-dev/ai-native-proof-of-work.
 Open Questions → Which artifacts should be shared first?
 Next Action → Populate first verified proof points.
 ```

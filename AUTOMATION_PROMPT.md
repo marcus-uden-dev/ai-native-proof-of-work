@@ -8,7 +8,7 @@ Active schedule and recreation details are documented in [template/WEEKLY_AUTOMA
 Run the weekly Proof-of-Work Compiler for my private GitHub portfolio evidence repository.
 
 Canonical repo:
-https://github.com/TheOneDarkHorse/ai-native-proof-of-work
+https://github.com/marcus-uden-dev/ai-native-proof-of-work
 
 The repo is recruiter-shareable and documents concrete product execution first, especially job-agent, with PKM and the household budget app as supporting proof points. It is the portfolio evidence layer, not the product. It also documents the automation, source indexing, weekly review, and Claude/Codex operating model that make the work repeatable and recruiter-readable.
 

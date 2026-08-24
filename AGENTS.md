@@ -18,7 +18,7 @@ Reusable clone/fork/template adoption material belongs under `template/` so the 
 Canonical GitHub repository:
 
 ```text
-https://github.com/TheOneDarkHorse/ai-native-proof-of-work
+https://github.com/marcus-uden-dev/ai-native-proof-of-work
 ```
 
 Repository name:
@@ -430,7 +430,7 @@ Before completing any weekly run, verify:
 21. Summarize local sources; do not dump raw content.
 22. Respect Marcus’s custom shared-skills setup.
 23. Treat `.agents` as potentially important but structurally non-standard.
-24. Treat `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` as the canonical repository.
+24. Treat `https://github.com/marcus-uden-dev/ai-native-proof-of-work` as the canonical repository.
 25. If not running inside the repo, report that limitation before attempting edits.
 
 ## Weekly Final Response Format

@@ -7,7 +7,7 @@ Time spent: Estimated / not directly tracked.
 
 This run retried GitHub export from ChatGPT using the GitHub connector after a prior run could not write to the canonical proof-of-work repository.
 
-Canonical repository: `TheOneDarkHorse/ai-native-proof-of-work`
+Canonical repository: `marcus-uden-dev/ai-native-proof-of-work`
 
 ## Instruction Source
 

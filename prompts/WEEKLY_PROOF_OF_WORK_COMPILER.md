@@ -1,6 +1,6 @@
 # Weekly Proof-of-Work Compiler Prompt
 
-Use this prompt in Codex from the root of `TheOneDarkHorse/ai-native-proof-of-work`.
+Use this prompt in Codex from the root of `marcus-uden-dev/ai-native-proof-of-work`.
 
 The active weekly schedule and recreation contract are documented in [../template/WEEKLY_AUTOMATION_RUNBOOK.md](../template/WEEKLY_AUTOMATION_RUNBOOK.md).
 
@@ -8,7 +8,7 @@ The active weekly schedule and recreation contract are documented in [../templat
 Run the weekly Proof-of-Work Compiler for this private GitHub portfolio evidence repository.
 
 Treat this repository as the canonical source of truth:
-https://github.com/TheOneDarkHorse/ai-native-proof-of-work
+https://github.com/marcus-uden-dev/ai-native-proof-of-work
 
 Clean-state contract:
 - Before editing, run `pwsh -NoProfile -File scripts/Test-CleanGitState.ps1` from the repository root.

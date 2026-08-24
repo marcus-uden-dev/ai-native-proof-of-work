@@ -13,7 +13,7 @@ It does not expose private local paths or sensitive material.
 
 | Item | Location | Notes |
 |---|---|---|
-| Portfolio evidence repository | `https://github.com/TheOneDarkHorse/ai-native-proof-of-work` | Main public recruiter-shareable archive; sensitive local sources remain excluded |
+| Portfolio evidence repository | `https://github.com/marcus-uden-dev/ai-native-proof-of-work` | Main public recruiter-shareable archive; sensitive local sources remain excluded |
 
 ## Source Categories
 
@@ -49,7 +49,7 @@ Recent source signals from this check:
 
 - Job-agent source status and handoff docs had 2026-05-31 updates, including repo-ops and handoff context that should remain source-verified before future promotion.
 - PKM and the household budget app each have 2026-05-26 dependency-maintenance commits; these are maintenance signals, not new product-outcome claims.
-- The proof-of-work repo now has a committed static demo portal and a separate public demo repository: `https://github.com/TheOneDarkHorse/ai-native-proof-of-work-demo`.
+- The proof-of-work repo now has a committed static demo portal and a separate public demo repository: `https://github.com/marcus-uden-dev/ai-native-proof-of-work-demo`.
 - Direct source verification on 2026-08-09 refreshed the `job-agent` evidence boundary from committed source files and git history, including the current startup contract, the active branch `feat/frontend-redesign-shell` at `bc10287`, July redesign planning plus M0/M1 shell work, August 8 shell polish at `cfb91bc`, 44 migration files with named head `0043` plus one older hash anomaly, and a committed-status-versus-dirty-worktree boundary for recruiter-facing claims.
 
 ## Current Weekly Boundary

@@ -6,7 +6,7 @@ Use this prompt in Codex on Marcus’s local machine, not in a remote-only envir
 Refresh local source indexes for the AI-native portfolio evidence repository.
 
 Target repo:
-https://github.com/TheOneDarkHorse/ai-native-proof-of-work
+https://github.com/marcus-uden-dev/ai-native-proof-of-work
 
 Canonical positioning:
 - Local indexes are internal evidence infrastructure.

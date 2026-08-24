@@ -24,7 +24,7 @@ For another user, the weekly update loop must use that user's own repositories a
 Run these commands in **PowerShell** from the folder where you want to clone the repo:
 
 ```powershell
-git clone https://github.com/TheOneDarkHorse/ai-native-proof-of-work.git
+git clone https://github.com/marcus-uden-dev/ai-native-proof-of-work.git
 cd ai-native-proof-of-work
 ```
 
@@ -48,14 +48,14 @@ git push origin main
 ## Option B — Upload directly to GitHub
 
 1. Open the private repo:
-   `https://github.com/TheOneDarkHorse/ai-native-proof-of-work`
+   `https://github.com/marcus-uden-dev/ai-native-proof-of-work`
 2. Upload the ZIP contents, not the outer folder if GitHub asks for files.
 3. Commit to `main`.
 4. Open [README.md](../README.md) and confirm Mermaid diagrams render.
 
 ## Option C — Use GitHub Desktop
 
-1. Clone `TheOneDarkHorse/ai-native-proof-of-work`.
+1. Clone `marcus-uden-dev/ai-native-proof-of-work`.
 2. Extract this ZIP into the local repo folder.
 3. Review changes.
 4. Commit: `Bootstrap AI-native proof-of-work repository`.

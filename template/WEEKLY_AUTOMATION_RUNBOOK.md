@@ -20,7 +20,7 @@ This supports the one-click clone goal state: the repository should carry enough
 | Status | Active |
 | Schedule | Sunday at 22:00 |
 | Schedule rule | `RRULE:FREQ=WEEKLY;BYHOUR=22;BYMINUTE=0;BYDAY=SU` |
-| Target repository | `TheOneDarkHorse/ai-native-proof-of-work` |
+| Target repository | `marcus-uden-dev/ai-native-proof-of-work` |
 | Execution model | Local documentation update |
 | Primary prompt source | [AUTOMATION_PROMPT.md](../AUTOMATION_PROMPT.md) |
 | Supporting prompt | [prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md](../prompts/WEEKLY_PROOF_OF_WORK_COMPILER.md) |
@@ -117,7 +117,7 @@ If the scheduled automation is missing, recreate it with these settings:
 | Prompt | Use [AUTOMATION_PROMPT.md](../AUTOMATION_PROMPT.md) |
 | Schedule | Weekly, Sunday, 22:00 |
 | RRULE | `RRULE:FREQ=WEEKLY;BYHOUR=22;BYMINUTE=0;BYDAY=SU` |
-| Repository root | The local clone of `TheOneDarkHorse/ai-native-proof-of-work` |
+| Repository root | The local clone of `marcus-uden-dev/ai-native-proof-of-work` |
 | Environment | Local clone or equivalent isolated working copy |
 | Status | Active |
 
