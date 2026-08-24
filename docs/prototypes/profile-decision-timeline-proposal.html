@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Profile page — Decision timeline proposal</title>
+  <style>
+    :root { --paper:#f6f1e6; --paper-raised:#fffcf5; --ink:#211d16; --muted:#625b4b; --faint:#8c8471; --rule:#dfd3b9; --gold:#9c6a22; --gold-tint:#efe0c1; --teal:#29685a; --teal-tint:#dbe9e2; --dark:#201b12; --dark-muted:#b7ab8c; --font-display:Georgia,'Times New Roman',serif; --font-body:Inter,'Segoe UI',sans-serif; --font-mono:'IBM Plex Mono',Consolas,monospace; }
+    * { box-sizing:border-box; }
+    body { margin:0; color:var(--ink); background:var(--paper); font:15px/1.6 var(--font-body); }
+    a { color:inherit; }
+    .shell { width:min(1120px, calc(100% - 40px)); margin:auto; }
+    .masthead { border-bottom:1px solid var(--rule); background:rgba(255,252,245,.82); }
+    .masthead__inner { display:flex; align-items:center; justify-content:space-between; gap:24px; min-height:68px; }
+    .wordmark { display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; }
+    .mark { display:grid; place-items:center; width:30px; height:30px; background:var(--dark); color:#fff8e9; font:12px var(--font-mono); }
+    nav { color:var(--muted); font-size:13px; }
+    nav a { margin-left:20px; text-decoration:none; }
+    .hero { padding:76px 0 58px; display:grid; grid-template-columns:1.35fr .65fr; gap:70px; align-items:end; }
+    .eyebrow,.kicker { margin:0 0 12px; color:var(--gold-strong,var(--gold)); font:600 11px/1.2 var(--font-mono); letter-spacing:.1em; text-transform:uppercase; }
+    h1,h2,h3 { margin:0; font-family:var(--font-display); font-weight:500; line-height:1.08; }
+    h1 { max-width:720px; font-size:clamp(42px,6vw,72px); letter-spacing:-.035em; }
+    h2 { font-size:clamp(30px,4vw,45px); letter-spacing:-.025em; }
+    h3 { font-size:25px; }
+    .hero__lead { max-width:660px; margin:24px 0 0; color:var(--muted); font-size:18px; }
+    .signal { border-left:3px solid var(--teal); padding:16px 0 16px 20px; }
+    .signal strong { display:block; font:600 13px var(--font-mono); }
+    .signal span { display:block; margin-top:7px; color:var(--muted); }
+    .dark-band { padding:25px 0; background:var(--dark); color:#efe7d4; }
+    .band-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+    .band-grid p { margin:0; color:var(--dark-muted); font-size:13px; }
+    .band-grid strong { display:block; margin-bottom:3px; color:#fff4d9; font:600 12px var(--font-mono); }
+    .section { padding:70px 0; }
+    .section--ruled { border-top:1px solid var(--rule); }
+    .heading { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:end; margin-bottom:30px; }
+    .heading p { margin:0; color:var(--muted); }
+    .controls { display:flex; flex-wrap:wrap; gap:9px; margin:24px 0 30px; }
+    button { border:1px solid var(--rule-strong,var(--rule)); border-radius:999px; padding:8px 13px; background:transparent; color:var(--muted); font:600 12px var(--font-mono); cursor:pointer; }
+    button:hover,button:focus-visible { outline:3px solid var(--teal-tint); outline-offset:2px; }
+    button[aria-pressed="true"] { border-color:var(--dark); background:var(--dark); color:#fff4d9; }
+    .timeline { border-left:1px solid var(--rule-strong,var(--rule)); margin-left:14px; }
+    .entry { position:relative; display:grid; grid-template-columns:150px 1fr; gap:28px; padding:0 0 34px 30px; }
+    .entry:last-child { padding-bottom:0; }
+    .entry::before { content:""; position:absolute; width:11px; height:11px; left:-6px; top:7px; background:var(--gold); border:3px solid var(--paper); outline:1px solid var(--gold); }
+    .entry__date { color:var(--faint); font:600 12px var(--font-mono); }
+    .entry__date span { display:block; margin-top:5px; color:var(--teal); font-size:10px; }
+    .entry__title { margin-bottom:8px; font-size:27px; }
+    .entry__summary { max-width:690px; margin:0; color:var(--muted); }
+    .tags { display:flex; flex-wrap:wrap; gap:7px; margin-top:14px; }
+    .tag { display:inline-flex; align-items:center; border:1px solid var(--rule-strong,var(--rule)); border-radius:999px; padding:3px 8px; color:var(--muted); font:600 10px var(--font-mono); }
+    .tag--project { border-color:var(--teal); background:var(--teal-tint); color:#1e5145; }
+    .tag--type { border-color:var(--gold); background:var(--gold-tint); color:#6d4715; }
+    .legend { display:flex; flex-wrap:wrap; gap:18px; margin-top:26px; color:var(--muted); font-size:12px; }
+    .legend span { display:inline-flex; align-items:center; gap:7px; }
+    .legend i { width:10px; height:10px; display:inline-block; border-radius:50%; background:var(--gold); }
+    .legend i.project { border-radius:2px; background:var(--teal); }
+    .legend i.history { border-radius:0; background:var(--dark); }
+    .footer { padding:32px 0 60px; color:var(--muted); border-top:1px solid var(--rule); font-size:13px; }
+    @media (max-width:760px) { .masthead__inner,.hero,.heading { display:block; } nav { margin-top:15px; } nav a { margin:0 16px 0 0; } .hero { padding-top:48px; } .signal { margin-top:34px; } .band-grid { grid-template-columns:1fr; gap:13px; } .heading p { margin-top:18px; } .entry { grid-template-columns:1fr; gap:4px; } .entry__title { font-size:24px; } }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="shell masthead__inner">
+      <a class="wordmark" href="#top"><span class="mark">MU</span><span>Marcus Udén</span></a>
+      <nav aria-label="Profile navigation"><a href="#work">Selected work</a><a href="#decisions">Decisions</a><a href="#contact">Contact</a></nav>
+    </div>
+  </header>
+  <main id="top">
+    <section class="shell hero">
+      <div><p class="eyebrow">Profile / how I work</p><h1>Good work leaves a trail of decisions.</h1><p class="hero__lead">A recruiter-readable history of what changed, why it changed, and which project it improved — ordered by time, not by tool.</p></div>
+      <aside class="signal"><strong>Prototype proposal</strong><span>Historical decision log with project tags, capability tags, and a compact evidence status. Draft only — not yet published.</span></aside>
+    </section>
+    <section class="dark-band"><div class="shell band-grid"><p><strong>10 historical decisions</strong>Candidate records found in the private proof-of-work archive.</p><p><strong>4 project lenses</strong>Personal AI Harness, Job-agent, PKM, and household budget app.</p><p><strong>One reading path</strong>Timeline first; filters help a recruiter go deeper.</p></div></section>
+    <section class="section shell" id="decisions">
+      <div class="heading"><div><p class="kicker">Decision timeline</p><h2>What changed, in order.</h2></div><p>Each entry separates the decision type from the capability it demonstrates. Project tags stay stable so a reader can follow one product without losing the wider trail.</p></div>
+      <div class="controls" aria-label="Filter decisions by project"><button aria-pressed="true" data-filter="all">All decisions</button><button aria-pressed="false" data-filter="portfolio">Personal AI Harness</button><button aria-pressed="false" data-filter="job-agent">Job-agent</button><button aria-pressed="false" data-filter="pkm">PKM</button><button aria-pressed="false" data-filter="household-budget">Household budget</button></div>
+      <div class="timeline">
+        <article class="entry" data-project="portfolio"><div class="entry__date">2026-08-09<span>Verified · historical</span></div><div><h3 class="entry__title">Separate product freshness from later documentation work</h3><p class="entry__summary">The timeline distinguishes a committed product-code milestone from later docs and operations commits, so evidence stays accurate when the archive changes after the product.</p><div class="tags"><span class="tag tag--project">project: personal-ai-harness</span><span class="tag tag--type">decision: evidence discipline</span><span class="tag">evidence-driven</span><span class="tag">systems-thinking</span></div></div></article>
+        <article class="entry" data-project="job-agent"><div class="entry__date">2026-06-28<span>Verified · historical</span></div><div><h3 class="entry__title">Use the source repo's handoff hierarchy before raw freshness checks</h3><p class="entry__summary">The lead project is evaluated through its own setup, status, and handoff material first; raw repository freshness is a fallback rather than the main proof.</p><div class="tags"><span class="tag tag--project">project: job-agent</span><span class="tag tag--type">decision: handoff</span><span class="tag">research-judgment</span><span class="tag">evidence-driven</span></div></div></article>
+        <article class="entry" data-project="portfolio"><div class="entry__date">2026-06-02<span>Verified · historical</span></div><div><h3 class="entry__title">Add workflow implementation cases as supporting proof</h3><p class="entry__summary">Reusable workflow changes are documented as small cases, so the portfolio shows practical execution instead of only principles or activity logs.</p><div class="tags"><span class="tag tag--project">project: personal-ai-harness</span><span class="tag tag--type">decision: proof packaging</span><span class="tag">workflow-automation</span><span class="tag">ai-native-workflows</span></div></div></article>
+        <article class="entry" data-project="job-agent"><div class="entry__date">2026-05-11<span>Verified · historical</span></div><div><h3 class="entry__title">Position Job-agent as a reviewed career workflow product</h3><p class="entry__summary">The product is framed around structured, human-reviewed job-search workflow support rather than generic AI text generation.</p><div class="tags"><span class="tag tag--project">project: job-agent</span><span class="tag tag--type">decision: product strategy</span><span class="tag">product-judgment</span><span class="tag">problem-framing</span></div></div></article>
+        <article class="entry" data-project="pkm"><div class="entry__date">2026-05-11<span>Verified · historical</span></div><div><h3 class="entry__title">Treat PKM as supporting evidence until daily-use value is validated</h3><p class="entry__summary">PKM remains a supporting product proof point while the evidence for sustained daily-use value is still being validated.</p><div class="tags"><span class="tag tag--project">project: pkm</span><span class="tag tag--type">decision: evidence boundary</span><span class="tag">research-judgment</span><span class="tag">product-judgment</span></div></div></article>
+        <article class="entry" data-project="household-budget"><div class="entry__date">2026-05-11<span>Verified · historical</span></div><div><h3 class="entry__title">Treat household budgeting as shared-domain modeling evidence</h3><p class="entry__summary">The household budget app is shown through shared roles, imports, review flows, forecasts, and privacy-sensitive domain modeling.</p><div class="tags"><span class="tag tag--project">project: household-budget</span><span class="tag tag--type">decision: product strategy</span><span class="tag">systems-thinking</span><span class="tag">problem-framing</span></div></div></article>
+      </div>
+      <div class="legend"><span><i></i> capability tag</span><span><i class="project"></i> project tag</span><span><i class="history"></i> evidence status</span></div>
+    </section>
+    <footer class="footer" id="contact"><div class="shell"><strong>Proposal boundary:</strong> this view shows a curated historical sample. Before publication, every record should be cross-checked against the repository source, assigned one stable project tag, and marked Verified / Needs Review / Planned.</div></footer>
+  </main>
+  <script>
+    const buttons = [...document.querySelectorAll('[data-filter]')];
+    const entries = [...document.querySelectorAll('.entry')];
+    buttons.forEach(button => button.addEventListener('click', () => {
+      const filter = button.dataset.filter;
+      buttons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      entries.forEach(entry => { entry.hidden = filter !== 'all' && entry.dataset.project !== filter; });
+    }));
+  </script>
+</body>
+</html>

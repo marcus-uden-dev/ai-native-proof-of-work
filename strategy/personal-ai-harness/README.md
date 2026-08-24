@@ -1,13 +1,13 @@
-# Portfolio Operating System Strategy
+# Personal AI Harness Strategy
 
-Last updated: 2026-05-11
+Last updated: 2026-08-24
 Status: Operating layer / Secondary proof point
 
 ## Purpose
 
-This area documents the strategy for the portfolio evidence layer as an evidence packaging and review system.
+This area documents the Personal AI Harness: the memory, agent, automation, and improvement layer behind the work. It is continuously refined by adding useful capabilities and pruning what no longer earns its place.
 
-This repository is not the product strategy target for job-agent, PKM, or the household budget app. It is the portfolio layer that makes those projects readable, reviewable, and recruiter-safe.
+The harness includes memory and lessons, source ingestion, skills, scheduled tasks, recursive review loops, human gates, agent governance, and the evidence layer that makes the work readable, reviewable, and recruiter-safe.
 
 ## Operating Value Proposition
 
@@ -17,15 +17,16 @@ Marcus uses AI-native workflows to design, build, test, document, and improve re
 
 | In Scope | Out of Scope |
 |---|---|
-| Evidence mapping | Pretending the portfolio repo is the main product |
+| Evidence mapping and recruiter packaging | Pretending the harness is the main product |
 | Weekly review | Raw chat/log publication |
 | Recruiter summaries | Unverified metrics |
 | Source indexes | Private local path exposure |
 | Decision logs | Hidden chain-of-thought |
+| Memory, skills, scheduled tasks, and recursive improvement | Autonomous self-modification without human review |
 
 ## Current Strategy
 
-Keep the operating layer secondary. It should explain how evidence is captured and promoted, while the primary product strategy lives in project folders:
+Keep the harness as a supporting proof point rather than presenting it as the main commercial product. It should explain how work is captured, remembered, improved, and promoted, while the primary product strategy lives in project folders:
 
 - [Job-Agent Strategy](../job-agent/)
 - [PKM Strategy](../pkm/)

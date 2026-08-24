@@ -1,5 +1,44 @@
 # Decision Log
 
+## 2026-08-24 — Record bilingual recruiter experience and defer technical-depth personalization
+
+### Context
+
+The recruiter-facing GitHub profile and supporting decision-log experience should be usable for Swedish- and English-speaking visitors. The current decision-log taxonomy has stable English IDs, but the public presentation also needs Swedish labels. A later idea is to let recruiters choose a technical depth, but that would add content variants and interaction complexity.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep the public experience English-only | Lowest maintenance cost | Excludes Swedish-speaking visitors and keeps tag labels less accessible |
+| Maintain separate English and Swedish content manually | Simple mental model | High risk of drift after GitHub profile or decision-log changes |
+| Use one localized content model with an entry language choice and sync validation | Supports both audiences and makes drift detectable | Requires future implementation and translation QA |
+| Add technical-depth personalization now | Could fit different recruiter backgrounds | Adds state, content, testing, and evidence-boundary complexity before the base language flow is stable |
+
+### Decision
+
+Record bilingual support as a future feature: expose `English` and `Svenska` links near the top of the GitHub profile README, provide a persistent `EN | SV` switcher in the upper-right corner of the linked proof site, retain stable English tag IDs, show Swedish labels for all current decision-log tags, and require GitHub profile or proof-site changes to trigger a paired language-sync check. Defer technical-depth personalization until further notice.
+
+### Reasoning Trail
+
+```text
+Context → Recruiters may read the profile in Swedish or English, and technical familiarity varies.
+Options Considered → English only, manually duplicated pages, a validated localized model, or localized content plus technical-depth personalization.
+Tradeoffs → A shared localized model costs more to build but lowers drift risk. Technical-depth personalization is useful but expands scope before the base flow is proven.
+Decision → Plan bilingual support and profile-triggered synchronization; defer technical-depth selection.
+Evidence → logs/DECISION_LOG_TAGS.md contains Swedish display labels for all 49 current tags and a synchronization policy.
+Open Questions → Which public surface owns the canonical profile content, and what default-language behavior is least surprising.
+Next Action → Use the complete translation plan to confirm the canonical public GitHub-profile source and public release checkout before approving implementation.
+```
+
+### Evidence
+
+[Bilingual Recruiter Profile and Localized Decision-Log Experience](../docs/plans/2026-08-24-001-feat-bilingual-recruiter-profile-experience.md), [Decision-Log Tag Taxonomy](DECISION_LOG_TAGS.md)
+
+### Status
+
+Planned — translation research is complete. Implementation remains deferred until the canonical public GitHub-profile source and public release checkout are confirmed. Technical-depth personalization remains deferred.
+
 ## 2026-08-09 — Separate committed product-code freshness from later docs/ops commits
 
 ### Context
@@ -218,7 +257,7 @@ Next Action → Review recruiter-facing navigation after the next weekly run.
 
 ### Evidence
 
-[strategy/README.md](../strategy/README.md), [strategy/job-agent/README.md](../strategy/job-agent/README.md), [strategy/pkm/README.md](../strategy/pkm/README.md), [strategy/household-budget-app/README.md](../strategy/household-budget-app/README.md), [strategy/portfolio-operating-system/README.md](../strategy/portfolio-operating-system/README.md)
+[strategy/README.md](../strategy/README.md), [strategy/job-agent/README.md](../strategy/job-agent/README.md), [strategy/pkm/README.md](../strategy/pkm/README.md), [strategy/household-budget-app/README.md](../strategy/household-budget-app/README.md), [strategy/personal-ai-harness/README.md](../strategy/personal-ai-harness/README.md)
 
 ### Status
 
