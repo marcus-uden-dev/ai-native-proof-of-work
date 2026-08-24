@@ -25,8 +25,10 @@
     "site/assets/images/job-agent/tailored-action.png",
     "site/assets/js/site.js",
     "site/assets/social-card.png",
+    "site/cv/index.html",
     "site/evidence/decision-log-tags.json",
     "site/evidence/decision-log.json",
+    "site/evidence/cv-facts.json",
     "site/evidence/fixtures/job-agent-company-v1.json",
     "site/evidence/releases/job-agent-v1.json",
     "site/index.html",
@@ -53,6 +55,9 @@
     "tests/e2e/site-shell.spec.js",
     "tests/evaluation/README.md",
     "tests/evaluation/fixtures.json",
+    "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-2026-08-24.md",
+    "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-followup-2026-08-24.md",
+    "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-followup-2026-08-24.prompt.txt",
     "tests/evaluation/rubric.md"
   ]
 }

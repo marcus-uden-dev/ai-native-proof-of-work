@@ -18,11 +18,14 @@ Use this structure with the [recruiter agent guide](https://marcus-uden-dev.gith
 
 ## Required report
 
-1. **Role needs** — List the role's important outcomes and constraints.
-2. **Evidence-backed matches** — Map each supported need to a public source.
-3. **Inference** — Label interpretations that need interview validation.
-4. **Gaps** — State requirements with no public evidence or unavailable sources.
-5. **Interview questions** — Ask five questions that test the highest-value uncertainties.
-6. **Fit assessment** — Give a short conclusion with confidence and limitations.
+1. **Executive summary** — Use at most four bullets. State the evidence-backed fit, two strongest matches, the main gap, and confidence.
+2. **Role needs** — List the role's important outcomes and constraints.
+3. **Evidence-backed matches** — Map each supported need to a public source.
+4. **Inference** — Label interpretations that need interview validation.
+5. **Gaps** — State requirements with no public evidence or unavailable sources.
+6. **Interview questions** — Ask five questions that test the highest-value uncertainties.
+7. **Fit assessment** — Give a short conclusion with confidence and limitations.
 
 Do not use synthetic company data as evidence about a real employer or a measured result. Do not paste confidential or personal data into the assessment.
+
+For employment chronology, education, language, and work authorization, cite the public [CV facts](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json) source.

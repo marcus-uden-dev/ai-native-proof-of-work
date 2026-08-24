@@ -10,6 +10,8 @@
 - [Decision log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json): Structured history of auto-published, tagged, dated self-improvement entries — rendered as static HTML on the recursive workflow page and available here as structured data.
 - [Decision log tag taxonomy](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json): The fixed set of capability tags decision log entries are assigned from.
 - [Recruiter report brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-report-brief.md): Required assessment structure.
+- [CV facts](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json): Current structured source of truth for employment chronology, education, languages, citizenship, and work authorization.
+- [CV facts page](https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/): Human-readable CV facts with links to the English PDF and structured source.
 
 Job-agent status: Work in progress. Not live. Not market-validated. No measured market outcomes.
 

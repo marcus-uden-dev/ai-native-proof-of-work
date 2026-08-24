@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "artifactId": "marcus-uden-cv-facts",
+  "status": "Current public professional source of truth",
+  "lastReviewed": "2026-08-24",
+  "canonicalUrl": "https://marcus.uden.dev/cv/",
+  "sources": {
+    "approvedPublicCv": {
+      "url": "https://marcus.uden.dev/assets/cv/marcus-uden-cv.pdf",
+      "role": "Canonical human-readable English CV",
+      "artifactSha256": "61a5f2378b8cc553b2eae6c224acc970f03765f1256a81c6027ee675a3adad90"
+    },
+    "candidateConfirmedFacts": {
+      "reviewedAt": "2026-08-24",
+      "role": "Source for citizenship, work authorization, birthplace, and family background"
+    }
+  },
+  "identity": {
+    "name": "Marcus Udén",
+    "location": "Stockholm, Sweden",
+    "citizenshipAndWorkAuthorization": "Swedish and U.S. citizen, eligible to work in Sweden.",
+    "birthplace": "Sweden",
+    "familyBackground": "One parent is American."
+  },
+  "professionalProfile": {
+    "headline": "Product Manager and Product Operations practitioner",
+    "summary": "Product and operations practitioner who turns messy operating problems into clear, buildable work.",
+    "coreCapabilities": [
+      "Product discovery and requirements",
+      "Product operations and workflow design",
+      "AI-assisted prototyping and evaluation",
+      "Customer journeys and service flows",
+      "Business analysis and regulated-process judgment",
+      "Cross-functional communication"
+    ]
+  },
+  "languages": [
+    { "language": "Swedish", "level": "native-level" },
+    { "language": "English", "level": "native-level" },
+    { "language": "Spanish", "level": "basic" }
+  ],
+  "education": [
+    {
+      "programme": "Digital Strategy",
+      "institution": "Nackademin, Stockholm",
+      "period": "2018-06 to 2020-01",
+      "focus": ["Marketing communication", "SEO", "Digital strategy", "Project management"]
+    },
+    {
+      "programme": "Law Programme",
+      "institution": "Stockholm University",
+      "period": "2006-08 to 2011-01",
+      "focus": ["Private law", "Constitutional law", "Criminal law", "Tort law"]
+    },
+    {
+      "programme": "Music Management",
+      "institution": "Kalmar University / Hultsfred",
+      "period": "2004-08 to 2006-01",
+      "focus": ["Business development", "Marketing", "Contract management"]
+    }
+  ],
+  "experience": [
+    { "title": "Consulting assignment - Customer experience and business model", "organisation": "ChefNextDoor", "period": "2025-12 to 2026-01" },
+    { "title": "Mail carrier - Logistics and customer service", "organisation": "PostNord", "period": "2023-05 to present" },
+    { "title": "Digital business developer - Digital transformation", "organisation": "Ldek AB", "period": "2022-06 to 2023-01" },
+    { "title": "Co-founder - Business development and product launch", "organisation": "Murphy Bed", "period": "2020-01 to 2022-01" },
+    { "title": "Founder - Innovation and product development", "organisation": "IoT product", "period": "2018-01 to 2021-01" },
+    { "title": "Thesis project - Innovation and retention strategy", "organisation": "Lendify", "period": "2019-03 to 2019-07" },
+    { "title": "Project Manager - Digitalisation and business development", "organisation": "Tierps Tryckeri", "period": "2018-01 to 2018-09" },
+    { "title": "Financial Advisor - Financing and risk management", "organisation": "SEB Construction Loans", "period": "2016-06 to 2017-12" },
+    { "title": "CEO and Co-founder - Business development and quality", "organisation": "Ramshöjden AB", "period": "2014-09 to 2016-06" },
+    { "title": "Financial Advisor - Risk analysis and customer relationships", "organisation": "SEB Mortgages and Construction Loans", "period": "2007-10 to 2014-09" },
+    { "title": "Account Manager - Customer and market analysis", "organisation": "Comboloan", "period": "2007-01 to 2007-10" }
+  ],
+  "additionalExperience": [
+    { "title": "National Digitalisation Coordinator", "organisation": "ELSA Sweden", "period": "2007-09 to 2008-09" },
+    { "title": "Project Manager and Teaching Assistant - Legal English", "organisation": "ELSA Stockholm", "period": "2006-12 to 2007-09" },
+    { "title": "Legal Representative - Intellectual property", "period": "2008-01 to 2009-08" }
+  ],
+  "publicProof": [
+    {
+      "title": "Job-agent case study",
+      "url": "https://marcus.uden.dev/proof/job-agent/",
+      "scope": "Public proof of product reasoning and implementation. Work in progress; not market-validated; no measured outcomes."
+    },
+    {
+      "title": "Recursive workflow system",
+      "url": "https://marcus.uden.dev/proof/recursive-workflow/",
+      "scope": "Supporting proof of a human-gated improvement workflow."
+    }
+  ],
+  "assessmentUse": {
+    "supports": ["Employment chronology", "Education", "Language level", "Citizenship and work authorization", "Public portfolio source links"],
+    "doesNotSupport": ["Claims outside the stated facts", "A hiring decision without human review"]
+  }
+}

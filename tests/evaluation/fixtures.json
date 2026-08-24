@@ -28,6 +28,32 @@
     {
       "id": "broken-source",
       "summary": "One named public evidence link is unavailable."
+    },
+    {
+      "id": "chatgpt-incognito-skolverket-digital-strategist-2026-08-24",
+      "summary": "A ChatGPT incognito assessment of a published Swedish digital-strategist job description.",
+      "provider": "ChatGPT incognito session; model not recorded",
+      "sourceFile": "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-2026-08-24.md",
+      "expected": [
+        "Use only the evaluator's stated public sources.",
+        "Keep evidence, inference, and gaps distinct.",
+        "Start with an executive summary that states fit, strongest matches, main gap, and confidence.",
+        "Use short numbered items for evidence-backed matches.",
+        "Do not use a wide Markdown table that hides the strength label on narrow screens."
+      ]
+    },
+    {
+      "id": "chatgpt-incognito-skolverket-digital-strategist-followup-2026-08-24",
+      "summary": "A repeat ChatGPT incognito assessment using the self-contained prompt and the published Swedish digital-strategist job description.",
+      "provider": "ChatGPT incognito session; model not recorded",
+      "promptFile": "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-followup-2026-08-24.prompt.txt",
+      "sourceFile": "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-followup-2026-08-24.md",
+      "expected": [
+        "Use only the stated public sources.",
+        "Start with an executive summary.",
+        "Keep evidence, inference, and gaps distinct.",
+        "Use strength-first numbered items instead of a Markdown table."
+      ]
     }
   ]
 }
