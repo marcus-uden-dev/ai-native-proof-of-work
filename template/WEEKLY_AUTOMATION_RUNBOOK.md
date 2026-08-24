@@ -65,7 +65,7 @@ It should:
 - maintain dependent indexes, reading paths, prompt inspection lists, runbooks, source maps, and local Markdown links whenever files are added, removed, renamed, moved, or repositioned
 - update recruiter-facing proof files only when there is verified new material
 - keep product strategy under `strategy/<project>/`
-- keep portfolio operating strategy under `strategy/portfolio-operating-system/`
+- keep Personal AI Harness strategy under `strategy/personal-ai-harness/`
 - add decision-log or problem-solving-log entries when meaningful decisions or issues occur
 - avoid private source leakage
 - avoid invented progress

@@ -25,7 +25,7 @@ The weekly automation already produces structured self-improvement evidence (les
 
 ## Requirements
 
-- **R1.** A fixed, evidence-only tag taxonomy (Marcus's confirmed list, 2026-08-23 revision — 49 current tags plus a gated "future tags" bank) governs every decision-log entry. A tag is assigned only when the underlying case provides concrete evidence for that capability — never inferred from tools or terminology alone. Future-bank tags are never assigned until a case demonstrates them.
+- **R1.** A fixed, evidence-only tag taxonomy (Marcus's confirmed list, 2026-08-24 revision — 49 current tags plus a gated "future tags" bank) governs every decision-log entry. A tag is assigned only when the underlying case provides concrete evidence for that capability — never inferred from tools or terminology alone. Future-bank tags are never assigned until a case demonstrates them. Every current tag also has a Swedish display label in `logs/DECISION_LOG_TAGS.md`; the stable English ID remains the machine value.
 - **R2.** Every weekly automation output is classified into exactly one tier: **auto** (small/mechanical — publishes without human review) or **flagged** (large/narrative — requires Marcus's review before anything ships).
 - **R3.** Auto-tier entries publish to the public site without introducing any new stored credential (PAT, Action secret, or otherwise) beyond the two `gh` accounts already authenticated on Marcus's machine.
 - **R4.** Every auto-tier publish is preceded by a hard identity check covering both vectors that actually gate a publish on this machine: the active `gh` account (which authenticates `git push` to github.com, confirmed below) and the local checkout's `git config user.email` (which `<public>`'s own release gate separately enforces). The automation refuses to publish — reporting instead — if either cannot be verified.
@@ -278,6 +278,8 @@ Step N: Classify each weekly finding.
 - A GitHub App with a repo-scoped installation token as the publish mechanism. *Reason: considered during adversarial review; excluded under the same no-new-credential constraint that ruled out the Action-secret design.*
 
 ### Deferred to Follow-Up Work
+
+- Bilingual recruiter profile and localized decision-log experience, including an entry language selector, Swedish labels for all assignable tags, and a paired sync check whenever the public GitHub profile changes. See [Bilingual Recruiter Profile and Localized Decision-Log Experience](2026-08-24-001-feat-bilingual-recruiter-profile-experience.md). The related technical-depth preference is explicitly deferred in that plan.
 
 - If the identity pre-flight (KTD3) fails repeatedly across multiple weekly runs, or a dry-run/simulated-failure test surfaces reliability problems the plan didn't anticipate, that's a signal the "no new secret" design may need revisiting toward a narrower credential or the semi-auto alternative — out of scope for this plan, worth its own decision-log entry if it happens.
 - A `docs/solutions/` or `logs/lessons.md`-style write-up of the theme-token-scoping convention (root tokens vs. `--dark-muted`), flagged as worth capturing during this session's earlier code review — unrelated to this plan's scope, noted here only so it isn't lost.

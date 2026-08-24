@@ -223,7 +223,7 @@ Create project strategy structure:
 - strategy/SUPPORTING_PROJECT_2/business/PRICING_STRATEGY.md
 - strategy/SUPPORTING_PROJECT_2/market/GO_TO_MARKET.md
 - strategy/SUPPORTING_PROJECT_2/decisions/DECISION_TRAIL.md
-- strategy/portfolio-operating-system/README.md
+- strategy/personal-ai-harness/README.md
 
 Create architecture files:
 - architecture/ARCHITECTURE.md

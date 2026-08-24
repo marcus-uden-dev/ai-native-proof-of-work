@@ -348,7 +348,7 @@ Weekly input rule:
 - Do not treat raw Claude/Codex sessions as the primary source for recruiter-facing updates.
 - If a weekly input file exists, cross-check it against project status files, source indexes, logs, and repo diffs before promoting claims.
 - If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant project-specific strategy/workflow document and add a decision-log entry when the change is meaningful.
-- Keep product strategy under `strategy/<project>/` for the actual product project, using the canonical subfolders `product/`, `business/`, `market/`, and `decisions/`. Use `strategy/portfolio-operating-system/` only for the portfolio evidence layer, compiler, source-indexing, weekly review, and recruiter-packaging operating layer.
+- Keep product strategy under `strategy/<project>/` for the actual product project, using the canonical subfolders `product/`, `business/`, `market/`, and `decisions/`. Use `strategy/personal-ai-harness/` for the Personal AI Harness: memory, skills, scheduled work, recursive improvement, evidence capture, weekly review, and recruiter packaging.
 - If no weekly input exists, continue from verified repo-visible changes and source indexes, but do not invent missing progress.
 
 If no verified new source material is available, do not invent a weekly update.

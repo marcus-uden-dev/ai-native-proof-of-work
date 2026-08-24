@@ -17,13 +17,13 @@ This repository is the evidence and portfolio layer. It is not the product that 
 | PKM | Supporting proof point for knowledge workflow design | [strategy/pkm/](pkm/) |
 | Household budget app | Supporting proof point for financial domain modeling and household UX | [strategy/household-budget-app/](household-budget-app/) |
 
-## Operating Layer
+## Personal AI Harness
 
-The proof-of-work compiler, source indexes, weekly review, and recruiter assets are documented as the portfolio operating system:
+The proof-of-work compiler, source indexes, memory, skills, scheduled work, recursive review loops, and recruiter assets are documented as the Personal AI Harness:
 
-- [strategy/portfolio-operating-system/](portfolio-operating-system/)
+- [Personal AI Harness strategy](personal-ai-harness/)
 
-Use this area only when discussing how project evidence is captured, reviewed, and packaged. Use the project folders above when discussing product strategy, value proposition, pricing, GTM, business model, or competitive positioning for the actual products.
+Use this area when discussing how work is captured, remembered, executed, reviewed, improved, and packaged. This includes active and incomplete harness improvements. Use the project folders above when discussing product strategy, value proposition, pricing, GTM, business model, or competitive positioning for the actual products.
 
 Each project folder uses the same canonical subfolders and document names so links and future weekly compiler updates can stay predictable.
 

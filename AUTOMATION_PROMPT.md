@@ -59,7 +59,7 @@ If local source indexes are available, inspect:
 
 If the source indexes are unavailable, do not invent their contents. Mark them as unavailable and continue with repo-visible evidence.
 
-Treat weekly-input/ as the clean input layer for new progress, features, decisions, blockers, lessons, and product/business-model insights. Do not use raw Claude/Codex sessions as the primary source for recruiter-facing updates. If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant project-specific strategy/workflow document and add a decision-log entry when the change is meaningful. Product strategy belongs under `strategy/<project>/` using the canonical `product/`, `business/`, `market/`, and `decisions/` subfolders; portfolio evidence-layer strategy belongs under `strategy/portfolio-operating-system/`.
+Treat weekly-input/ as the clean input layer for new progress, features, decisions, blockers, lessons, and product/business-model insights. Do not use raw Claude/Codex sessions as the primary source for recruiter-facing updates. If a weekly input item changes value proposition, pricing, GTM, ICP, product strategy, architecture, or operating model, update the relevant project-specific strategy/workflow document and add a decision-log entry when the change is meaningful. Product strategy belongs under `strategy/<project>/` using the canonical `product/`, `business/`, `market/`, and `decisions/` subfolders; Personal AI Harness strategy belongs under `strategy/personal-ai-harness/`.
 
 Update or create:
 1. project proof-point map

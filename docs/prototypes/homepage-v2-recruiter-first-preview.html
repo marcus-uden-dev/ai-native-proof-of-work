@@ -1,0 +1,659 @@
+<title>Proof-First Homepage</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --paper: #f6f1e6;
+    --paper-raised: #fffcf5;
+    --ink: #211d16;
+    --ink-muted: #625b4b;
+    --ink-faint: #8c8471;
+    --rule: #e1d6bd;
+    --rule-strong: #cbbd9b;
+    --gold: #9c6a22;
+    --gold-strong: #7e5419;
+    --gold-tint: #efe0c1;
+    --teal: #29685a;
+    --teal-tint: #dbe9e2;
+    --band-bg: #201b12;
+    --band-text: #efe7d4;
+    --band-muted: #b7ab8c;
+    --band-rule: #3c3423;
+    --shadow: 0 1px 2px rgba(33,29,22,0.04), 0 8px 24px -12px rgba(33,29,22,0.18);
+    --shadow-sm: 0 1px 2px rgba(33,29,22,0.06);
+    --radius: 3px;
+
+    --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+    --font-body: "Public Sans", -apple-system, "Segoe UI", sans-serif;
+    --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper: #16130d;
+      --paper-raised: #1e1a12;
+      --ink: #ece3cf;
+      --ink-muted: #b6ac93;
+      --ink-faint: #837a64;
+      --rule: #362f20;
+      --rule-strong: #4a4128;
+      --gold: #d0a153;
+      --gold-strong: #e2b768;
+      --gold-tint: #362a15;
+      --teal: #6fac9b;
+      --teal-tint: #1b2e28;
+      --band-bg: #0e0c08;
+      --band-text: #ece3cf;
+      --band-muted: #93896f;
+      --band-rule: #2a2417;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+      --shadow-sm: 0 1px 2px rgba(0,0,0,0.35);
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper: #16130d;
+    --paper-raised: #1e1a12;
+    --ink: #ece3cf;
+    --ink-muted: #b6ac93;
+    --ink-faint: #837a64;
+    --rule: #362f20;
+    --rule-strong: #4a4128;
+    --gold: #d0a153;
+    --gold-strong: #e2b768;
+    --gold-tint: #362a15;
+    --teal: #6fac9b;
+    --teal-tint: #1b2e28;
+    --band-bg: #0e0c08;
+    --band-text: #ece3cf;
+    --band-muted: #93896f;
+    --band-rule: #2a2417;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 28px -12px rgba(0,0,0,0.55);
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.35);
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  img, svg { max-width: 100%; }
+
+  a { color: inherit; }
+
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 500;
+    line-height: 1.14;
+    text-wrap: balance;
+    margin: 0;
+    color: var(--ink);
+  }
+
+  .wrap {
+    max-width: 74rem;
+    margin: 0 auto;
+    padding-inline: clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .prose { max-width: 40rem; }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+  }
+
+  .eyebrow.muted { color: var(--ink-faint); }
+  .eyebrow.gold { color: var(--gold); }
+
+  /* ---------- meta preview banner ---------- */
+  .preview-banner {
+    background: var(--gold-tint);
+    border-bottom: 1px solid var(--rule-strong);
+    color: var(--gold-strong);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    letter-spacing: 0.02em;
+    text-align: center;
+    padding: 0.65rem 1rem;
+  }
+
+  /* ---------- header ---------- */
+  header.site {
+    border-bottom: 1px solid var(--rule);
+    background: var(--paper);
+  }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.15rem;
+    gap: 1rem;
+  }
+  .site-name {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+  }
+  .site-links {
+    display: flex;
+    gap: clamp(1rem, 3vw, 2.1rem);
+    font-size: 0.88rem;
+    font-weight: 600;
+    flex-wrap: wrap;
+  }
+  .site-links a {
+    text-decoration: none;
+    color: var(--ink-muted);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 2px;
+  }
+  .site-links a:hover, .site-links a:focus-visible { color: var(--ink); border-color: var(--gold); }
+
+  /* ---------- hero ---------- */
+  .hero {
+    padding-block: clamp(2.75rem, 6vw, 4.5rem) clamp(3rem, 7vw, 5rem);
+  }
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: clamp(2.25rem, 5vw, 4rem);
+    align-items: start;
+  }
+  @media (max-width: 860px) {
+    .hero-grid { grid-template-columns: 1fr; }
+  }
+  .hero h1 {
+    font-size: clamp(2.05rem, 4vw, 2.9rem);
+    margin-top: 0.65rem;
+    letter-spacing: -0.01em;
+  }
+  .hero-sub {
+    margin-top: 1.15rem;
+    color: var(--ink-muted);
+    font-size: 1.05rem;
+    max-width: 34rem;
+  }
+  .hero-ctas {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+    margin-top: 1.85rem;
+    flex-wrap: wrap;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.92rem;
+    padding: 0.72rem 1.35rem;
+    border-radius: var(--radius);
+    text-decoration: none;
+    border: 1px solid transparent;
+    cursor: pointer;
+  }
+  .btn-primary {
+    background: var(--gold);
+    color: var(--paper-raised);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-primary:hover { background: var(--gold-strong); }
+  .btn-secondary {
+    background: transparent;
+    border-color: var(--rule-strong);
+    color: var(--ink);
+  }
+  .btn-secondary:hover { border-color: var(--ink); }
+  .tertiary-link {
+    display: block;
+    margin-top: 1.15rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    width: fit-content;
+  }
+  .tertiary-link:hover { border-color: var(--teal); }
+
+  /* ---------- artifact preview card ---------- */
+  .artifact-card {
+    background: var(--paper-raised);
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .artifact-card__top {
+    padding: 1.15rem 1.3rem 1rem;
+    border-bottom: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+  .artifact-card__body { padding: 1.3rem; }
+  .artifact-card__body h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.9rem;
+  }
+  .evidence-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.55rem 0;
+    border-bottom: 1px dashed var(--rule);
+    font-size: 0.86rem;
+  }
+  .evidence-row:last-of-type { border-bottom: none; }
+  .evidence-row dt { color: var(--ink-faint); font-family: var(--font-mono); font-size: 0.74rem; letter-spacing: 0.03em; text-transform: uppercase; }
+  .evidence-row dd { margin: 0; color: var(--ink-muted); text-align: right; }
+
+  .decision-stamp {
+    margin-top: 1.15rem;
+    border: 1.5px solid var(--teal);
+    color: var(--teal);
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.55rem 0.8rem;
+    border-radius: var(--radius);
+    display: inline-block;
+  }
+  .artifact-card__foot {
+    padding: 0.9rem 1.3rem 1.15rem;
+    font-size: 0.88rem;
+    font-weight: 600;
+  }
+  .artifact-card__foot a { color: var(--gold); text-decoration: none; }
+  .artifact-card__foot a:hover { text-decoration: underline; }
+
+  /* ---------- section shells ---------- */
+  section { padding-block: clamp(3rem, 6vw, 4.75rem); }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: clamp(2rem, 4vw, 2.75rem);
+    border-bottom: 1px solid var(--rule);
+    padding-bottom: 1.4rem;
+  }
+  .section-head h2 { font-size: clamp(1.55rem, 2.6vw, 2rem); }
+  .section-head p { margin: 0.4rem 0 0; color: var(--ink-muted); max-width: 32rem; font-size: 0.98rem; }
+
+  /* ---------- proof cases ---------- */
+  .case-list { display: flex; flex-direction: column; gap: 1.75rem; }
+  .case {
+    display: grid;
+    grid-template-columns: 5.5rem minmax(0,1fr);
+    gap: clamp(1.25rem, 3vw, 2.5rem);
+    padding-block: 1.9rem;
+    border-top: 1px solid var(--rule);
+  }
+  .case:first-child { border-top: none; padding-top: 0; }
+  @media (max-width: 700px) {
+    .case { grid-template-columns: 1fr; gap: 0.6rem; }
+  }
+  .case-num {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--ink-faint);
+    padding-top: 0.2rem;
+  }
+  .case-num strong { display: block; font-size: 1.6rem; color: var(--rule-strong); font-weight: 500; }
+  .case--lead .case-num strong { color: var(--gold); }
+  .case-body h3 { font-size: 1.35rem; margin-bottom: 0.55rem; }
+  .case-body p { color: var(--ink-muted); margin: 0 0 1rem; max-width: 42rem; }
+  .case-meta { display: flex; gap: 0.6rem 1rem; flex-wrap: wrap; align-items: center; margin-bottom: 0.9rem; }
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.28rem 0.6rem;
+    border-radius: 2px;
+    font-weight: 600;
+  }
+  .tag--lead { background: var(--gold-tint); color: var(--gold-strong); }
+  .tag--wip { background: var(--teal-tint); color: var(--teal); }
+  .tag--planned { border: 1px dashed var(--rule-strong); color: var(--ink-faint); background: transparent; }
+  .case-link { font-size: 0.9rem; font-weight: 700; color: var(--gold); text-decoration: none; }
+  .case-link:hover { text-decoration: underline; }
+  .case--planned { opacity: 0.82; }
+  .case--planned .case-body h3 { color: var(--ink-muted); }
+
+  /* ---------- what the work shows ---------- */
+  .signal-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  @media (max-width: 760px) { .signal-grid { grid-template-columns: 1fr; } }
+  .signal {
+    background: var(--paper-raised);
+    padding: 1.75rem 1.6rem;
+  }
+  .signal h3 { font-size: 1.08rem; margin-bottom: 0.6rem; }
+  .signal p { margin: 0; color: var(--ink-muted); font-size: 0.92rem; }
+  .signal .eyebrow { display: block; margin-bottom: 0.7rem; }
+
+  /* ---------- operating context ---------- */
+  .context-list {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid var(--rule);
+  }
+  .context-row {
+    display: grid;
+    grid-template-columns: 14rem minmax(0,1fr);
+    gap: 1.5rem;
+    padding: 1.15rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  @media (max-width: 640px) { .context-row { grid-template-columns: 1fr; gap: 0.3rem; } }
+  .context-row dt { font-weight: 700; font-size: 0.95rem; }
+  .context-row dd { margin: 0; color: var(--ink-muted); font-size: 0.95rem; }
+
+  /* ---------- how I work (dark band) ---------- */
+  .band {
+    background: var(--band-bg);
+    color: var(--band-text);
+  }
+  .band .eyebrow { color: var(--gold-strong); }
+  .band-flow {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: clamp(1.4rem, 3.3vw, 2.15rem);
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5em;
+    color: var(--band-text);
+  }
+  .band-flow .arrow { color: var(--band-muted); font-style: normal; font-size: 0.75em; }
+  .band-link {
+    display: inline-block;
+    margin-top: 1.75rem;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.92rem;
+    color: var(--band-text);
+    text-decoration: none;
+    border-bottom: 1px solid var(--band-rule);
+    padding-bottom: 3px;
+  }
+  .band-link:hover { border-color: var(--gold-strong); }
+
+  /* ---------- AI review (tertiary) ---------- */
+  .ai-review {
+    display: grid;
+    grid-template-columns: minmax(0,1fr) auto;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 1.75rem;
+    border: 1px solid var(--rule);
+    border-radius: var(--radius);
+    background: var(--paper-raised);
+  }
+  @media (max-width: 640px) { .ai-review { grid-template-columns: 1fr; } }
+  .ai-review h3 { font-size: 1.1rem; margin-bottom: 0.35rem; }
+  .ai-review p { margin: 0; color: var(--ink-muted); font-size: 0.92rem; max-width: 34rem; }
+
+  /* ---------- contact ---------- */
+  .contact-inner {
+    text-align: center;
+    max-width: 34rem;
+    margin: 0 auto;
+  }
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1.25rem, 4vw, 2.5rem);
+    margin-top: 1.75rem;
+    flex-wrap: wrap;
+    font-weight: 700;
+    font-size: 0.95rem;
+  }
+  .contact-links a { text-decoration: none; color: var(--ink); border-bottom: 1px solid var(--rule-strong); padding-bottom: 2px; }
+  .contact-links a:hover { border-color: var(--gold); color: var(--gold); }
+
+  footer.site {
+    border-top: 1px solid var(--rule);
+    padding-block: 1.75rem;
+    text-align: center;
+    color: var(--ink-faint);
+    font-size: 0.82rem;
+  }
+
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .btn, .case-link, .tertiary-link, .contact-links a { transition: background-color .15s ease, border-color .15s ease, color .15s ease; }
+  }
+</style>
+
+<div class="preview-banner">PREVIEW MOCKUP · recommended v2 layout from the recruiter-first audit · not the live site</div>
+
+<header class="site">
+  <div class="wrap site-nav">
+    <div class="site-name">Marcus Udén</div>
+    <nav class="site-links">
+      <a href="#proof">Proof</a>
+      <a href="#experience">Experience</a>
+      <a href="#cv">CV</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Product Manager · Product Operations</span>
+        <h1>I turn operational complexity into product decisions teams can build and test.</h1>
+        <p class="hero-sub">Frontline operating experience, customer research, and AI-assisted product execution — applied to real problems, with the evidence to show the reasoning.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#proof">View selected proof</a>
+          <a class="btn btn-secondary" href="#cv">Download CV</a>
+        </div>
+        <a class="tertiary-link" href="#ai-review">Compare fit with a role, using AI →</a>
+      </div>
+
+      <div class="artifact-card" aria-label="Example decision artifact from the Job-agent case">
+        <div class="artifact-card__top">
+          <span class="eyebrow gold">Case 02 · Job-agent</span>
+          <span class="eyebrow muted">Company research</span>
+        </div>
+        <div class="artifact-card__body">
+          <h3>Should this role be pursued?</h3>
+          <dl>
+            <div class="evidence-row">
+              <dt>Provenance</dt>
+              <dd>Public filings, careers page, press</dd>
+            </div>
+            <div class="evidence-row">
+              <dt>Confidence</dt>
+              <dd>Medium — one contradicted signal</dd>
+            </div>
+            <div class="evidence-row">
+              <dt>Used for</dt>
+              <dd>Application angle, interview prep</dd>
+            </div>
+          </dl>
+          <span class="decision-stamp">Decision: Investigate before pursuing</span>
+        </div>
+        <div class="artifact-card__foot">
+          <a href="#proof">View the decision →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Selected proof</h2>
+          <p>Three cases, one judgment pattern: evidence → decision → smallest credible test.</p>
+        </div>
+      </div>
+
+      <div class="case-list">
+        <div class="case case--planned">
+          <div class="case-num">01</div>
+          <div class="case-body">
+            <div class="case-meta"><span class="tag tag--planned">In release review</span></div>
+            <h3>Operational decision case</h3>
+            <p>A sanitized real-world operating problem, released once the underlying employer material clears privacy review. Problem → evidence → trade-off → decision → artifact → next test.</p>
+          </div>
+        </div>
+
+        <div class="case case--lead">
+          <div class="case-num"><strong>02</strong>Lead case</div>
+          <div class="case-body">
+            <div class="case-meta">
+              <span class="tag tag--lead">Lead case</span>
+              <span class="tag tag--wip">WIP · synthetic public release</span>
+            </div>
+            <h3>Job-agent — career decision support</h3>
+            <p>Turns fragmented company and role evidence into a pursue, investigate, or pass decision, then traces that decision into application and interview actions.</p>
+            <a class="case-link" href="#">View the decision →</a>
+          </div>
+        </div>
+
+        <div class="case case--planned">
+          <div class="case-num">03</div>
+          <div class="case-body">
+            <div class="case-meta"><span class="tag tag--planned">In development</span></div>
+            <h3>Independent product build</h3>
+            <p>A self-directed product outside the portfolio and AI-infrastructure domain — domain modelling, UX, edge cases, and a shipped implementation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="signals">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>What the work shows</h2>
+          <p>Each case supports more than one claim — nothing here rests on a single case alone.</p>
+        </div>
+      </div>
+      <div class="signal-grid">
+        <div class="signal">
+          <span class="eyebrow">Cases 01 + 02</span>
+          <h3>Product judgment</h3>
+          <p>Real trade-offs, made under incomplete evidence, traced to a decision rather than a feature list.</p>
+        </div>
+        <div class="signal">
+          <span class="eyebrow">Cases 01 + 03</span>
+          <h3>Execution</h3>
+          <p>From decision to a working artifact — prototypes and shipped implementation, not slide decks.</p>
+        </div>
+        <div class="signal">
+          <span class="eyebrow">Job-agent + workflow layer</span>
+          <h3>AI-native leverage</h3>
+          <p>AI accelerates the research and drafting; the pursue/investigate/pass call stays a human decision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <div>
+          <h2>Operating context</h2>
+          <p>Where the operational depth comes from, in brief — the full history is in the CV.</p>
+        </div>
+      </div>
+      <dl class="context-list">
+        <div class="context-row">
+          <dt>Operations / frontline service</dt>
+          <dd>Recurring workflow friction and customer reality, observed first-hand rather than reported second-hand.</dd>
+        </div>
+        <div class="context-row">
+          <dt>Financial services</dt>
+          <dd>Regulated decisions, risk assessment, and customer cases under compliance constraints.</dd>
+        </div>
+        <div class="context-row">
+          <dt>Customer research / entrepreneurship</dt>
+          <dd>Independent research, propositions, and product concepts taken from idea to test.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap">
+      <span class="eyebrow">How I work</span>
+      <div class="band-flow">
+        <span>Evidence</span><span class="arrow">→</span>
+        <span>Decision</span><span class="arrow">→</span>
+        <span>Smallest credible test</span><span class="arrow">→</span>
+        <span>Learn</span>
+      </div>
+      <a class="band-link" href="#">See how the AI-assisted workflow supports this →</a>
+    </div>
+  </section>
+
+  <section id="ai-review">
+    <div class="wrap">
+      <div class="ai-review">
+        <div>
+          <h3>Review fit with AI</h3>
+          <p>A guided prompt that checks a role against public evidence only — separates what's confirmed from what's inferred, and won't manufacture a positive verdict where the evidence doesn't support one.</p>
+        </div>
+        <a class="btn btn-secondary" href="#">Compare with a role →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="cv" class="contact">
+    <div class="wrap contact-inner">
+      <span class="eyebrow">Contact</span>
+      <h2 style="margin-top:0.6rem;">Ready to look closer?</h2>
+      <p style="color:var(--ink-muted); margin-top:0.75rem;">Two-page CV, selectable text, privacy-reviewed. Same evidence, prioritized for a five-second read.</p>
+      <div class="contact-links" id="contact">
+        <a href="#">Download CV</a>
+        <a href="#">Email</a>
+        <a href="#">GitHub — proof-of-work repo</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">Recommended homepage v2 — layout from the 2026-08-23 recruiter-first audit. Illustrative content only.</div>
+</footer>

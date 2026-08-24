@@ -1,5 +1,25 @@
 # Changelog
 
+## 2026-08-24 — Bilingual recruiter experience planned and technical-depth feature deferred
+
+### Added
+
+- Swedish display labels for all 49 currently assignable decision-log tags, while preserving stable English tag IDs for machine validation.
+- [Bilingual Recruiter Profile and Localized Decision-Log Experience](../docs/plans/2026-08-24-001-feat-bilingual-recruiter-profile-experience.md) as a deferred feature proposal.
+- A decision-log entry recording the GitHub README language links, proof-site language selector, profile sync, and Swedish tag requirements.
+- [Complete Swedish Recruiter-Site Translation Plan](../docs/plans/2026-08-24-002-full-site-swedish-translation-plan-for-plan.md), covering the static site, localized decision-log data, GitHub-profile synchronization, and release validation.
+
+### Changed
+
+- Updated the decision-log taxonomy with a language policy requiring Swedish labels and paired updates when tags, GitHub-profile content, or linked proof-site content changes.
+- Linked the bilingual profile proposal from the recruiter decision-log automation plan.
+- Marked translation research as complete; no public-site implementation has started.
+
+### Deferred
+
+- Technical-knowledge/depth selection for recruiter-facing material is explicitly deferred until further notice.
+- Translation implementation is deferred until the canonical GitHub-profile source and public release checkout are confirmed.
+
 ## 2026-08-09 — Weekly compiler boundary refresh to the current redesign-branch head
 
 ### Added
@@ -210,7 +230,7 @@ No dated weekly-input file existed for the current week, so this sync used verif
 - [strategy/job-agent/](../strategy/job-agent/) as the lead product strategy folder.
 - [strategy/pkm/](../strategy/pkm/) as the PKM strategy folder.
 - [strategy/household-budget-app/](../strategy/household-budget-app/) as the household budget app strategy folder.
-- [strategy/portfolio-operating-system/README.md](../strategy/portfolio-operating-system/README.md) to separate portfolio evidence-layer strategy from product strategy.
+- [strategy/personal-ai-harness/README.md](../strategy/personal-ai-harness/README.md) to separate Personal AI Harness strategy from product strategy.
 
 ### Changed
 

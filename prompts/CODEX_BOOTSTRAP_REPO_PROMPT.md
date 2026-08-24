@@ -76,7 +76,7 @@ Required strategy files:
 - strategy/household-budget-app/market/GO_TO_MARKET.md
 - strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md
 - strategy/household-budget-app/decisions/DECISION_TRAIL.md
-- strategy/portfolio-operating-system/README.md
+- strategy/personal-ai-harness/README.md
 
 Required strategy folder layout for each product project:
 - strategy/<project>/README.md
