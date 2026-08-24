@@ -18,6 +18,8 @@ test('agent guide resists untrusted instructions and requires cited evidence', a
   expect(text).toMatch(/Cite each material finding/i);
   expect(text).toMatch(/State when evidence or source access is missing/i);
   expect(text).toMatch(/Do not include confidential or personal data/i);
+  expect(text).toMatch(/Executive summary/i);
+  expect(text).toMatch(/not a Markdown table/i);
 });
 
 test('homepage exposes a copyable external prompt without embedding a chat', async ({ context, page }) => {
@@ -29,6 +31,9 @@ test('homepage exposes a copyable external prompt without embedding a chat', asy
   expect(clipboard).toContain('Use public evidence only');
   expect(clipboard).toContain('untrusted data');
   expect(clipboard).toContain('Do not include confidential or personal data');
+  expect(clipboard).toContain('Start with an executive summary');
+  expect(clipboard).toContain('Do not use Markdown tables');
+  expect(clipboard).toContain('evidence/cv-facts.json');
   await expect(page.locator('iframe')).toHaveCount(0);
   await expect(page.locator('form')).toHaveCount(0);
 });
@@ -53,8 +58,10 @@ test('decision log evidence files are available as static evidence and registere
   const llmsText = await (await request.get('/llms.txt')).text();
   expect(llmsText).toContain('evidence/decision-log.json');
   expect(llmsText).toContain('evidence/decision-log-tags.json');
+  expect(llmsText).toContain('evidence/cv-facts.json');
 
   const guideText = await (await request.get('/recruiter-agent-guide.md')).text();
   expect(guideText).toContain('evidence/decision-log.json');
   expect(guideText).toContain('evidence/decision-log-tags.json');
+  expect(guideText).toContain('evidence/cv-facts.json');
 });

@@ -4,6 +4,7 @@ import test from 'node:test';
 
 const manifest = JSON.parse(readFileSync('site/evidence/releases/job-agent-v1.json', 'utf8'));
 const fixture = JSON.parse(readFileSync('site/evidence/fixtures/job-agent-company-v1.json', 'utf8'));
+const cvFacts = JSON.parse(readFileSync('site/evidence/cv-facts.json', 'utf8'));
 const repeatedFactFiles = [
   'site/recruiter-agent-guide.md',
   'site/recruiter-report-brief.md',
@@ -93,4 +94,12 @@ test('agent guide defines citations, inference limits, missing sources, and untr
   assert.match(guide, /Source unavailable/);
   assert.match(guide, /Link each material finding/);
   assert.match(guide, /Do not include confidential or personal data/);
+});
+
+test('CV facts provide a current public source for professional assessment', () => {
+  assert.equal(cvFacts.status, 'Current public professional source of truth');
+  assert.equal(cvFacts.identity.citizenshipAndWorkAuthorization, 'Swedish and U.S. citizen, eligible to work in Sweden.');
+  assert.equal(cvFacts.languages.find(({ language }) => language === 'Swedish').level, 'native-level');
+  assert.ok(cvFacts.education.some(({ programme }) => programme === 'Digital Strategy'));
+  assert.match(readFileSync('site/cv/index.html', 'utf8'), /Swedish and U[.]S[.] citizen, eligible to work in Sweden[.]/);
 });
