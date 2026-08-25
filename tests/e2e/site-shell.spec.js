@@ -31,6 +31,8 @@ test('core positioning and actions remain available without JavaScript', async (
   await expect(page.getByRole('link', { name: /Open the guided case study/ })).toHaveAttribute('href', 'proof/job-agent/');
   await expect(page.getByRole('link', { name: 'Request an interview' })).toHaveAttribute('href', /mailto:/);
   await expect(page.getByRole('link', { name: 'Review fit with AI' })).toHaveAttribute('href', '#ai-review');
+  await expect(page.getByRole('heading', { name: 'How the work is thought through.' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Open the WIP Oracle preview' })).toHaveAttribute('href', 'profile-oracle/');
   await context.close();
 });
 
@@ -57,7 +59,7 @@ test('print mode keeps evidence and hides navigation controls', async ({ page })
   await page.emulateMedia({ media: 'print' });
   await expect(page.locator('.masthead')).toBeHidden();
   await expect(page.getByRole('heading', { name: 'Why Marcus for hands-on product work?' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Job-agent', exact: true })).toBeVisible();
+  await expect(page.locator('#selected-proof').getByRole('heading', { name: 'Job-agent', exact: true })).toBeVisible();
   await expect(page.getByText('Working title', { exact: true })).toBeVisible();
 });
 

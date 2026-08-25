@@ -410,6 +410,132 @@ h3 {
   font-size: 1.08rem;
 }
 
+.oracle-summary {
+  background: var(--surface);
+}
+
+.oracle-summary__facts {
+  display: grid;
+  margin: 0 0 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  border-block: 1px solid var(--line);
+}
+
+.oracle-summary__facts div {
+  padding: 1rem 1.25rem;
+  border-right: 1px solid var(--line);
+}
+
+.oracle-summary__facts div:last-child {
+  border-right: 0;
+}
+
+.oracle-summary__facts strong {
+  display: block;
+  color: var(--gold);
+  font: 760 1.65rem/1 var(--serif);
+}
+
+.oracle-summary__facts span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.oracle-lens-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.oracle-lens {
+  min-width: 0;
+  padding: 1.4rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.oracle-lens + .oracle-lens {
+  border-left: 0;
+}
+
+.oracle-lens--harness {
+  background: var(--teal-soft);
+}
+
+.oracle-lens--harness .oracle-lens__role {
+  color: #70420c;
+}
+
+.oracle-lens__role {
+  margin: 0 0 0.8rem;
+  color: var(--gold);
+  font-size: 0.67rem;
+  font-weight: 760;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.oracle-lens h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.35rem;
+}
+
+.oracle-lens > p:not(.oracle-lens__role) {
+  min-height: 5.3rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.oracle-tags {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+  gap: 0.4rem;
+}
+
+.oracle-tags .pill {
+  min-height: 1.8rem;
+  padding: 0.28rem 0.58rem;
+  font-size: 0.65rem;
+}
+
+.oracle-summary__actions {
+  display: flex;
+  margin-top: 1.7rem;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+@media (max-width: 47.5rem) {
+  .oracle-summary__facts,
+  .oracle-lens-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .oracle-summary__facts div:nth-child(2) {
+    border-right: 0;
+  }
+
+  .oracle-lens + .oracle-lens {
+    border-top: 0;
+    border-left: 1px solid var(--line);
+  }
+
+  .oracle-lens:nth-child(odd) {
+    border-left: 1px solid var(--line);
+  }
+
+  .oracle-lens > p:not(.oracle-lens__role) {
+    min-height: 0;
+  }
+
+  .oracle-summary__actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
 .claim-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
