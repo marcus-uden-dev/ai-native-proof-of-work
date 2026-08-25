@@ -22,9 +22,20 @@ The complete recruiter-safe repository is available as reference material. The c
 Keep evidence classes separate:
 
 - `employment_evidence`: service history in [Career Evidence Source](career-evidence/CAREER_EVIDENCE_SOURCE.md) and [CV.md](CV.md).
-- `user_cv_evidence`: a CV variant available to the job-agent product.
+- `user_cv_evidence`: a user-owned CV available to the job-agent product.
 - `persona_evidence`: profile and persona material.
 - `portfolio_decision_evidence`: [Decision Log](logs/DECISION_LOG.md) and [Decision Log Tags](logs/DECISION_LOG_TAGS.md). This can support product judgment and workflow decisions, but cannot prove an unlisted employment duty.
+
+### Evidence-class examples
+
+The classes identify the type and limit of evidence. They do not replace the full repository and they do not represent separate CV versions.
+
+| Class | Example | Do not infer |
+|---|---|---|
+| `employment_evidence` | SEB mortgage and construction-finance work stated in the CV | Unstated authority, duties, metrics, or outcomes |
+| `user_cv_evidence` | User-owned CV text used by job-agent match scoring | Portfolio decisions or proof-repository content |
+| `persona_evidence` | Target roles, preferences, and working context | Employment or credit experience |
+| `portfolio_decision_evidence` | A documented product decision or trade-off | Employment duties or customer responsibilities |
 
 ## Evaluation Goal
 

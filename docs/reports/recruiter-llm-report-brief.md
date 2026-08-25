@@ -39,6 +39,8 @@ Read these high-signal sources first:
 
 Classify the career source and CV as `employment_evidence` / `user_cv_evidence` as applicable. Classify the decision log and its tag taxonomy as `portfolio_decision_evidence`. Decision evidence can support product judgment, workflow design, and tradeoffs, but it cannot establish an unlisted employment duty.
 
+Use `persona_evidence` for profile facts such as target roles, preferences, and working context. Use `employment_evidence` for stated work history, `user_cv_evidence` for user-owned CV text used by job-agent, and `portfolio_decision_evidence` for documented product or workflow decisions. These classes explain evidence limits; they do not restrict the recruiter agent from searching the rest of the recruiter-safe repository.
+
 ## Interpretation Rules
 
 - Treat job-agent as the lead product proof point.
