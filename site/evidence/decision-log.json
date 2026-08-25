@@ -133,5 +133,80 @@
     ],
     "why": "Used household budgeting to demonstrate shared roles, imports, review flows, forecasts, and privacy-sensitive domain modeling.",
     "demonstrates": "Frames a multi-user domain with explicit roles, constraints, and review needs."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Job-agent",
+    "status": "Verified",
+    "type": "Product flow",
+    "title": "Use a reviewed career workflow instead of an autonomous applier",
+    "tags": [
+      "product-discovery",
+      "decision-support",
+      "human-in-the-loop",
+      "risk-awareness"
+    ],
+    "why": "Started with a reviewed workflow connecting discovery, fit analysis, application support, privacy, and feedback instead of unreviewed application sending.",
+    "demonstrates": "Uses user control and explicit risk boundaries to shape an AI-assisted product flow."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product learning",
+    "title": "Treat telemetry and outcome learning as a product layer",
+    "tags": [
+      "continuous-improvement",
+      "validation",
+      "quality-assurance",
+      "decision-traceability"
+    ],
+    "why": "Included telemetry and outcome learning as a medium-priority capability, while keeping measurement ahead of outcome claims.",
+    "demonstrates": "Designs feedback loops that improve the product without inventing unmeasured results."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Job-agent",
+    "status": "Hypothesis",
+    "type": "Pricing",
+    "title": "Test a job-search sprint or focused monthly plan first",
+    "tags": [
+      "product-judgment",
+      "prioritization",
+      "commercial-awareness",
+      "value-creation"
+    ],
+    "why": "Kept a time-boxed job-search sprint and a lightweight monthly plan as the first pricing hypotheses while willingness to pay remains unvalidated.",
+    "demonstrates": "Frames pricing around user value and clearly separates hypotheses from market evidence."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Pricing",
+    "title": "Defer household-budget pricing until trust and daily value are proven",
+    "tags": [
+      "risk-awareness",
+      "prioritization",
+      "commercial-awareness",
+      "evidence-driven"
+    ],
+    "why": "Deferred pricing until workflow safety, import quality, privacy, and repeated household value are stronger.",
+    "demonstrates": "Uses trust and evidence thresholds before making commercial product decisions."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "PKM",
+    "status": "Planned",
+    "type": "Pricing",
+    "title": "Defer PKM pricing until daily-use value is validated",
+    "tags": [
+      "research-judgment",
+      "prioritization",
+      "commercial-awareness",
+      "validation"
+    ],
+    "why": "Deferred pricing until one end-to-end daily-use path demonstrates repeated value across ingestion, search, learning, and capture.",
+    "demonstrates": "Protects commercial credibility by testing repeated value before selecting a pricing model."
   }
 ]

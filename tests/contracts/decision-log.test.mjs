@@ -36,6 +36,8 @@ function validateEntry(entry, index) {
   assert.ok(entry.why.trim().length > 0, `${label}.why must not be empty`);
   assert.equal(typeof entry.demonstrates, 'string', `${label}.demonstrates must be a string`);
   assert.ok(entry.demonstrates.trim().length > 0, `${label}.demonstrates must not be empty`);
+  if (entry.status !== undefined) assert.ok(['Verified', 'Planned', 'Hypothesis'].includes(entry.status), `${label}.status must be Verified, Planned, or Hypothesis`);
+  if (entry.type !== undefined) assert.ok(typeof entry.type === 'string' && entry.type.trim().length > 0, `${label}.type must be a non-empty string`);
   assert.ok(!Number.isNaN(Date.parse(entry.date)), `${label}.date must be a valid date`);
   for (const { label: patternLabel, pattern } of redactionPatterns) {
     assert.ok(!pattern.test(entry.why), `${label}.why matches redaction-backstop pattern (${patternLabel})`);

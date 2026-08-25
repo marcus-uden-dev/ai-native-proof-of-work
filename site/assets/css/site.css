@@ -632,6 +632,19 @@ h3 {
   color: #71430e;
 }
 
+.pill--status {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  color: #1e5145;
+}
+
+.pill--planned,
+.pill--hypothesis {
+  border-color: #d6b78f;
+  background: var(--gold-soft);
+  color: #71430e;
+}
+
 .proof-facts {
   display: grid;
   margin-block: 2rem;
