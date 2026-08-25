@@ -122,8 +122,8 @@ test('the decision log renders the newest published entry', async ({ page }) => 
   await page.goto('/proof/recursive-workflow/');
   const section = page.locator('#decision-log');
   await expect(section).toBeVisible();
-  await expect(section.getByText('2026-08-09')).toBeVisible();
-  await expect(section.getByText('Separated product-code freshness from later documentation and operations work so the public proof describes what actually changed.')).toBeVisible();
+  await expect(section.getByText('2026-08-24')).toBeVisible();
+  await expect(section.getByText('Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.')).toBeVisible();
 });
 
 test('the decision log links to its structured evidence files with working relative paths', async ({ page }) => {

@@ -1,56 +1,137 @@
 [
   {
+    "date": "2026-08-24",
+    "project": "Personal AI Harness",
+    "tags": [
+      "product-judgment",
+      "systems-thinking",
+      "context-engineering",
+      "continuous-improvement"
+    ],
+    "why": "Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.",
+    "demonstrates": "Explains system ownership and product boundaries clearly as the work evolves."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Personal AI Harness",
+    "tags": [
+      "prioritization",
+      "automation-judgment",
+      "workflow-automation",
+      "validation"
+    ],
+    "why": "Chose a bounded canary before expanding scheduled finding intake into a broader reporting architecture.",
+    "demonstrates": "Uses staged validation to control uncertainty before scaling automation."
+  },
+  {
+    "date": "2026-08-10",
+    "project": "Personal AI Harness",
+    "tags": [
+      "reusable-infrastructure",
+      "governance-architecture",
+      "risk-controls",
+      "reusable-systems"
+    ],
+    "why": "Separated shared skill source from runtime-specific adaptations so reusable workflows can survive upgrades.",
+    "demonstrates": "Designs reusable infrastructure with explicit boundaries and failure controls."
+  },
+  {
     "date": "2026-08-09",
-    "tags": ["evidence-driven", "decision-traceability", "risk-awareness", "quality-assurance"],
+    "project": "Job-agent",
+    "tags": [
+      "evidence-driven",
+      "decision-traceability",
+      "research-judgment"
+    ],
     "why": "Separated product-code freshness from later documentation and operations work so the public proof describes what actually changed.",
-    "demonstrates": "Maintains an evidence boundary between shipped product work, follow-up documentation, and uncommitted work."
+    "demonstrates": "Maintains an evidence boundary between shipped product work and follow-up work."
   },
   {
     "date": "2026-08-05",
-    "tags": ["evidence-driven", "risk-awareness", "quality-assurance", "decision-traceability"],
-    "why": "Re-anchored the portfolio to the currently accessible committed source state and excluded local work that was not yet committed.",
-    "demonstrates": "Chooses verifiable evidence over a more attractive but unsupported progress story."
+    "project": "Job-agent",
+    "tags": [
+      "risk-awareness",
+      "evidence-driven",
+      "quality-assurance"
+    ],
+    "why": "Anchored recruiter-facing claims to committed source state and excluded uncommitted local work.",
+    "demonstrates": "Chooses verifiable evidence over a stronger but unsupported progress story."
   },
   {
     "date": "2026-06-28",
-    "tags": ["knowledge-management", "decision-support", "systems-thinking", "evidence-driven"],
+    "project": "Job-agent",
+    "tags": [
+      "systems-thinking",
+      "decision-support",
+      "knowledge-management"
+    ],
     "why": "Preserved distinct roles for orientation, durable status, and direct freshness verification in the product handoff.",
-    "demonstrates": "Designs information hierarchies that help people find the right level of truth for the decision they need to make."
+    "demonstrates": "Designs information hierarchies that help people find the right level of truth."
   },
   {
-    "date": "2026-06-14",
-    "tags": ["research-judgment", "evidence-driven", "quality-assurance", "decision-traceability"],
-    "why": "Used direct source verification when a curated status document could lag behind the actual project state.",
-    "demonstrates": "Combines useful summaries with an explicit freshness check instead of trusting one source blindly."
+    "date": "2026-06-25",
+    "project": "Personal AI Harness",
+    "tags": [
+      "knowledge-management",
+      "governance-architecture",
+      "reusable-systems"
+    ],
+    "why": "Kept repo-owned durable documents with the project they govern while shared agent documentation remains cross-runtime.",
+    "demonstrates": "Uses clear ownership boundaries to keep durable knowledge maintainable."
+  },
+  {
+    "date": "2026-06-24",
+    "project": "Personal AI Harness",
+    "tags": [
+      "decision-support",
+      "research-synthesis",
+      "stakeholder-understanding"
+    ],
+    "why": "Placed the decision, recommended action, response options, and concise evidence near the top of decision-heavy reports.",
+    "demonstrates": "Makes complex review outputs easier for people to understand and act on."
   },
   {
     "date": "2026-06-02",
-    "tags": ["reusable-systems", "ai-native-workflows", "product-judgment", "knowledge-management"],
-    "why": "Turned implemented workflow improvements into supporting proof while keeping concrete product work as the main recruiter signal.",
-    "demonstrates": "Packages operating-system improvements as reusable evidence without letting the infrastructure story replace the product story."
-  },
-  {
-    "date": "2026-05-24",
-    "tags": ["reusable-systems", "knowledge-management", "governance-architecture", "design-governance"],
-    "why": "Kept reusable seed material separate from recruiter-facing proof and made the reusable layer provider-neutral.",
-    "demonstrates": "Separates audience-specific concerns while preserving a reusable system architecture."
+    "project": "Personal AI Harness",
+    "tags": [
+      "reusable-systems",
+      "ai-native-workflows",
+      "product-judgment"
+    ],
+    "why": "Turned workflow improvements into supporting proof while keeping concrete product work as the main recruiter signal.",
+    "demonstrates": "Packages operating-layer improvements without letting infrastructure replace product evidence."
   },
   {
     "date": "2026-05-11",
-    "tags": ["systems-thinking", "governance-architecture", "knowledge-management", "decision-traceability"],
-    "why": "Organized strategy by product project so decisions remain attached to the product they govern.",
-    "demonstrates": "Uses clear ownership boundaries to reduce ambiguity as a portfolio grows."
+    "project": "Personal AI Harness",
+    "tags": [
+      "product-taste",
+      "prioritization",
+      "stakeholder-understanding"
+    ],
+    "why": "Kept concrete products ahead of the operating layer in the recruiter-facing proof structure.",
+    "demonstrates": "Prioritizes the clearest audience signal while preserving the enabling system."
   },
   {
-    "date": "2026-05-09",
-    "tags": ["product-judgment", "decision-support", "evidence-driven", "product-discovery"],
-    "why": "Led recruiter-facing proof with concrete projects and documented automation as the operating method behind them.",
-    "demonstrates": "Chooses a product-first narrative while still making the enabling system inspectable."
+    "date": "2026-05-11",
+    "project": "PKM",
+    "tags": [
+      "research-judgment",
+      "product-judgment",
+      "evidence-driven"
+    ],
+    "why": "Presented PKM as supporting evidence until sustained adoption and daily-use value are validated.",
+    "demonstrates": "Uses conservative evidence boundaries instead of overstating product maturity."
   },
   {
-    "date": "2026-05-08",
-    "tags": ["knowledge-management", "reusable-systems", "evidence-driven", "design-governance"],
-    "why": "Used Markdown and Mermaid as the canonical documentation layer so the evidence remains versioned, inspectable, and easy to maintain.",
-    "demonstrates": "Selects a durable source format that supports collaboration, review, and future exports."
+    "date": "2026-05-11",
+    "project": "Household budget",
+    "tags": [
+      "systems-thinking",
+      "problem-framing",
+      "stakeholder-understanding"
+    ],
+    "why": "Used household budgeting to demonstrate shared roles, imports, review flows, forecasts, and privacy-sensitive domain modeling.",
+    "demonstrates": "Frames a multi-user domain with explicit roles, constraints, and review needs."
   }
 ]
