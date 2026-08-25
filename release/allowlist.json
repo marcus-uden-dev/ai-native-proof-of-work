@@ -30,6 +30,7 @@
     "site/evidence/fixtures/job-agent-company-v1.json",
     "site/evidence/releases/job-agent-v1.json",
     "site/index.html",
+    "site/profile-oracle/index.html",
     "site/llms.txt",
     "site/proof/job-agent/demo/app.js",
     "site/proof/job-agent/demo/index.html",
