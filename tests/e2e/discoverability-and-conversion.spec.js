@@ -4,7 +4,8 @@ const pages = [
   { path: '/', canonical: 'https://marcus.uden.dev/', title: 'Marcus Udén — Product judgment, execution, and AI-native leverage' },
   { path: '/proof/job-agent/', canonical: 'https://marcus.uden.dev/proof/job-agent/', title: 'Job-agent case study — Marcus Udén' },
   { path: '/proof/job-agent/demo/', canonical: 'https://marcus.uden.dev/proof/job-agent/demo/', title: 'Job-agent recruiter-safe prototype — Marcus Udén' },
-  { path: '/proof/recursive-workflow/', canonical: 'https://marcus.uden.dev/proof/recursive-workflow/', title: 'Recursive workflow system — Marcus Udén' }
+  { path: '/proof/recursive-workflow/', canonical: 'https://marcus.uden.dev/proof/recursive-workflow/', title: 'Recursive workflow system — Marcus Udén' },
+  { path: '/profile-oracle/', canonical: 'https://marcus.uden.dev/profile-oracle/', title: 'Profiles — evidence views for Marcus Udén' }
 ];
 
 for (const target of pages) {
@@ -45,6 +46,7 @@ test('robots and sitemap publish one canonical identity', async ({ request }) =>
   expect(robots).toContain('Sitemap: https://marcus.uden.dev/sitemap.xml');
   expect(sitemap).toContain('<loc>https://marcus.uden.dev/</loc>');
   expect(sitemap).toContain('<loc>https://marcus.uden.dev/proof/job-agent/</loc>');
+  expect(sitemap).toContain('<loc>https://marcus.uden.dev/profile-oracle/</loc>');
   expect(sitemap).not.toContain('github.io');
 });
 

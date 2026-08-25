@@ -2,135 +2,144 @@
   {
     "date": "2026-08-24",
     "project": "Personal AI Harness",
-    "tags": [
-      "product-judgment",
-      "systems-thinking",
-      "context-engineering",
-      "continuous-improvement"
-    ],
+    "title": "Name the operating layer Personal AI Harness",
+    "capabilities": ["product-judgment", "systems-thinking", "evidence-discipline"],
+    "mechanisms": [],
+    "evidence": { "status": "Public evidence", "refs": ["../"] },
+    "outcome": { "status": "Not applicable" },
+    "casePotential": "Supporting evidence",
     "why": "Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.",
     "demonstrates": "Explains system ownership and product boundaries clearly as the work evolves."
   },
   {
     "date": "2026-08-20",
     "project": "Personal AI Harness",
-    "tags": [
-      "prioritization",
-      "automation-judgment",
-      "workflow-automation",
-      "validation"
-    ],
+    "title": "Test scheduled finding intake with a bounded canary first",
+    "capabilities": ["prioritization", "experimentation", "operating-model-design"],
+    "mechanisms": ["canary", "validation"],
+    "evidence": { "status": "Verified", "refs": ["../proof/recursive-workflow/"] },
+    "outcome": { "status": "Not measured", "successDefinition": "Learn whether bounded finding intake earns expansion into a wider reporting architecture." },
+    "casePotential": "Supporting evidence",
     "why": "Chose a bounded canary before expanding scheduled finding intake into a broader reporting architecture.",
-    "demonstrates": "Uses staged validation to control uncertainty before scaling automation."
+    "demonstrates": "Uses staged validation to control uncertainty before scaling an operating workflow."
   },
   {
     "date": "2026-08-10",
     "project": "Personal AI Harness",
-    "tags": [
-      "reusable-infrastructure",
-      "governance-architecture",
-      "risk-controls",
-      "reusable-systems"
-    ],
+    "title": "Keep reusable skill source runtime-neutral",
+    "capabilities": ["operating-model-design", "technical-fluency", "evidence-discipline"],
+    "mechanisms": ["reusable-infrastructure", "governance-architecture", "risk-controls"],
+    "evidence": { "status": "Verified", "refs": ["../"] },
+    "outcome": { "status": "Not measured" },
+    "casePotential": "Supporting evidence",
     "why": "Separated shared skill source from runtime-specific adaptations so reusable workflows can survive upgrades.",
     "demonstrates": "Designs reusable infrastructure with explicit boundaries and failure controls."
   },
   {
     "date": "2026-08-09",
     "project": "Job-agent",
-    "tags": [
-      "evidence-driven",
-      "decision-traceability",
-      "research-judgment"
-    ],
+    "title": "Separate product-code freshness from later documentation work",
+    "capabilities": ["evidence-discipline", "technical-fluency", "execution"],
+    "mechanisms": ["decision-traceability", "traceability"],
+    "evidence": { "status": "Verified", "refs": ["../proof/job-agent/", "../"] },
+    "outcome": { "status": "Not applicable" },
+    "casePotential": "Supporting evidence",
     "why": "Separated product-code freshness from later documentation and operations work so the public proof describes what actually changed.",
-    "demonstrates": "Maintains an evidence boundary between shipped product work and follow-up work."
+    "demonstrates": "Maintains an evidence boundary between delivered product work and follow-up work."
   },
   {
     "date": "2026-08-05",
     "project": "Job-agent",
-    "tags": [
-      "risk-awareness",
-      "evidence-driven",
-      "quality-assurance"
-    ],
+    "title": "Use committed source state and exclude dirty work in recruiter proof",
+    "capabilities": ["evidence-discipline", "quality-judgment", "product-judgment"],
+    "mechanisms": ["quality-gate", "traceability"],
+    "evidence": { "status": "Verified", "refs": ["../proof/job-agent/", "../"] },
+    "outcome": { "status": "Not applicable" },
+    "casePotential": "Supporting evidence",
     "why": "Anchored recruiter-facing claims to committed source state and excluded uncommitted local work.",
     "demonstrates": "Chooses verifiable evidence over a stronger but unsupported progress story."
   },
   {
     "date": "2026-06-28",
     "project": "Job-agent",
-    "tags": [
-      "systems-thinking",
-      "decision-support",
-      "knowledge-management"
-    ],
+    "title": "Preserve the source repository handoff hierarchy",
+    "capabilities": ["systems-thinking", "operating-model-design", "evidence-discipline"],
+    "mechanisms": ["traceability"],
+    "evidence": { "status": "Public evidence", "refs": ["../proof/job-agent/", "../"] },
+    "outcome": { "status": "Not applicable" },
+    "casePotential": "Supporting evidence",
     "why": "Preserved distinct roles for orientation, durable status, and direct freshness verification in the product handoff.",
     "demonstrates": "Designs information hierarchies that help people find the right level of truth."
   },
   {
     "date": "2026-06-25",
     "project": "Personal AI Harness",
-    "tags": [
-      "knowledge-management",
-      "governance-architecture",
-      "reusable-systems"
-    ],
+    "title": "Keep repo-owned durable documents with the owning project",
+    "capabilities": ["operating-model-design", "organizational-learning", "evidence-discipline"],
+    "mechanisms": ["governance-architecture", "reusable-infrastructure"],
+    "evidence": { "status": "Public evidence", "refs": ["../"] },
+    "outcome": { "status": "Not applicable" },
+    "casePotential": "Supporting evidence",
     "why": "Kept repo-owned durable documents with the project they govern while shared agent documentation remains cross-runtime.",
     "demonstrates": "Uses clear ownership boundaries to keep durable knowledge maintainable."
   },
   {
     "date": "2026-06-24",
     "project": "Personal AI Harness",
-    "tags": [
-      "decision-support",
-      "research-synthesis",
-      "stakeholder-understanding"
-    ],
+    "title": "Make decision-heavy reports decision-first",
+    "capabilities": ["research-synthesis", "stakeholder-management", "evidence-discipline"],
+    "mechanisms": [],
+    "evidence": { "status": "Public evidence", "refs": ["../"] },
+    "outcome": { "status": "Not applicable" },
+    "casePotential": "Supporting evidence",
     "why": "Placed the decision, recommended action, response options, and concise evidence near the top of decision-heavy reports.",
     "demonstrates": "Makes complex review outputs easier for people to understand and act on."
   },
   {
     "date": "2026-06-02",
     "project": "Personal AI Harness",
-    "tags": [
-      "reusable-systems",
-      "ai-native-workflows",
-      "product-judgment"
-    ],
+    "title": "Show workflow improvements as supporting cases",
+    "capabilities": ["product-judgment", "operating-model-design", "prioritization"],
+    "mechanisms": ["reusable-infrastructure", "human-gate"],
+    "evidence": { "status": "Public evidence", "refs": ["../proof/recursive-workflow/"] },
+    "outcome": { "status": "Not applicable" },
+    "casePotential": "Supporting evidence",
     "why": "Turned workflow improvements into supporting proof while keeping concrete product work as the main recruiter signal.",
     "demonstrates": "Packages operating-layer improvements without letting infrastructure replace product evidence."
   },
   {
     "date": "2026-05-11",
     "project": "Personal AI Harness",
-    "tags": [
-      "product-taste",
-      "prioritization",
-      "stakeholder-understanding"
-    ],
+    "title": "Keep concrete products ahead of the operating layer",
+    "capabilities": ["product-taste", "prioritization", "product-judgment"],
+    "mechanisms": [],
+    "evidence": { "status": "Public evidence", "refs": ["../"] },
+    "outcome": { "status": "Not applicable" },
+    "casePotential": "Supporting evidence",
     "why": "Kept concrete products ahead of the operating layer in the recruiter-facing proof structure.",
     "demonstrates": "Prioritizes the clearest audience signal while preserving the enabling system."
   },
   {
     "date": "2026-05-11",
     "project": "PKM",
-    "tags": [
-      "research-judgment",
-      "product-judgment",
-      "evidence-driven"
-    ],
+    "title": "Keep PKM supporting until sustained value is validated",
+    "capabilities": ["research-judgment", "product-judgment", "evidence-discipline"],
+    "mechanisms": ["validation"],
+    "evidence": { "status": "Verified", "refs": ["../"] },
+    "outcome": { "status": "Not measured", "successDefinition": "Demonstrate sustained daily-use value before stronger product claims are made." },
+    "casePotential": "Supporting evidence",
     "why": "Presented PKM as supporting evidence until sustained adoption and daily-use value are validated.",
     "demonstrates": "Uses conservative evidence boundaries instead of overstating product maturity."
   },
   {
     "date": "2026-05-11",
     "project": "Household budget",
-    "tags": [
-      "systems-thinking",
-      "problem-framing",
-      "stakeholder-understanding"
-    ],
+    "title": "Use household budgeting as shared-domain modeling evidence",
+    "capabilities": ["systems-thinking", "problem-framing", "operational-understanding"],
+    "mechanisms": [],
+    "evidence": { "status": "Verified", "refs": ["../"] },
+    "outcome": { "status": "Not measured" },
+    "casePotential": "Supporting evidence",
     "why": "Used household budgeting to demonstrate shared roles, imports, review flows, forecasts, and privacy-sensitive domain modeling.",
     "demonstrates": "Frames a multi-user domain with explicit roles, constraints, and review needs."
   },
@@ -140,12 +149,11 @@
     "status": "Verified",
     "type": "Product flow",
     "title": "Use a reviewed career workflow instead of an autonomous applier",
-    "tags": [
-      "product-discovery",
-      "decision-support",
-      "human-in-the-loop",
-      "risk-awareness"
-    ],
+    "capabilities": ["product-discovery", "product-judgment", "quality-judgment", "evidence-discipline"],
+    "mechanisms": ["human-gate", "risk-controls"],
+    "evidence": { "status": "Verified", "refs": ["../proof/job-agent/", "../"] },
+    "outcome": { "status": "Not measured" },
+    "casePotential": "Supporting case",
     "why": "Started with a reviewed workflow connecting discovery, fit analysis, application support, privacy, and feedback instead of unreviewed application sending.",
     "demonstrates": "Uses user control and explicit risk boundaries to shape an AI-assisted product flow."
   },
@@ -155,12 +163,11 @@
     "status": "Planned",
     "type": "Product learning",
     "title": "Treat telemetry and outcome learning as a product layer",
-    "tags": [
-      "continuous-improvement",
-      "validation",
-      "quality-assurance",
-      "decision-traceability"
-    ],
+    "capabilities": ["metrics-and-kpis", "quality-judgment", "continuous-improvement", "evidence-discipline"],
+    "mechanisms": ["validation", "outcome-measurement", "feedback-loop"],
+    "evidence": { "status": "Planned", "refs": ["../proof/job-agent/"] },
+    "outcome": { "status": "Success criteria defined but not measured", "successDefinition": "Use telemetry and outcome learning to guide product improvement without claiming results before measurement.", "leadingIndicators": ["completion rate", "intervention rate", "correction rate"] },
+    "casePotential": "Supporting evidence",
     "why": "Included telemetry and outcome learning as a medium-priority capability, while keeping measurement ahead of outcome claims.",
     "demonstrates": "Designs feedback loops that improve the product without inventing unmeasured results."
   },
@@ -170,12 +177,11 @@
     "status": "Hypothesis",
     "type": "Pricing",
     "title": "Test a job-search sprint or focused monthly plan first",
-    "tags": [
-      "product-judgment",
-      "prioritization",
-      "commercial-awareness",
-      "value-creation"
-    ],
+    "capabilities": ["product-judgment", "prioritization", "commercial-judgment", "value-realization"],
+    "mechanisms": ["pricing-hypothesis"],
+    "evidence": { "status": "Hypothesis", "refs": ["../proof/job-agent/"] },
+    "outcome": { "status": "Success criteria defined but not measured", "successDefinition": "Learn which offer structure creates enough user value to justify continued use or payment." },
+    "casePotential": "Supporting evidence",
     "why": "Kept a time-boxed job-search sprint and a lightweight monthly plan as the first pricing hypotheses while willingness to pay remains unvalidated.",
     "demonstrates": "Frames pricing around user value and clearly separates hypotheses from market evidence."
   },
@@ -185,12 +191,11 @@
     "status": "Planned",
     "type": "Pricing",
     "title": "Defer household-budget pricing until trust and daily value are proven",
-    "tags": [
-      "risk-awareness",
-      "prioritization",
-      "commercial-awareness",
-      "evidence-driven"
-    ],
+    "capabilities": ["product-judgment", "prioritization", "commercial-judgment", "evidence-discipline"],
+    "mechanisms": ["pricing-hypothesis", "risk-controls"],
+    "evidence": { "status": "Planned", "refs": ["../"] },
+    "outcome": { "status": "Success criteria defined but not measured", "successDefinition": "Establish workflow safety, import quality, privacy, and repeated household value before pricing." },
+    "casePotential": "Supporting evidence",
     "why": "Deferred pricing until workflow safety, import quality, privacy, and repeated household value are stronger.",
     "demonstrates": "Uses trust and evidence thresholds before making commercial product decisions."
   },
@@ -200,12 +205,11 @@
     "status": "Planned",
     "type": "Pricing",
     "title": "Defer PKM pricing until daily-use value is validated",
-    "tags": [
-      "research-judgment",
-      "prioritization",
-      "commercial-awareness",
-      "validation"
-    ],
+    "capabilities": ["research-judgment", "prioritization", "commercial-judgment", "value-realization"],
+    "mechanisms": ["pricing-hypothesis", "validation"],
+    "evidence": { "status": "Planned", "refs": ["../"] },
+    "outcome": { "status": "Success criteria defined but not measured", "successDefinition": "Demonstrate repeated value across ingestion, search, learning, and capture before selecting pricing." },
+    "casePotential": "Supporting evidence",
     "why": "Deferred pricing until one end-to-end daily-use path demonstrates repeated value across ingestion, search, learning, and capture.",
     "demonstrates": "Protects commercial credibility by testing repeated value before selecting a pricing model."
   }

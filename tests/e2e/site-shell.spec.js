@@ -77,10 +77,28 @@ test('reduced-motion preference removes smooth movement', async ({ page }) => {
 
 test('the quiet repository link is consistent across every masthead page', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
-  for (const path of ['/', '/proof/job-agent/', '/proof/recursive-workflow/']) {
+  for (const path of ['/', '/proof/job-agent/', '/proof/recursive-workflow/', '/profile-oracle/']) {
     await page.goto(path);
     await expect(page.getByRole('link', { name: /Browse proof-of-work repo/ })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
   }
+});
+
+test('Profiles route is static, evidence-first, and free of score language', async ({ browser, page }) => {
+  await page.goto('/profile-oracle/');
+  await expect(page).toHaveTitle('Profiles — evidence views for Marcus Udén');
+  await expect(page.getByRole('heading', { name: 'Start with the role question. Follow the proof.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'AI Product' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Requirements translation' })).toBeVisible();
+  await expect(page.getByText('Evidence gap', { exact: true }).first()).toBeVisible();
+  await expect(page.getByText(/No scores\. No inferred strength\./)).toBeVisible();
+  await expect(page.locator('body')).not.toContainText(/percent|star rating|radar chart|skill bar/i);
+
+  const noJsContext = await browser.newContext({ javaScriptEnabled: false });
+  const noJsPage = await noJsContext.newPage();
+  await noJsPage.goto('/profile-oracle/');
+  await expect(noJsPage.getByRole('heading', { name: 'AI Implementation / Customer Enablement' })).toBeVisible();
+  await expect(noJsPage.getByRole('link', { name: 'Job-agent case study' }).first()).toHaveAttribute('href', '../proof/job-agent/');
+  await noJsContext.close();
 });
 
 test('project subpath and the recovery page resolve', async ({ page }) => {

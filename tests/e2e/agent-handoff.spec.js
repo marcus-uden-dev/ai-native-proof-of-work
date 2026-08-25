@@ -44,17 +44,17 @@ test('manifest and fixture are available as static evidence', async ({ request }
 
 test('decision log evidence files are available as static evidence and registered as allowed sources', async ({ request }) => {
   const logResponse = await request.get('/evidence/decision-log.json');
-  const tagsResponse = await request.get('/evidence/decision-log-tags.json');
+  const taxonomyResponse = await request.get('/evidence/taxonomy.json');
   expect(logResponse.ok()).toBeTruthy();
-  expect(tagsResponse.ok()).toBeTruthy();
+  expect(taxonomyResponse.ok()).toBeTruthy();
   expect(Array.isArray(await logResponse.json())).toBe(true);
-  expect(Array.isArray(await tagsResponse.json())).toBe(true);
+  expect((await taxonomyResponse.json()).schemaVersion).toBe(2);
 
   const llmsText = await (await request.get('/llms.txt')).text();
   expect(llmsText).toContain('evidence/decision-log.json');
-  expect(llmsText).toContain('evidence/decision-log-tags.json');
+  expect(llmsText).toContain('evidence/taxonomy.json');
 
   const guideText = await (await request.get('/recruiter-agent-guide.md')).text();
   expect(guideText).toContain('evidence/decision-log.json');
-  expect(guideText).toContain('evidence/decision-log-tags.json');
+  expect(guideText).toContain('evidence/taxonomy.json');
 });

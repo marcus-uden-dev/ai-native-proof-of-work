@@ -18,6 +18,50 @@
   font-synthesis: none;
 }
 
+.profile-lens__capabilities {
+  max-width: 880px;
+  margin: 0 0 1.5rem;
+  color: var(--muted);
+}
+
+.decision-log-entry__tags .pill--mechanism {
+  color: var(--muted);
+  background: var(--paper);
+  border-color: var(--line);
+  font-size: 0.75rem;
+}
+
+.profile-evidence-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.profile-evidence {
+  border: 1px solid var(--line);
+  background: var(--surface);
+  padding: 1.25rem;
+}
+
+.profile-evidence h3 {
+  margin: 0.2rem 0 0.8rem;
+}
+
+.profile-evidence p:last-child {
+  margin-bottom: 0;
+}
+
+.profile-evidence--gap {
+  background: var(--paper);
+  border-style: dashed;
+}
+
+@media (max-width: 760px) {
+  .profile-evidence-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 * {
   box-sizing: border-box;
 }

@@ -23,27 +23,25 @@ test('homepage states the system loop beneath the intact product loop', async ({
   await expect(method).toContainText(/human review controls every promotion/i);
 });
 
-test('the supporting-proof page states both loops, Autoresearch, daily automation, and the human gate', async ({ page }) => {
+test('the supporting-proof page states both loops, workflow improvement, daily automation, and the human gate', async ({ page }) => {
   const response = await page.goto('/proof/recursive-workflow/');
   expect(response?.status()).toBe(200);
   await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
   await expect(page.getByText('Discover → Define → Build → Improve', { exact: true })).toBeVisible();
   await expect(page.getByText('Execute → Review → Detect pattern → Human gate → Promote → Next cycle', { exact: true })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Broad discovery filtered into decision-relevant evidence.' })).toBeVisible();
-  await expect(page.getByText(/scheduled, semi-automated research loop/)).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Repeated work becomes clearer after review.' })).toBeVisible();
+  await expect(page.getByText(/executes work, reviews the result, detects a recurring pattern/)).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Health, drift, and opportunities become bounded next actions.' })).toBeVisible();
   await expect(page.getByText(/No important instruction is updated without human review/)).toBeVisible();
 });
 
-test('the Autoresearch section names the actual quality-filter criteria', async ({ page }) => {
+test('the workflow improvement section keeps review and human promotion explicit', async ({ page }) => {
   await page.goto('/proof/recursive-workflow/');
-  const autoresearch = page.locator('#autoresearch');
-  for (const criterion of ['primary source', 'reproducible', 'practical', 'relevant', 'low-hype']) {
-    await expect(autoresearch).toContainText(criterion);
-  }
-  // U1 regression: the existing example article is untouched by this unit
-  await expect(autoresearch).toContainText('A pattern, not a headline');
-  await expect(autoresearch).toContainText('A recurring signal found during research');
+  const loop = page.locator('#workflow-improvement');
+  await expect(loop).toContainText('Review before promotion');
+  await expect(loop).toContainText('A pattern, not an automatic change');
+  await expect(loop).toContainText('a person confirms');
+  await expect(loop).not.toContainText('Autoresearch');
 });
 
 test('the daily-automation section names at least three task layers', async ({ page }) => {
@@ -110,7 +108,7 @@ test('the decision log content is present in the raw HTML response, with no Java
   expect(html).toContain('pricing hypotheses');
   expect(html).not.toContain('No entries yet — check back after the next weekly run.');
   expect(html).toContain('evidence/decision-log.json');
-  expect(html).toContain('evidence/decision-log-tags.json');
+  expect(html).toContain('evidence/taxonomy.json');
 });
 
 test('the decision log reuses the limitations-list--stacked component rather than a bespoke card grid', async ({ page }) => {
@@ -128,7 +126,7 @@ test('the decision log renders the newest published entry', async ({ page }) => 
   await expect(section.getByText('Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.')).toBeVisible();
 });
 
-test('the Oracle project and capability filters reveal the matching decisions', async ({ page }) => {
+test('the project and primary-capability filters reveal the matching decisions', async ({ page }) => {
   await page.goto('/proof/recursive-workflow/');
   const entries = page.locator('#decision-timeline > li[data-project]');
 
@@ -137,9 +135,9 @@ test('the Oracle project and capability filters reveal the matching decisions', 
   expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(6);
   expect(await entries.evaluateAll((items) => items.filter((item) => item.hidden).length)).toBe(11);
 
-  await page.getByRole('button', { name: 'evidence-driven', exact: true }).click();
-  await expect(page.locator('[data-scroll-status]')).toContainText('4 decisions');
-  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(4);
+  await page.getByRole('button', { name: 'evidence discipline', exact: true }).click();
+  await expect(page.locator('[data-scroll-status]')).toContainText('11 decisions');
+  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(11);
 
   await page.getByRole('button', { name: /All decisions/ }).click();
   await expect(page.locator('[data-scroll-status]')).toContainText('17 decisions');
@@ -164,5 +162,5 @@ test('the decision log links to its structured evidence files with working relat
   await page.goto('/proof/recursive-workflow/');
   const section = page.locator('#decision-log');
   await expect(section.getByRole('link', { name: 'decision-log.json' })).toHaveAttribute('href', '../../evidence/decision-log.json');
-  await expect(section.getByRole('link', { name: 'capability tag taxonomy' })).toHaveAttribute('href', '../../evidence/decision-log-tags.json');
+  await expect(section.getByRole('link', { name: 'typed taxonomy' })).toHaveAttribute('href', '../../evidence/taxonomy.json');
 });

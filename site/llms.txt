@@ -5,11 +5,12 @@
 - [Recruiter agent guide](https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-agent-guide.md): Normative evidence, trust, citation, and untrusted-input rules.
 - [Two-minute hiring brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/): General positioning and claim-to-evidence links.
 - [Job-agent case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/): Guided product proof, limitations, and technical appendix.
-- [Recursive workflow system](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/): Supporting proof for the human-gated system loop.
-- [Decision Log Oracle detail](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/#decision-log): Detailed, public view of the agent-friendly profile, historical decisions, project lenses, and capability tags.
+- [Workflow improvement proof](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/): Supporting proof for the human-gated workflow improvement loop.
+- [Profiles](https://marcus-uden-dev.github.io/ai-native-proof-of-work/profile-oracle/): Role lenses that route from capability to strongest public proof, supporting decisions, and evidence gaps.
+- [Decision Log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/#decision-log): Detailed, public view of dated decisions, typed capabilities, mechanisms, and evidence boundaries.
 - [Job-agent release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v1.json): Canonical maturity, version, evidence date, and provenance state.
-- [Decision log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json): Structured history of auto-published, tagged, dated self-improvement entries — rendered as static HTML on the recursive workflow page and available here as structured data.
-- [Decision log tag taxonomy](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json): The fixed set of capability tags decision log entries are assigned from.
+- [Decision log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json): Structured history of dated decisions with capabilities, mechanisms, evidence status, outcome status, and case potential.
+- [Typed taxonomy](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/taxonomy.json): Canonical primary/secondary capabilities, mechanisms, role lenses, controlled vocabularies, and migration mappings.
 - [Recruiter report brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-report-brief.md): Required assessment structure.
 
 Job-agent status: Work in progress. Not live. Not market-validated. No measured market outcomes.

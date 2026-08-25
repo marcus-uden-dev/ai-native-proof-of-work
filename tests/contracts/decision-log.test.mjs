@@ -1,21 +1,18 @@
 import assert from 'node:assert/strict';
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync } from 'node:fs';
 import test from 'node:test';
 
 const entries = JSON.parse(readFileSync('site/evidence/decision-log.json', 'utf8'));
-const tags = JSON.parse(readFileSync('site/evidence/decision-log-tags.json', 'utf8'));
-const currentTagNames = new Set(tags.map((t) => t.tag));
-
-// Session-mechanics / tool-internal markers this test can safely name directly.
-// Forbidden-identity and local-path leaks are already caught repo-wide by
-// scripts/check-public-release.mjs (identity via PUBLIC_RELEASE_FORBIDDEN_IDENTITIES, an env
-// var / CI secret never hardcoded in a tracked file; local paths via its own generic
-// [A-Za-z]:\Users\... pattern) -- this file must not duplicate either as a literal/regex here,
-// or it risks becoming the exact leak it exists to prevent, and a path-shaped regex literal in
-// this file's own source would also false-positive against that repo-wide scan. Deliberately
-// narrow otherwise: this site legitimately references "Claude"/"Codex" as external AI assistant
-// names elsewhere (recruiter-agent-guide.md), so this deny-list targets specific leakage shapes,
-// not tool brand names in general.
+const taxonomy = JSON.parse(readFileSync('site/evidence/taxonomy.json', 'utf8'));
+const renderedDecisionLog = readFileSync('site/proof/recursive-workflow/index.html', 'utf8');
+const renderedDecisionLogLower = renderedDecisionLog.toLowerCase();
+const primary = new Set(taxonomy.capabilities.primary.map(({ id }) => id));
+const secondary = new Set(taxonomy.capabilities.secondary.map(({ id }) => id));
+const mechanisms = new Set(taxonomy.mechanisms.map(({ id }) => id));
+const allCapabilities = new Set([...primary, ...secondary]);
+const evidenceStatuses = new Set(taxonomy.evidenceStatuses);
+const outcomeStatuses = new Set(taxonomy.outcomeStatuses);
+const casePotentials = new Set(taxonomy.casePotentials);
 const redactionPatterns = [
   { label: 'codex automations directory', pattern: /\.codex[\\/]automations/i },
   { label: 'automation config filename', pattern: /automation\.toml/i },
@@ -26,18 +23,29 @@ const redactionPatterns = [
 
 function validateEntry(entry, index) {
   const label = `entries[${index}]`;
-  assert.ok(Array.isArray(entry.tags), `${label}.tags must be an array`);
-  assert.ok(entry.tags.length >= 3 && entry.tags.length <= 7, `${label}.tags must have 3-7 entries, got ${entry.tags.length}`);
-  assert.equal(new Set(entry.tags).size, entry.tags.length, `${label}.tags must not contain duplicates`);
-  for (const tag of entry.tags) {
-    assert.ok(currentTagNames.has(tag), `${label} uses unknown or future-bank tag: ${tag}`);
+  assert.ok(Array.isArray(entry.capabilities), `${label}.capabilities must be an array`);
+  assert.ok(entry.capabilities.length >= 2 && entry.capabilities.length <= 4, `${label}.capabilities must have 2-4 entries`);
+  assert.equal(new Set(entry.capabilities).size, entry.capabilities.length, `${label}.capabilities must not contain duplicates`);
+  for (const capability of entry.capabilities) assert.ok(allCapabilities.has(capability), `${label} uses unknown capability: ${capability}`);
+  assert.ok(Array.isArray(entry.mechanisms), `${label}.mechanisms must be an array`);
+  assert.equal(new Set(entry.mechanisms).size, entry.mechanisms.length, `${label}.mechanisms must not contain duplicates`);
+  for (const mechanism of entry.mechanisms) assert.ok(mechanisms.has(mechanism), `${label} uses unknown mechanism: ${mechanism}`);
+  assert.equal(typeof entry.evidence?.status, 'string', `${label}.evidence.status must be a string`);
+  assert.ok(evidenceStatuses.has(entry.evidence.status), `${label} uses unknown evidence status: ${entry.evidence.status}`);
+  assert.ok(Array.isArray(entry.evidence.refs) && entry.evidence.refs.length > 0, `${label}.evidence.refs must contain a public reference`);
+  for (const ref of entry.evidence.refs) {
+    assert.equal(typeof ref, 'string');
+    assert.ok(!/^[A-Za-z]:[\\/]|^\\\\|^https?:\/\//i.test(ref), `${label}.evidence.refs must stay relative and public`);
   }
-  assert.equal(typeof entry.why, 'string', `${label}.why must be a string`);
+  assert.ok(outcomeStatuses.has(entry.outcome?.status), `${label} uses unknown outcome status: ${entry.outcome?.status}`);
+  if (entry.outcome.status === 'Measured outcome') assert.equal(typeof entry.outcome.measuredOutcome, 'string', `${label} measured outcomes need measuredOutcome`);
+  assert.ok(casePotentials.has(entry.casePotential), `${label} uses unknown case potential: ${entry.casePotential}`);
+  assert.equal(typeof entry.why, 'string');
   assert.ok(entry.why.trim().length > 0, `${label}.why must not be empty`);
-  assert.equal(typeof entry.demonstrates, 'string', `${label}.demonstrates must be a string`);
+  assert.equal(typeof entry.demonstrates, 'string');
   assert.ok(entry.demonstrates.trim().length > 0, `${label}.demonstrates must not be empty`);
+  assert.ok(!('tags' in entry), `${label} must not retain the ambiguous legacy tags field`);
   if (entry.status !== undefined) assert.ok(['Verified', 'Planned', 'Hypothesis'].includes(entry.status), `${label}.status must be Verified, Planned, or Hypothesis`);
-  if (entry.type !== undefined) assert.ok(typeof entry.type === 'string' && entry.type.trim().length > 0, `${label}.type must be a non-empty string`);
   assert.ok(!Number.isNaN(Date.parse(entry.date)), `${label}.date must be a valid date`);
   for (const { label: patternLabel, pattern } of redactionPatterns) {
     assert.ok(!pattern.test(entry.why), `${label}.why matches redaction-backstop pattern (${patternLabel})`);
@@ -45,62 +53,80 @@ function validateEntry(entry, index) {
   }
 }
 
-test('decision-log entries are schema-valid, use only current taxonomy tags, and pass the redaction backstop', () => {
+test('taxonomy has unique typed IDs and includes the recruiter capability contract', () => {
+  assert.equal(taxonomy.schemaVersion, 2);
+  assert.equal(primary.size, taxonomy.capabilities.primary.length);
+  assert.equal(secondary.size, taxonomy.capabilities.secondary.length);
+  assert.equal(mechanisms.size, taxonomy.mechanisms.length);
+  assert.equal([...primary].some((id) => secondary.has(id)), false, 'primary and secondary capabilities must not overlap');
+  for (const id of ['execution', 'operational-understanding', 'requirements-translation', 'technical-fluency', 'quality-judgment', 'stakeholder-management', 'operating-model-design', 'change-management', 'adoption-and-enablement', 'metrics-and-kpis', 'value-realization', 'evidence-discipline']) assert.ok(primary.has(id), `missing required primary capability: ${id}`);
+  for (const lens of taxonomy.roleLenses) {
+    for (const id of [...lens.coreCapabilities, ...lens.supportingCapabilities]) assert.ok(allCapabilities.has(id), `${lens.id} references unknown capability: ${id}`);
+  }
+});
+
+test('migration covers every former tag and the retired compatibility manifest stays removed', () => {
+  const migrations = new Map(taxonomy.migration.map((entry) => [entry.from, entry]));
+  assert.equal(migrations.size, 49);
+  assert.equal(existsSync('site/evidence/decision-log-tags.json'), false);
+  for (const alias of ['product-taste', 'workflow-automation', 'business-value', 'ai-native-workflows', 'least-privilege']) assert.ok(migrations.has(alias), `missing migration for ${alias}`);
+});
+
+test('decision-log entries are schema-valid and preserve conservative evidence boundaries', () => {
+  assert.equal(entries.length, 17);
   entries.forEach(validateEntry);
+  assert.equal(entries.some((entry) => entry.outcome.status === 'Measured outcome'), false, 'migration must not invent measured outcomes');
 });
 
 test('decision-log entries are ordered newest-first', () => {
   for (let i = 1; i < entries.length; i += 1) {
-    const prev = Date.parse(entries[i - 1].date);
-    const curr = Date.parse(entries[i].date);
-    assert.ok(prev >= curr, `entries[${i - 1}] (${entries[i - 1].date}) must not be older than entries[${i}] (${entries[i].date})`);
+    assert.ok(Date.parse(entries[i - 1].date) >= Date.parse(entries[i].date), `entries[${i - 1}] must not be older than entries[${i}]`);
   }
 });
 
-test('decision-log-tags.json is a subset of the current-tags taxonomy (never the future bank)', () => {
-  for (const { tag, shows } of tags) {
-    assert.equal(typeof tag, 'string');
-    assert.ok(tag.length > 0);
-    assert.equal(typeof shows, 'string');
-    assert.ok(shows.length > 0);
-  }
-  const names = tags.map((t) => t.tag);
-  assert.equal(new Set(names).size, names.length, 'decision-log-tags.json must not contain duplicate tags');
-});
-
-test('validator rejects a malformed sample entry (fixture-only, not live data)', () => {
-  const badEntries = [
-    { date: '2026-08-23', tags: ['product-taste'], why: 'x', demonstrates: 'y' }, // too few tags
-    { date: '2026-08-23', tags: ['product-taste', 'product-taste', 'evidence-driven'], why: 'x', demonstrates: 'y' }, // duplicate tag
-    { date: '2026-08-23', tags: ['not-a-real-tag', 'product-taste', 'evidence-driven'], why: 'x', demonstrates: 'y' }, // unknown tag
-    { date: '2026-08-23', tags: ['value-realization', 'product-taste', 'evidence-driven'], why: 'x', demonstrates: 'y' }, // future-bank tag
-    { date: '2026-08-23', tags: ['product-taste', 'evidence-driven', 'systems-thinking'], why: '', demonstrates: 'y' } // empty why
-  ];
-  for (const [i, entry] of badEntries.entries()) {
-    assert.throws(() => validateEntry(entry, i), `bad fixture ${i} should have failed validation`);
+test('static Decision Log stays synchronized with structured evidence and the typed model', () => {
+  assert.doesNotMatch(renderedDecisionLog, /data-tags=/);
+  for (const entry of entries) {
+    assert.ok(renderedDecisionLog.includes(entry.why), `rendered Decision Log is missing: ${entry.why}`);
+    assert.ok(renderedDecisionLog.includes(entry.demonstrates), `rendered Decision Log is missing: ${entry.demonstrates}`);
+    for (const capability of entry.capabilities) assert.ok(renderedDecisionLogLower.includes(capability.replaceAll('-', ' ').toLowerCase()), `rendered Decision Log is missing capability: ${capability}`);
   }
 });
 
-test('validator rejects every redaction-backstop pattern (fixture-only, not live data)', () => {
-  const baseEntry = { date: '2026-08-23', tags: ['product-taste', 'evidence-driven', 'systems-thinking'], demonstrates: 'y' };
-  const leakSamples = [
-    'checked .codex/automations output',
-    'ran the automation.toml step',
-    'dispatched a subagent for this',
-    'ran gh auth switch first',
-    'reviewed the session transcript'
-  ];
-  for (const [i, leak] of leakSamples.entries()) {
-    assert.throws(() => validateEntry({ ...baseEntry, why: leak }, i), `redaction pattern should have caught: ${leak}`);
-  }
-});
-
-test('validator accepts a well-formed sample entry (fixture-only, not live data)', () => {
-  const goodEntry = {
-    date: '2026-08-23',
-    tags: ['product-taste', 'evidence-driven', 'systems-thinking'],
-    why: 'Added a deterministic redaction backstop instead of relying solely on prompt compliance.',
-    demonstrates: 'Designs automated systems with a second, code-enforced safety gate, not just a single point of trust.'
+test('validator rejects malformed typed evidence', () => {
+  const base = {
+    date: '2026-08-23', capabilities: ['product-judgment', 'evidence-discipline'], mechanisms: [],
+    evidence: { status: 'Public evidence', refs: ['../'] }, outcome: { status: 'Not measured' },
+    casePotential: 'Supporting evidence', why: 'x', demonstrates: 'y'
   };
-  assert.doesNotThrow(() => validateEntry(goodEntry, 0));
+  assert.throws(() => validateEntry({ ...base, capabilities: ['decision-making', 'product-judgment'] }, 0));
+  assert.throws(() => validateEntry({ ...base, mechanisms: ['human-in-the-loop'] }, 1));
+  assert.throws(() => validateEntry({ ...base, evidence: { status: 'Measured outcome', refs: ['../'] } }, 2));
+  assert.throws(() => validateEntry({ ...base, outcome: { status: 'Made-up' } }, 3));
+  const localPath = ['C:', 'Users', 'private'].join('\\');
+  assert.throws(() => validateEntry({ ...base, evidence: { status: 'Public evidence', refs: [localPath] } }, 4));
+  assert.throws(() => validateEntry({ ...base, tags: ['product-judgment'] }, 5));
+});
+
+test('validator rejects every redaction-backstop pattern', () => {
+  const baseEntry = {
+    date: '2026-08-23', capabilities: ['product-judgment', 'evidence-discipline'], mechanisms: [],
+    evidence: { status: 'Public evidence', refs: ['../'] }, outcome: { status: 'Not measured' },
+    casePotential: 'Supporting evidence', demonstrates: 'y'
+  };
+  const leakSamples = ['checked .codex/automations output', 'ran the automation.toml step', 'dispatched a subagent for this', 'ran gh auth switch first', 'reviewed the session transcript'];
+  for (const leak of leakSamples) assert.throws(() => validateEntry({ ...baseEntry, why: leak }, 0));
+});
+
+test('validator accepts a conservative typed entry', () => {
+  assert.doesNotThrow(() => validateEntry({
+    date: '2026-08-23',
+    capabilities: ['product-judgment', 'evidence-discipline'],
+    mechanisms: ['human-gate'],
+    evidence: { status: 'Public evidence', refs: ['../../'] },
+    outcome: { status: 'Success criteria defined but not measured', successDefinition: 'Reduce unsupported public claims.' },
+    casePotential: 'Supporting evidence',
+    why: 'Added a bounded review gate before publishing a change.',
+    demonstrates: 'Makes a decision with explicit evidence and outcome boundaries.'
+  }, 0));
 });

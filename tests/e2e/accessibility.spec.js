@@ -6,7 +6,8 @@ const routes = [
   '/',
   '/proof/job-agent/',
   '/proof/job-agent/demo/#research',
-  '/proof/recursive-workflow/'
+  '/proof/recursive-workflow/',
+  '/profile-oracle/'
 ];
 
 for (const route of routes) {
