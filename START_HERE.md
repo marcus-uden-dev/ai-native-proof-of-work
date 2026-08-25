@@ -22,6 +22,9 @@ Evidence was checked on 2026-08-15 against this repository and the source-verifi
 2. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) — the strongest product story.
 3. [Project Status](PROJECT_STATUS.md) — current state, evidence boundaries, and open work.
 
+For case selection, promotion status, and evidence boundaries, use the
+[Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md).
+
 ## Verify the Main Claims in 60 Seconds
 
 | Check | Evidence |
@@ -37,6 +40,7 @@ Demo status: the [published Job-agent V1 snapshot](https://theonedarkhorse.githu
 | Need | Best Source |
 |---|---|
 | Capability-to-evidence map | [Evidence Matrix](EVIDENCE_MATRIX.md) |
+| Case identity and promotion status | [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md) |
 | Milestones and progression | [Project Timeline](PROJECT_TIMELINE.md) |
 | Reading paths for different roles | [Role Reading Paths](ROLE_READING_PATHS.md) |
 | Decisions and tradeoffs | [Decision Log](logs/DECISION_LOG.md) |

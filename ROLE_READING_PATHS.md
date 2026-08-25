@@ -13,11 +13,12 @@ Read:
 
 1. [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md) if using an assistant
 2. [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md)
-3. [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md)
-4. [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md)
-5. [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
-6. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-7. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+3. [docs/evidence/CASE_STUDY_REGISTRY.md](docs/evidence/CASE_STUDY_REGISTRY.md)
+4. [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md)
+5. [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md)
+6. [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md) as supporting mechanism evidence
+7. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+8. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
 
 Look for:
 
@@ -32,11 +33,12 @@ Look for:
 Read:
 
 1. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
-2. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
-3. [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
-4. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
-5. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
-6. [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md)
+2. [docs/evidence/CASE_STUDY_REGISTRY.md](docs/evidence/CASE_STUDY_REGISTRY.md)
+3. [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md)
+4. [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
+5. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
+6. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+7. [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md)
 
 Look for:
 

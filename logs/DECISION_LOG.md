@@ -1,5 +1,50 @@
 # Decision Log
 
+## 2026-08-26 — Make the case-study registry the canonical Profiles evidence layer
+
+### Context
+
+Case identity, promotion status, role lenses, capabilities, and evidence
+boundaries were spread across case-study pages, project summaries, capability
+maps, and the repository evidence index. The new Profiles recommendation also
+requires a clear boundary between recruiter cases and supporting mechanisms.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep separate inventories in each document | No migration work | Creates drift and unclear promotion status |
+| Use the case-study pages as the only registry | Simple for humans | Weak for agent retrieval and role-lens routing |
+| Add one editorial registry with narrative and JSON projections | Clear source of truth; supports Profiles, recruiter agents, and CE workflows | Requires small updates to navigation and evidence maps |
+
+### Decision
+
+Use `docs/evidence/CASE_STUDY_REGISTRY.md` as the canonical editorial case
+registry. Keep narrative case pages readable and focused, project the registry
+into `repository-evidence-index.json`, and keep CE `docs/solutions/` reserved
+for reusable workflow learning. Mechanisms remain supporting evidence rather
+than standalone default Profiles cases.
+
+### Reasoning Trail
+
+```text
+Context -> Case status and evidence boundaries were duplicated across surfaces.
+Options Considered -> Separate inventories, narrative pages as registry, or one registry with projections.
+Tradeoffs -> A registry adds one maintained artifact but reduces drift and makes promotion explicit.
+Decision -> Registry-first case model with narrative and machine-readable projections.
+Evidence -> docs/evidence/CASE_STUDY_REGISTRY.md; repository-evidence-index.json; EVIDENCE_MATRIX.md.
+Open Questions -> Which backfill case should be promoted next after evidence and public-clearance review.
+Next Action -> Backfill PostNord, ELSA, and Lendify evidence before adding them to default Profiles presentation.
+```
+
+### Evidence
+
+[Canonical Case Study Registry](../docs/evidence/CASE_STUDY_REGISTRY.md), [Case Study Promotion Prompt](../prompts/CASE_STUDY_PROMOTION_PROMPT.md), [Evidence Matrix](../EVIDENCE_MATRIX.md)
+
+### Status
+
+Decision — registry and CE-compatible promotion workflow implemented; experience-case promotion remains evidence-gated.
+
 ## 2026-08-25 — Separate the human profile from the agent repository interview
 
 ### Context
@@ -27,7 +72,7 @@ Tradeoffs -> Separation keeps each surface focused. Prompt-first is less seamles
 Decision -> Human profile, agent-searchable repository, Decision Log for static reasoning, Ask the Repository for a later interactive entry point, prompt-first as the first slice.
 Evidence -> tasks/2026-08-25-replace-profile-oracle-with-repository-interview.md; current recruiter guide and repository evidence paths.
 Open Questions -> Final interactive label and whether a later API-backed answer field creates enough value to justify its controls.
-Next Action -> Inventory public-facing Oracle labels and draft the provider-neutral repository-interview prompt.
+Next Action -> Provide the public-site source checkout so the stale live-page labels can be replaced and the prompt-first repository interview can be published.
 ```
 
 ### Evidence
@@ -36,7 +81,7 @@ Next Action -> Inventory public-facing Oracle labels and draft the provider-neut
 
 ### Status
 
-Decision — prompt-first repository interview is planned; direct in-page AI answers are deferred.
+Decision — prompt-first repository interview is planned; direct in-page AI answers are deferred. The provider-neutral prompt and active repository entry points are now aligned; the live page still needs its source checkout for the final copy change.
 
 ## 2026-08-24 — Record bilingual recruiter experience and defer technical-depth personalization
 

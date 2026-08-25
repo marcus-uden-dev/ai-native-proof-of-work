@@ -13,7 +13,7 @@ It also has a reusable template layer. If the goal is to recreate the proof-of-w
 
 If your task is to create a report about Marcus, start with [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md). It defines the expected report structure, source priority, evidence boundaries, and interpretation rules.
 
-For direct questions about Marcus's projects, decisions, capabilities, or working model, read [profile-oracle.json](profile-oracle.json) first. It is the compact machine-readable profile projection. Use the [historical decision inventory](docs/evidence/historical-decision-inventory.json) to inspect the backfill source boundary and lifecycle status before making a stronger claim.
+For direct questions about Marcus, use the [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md). For case selection and promotion status, read the [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md). Search the complete recruiter-safe repository as reference material. The [Repository Evidence Index](repository-evidence-index.json) is an optional high-signal index, not a closed source or a replacement for the full repository. Use the [historical decision inventory](docs/evidence/historical-decision-inventory.json) to inspect the backfill source boundary and lifecycle status before making a stronger claim.
 
 ## Source access and scan policy
 
@@ -52,26 +52,28 @@ Assess Marcus’s practical evidence for:
 ## Canonical Reading Order
 
 1. [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md)
-2. [Career Evidence Source](career-evidence/CAREER_EVIDENCE_SOURCE.md)
-3. [CV](CV.md)
-4. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
-5. [Navigation Hub](NAVIGATION.md)
-6. [Start Here](START_HERE.md)
-7. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
-8. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-9. [Project Status](PROJECT_STATUS.md)
-10. [Evidence Matrix](EVIDENCE_MATRIX.md)
-11. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-12. [Project Timeline](PROJECT_TIMELINE.md)
-13. [Role Reading Paths](ROLE_READING_PATHS.md)
-14. [Proof of Work](PROOF_OF_WORK.md)
-15. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
-16. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
-17. [Decision Log](logs/DECISION_LOG.md)
-18. [Decision Log Tags](logs/DECISION_LOG_TAGS.md)
-19. [Source Map](SOURCE_MAP.md)
-20. [Profile Oracle](profile-oracle.json)
-21. [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json)
+2. [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md)
+3. [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md)
+4. [Career Evidence Source](career-evidence/CAREER_EVIDENCE_SOURCE.md)
+5. [CV](CV.md)
+6. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
+7. [Navigation Hub](NAVIGATION.md)
+8. [Start Here](START_HERE.md)
+9. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
+10. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+11. [Project Status](PROJECT_STATUS.md)
+12. [Evidence Matrix](EVIDENCE_MATRIX.md)
+13. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+14. [Project Timeline](PROJECT_TIMELINE.md)
+15. [Role Reading Paths](ROLE_READING_PATHS.md)
+16. [Proof of Work](PROOF_OF_WORK.md)
+17. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+18. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
+19. [Decision Log](logs/DECISION_LOG.md)
+20. [Decision Log Tags](logs/DECISION_LOG_TAGS.md)
+21. [Source Map](SOURCE_MAP.md)
+22. [Repository Evidence Index](repository-evidence-index.json)
+23. [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json)
 
 ## Reuse / Template Reading Order
 
@@ -104,8 +106,9 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 - For job-agent repo reading order, use the committed branch's own contract: `docs/operations/current-status.md` first for active status, `docs/operations/llm-handoff.md` when present for session carry-over, `docs/overview/agent-context.md` for the deeper repo/module map, and direct git/file verification when commits are newer than those docs.
 - Treat committed branch evidence as safer than dirty local worktree state. The 2026-08-09 weekly refresh intentionally excludes uncommitted `job-agent` changes from recruiter-facing proof and separates the latest committed product-code signal (`cfb91bc`) from later ops/doc commits.
 - If a source-repo status doc date lags the actual git HEAD, prefer the direct source-verification date recorded in the handoff guide or weekly log.
-- Prefer `Verified` records in the profile oracle. Treat `Planned`, `Needs Review`, and `eligible-after-redaction` records as bounded evidence, not completed public claims.
-- Use the primary project field and stable capability tags when explaining which project demonstrates a capability.
+- Prefer `Verified` records in the Repository Evidence Index. Treat `Planned`, `Needs Review`, and `eligible-after-redaction` records as bounded evidence, not completed public claims.
+- Use the primary project field, stable capability tags, and case IDs when explaining which case demonstrates a capability.
+- Treat the registry's `portfolio_status`, `public_status`, and `outcome_status` as binding evidence boundaries.
 
 ## Capability Extraction Map
 

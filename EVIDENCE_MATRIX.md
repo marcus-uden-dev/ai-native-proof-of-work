@@ -9,6 +9,9 @@ This matrix maps recruiter-relevant capabilities to concrete proof points.
 
 Use it as a quick scan before reading the deeper case studies.
 
+Case identity and promotion status come from the [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md).
+Capability tags are retrieval aids; they are not a substitute for case-level evidence.
+
 ## Visual Map
 
 ```mermaid
@@ -40,6 +43,16 @@ flowchart TD
 | Workflow implementation | [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md), [tasks/lessons.md](tasks/lessons.md), [template/README.md](template/README.md) | Verified / Needs Review by case | Shows how repeated AI-assisted workflows become durable repo assets instead of one-off conversations |
 | Custom skill design | [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md), [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md), [template/CUSTOM_SKILL_CASE_TEMPLATE.md](template/CUSTOM_SKILL_CASE_TEMPLATE.md) | Verified / Needs Review by skill | Shows how Marcus-created skills are documented as reusable, redacted problem/solution workflows rather than raw prompts |
 | Recruiter communication | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md), [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), recruiter assets | Verified | Makes the portfolio easier to evaluate quickly and helps recruiter-side LLMs produce balanced reports |
+
+## Case routing
+
+| Role lens | First case | Additional cases | Evidence boundary |
+|---|---|---|---|
+| AI Product | CASE-001 Job-agent | CASE-002 PKM; CASE-003 Household Budget; CASE-007 IoT Fitness | Product proof leads; outcome status remains explicit |
+| Product Operations | CASE-001 Job-agent | CASE-003 Household Budget; CASE-005 ELSA; CASE-011 PostNord | Experience cases require scope and authority backfill |
+| AI Transformation / Enablement | CASE-004 Human-gated Workflow Improvement | CASE-005 ELSA; CASE-011 PostNord; CASE-014 Public Evidence | Operating mechanisms support cases and do not replace them |
+| Customer Understanding | CASE-006 Lendify | CASE-008 ChefNextDoor; CASE-007 IoT Fitness | Research and retention outcomes are not claimed without source detail |
+| Business Analysis / Risk | CASE-003 Household Budget | CASE-012 SEB; CASE-009 Murphy Bed | Separate portfolio domain modelling from employment evidence |
 
 ## Evidence Gaps To Close Next
 

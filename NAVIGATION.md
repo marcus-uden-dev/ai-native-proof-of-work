@@ -60,8 +60,10 @@ The full recruiter-safe repository remains available for targeted search. This t
 | 3 | [Architecture Overview](architecture/ARCHITECTURE.md) | Technical model |
 | 4 | [AI Operating Model](workflows/AI_OPERATING_MODEL.md) | How the workflow layer works |
 | 5 | [llms.txt](llms.txt) | Machine-readable repository map |
-| 6 | [Profile Oracle](profile-oracle.json) | Compact agent-friendly profile projection |
-| 7 | [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json) | Backfill source boundary and lifecycle classification |
+| 6 | [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md) | Prompt for recruiter questions about skills, work history, projects, decisions, and evidence |
+| 7 | [Repository Evidence Index](repository-evidence-index.json) | Optional high-signal index; the complete repository remains searchable |
+| 8 | [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md) | Case identity, Profiles tiers, role lenses, and evidence boundaries |
+| 9 | [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json) | Backfill source boundary and lifecycle classification |
 
 ## By Question
 
@@ -71,7 +73,8 @@ The full recruiter-safe repository remains available for targeted search. This t
 | What should a recruiter read first? | [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) |
 | Where can I see the published historical demo? | [Job-Agent V1 Snapshot](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/job-agent/index.html) |
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
-| What can an agent answer about Marcus? | [Profile Oracle](profile-oracle.json) |
+| How can a recruiter ask the repository about Marcus? | [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md) |
+| Which case should support a capability? | [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md) and [Evidence Matrix](EVIDENCE_MATRIX.md) |
 | Which historical decisions were backfilled? | [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json) |
 | Can an LLM create a fair recruiter report about Marcus? | [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |

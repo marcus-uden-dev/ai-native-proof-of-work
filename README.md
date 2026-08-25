@@ -63,7 +63,9 @@ flowchart TD
 | [START_HERE.md](START_HERE.md) | Fast recruiter-readable entry point |
 | [Published Job-Agent UX Snapshot (archived V1)](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/demos/job-agent/index.html) | No-install historical preview; the local snapshot is more current and app-faithful |
 | [llms.txt](llms.txt) | Machine-readable repository map for LLM assistants |
-| [profile-oracle.json](profile-oracle.json) | Compact machine-readable profile facts, projects, capabilities, and reviewed decisions |
+| [Repository Evidence Index](repository-evidence-index.json) | Optional high-signal index of projects, capabilities, and reviewed decisions; the complete repository remains searchable |
+| [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md) | Case IDs, Profiles tiers, role lenses, evidence boundaries, and promotion gates |
+| [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md) | Provider-neutral prompt for recruiter questions about skills, work history, projects, decisions, and evidence |
 | [docs/evidence/historical-decision-inventory.json](docs/evidence/historical-decision-inventory.json) | Historical backfill inventory with evidence and public-eligibility boundaries |
 | [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md) | Suggested report brief for recruiter-side LLMs |
 | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) | One-screen recruiter overview |
@@ -84,7 +86,7 @@ flowchart TD
 | [workflows/](workflows/) | Claude/Codex workflow, AI operating model, scheduled tasks |
 | [diagrams/](diagrams/) | GitHub-readable Mermaid diagrams |
 | [logs/](logs/) | Weekly diary, decisions, changelog, problem-solving log |
-| [docs/prototypes/profile-oracle-preview.html](docs/prototypes/profile-oracle-preview.html) | Clickable preview of the agent-friendly profile and decision timeline |
+| [docs/prototypes/repository-evidence-preview.html](docs/prototypes/repository-evidence-preview.html) | Clickable preview of the agent-readable evidence and decision timeline |
 | [recruiter-assets/](recruiter-assets/) | CV bullets, recruiter summary, LinkedIn drafts, interview talking points |
 | [exports/](exports/) | Optional recruiter-readable exports |
 | [template/](template/) | Secondary clone/fork adoption kit for users who want to reuse the system |

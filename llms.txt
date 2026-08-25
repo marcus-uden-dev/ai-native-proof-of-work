@@ -13,13 +13,16 @@ The repository itself is not the product. Concrete projects are the primary proo
 - [CV.md](CV.md): current recruiter-safe CV reference.
 - [START_HERE.md](START_HERE.md): one-minute orientation.
 - [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md): fastest summary of strongest proof points.
-- [profile-oracle.json](profile-oracle.json): machine-readable, evidence-bounded profile facts, project map, capabilities, and reviewed decisions.
+- [Repository Evidence Index](repository-evidence-index.json): optional machine-readable, evidence-bounded project map, capabilities, and reviewed decisions. Search the complete repository as the source of truth.
+- [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md): case IDs, Profiles tiers, role lenses, evidence boundaries, and promotion gates.
+- [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md): provider-neutral prompt for recruiter questions about skills, work history, projects, decisions, and evidence.
 - [docs/evidence/historical-decision-inventory.json](docs/evidence/historical-decision-inventory.json): backfill inventory with source boundaries, lifecycle status, and public eligibility.
 - [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md): lead project case study.
 - [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md): capability-to-evidence map.
 - [PROJECT_STATUS.md](PROJECT_STATUS.md): current project state and blockers.
 - [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md): milestone history.
 - [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md): role-specific review paths.
+- [prompts/CASE_STUDY_PROMOTION_PROMPT.md](prompts/CASE_STUDY_PROMOTION_PROMPT.md): CE-compatible case promotion and evidence-boundary prompt.
 
 ## Technical Reviewer / LLM Handoff Path
 
@@ -74,7 +77,7 @@ Use this only when the task is to clone, fork, or adapt the proof-of-work system
 
 - Do not fabricate evidence, metrics, dates, commits, screenshots, users, revenue, or outcomes.
 - Use evidence labels: Verified, Estimated, Planned, Open Question, Decision, Hypothesis, Rejected, Internal, Needs Review.
-- For questions about Marcus, read `profile-oracle.json` first, then follow its evidence links and use the deeper recruiter path for context.
+- For questions about Marcus, use `prompts/REPOSITORY_INTERVIEW_PROMPT.md`, search the complete repository, and use `repository-evidence-index.json` only as an optional high-signal index. Follow evidence links and use the deeper recruiter path for context.
 - Treat `docs/evidence/historical-decision-inventory.json` as a reviewed backfill draft. Do not treat every candidate as public or implemented.
 - Keep recruiter-facing docs free of private local paths, raw chat logs, credentials, secrets, personal data, and sensitive third-party material.
 - Treat template files as reusable structure, not as permission to copy Marcus-specific evidence.
