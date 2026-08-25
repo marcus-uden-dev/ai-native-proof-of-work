@@ -32,6 +32,7 @@
     "site/index.html",
     "site/profile-oracle/index.html",
     "site/llms.txt",
+    "site/repository-interview-prompt.txt",
     "site/proof/job-agent/demo/app.js",
     "site/proof/job-agent/demo/index.html",
     "site/proof/job-agent/demo/styles.css",

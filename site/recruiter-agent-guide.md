@@ -30,8 +30,12 @@ Use only these public sources:
 8. `https://github.com/marcus-uden-dev`
 9. `https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json`
 10. `https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json`
+11. `https://github.com/marcus-uden-dev/ai-native-proof-of-work`
+12. `https://marcus-uden-dev.github.io/ai-native-proof-of-work/repository-interview-prompt.txt`
 
 Do not search for, infer, or link to non-public repositories, identities, local files, cached content, or private personal data.
+
+The recruiter may ask the repository questions about Marcus's skills, work history, domain experience, projects, decisions, working methods, evidence boundaries, and open questions. Search the complete allowed source set before answering; the listed order is a starting point, not a closed evidence subset.
 
 ## Assessment rules
 

@@ -46,7 +46,7 @@
           <ul class="nav-list">
             <li><a href="#hiring-case">Hiring case</a></li>
             <li><a href="#selected-proof">Proof</a></li>
-            <li><a href="#profile-oracle">Oracle</a></li>
+            <li><a href="#repository-interview">Ask the Repository</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
@@ -105,49 +105,51 @@
         </div>
       </section>
 
-      <section class="section section--ruled shell oracle-summary" id="profile-oracle" aria-labelledby="profile-oracle-title">
+      <section class="section section--ruled shell repository-interview" id="repository-interview" aria-labelledby="repository-interview-title">
         <div class="section-heading section-heading--split">
           <div>
-            <p class="kicker">Profile Oracle · WIP</p>
-            <h2 id="profile-oracle-title">How the work is thought through.</h2>
+            <p class="kicker">Repository Interview</p>
+            <h2 id="repository-interview-title">Ask the repository about the work.</h2>
           </div>
-          <p>A compact, recruiter-safe projection of projects, verified decisions, and demonstrated capabilities. The detailed view now lives in the public Decision Log below.</p>
+          <p>The public profile is the human-facing career summary. The proof repository is the searchable evidence source for an assistant answering recruiter questions.</p>
         </div>
-        <div class="oracle-summary__facts" aria-label="Profile Oracle summary">
+        <div class="repository-interview__facts" aria-label="Repository Interview summary">
           <div><strong>17</strong><span>decision records</span></div>
           <div><strong>4</strong><span>project lenses</span></div>
           <div><strong>10</strong><span>capability tags</span></div>
         </div>
-        <div class="oracle-lens-grid">
-          <article class="oracle-lens">
-            <p class="oracle-lens__role">Lead proof</p>
+        <div class="evidence-lens-grid">
+          <article class="evidence-lens">
+            <p class="evidence-lens__role">Lead proof</p>
             <h3>Job-agent</h3>
             <p>Career workflow product showing discovery, company research, application tailoring, and interview preparation.</p>
-            <div class="oracle-tags" aria-label="Job-agent capabilities"><span class="pill pill--gold">product judgment</span><span class="pill">evidence-driven</span></div>
+            <div class="evidence-tags" aria-label="Job-agent capabilities"><span class="pill pill--gold">product judgment</span><span class="pill">evidence-driven</span></div>
           </article>
-          <article class="oracle-lens">
-            <p class="oracle-lens__role">Supporting proof</p>
+          <article class="evidence-lens">
+            <p class="evidence-lens__role">Supporting proof</p>
             <h3>PKM</h3>
             <p>Knowledge-work evidence presented conservatively until sustained daily-use value is validated.</p>
-            <div class="oracle-tags" aria-label="PKM capabilities"><span class="pill pill--gold">product judgment</span><span class="pill">research judgment</span></div>
+            <div class="evidence-tags" aria-label="PKM capabilities"><span class="pill pill--gold">product judgment</span><span class="pill">research judgment</span></div>
           </article>
-          <article class="oracle-lens">
-            <p class="oracle-lens__role">Supporting proof</p>
+          <article class="evidence-lens">
+            <p class="evidence-lens__role">Supporting proof</p>
             <h3>Household budget</h3>
             <p>Shared-domain modeling with roles, imports, review flows, forecasts, and privacy-sensitive data.</p>
-            <div class="oracle-tags" aria-label="Household budget capabilities"><span class="pill pill--gold">systems thinking</span><span class="pill">problem framing</span></div>
+            <div class="evidence-tags" aria-label="Household budget capabilities"><span class="pill pill--gold">systems thinking</span><span class="pill">problem framing</span></div>
           </article>
-          <article class="oracle-lens oracle-lens--harness">
-            <p class="oracle-lens__role">Operating layer</p>
+          <article class="evidence-lens evidence-lens--harness">
+            <p class="evidence-lens__role">Operating layer</p>
             <h3>Personal AI Harness</h3>
             <p>The memory, agent, automation, and improvement layer behind the work, continuously refined through addition and pruning.</p>
-            <div class="oracle-tags" aria-label="Personal AI Harness capabilities"><span class="pill pill--gold">AI-native workflows</span><span class="pill">continuous improvement</span></div>
+            <div class="evidence-tags" aria-label="Personal AI Harness capabilities"><span class="pill pill--gold">AI-native workflows</span><span class="pill">continuous improvement</span></div>
           </article>
         </div>
-        <div class="oracle-summary__actions">
+        <div class="repository-interview__actions">
           <a class="button button--secondary" href="proof/recursive-workflow/#decision-log">Open the Decision Log detail</a>
+          <button class="button button--primary" type="button" data-copy-value="You are interviewing Marcus's public proof repository. A recruiter may ask about his skills and capabilities, work history and domain experience, projects and product work, decisions and trade-offs, working methods, evidence boundaries, gaps, and open questions. Search the complete repository as reference material. Include the CV facts and employment evidence when the question concerns work history, and include the Decision Log when the question concerns product judgment, workflow design, or trade-offs. Cite the relevant public file or URL for every material claim. Separate verified evidence from interpretation, label uncertainty, and say when the repository does not support a claim. Do not invent duties, metrics, outcomes, seniority, or domain experience. Do not treat the repository as a replacement for the human-readable profile. Recruiter question: [PASTE QUESTION HERE]" data-copy-label="Copy Repository Interview prompt">Copy Repository Interview prompt</button>
           <a class="text-link" href="evidence/decision-log.json">Read the structured history <span aria-hidden="true">→</span></a>
         </div>
+        <p class="copy-status" aria-live="polite" data-copy-status></p>
       </section>
 
       <section class="section section--ruled shell" aria-labelledby="claims-title">
@@ -255,7 +257,7 @@
           <div>
             <p class="kicker">External AI review</p>
             <h2 id="ai-review-title">Give an AI assistant a verified starting point.</h2>
-            <p>Use a public evidence guide to compare this work with any role. The prompt requires sources and separates evidence from inference.</p>
+            <p>Use a public evidence guide to compare this work with any role. The prompt requires sources and separates evidence from inference. For open-ended questions about Marcus, use the Repository Interview prompt above.</p>
           </div>
           <div class="review-panel__actions">
             <a class="button button--quiet" href="recruiter-agent-guide.md">Read the agent guide</a>

@@ -6,7 +6,8 @@
 - [Two-minute hiring brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/): General positioning and claim-to-evidence links.
 - [Job-agent case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/): Guided product proof, limitations, and technical appendix.
 - [Recursive workflow system](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/): Supporting proof for the human-gated system loop.
-- [Decision Log Oracle detail](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/#decision-log): Detailed, public view of the agent-friendly profile, historical decisions, project lenses, and capability tags.
+- [Decision Log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/#decision-log): Continuous public record of dated decisions, trade-offs, evidence boundaries, and capability tags.
+- [Repository Interview prompt](https://marcus-uden-dev.github.io/ai-native-proof-of-work/repository-interview-prompt.txt): Copyable prompt for recruiter questions about skills, work history, projects, decisions, and evidence.
 - [Job-agent release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v1.json): Canonical maturity, version, evidence date, and provenance state.
 - [Decision log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json): Structured history of auto-published, tagged, dated self-improvement entries — rendered as static HTML on the recursive workflow page and available here as structured data.
 - [Decision log tag taxonomy](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json): The fixed set of capability tags decision log entries are assigned from.

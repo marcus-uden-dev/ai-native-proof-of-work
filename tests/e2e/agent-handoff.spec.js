@@ -33,6 +33,25 @@ test('homepage exposes a copyable external prompt without embedding a chat', asy
   await expect(page.locator('form')).toHaveCount(0);
 });
 
+test('repository interview prompt invites evidence-backed recruiter questions', async ({ request, page }) => {
+  const response = await request.get('/repository-interview-prompt.txt');
+  expect(response.ok()).toBeTruthy();
+  const prompt = await response.text();
+  expect(prompt).toContain('skills and capabilities');
+  expect(prompt).toContain('work history and domain experience');
+  expect(prompt).toContain('projects and product work');
+  expect(prompt).toContain('decisions and trade-offs');
+  expect(prompt).toContain('evidence boundaries');
+
+  await page.context().grantPermissions(['clipboard-read', 'clipboard-write']);
+  await page.goto('/');
+  await page.getByRole('button', { name: 'Copy Repository Interview prompt' }).click();
+  await expect(page.locator('#repository-interview [data-copy-status]')).toContainText('succeeded');
+  const clipboard = await page.evaluate(() => navigator.clipboard.readText());
+  expect(clipboard).toContain('A recruiter may ask about');
+  expect(clipboard).toContain('Recruiter question:');
+});
+
 test('manifest and fixture are available as static evidence', async ({ request }) => {
   const manifestResponse = await request.get('/evidence/releases/job-agent-v1.json');
   const fixtureResponse = await request.get('/evidence/fixtures/job-agent-company-v1.json');
