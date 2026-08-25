@@ -17,7 +17,7 @@ Integrate a recruiter-safe projection of the Profile Oracle into the public hiri
 
 ## Final artifact target
 
-The public hiring brief at `/` contains a compact Profile Oracle section with project lenses, verified decision signal, capability tags, and a link to the password-protected WIP detail preview. The public section is static, readable without JavaScript, and generated from reviewed source data during this implementation pass.
+The public hiring brief at `/` contains a compact Oracle summary, while the public Decision Log carries the detailed Oracle view. The log includes decisions from the Personal AI Harness and the specific product repositories, including product flow, telemetry, pricing, evidence boundaries, and architecture. Each record keeps its project, type, status, and capability tags visible. The public section is static, readable without JavaScript, and generated from reviewed source data.
 
 ## Inputs to examine
 
@@ -25,15 +25,16 @@ The public hiring brief at `/` contains a compact Profile Oracle section with pr
 - `docs/prototypes/profile-oracle-preview.html`
 - `logs/DECISION_LOG_TAGS.md`
 - `docs/evidence/historical-decision-inventory.json`
+- `strategy/<project>/{product,business,market,decisions}/`
 - Public `site/index.html`, `site/assets/css/site.css`, and release allowlist
 - Public profile-oracle route and decision-log contract tests
 
 ## Context assumptions
 
 - The public site is a curated projection, not a mirror of the source repository.
-- Only the 12 verified decisions already approved for the public decision log are eligible for this section.
-- The detailed `/profile-oracle/` route remains password-protected WIP.
-- The existing public decision log remains the canonical detailed timeline.
+- Verified decisions and explicitly labelled planned or hypothesis records from project strategy documents are eligible after redaction.
+- The public Decision Log is the canonical detailed Oracle timeline; the former `/profile-oracle/` route redirects there.
+- Project decisions must not be collapsed into Personal AI Harness decisions merely because the portfolio repository stores the evidence.
 - English stable identifiers remain the data contract; recruiter-facing copy stays concise.
 
 ## Key questions to answer
@@ -45,10 +46,11 @@ The public hiring brief at `/` contains a compact Profile Oracle section with pr
 
 ## Extraction method
 
-1. Parse the reviewed Oracle JSON and count verified decisions by project.
+1. Parse the reviewed Oracle JSON and inventory decision records by project and status.
 2. Cross-check project IDs and capability tags against the current taxonomy.
-3. Compare the public route and homepage for duplicate or contradictory status copy.
-4. Inspect the public allowlist and contract tests before editing.
+3. Read project-scoped product, business, pricing, market, and decision-trail documents for additional user-flow, telemetry, pricing, and architecture decisions.
+4. Compare the public route and homepage for duplicate or contradictory status copy.
+5. Inspect the public allowlist and contract tests before editing.
 
 ## Synthesis method
 
@@ -56,9 +58,10 @@ Create a compact public projection containing:
 
 - A WIP-labelled Oracle heading and one-sentence purpose.
 - Four project lenses with role/status labels.
-- A verified-decision count and a short explanation of the evidence boundary.
+- A decision-record count and a short explanation of the evidence boundary.
+- Project-specific records with explicit `Verified`, `Planned`, or `Hypothesis` status and decision type.
 - A small set of recruiter-understandable capability tags.
-- A link to the gated detailed preview and the public decision log.
+- A link to the public Decision Log detail.
 
 Do not expose `evidence_refs` from the private Oracle when they point to internal documents. Do not add a second full decision timeline to the homepage.
 
@@ -78,17 +81,18 @@ Hiring brief
   Profile Oracle summary
     purpose and WIP boundary
     four project lenses
-    verified decision and capability signal
-    links to gated Oracle preview and public decision log
+    project decisions with status, type, and capability signal
+    link to public Decision Log detail
   Existing proof and contact sections
 ```
 
 ## Acceptance criteria
 
 - [ ] The public homepage contains a visible Profile Oracle section.
-- [ ] The section uses only sanitized verified project and capability summaries.
+- [ ] The section uses sanitized project and capability summaries with explicit lifecycle status.
+- [ ] Project-repository decisions cover product flow, telemetry, pricing, or architecture where evidence exists.
 - [ ] It does not contain local paths, raw plan names, secrets, or internal evidence links.
-- [ ] The detailed preview remains password-protected and marked WIP.
+- [ ] The former detailed preview route redirects to the public Decision Log and does not create a duplicate source.
 - [ ] The public page works with JavaScript disabled.
 - [ ] Accessibility and mobile layout checks pass.
 - [ ] Public release validation passes.
@@ -105,6 +109,7 @@ Hiring brief
 
 - The Oracle is duplicated as a second long timeline and makes the homepage too long.
 - A planned or internal record is presented as verified public evidence.
+- A product-repository decision is incorrectly classified as a Personal AI Harness decision.
 - The homepage links directly to private source files.
 - The public gate is removed from the detailed preview without explicit scope.
 - Unrelated preview work is staged during the public release.
@@ -121,8 +126,10 @@ Build and validate the compact public Oracle summary in the public staging check
 
 | Source / tool | Finding |
 |---|---|
-| `profile-oracle.json` | 4 project lenses and 12 verified decisions are available for a sanitized projection. |
-| `site/profile-oracle/index.html` | The detailed route already contains the Oracle timeline and remains password-protected WIP. |
+| `profile-oracle.json` | 4 project lenses plus project-specific decisions with verified, planned, and hypothesis statuses are available for a sanitized projection. |
+| `strategy/job-agent/` | Product flow, telemetry, and pricing decisions are documented in project-scoped strategy files. |
+| `strategy/pkm/` and `strategy/household-budget-app/` | Supporting-product positioning and pricing boundaries are documented without market-outcome claims. |
+| `site/profile-oracle/index.html` | The former route now redirects to the public Decision Log to avoid duplicate Oracle surfaces. |
 | Public release files | The homepage is allowlisted and has an existing design system and contract-test surface. |
 | `logs/DECISION_LOG_TAGS.md` | Capability tags must describe evidenced capabilities and remain within the current taxonomy. |
 | PowerShell, `rg`, Git status | Public staging had two unrelated dirty preview files; they were stashed and preserved before implementation. |

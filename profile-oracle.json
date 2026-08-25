@@ -177,6 +177,56 @@
       "summary":"The budget app demonstrates shared roles, imports, review flows, forecasts, and privacy-sensitive domain modeling.",
       "tags":["systems-thinking","problem-framing","stakeholder-understanding"],
       "evidence_refs":["strategy/household-budget-app/README.md","PROJECT_PROOF_POINTS.md"]
+    },
+    {
+      "id":"decision-2026-05-11-job-agent-reviewed-career-flow",
+      "date":"2026-05-11",
+      "project":"job-agent",
+      "status":"Verified",
+      "title":"Use a reviewed career workflow instead of an autonomous applier",
+      "summary":"The product starts with user-reviewed discovery, fit analysis, application support, privacy, and feedback rather than unreviewed application sending.",
+      "tags":["product-discovery","decision-support","human-in-the-loop","risk-awareness"],
+      "evidence_refs":["strategy/job-agent/product/PRODUCT_STRATEGY.md","strategy/job-agent/decisions/DECISION_TRAIL.md"]
+    },
+    {
+      "id":"decision-2026-05-11-job-agent-telemetry-as-learning-layer",
+      "date":"2026-05-11",
+      "project":"job-agent",
+      "status":"Planned",
+      "title":"Treat telemetry and outcome learning as a product layer",
+      "summary":"Telemetry and outcome learning are planned as a medium-priority capability, with measurement kept ahead of outcome claims.",
+      "tags":["continuous-improvement","validation","quality-assurance","decision-traceability"],
+      "evidence_refs":["strategy/job-agent/product/PRODUCT_STRATEGY.md","case-studies/JOB_AGENT_CASE_STUDY.md"]
+    },
+    {
+      "id":"decision-2026-05-11-job-agent-pricing-hypotheses",
+      "date":"2026-05-11",
+      "project":"job-agent",
+      "status":"Hypothesis",
+      "title":"Test a job-search sprint or focused monthly plan first",
+      "summary":"A time-boxed sprint and a lightweight monthly plan are the first pricing hypotheses; willingness to pay remains unvalidated.",
+      "tags":["product-judgment","prioritization","commercial-awareness","value-creation"],
+      "evidence_refs":["strategy/job-agent/business/PRICING_STRATEGY.md"]
+    },
+    {
+      "id":"decision-2026-05-11-household-budget-pricing-boundary",
+      "date":"2026-05-11",
+      "project":"household-budget",
+      "status":"Planned",
+      "title":"Defer household-budget pricing until trust and daily value are proven",
+      "summary":"Pricing waits until workflow safety, import quality, privacy, and repeated household value are stronger.",
+      "tags":["risk-awareness","prioritization","commercial-awareness","evidence-driven"],
+      "evidence_refs":["strategy/household-budget-app/business/PRICING_STRATEGY.md"]
+    },
+    {
+      "id":"decision-2026-05-11-pkm-pricing-boundary",
+      "date":"2026-05-11",
+      "project":"pkm",
+      "status":"Planned",
+      "title":"Defer PKM pricing until daily-use value is validated",
+      "summary":"Pricing waits until one end-to-end daily-use path demonstrates repeated value across ingestion, search, learning, and capture.",
+      "tags":["research-judgment","prioritization","commercial-awareness","validation"],
+      "evidence_refs":["strategy/pkm/business/PRICING_STRATEGY.md"]
     }
   ],
   "public_boundary": {
