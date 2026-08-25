@@ -6,7 +6,17 @@ The site leads with a concise hiring case. It then provides dated evidence, expl
 
 ## Current state
 
-The repository is a local clean-room staging area. It has no remote and is not published. The intended public project is `marcus-uden-dev/ai-native-proof-of-work`, with `https://marcus.uden.dev` as the canonical site after approval and DNS validation.
+This is the professional public repository staging area for `marcus-uden-dev/ai-native-proof-of-work`. It contains the curated static site and a staged migration of project strategy and case-study evidence from the earlier proof-of-work archive. Publication, Pages activation, and DNS changes still require explicit approval.
+
+The migration is content-only. The earlier repository history is not imported. See [release/migration-manifest.json](release/migration-manifest.json) for the staged file boundary.
+
+## Project evidence
+
+- [Project proof points](PROJECT_PROOF_POINTS.md)
+- [Project status](PROJECT_STATUS.md)
+- [Job-agent case study](case-studies/JOB_AGENT_CASE_STUDY.md)
+- [PKM case study](case-studies/PKM_CASE_STUDY.md)
+- [Household budget app case study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md)
 
 ## Hiring route
 

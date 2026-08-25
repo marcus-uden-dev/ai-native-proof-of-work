@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "migrationId": "original-proof-of-work-to-professional-repository-2026-08-25",
+  "status": "staged",
+  "source": {
+    "role": "legacy public proof-of-work repository",
+    "commit": "4e859463f4080d7c6bf2fcf7c263cf2d6231a650",
+    "historyPolicy": "content-only migration; do not import source Git history"
+  },
+  "destination": {
+    "role": "professional public proof-of-work repository",
+    "commitBeforeMigration": "ff503b7d54b00c4223ad4a65481529c392809b34",
+    "canonicalRepository": "marcus-uden-dev/ai-native-proof-of-work"
+  },
+  "batches": [
+    {
+      "id": "project-strategy",
+      "sourcePaths": [
+        "strategy/job-agent/",
+        "strategy/pkm/",
+        "strategy/household-budget-app/"
+      ],
+      "destinationPaths": [
+        "strategy/job-agent/",
+        "strategy/pkm/",
+        "strategy/household-budget-app/"
+      ],
+      "status": "staged",
+      "review": "local link and public-marker scan passed; final release privacy review pending"
+    },
+    {
+      "id": "project-case-studies",
+      "sourcePaths": [
+        "case-studies/JOB_AGENT_CASE_STUDY.md",
+        "case-studies/PKM_CASE_STUDY.md",
+        "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md"
+      ],
+      "destinationPaths": [
+        "case-studies/JOB_AGENT_CASE_STUDY.md",
+        "case-studies/PKM_CASE_STUDY.md",
+        "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md"
+      ],
+      "status": "staged",
+      "review": "old demo links removed; final release privacy review pending"
+    },
+    {
+      "id": "project-summaries",
+      "sourcePaths": [
+        "PROJECT_PROOF_POINTS.md",
+        "PROJECT_STATUS.md"
+      ],
+      "destinationPaths": [
+        "PROJECT_PROOF_POINTS.md",
+        "PROJECT_STATUS.md"
+      ],
+      "status": "staged",
+      "review": "project-focused summaries; claims and maturity labels require final public review"
+    }
+  ],
+  "excludedFromThisBatch": [
+    "AGENTS.md",
+    "internal/",
+    "plans/",
+    "prompts/",
+    "logs/",
+    "weekly-input/",
+    "workflows/",
+    "template/",
+    "recruiter-assets/",
+    "career-evidence/",
+    "case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md",
+    "demos/"
+  ],
+  "rollback": {
+    "method": "remove the staged destination files and restore the destination checkout to the recorded pre-migration commit only with explicit approval",
+    "sourcePreserved": true
+  }
+}
