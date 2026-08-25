@@ -126,6 +126,24 @@ test('the decision log renders the newest published entry', async ({ page }) => 
   await expect(section.getByText('Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.')).toBeVisible();
 });
 
+test('the Oracle project and capability filters reveal the matching decisions', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const entries = page.locator('#decision-timeline > li[data-project]');
+
+  await page.getByRole('button', { name: /Job-agent/ }).click();
+  await expect(page.locator('[data-scroll-status]')).toContainText('3 decisions');
+  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(3);
+  expect(await entries.evaluateAll((items) => items.filter((item) => item.hidden).length)).toBe(9);
+
+  await page.getByRole('button', { name: 'evidence-driven', exact: true }).click();
+  await expect(page.locator('[data-scroll-status]')).toContainText('3 decisions');
+  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(3);
+
+  await page.getByRole('button', { name: /All decisions/ }).click();
+  await expect(page.locator('[data-scroll-status]')).toContainText('12 decisions');
+  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(12);
+});
+
 test('the compact decision timeline auto-scrolls and pauses on interaction', async ({ page }) => {
   await page.goto('/proof/recursive-workflow/');
   const viewport = page.locator('.decision-log-viewport');

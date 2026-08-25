@@ -1432,6 +1432,16 @@ h3 {
   grid-column: 1 / -1;
 }
 
+.decision-log-oracle__filter-label {
+  flex-basis: 100%;
+  margin: 0.25rem 0 0.1rem;
+  color: var(--muted);
+  font-size: 0.64rem;
+  font-weight: 750;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .decision-log-oracle__project {
   display: inline-flex;
   flex-direction: column;
@@ -1442,6 +1452,25 @@ h3 {
   color: var(--ink);
   font-size: 0.82rem;
   font-weight: 700;
+  text-align: left;
+}
+
+.decision-log-oracle__project:hover,
+.decision-log-oracle__project:focus-visible,
+.decision-log-oracle__project[aria-pressed="true"] {
+  border-color: var(--dark);
+  background: var(--dark);
+  color: var(--paper);
+}
+
+.decision-log-oracle__project:hover small,
+.decision-log-oracle__project:focus-visible small,
+.decision-log-oracle__project[aria-pressed="true"] small {
+  color: var(--dark-muted);
+}
+
+.decision-log-oracle__project--harness[aria-pressed="true"] {
+  border-color: var(--teal);
 }
 
 .decision-log-oracle__project small {
@@ -1466,6 +1495,14 @@ h3 {
   min-height: 1.55rem;
   padding: 0.22rem 0.55rem;
   font-size: 0.64rem;
+}
+
+.decision-log-oracle__tags .pill:hover,
+.decision-log-oracle__tags .pill:focus-visible,
+.decision-log-oracle__tags .pill[aria-pressed="true"] {
+  border-color: var(--dark);
+  background: var(--dark);
+  color: var(--paper);
 }
 
 .decision-log-oracle__boundary {
