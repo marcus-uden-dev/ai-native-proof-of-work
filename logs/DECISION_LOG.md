@@ -1,5 +1,43 @@
 # Decision Log
 
+## 2026-08-25 — Separate the human profile from the agent repository interview
+
+### Context
+
+The current “Profile Oracle” naming suggests a static authority or profile projection. The intended experience has two distinct audiences: a human recruiter should read the public profile, while an agent should search the public proof repository to answer evidence-based questions.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Treat the profile as both human summary and agent source | One apparent entry point | Makes the profile carry too much detail and weakens repository searchability |
+| Keep the profile human-facing and the proof repository agent-searchable | Clear audience boundaries; preserves the repo as evidence context | Requires explicit agent instructions and a searchable repository structure |
+| Put a direct AI answer field on the public page first | Smoothest apparent interaction | Requires an API or connector, plus privacy, cost, citation, and abuse controls |
+
+### Decision
+
+Keep the public profile as the human-facing career and recruiter summary. Use the public proof repository as the agent-searchable evidence source. Replace public-facing “Profile Oracle” language with a static `Decision Log` surface and a later `Ask the Repository` / `Repository Interview` surface. Start with a provider-neutral, copyable prompt; defer direct in-page AI answers until a later API-backed design is justified.
+
+### Reasoning Trail
+
+```text
+Context -> Humans need the profile; agents need searchable evidence and repository context.
+Options Considered -> One combined profile, separated profile/repository channels, or a direct AI field first.
+Tradeoffs -> Separation keeps each surface focused. Prompt-first is less seamless than an embedded answer but is reversible and avoids premature API, privacy, cost, and abuse scope.
+Decision -> Human profile, agent-searchable repository, Decision Log for static reasoning, Ask the Repository for a later interactive entry point, prompt-first as the first slice.
+Evidence -> tasks/2026-08-25-replace-profile-oracle-with-repository-interview.md; current recruiter guide and repository evidence paths.
+Open Questions -> Final interactive label and whether a later API-backed answer field creates enough value to justify its controls.
+Next Action -> Inventory public-facing Oracle labels and draft the provider-neutral repository-interview prompt.
+```
+
+### Evidence
+
+[Repository Interview Todo](../tasks/2026-08-25-replace-profile-oracle-with-repository-interview.md), [Recruiter Agent Guide](../RECRUITER_AGENT_GUIDE.md), [Navigation](../NAVIGATION.md)
+
+### Status
+
+Decision — prompt-first repository interview is planned; direct in-page AI answers are deferred.
+
 ## 2026-08-24 — Record bilingual recruiter experience and defer technical-depth personalization
 
 ### Context
