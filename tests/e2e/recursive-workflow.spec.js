@@ -105,7 +105,8 @@ test('the decision log content is present in the raw HTML response, with no Java
   expect(html).toContain('id="decision-log"');
   expect(html).toContain('<!-- DECISION_LOG_ENTRIES:BEGIN -->');
   expect(html).toContain('<!-- DECISION_LOG_ENTRIES:END -->');
-  expect(html).toContain('No entries yet — check back after the next weekly run.');
+  expect(html).toContain('2026-08-09');
+  expect(html).not.toContain('No entries yet — check back after the next weekly run.');
   expect(html).toContain('evidence/decision-log.json');
   expect(html).toContain('evidence/decision-log-tags.json');
 });
@@ -117,11 +118,12 @@ test('the decision log reuses the limitations-list--stacked component rather tha
   await expect(list).toHaveClass(/limitations-list--stacked/);
 });
 
-test('the decision log renders its explicit empty state (currently the live, correct state)', async ({ page }) => {
+test('the decision log renders the newest published entry', async ({ page }) => {
   await page.goto('/proof/recursive-workflow/');
   const section = page.locator('#decision-log');
   await expect(section).toBeVisible();
-  await expect(section.getByText('No entries yet — check back after the next weekly run.')).toBeVisible();
+  await expect(section.getByText('2026-08-09')).toBeVisible();
+  await expect(section.getByText('Separated product-code freshness from later documentation and operations work so the public proof describes what actually changed.')).toBeVisible();
 });
 
 test('the decision log links to its structured evidence files with working relative paths', async ({ page }) => {
