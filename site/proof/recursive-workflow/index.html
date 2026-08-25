@@ -173,9 +173,10 @@
             <p class="kicker">Decision log</p>
             <h2 id="decision-log-title">Small, verified improvements — tagged and dated.</h2>
           </div>
-          <p>Auto-published by the weekly automation for mechanical, already-completed improvements only, from a fixed <a href="../../evidence/decision-log-tags.json">capability tag taxonomy</a>. Larger additions to this site are reviewed before anything ships. Structured history: <a href="../../evidence/decision-log.json">decision-log.json</a>.</p>
+          <p>Auto-published by the weekly automation from a fixed <a href="../../evidence/decision-log-tags.json">capability tag taxonomy</a>. Structured history: <a href="../../evidence/decision-log.json">decision-log.json</a>.</p>
         </div>
-        <ul class="limitations-list limitations-list--stacked decision-log-list">
+        <div class="decision-log-viewport" data-auto-scroll="true" tabindex="0" aria-label="Scrollable decision timeline">
+          <ul class="limitations-list limitations-list--stacked decision-log-list">
           <!-- DECISION_LOG_ENTRIES:BEGIN -->
           <li><p class="decision-log-entry__date">2026-08-24</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">product-judgment</span><span class="pill">systems-thinking</span><span class="pill">context-engineering</span><span class="pill">continuous-improvement</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Explains system ownership and product boundaries clearly as the work evolves.</p></li>
           <li><p class="decision-log-entry__date">2026-08-20</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">prioritization</span><span class="pill">automation-judgment</span><span class="pill">workflow-automation</span><span class="pill">validation</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Chose a bounded canary before expanding scheduled finding intake into a broader reporting architecture.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Uses staged validation to control uncertainty before scaling automation.</p></li>
@@ -190,7 +191,9 @@
           <li><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">PKM</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">research-judgment</span><span class="pill">product-judgment</span><span class="pill">evidence-driven</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Presented PKM as supporting evidence until sustained adoption and daily-use value are validated.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Uses conservative evidence boundaries instead of overstating product maturity.</p></li>
           <li><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Household budget</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">systems-thinking</span><span class="pill">problem-framing</span><span class="pill">stakeholder-understanding</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Used household budgeting to demonstrate shared roles, imports, review flows, forecasts, and privacy-sensitive domain modeling.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Frames a multi-user domain with explicit roles, constraints, and review needs.</p></li>
           <!-- DECISION_LOG_ENTRIES:END -->
-        </ul>
+          </ul>
+        </div>
+        <p class="decision-log-status" data-scroll-status><strong>Auto-scrolling</strong> · Hover or interact to pause.</p>
       </section>
 
       <section class="section shell" id="contact" aria-labelledby="case-contact-title">
@@ -207,6 +210,36 @@
         </div>
       </section>
     </main>
+
+    <script>
+      (() => {
+        const viewport = document.querySelector('[data-auto-scroll]');
+        const status = document.querySelector('[data-scroll-status]');
+        if (!viewport || !status || viewport.scrollHeight <= viewport.clientHeight || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+        let paused = false;
+        const speed = 10;
+
+        const pause = () => {
+          paused = true;
+          viewport.classList.add('is-paused');
+          status.innerHTML = '<strong>Paused</strong> · Scroll or move away to read.';
+        };
+
+        ['pointerenter', 'focusin', 'wheel', 'touchstart', 'pointerdown', 'keydown'].forEach((eventName) => {
+          viewport.addEventListener(eventName, pause, { passive: eventName !== 'keydown' });
+        });
+
+        const tick = () => {
+          if (!paused) {
+            viewport.scrollTop += speed / 20;
+            if (viewport.scrollTop >= viewport.scrollHeight - viewport.clientHeight) viewport.scrollTop = 0;
+          }
+        };
+
+        window.setTimeout(() => window.setInterval(tick, 50), 900);
+      })();
+    </script>
 
     <footer class="footer">
       <div class="shell footer__inner">

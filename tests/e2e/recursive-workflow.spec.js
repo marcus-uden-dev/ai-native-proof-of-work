@@ -126,6 +126,20 @@ test('the decision log renders the newest published entry', async ({ page }) => 
   await expect(section.getByText('Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.')).toBeVisible();
 });
 
+test('the compact decision timeline auto-scrolls and pauses on interaction', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const viewport = page.locator('.decision-log-viewport');
+  await expect(viewport).toHaveAttribute('data-auto-scroll', 'true');
+  await page.waitForTimeout(1300);
+  const positionBeforePause = await viewport.evaluate((element) => element.scrollTop);
+  expect(positionBeforePause).toBeGreaterThan(0);
+  await viewport.hover();
+  await expect(page.locator('[data-scroll-status]')).toContainText('Paused');
+  const positionAfterPause = await viewport.evaluate((element) => element.scrollTop);
+  await page.waitForTimeout(250);
+  expect(await viewport.evaluate((element) => element.scrollTop)).toBe(positionAfterPause);
+});
+
 test('the decision log links to its structured evidence files with working relative paths', async ({ page }) => {
   await page.goto('/proof/recursive-workflow/');
   const section = page.locator('#decision-log');

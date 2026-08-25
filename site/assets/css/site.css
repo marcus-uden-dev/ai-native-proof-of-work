@@ -1190,29 +1190,113 @@ h3 {
   border: 0;
 }
 
+.decision-log-viewport {
+  position: relative;
+  height: clamp(19rem, 54vh, 33rem);
+  margin-top: 1.25rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scroll-behavior: auto;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  scrollbar-color: var(--gold) transparent;
+  scrollbar-width: thin;
+}
+
+.decision-log-viewport::after {
+  position: sticky;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: block;
+  height: 1.5rem;
+  margin-top: -1.5rem;
+  background: linear-gradient(transparent, var(--surface));
+  content: "";
+  pointer-events: none;
+}
+
+.decision-log-viewport.is-paused::after {
+  display: none;
+}
+
+.decision-log-status {
+  margin: 0.65rem 0 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.03em;
+}
+
+.decision-log-status strong {
+  color: var(--gold);
+  font-weight: 750;
+}
+
 .decision-log-list {
-  margin-top: 1.5rem;
+  display: block;
+  margin: 0;
 }
 
 .decision-log-entry__date {
-  margin: 0 0 0.5rem;
+  display: inline-block;
+  margin: 0 0.7rem 0.3rem 0;
   color: var(--muted);
-  font-size: 0.75rem;
+  font-size: 0.66rem;
   font-weight: 750;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .decision-log-entry__tags {
-  display: flex;
+  display: inline-flex;
   flex-wrap: wrap;
   margin: 0 0 0.6rem;
   gap: 0.4rem;
+  vertical-align: middle;
 }
 
 .decision-log-entry__why,
 .decision-log-entry__demonstrates {
-  margin: 0.3rem 0 0;
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.decision-log-list li {
+  padding: 0.8rem 1rem 0.8rem 2.5rem;
+}
+
+.decision-log-list li::before {
+  top: 0.9rem;
+  left: 1rem;
+}
+
+.decision-log-list .pill {
+  min-height: 1.55rem;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.64rem;
+}
+
+@media (max-width: 640px) {
+  .decision-log-viewport {
+    height: 50vh;
+  }
+
+  .decision-log-list li {
+    padding-left: 2rem;
+  }
+
+  .decision-log-list li::before {
+    left: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decision-log-viewport {
+    scroll-behavior: auto;
+  }
 }
 
 .promotion-example {
