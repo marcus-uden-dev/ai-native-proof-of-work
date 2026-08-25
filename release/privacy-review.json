@@ -2,34 +2,34 @@
   "schemaVersion": 1,
   "releaseId": "job-agent-v1-release-candidate",
   "reviewStatus": "complete",
-  "reviewedAt": "2026-08-20",
+  "reviewedAt": "2026-08-25",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "6e96beb83c2af8c0e8a4a840a60d19a5e9bf8ce3",
+  "candidateCommit": "1e8cb9464878c26fd6cc002ad3d9a47bd468437b",
   "scope": "Full release-candidate binary set: three synthetic proof frames, sanitized English CV, and professional social card.",
   "reviewedFiles": [
     {
       "path": "site/assets/images/job-agent/decision-research.png",
-      "sha256": "c2b7db443092dc6f11fe1cb98c33136de5eceb5fa531e85128dbc59d76723658",
+      "sha256": "7a5aef01796c9697c18cf6d0aa61bfb1099ac8546c4d2d6d87a909f57644e905",
       "decision": "approved",
       "dataClass": "synthetic demo",
       "containsPersonalData": false,
-      "note": "Regenerated after the WCAG contrast correction. Visually checked for local paths, private identifiers, credentials, and realistic private data."
+      "note": "Regenerated from the current staged public prototype on 2026-08-25 and visually checked for local paths, private identifiers, credentials, and realistic private data."
     },
     {
       "path": "site/assets/images/job-agent/intake-scope.png",
-      "sha256": "f34f415d33efd532fcdd0c39e55b095bdf5ecc8f0559f16bcc6d027e48441020",
+      "sha256": "479a16be5c30ae822afaa8696ac28ddea46ffad62769239238365f95394aa183",
       "decision": "approved",
       "dataClass": "synthetic demo",
       "containsPersonalData": false,
-      "note": "Generated from the staged public prototype and visually checked for local paths, private identifiers, credentials, and realistic private data."
+      "note": "Regenerated from the current staged public prototype on 2026-08-25 and visually checked for local paths, private identifiers, credentials, and realistic private data."
     },
     {
       "path": "site/assets/images/job-agent/tailored-action.png",
-      "sha256": "d6b7c9aa82089522a3db6076d77b7ed33995f4e1f0d1e5fb9f6cba359c28f944",
+      "sha256": "a53e40710c6cd4b03d1f6745ce7b15edc6650fec859b7810735c47e69b0a3f3e",
       "decision": "approved",
       "dataClass": "synthetic demo",
       "containsPersonalData": false,
-      "note": "Generated from the staged public prototype and visually checked for local paths, private identifiers, credentials, and realistic private data."
+      "note": "Regenerated from the current staged public prototype on 2026-08-25 and visually checked for local paths, private identifiers, credentials, and realistic private data."
     },
     {
       "path": "site/assets/cv/marcus-uden-cv.pdf",
