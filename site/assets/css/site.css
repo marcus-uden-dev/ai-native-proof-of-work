@@ -507,6 +507,18 @@ h3 {
   gap: 1.2rem;
 }
 
+.hero__decision-note {
+  max-width: 38rem;
+  margin: 1.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.hero__decision-note strong {
+  color: var(--ink);
+}
+
 @media (max-width: 47.5rem) {
   .oracle-summary__facts,
   .oracle-lens-grid {
@@ -1359,6 +1371,114 @@ h3 {
   font-weight: 750;
 }
 
+.decision-log-oracle {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(17rem, 0.7fr);
+  gap: 1.25rem 2rem;
+  margin-top: 1.5rem;
+  padding: 1.35rem;
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--teal);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+}
+
+.decision-log-oracle__intro h3 {
+  margin: 0;
+  font-size: 1.55rem;
+}
+
+.decision-log-oracle__intro p:last-child,
+.decision-log-oracle__boundary {
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.decision-log-oracle__facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  align-self: start;
+}
+
+.decision-log-oracle__facts div {
+  padding: 0.65rem 0.75rem;
+  border-left: 1px solid var(--line);
+}
+
+.decision-log-oracle__facts strong {
+  display: block;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 1.55rem;
+  line-height: 1;
+}
+
+.decision-log-oracle__facts span {
+  display: block;
+  margin-top: 0.3rem;
+  color: var(--muted);
+  font-size: 0.66rem;
+  line-height: 1.25;
+}
+
+.decision-log-oracle__projects,
+.decision-log-oracle__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  grid-column: 1 / -1;
+}
+
+.decision-log-oracle__project {
+  display: inline-flex;
+  flex-direction: column;
+  min-width: 10rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.decision-log-oracle__project small {
+  margin-top: 0.2rem;
+  color: var(--muted);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.decision-log-oracle__project--lead {
+  border-color: var(--gold);
+}
+
+.decision-log-oracle__project--harness {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+}
+
+.decision-log-oracle__tags .pill {
+  min-height: 1.55rem;
+  padding: 0.22rem 0.55rem;
+  font-size: 0.64rem;
+}
+
+.decision-log-oracle__boundary {
+  grid-column: 1 / -1;
+  margin-top: 0;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--line);
+}
+
+.decision-log-oracle__boundary strong {
+  color: var(--ink);
+}
+
 .decision-log-list {
   display: block;
   margin: 0;
@@ -1406,6 +1526,19 @@ h3 {
 }
 
 @media (max-width: 640px) {
+  .decision-log-oracle {
+    display: block;
+  }
+
+  .decision-log-oracle__facts {
+    margin-top: 1.25rem;
+  }
+
+  .decision-log-oracle__projects,
+  .decision-log-oracle__tags {
+    margin-top: 1rem;
+  }
+
   .decision-log-viewport {
     height: 50vh;
   }
