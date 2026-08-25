@@ -15,6 +15,17 @@ If your task is to create a report about Marcus, start with [Recruiter LLM Repor
 
 For direct questions about Marcus's projects, decisions, capabilities, or working model, read [profile-oracle.json](profile-oracle.json) first. It is the compact machine-readable profile projection. Use the [historical decision inventory](docs/evidence/historical-decision-inventory.json) to inspect the backfill source boundary and lifecycle status before making a stronger claim.
 
+## Source access and scan policy
+
+The complete recruiter-safe repository is available as reference material. The canonical reading order below is a high-signal priority path, not a closed allowlist. Search other relevant project, strategy, workflow, evidence, log, and case-study files when the role or claim requires them.
+
+Keep evidence classes separate:
+
+- `employment_evidence`: service history in [Career Evidence Source](career-evidence/CAREER_EVIDENCE_SOURCE.md) and [CV.md](CV.md).
+- `user_cv_evidence`: a CV variant available to the job-agent product.
+- `persona_evidence`: profile and persona material.
+- `portfolio_decision_evidence`: [Decision Log](logs/DECISION_LOG.md) and [Decision Log Tags](logs/DECISION_LOG_TAGS.md). This can support product judgment and workflow decisions, but cannot prove an unlisted employment duty.
+
 ## Evaluation Goal
 
 Assess Marcus’s practical evidence for:
@@ -30,22 +41,26 @@ Assess Marcus’s practical evidence for:
 ## Canonical Reading Order
 
 1. [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md)
-2. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
-3. [Navigation Hub](NAVIGATION.md)
-4. [Start Here](START_HERE.md)
-5. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
-6. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-7. [Project Status](PROJECT_STATUS.md)
-8. [Evidence Matrix](EVIDENCE_MATRIX.md)
-9. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-10. [Project Timeline](PROJECT_TIMELINE.md)
-11. [Role Reading Paths](ROLE_READING_PATHS.md)
-12. [Proof of Work](PROOF_OF_WORK.md)
-13. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
-14. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
-15. [Source Map](SOURCE_MAP.md)
-16. [Profile Oracle](profile-oracle.json)
-17. [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json)
+2. [Career Evidence Source](career-evidence/CAREER_EVIDENCE_SOURCE.md)
+3. [CV](CV.md)
+4. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
+5. [Navigation Hub](NAVIGATION.md)
+6. [Start Here](START_HERE.md)
+7. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
+8. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+9. [Project Status](PROJECT_STATUS.md)
+10. [Evidence Matrix](EVIDENCE_MATRIX.md)
+11. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+12. [Project Timeline](PROJECT_TIMELINE.md)
+13. [Role Reading Paths](ROLE_READING_PATHS.md)
+14. [Proof of Work](PROOF_OF_WORK.md)
+15. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+16. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
+17. [Decision Log](logs/DECISION_LOG.md)
+18. [Decision Log Tags](logs/DECISION_LOG_TAGS.md)
+19. [Source Map](SOURCE_MAP.md)
+20. [Profile Oracle](profile-oracle.json)
+21. [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json)
 
 ## Reuse / Template Reading Order
 

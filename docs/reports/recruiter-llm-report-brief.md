@@ -19,18 +19,25 @@ What does this repository fairly demonstrate about Marcus, what is strongest, wh
 
 ## Source Priority
 
-Read in this order:
+Use the complete recruiter-safe repository as reference material. The order below is a retrieval aid, not a closed allowlist: search other relevant repository files when the role, claim, or question requires them.
 
-1. [START_HERE.md](../../START_HERE.md)
-2. [RECRUITER_ONE_PAGER.md](../../RECRUITER_ONE_PAGER.md)
-3. [case-studies/JOB_AGENT_CASE_STUDY.md](../../case-studies/JOB_AGENT_CASE_STUDY.md)
-4. [PROJECT_PROOF_POINTS.md](../../PROJECT_PROOF_POINTS.md)
-5. [EVIDENCE_MATRIX.md](../../EVIDENCE_MATRIX.md)
-6. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
-7. [PROJECT_TIMELINE.md](../../PROJECT_TIMELINE.md)
-8. [logs/DECISION_LOG.md](../../logs/DECISION_LOG.md)
-9. [SOURCE_MAP.md](../../SOURCE_MAP.md)
-10. [RECRUITER_AGENT_GUIDE.md](../../RECRUITER_AGENT_GUIDE.md)
+Read these high-signal sources first:
+
+1. [Career Evidence Source](../../career-evidence/CAREER_EVIDENCE_SOURCE.md)
+2. [CV.md](../../CV.md)
+3. [START_HERE.md](../../START_HERE.md)
+4. [RECRUITER_ONE_PAGER.md](../../RECRUITER_ONE_PAGER.md)
+5. [case-studies/JOB_AGENT_CASE_STUDY.md](../../case-studies/JOB_AGENT_CASE_STUDY.md)
+6. [PROJECT_PROOF_POINTS.md](../../PROJECT_PROOF_POINTS.md)
+7. [EVIDENCE_MATRIX.md](../../EVIDENCE_MATRIX.md)
+8. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](../../case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+9. [PROJECT_TIMELINE.md](../../PROJECT_TIMELINE.md)
+10. [logs/DECISION_LOG.md](../../logs/DECISION_LOG.md)
+11. [logs/DECISION_LOG_TAGS.md](../../logs/DECISION_LOG_TAGS.md)
+12. [SOURCE_MAP.md](../../SOURCE_MAP.md)
+13. [RECRUITER_AGENT_GUIDE.md](../../RECRUITER_AGENT_GUIDE.md)
+
+Classify the career source and CV as `employment_evidence` / `user_cv_evidence` as applicable. Classify the decision log and its tag taxonomy as `portfolio_decision_evidence`. Decision evidence can support product judgment, workflow design, and tradeoffs, but it cannot establish an unlisted employment duty.
 
 ## Interpretation Rules
 

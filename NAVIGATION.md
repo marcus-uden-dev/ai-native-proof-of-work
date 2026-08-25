@@ -36,15 +36,20 @@ Optional historical preview: [published Job-Agent V1 snapshot](https://theonedar
 |---|---|---|
 | 1 | [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) | Suggested fair report format and evidence boundaries for recruiter-side LLMs |
 | 2 | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) | Detailed path for agents and structured review |
-| 3 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
-| 4 | [Project Status](PROJECT_STATUS.md) | Current state, progress, and blockers |
-| 5 | [Project Proof Points](PROJECT_PROOF_POINTS.md) | Portfolio-level evidence |
-| 6 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project |
-| 7 | [PKM Case Study](case-studies/PKM_CASE_STUDY.md) | Supporting knowledge-system evidence |
-| 8 | [Household Budget App Case Study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Supporting domain-modeling evidence |
-| 9 | [Workflow Implementation Cases](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) | Supporting AI-native workflow implementation evidence |
-| 10 | [Decision Log](logs/DECISION_LOG.md) | Tradeoffs and positioning decisions |
-| 11 | [Before / After Snapshots](BEFORE_AFTER_SNAPSHOTS.md) | How the portfolio improved |
+| 3 | [Career Evidence Source](career-evidence/CAREER_EVIDENCE_SOURCE.md) | Consolidated service history and explicit evidence gaps |
+| 4 | [CV](CV.md) | Current recruiter-safe career reference |
+| 5 | [Evidence Matrix](EVIDENCE_MATRIX.md) | Capability map |
+| 6 | [Project Status](PROJECT_STATUS.md) | Current state, progress, and blockers |
+| 7 | [Project Proof Points](PROJECT_PROOF_POINTS.md) | Portfolio-level evidence |
+| 8 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project |
+| 9 | [PKM Case Study](case-studies/PKM_CASE_STUDY.md) | Supporting knowledge-system evidence |
+| 10 | [Household Budget App Case Study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Supporting domain-modeling evidence |
+| 11 | [Workflow Implementation Cases](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) | Supporting AI-native workflow implementation evidence |
+| 12 | [Decision Log](logs/DECISION_LOG.md) | Tradeoffs and positioning decisions (`portfolio_decision_evidence`) |
+| 13 | [Decision Log Tags](logs/DECISION_LOG_TAGS.md) | Controlled decision-evidence taxonomy |
+| 14 | [Before / After Snapshots](BEFORE_AFTER_SNAPSHOTS.md) | How the portfolio improved |
+
+The full recruiter-safe repository remains available for targeted search. This table is a priority path, not a closed source list.
 
 ## Technical Reviewer / LLM Handoff
 

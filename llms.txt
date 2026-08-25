@@ -9,6 +9,8 @@ The repository itself is not the product. Concrete projects are the primary proo
 ## Primary Recruiter Path
 
 - [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md): fair report format for recruiter-side LLMs.
+- [career-evidence/CAREER_EVIDENCE_SOURCE.md](career-evidence/CAREER_EVIDENCE_SOURCE.md): consolidated employment evidence from the supplied CV variants.
+- [CV.md](CV.md): current recruiter-safe CV reference.
 - [START_HERE.md](START_HERE.md): one-minute orientation.
 - [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md): fastest summary of strongest proof points.
 - [profile-oracle.json](profile-oracle.json): machine-readable, evidence-bounded profile facts, project map, capabilities, and reviewed decisions.
@@ -31,12 +33,14 @@ The repository itself is not the product. Concrete projects are the primary proo
 
 ## Evidence And Strategy Reference
 
+- The complete recruiter-safe repository is searchable reference material. The paths listed here are high-signal entry points, not a closed allowlist.
 - [PROOF_OF_WORK.md](PROOF_OF_WORK.md): central proof-of-work map.
 - [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md): strongest evidence by project.
 - [SOURCE_MAP.md](SOURCE_MAP.md): recruiter-safe source summary.
 - [strategy/README.md](strategy/README.md): strategy index.
 - [logs/DECISION_LOG.md](logs/DECISION_LOG.md): decision trail.
 - [logs/DECISION_LOG_TAGS.md](logs/DECISION_LOG_TAGS.md): controlled capability-tag taxonomy and assignment rules.
+- Decision-log material is `portfolio_decision_evidence`; it supports product judgment and workflow decisions but does not establish unlisted employment duties.
 - [logs/PROBLEM_SOLVING_LOG.md](logs/PROBLEM_SOLVING_LOG.md): problems and mitigations.
 - [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md): workflow improvements.
 - [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md): sanitized case study for Marcus-created reusable skills.
