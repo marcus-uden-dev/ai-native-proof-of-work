@@ -46,6 +46,8 @@ test('CV evidence routes are available to the recruiter assessment flow', async 
   expect(cvPdf.ok()).toBeTruthy();
   const facts = await cvFacts.json();
   expect(facts.artifactId).toBe('marcus-uden-cv-facts');
+  expect(facts.publicationPolicy.omissions).toEqual([]);
+  expect(facts.identity.citizenshipAndWorkAuthorization).toBe('Swedish and U.S. citizen, eligible to work in Sweden.');
   expect(facts.experience).toEqual(expect.arrayContaining([
     expect.objectContaining({ organisation: 'ChefNextDoor' }),
     expect.objectContaining({ organisation: 'PostNord' }),

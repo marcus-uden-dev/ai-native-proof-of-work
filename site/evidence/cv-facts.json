@@ -9,11 +9,23 @@
       "url": "https://marcus.uden.dev/assets/cv/marcus-uden-cv.pdf",
       "role": "Canonical human-readable English CV",
       "artifactSha256": "61a5f2378b8cc553b2eae6c224acc970f03765f1256a81c6027ee675a3adad90"
+    },
+    "candidateConfirmedFacts": {
+      "reviewedAt": "2026-08-24",
+      "role": "Source for citizenship, work authorization, birthplace, and family background"
     }
+  },
+  "publicationPolicy": {
+    "approvedForPublication": true,
+    "omissions": [],
+    "note": "No facts from the prior structured public record are intentionally omitted."
   },
   "identity": {
     "name": "Marcus Udén",
-    "location": "Stockholm, Sweden"
+    "location": "Stockholm, Sweden",
+    "citizenshipAndWorkAuthorization": "Swedish and U.S. citizen, eligible to work in Sweden.",
+    "birthplace": "Sweden",
+    "familyBackground": "One parent is American."
   },
   "professionalProfile": {
     "headline": "Product Manager and Product Operations practitioner",
@@ -154,6 +166,7 @@
       "Employment chronology",
       "Education and stated programme focus",
       "Language level",
+      "Citizenship and work authorization",
       "Explicitly listed role scope",
       "Related mortgage, construction-finance, risk-analysis, and contract-review experience",
       "Public proof sources and their stated limits"
