@@ -44,7 +44,14 @@ test('CV evidence routes are available to the recruiter assessment flow', async 
   expect(cvPage.ok()).toBeTruthy();
   expect(cvFacts.ok()).toBeTruthy();
   expect(cvPdf.ok()).toBeTruthy();
-  expect((await cvFacts.json()).artifactId).toBe('marcus-uden-cv-facts');
+  const facts = await cvFacts.json();
+  expect(facts.artifactId).toBe('marcus-uden-cv-facts');
+  expect(facts.experience).toEqual(expect.arrayContaining([
+    expect.objectContaining({ organisation: 'ChefNextDoor' }),
+    expect.objectContaining({ organisation: 'PostNord' }),
+    expect.objectContaining({ organisation: 'SEB Construction Loans' }),
+    expect.objectContaining({ organisation: 'ELSA Sweden' })
+  ]));
   expect(cvPdf.headers()['content-type']).toContain('application/pdf');
 });
 
