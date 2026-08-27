@@ -1,14 +1,15 @@
-# Local Draft Recruiter Smoke Test — Zinova Product Manager
+# Local Branch Recruiter Smoke Test — Zinova Product Manager
 
 ## Execution record
 
 - Date: 2026-08-27
-- Method: unauthenticated HTTP retrieval from the local static site with no sign-in, browser session, or cookies.
+- Branch head: `8b9be90`
+- Method: unauthenticated HTTP retrieval from the local static site. No sign-in, browser session, or cookies were used.
 - Guide followed: `recruiter-agent-guide.md`.
 - Report model followed: `recruiter-report-brief.md`.
 - Role input: sanitized summary in the paired `.prompt.txt` file.
-- Scope: guided public-source route only. No general web search, local CV source files, or non-public repositories were used as assessment evidence.
-- Important limitation: this verifies the local draft route. It is not an observed run from ChatGPT or Claude against the deployed public site.
+- Scope: guided public-source route only. No general web search, local source CV files, or non-public repositories were used as assessment evidence.
+- Important limitation: this verifies the PR branch before deployment. It is not an observed run from ChatGPT or Claude against the deployed public site.
 
 ## Source-access result
 
@@ -17,59 +18,62 @@
 - `200` — CV facts page
 - `200` — CV facts JSON
 - `200` — English CV PDF
-- `200` — Job-agent proof
+- `200` — Job-agent proof and static demo
 - `200` — recursive workflow proof
+- `200` — release manifest and decision-log sources
 
 ## Smoke-test response
 
 ### 1. Executive summary
 
-- **Evidence-backed fit: Moderate.** Marcus has relevant product-workflow and financial-services evidence, with a clear limitation on direct SME-finance equivalence.
-- **Strongest match: Credit and risk context.** The public CV sources record SEB mortgage and construction-finance work with risk analysis and contract review.
-- **Strongest match: Product judgment and AI-assisted workflow design.** The public proof shows structured research, trade-offs, and human-gated AI support.
-- **Main gap: Direct SME product ownership, pricing, margin, and measured credit-product outcomes require interview validation. Confidence: medium.**
+- **Evidence-backed fit: Moderate to strong.** The public evidence supports product discovery, customer-journey work, regulated-process judgment, related credit experience, and AI-assisted workflow design.
+- **Strongest match: Product discovery and customer journeys.** The CV records customer interviews, journey mapping, service-flow analysis, requirements, onboarding, and product-adoption work across Lendify, ChefNextDoor, and an IoT product.
+- **Strongest match: Financial-services and risk context.** The CV documents SEB mortgage and construction-finance work with risk analysis and contract review.
+- **Main gap: Direct SME lending ownership plus measured pricing, margin, conversion, volume, and credit-quality outcomes are not evidenced by the current public source route. Confidence: medium.**
 
 ### 2. Role needs
 
-Zinova needs a hands-on Product Manager who can own financial products and digital customer journeys. The role needs product strategy, customer research, credit understanding, pricing and packaging judgment, AI-assisted prototyping, clear requirements, collaboration with risk and compliance, and measurable commercial results for Swedish small and medium-sized businesses.
+Zinova needs a hands-on Product Manager who can own financial products and the digital customer experience for Swedish small and medium-sized businesses. The role needs product strategy, roadmap ownership, pricing and packaging judgment, customer research, credit understanding, AI-assisted prototyping, clear requirements, customer journeys, cross-functional work with risk and compliance, and measurable commercial outcomes.
 
 ### 3. Evidence-backed matches
 
-1. **Strong — related credit, risk, and contract experience.** The CV facts source records work at SEB Construction Loans and SEB Mortgages and Construction Loans. The listed scope includes construction finance, mortgage and construction-finance cases, risk analysis, and contract review. This is relevant evidence for Zinova's credit and regulated-finance context. It is not direct evidence of SME or commercial lending. [CV facts JSON](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json), [English CV PDF](https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/cv/marcus-uden-cv.pdf)
+1. **Strong — product discovery and customer journeys.** The CV records customer interviews, target-group analysis, journey mapping, retention strategy, service-flow analysis, requirements, prototyping, onboarding, time-to-value, and product-adoption work. This directly supports Zinova's discovery and customer-experience needs. [CV facts JSON](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json), [English CV PDF](https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/cv/marcus-uden-cv.pdf)
 
-2. **Strong — structured product decisions under uncertainty.** The Job-agent proof connects research inputs, provenance, decision use, and a pursue, investigate, or pass outcome. This supports Zinova's need for prioritisation and customer-journey decisions where uncertainty and risk matter. [Job-agent proof](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/)
+2. **Strong — related credit, risk, and contract experience.** The CV documents work at SEB Construction Loans and SEB Mortgages and Construction Loans. The stated scope includes construction finance, mortgage and construction-finance cases, risk analysis, contract review, customer handling, and parts of the risk-management system. This is relevant evidence for a regulated financial-product context; it is not direct evidence of SME or commercial lending. [CV facts JSON](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json), [English CV PDF](https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/cv/marcus-uden-cv.pdf)
 
-3. **Strong — AI-assisted prototyping with human controls.** The public workflow evidence describes AI support for research, synthesis, prototyping, and validation while keeping human decisions and promotion controls visible. This is relevant to Zinova's AI-assisted prototyping need. [Recursive workflow proof](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/)
+3. **Moderate to strong — business and product launch judgment.** The CV records B2C business building, contract and requirements work, logistics, digital sales-channel work, business-model testing, and a loyalty-system concept. This supports practical commercial and delivery judgment, although the public route does not provide measured outcomes. [CV facts JSON](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json), [English CV PDF](https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/cv/marcus-uden-cv.pdf)
 
-4. **Moderate — Swedish and English communication.** The structured CV facts list Swedish and English at native level. [CV facts JSON](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json)
+4. **Strong — AI-assisted workflow design with explicit controls.** The public proof shows research, provenance, decision use, human review, and next-action design. It supports Zinova's need for AI-assisted prototyping and clear decision workflows. The release is a prototype and has no measured market outcomes. [Job-agent proof](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/), [release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v1.json), [recursive workflow proof](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/)
+
+5. **Strong — Swedish and English communication and Swedish work authorization.** The CV facts list Swedish and English at native level. The structured identity source confirms Swedish and U.S. citizenship and eligibility to work in Sweden. [CV facts JSON](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json), [English CV PDF](https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/cv/marcus-uden-cv.pdf)
 
 ### 4. Inferences that need interview validation
 
-- The SEB credit and risk experience may transfer well to a regulated SME-finance product context. This is an inference because the public sources do not show direct SME or commercial lending ownership.
-- The product evidence suggests Marcus can turn a complex customer problem into a clear flow and next action. Interview validation should test ownership across roadmap, requirements, engineering delivery, and launch.
-- The public materials suggest a risk-aware approach. Interview validation should test practical collaboration with credit, compliance, legal, and risk functions.
+- The documented private-side mortgage and construction-finance work may transfer well to an SME-finance product context. This is an inference, not evidence of direct SME or commercial lending ownership.
+- The combined discovery, requirements, business-model, and workflow evidence suggests Marcus can own a product problem from research through delivery. Interview validation should test roadmap ownership, engineering collaboration, and launch accountability in a comparable product setting.
+- The public evidence suggests risk-aware cross-functional judgment. Interview validation should test practical work with credit, compliance, legal, and risk stakeholders.
 
 ### 5. Gaps or missing evidence
 
-- **Direct SME or commercial lending: Not evidenced by the current public source route.** The CV documents related private-side mortgage and construction-finance experience. It does not establish direct SME or commercial lending equivalence.
-- **Pricing, packaging, margin, conversion, volume, and credit-quality outcomes: Not evidenced by the current public source route.** The Job-agent release remains work in progress, not market-validated, and has no measured market outcomes. [Release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v1.json)
-- **End-to-end financial-product launch ownership: Not evidenced by the current public source route.** The public product proof demonstrates workflow and decision design. It does not prove production ownership of a lending product through launch and measured outcomes.
+- **Direct SME or commercial lending: Not evidenced by the current public source route.** The sources show related mortgage, construction-finance, risk, and contract work.
+- **Measured financial-product outcomes: Not evidenced by the current public source route.** Pricing, margin, conversion, volume, customer-satisfaction, and credit-quality results are not published as quantified outcomes.
+- **Direct ownership of a financial product through launch and measured results: Not evidenced by the current public source route.** The product and financial-services evidence is relevant, but does not establish this exact combination.
 
 ### 6. Interview questions
 
-1. Which private-side mortgage or construction-finance cases at SEB required the most risk and contract judgment, and how did you make the decision clear for the customer?
-2. What evidence would you need before transferring experience from mortgage and construction finance to a small-business financing journey?
-3. Describe a product decision where customer value, risk, compliance, and commercial economics pointed in different directions.
-4. How do you translate a prototype into business rules, acceptance criteria, and delivery-ready requirements?
-5. Which direct experience do you have with pricing, packaging, margin, conversion, volume, or credit-quality metrics?
+1. Which SEB mortgage or construction-finance cases required the most risk and contract judgment, and how did you make the decision understandable for the customer?
+2. How would you adapt private-side credit experience to an SME financing journey without assuming that the customers, risk model, or decision process are the same?
+3. Describe how you turned a customer-research finding into a prioritised requirement, user flow, and delivery decision.
+4. Which product or business-model decisions did you own at Murphy Bed or the IoT product, and what evidence changed your direction?
+5. Which metrics have you used to evaluate pricing, conversion, retention, service quality, or credit quality, and how did they affect product decisions?
 
 ### 7. Fit assessment
 
-**Evidence-backed fit: Moderate for regulated product judgment, customer-workflow design, AI-assisted prototyping, Swedish and English communication, and related private-side credit experience.** The rerun improves on the prior assessment because the guided route now exposes the SEB credit, mortgage, construction-finance, risk-analysis, and contract-review evidence. Confidence remains medium because Zinova's direct SME-finance, commercial lending, pricing, and measured-outcome requirements need specific interview validation.
+**Evidence-backed fit: Moderate to strong for product discovery, customer journeys, regulated-process judgment, related private-side credit experience, practical business-model work, and AI-assisted workflow design.** Confidence is medium because Zinova's direct SME-finance, commercial-lending, and quantified financial-product outcome requirements need interview validation. The assessment makes no identity, existence, authorship, or CV-authenticity challenge.
 
-## Improvement against the pre-fix smoke test
+## Improvement against the initial smoke test
 
-1. The required CV sources were available through the guided route instead of returning `404` or being excluded from the guide.
-2. The assessment identified related SEB credit experience instead of treating it as absent.
-3. The assessment kept the correct distinction between related private-side credit work and direct SME or commercial lending.
-4. The test did not raise identity or CV-authenticity concerns.
+1. The guided route now exposes the full public career record rather than a small SEB-only subset.
+2. The assessment identifies customer research, journey mapping, requirements, onboarding, product-adoption, business-model, and launch evidence.
+3. The assessment preserves the correct distinction between related private-side credit experience and direct SME or commercial lending.
+4. The test does not raise identity or CV-authenticity concerns.
