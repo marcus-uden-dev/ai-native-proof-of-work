@@ -12,20 +12,13 @@
     },
     "candidateConfirmedFacts": {
       "reviewedAt": "2026-08-24",
-      "role": "Source for citizenship, work authorization, birthplace, and family background"
+      "role": "Source for citizenship and work authorization"
     }
-  },
-  "publicationPolicy": {
-    "approvedForPublication": true,
-    "omissions": [],
-    "note": "No facts from the prior structured public record are intentionally omitted."
   },
   "identity": {
     "name": "Marcus Udén",
     "location": "Stockholm, Sweden",
-    "citizenshipAndWorkAuthorization": "Swedish and U.S. citizen, eligible to work in Sweden.",
-    "birthplace": "Sweden",
-    "familyBackground": "One parent is American."
+    "citizenshipAndWorkAuthorization": "Swedish and U.S. citizen, eligible to work in Sweden."
   },
   "professionalProfile": {
     "headline": "Product Manager and Product Operations practitioner",
