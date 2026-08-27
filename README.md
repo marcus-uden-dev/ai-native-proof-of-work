@@ -12,7 +12,7 @@ Use the GitHub repository directly. The recruiter route does not require a custo
 
 ## Hiring route
 
-1. Start with [the recruiter agent guide](RECRUITER_AGENT_GUIDE.md) for a guided, evidence-bound review.
+1. Start with [the recruiter agent guide](site/recruiter-agent-guide.md) for a guided, evidence-bound review.
 2. Read [the two-minute hiring brief](RECRUITER_ONE_PAGER.md).
 3. Inspect [the Job-agent case study](case-studies/JOB_AGENT_CASE_STUDY.md) and the [evidence matrix](EVIDENCE_MATRIX.md).
 4. Download [the sanitized English CV](site/assets/cv/marcus-uden-cv.pdf).
