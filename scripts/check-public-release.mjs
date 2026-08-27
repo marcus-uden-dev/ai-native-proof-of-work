@@ -17,6 +17,7 @@ function normalizePath(path) {
 function listFiles(root, current = root) {
   const files = [];
   for (const entry of readdirSync(current, { withFileTypes: true })) {
+    if (entry.name === '.git') continue;
     if (entry.isDirectory() && ignoredDirectories.has(entry.name)) continue;
     const absolute = resolve(current, entry.name);
     if (entry.isDirectory()) files.push(...listFiles(root, absolute));

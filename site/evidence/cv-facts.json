@@ -1,0 +1,76 @@
+{
+  "schemaVersion": 1,
+  "artifactId": "marcus-uden-cv-facts",
+  "status": "Current public professional source",
+  "lastReviewed": "2026-08-27",
+  "canonicalUrl": "https://marcus.uden.dev/cv/",
+  "sources": {
+    "approvedPublicCv": {
+      "url": "https://marcus.uden.dev/assets/cv/marcus-uden-cv.pdf",
+      "role": "Canonical human-readable English CV",
+      "artifactSha256": "61a5f2378b8cc553b2eae6c224acc970f03765f1256a81c6027ee675a3adad90"
+    }
+  },
+  "identity": {
+    "name": "Marcus Udén",
+    "location": "Stockholm, Sweden"
+  },
+  "professionalProfile": {
+    "headline": "Product Manager and Product Operations practitioner",
+    "summary": "Product and operations practitioner who turns messy operating problems into clear, buildable work.",
+    "coreCapabilities": [
+      "Product discovery and requirements",
+      "Product operations and workflow design",
+      "AI-assisted prototyping and evaluation",
+      "Customer journeys and service flows",
+      "Business analysis and regulated-process judgment",
+      "Cross-functional communication"
+    ]
+  },
+  "languages": [
+    { "language": "Swedish", "level": "native-level" },
+    { "language": "English", "level": "native-level" },
+    { "language": "Spanish", "level": "basic" }
+  ],
+  "education": [
+    { "programme": "Digital Strategy", "institution": "Nackademin, Stockholm", "period": "2018-06 to 2020-01" },
+    { "programme": "Law Programme", "institution": "Stockholm University", "period": "2006-08 to 2011-01" },
+    { "programme": "Music Management", "institution": "Kalmar University / Hultsfred", "period": "2004-08 to 2006-01" }
+  ],
+  "experience": [
+    {
+      "title": "Financial Advisor - Financing and risk management",
+      "organisation": "SEB Construction Loans",
+      "period": "2016-06 to 2017-12",
+      "scope": "Processed construction finance with risk analysis and contract review."
+    },
+    {
+      "title": "Financial Advisor - Risk analysis and customer relationships",
+      "organisation": "SEB Mortgages and Construction Loans",
+      "period": "2007-10 to 2014-09",
+      "scope": "Managed mortgage and construction-finance cases, including risk and contract review."
+    },
+    {
+      "title": "Account Manager - Customer and market analysis",
+      "organisation": "Comboloan",
+      "period": "2007-01 to 2007-10",
+      "scope": "Worked with customer and market analysis in financial services."
+    },
+    { "title": "Digital business developer - Digital transformation", "organisation": "Ldek AB", "period": "2022-06 to 2023-01" },
+    { "title": "Founder and co-founder roles - Business development and product launch", "organisation": "Multiple ventures", "period": "2014-09 to 2022-01" }
+  ],
+  "assessmentUse": {
+    "supports": [
+      "Employment chronology",
+      "Education",
+      "Language level",
+      "Explicitly listed role scope",
+      "Related mortgage, construction-finance, risk-analysis, and contract-review experience"
+    ],
+    "doesNotSupport": [
+      "Direct SME or commercial lending equivalence unless another public source supports it",
+      "Claims outside the stated facts",
+      "A hiring decision without human review"
+    ]
+  }
+}

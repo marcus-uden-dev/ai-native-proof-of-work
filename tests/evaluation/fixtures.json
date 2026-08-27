@@ -28,6 +28,10 @@
     {
       "id": "broken-source",
       "summary": "One named public evidence link is unavailable."
+    },
+    {
+      "id": "zinova-product-manager-post-fix",
+      "summary": "Sanitized financial-products Product Manager role used to verify that the guided CV route surfaces related SEB credit evidence without claiming direct SME or commercial lending equivalence."
     }
   ]
 }
