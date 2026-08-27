@@ -2,9 +2,9 @@
   "schemaVersion": 1,
   "releaseId": "job-agent-v1-release-candidate",
   "reviewStatus": "complete",
-  "reviewedAt": "2026-08-25",
+  "reviewedAt": "2026-08-27",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "1e8cb9464878c26fd6cc002ad3d9a47bd468437b",
+  "candidateCommit": "cf6cae92924ac7f3031d315936826563b3b4924a",
   "scope": "Full release-candidate binary set: three synthetic proof frames, sanitized English CV, and professional social card.",
   "reviewedFiles": [
     {

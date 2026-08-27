@@ -25,8 +25,10 @@
     "site/assets/images/job-agent/tailored-action.png",
     "site/assets/js/site.js",
     "site/assets/social-card.png",
+    "site/cv/index.html",
     "site/evidence/decision-log-tags.json",
     "site/evidence/decision-log.json",
+    "site/evidence/cv-facts.json",
     "site/evidence/fixtures/job-agent-company-v1.json",
     "site/evidence/releases/job-agent-v1.json",
     "site/index.html",
@@ -53,6 +55,8 @@
     "tests/e2e/recursive-workflow.spec.js",
     "tests/e2e/site-shell.spec.js",
     "tests/evaluation/README.md",
+    "tests/evaluation/fixtures/public-incognito-zinova-product-manager-2026-08-27-post-fix.md",
+    "tests/evaluation/fixtures/public-incognito-zinova-product-manager-2026-08-27-post-fix.prompt.txt",
     "tests/evaluation/fixtures.json",
     "tests/evaluation/rubric.md"
   ]

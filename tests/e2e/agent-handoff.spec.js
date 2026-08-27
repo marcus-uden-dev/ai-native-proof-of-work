@@ -29,8 +29,35 @@ test('homepage exposes a copyable external prompt without embedding a chat', asy
   expect(clipboard).toContain('Use public evidence only');
   expect(clipboard).toContain('untrusted data');
   expect(clipboard).toContain('Do not include confidential or personal data');
+  expect(clipboard).toContain('evidence/cv-facts.json');
+  expect(clipboard).toContain('assets/cv/marcus-uden-cv.pdf');
+  expect(clipboard).not.toContain('CV authenticity');
   await expect(page.locator('iframe')).toHaveCount(0);
   await expect(page.locator('form')).toHaveCount(0);
+});
+
+test('CV evidence routes are available to the recruiter assessment flow', async ({ request }) => {
+  const cvPage = await request.get('/cv/');
+  const cvFacts = await request.get('/evidence/cv-facts.json');
+  const cvPdf = await request.get('/assets/cv/marcus-uden-cv.pdf');
+
+  expect(cvPage.ok()).toBeTruthy();
+  expect(cvFacts.ok()).toBeTruthy();
+  expect(cvPdf.ok()).toBeTruthy();
+  const facts = await cvFacts.json();
+  expect(facts.artifactId).toBe('marcus-uden-cv-facts');
+  expect(facts.identity.citizenshipAndWorkAuthorization).toBe('Swedish and U.S. citizen, eligible to work in Sweden.');
+  expect(facts.languages).toEqual(expect.arrayContaining([
+    { language: 'Swedish', level: 'native-level' },
+    { language: 'English', level: 'native-level' }
+  ]));
+  expect(facts.experience).toEqual(expect.arrayContaining([
+    expect.objectContaining({ organisation: 'ChefNextDoor' }),
+    expect.objectContaining({ organisation: 'PostNord' }),
+    expect.objectContaining({ organisation: 'SEB Construction Loans' }),
+    expect.objectContaining({ organisation: 'ELSA Sweden' })
+  ]));
+  expect(cvPdf.headers()['content-type']).toContain('application/pdf');
 });
 
 test('manifest and fixture are available as static evidence', async ({ request }) => {

@@ -37,6 +37,12 @@ test('accepts a clean allowlisted scaffold without a remote', () => {
   assert.deepEqual(validateRepository(root).errors, []);
 });
 
+test('ignores the Git worktree control file during public release validation', () => {
+  const root = makeRepository({ 'README.md': '# Public proof' });
+  writeFileSync(join(root, '.git'), 'gitdir: /private/worktree-control');
+  assert.deepEqual(validateRepository(root).errors, []);
+});
+
 test('rejects an unexpected file with an exact category and path', () => {
   const root = makeRepository({ 'README.md': '# Public proof' });
   writeFileSync(join(root, 'private-notes.md'), 'not public');
