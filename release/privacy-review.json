@@ -5,7 +5,7 @@
   "reviewedAt": "2026-09-01",
   "reviewer": "Marcus Udén (Codex)",
   "candidateCommit": "6bddf90714be497f417bf7002c7993cfd4fbaefd",
-  "scope": "Full release-candidate binary set: current and historical synthetic proof frames, sanitized English CV, and professional social card.",
+  "scope": "Full release-candidate binary set: current and historical synthetic proof frames, sanitized English CV, professional social card, and one aggregate personal listening-statistics screenshot.",
   "reviewedFiles": [
     {
       "path": "site/assets/images/job-agent/decision-research.png",
@@ -85,6 +85,18 @@
         "public positioning"
       ],
       "note": "Generated from the public design system and visually checked. No photo, private identifier, local path, or unapproved contact detail is present."
+    },
+    {
+      "path": "site/assets/images/information-diet/pocket-casts-listening-stats-2026-08-28.jpg",
+      "sha256": "861e7615d6e0469d367c1e65db6c275a125a44d79f4d3cba7a3dfd4e55227def",
+      "decision": "approved",
+      "dataClass": "aggregate personal usage statistic",
+      "containsPersonalData": true,
+      "approvedPersonalData": [
+        "Aggregate Pocket Casts listening time",
+        "Aggregate playback-time savings"
+      ],
+      "note": "User-provided screenshot visually checked for names, account identifiers, private feeds, messages, credentials, and unrelated personal data. It shows aggregate listening statistics only and is published with an explicit evidence boundary."
     }
   ]
 }
