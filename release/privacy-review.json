@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "releaseId": "job-agent-v1-release-candidate",
   "reviewStatus": "complete",
-  "reviewedAt": "2026-08-27",
+  "reviewedAt": "2026-08-28",
   "reviewer": "Marcus Udén (Codex)",
   "candidateCommit": "54d6e878a724ca6257df62f668243c8323bef1a0",
-  "scope": "Full release-candidate binary set: three synthetic proof frames, sanitized English CV, and professional social card.",
+  "scope": "Full release-candidate binary set: three synthetic proof frames, sanitized English CV, professional social card, and one aggregate personal listening-statistics screenshot.",
   "reviewedFiles": [
     {
       "path": "site/assets/images/job-agent/decision-research.png",
@@ -61,6 +61,18 @@
         "public positioning"
       ],
       "note": "Generated from the public design system and visually checked. No photo, private identifier, local path, or unapproved contact detail is present."
+    },
+    {
+      "path": "site/assets/images/information-diet/pocket-casts-listening-stats-2026-08-28.jpg",
+      "sha256": "861e7615d6e0469d367c1e65db6c275a125a44d79f4d3cba7a3dfd4e55227def",
+      "decision": "approved",
+      "dataClass": "aggregate personal usage statistic",
+      "containsPersonalData": true,
+      "approvedPersonalData": [
+        "Aggregate Pocket Casts listening time",
+        "Aggregate playback-time savings"
+      ],
+      "note": "User-provided screenshot visually checked for names, account identifiers, private feeds, messages, credentials, and unrelated personal data. It shows aggregate listening statistics only and is published with an explicit evidence boundary."
     }
   ]
 }

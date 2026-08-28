@@ -1015,6 +1015,31 @@ h3 {
   color: var(--gold);
 }
 
+.information-diet-figure {
+  max-width: 24rem;
+  margin: 2rem 0 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.information-diet-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.information-diet-figure figcaption {
+  padding: 1rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.information-diet-figure figcaption strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--gold);
+}
+
 .research-section {
   padding-block: clamp(4.5rem, 10vw, 8rem);
   background: var(--dark);
