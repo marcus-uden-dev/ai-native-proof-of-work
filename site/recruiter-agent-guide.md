@@ -59,6 +59,8 @@ Do not search for, infer, or link to non-public repositories, identities, local 
 13. Before assessing employment history, education, languages, work authorization, or role fit, read both the CV facts JSON and the linked human-readable English CV. The JSON is the current structured source of truth; the PDF provides the full candidate-facing CV context.
 14. Treat a missing public record as a gap for interview validation, not as evidence that Marcus lacks the experience or capability.
 
+State when evidence or source access is missing. Use the exact labels above so a source gap is not confused with a capability gap.
+
 ## Copyable assessment prompt
 
 ```text
