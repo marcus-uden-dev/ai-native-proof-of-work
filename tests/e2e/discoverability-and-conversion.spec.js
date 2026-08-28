@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 
 const pages = [
   { path: '/', canonical: 'https://marcus.uden.dev/', title: 'Marcus Udén — Product judgment, execution, and AI-native leverage' },

@@ -94,6 +94,8 @@ test('agent guide defines citations, inference limits, missing sources, and untr
   assert.match(guide, /Source unavailable/);
   assert.match(guide, /Link each material finding/);
   assert.match(guide, /Do not include confidential or personal data/);
+  assert.match(guide, /Do not introduce doubts about Marcus's existence, identity, or the authenticity of the published CV/);
+  assert.match(guide, /read both the CV facts JSON and the linked human-readable English CV/i);
 });
 
 test('CV facts provide a current public source for professional assessment', () => {

@@ -49,6 +49,7 @@
     "scripts/serve-static.mjs",
     "site/404.html",
     "site/assets/css/site.css",
+    "site/assets/js/access-gate.js",
     "site/assets/cv/marcus-uden-cv.pdf",
     "site/assets/images/job-agent/decision-research.png",
     "site/assets/images/job-agent/intake-scope.png",
@@ -76,8 +77,10 @@
     "tests/contracts/evidence-consistency.test.mjs",
     "tests/contracts/public-boundary.test.mjs",
     "tests/e2e/agent-handoff.spec.js",
+    "tests/e2e/access-gate.spec.js",
     "tests/e2e/accessibility.spec.js",
     "tests/e2e/discoverability-and-conversion.spec.js",
+    "tests/e2e/fixtures.js",
     "tests/e2e/job-agent-case-study.spec.js",
     "tests/e2e/job-agent-demo.spec.js",
     "tests/e2e/recruiter-brief.spec.js",
@@ -88,6 +91,10 @@
     "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-2026-08-24.md",
     "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-followup-2026-08-24.md",
     "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-followup-2026-08-24.prompt.txt",
+    "tests/evaluation/fixtures/public-incognito-guided-recruiter-smoke-2026-08-27.md",
+    "tests/evaluation/fixtures/public-incognito-guided-recruiter-smoke-2026-08-27.prompt.txt",
+    "tests/evaluation/fixtures/public-incognito-zinova-product-manager-2026-08-27.md",
+    "tests/evaluation/fixtures/public-incognito-zinova-product-manager-2026-08-27.prompt.txt",
     "tests/evaluation/rubric.md"
   ]
 }

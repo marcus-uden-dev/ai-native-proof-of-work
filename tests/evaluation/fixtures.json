@@ -54,6 +54,33 @@
         "Keep evidence, inference, and gaps distinct.",
         "Use strength-first numbered items instead of a Markdown table."
       ]
+    },
+    {
+      "id": "public-incognito-guided-recruiter-smoke-2026-08-27",
+      "summary": "An unauthenticated public-source smoke test of the live recruiter guide and report model, using a synthetic Product Manager, Workflow and Operations brief.",
+      "provider": "Codex public-source smoke; unauthenticated HTTP retrieval; not a third-party LLM run",
+      "promptFile": "tests/evaluation/fixtures/public-incognito-guided-recruiter-smoke-2026-08-27.prompt.txt",
+      "sourceFile": "tests/evaluation/fixtures/public-incognito-guided-recruiter-smoke-2026-08-27.md",
+      "expected": [
+        "Follow the live recruiter agent guide and report brief.",
+        "Use public guide sources only and keep evidence, inference, and gaps distinct.",
+        "Do not introduce irrelevant identity or CV-authenticity doubts.",
+        "Record public CV-source availability separately from assessment evidence."
+      ]
+    },
+    {
+      "id": "public-incognito-zinova-product-manager-2026-08-27",
+      "summary": "An unauthenticated public-source smoke test of the live recruiter guide and report model against a sanitized Zinova Product Manager role summary.",
+      "provider": "Codex public-source smoke; unauthenticated HTTP retrieval; not a third-party LLM run",
+      "promptFile": "tests/evaluation/fixtures/public-incognito-zinova-product-manager-2026-08-27.prompt.txt",
+      "sourceFile": "tests/evaluation/fixtures/public-incognito-zinova-product-manager-2026-08-27.md",
+      "expected": [
+        "Use the live guide and report model.",
+        "Separate evidence, inference, and gaps for a finance-product role.",
+        "Do not claim unproven lending, credit, pricing, language, or market-outcome experience.",
+        "Do not introduce irrelevant identity or CV-authenticity doubts.",
+        "Distinguish an unavailable guided source from an absence of candidate experience."
+      ]
     }
   ]
 }
