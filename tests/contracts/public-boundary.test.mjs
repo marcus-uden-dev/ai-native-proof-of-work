@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { mkdtempSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
 import test from 'node:test';
@@ -32,6 +33,27 @@ function makeRepository(files, privacy = {}, extraAllowedFiles = []) {
   return root;
 }
 
+function runGit(root, args) {
+  return execFileSync('git', ['-C', root, ...args], { encoding: 'utf8' }).trim();
+}
+
+function initializeGitRepository(root) {
+  runGit(root, ['init']);
+  runGit(root, ['config', 'user.name', 'Test Reviewer']);
+  runGit(root, ['config', 'user.email', 'marcus.uden.dev@gmail.com']);
+  runGit(root, ['add', '.']);
+  runGit(root, ['commit', '-m', 'Create fixture']);
+}
+
+function updatePrivacyCandidate(root, candidateCommit) {
+  const privacyPath = join(root, 'release/privacy-review.json');
+  const privacy = JSON.parse(readFileSync(privacyPath, 'utf8'));
+  privacy.candidateCommit = candidateCommit;
+  writeFileSync(privacyPath, JSON.stringify(privacy, null, 2));
+  runGit(root, ['add', 'release/privacy-review.json']);
+  runGit(root, ['commit', '-m', 'Record privacy candidate']);
+}
+
 test('accepts a clean allowlisted scaffold without a remote', () => {
   const root = makeRepository({ 'README.md': '# Public proof' });
   assert.deepEqual(validateRepository(root).errors, []);
@@ -41,6 +63,25 @@ test('ignores the Git worktree control file during public release validation', (
   const root = makeRepository({ 'README.md': '# Public proof' });
   writeFileSync(join(root, '.git'), 'gitdir: /private/worktree-control');
   assert.deepEqual(validateRepository(root).errors, []);
+});
+
+test('accepts a completed privacy review whose candidate is an ancestor of HEAD', () => {
+  const root = makeRepository({ 'README.md': '# Public proof' }, { reviewStatus: 'complete' });
+  initializeGitRepository(root);
+  const candidateCommit = runGit(root, ['rev-parse', 'HEAD']);
+  updatePrivacyCandidate(root, candidateCommit);
+  assert.deepEqual(validateRepository(root).errors, []);
+});
+
+test('rejects a completed privacy review whose existing candidate is not an ancestor of HEAD', () => {
+  const root = makeRepository({ 'README.md': '# Public proof' }, { reviewStatus: 'complete' });
+  initializeGitRepository(root);
+  runGit(root, ['commit', '--allow-empty', '-m', 'Create unmerged candidate']);
+  const candidateCommit = runGit(root, ['rev-parse', 'HEAD']);
+  runGit(root, ['reset', '--hard', 'HEAD~1']);
+  updatePrivacyCandidate(root, candidateCommit);
+  const result = validateRepository(root);
+  assert.ok(result.errors.some((error) => error.category === 'privacy-record' && error.file === 'release/privacy-review.json'));
 });
 
 test('rejects an unexpected file with an exact category and path', () => {

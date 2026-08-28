@@ -20,6 +20,10 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
+      - name: Fetch the privacy review candidate
+        run: |
+          candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
+          git fetch --no-tags origin "$candidate_commit:refs/review-candidates/$candidate_commit"
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
@@ -29,12 +33,14 @@ jobs:
         run: npm ci
       - name: Audit development dependencies
         run: npm audit --audit-level=high
+      - name: Validate the public release boundary
+        run: npm run release:validate
       - name: Install Chromium
         run: npx playwright install --with-deps chromium
       - name: Run contract and browser tests
         run: npm test
-      - name: Validate the public release boundary
-        run: npm run release:validate
       - name: Check whitespace errors
         run: git diff --check
+      - name: Check that tests did not change tracked files
+        run: git diff --exit-code
 
