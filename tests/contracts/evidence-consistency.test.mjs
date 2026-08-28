@@ -98,6 +98,7 @@ test('agent guide defines citations, inference limits, missing sources, and untr
   assert.match(guide, /read both the CV facts JSON and the linked human-readable English CV/i);
 });
 
+
 test('CV facts provide a current public source for professional assessment', () => {
   assert.equal(cvFacts.status, 'Current public professional source of truth');
   assert.equal(cvFacts.identity.citizenshipAndWorkAuthorization, 'Swedish and U.S. citizen, eligible to work in Sweden.');
