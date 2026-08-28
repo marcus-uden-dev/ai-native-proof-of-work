@@ -56,24 +56,25 @@ Assess Marcus’s practical evidence for:
 3. [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md)
 4. [Career Evidence Source](career-evidence/CAREER_EVIDENCE_SOURCE.md)
 5. [CV](CV.md)
-6. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
-7. [Navigation Hub](NAVIGATION.md)
-8. [Start Here](START_HERE.md)
-9. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
-10. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-11. [Project Status](PROJECT_STATUS.md)
-12. [Evidence Matrix](EVIDENCE_MATRIX.md)
-13. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-14. [Project Timeline](PROJECT_TIMELINE.md)
-15. [Role Reading Paths](ROLE_READING_PATHS.md)
-16. [Proof of Work](PROOF_OF_WORK.md)
-17. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
-18. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
-19. [Decision Log](logs/DECISION_LOG.md)
-20. [Decision Log Tags](logs/DECISION_LOG_TAGS.md)
-21. [Source Map](SOURCE_MAP.md)
-22. [Repository Evidence Index](repository-evidence-index.json)
-23. [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json)
+6. [Information Diet](recruiter-assets/INFORMATION_DIET.md)
+7. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md)
+8. [Navigation Hub](NAVIGATION.md)
+9. [Start Here](START_HERE.md)
+10. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
+11. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
+12. [Project Status](PROJECT_STATUS.md)
+13. [Evidence Matrix](EVIDENCE_MATRIX.md)
+14. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+15. [Project Timeline](PROJECT_TIMELINE.md)
+16. [Role Reading Paths](ROLE_READING_PATHS.md)
+17. [Proof of Work](PROOF_OF_WORK.md)
+18. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+19. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
+20. [Decision Log](logs/DECISION_LOG.md)
+21. [Decision Log Tags](logs/DECISION_LOG_TAGS.md)
+22. [Source Map](SOURCE_MAP.md)
+23. [Repository Evidence Index](repository-evidence-index.json)
+24. [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json)
 
 ## Reuse / Template Reading Order
 
@@ -123,6 +124,7 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 | AI-native workflow design | [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
 | Privacy-aware execution | [SOURCE_MAP.md](SOURCE_MAP.md), [SHARING_CHECKLIST.md](SHARING_CHECKLIST.md), case-study evidence boundaries |
 | Communication clarity | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), [recruiter-assets/RECRUITER_SUMMARY.md](recruiter-assets/RECRUITER_SUMMARY.md) |
+| Learning and external-signal intake | [recruiter-assets/INFORMATION_DIET.md](recruiter-assets/INFORMATION_DIET.md) | Aggregate listening time and followed-feed topic clusters; do not infer expertise or category-level listening share |
 
 ## Suggested Output For A Recruiter Agent
 

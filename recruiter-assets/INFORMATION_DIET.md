@@ -1,15 +1,19 @@
 # Information Diet and Learning Signals
 
-Last updated: 2026-06-02
+Last updated: 2026-08-27
 Status: Recruiter-facing / Evidence-labeled
 
 ## Summary
 
 This file summarizes private Pocket Casts exports into a recruiter-safe view of learning interests, professional taste, and external signal intake.
 
-Source status: Verified subscription list from a Pocket Casts OPML backup dated 2026-03-19, plus a Pocket Casts stats screenshot dated 2026-06-02. The OPML export contains followed podcast feeds. The screenshot contains aggregate listening time, not episode-level history or category-level listening.
+Source status: Verified subscription list from a Pocket Casts OPML backup dated 2026-03-19, plus a user-provided Pocket Casts stats screenshot dated 2026-08-28. The OPML export contains followed podcast feeds. The screenshot contains aggregate listening time, not episode-level history or category-level listening.
 
-![Pocket Casts listening stats screenshot](../assets/screenshots/pocket-casts-listening-stats-2026-06-02.jpg)
+![Pocket Casts listening stats screenshot](../assets/screenshots/pocket-casts-listening-stats-2026-08-28.jpg)
+
+## Recruiter-Facing Formulation
+
+Marcus has a long-running and documented information-intake habit through podcasts, averaging roughly three hours of listening per day over the measured period. The followed feeds span AI, technology, startups, business, science, decision-making, institutions, and policy. This is not evidence of expertise by itself, but it helps explain the breadth of input behind his product judgment and external-signal awareness.
 
 ## How To Read This
 
@@ -27,14 +31,14 @@ It is useful as a measured aggregate listening signal, but not yet as a category
 
 | Metric | Value | Evidence Status |
 |---|---:|---|
-| Total Pocket Casts listening time since 2015-10-19 | 483 days 22 hours | Verified screenshot |
-| Total listening time in hours | 11,614 hours | Calculated from screenshot |
-| Total listening time in minutes | 696,840 minutes | Calculated from screenshot |
-| Listening time in years | 1.32 years | Calculated from screenshot |
-| Average listening time per day from 2015-10-19 to 2026-06-02 | 2.99 hours/day | Calculated from screenshot date |
-| Average listening time per day in minutes | 180 minutes/day | Calculated from screenshot date |
-| Average listening time per week | 21.0 hours/week | Calculated from screenshot date |
-| Share of elapsed calendar time spent listening | 12.5% | Calculated from screenshot date |
+| Total Pocket Casts listening time since 2015-10-19 | 489 days 8 hours | Verified user-provided screenshot dated 2026-08-28 |
+| Total listening time in hours | 11,744 hours | Calculated from screenshot |
+| Total listening time in minutes | 704,640 minutes | Calculated from screenshot |
+| Listening time in years | 1.34 years | Calculated from screenshot |
+| Average listening time per day from 2015-10-19 to 2026-08-28 | 2.96 hours/day | Calculated from screenshot date |
+| Average listening time per day in minutes | 178 minutes/day | Calculated from screenshot date |
+| Average listening time per week | 20.7 hours/week | Calculated from screenshot date |
+| Share of elapsed calendar time spent listening | 12.3% | Calculated from screenshot date |
 | Total time saved by Pocket Casts playback features | 1 day 18 hours | Verified screenshot |
 | Time saved by skipping | 1 day 13 hours | Verified screenshot |
 | Time saved by variable speed | 5 hours 19 minutes | Verified screenshot |
@@ -43,9 +47,9 @@ Interpretation: this is a long-running learning and information-intake habit. Th
 
 Quick conversions:
 
-- 483 days 22 hours is roughly 69 weeks of continuous listening.
-- 11,614 hours is roughly 5.6 full-time work years at 40 hours/week.
-- The long-run average is about 3 hours per day, or 21 hours per week.
+- 489 days 8 hours is roughly 70 weeks of continuous listening.
+- 11,744 hours is roughly 5.6 full-time work years at 40 hours/week.
+- The long-run average is about 3 hours per day, or 20.7 hours per week.
 - Category-level time is still unavailable, so these totals should not be presented as "AI listening time" or "business listening time" without richer app statistics.
 
 ## Recruiter-Relevant Podcast Clusters
@@ -66,7 +70,7 @@ Quick conversions:
 | Feed URL | Yes | Present in OPML, kept out of this recruiter summary unless needed |
 | Subscription count | Yes | 511 followed feeds in the export |
 | Export date | Yes | File timestamp: 2026-03-19 |
-| Aggregate listening time | Yes | Pocket Casts screenshot shows 483 days 22 hours listened since 2015-10-19 |
+| Aggregate listening time | Yes | User-provided Pocket Casts screenshot dated 2026-08-28 shows 489 days 8 hours listened since 2015-10-19 |
 | AI/business listening share | No | Can be calculated only after importing listening history or app statistics |
 | Episode-level topics | No | Would require a richer export or feed/episode enrichment workflow |
 

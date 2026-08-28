@@ -7,7 +7,7 @@ They are intended as representative portfolio visuals, not as evidence of real u
 
 The related [job-agent UX snapshot](../../demos/job-agent/index.html) uses the same privacy-safe posture and can be opened locally or published as static GitHub Pages/Netlify/Cloudflare Pages content.
 
-One screenshot in this folder is different: `pocket-casts-listening-stats-2026-06-02.jpg` is a real personal app-statistics screenshot used as aggregate learning-signal evidence. It should remain aggregate-only and should not be expanded with raw listening logs unless separately privacy-reviewed.
+Two screenshots in this folder are different: the Pocket Casts statistics images are real personal app-statistics screenshots used as aggregate learning-signal evidence. They should remain aggregate-only and should not be expanded with raw listening logs unless separately privacy-reviewed. The 2026-08-28 image is the current snapshot; the 2026-06-02 image is retained as historical evidence.
 
 ## Current Set
 
@@ -19,6 +19,7 @@ One screenshot in this folder is different: `pocket-casts-listening-stats-2026-0
 | `pkm-01-knowledge-feed.png` | PKM | Saved knowledge feed with source summaries and tags |
 | `household-budget-01-dashboard.png` | Household budget app | Dashboard with liquidity, budget, household, recurring, and category views |
 | `pocket-casts-listening-stats-2026-06-02.jpg` | Information diet | Pocket Casts aggregate listening-time stats used in [Information Diet](../../recruiter-assets/INFORMATION_DIET.md) |
+| `pocket-casts-listening-stats-2026-08-28.jpg` | Information diet | Current Pocket Casts aggregate listening-time stats used in [Information Diet](../../recruiter-assets/INFORMATION_DIET.md) |
 
 ## Privacy Note
 

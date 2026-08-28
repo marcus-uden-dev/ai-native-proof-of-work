@@ -15,6 +15,25 @@
     "Use the primary_project field when answering which project demonstrates a capability.",
     "Use evidence_refs for traceability and report uncertainty when a record is marked Needs Review."
   ],
+  "profile_signals": [
+    {
+      "id": "information-diet",
+      "title": "Long-running information intake through podcasts",
+      "summary": "A long-running and documented podcast-based information-intake habit. Aggregate listening is roughly three hours per day over the measured period, and followed feeds span AI, technology, startups, business, science, decision-making, institutions, and policy.",
+      "professional_relevance": "Supports a picture of broad external-signal intake and source taste that can inform product judgment and recruiter conversations.",
+      "evidence_boundary": "This does not establish expertise, learning outcomes, or category-level listening time by itself. Followed feeds are not proof that every show is listened to regularly.",
+      "evidence_status": "Verified aggregate listening time and followed-feed topic clusters; category-level listening share unavailable",
+      "verified_metrics": {
+        "measurement_date": "2026-08-28",
+        "total_listening_time": "489 days 8 hours since 2015-10-19",
+        "total_listening_hours": 11744,
+        "average_listening_hours_per_day": 2.96,
+        "average_listening_hours_per_week": 20.7
+      },
+      "capability_tags": ["learning-and-signal-intake", "source-taste", "evidence-driven"],
+      "evidence_refs": ["recruiter-assets/INFORMATION_DIET.md", "assets/screenshots/pocket-casts-listening-stats-2026-08-28.jpg", "EVIDENCE_MATRIX.md", "SOURCE_MAP.md"]
+    }
+  ],
   "projects": [
     {
       "id": "job-agent",
@@ -225,7 +244,9 @@
     {"tag":"decision-traceability","shows":"Preserves links between context, options, trade-offs, decisions, evidence, and next actions."},
     {"tag":"quality-gate","shows":"Uses explicit checks and pass/fail boundaries before changes are published."},
     {"tag":"human-in-the-loop","shows":"Places human review where automation should not act autonomously."},
-    {"tag":"reusable-systems","shows":"Converts repeated solutions and lessons into reusable systems, templates, and workflows."}
+    {"tag":"reusable-systems","shows":"Converts repeated solutions and lessons into reusable systems, templates, and workflows."},
+    {"tag":"learning-and-signal-intake","shows":"Maintains broad, sustained external information intake and uses source quality and topic breadth as context for product judgment."},
+    {"tag":"source-taste","shows":"Selects and groups external sources across technical, business, scientific, and institutional domains while keeping evidence boundaries explicit."}
   ],
   "decisions": [
     {

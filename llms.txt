@@ -11,6 +11,7 @@ The repository itself is not the product. Concrete projects are the primary proo
 - [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md): fair report format for recruiter-side LLMs.
 - [career-evidence/CAREER_EVIDENCE_SOURCE.md](career-evidence/CAREER_EVIDENCE_SOURCE.md): consolidated employment evidence from the supplied CV variants.
 - [CV.md](CV.md): current recruiter-safe CV reference.
+- [recruiter-assets/INFORMATION_DIET.md](recruiter-assets/INFORMATION_DIET.md): verified aggregate podcast listening signal and topic clusters; use as supporting profile context, not employment or expertise proof.
 - [START_HERE.md](START_HERE.md): one-minute orientation.
 - [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md): fastest summary of strongest proof points.
 - [Repository Evidence Index](repository-evidence-index.json): optional machine-readable, evidence-bounded project map, capabilities, and reviewed decisions. Search the complete repository as the source of truth.
