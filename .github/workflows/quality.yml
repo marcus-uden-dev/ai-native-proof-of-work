@@ -23,7 +23,7 @@ jobs:
       - name: Fetch the privacy review candidate
         run: |
           candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
-          git fetch --no-tags origin "$candidate_commit"
+          git fetch --no-tags origin "$candidate_commit:refs/review-candidates/$candidate_commit"
       - name: Verify privacy review ancestry
         run: |
           candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
