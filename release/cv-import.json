@@ -3,7 +3,7 @@
   "importId": "marcus-uden-cv-2026-08-20",
   "source": {
     "fileName": "CV Marcus Uden English.pdf",
-    "role": "Latest English factual baseline and layout reference",
+    "role": "Latest English factual baseline and layout reference for the public CV facts source",
     "sha256": "f76178e81e489353e1a80e2561fc56b2543aefe1fe8ce1117b683611687ddbb0",
     "sourceModified": "2026-06-02"
   },
@@ -25,6 +25,6 @@
     "linkedInPublished": false,
     "localPathPublished": false
   },
-  "claimPolicy": "Employment and education facts derive from the supplied English source. Public proof wording follows the governed Job-agent release and makes outcome limits explicit."
+  "claimPolicy": "Employment, education, and language facts derive from the supplied English source. Citizenship, work authorization, birthplace, and family background require a dated candidate-confirmed source. Public proof wording follows the governed Job-agent release and makes outcome limits explicit."
 }
 

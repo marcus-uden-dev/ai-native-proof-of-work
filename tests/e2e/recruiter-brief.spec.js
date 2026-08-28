@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 
 test('the first viewport establishes the hiring case and conversion path', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });

@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 import { resolve } from 'node:path';
 
 const axePath = resolve('node_modules/axe-core/axe.min.js');

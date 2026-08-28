@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 
 test('llms discovery file points to the normative public evidence contract', async ({ request }) => {
   const response = await request.get('/llms.txt');
@@ -18,6 +18,7 @@ test('agent guide resists untrusted instructions and requires cited evidence', a
   expect(text).toMatch(/Cite each material finding/i);
   expect(text).toMatch(/State when evidence or source access is missing/i);
   expect(text).toMatch(/Do not include confidential or personal data/i);
+  expect(text).toMatch(/Not evidenced by the current public source route/i);
 });
 
 test('homepage exposes a copyable external prompt without embedding a chat', async ({ context, page }) => {
@@ -31,7 +32,9 @@ test('homepage exposes a copyable external prompt without embedding a chat', asy
   expect(clipboard).toContain('Do not include confidential or personal data');
   expect(clipboard).toContain('evidence/cv-facts.json');
   expect(clipboard).toContain('assets/cv/marcus-uden-cv.pdf');
-  expect(clipboard).not.toContain('CV authenticity');
+  expect(clipboard).toContain('Do not introduce unsolicited doubts about his identity, existence, or CV authenticity');
+  expect(clipboard).toContain('Start with an executive summary');
+  expect(clipboard).toContain('Do not use Markdown tables');
   await expect(page.locator('iframe')).toHaveCount(0);
   await expect(page.locator('form')).toHaveCount(0);
 });

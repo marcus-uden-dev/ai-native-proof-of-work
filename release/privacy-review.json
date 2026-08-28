@@ -4,7 +4,7 @@
   "reviewStatus": "complete",
   "reviewedAt": "2026-08-27",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "cf6cae92924ac7f3031d315936826563b3b4924a",
+  "candidateCommit": "036d8f27814fae5f9cd04a6e56ab173c6570a698",
   "scope": "Full release-candidate binary set: three synthetic proof frames, sanitized English CV, and professional social card.",
   "reviewedFiles": [
     {
@@ -41,9 +41,13 @@
         "Marcus Udén",
         "Stockholm, Sweden",
         "marcus.uden.dev@gmail.com",
-        "public professional history"
+        "public professional history",
+        "Swedish and U.S. citizenship",
+        "eligibility to work in Sweden",
+        "birthplace: Sweden",
+        "family background: one parent is American"
       ],
-      "note": "Rendered as a two-page selectable-text PDF. The old email, phone number, LinkedIn, and local source paths are absent."
+      "note": "Rendered as a two-page selectable-text PDF. The old email, phone number, LinkedIn, and local source paths are absent. Candidate-confirmed citizenship and background facts are published separately in the reviewed CV facts source."
     },
     {
       "path": "site/assets/social-card.png",
