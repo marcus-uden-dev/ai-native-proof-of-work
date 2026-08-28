@@ -47,6 +47,8 @@ jobs:
       - name: Run contract and browser tests
         run: npm test
       - name: Validate the public release boundary
+        env:
+          PUBLIC_RELEASE_DEBUG_GIT: '1'
         run: npm run release:validate
       - name: Check whitespace errors
         run: git diff --check
