@@ -24,6 +24,14 @@ jobs:
         run: |
           candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
           git fetch --no-tags origin "$candidate_commit"
+      - name: Verify privacy review ancestry
+        run: |
+          candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
+          echo "candidate_commit=$candidate_commit"
+          echo "head_commit=$(git rev-parse HEAD)"
+          git cat-file -t "$candidate_commit"
+          git log --oneline --decorate --graph --all -20
+          git merge-base --is-ancestor "$candidate_commit" HEAD
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
