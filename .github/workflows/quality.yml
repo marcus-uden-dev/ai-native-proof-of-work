@@ -30,8 +30,9 @@ jobs:
           echo "candidate_commit=$candidate_commit"
           echo "head_commit=$(git rev-parse HEAD)"
           git cat-file -t "$candidate_commit"
+          echo "merge_base=$(git merge-base "$candidate_commit" HEAD)"
           git log --oneline --decorate --graph --all -20
-          git merge-base --is-ancestor "$candidate_commit" HEAD
+          test "$(git merge-base "$candidate_commit" HEAD)" = "$candidate_commit"
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
