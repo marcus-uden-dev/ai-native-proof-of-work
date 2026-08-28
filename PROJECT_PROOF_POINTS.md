@@ -1,13 +1,13 @@
 # Project Proof Points
 
-Last updated: 2026-08-09
+Last updated: 2026-08-28
 Status: Active / Evidence-backed summary
 
 ## Purpose
 
 This file keeps the focus on concrete project work.
 
-The proof-of-work compiler, source indexes, and weekly review process are documented as a real part of the operating model. They are important secondary proof points, but the main evidence is the product and execution work behind job-agent, PKM, and the household budget app.
+The proof-of-work compiler, source indexes, and weekly review process are documented as a real part of the operating model. They are important secondary proof points, but the main evidence is the product and execution work behind job-agent, PKM, the household budget app, and phone-layout-agent.
 
 ## Project Portfolio
 
@@ -16,6 +16,7 @@ The proof-of-work compiler, source indexes, and weekly review process are docume
 | Job-agent / job-agent UX | Primary proof point: career workflow product with CV, job discovery, application support, privacy, feedback, QA, deployment, telemetry, and billing planning | Internal / Verified; summarized from local project docs and tests | Shows full-stack product execution, career-domain judgment, privacy-aware design, test discipline, and AI-assisted workflow design |
 | PKM | Supporting proof point: personal knowledge-management product with ingestion, search, learning, social/feed, browser extension, backend/frontend structure, and feature lifecycle workflow | Internal / Verified; summarized from local project index and repo structure | Shows information architecture, knowledge workflows, ingestion thinking, and project prioritization |
 | Household budget app | Supporting proof point: Swedish household budgeting app with shared household, imports, transaction review, forecasting, goals, RLS/security, and extensive unit-test surface | Internal / Verified; summarized from local project docs and repo structure | Shows domain modeling, financial-product UX, privacy/security thinking, and test-backed product development |
+| Phone-layout-agent | Supporting proof point: local Android launcher automation with approval-gated proposals, allowlisted ADB, deterministic Samsung One UI batches, checkpoints, recovery, and verification | Private source / Verified summary; controlled outcome not measured | Shows automation judgment, physical-device reliability, technical risk management, QA, and evidence discipline |
 
 ## Case Study Links
 
@@ -24,6 +25,7 @@ The proof-of-work compiler, source indexes, and weekly review process are docume
 | Job-agent / job-agent UX | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) |
 | PKM | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) |
 | Household budget app | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
+| Phone-layout-agent | [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) |
 
 ## Current Status Link
 
@@ -56,6 +58,7 @@ The stronger story is:
 | Job-agent | Committed source status still marks the MVP complete while the currently accessible redesign branch adds planning, M0 and M1 frontend shell implementation evidence, and August 8 shell polish; privacy, feedback, QA, discovery, shared-job cleanup, CI, telemetry, billing, deployment planning, startup/LLM handoff docs, and prior GDPR/data-rights work remain represented, with direct source verification refreshed on 2026-08-09 | Production activation, legal review, live Stripe, public backend origin, observability setup, public-safe evidence excerpts, redesign-branch merge/review clarity, and publish-safe confirmation of branch/repo-ops state |
 | PKM | Knowledge-workflow product with ingestion/search/learning/feed/source/person/topic surfaces, feature lifecycle discipline, a Chrome extension for browser capture, and a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/quota, SMTP, deployment, source/person/topic setup, and verification of search, flashcard, extension, and MCP paths |
 | Household budget app | Core budgeting surfaces plus substantial household/shared-account hardening, invite onboarding, ownership rules, read-model/view-model extraction, mutation helper consolidation, and a 2026-05-26 app dependency-maintenance commit | Finish post-hardening migration cleanup, remove legacy bridge debt, validate Supabase ownership hardening, and split future modeling into smaller slices |
+| Phone-layout-agent | Deterministic Android launcher automation with approval-gated proposals, bounded ADB, native folder-picker batches, checkpoints, recovery, and independent verification; current source checks pass | Run a controlled baseline-versus-deterministic workload and keep ambiguous/unsupported launcher cases behind review boundaries |
 
 ## Supporting Project Signals
 
@@ -74,6 +77,14 @@ The stronger story is:
 - Recent status emphasizes household-scoped reads/writes, shared-account ownership hardening, invite onboarding, and moving complex page logic into dedicated read models, view models, workflow helpers, and mutation helpers.
 - Latest observed repo signal is dependency maintenance on 2026-05-26; do not present it as product-outcome validation.
 - Demonstrates careful domain modeling and security-aware household data access.
+
+### Phone-layout-agent
+
+- Uses a dry-run-first proposal and explicit approval before physical device changes.
+- Separates AI-assisted discovery/classification and strategy review from deterministic ADB navigation, native folder-picker batches, checkpoints, recovery, and verification.
+- Constrains risk through an allowlisted command surface, protected launcher items, confidence thresholds, mismatch blocking, and independent folder re-open checks.
+- Uses tests and run evidence to distinguish implementation proof from a controlled throughput outcome.
+- Demonstrates that physical-device automation is a product and reliability problem, not only an interaction-script problem.
 
 ## How The Automation Fits
 

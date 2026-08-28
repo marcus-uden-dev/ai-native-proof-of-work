@@ -6,7 +6,7 @@ A public, recruiter-shareable archive documenting practical product work, AI-nat
 
 This repository is not a codebase.
 
-It is a structured proof-of-work portfolio showing concrete product work first, especially job-agent, with PKM and a household budget app as supporting evidence. Claude, Codex, scheduled routines, GitHub-based documentation, local project archives, and reusable skills are the operating layer that helps package and improve that work.
+It is a structured proof-of-work portfolio showing concrete product work first, especially job-agent, with PKM, a household budget app, and phone-layout-agent as supporting evidence. Claude, Codex, scheduled routines, GitHub-based documentation, local project archives, and reusable skills are the operating layer that helps package and improve that work.
 
 If you are a recruiter or using an LLM to evaluate this repository, start with [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md). It defines the fair report format, evidence rules, and what not to overclaim.
 
@@ -73,11 +73,12 @@ flowchart TD
 | [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) | High-level positioning and current status |
 | [PROOF_OF_WORK.md](PROOF_OF_WORK.md) | Central evidence map |
 | [PROJECT_STATUS.md](PROJECT_STATUS.md) | Current status, recent progress, and open work across projects |
-| [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Project-focused proof points for job-agent, PKM, and the household budget app |
+| [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) | Project-focused proof points for job-agent, PKM, the household budget app, and phone-layout-agent |
 | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) | Milestone timeline showing how the portfolio develops over time |
 | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) | Capability-to-evidence map with visual layout |
 | [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) | Role-specific reading paths |
 | [case-studies/](case-studies/) | Sanitized project case studies |
+| [Phone-layout-agent Case Study](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) | Android launcher automation, reliability, safety, and decision trail |
 | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Practical install and LLM handoff guide for the lead product repo |
 | [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md) | Sanitized problem/solution case study for Marcus-created reusable skills |
 | [weekly-input/](weekly-input/) | Clean weekly input layer for progress, decisions, blockers, and business insights |

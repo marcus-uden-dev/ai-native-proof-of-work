@@ -1,6 +1,6 @@
 # Project Strategy Index
 
-Last updated: 2026-05-11
+Last updated: 2026-08-28
 Status: Active / Project-scoped
 
 ## Purpose
@@ -16,6 +16,7 @@ This repository is the evidence and portfolio layer. It is not the product that 
 | Job-agent | Primary proof point and lead product strategy | [strategy/job-agent/](job-agent/) |
 | PKM | Supporting proof point for knowledge workflow design | [strategy/pkm/](pkm/) |
 | Household budget app | Supporting proof point for financial domain modeling and household UX | [strategy/household-budget-app/](household-budget-app/) |
+| Phone-layout-agent | Supporting proof point for deterministic Android automation and physical-device reliability | [strategy/phone-layout-agent/](phone-layout-agent/) |
 
 ## Personal AI Harness
 

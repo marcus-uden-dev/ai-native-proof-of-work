@@ -1,5 +1,52 @@
 # Decision Log
 
+## 2026-08-28 — Use deterministic, approval-gated execution for Android launcher automation
+
+### Context
+
+Phone-layout-agent automates visible launcher organization on a physical
+Samsung Android device. Repeated screenshot analysis and individual drag
+decisions were costly and made completion difficult to prove. Unrestricted
+device control would also create an unnecessary safety and recovery risk.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep model-directed screenshot and drag loops | Flexible for unfamiliar states | Slow, coordinate-sensitive, and difficult to verify or resume |
+| Use direct coordinate automation | Small initial implementation | Fragile when page or layout state changes; weak against partial completion |
+| Use deterministic native picker batches with approval, checkpoints, and re-open verification | Fewer actions, bounded permissions, resumability, and stronger evidence | Requires a Samsung-specific adapter and conservative handling of ambiguity |
+
+### Decision
+
+Use AI for discovery, classification, question formation, and strategy review.
+Use deterministic code for allowlisted ADB operations, launcher navigation,
+native folder-picker batches, checkpoints, recovery, and verification. Keep
+dry-run as the default and require explicit approval before physical changes.
+
+### Reasoning Trail
+
+```text
+Context -> Physical UI automation needs both flexibility and a controlled action surface.
+Options Considered -> Model-directed gestures, direct coordinates, or deterministic native batches.
+Tradeoffs -> The deterministic path requires device-specific adapter work but improves safety, resumability, and evidence quality.
+Decision -> Separate AI-assisted classification from deterministic, approval-gated, allowlisted execution.
+Evidence -> Private source implementation at a7bea45; 45 test files / 110 tests passed with one worker; lint, typecheck, build, and selected internal physical-run checks passed.
+Open Questions -> Controlled before/after throughput, cross-page reliability, and the right boundary for accessibility-assisted shortcuts.
+Next Action -> Run a fixed baseline-versus-deterministic workload and publish only verified aggregate results and failure modes.
+```
+
+### Evidence
+
+[Phone-layout-agent case study](../case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md),
+[Phone-layout-agent decision trail](../strategy/phone-layout-agent/decisions/DECISION_TRAIL.md),
+[canonical case registry](../docs/evidence/CASE_STUDY_REGISTRY.md)
+
+### Status
+
+Decision — implementation and selected operational exercises are evidenced;
+controlled throughput and external adoption remain unmeasured.
+
 ## 2026-08-26 — Make AI model and reasoning effort visible in responses
 
 ### Context

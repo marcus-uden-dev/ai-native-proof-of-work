@@ -1,6 +1,6 @@
 # Recruiter One-Pager
 
-Last updated: 2026-08-09
+Last updated: 2026-08-28
 Status: Active / Recruiter-facing
 
 ## Positioning
@@ -14,6 +14,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 | Job-agent | Strongest product evidence: career workflow product with CV, discovery, application support, feedback, privacy, QA, deployment, telemetry, billing planning, and now committed redesign planning plus M0/M1 shell work with August 8 shell polish on `feat/frontend-redesign-shell`, with the handoff path re-checked against current source-repo setup on 2026-08-09 | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) and [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
 | PKM | Shows knowledge workflow design, ingestion/search thinking, learning surfaces, feature lifecycle discipline, and prioritization | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) |
 | Household budget app | Shows financial domain modeling, shared household access, import/review flows, forecasting, goals, and test-backed product thinking | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
+| Phone-layout-agent | Shows approval-gated Android launcher automation, deterministic physical-device execution, recovery, QA, and evidence boundaries; controlled throughput is not measured | [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) and [Decision Trail](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md) |
 | Portfolio evidence workflow | Shows how project evidence is captured, reviewed, summarized, kept recruiter-safe over time, and adapted into a provider-neutral template layer | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md), [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [template/README.md](template/README.md) |
 
 ## What To Look For
@@ -39,7 +40,7 @@ For an LLM-assisted review, use the [Recruiter LLM Report Brief](docs/reports/re
 
 1. How job-agent became the lead proof point for product execution.
 2. How privacy, QA, and production-readiness thinking show up in the work.
-3. How PKM and the budget app show range beyond the career domain.
+3. How PKM, the budget app, and phone-layout-agent show range beyond the career domain.
 4. How AI is used as an operating layer, not as generic content generation.
 5. How the portfolio documentation turns fragmented project work into evidence without inflating claims.
 

@@ -57,6 +57,14 @@
       "evidence_refs": ["strategy/household-budget-app/README.md", "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md"]
     },
     {
+      "id": "phone-layout-agent",
+      "role": "supporting-proof-point",
+      "summary": "Private Android launcher automation work using approval-gated proposals, bounded ADB, deterministic Samsung One UI batches, checkpoints, recovery, and independent verification.",
+      "status": "supporting-evidence",
+      "platform_tags": ["android", "adb", "samsung-one-ui", "launcher-automation", "physical-device-validation"],
+      "evidence_refs": ["PROJECT_STATUS.md", "PROJECT_PROOF_POINTS.md", "case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md", "strategy/phone-layout-agent/decisions/DECISION_TRAIL.md"]
+    },
+    {
       "id": "personal-ai-harness",
       "role": "operating-layer",
       "summary": "The memory, agent, automation, and improvement layer behind the work. It is continuously refined by adding useful capabilities and pruning what no longer earns its place.",
@@ -232,6 +240,22 @@
       "role_lenses": ["AI Governance", "Product Operations", "AI Transformation"],
       "capabilities": ["evidence-discipline", "governance-and-risk", "privacy-and-security-judgment", "quality-judgment"],
       "evidence_refs": ["docs/evidence/CASE_STUDY_REGISTRY.md", "SOURCE_MAP.md", "SHARING_CHECKLIST.md"]
+    },
+    {
+      "id": "CASE-015",
+      "title": "Phone-layout-agent — Reliable Android launcher automation",
+      "primary_project": "phone-layout-agent",
+      "portfolio_status": "supporting-product-proof",
+      "public_status": "public-summary-private-source",
+      "evidence_status": "private-source-implementation-verified-selected-operational-evidence-summarized",
+      "outcome_status": "operational-improvement-demonstrated-controlled-throughput-not-measured",
+      "role_lenses": ["AI Product", "Product Operations", "AI Transformation / Enablement", "Technical Product"],
+      "capabilities": ["process-improvement", "automation-judgment", "automation-reliability", "technical-judgment", "quality-assurance", "validation", "risk-awareness"],
+      "platform_tags": ["android", "adb", "samsung-one-ui", "launcher-automation", "physical-device-validation"],
+      "decision": "Separate AI-assisted classification and review from deterministic, approval-gated, allowlisted device execution with checkpointing and independent re-open verification.",
+      "result_boundary": "Implementation and selected physical-device exercises are evidenced; controlled throughput, external adoption, unattended multi-device reliability, and production readiness are not claimed.",
+      "next_evidence_test": "Run a fixed baseline-versus-deterministic workload and report verified moves, failures, retries, recovery levels, disconnects, and median successful move time.",
+      "evidence_refs": ["docs/evidence/CASE_STUDY_REGISTRY.md", "case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md", "strategy/phone-layout-agent/README.md", "strategy/phone-layout-agent/decisions/DECISION_TRAIL.md"]
     }
   ],
   "capabilities": [
@@ -258,6 +282,17 @@
       "summary":"The system is framed as the evolving operating layer behind the products, not as the product portfolio itself.",
       "tags":["product-judgment","systems-thinking","context-engineering","continuous-improvement"],
       "evidence_refs":["strategy/personal-ai-harness/README.md","README.md"]
+    },
+    {
+      "id":"decision-2026-08-28-phone-layout-agent-deterministic-execution",
+      "date":"2026-08-28",
+      "project":"phone-layout-agent",
+      "status":"Verified",
+      "title":"Use deterministic, approval-gated execution for Samsung launcher changes",
+      "summary":"AI-assisted classification and review are separated from allowlisted deterministic device execution, with native batches, checkpoints, recovery, and independent verification.",
+      "tags":["process-improvement","automation-judgment","automation-reliability","technical-judgment","quality-assurance","validation","risk-awareness"],
+      "platform_tags":["android","adb","samsung-one-ui","launcher-automation"],
+      "evidence_refs":["case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md","strategy/phone-layout-agent/decisions/DECISION_TRAIL.md"]
     },
     {
       "id":"decision-2026-08-20-scheduled-finding-canary",

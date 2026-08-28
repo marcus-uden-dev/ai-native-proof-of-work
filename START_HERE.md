@@ -1,6 +1,6 @@
 # Start Here
 
-Last updated: 2026-08-15
+Last updated: 2026-08-28
 Status: Active / Recruiter-facing
 
 ## One-Minute Overview
@@ -11,6 +11,7 @@ Two supporting projects show range:
 
 - **PKM (personal knowledge management)** explores capture, ingestion, search, learning, and knowledge retrieval.
 - **Household Budget** explores shared financial workflows, imports, forecasting, goals, permissions, and migration-safe domain modeling.
+- **Phone-layout-agent** explores approval-gated Android launcher automation, deterministic execution, physical-device reliability, and evidence-based recovery.
 
 This repository is the evidence and explanation layer around those products. It is not the product itself.
 
@@ -21,6 +22,8 @@ Evidence was checked on 2026-08-15 against this repository and the source-verifi
 1. [Recruiter One-Pager](RECRUITER_ONE_PAGER.md) — the fastest overview of positioning and proof.
 2. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) — the strongest product story.
 3. [Project Status](PROJECT_STATUS.md) — current state, evidence boundaries, and open work.
+
+For the Android automation case, read [Phone-layout-agent Case Study](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) and its [Decision Trail](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md).
 
 For case selection, promotion status, and evidence boundaries, use the
 [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md).

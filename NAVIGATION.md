@@ -1,6 +1,6 @@
 # Navigation Hub
 
-Last updated: 2026-08-15
+Last updated: 2026-08-28
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -44,10 +44,11 @@ Optional historical preview: [published Job-Agent V1 snapshot](https://theonedar
 | 8 | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) | Lead project |
 | 9 | [PKM Case Study](case-studies/PKM_CASE_STUDY.md) | Supporting knowledge-system evidence |
 | 10 | [Household Budget App Case Study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Supporting domain-modeling evidence |
-| 11 | [Workflow Implementation Cases](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) | Supporting AI-native workflow implementation evidence |
-| 12 | [Decision Log](logs/DECISION_LOG.md) | Tradeoffs and positioning decisions (`portfolio_decision_evidence`) |
-| 13 | [Decision Log Tags](logs/DECISION_LOG_TAGS.md) | Controlled decision-evidence taxonomy |
-| 14 | [Before / After Snapshots](BEFORE_AFTER_SNAPSHOTS.md) | How the portfolio improved |
+| 11 | [Phone-layout-agent Case Study](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) | Supporting Android automation and physical-device reliability evidence |
+| 12 | [Workflow Implementation Cases](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md) | Supporting AI-native workflow implementation evidence |
+| 13 | [Decision Log](logs/DECISION_LOG.md) | Tradeoffs and positioning decisions (`portfolio_decision_evidence`) |
+| 14 | [Decision Log Tags](logs/DECISION_LOG_TAGS.md) | Controlled decision-evidence taxonomy |
+| 15 | [Before / After Snapshots](BEFORE_AFTER_SNAPSHOTS.md) | How the portfolio improved |
 
 The full recruiter-safe repository remains available for targeted search. This table is a priority path, not a closed source list.
 
@@ -75,6 +76,7 @@ The full recruiter-safe repository remains available for targeted search. This t
 | What should an agent read first? | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) |
 | How can a recruiter ask the repository about Marcus? | [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md) |
 | Which case should support a capability? | [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md) and [Evidence Matrix](EVIDENCE_MATRIX.md) |
+| What shows Android and physical-device automation? | [Phone-layout-agent Case Study](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) |
 | Which historical decisions were backfilled? | [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json) |
 | Can an LLM create a fair recruiter report about Marcus? | [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md) |
 | What is the strongest project? | [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md) |

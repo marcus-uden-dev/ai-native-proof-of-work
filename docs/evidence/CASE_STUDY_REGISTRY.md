@@ -1,6 +1,6 @@
 # Canonical Case Study Registry
 
-Last updated: 2026-08-26
+Last updated: 2026-08-28
 Status: Active / Evidence-bounded
 
 ## Purpose
@@ -27,7 +27,7 @@ machine-readable `repository-evidence-index.json` is a retrieval projection.
 | Tier | Cases | Default treatment |
 |---|---|---|
 | Lead proof | CASE-001 Job-agent | Default first-level attention |
-| Strong product / experience proof | CASE-002 PKM, CASE-003 Household Budget, CASE-005 ELSA, CASE-006 Lendify, CASE-011 PostNord | Promote according to status below |
+| Strong product / experience proof | CASE-002 PKM, CASE-003 Household Budget, CASE-005 ELSA, CASE-006 Lendify, CASE-011 PostNord, CASE-015 Phone-layout-agent | Promote according to status below |
 | Role-specific supporting depth | CASE-007 IoT Fitness, CASE-008 ChefNextDoor | Retrieve for relevant roles |
 | Agent database / historical experience | CASE-009 Murphy Bed, CASE-010 Tierps Tryckeri, CASE-012 SEB, CASE-013 Ramshöjden | Keep searchable; promote only when relevant and sufficiently evidenced |
 | Operating and trust proof | CASE-004 Human-gated Workflow Improvement, CASE-014 Public Evidence and Release System | Supporting evidence beneath stronger cases |
@@ -217,6 +217,21 @@ boundary, and one concrete next evidence test.
 - **Result boundary:** Supports stronger cases; it is not a flagship product case.
 - **Next evidence test:** Validate the registry and public release manifest during repository consolidation.
 - **Sources:** `SOURCE_MAP.md`; `SHARING_CHECKLIST.md`; `docs/plans/2026-08-25-repository-consolidation-and-source-of-truth-plan.md`
+
+### CASE-015 — Phone-layout-agent
+
+- **Title:** Phone-layout-agent — Reliable Android launcher automation
+- **Portfolio status:** Supporting product proof
+- **Public status:** Public recruiter-safe summary; source repository private
+- **Evidence status:** Private-source implementation verified; selected operational evidence summarized
+- **Outcome status:** Operational improvement demonstrated; controlled throughput not measured
+- **Role lenses:** AI Product; Product Operations; AI Transformation / Enablement; Technical Product
+- **Capabilities:** Process improvement; automation judgment; automation reliability; technical judgment; quality assurance; validation; risk awareness
+- **Platform tags:** Android; ADB; Samsung One UI; launcher automation; physical-device validation
+- **Decision:** Separate AI-assisted classification and review from deterministic, approval-gated, allowlisted device execution with checkpointing and independent re-open verification.
+- **Result boundary:** Implementation and selected physical-device exercises are evidenced. No controlled throughput, external adoption, unattended multi-device reliability, or production-readiness claim is made.
+- **Next evidence test:** Run a fixed baseline-versus-deterministic workload and report verified moves, failures, retries, recovery levels, disconnects, and median successful move time.
+- **Sources:** `case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md`; `strategy/phone-layout-agent/README.md`; `strategy/phone-layout-agent/decisions/DECISION_TRAIL.md`; private source repository `marcus-uden-dev/phone-layout-agent`
 
 ## Mechanism boundary
 

@@ -1,6 +1,6 @@
 # Evidence Matrix
 
-Last updated: 2026-08-09
+Last updated: 2026-08-28
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -16,7 +16,7 @@ Capability tags are retrieval aids; they are not a substitute for case-level evi
 
 ```mermaid
 flowchart TD
-    A["Marcus<br/>AI-native product builder"] --> B["Product proof<br/>Job-agent leads;<br/>PKM and budget app support"]
+    A["Marcus<br/>AI-native product builder"] --> B["Product proof<br/>Job-agent leads;<br/>PKM, budget, and Android automation support"]
     B --> C["Product judgment<br/>value prop, pricing,<br/>GTM, open questions"]
     C --> D["Reliability<br/>tests and verification notes"]
     D --> E["Trust<br/>privacy and data-rights choices"]
@@ -33,6 +33,8 @@ flowchart TD
 | Career-domain product judgment | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) | Hypothesis / Internal Verified | Connects project execution to job-search workflow pain |
 | Knowledge workflow design | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) | Internal / Verified | Shows ingestion, search, learning, and prioritization thinking |
 | Financial domain modeling | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | Internal / Verified | Shows careful modeling of household data, imports, goals, and forecasts |
+| Deterministic physical-device automation | [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md), [strategy/phone-layout-agent/decisions/DECISION_TRAIL.md](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md) | Private source / Verified summary | Shows how AI-assisted classification can be paired with bounded, deterministic execution on Android |
+| Automation safety and recovery | [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) | Verified implementation; controlled outcome not measured | Shows allowlists, approval gates, protected items, checkpoints, mismatch blocking, and independent verification |
 | QA and regression discipline | Job-agent and budget case studies | Internal / Verified | Shows attention to reliability and verification, not just ideation |
 | Reproducible product handoff | [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [PROJECT_STATUS.md](PROJECT_STATUS.md) | Verified | Shows that setup claims are tied to source-verified env files, startup docs, ports, validation paths, the currently accessible committed branch contract, and actual source HEAD rather than memory, stale status summaries, or dirty local WIP |
 | Published product snapshots | [Published Demo Portal](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/) | Verified | Gives reviewers a no-install way to inspect the main product surfaces before reading deeper docs |
@@ -48,9 +50,9 @@ flowchart TD
 
 | Role lens | First case | Additional cases | Evidence boundary |
 |---|---|---|---|
-| AI Product | CASE-001 Job-agent | CASE-002 PKM; CASE-003 Household Budget; CASE-007 IoT Fitness | Product proof leads; outcome status remains explicit |
-| Product Operations | CASE-001 Job-agent | CASE-003 Household Budget; CASE-005 ELSA; CASE-011 PostNord | Experience cases require scope and authority backfill |
-| AI Transformation / Enablement | CASE-004 Human-gated Workflow Improvement | CASE-005 ELSA; CASE-011 PostNord; CASE-014 Public Evidence | Operating mechanisms support cases and do not replace them |
+| AI Product | CASE-001 Job-agent | CASE-002 PKM; CASE-003 Household Budget; CASE-007 IoT Fitness; CASE-015 Phone-layout-agent | Product proof leads; outcome status remains explicit |
+| Product Operations | CASE-001 Job-agent | CASE-003 Household Budget; CASE-005 ELSA; CASE-011 PostNord; CASE-015 Phone-layout-agent | Experience cases require scope and authority backfill; phone-layout-agent has a private source boundary |
+| AI Transformation / Enablement | CASE-004 Human-gated Workflow Improvement | CASE-005 ELSA; CASE-011 PostNord; CASE-014 Public Evidence; CASE-015 Phone-layout-agent | Operating mechanisms support cases and do not replace them |
 | Customer Understanding | CASE-006 Lendify | CASE-008 ChefNextDoor; CASE-007 IoT Fitness | Research and retention outcomes are not claimed without source detail |
 | Business Analysis / Risk | CASE-003 Household Budget | CASE-012 SEB; CASE-009 Murphy Bed | Separate portfolio domain modelling from employment evidence |
 

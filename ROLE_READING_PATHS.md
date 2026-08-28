@@ -1,6 +1,6 @@
 # Role Reading Paths
 
-Last updated: 2026-08-09
+Last updated: 2026-08-28
 Status: Active / Recruiter-facing
 
 ## Purpose
@@ -17,8 +17,9 @@ Read:
 4. [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md)
 5. [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md)
 6. [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md) as supporting mechanism evidence
-7. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
-8. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
+7. [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) as physical-device automation evidence
+8. [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md)
+9. [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md)
 
 Look for:
 
@@ -27,6 +28,7 @@ Look for:
 - repeatable workflow design
 - custom skills as reusable problem/solution workflows
 - privacy-aware documentation
+- bounded AI-assisted automation and physical-device safety
 
 ## Product Operations
 
@@ -38,7 +40,8 @@ Read:
 4. [logs/DECISION_LOG.md](logs/DECISION_LOG.md)
 5. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
 6. [case-studies/WORKFLOW_IMPLEMENTATION_CASES.md](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
-7. [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md)
+7. [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md)
+8. [BEFORE_AFTER_SNAPSHOTS.md](BEFORE_AFTER_SNAPSHOTS.md)
 
 Look for:
 
@@ -53,10 +56,12 @@ Look for:
 Read:
 
 1. [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md)
-2. [strategy/job-agent/product/PRODUCT_STRATEGY.md](strategy/job-agent/product/PRODUCT_STRATEGY.md)
-3. [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md)
-4. [strategy/job-agent/business/PRICING_STRATEGY.md](strategy/job-agent/business/PRICING_STRATEGY.md)
-5. [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md)
+2. [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md)
+3. [strategy/phone-layout-agent/decisions/DECISION_TRAIL.md](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md)
+4. [strategy/job-agent/product/PRODUCT_STRATEGY.md](strategy/job-agent/product/PRODUCT_STRATEGY.md)
+5. [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md)
+6. [strategy/job-agent/business/PRICING_STRATEGY.md](strategy/job-agent/business/PRICING_STRATEGY.md)
+7. [architecture/ARCHITECTURE.md](architecture/ARCHITECTURE.md)
 
 Look for:
 
@@ -64,6 +69,7 @@ Look for:
 - tradeoffs
 - MVP boundaries
 - architecture/product alignment
+- deterministic execution and evidence boundaries for physical-device automation
 
 ## Technical Reviewer / Setup Reproduction
 
@@ -74,7 +80,8 @@ Read:
 3. [PROJECT_STATUS.md](PROJECT_STATUS.md)
 4. [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md)
 5. [SOURCE_MAP.md](SOURCE_MAP.md)
-6. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
+6. [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md)
+7. [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md)
 
 Look for:
 
@@ -94,6 +101,7 @@ Read:
 3. [recruiter-assets/INTERVIEW_TALKING_POINTS.md](recruiter-assets/INTERVIEW_TALKING_POINTS.md)
 4. [SOURCE_MAP.md](SOURCE_MAP.md)
 5. [SHARING_CHECKLIST.md](SHARING_CHECKLIST.md)
+6. [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md)
 
 Look for:
 

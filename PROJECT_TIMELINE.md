@@ -1,13 +1,13 @@
 # Project Timeline
 
-Last updated: 2026-08-09
+Last updated: 2026-08-28
 Status: Active / Living milestone log
 
 ## Purpose
 
 This timeline shows how the product portfolio and its evidence layer develop over time.
 
-It is not a full changelog. It highlights recruiter-relevant milestones across job-agent, PKM, the household budget app, and the documentation automation that packages the work.
+It is not a full changelog. It highlights recruiter-relevant milestones across job-agent, PKM, the household budget app, phone-layout-agent, and the documentation automation that packages the work.
 
 ## Timeline View
 
@@ -33,8 +33,9 @@ flowchart TD
     M18["2026-07-01 to 2026-07-02<br/>Frontend redesign direction,<br/>M0, and M1 shell land"]
     M19["2026-08-05<br/>Boundary corrected to<br/>current committed branch"]
     M20["2026-08-08 to 2026-08-09<br/>M1 polish lands and<br/>boundary is refreshed again"]
+    M21["2026-08-28<br/>Android launcher<br/>automation case added"]
 
-    M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9 --> M10 --> M11 --> M12 --> M13 --> M14 --> M15 --> M16 --> M17 --> M18 --> M19 --> M20
+    M1 --> M2 --> M3 --> M4 --> M5 --> M6 --> M7 --> M8 --> M9 --> M10 --> M11 --> M12 --> M13 --> M14 --> M15 --> M16 --> M17 --> M18 --> M19 --> M20 --> M21
 ```
 
 ## Milestone Log
@@ -65,6 +66,7 @@ flowchart TD
 | 2026-07-01 to 2026-07-02 | Job-agent adds a committed frontend redesign package: UX audit, alternatives, implementation plan, M0 UI foundations, and M1 shell/IA redirects on `feat/frontend-redesign-shell` | Job-agent | Internal / Verified | Source-repo commits `19c3525`, `dd29f6d`, `38cefcb`, `852a191`; [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md); [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) | Adds a fresher product-design and frontend-execution proof layer without pretending the branch is already merged |
 | 2026-08-05 | Weekly compiler refresh corrects the accessible `job-agent` source boundary to the currently committed July branch state and excludes dirty local WIP from recruiter-facing claims | Job-agent / portfolio evidence layer | Internal / Verified | [SOURCE_MAP.md](SOURCE_MAP.md), [PROJECT_STATUS.md](PROJECT_STATUS.md), [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md), [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) | Shows evidence discipline when the accessible branch state diverges from an older verified snapshot |
 | 2026-08-08 to 2026-08-09 | Job-agent adds committed M1 shell polish, while the weekly compiler refreshes the source boundary again to separate landed shell work from newer dirty M2 WIP | Job-agent / portfolio evidence layer | Internal / Verified | Source-repo commits `cfb91bc`, `8b9486e`, `bc10287`; [PROJECT_STATUS.md](PROJECT_STATUS.md); [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md); [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) | Shows frontend follow-through plus evidence discipline about product-code commits versus later ops/doc commits and dirty local follow-up |
+| 2026-08-28 | Phone-layout-agent is added as a supporting Android automation case with an explicit decision trail | Phone-layout-agent / portfolio evidence layer | Verified implementation summary; controlled outcome not measured | [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md), [strategy/phone-layout-agent/decisions/DECISION_TRAIL.md](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md), private source boundary `a7bea45` | Shows automation judgment, physical-device reliability, safety boundaries, and evidence discipline |
 
 ## How To Maintain This
 

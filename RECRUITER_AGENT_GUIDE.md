@@ -1,6 +1,6 @@
 # Recruiter Agent Guide
 
-Last updated: 2026-08-25
+Last updated: 2026-08-28
 Status: Active / Agent-readable
 
 ## Purpose
@@ -62,19 +62,21 @@ Assess Marcus’s practical evidence for:
 9. [Start Here](START_HERE.md)
 10. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
 11. [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md)
-12. [Project Status](PROJECT_STATUS.md)
-13. [Evidence Matrix](EVIDENCE_MATRIX.md)
-14. [Project Proof Points](PROJECT_PROOF_POINTS.md)
-15. [Project Timeline](PROJECT_TIMELINE.md)
-16. [Role Reading Paths](ROLE_READING_PATHS.md)
-17. [Proof of Work](PROOF_OF_WORK.md)
-18. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
-19. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
-20. [Decision Log](logs/DECISION_LOG.md)
-21. [Decision Log Tags](logs/DECISION_LOG_TAGS.md)
-22. [Source Map](SOURCE_MAP.md)
-23. [Repository Evidence Index](repository-evidence-index.json)
-24. [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json)
+12. [Phone-layout-agent Case Study](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md)
+13. [Phone-layout-agent Decision Trail](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md)
+14. [Project Status](PROJECT_STATUS.md)
+15. [Evidence Matrix](EVIDENCE_MATRIX.md)
+16. [Project Proof Points](PROJECT_PROOF_POINTS.md)
+17. [Project Timeline](PROJECT_TIMELINE.md)
+18. [Role Reading Paths](ROLE_READING_PATHS.md)
+19. [Proof of Work](PROOF_OF_WORK.md)
+20. [Workflow Implementation Case Studies](case-studies/WORKFLOW_IMPLEMENTATION_CASES.md)
+21. [Custom Skills Case Study](case-studies/CUSTOM_SKILLS_CASE_STUDY.md)
+22. [Decision Log](logs/DECISION_LOG.md)
+23. [Decision Log Tags](logs/DECISION_LOG_TAGS.md)
+24. [Source Map](SOURCE_MAP.md)
+25. [Repository Evidence Index](repository-evidence-index.json)
+26. [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json)
 
 ## Reuse / Template Reading Order
 
@@ -97,7 +99,7 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 ## Important Interpretation Rules
 
 - Treat job-agent as the lead proof point.
-- Treat PKM and the household budget app as supporting proof points.
+- Treat PKM, the household budget app, and phone-layout-agent as supporting proof points.
 - Treat automation, source indexes, weekly compiler, and review loops as documented operating infrastructure and secondary proof points.
 - Treat Personal AI Harness as the operating layer behind the product work, not as a substitute for the concrete product proof points.
 - Do not assume local-only files, raw chats, private project folders, or internal indexes are available.
@@ -121,6 +123,7 @@ Do not copy Marcus-specific claims, project evidence, screenshots, local paths, 
 | Custom skill design | [case-studies/CUSTOM_SKILLS_CASE_STUDY.md](case-studies/CUSTOM_SKILLS_CASE_STUDY.md), [workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md](workflows/CUSTOM_SKILLS_DOCUMENTATION_MODEL.md), [template/CUSTOM_SKILL_CASE_TEMPLATE.md](template/CUSTOM_SKILL_CASE_TEMPLATE.md) |
 | Product judgment | [strategy/job-agent/product/PRODUCT_STRATEGY.md](strategy/job-agent/product/PRODUCT_STRATEGY.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md), [logs/DECISION_LOG.md](logs/DECISION_LOG.md) |
 | QA discipline | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md), [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
+| Physical-device automation judgment | [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md), [strategy/phone-layout-agent/decisions/DECISION_TRAIL.md](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md) |
 | AI-native workflow design | [workflows/CLAUDE_CODEX_WORKFLOW.md](workflows/CLAUDE_CODEX_WORKFLOW.md), [workflows/AI_OPERATING_MODEL.md](workflows/AI_OPERATING_MODEL.md) |
 | Privacy-aware execution | [SOURCE_MAP.md](SOURCE_MAP.md), [SHARING_CHECKLIST.md](SHARING_CHECKLIST.md), case-study evidence boundaries |
 | Communication clarity | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md), [RECRUITER_BRIEF.md](RECRUITER_BRIEF.md), [recruiter-assets/RECRUITER_SUMMARY.md](recruiter-assets/RECRUITER_SUMMARY.md) |

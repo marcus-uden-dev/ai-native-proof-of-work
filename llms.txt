@@ -4,7 +4,7 @@
 
 This is a private, recruiter-shareable proof-of-work repository. It documents real product work, AI-native workflow design, architecture reasoning, project decisions, weekly execution, and reusable operating model patterns.
 
-The repository itself is not the product. Concrete projects are the primary proof. Job-agent is the lead proof point. PKM and the household budget app are supporting proof points. Automation, source indexes, weekly compiler prompts, and review loops are operating infrastructure.
+The repository itself is not the product. Concrete projects are the primary proof. Job-agent is the lead proof point. PKM, the household budget app, and phone-layout-agent are supporting proof points. Automation, source indexes, weekly compiler prompts, and review loops are operating infrastructure.
 
 ## Primary Recruiter Path
 
@@ -19,6 +19,7 @@ The repository itself is not the product. Concrete projects are the primary proo
 - [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md): provider-neutral prompt for recruiter questions about skills, work history, projects, decisions, and evidence.
 - [docs/evidence/historical-decision-inventory.json](docs/evidence/historical-decision-inventory.json): backfill inventory with source boundaries, lifecycle status, and public eligibility.
 - [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md): lead project case study.
+- [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md): supporting Android launcher automation case study and decision trail.
 - [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md): capability-to-evidence map.
 - [PROJECT_STATUS.md](PROJECT_STATUS.md): current project state and blockers.
 - [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md): milestone history.
@@ -43,6 +44,7 @@ The repository itself is not the product. Concrete projects are the primary proo
 - [SOURCE_MAP.md](SOURCE_MAP.md): recruiter-safe source summary.
 - [strategy/README.md](strategy/README.md): strategy index.
 - [logs/DECISION_LOG.md](logs/DECISION_LOG.md): decision trail.
+- [strategy/phone-layout-agent/decisions/DECISION_TRAIL.md](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md): project-specific Android automation decision trail.
 - [logs/DECISION_LOG_TAGS.md](logs/DECISION_LOG_TAGS.md): controlled capability-tag taxonomy and assignment rules.
 - Decision-log material is `portfolio_decision_evidence`; it supports product judgment and workflow decisions but does not establish unlisted employment duties.
 - [logs/PROBLEM_SOLVING_LOG.md](logs/PROBLEM_SOLVING_LOG.md): problems and mitigations.

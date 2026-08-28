@@ -1,6 +1,6 @@
 # Proof of Work
 
-Last updated: 2026-08-09
+Last updated: 2026-08-28
 Status: Active / Project-focused evidence map
 
 ## What This Demonstrates
@@ -21,11 +21,12 @@ Status: Active / Project-focused evidence map
 | Recruiter one-pager | Fast skim path and top proof points | Verified | [RECRUITER_ONE_PAGER.md](RECRUITER_ONE_PAGER.md) |
 | Recruiter LLM report brief | Fair report format, source priority, and overclaiming guardrails for recruiter-side assistants | Verified | [docs/reports/recruiter-llm-report-brief.md](docs/reports/recruiter-llm-report-brief.md) |
 | Job-agent case study | Lead product proof point | Internal / Verified | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) |
+| Phone-layout-agent case study | Supporting Android automation and physical-device reliability proof | Private source / Verified summary; controlled outcome not measured | [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) |
 | Evidence matrix | Capability-to-evidence map | Verified | [EVIDENCE_MATRIX.md](EVIDENCE_MATRIX.md) |
 | Role reading paths | Role-specific recruiter navigation | Verified | [ROLE_READING_PATHS.md](ROLE_READING_PATHS.md) |
 | Recruiter agent guide | Agent-readable evaluation instructions | Verified | [RECRUITER_AGENT_GUIDE.md](RECRUITER_AGENT_GUIDE.md) |
 | Project status | Current state, recent progress, and open work across projects | Internal / Verified | [PROJECT_STATUS.md](PROJECT_STATUS.md) |
-| Project proof points | Concrete project portfolio: job-agent, PKM, household budget app | Internal / Verified | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
+| Project proof points | Concrete project portfolio: job-agent, PKM, household budget app, and phone-layout-agent | Internal / Verified | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md) |
 | Project timeline | Milestones across products and the portfolio evidence layer | Internal / Verified | [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) |
 | Weekly log | Execution cadence | Verified | [logs/WEEKLY_LOG.md](logs/WEEKLY_LOG.md) |
 | Static demo portal | Published no-install click-through for job-agent, PKM, and household budget snapshots | Verified | [Published demo](https://theonedarkhorse.github.io/ai-native-proof-of-work-demo/), [demos/manifest.json](demos/manifest.json) |
@@ -83,6 +84,15 @@ Status: Active / Project-focused evidence map
 - Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)
 - Case study: [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md)
 - Recruiter relevance: Demonstrates product execution outside the AI/career domain, making the portfolio broader and more credible.
+
+### 4. Phone-layout-agent Android automation
+
+- What was done: Built and documented a local Android launcher automation path with approval-gated proposals, allowlisted ADB operations, deterministic Samsung One UI batches, checkpoints, recovery, and independent verification.
+- Why it matters: Shows how to apply AI where it helps with classification and review while keeping physical-device execution bounded and deterministic.
+- Status: Private source / Verified summary; controlled throughput not measured.
+- Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [strategy/phone-layout-agent/decisions/DECISION_TRAIL.md](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md)
+- Case study: [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md)
+- Recruiter relevance: Demonstrates automation judgment, technical risk management, QA, recovery design, and evidence discipline.
 
 ### 4. Portfolio evidence repository scaffold
 
