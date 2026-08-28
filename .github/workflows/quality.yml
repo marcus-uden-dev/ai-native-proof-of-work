@@ -46,6 +46,11 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Run contract and browser tests
         run: npm test
+      - name: Recheck privacy review ancestry after tests
+        run: |
+          candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
+          echo "merge_base_after_tests=$(git merge-base "$candidate_commit" HEAD)"
+          test "$(git merge-base "$candidate_commit" HEAD)" = "$candidate_commit"
       - name: Validate the public release boundary
         env:
           PUBLIC_RELEASE_DEBUG_GIT: '1'
