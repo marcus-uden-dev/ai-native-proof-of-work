@@ -6,17 +6,24 @@ The site leads with a concise hiring case. It then provides dated evidence, expl
 
 ## Current state
 
-This is a public, recruiter-shareable repository. It is the curated evidence layer around product work, not a mirror of every working file or a claim that a product is released or market-validated.
+This is the professional public repository staging area for `marcus-uden-dev/ai-native-proof-of-work`. It contains the curated static site and a staged migration of project strategy and case-study evidence from the earlier proof-of-work archive. It is a public, recruiter-shareable evidence layer around product work, not a mirror of every working file or a claim that a product is released or market-validated.
 
-Use the GitHub repository directly. The recruiter route does not require a custom domain or a separate public website.
+The migration is content-only. The earlier repository history is not imported. See [release/migration-manifest.json](release/migration-manifest.json) for the staged file boundary. The recruiter route does not require a custom domain or a separate public website.
+
+## Project evidence
+
+- [Project proof points](PROJECT_PROOF_POINTS.md)
+- [Project status](PROJECT_STATUS.md)
+- [Job-agent case study](case-studies/JOB_AGENT_CASE_STUDY.md)
+- [PKM case study](case-studies/PKM_CASE_STUDY.md)
+- [Household budget app case study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md)
 
 ## Hiring route
 
-1. Start with [the recruiter agent guide](RECRUITER_AGENT_GUIDE.md) for a guided, evidence-bound review.
-2. Read [the two-minute hiring brief](RECRUITER_ONE_PAGER.md).
-3. Inspect [the Job-agent case study](case-studies/JOB_AGENT_CASE_STUDY.md) and the [evidence matrix](EVIDENCE_MATRIX.md).
-4. Download [the sanitized English CV](site/assets/cv/marcus-uden-cv.pdf).
-5. Request an interview through `marcus.uden.dev@gmail.com`.
+1. Read the two-minute hiring brief.
+2. Inspect the Job-agent case study and synthetic company-research proof.
+3. Download the sanitized English CV.
+4. Request an interview through `marcus.uden.dev@gmail.com`.
 
 The site describes Job-agent as work in progress, not live, not market-validated, and without measured market outcomes.
 
@@ -28,10 +35,10 @@ npm test
 npm run release:validate
 ```
 
-The `site/` directory contains release assets and is not part of the current recruiter reading path. The release validator checks file allowlisting, identity separation, private paths, credentials, product maturity wording, Git metadata, and binary privacy records.
+The static site will live under `site/`. The release validator checks file allowlisting, identity separation, private paths, credentials, product maturity wording, Git metadata, and binary privacy records.
 
 ## Publication boundary
 
-GitHub Pages activation and domain changes require explicit approval. The rollback method is an append-only revert commit to the last approved release.
+Publication, GitHub Pages activation, and domain changes require explicit approval. The rollback method is an append-only revert commit to the last approved release.
 
 CI uses read-only permissions for quality checks. Pages and identity-token permissions exist only in the deployment job, which runs after Quality succeeds. See `docs/RELEASE_RUNBOOK.md` for the release, temporary-host, rollback, and domain gates.

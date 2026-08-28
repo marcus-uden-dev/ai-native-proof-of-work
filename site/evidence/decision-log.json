@@ -1,5 +1,11 @@
 [
   {
+    "date": "2026-08-26",
+    "tags": ["ai-native-workflows", "context-engineering", "decision-traceability", "automation-judgment", "risk-controls"],
+    "why": "Made each AI-assisted response identify its model and reasoning effort when available. This makes model routing observable without exposing private operating details.",
+    "demonstrates": "Turns invisible AI configuration into a verifiable, human-readable control. Uses an explicit unknown state instead of false precision."
+  },
+  {
     "date": "2026-08-24",
     "project": "Personal AI Harness",
     "tags": [

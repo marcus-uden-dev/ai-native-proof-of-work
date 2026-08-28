@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 import { readFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 

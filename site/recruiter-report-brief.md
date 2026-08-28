@@ -26,6 +26,6 @@ Use this structure with the [recruiter agent guide](https://marcus-uden-dev.gith
 6. **Interview questions** — Ask five questions that test the highest-value uncertainties.
 7. **Fit assessment** — Give a short conclusion with confidence and limitations.
 
-For professional experience, education, languages, or career fit, cite both the public [CV facts JSON](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json) and the [English CV PDF](https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/cv/marcus-uden-cv.pdf) as applicable.
-
 Do not use synthetic company data as evidence about a real employer or a measured result. Do not paste confidential or personal data into the assessment.
+
+For professional experience, education, languages, or career fit, cite both the public [CV facts JSON](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json) and the [English CV PDF](https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/cv/marcus-uden-cv.pdf) as applicable.

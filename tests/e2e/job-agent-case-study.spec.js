@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 
 test('status and synthetic notices appear before the first proof frame', async ({ page }) => {
   await page.goto('/proof/job-agent/');

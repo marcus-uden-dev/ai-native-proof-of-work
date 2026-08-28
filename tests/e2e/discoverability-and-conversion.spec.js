@@ -1,7 +1,8 @@
-import { expect, test } from '@playwright/test';
+import { expect, test } from './fixtures.js';
 
 const pages = [
   { path: '/', canonical: 'https://marcus.uden.dev/', title: 'Marcus Udén — Product judgment, execution, and AI-native leverage' },
+  { path: '/cv/', canonical: 'https://marcus.uden.dev/cv/', title: 'CV facts — Marcus Udén' },
   { path: '/proof/job-agent/', canonical: 'https://marcus.uden.dev/proof/job-agent/', title: 'Job-agent case study — Marcus Udén' },
   { path: '/proof/job-agent/demo/', canonical: 'https://marcus.uden.dev/proof/job-agent/demo/', title: 'Job-agent recruiter-safe prototype — Marcus Udén' },
   { path: '/proof/recursive-workflow/', canonical: 'https://marcus.uden.dev/proof/recursive-workflow/', title: 'Recursive workflow system — Marcus Udén' }
@@ -58,6 +59,10 @@ test('CV and interview actions use the approved public assets and email', async 
   const cv = await request.get('/assets/cv/marcus-uden-cv.pdf');
   expect(cv.ok()).toBeTruthy();
   expect((await cv.body()).subarray(0, 4).toString()).toBe('%PDF');
+  const facts = await request.get('/evidence/cv-facts.json');
+  expect(facts.ok()).toBeTruthy();
+  expect((await facts.json()).identity.citizenshipAndWorkAuthorization).toBe('Swedish and U.S. citizen, eligible to work in Sweden.');
+  await expect(page.getByRole('link', { name: 'Read CV facts' }).first()).toHaveAttribute('href', 'cv/');
 });
 
 test('project-subpath navigation keeps relative assets and downloads valid', async ({ page }) => {
