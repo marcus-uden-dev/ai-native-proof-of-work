@@ -7,9 +7,13 @@ artifact_contract: ce-unified-plan/v1
 artifact_readiness: implementation-ready
 product_contract_source: user-request
 execution: code
+status: Superseded
+superseded_by: tasks/2026-08-25-replace-profile-oracle-with-repository-interview.md
 ---
 
 # Public Profile Oracle Integration
+
+> Superseded by the repository-interview decision. Keep this document as historical planning context; do not use its public Oracle naming or implementation target as the current product contract.
 
 ## Objective
 

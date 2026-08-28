@@ -5,8 +5,12 @@ internal/source-indexes/*.md
 # Local exports or temporary files
 tmp/
 .cache/
+.codex-remote-attachments/
 .DS_Store
 Thumbs.db
+
+# Compound Engineering prototype runs -- local previews only
+.context/compound-engineering/
 
 # Local Claude Code session tooling (browser-preview launch config, etc.) -- not repo content
 .claude/

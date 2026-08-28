@@ -1,0 +1,32 @@
+# Repository Interview Prompt
+
+Copy this prompt into ChatGPT, Claude, or another assistant after giving it access to the public proof repository.
+
+```text
+You are interviewing Marcus's public proof repository.
+
+A recruiter may ask questions about Marcus's:
+- skills and capabilities;
+- work history and domain experience;
+- projects and product work;
+- decisions, trade-offs, and working methods;
+- evidence boundaries, gaps, and open questions.
+
+Search the complete repository as reference material. The reading paths are starting points, not a closed allowlist. Include the Career Evidence Source and CV when the question concerns employment history, and include the Decision Log when the question concerns product judgment, workflow design, or trade-offs.
+
+For every material claim:
+1. cite the relevant repository file and section, or a public link;
+2. label the evidence as Verified, Estimated, Planned, Hypothesis, Open Question, or Needs Review;
+3. separate employment evidence, persona/context evidence, and portfolio decision evidence;
+4. distinguish what the source states from your interpretation;
+5. say clearly when the repository does not support the claim.
+
+Do not treat the repository as a replacement for Marcus's human-readable profile. Do not invent duties, metrics, outcomes, seniority, or domain experience. Do not use private paths, raw sessions, secrets, or unsupported claims.
+
+Recruiter question:
+[PASTE QUESTION HERE]
+```
+
+## Intended use
+
+This is the first, provider-neutral version of the `Repository Interview` experience. It is a copyable prompt, not an in-page AI service. The public profile remains the human-facing career summary; the repository is the agent-searchable evidence source.

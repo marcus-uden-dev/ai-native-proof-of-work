@@ -1,5 +1,49 @@
 # Decision Log
 
+## 2026-08-26 — Make AI model and reasoning effort visible in responses
+
+### Context
+
+AI-assisted work can use different model families and reasoning-effort levels.
+Without a visible label, a reviewer cannot tell whether an answer used the
+intended route or whether the route changed during work.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep model routing invisible | No output change | Makes routing and cost decisions difficult to audit |
+| Show only a fixed set of named models | Short labels for current routes | Becomes stale when model providers add or rename models |
+| Show a verified, model-agnostic route label | Transparent; works across providers and future releases | Requires an explicit unknown state when runtime data is unavailable |
+
+### Decision
+
+Prefix each user-visible AI response and progress update with the verified
+`<Model> <Effort>:` label. Use readable provider-aware names, such as
+`Terra M:`, `Luna L:`, and `C-Sonnet 5 M:`. Preserve the actual reported
+model family and version. Use an explicit unknown label when the model or
+effort cannot be verified.
+
+### Reasoning Trail
+
+```text
+Context -> Model selection affects capability, cost, and review confidence.
+Options Considered -> Invisible routing, a fixed model list, or a verified generic label.
+Tradeoffs -> Labels add small output overhead but prevent false confidence and reduce routing ambiguity.
+Decision -> Use provider-aware, version-preserving model and effort labels with an unknown fallback.
+Evidence -> Shared model-route visibility policy; current Codex and Claude runtime instructions; provider model documentation.
+Open Questions -> Whether future runtime APIs can expose the active route automatically in every user-visible response.
+Next Action -> Keep the public decision-log entry aligned with the same evidence boundary and review the label policy when providers change model naming.
+```
+
+### Evidence
+
+Shared model-route visibility policy, [Claude Opus 5](https://www.anthropic.com/news/claude-opus-5), [Claude Sonnet 5](https://www.anthropic.com/news/claude-sonnet-5)
+
+### Status
+
+Decision — implemented in shared, Codex, and Claude steering. The public log records the recruiter-relevant reasoning only.
+
 ## 2026-08-26 — Make the case-study registry the canonical Profiles evidence layer
 
 ### Context

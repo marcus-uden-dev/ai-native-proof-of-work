@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Profile Oracle Preview | Marcus Udén</title>
+  <title>Repository Evidence Preview | Marcus Udén</title>
   <style>
     :root { --paper:#f6f1e6; --card:#fffaf0; --ink:#211d16; --muted:#625b4b; --faint:#8c8471; --rule:#dfd3b9; --gold:#9c6a22; --gold-tint:#efe0c1; --teal:#29685a; --teal-tint:#dbe9e2; --dark:#201b12; --dark-muted:#b7ab8c; --serif:Georgia,'Times New Roman',serif; --sans:Inter,'Segoe UI',sans-serif; --mono:'IBM Plex Mono',Consolas,monospace; }
     * { box-sizing:border-box; }
@@ -23,9 +23,9 @@
     h2 { font-size:clamp(30px,4vw,46px); letter-spacing:-.025em; }
     h3 { font-size:25px; }
     .lead { max-width:700px; margin:22px 0 0; color:var(--muted); font-size:18px; }
-    .oracle-card { border-left:3px solid var(--teal); padding:18px 0 18px 22px; }
-    .oracle-card strong { display:block; font:600 12px var(--mono); }
-    .oracle-card p { margin:8px 0 0; color:var(--muted); }
+    .evidence-card { border-left:3px solid var(--teal); padding:18px 0 18px 22px; }
+    .evidence-card strong { display:block; font:600 12px var(--mono); }
+    .evidence-card p { margin:8px 0 0; color:var(--muted); }
     .privacy-banner { padding:12px 0; background:var(--gold-tint); border-bottom:1px solid var(--rule); color:#6d4715; font:600 11px/1.4 var(--mono); letter-spacing:.04em; text-transform:uppercase; }
     .privacy-banner strong { color:var(--dark); }
     .band { padding:25px 0; background:var(--dark); color:#efe7d4; }
@@ -50,27 +50,27 @@
     .tag { border:1px solid var(--rule); border-radius:999px; padding:3px 8px; color:var(--muted); font:600 10px var(--mono); }
     .tag.project { border-color:var(--teal); background:var(--teal-tint); color:#1e5145; }
     .tag.status { border-color:var(--gold); background:var(--gold-tint); color:#6d4715; }
-    .oracle-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+    .evidence-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
     .card { padding:23px; background:var(--card); border:1px solid var(--rule); }
     .card h3 { font-size:27px; }
     .card p { color:var(--muted); }
     .card ul { margin:14px 0 0; padding-left:20px; color:var(--muted); }
     footer { padding:32px 0 60px; border-top:1px solid var(--rule); color:var(--muted); font-size:13px; }
-    @media (max-width:760px) { .mast,.hero,.intro { display:block; } nav { margin-top:15px; } nav a { margin:0 16px 0 0; } .hero { padding-top:48px; } .oracle-card { margin-top:34px; } .stats,.oracle-grid { grid-template-columns:1fr 1fr; } .record { grid-template-columns:1fr; gap:4px; } }
+    @media (max-width:760px) { .mast,.hero,.intro { display:block; } nav { margin-top:15px; } nav a { margin:0 16px 0 0; } .hero { padding-top:48px; } .evidence-card { margin-top:34px; } .stats,.evidence-grid { grid-template-columns:1fr 1fr; } .record { grid-template-columns:1fr; gap:4px; } }
   </style>
 </head>
 <body>
-  <header><div class="shell mast"><a class="brand" href="#top"><span class="mark">MU</span><span>Marcus Udén</span></a><nav><a href="#oracle">Oracle</a><a href="#decisions">Decisions</a><a href="#boundary">Boundary</a></nav></div></header>
+  <header><div class="shell mast"><a class="brand" href="#top"><span class="mark">MU</span><span>Marcus Udén</span></a><nav><a href="#decisions">Decision Log</a><a href="#interview">Repository Interview</a><a href="#boundary">Boundary</a></nav></div></header>
   <main id="top">
     <div class="privacy-banner"><div class="shell"><strong>Private preview · WIP</strong> · Not published to the public profile or site</div></div>
     <section class="shell hero">
-      <div><p class="eyebrow">Profile / agent-readable proof</p><h1>A profile that can explain how the work was thought through.</h1><p class="lead">A reviewed projection of projects, decisions, capability tags, and evidence boundaries. The source material is broader than the public profile. This view exposes the useful signal.</p></div>
-      <aside class="oracle-card"><strong>PROFILE ORACLE PREVIEW</strong><p>Backfill complete as a reviewed draft. Candidate records were extracted from decision logs, plans, lessons, and sanitized harness incidents.</p></aside>
+      <div><p class="eyebrow">Repository evidence / agent-readable proof</p><h1>A repository that can explain how the work was thought through.</h1><p class="lead">A reviewed projection of projects, decisions, capability tags, and evidence boundaries. The source material is broader than the human-facing profile. This view exposes the useful signal.</p></div>
+      <aside class="evidence-card"><strong>REPOSITORY EVIDENCE PREVIEW</strong><p>Backfill complete as a reviewed draft. Candidate records were extracted from decision logs, plans, lessons, and sanitized harness incidents.</p></aside>
     </section>
     <section class="band"><div class="shell stats"><p><strong>12</strong>reviewed decisions</p><p><strong>4</strong>project lenses</p><p><strong>10</strong>capability tags</p><p><strong>2</strong>evidence layers</p></div></section>
-    <section class="section shell" id="oracle">
-      <div class="intro"><div><p class="kicker">Oracle summary</p><h2>What this profile can answer.</h2></div><p>Start with the compact oracle for a fast answer. Follow the evidence links for context. Treat status and public eligibility as part of the claim, not as metadata to ignore.</p></div>
-      <div class="oracle-grid">
+    <section class="section shell" id="interview">
+      <div class="intro"><div><p class="kicker">Repository Interview</p><h2>Ask questions about the work.</h2></div><p>A recruiter can ask an assistant about skills, work history, projects, decisions, evidence, and open questions. The assistant should search the complete repository and cite its sources.</p></div>
+      <div class="evidence-grid">
         <article class="card"><p class="kicker">Primary proof</p><h3>Concrete product work</h3><p>Job-agent leads the proof. PKM and household budgeting provide supporting evidence for product reasoning, knowledge work, and domain modeling.</p><ul><li>Product decisions are separated from documentation freshness.</li><li>Committed evidence is separated from dirty local work.</li><li>Handoff and status sources have explicit roles.</li></ul></article>
         <article class="card"><p class="kicker">Operating layer</p><h3>Personal AI Harness</h3><p>The memory, agent, automation, and improvement layer behind the work. It is continuously refined by adding useful capabilities and pruning what no longer earns its place.</p><ul><li>Reusable workflows become documented cases.</li><li>Scheduled work uses bounded experiments and quality gates.</li><li>Lessons feed future operating rules.</li></ul></article>
       </div>
@@ -93,7 +93,7 @@
         <article class="record" data-project="household-budget"><div class="date">2026-05-11<span>Verified</span></div><div><h3>Use household budgeting as shared-domain modeling evidence</h3><p class="summary">The budget app demonstrates shared roles, imports, review flows, forecasts, and privacy-sensitive domain modeling.</p><div class="tags"><span class="tag project">project: household-budget</span><span class="tag status">status: verified</span><span class="tag">systems-thinking</span><span class="tag">problem-framing</span><span class="tag">stakeholder-understanding</span></div></div></article>
       </div>
     </section>
-    <section class="section shell" id="boundary"><div class="intro"><div><p class="kicker">Evidence boundary</p><h2>Useful signal, controlled source.</h2></div><p>The oracle is generated from broader internal sources, but the profile exposes only sanitized summaries, stable project identifiers, capability tags, and traceable evidence links. Raw sessions, local paths, secrets, and unsupported outcomes stay out.</p></div></section>
+    <section class="section shell" id="boundary"><div class="intro"><div><p class="kicker">Evidence boundary</p><h2>Useful signal, controlled source.</h2></div><p>This reviewed repository projection exposes only sanitized summaries, stable project identifiers, capability tags, and traceable evidence links. Raw sessions, local paths, secrets, and unsupported outcomes stay out.</p></div></section>
     <footer><div class="shell"><strong>Preview boundary:</strong> this is a recruiter-facing prototype backed by a reviewed draft. Planned and internal candidates remain separate from verified public claims.</div></footer>
   </main>
   <script>

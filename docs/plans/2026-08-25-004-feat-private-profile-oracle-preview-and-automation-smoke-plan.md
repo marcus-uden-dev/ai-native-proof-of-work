@@ -7,9 +7,13 @@ artifact_contract: ce-unified-plan/v1
 artifact_readiness: implementation-ready
 product_contract_source: user-request
 execution: code
+status: Superseded
+superseded_by: tasks/2026-08-25-replace-profile-oracle-with-repository-interview.md
 ---
 
 # Private Profile Oracle Preview and Automation Smoke Test
+
+> Superseded by the repository-interview decision. Keep this document as historical smoke-test context; do not use its Oracle naming or private-preview target as the current public interaction model.
 
 ## Goal Capsule
 

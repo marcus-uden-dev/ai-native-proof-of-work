@@ -45,6 +45,40 @@ Alternative name: `Repository Interview`.
 
 Avoid using `Oracle` in public-facing headings, navigation, copy, or page titles.
 
+### Live page audit finding
+
+The current published recursive-workflow page still contains these stale public labels:
+
+- `Oracle detail`
+- `What this profile can answer.`
+- `The Decision Log is the detailed, public Oracle view.`
+- `Decision Log Oracle detail`
+
+Replace them with the settled information architecture:
+
+- `Decision Log`
+- `Learn how I think through my continuous decision log.`
+- `Ask the Repository`
+- `Ask questions about skills, work history, projects, decisions, evidence, and open questions.`
+
+The public-page source was located in the canonical public repository: `site/proof/recursive-workflow/index.html`, with the homepage prompt in `site/index.html` and the recruiter guidance in `site/recruiter-agent-guide.md`. The live page still requires a commit and push from that source checkout before the change is published.
+
+### Repository-interview prompt contract
+
+The generated prompt must state that the recruiter can ask the repository questions about Marcus’s:
+
+- skills and capabilities;
+- work history and domain experience;
+- projects and product work;
+- decisions, trade-offs, and working methods;
+- evidence boundaries, gaps, and open questions.
+
+The prompt must instruct the assistant to search the public repository, cite file paths or public links, separate verified evidence from interpretation, and say when the repository does not support an answer. It must not imply that the repository replaces the human-readable profile or that every career claim is proven by the repository.
+
+Suggested prompt framing:
+
+> You are interviewing Marcus’s public proof repository. A recruiter may ask about his skills, work history, domain experience, projects, decisions, working methods, and evidence. Search the repository before answering, cite the relevant public files or links, distinguish verified evidence from interpretation, and state clearly when the repository does not support a claim.
+
 ## Feasibility options
 
 ### Option A — Prompt-first, selected first slice
@@ -82,7 +116,7 @@ Launch the prompt-first flow and add an API-backed answer field later if the int
 
 ## Acceptance criteria
 
-- [ ] No public-facing page, navigation label, or copy calls the experience “Profile Oracle”.
+- [ ] No public-facing page, navigation label, artifact name, or copy calls the experience “Profile Oracle”.
 - [ ] The static decision history uses `Decision Log` and the continuous-thinking copy is tested.
 - [ ] The interactive concept uses `Ask the Repository` or `Repository Interview` consistently.
 - [ ] A provider-neutral prompt can be generated from a question and the public repository URL.
