@@ -49,6 +49,10 @@ jobs:
       - name: Recheck privacy review ancestry after tests
         run: |
           candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
+          echo "head_after_tests=$(git rev-parse HEAD)"
+          git show-ref --verify "refs/review-candidates/$candidate_commit" || true
+          git cat-file -t "$candidate_commit" || true
+          git log --oneline --decorate --graph --all -20
           echo "merge_base_after_tests=$(git merge-base "$candidate_commit" HEAD)"
           test "$(git merge-base "$candidate_commit" HEAD)" = "$candidate_commit"
       - name: Validate the public release boundary
