@@ -87,6 +87,7 @@ If Pocket Casts or another podcast app can export listening statistics, the proo
 
 ## Privacy Notes
 
-- Private feed names, account identifiers, raw feed URLs, and local file paths are excluded from this recruiter-facing file.
-- The source export should remain private unless deliberately redacted.
+- Podcast show names, followed-feed details, and listening-history detail may be included when deliberately selected as public evidence.
+- Account identifiers, authentication data, raw private metadata, and local file paths remain excluded.
+- The source export may be published in a suitable evidence format when its public scope has been deliberately reviewed.
 - Future X follows or browser-visit summaries should use the same rule: aggregate by topic and source quality, not raw identity trails or browsing logs.
