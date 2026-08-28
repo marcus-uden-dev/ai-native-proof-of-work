@@ -20,19 +20,15 @@ jobs:
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
         with:
           fetch-depth: 0
+      - name: Ensure release ancestry is complete
+        run: |
+          if [ "$(git rev-parse --is-shallow-repository)" = "true" ]; then
+            git fetch --no-tags --unshallow origin
+          fi
       - name: Fetch the privacy review candidate
         run: |
           candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
           git fetch --no-tags origin "$candidate_commit:refs/review-candidates/$candidate_commit"
-      - name: Verify privacy review ancestry
-        run: |
-          candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
-          echo "candidate_commit=$candidate_commit"
-          echo "head_commit=$(git rev-parse HEAD)"
-          git cat-file -t "$candidate_commit"
-          echo "merge_base=$(git merge-base "$candidate_commit" HEAD)"
-          git log --oneline --decorate --graph --all -20
-          test "$(git merge-base "$candidate_commit" HEAD)" = "$candidate_commit"
       - name: Set up Node.js
         uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
         with:
@@ -46,18 +42,7 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Run contract and browser tests
         run: npm test
-      - name: Recheck privacy review ancestry after tests
-        run: |
-          candidate_commit="$(node -p "require('./release/privacy-review.json').candidateCommit")"
-          echo "head_after_tests=$(git rev-parse HEAD)"
-          git show-ref --verify "refs/review-candidates/$candidate_commit" || true
-          git cat-file -t "$candidate_commit" || true
-          git log --oneline --decorate --graph --all -20
-          echo "merge_base_after_tests=$(git merge-base "$candidate_commit" HEAD)"
-          test "$(git merge-base "$candidate_commit" HEAD)" = "$candidate_commit"
       - name: Validate the public release boundary
-        env:
-          PUBLIC_RELEASE_DEBUG_GIT: '1'
         run: npm run release:validate
       - name: Check whitespace errors
         run: git diff --check

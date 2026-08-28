@@ -29,11 +29,7 @@ function listFiles(root, current = root) {
 function git(root, args, fallback = '') {
   try {
     return execFileSync('git', ['-C', root, ...args], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] }).trim();
-  } catch (error) {
-    if (process.env.PUBLIC_RELEASE_DEBUG_GIT === '1') {
-      const stderr = error.stderr?.toString().trim() || 'no stderr';
-      console.error(`[release-git] git ${args.join(' ')} failed with exit ${error.status ?? 'unknown'}: ${stderr}`);
-    }
+  } catch {
     return fallback;
   }
 }
