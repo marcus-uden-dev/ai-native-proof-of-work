@@ -138,3 +138,26 @@ test('rejects broken and root-relative internal links', () => {
   assert.ok(validateRepository(broken).errors.some((error) => error.category === 'broken-link'));
   assert.ok(validateRepository(rooted).errors.some((error) => error.category === 'broken-link'));
 });
+
+test('requires every public HTML page to use the approved favicon asset', async () => {
+  const { createHash } = await import('node:crypto');
+  const content = Buffer.from('favicon-fixture');
+  const digest = createHash('sha256').update(content).digest('hex');
+  const root = makeRepository(
+    {
+      'site/assets/marcus-uden-avatar.png': content,
+      'site/index.html': '<link rel="icon" href="assets/marcus-uden-avatar.png">',
+      'site/new-page.html': '<html><head></head></html>'
+    },
+    {
+      reviewStatus: 'complete',
+      reviewedFiles: [{
+        path: 'site/assets/marcus-uden-avatar.png',
+        sha256: digest,
+        decision: 'approved'
+      }]
+    }
+  );
+  const result = validateRepository(root);
+  assert.ok(result.errors.some((error) => error.category === 'favicon' && error.file === 'site/new-page.html'));
+});

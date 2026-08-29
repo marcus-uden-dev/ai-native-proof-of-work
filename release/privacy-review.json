@@ -63,6 +63,14 @@
       "note": "Generated from the public design system and visually checked. No photo, private identifier, local path, or unapproved contact detail is present."
     },
     {
+      "path": "site/assets/marcus-uden-avatar.png",
+      "sha256": "6342dfa8d73dfc883934ab7fa6f500aa0c2ef438707fd30aafb0e1f4b8aec656",
+      "decision": "approved",
+      "dataClass": "public professional identity",
+      "containsPersonalData": false,
+      "note": "User-provided image from Downloads, selected for the public Pages favicon and visually checked on 2026-08-29."
+    },
+    {
       "path": "site/assets/images/information-diet/pocket-casts-listening-stats-2026-08-28.jpg",
       "sha256": "861e7615d6e0469d367c1e65db6c275a125a44d79f4d3cba7a3dfd4e55227def",
       "decision": "approved",

@@ -84,6 +84,33 @@ function validateInternalLinks(root, files, errors) {
   }
 }
 
+function validateSiteFavicons(root, files, errors) {
+  const siteRoot = resolve(root, 'site');
+  const faviconAsset = resolve(siteRoot, 'assets/marcus-uden-avatar.png');
+  if (!existsSync(faviconAsset)) return;
+
+  for (const file of files.filter((path) => path.startsWith('site/') && extname(path).toLowerCase() === '.html')) {
+    const absolute = resolve(root, file);
+    const content = readFileSync(absolute, 'utf8');
+    const iconTag = [...content.matchAll(/<link\b[^>]*>/gi)].find((match) => /\brel=["']icon["']/i.test(match[0]));
+    const href = iconTag?.[0].match(/\bhref=["']([^"']+)["']/i)?.[1];
+
+    if (!href) {
+      addMatch(errors, 'favicon', file, 'Every public HTML page must link the approved favicon asset.');
+      continue;
+    }
+    if (/^(?:https?:|data:)/i.test(href)) {
+      addMatch(errors, 'favicon', file, 'The favicon must use the local approved asset.');
+      continue;
+    }
+
+    const target = resolve(dirname(absolute), decodeURIComponent(href.split('#', 1)[0]));
+    if (target !== faviconAsset) {
+      addMatch(errors, 'favicon', file, 'The favicon must point to site/assets/marcus-uden-avatar.png.');
+    }
+  }
+}
+
 export function validateRepository(root = repositoryRoot, options = {}) {
   const errors = [];
   const files = listFiles(root);
@@ -98,6 +125,7 @@ export function validateRepository(root = repositoryRoot, options = {}) {
     if (!allowed.has(file)) addMatch(errors, 'unexpected-path', file, 'The file is not in the public release allowlist.');
   }
   validateInternalLinks(root, files, errors);
+  validateSiteFavicons(root, files, errors);
 
   const environmentTokens = (options.forbiddenIdentities ?? process.env.PUBLIC_RELEASE_FORBIDDEN_IDENTITIES ?? '')
     .split(';')
