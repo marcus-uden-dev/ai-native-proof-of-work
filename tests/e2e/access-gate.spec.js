@@ -16,7 +16,7 @@ test('shows a WIP password gate before the preview and unlocks the session with 
     const digestBytes = Uint8Array.from(approvedHash.match(/.{2}/g).map((byte) => Number.parseInt(byte, 16)));
     crypto.subtle.digest = async () => digestBytes.buffer;
   });
-  await page.getByLabel('Preview password').fill('approved-preview-password');
+  await page.getByLabel('Preview password').fill('cleo');
   await page.getByRole('button', { name: 'Open preview' }).click();
   await expect(page.locator('body > .access-gate')).toHaveCount(0);
   await expect(page.locator('body > header')).toBeVisible();
