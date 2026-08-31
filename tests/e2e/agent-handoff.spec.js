@@ -43,6 +43,10 @@ test('homepage generates a copyable repository interview prompt without embeddin
   const generatorActions = page.locator('.generator-actions');
   await expect(generatorActions.getByRole('button', { name: 'Generate interview prompt' })).toBeVisible();
   await expect(generatorActions.getByRole('link', { name: 'Open ChatGPT' })).toHaveAttribute('href', 'https://chatgpt.com/');
+  const resultActions = page.locator('.button-row');
+  await expect(resultActions.getByRole('link', { name: 'Open GitHub' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev');
+  await expect(resultActions.getByRole('link', { name: 'Open ChatGPT' })).toHaveAttribute('href', 'https://chatgpt.com/');
+  await expect(resultActions.locator('button, a')).toHaveCount(3);
   const actionControls = generatorActions.locator('button, a');
   await expect(actionControls).toHaveCount(3);
   await expect(actionControls.nth(0)).toHaveText('Generate interview prompt');
