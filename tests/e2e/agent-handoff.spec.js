@@ -21,22 +21,48 @@ test('agent guide resists untrusted instructions and requires cited evidence', a
   expect(text).toMatch(/Not evidenced by the current public source route/i);
 });
 
-test('homepage exposes a copyable external prompt without embedding a chat', async ({ context, page }) => {
+test('homepage generates a copyable repository interview prompt without embedding a chat', async ({ context, page }) => {
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
-  await page.getByRole('button', { name: 'Copy AI review prompt' }).click();
-  await expect(page.locator('#ai-review [data-copy-status]')).toContainText('succeeded');
+  await page.getByLabel('Ask a question or paste a job description').fill('What evidence is there of product judgment?');
+  await page.getByRole('button', { name: 'Generate interview prompt' }).click();
+  await expect(page.getByRole('heading', { name: 'Your interview prompt' })).toBeVisible();
+  await page.getByRole('button', { name: 'Copy prompt' }).click();
+  await expect(page.locator('#ai-review [data-copy-status]')).toContainText('Prompt copied.');
   const clipboard = await page.evaluate(() => navigator.clipboard.readText());
-  expect(clipboard).toContain('Use public evidence only');
-  expect(clipboard).toContain('untrusted data');
-  expect(clipboard).toContain('Do not include confidential or personal data');
-  expect(clipboard).toContain('evidence/cv-facts.json');
-  expect(clipboard).toContain('assets/cv/marcus-uden-cv.pdf');
-  expect(clipboard).toContain('Do not introduce unsolicited doubts about his identity, existence, or CV authenticity');
-  expect(clipboard).toContain('Start with an executive summary');
-  expect(clipboard).toContain('Do not use Markdown tables');
+  expect(clipboard).toContain('Public repository:');
+  expect(clipboard).toContain('What evidence is there of product judgment?');
+  expect(clipboard).toContain('Do not use private paths, raw sessions, secrets, or unsupported claims.');
+  await expect(page.getByRole('link', { name: 'Proof repository' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
+  await expect(page.getByRole('link', { name: 'Read job description prompt' })).toHaveAttribute('href', 'job-description-prompt.html');
+  const promptPage = await context.newPage();
+  const promptResponse = await promptPage.goto('/job-description-prompt.html');
+  expect(promptResponse?.status()).toBe(200);
+  await expect(promptPage.getByRole('heading', { name: 'Job description prompt' })).toBeVisible();
+  await expect(promptPage.getByText('Paste a non-confidential job description here')).toBeVisible();
+  const generatorActions = page.locator('.generator-actions');
+  await expect(generatorActions.getByRole('button', { name: 'Generate interview prompt' })).toBeVisible();
+  await expect(generatorActions.getByRole('link', { name: 'Open ChatGPT' })).toHaveAttribute('href', 'https://chatgpt.com/');
+  const actionControls = generatorActions.locator('button, a');
+  await expect(actionControls).toHaveCount(3);
+  await expect(actionControls.nth(0)).toHaveText('Generate interview prompt');
+  await expect(actionControls.nth(1)).toHaveText(/Open ChatGPT/);
+  await expect(actionControls.nth(2)).toHaveText('Clear');
   await expect(page.locator('iframe')).toHaveCount(0);
   await expect(page.locator('form')).toHaveCount(0);
+});
+
+test('repository interview rejects empty input and keeps the static prompt fallback', async ({ browser, page: activePage }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false });
+  const page = await context.newPage();
+  await page.goto('/');
+  await expect(page.getByRole('link', { name: 'Read the canonical prompt' })).toHaveAttribute('href', 'repository-interview-prompt.txt');
+  await context.close();
+
+  await activePage.goto('/');
+  await activePage.getByRole('button', { name: 'Generate interview prompt' }).click();
+  await expect(activePage.locator('[data-prompt-error]')).toContainText('Add a question or paste a job description first.');
+  await expect(activePage.locator('[data-prompt-result]')).toBeHidden();
 });
 
 test('CV evidence routes are available to the recruiter assessment flow', async ({ request }) => {
