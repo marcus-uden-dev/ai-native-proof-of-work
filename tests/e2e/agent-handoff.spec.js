@@ -28,7 +28,7 @@ test('homepage generates a copyable repository interview prompt without embeddin
   await page.getByRole('button', { name: 'Generate interview prompt' }).click();
   await expect(page.getByRole('heading', { name: 'Your interview prompt' })).toBeVisible();
   await page.getByRole('button', { name: 'Copy prompt' }).click();
-  await expect(page.locator('#ai-review [data-copy-status]')).toContainText('Prompt copied.');
+  await expect(page.locator('#copyStatus')).toContainText('Prompt copied.');
   const clipboard = await page.evaluate(() => navigator.clipboard.readText());
   expect(clipboard).toContain('Public repository:');
   expect(clipboard).toContain('What evidence is there of product judgment?');
@@ -52,6 +52,35 @@ test('homepage generates a copyable repository interview prompt without embeddin
   await expect(page.locator('form')).toHaveCount(0);
 });
 
+test('repository interview keeps the preview typography and full-width brown surface', async ({ page }) => {
+  await page.goto('/');
+  const metrics = await page.locator('#ai-review').evaluate((section) => {
+    const card = section.querySelector('.agent-card');
+    const heading = section.querySelector('.agent-copy h2');
+    const sectionStyle = getComputedStyle(section);
+    const cardStyle = getComputedStyle(card);
+    const headingStyle = getComputedStyle(heading);
+    return {
+      left: section.getBoundingClientRect().left,
+      width: section.getBoundingClientRect().width,
+      documentWidth: document.documentElement.clientWidth,
+      background: sectionStyle.backgroundColor,
+      cardBackground: cardStyle.backgroundColor,
+      cardRadius: cardStyle.borderRadius,
+      headingFamily: headingStyle.fontFamily,
+      headingWeight: headingStyle.fontWeight
+    };
+  });
+
+  expect(metrics.left).toBe(0);
+  expect(metrics.width).toBe(metrics.documentWidth);
+  expect(metrics.background).toBe('rgb(32, 27, 18)');
+  expect(metrics.cardBackground).toBe('rgba(0, 0, 0, 0)');
+  expect(metrics.cardRadius).toBe('0px');
+  expect(metrics.headingFamily).toContain('Georgia');
+  expect(metrics.headingWeight).toBe('500');
+});
+
 test('repository interview rejects empty input and keeps the static prompt fallback', async ({ browser, page: activePage }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
@@ -61,8 +90,8 @@ test('repository interview rejects empty input and keeps the static prompt fallb
 
   await activePage.goto('/');
   await activePage.getByRole('button', { name: 'Generate interview prompt' }).click();
-  await expect(activePage.locator('[data-prompt-error]')).toContainText('Add a question or paste a job description first.');
-  await expect(activePage.locator('[data-prompt-result]')).toBeHidden();
+  await expect(activePage.locator('#inputError')).toContainText('Add a question or paste a job description first.');
+  await expect(activePage.locator('#generatorResult')).toBeHidden();
 });
 
 test('CV evidence routes are available to the recruiter assessment flow', async ({ request }) => {
