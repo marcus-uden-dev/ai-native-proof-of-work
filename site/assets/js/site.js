@@ -21,17 +21,17 @@ for (const button of document.querySelectorAll('[data-copy-value]')) {
   button.addEventListener('click', () => copyText(button));
 }
 
-const promptGenerator = document.querySelector('[data-prompt-generator]');
+const promptGenerator = document.querySelector('#ai-review');
 
 if (promptGenerator) {
-  const input = promptGenerator.querySelector('#recruiter-input');
-  const output = promptGenerator.querySelector('[data-prompt-output]');
-  const result = promptGenerator.querySelector('[data-prompt-result]');
-  const error = promptGenerator.querySelector('[data-prompt-error]');
-  const generateButton = promptGenerator.querySelector('[data-generate-prompt]');
-  const clearButton = promptGenerator.querySelector('[data-clear-prompt]');
-  const copyButton = promptGenerator.querySelector('[data-copy-prompt]');
-  const copyStatus = promptGenerator.querySelector('[data-copy-status]');
+  const input = promptGenerator.querySelector('#recruiterInput');
+  const output = promptGenerator.querySelector('#repositoryPrompt');
+  const result = promptGenerator.querySelector('#generatorResult');
+  const error = promptGenerator.querySelector('#inputError');
+  const generateButton = promptGenerator.querySelector('#generatePrompt');
+  const clearButton = promptGenerator.querySelector('#clearInput');
+  const copyButton = promptGenerator.querySelector('#copyPrompt');
+  const copyStatus = promptGenerator.querySelector('#copyStatus');
   const templatePromise = fetch('repository-interview-prompt.txt', { cache: 'no-store' }).then((response) => {
     if (!response.ok) throw new Error('Prompt template unavailable');
     return response.text();
