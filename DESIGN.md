@@ -1,8 +1,21 @@
-# Design identity
+---
+created: 2026-08-30
+updated: 2026-08-31
+author: Marcus Udén (Codex)
+source_tool: Codex Desktop
+source: saved Repository Interview preview and user request
+type: reference
+status: active
+review_status: pending
+visibility: public-safe
+tags: [design, paper-trail-evidence, recruiter, portfolio]
+---
+
+# Paper Trail Evidence
 
 ## Intent
 
-This site presents evidence of product judgment, execution, and AI-native workflow design. It must feel restrained, editorial, and credible. It must not look like a generic AI product, a developer dashboard, or a personal branding template.
+This site uses the **Paper Trail Evidence** design system. It presents evidence of product judgment, execution, and AI-native workflow design. It must feel restrained, editorial, and credible. It must not look like a generic AI product, a developer dashboard, or a personal branding template.
 
 The design uses warm paper, dark ink, and small gold and teal accents. Hierarchy, spacing, and evidence labels do most of the visual work.
 
@@ -24,11 +37,15 @@ The design uses warm paper, dark ink, and small gold and teal accents. Hierarchy
   --ink: #171815;
   --muted: #626159;
   --line: #d8d1c4;
-  --gold: #a86d25;
+  --gold: #9a601e;
   --gold-soft: #efe1ca;
-  --teal: #35695a;
+  --teal: #2f6656;
   --teal-soft: #dce9e3;
   --dark: #11120f;
+  --dark-soft: #1b1d18;
+  --dark-muted: #b8b1a4;
+  --dark-line: #3d4038;
+  --focus: #075ea8;
 }
 ```
 
@@ -36,7 +53,7 @@ Do not use gradients, neon colors, purple AI effects, decorative glow, large rou
 
 ## Typography
 
-Use a system-first sans-serif stack. Keep body text between 15 and 18 pixels with generous line height. Use compact uppercase only for short evidence labels. Keep long reading lines between 55 and 72 characters.
+Use a system-first sans-serif stack for reading text, Georgia/Times New Roman for editorial headings, and IBM Plex Mono/Consolas for labels and metadata. Keep body text between 15 and 18 pixels with generous line height. Use compact uppercase only for short evidence labels. Keep meaningful gold/amber text at or above 0.8rem. Keep long reading lines between 55 and 72 characters. The Repository Interview is the reference treatment: its readable body copy and prompt chips use the same 1rem sans-serif text size; only the chip line height and padding are compact.
 
 ## Layout
 
@@ -59,9 +76,18 @@ Use a centered 1120-pixel content column. Use a 12-column grid on wide screens a
 - Claim-to-evidence card: one precise claim, one interpretation, and one evidence link.
 - Proof card: problem, decision, evidence status, and next action. A second, subordinate proof card uses a "Supporting proof" pill instead of "Lead proof" and omits the primary pill entirely.
 - Process strip: Discover → Define → Build → Improve. A second, human-gated system-loop strip can sit beneath it: Execute → Review → Detect pattern → Human gate → Promote → Next cycle.
+- Repository Interview panel — canonical component: use the combined Repository Interview preview as the final dark interview-panel treatment and stable component-level decision, not as a replacement for the full site identity. Keep the surrounding page free to use the broader light Paper Trail Evidence system.
+  - Use a deep olive-black surface, quiet borders, warm ivory text, and a large tightly set Georgia/Times New Roman heading.
+  - Place a readable gold/amber mono kicker above the heading, with at least `0.8rem` text, `1.3` line-height, and about `1.1rem` space below it.
+  - Use two columns on wide screens and collapse to one column below 760 pixels.
+  - Use a near-black prompt window with IBM Plex Mono/Consolas text, visible scrolling, preserved line breaks, and safe wrapping.
+  - Keep the gold primary action, dark olive secondary controls, visible borders, clear focus states, and 44-pixel minimum targets.
+  - Preserve the behavior: example chips fill the input, the generator creates a recruiter interview prompt, and copy provides a visible success or fallback state.
+- Do not apply the dark panel, dense prompt window, or its button treatment to every section. Reuse it where an interactive evidence interview is needed.
 - Loop diagram: the light-context counterpart to the system-loop strip, used on the recursive-workflow supporting-proof page (not inside a dark section). A numbered step list plus a two-path branch card (confirmed pattern vs. one-off) showing the human-gate outcome. Uses root tokens only (`--gold`, `--teal`, `--line`, `--surface`, `--muted`) — never the process strip's dark-only hardcoded colors, since this component can appear on a light `.section`.
 - Decision log: a stacked, single-column list of tagged, dated entries (date, capability-tag pills, one-line why, one-line what-it-shows), auto-published weekly directly as static HTML (never client-fetched) so the content is present in the raw page a non-JS-executing reader or agent receives. Reuses `.limitations-list--stacked`'s bordered-stack pattern rather than a card grid, to read as a scannable log, not a case study. A companion `site/evidence/decision-log.json` carries the full structured history for programmatic readers; `site/evidence/decision-log-tags.json` carries the current tag taxonomy. Renders an explicit "no entries yet" state when empty.
 - AI review prompt: public evidence only, evidence separated from inference. The hero can offer a secondary "Review fit with AI" action beside the primary CV action, linking to this section rather than duplicating its copy control.
+- AI review prompt: public evidence only, evidence separated from inference. The hero can offer a secondary "Review fit with AI" action beside the primary CV action, linking to the Repository Interview section rather than duplicating its copy control.
 - Contact panel: CV download, interview request, email, and copy-email fallback.
 - Header repository link: a quiet, muted-color link in the masthead pointing to the public GitHub repository. It never competes visually with the primary conversion actions and is hidden below 760 pixels.
 - Status labels: compact pills for evidence and product maturity. Known values: "Work in progress", "Lead proof", "Supporting proof", "Working title" (labels a product name as temporary, not final).

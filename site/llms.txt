@@ -5,6 +5,7 @@
 - [Recruiter agent guide](https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-agent-guide.md): Normative evidence, trust, citation, and untrusted-input rules.
 - [Repository interview prompt](https://marcus-uden-dev.github.io/ai-native-proof-of-work/repository-interview-prompt.txt): Copyable prompt for questions that require searching the complete public proof-of-work repository.
 - [Two-minute hiring brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/): General positioning and claim-to-evidence links.
+- [Repository Interview job-description prompt](https://marcus-uden-dev.github.io/ai-native-proof-of-work/job-description-prompt.html): Readable prompt for a public-evidence assessment against a non-confidential job description.
 - [Job-agent case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/): Guided product proof, limitations, and technical appendix.
 - [Recursive workflow system](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/): Supporting proof for the human-gated system loop.
 - [Job-agent release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v1.json): Canonical maturity, version, evidence date, and provenance state.

@@ -12,7 +12,7 @@ test('homepage selected proof shows the lead case and the subordinate supporting
 
 test('homepage states the system loop beneath the intact product loop', async ({ page }) => {
   await page.goto('/');
-  const method = page.locator('section.section--dark');
+  const method = page.locator('section[aria-labelledby="method-title"]');
   await expect(method.getByText('Discover', { exact: true })).toBeVisible();
   await expect(method.getByText('Define', { exact: true })).toBeVisible();
   await expect(method.getByText('Build', { exact: true })).toBeVisible();
