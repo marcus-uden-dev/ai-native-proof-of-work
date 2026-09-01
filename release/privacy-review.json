@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "releaseId": "job-agent-v1-release-candidate",
   "reviewStatus": "complete",
-  "reviewedAt": "2026-08-27",
+  "reviewedAt": "2026-09-01",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "253ea2fe2ac7b5d41fcf35de113e33a7c24bbc55",
-  "scope": "Full release-candidate binary set: three synthetic proof frames, sanitized English CV, and professional social card.",
+  "candidateCommit": "5c29082",
+  "scope": "Full release-candidate binary set: current and historical synthetic proof frames, sanitized English CV, and professional social card.",
   "reviewedFiles": [
     {
       "path": "site/assets/images/job-agent/decision-research.png",
@@ -30,6 +30,30 @@
       "dataClass": "synthetic demo",
       "containsPersonalData": false,
       "note": "Regenerated from the current staged public prototype on 2026-08-25 and visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
+      "path": "site/assets/images/job-agent/current-find-jobs.png",
+      "sha256": "f82f2a135931b6cab3389eec0ce41d4b0c9725f0bf53691303feb483790f4c68",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Captured from the current Job-agent frontend on 2026-08-31 with English UI and mocked synthetic data. Visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
+      "path": "site/assets/images/job-agent/current-job-detail.png",
+      "sha256": "7e02bb8fe73d56a36b63e893000be86ff184a32aa862de369658ebeb78a8e954",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Captured from the current Job-agent frontend on 2026-08-31 with English UI and mocked synthetic data. Visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
+      "path": "site/assets/images/job-agent/current-today.png",
+      "sha256": "492f4890f518557d0b8c08c594b816eeb33a0a9ea56f909849dc4131a939f8e0",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Captured from the current Job-agent frontend on 2026-08-31 with English UI and mocked synthetic data. Visually checked for local paths, private identifiers, credentials, and realistic private data."
     },
     {
       "path": "site/assets/cv/marcus-uden-cv.pdf",
