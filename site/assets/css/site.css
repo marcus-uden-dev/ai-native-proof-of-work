@@ -1320,6 +1320,24 @@ h3 {
   gap: 1rem;
 }
 
+.proof-capture-note {
+  margin: 2rem 0 -1rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.visual-proof-grid--job-detail-lead {
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 0.8fr);
+}
+
+.visual-proof-grid--job-detail-lead > figure:first-child {
+  grid-row: span 2;
+}
+
+.visual-proof-grid--job-detail-lead > figure:first-child a {
+  aspect-ratio: 4 / 3;
+}
+
 .visual-proof-grid figure {
   min-width: 0;
   margin: 0;
@@ -2073,6 +2091,10 @@ h3 {
   .decision-grid,
   .limitations-list {
     grid-template-columns: 1fr;
+  }
+
+  .visual-proof-grid--job-detail-lead > figure:first-child {
+    grid-row: auto;
   }
 
   .proof-sequence li + li,
