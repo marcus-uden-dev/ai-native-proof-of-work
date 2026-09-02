@@ -1,13 +1,16 @@
 import { expect, test } from './fixtures.js';
 
-test('homepage selected proof shows the lead case and the subordinate supporting case', async ({ page }) => {
+test('homepage selected proof shows the lead case and supporting profile signals', async ({ page }) => {
   await page.goto('/');
   const cards = page.locator('#selected-proof .proof-card');
-  await expect(cards).toHaveCount(2);
+  await expect(cards).toHaveCount(3);
   await expect(cards.nth(0).getByText('Lead proof', { exact: true })).toBeVisible();
   await expect(cards.nth(1).getByText('Supporting proof', { exact: true })).toBeVisible();
   await expect(cards.nth(1)).toContainText('Recursive workflow system');
   await expect(cards.nth(1).getByRole('link', { name: /Open the recursive workflow proof/ })).toHaveAttribute('href', 'proof/recursive-workflow/');
+  await expect(cards.nth(2).getByText('Supporting profile signal', { exact: true })).toBeVisible();
+  await expect(cards.nth(2)).toContainText('Information diet');
+  await expect(cards.nth(2).getByRole('link', { name: /Open the information diet evidence/ })).toHaveAttribute('href', 'proof/information-diet/');
 });
 
 test('homepage states the system loop beneath the intact product loop', async ({ page }) => {
