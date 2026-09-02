@@ -6,7 +6,7 @@ test('status and synthetic notices appear before the first proof frame', async (
   await expect(page.getByText('Work in progress', { exact: true })).toBeVisible();
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
-  await expect(page.getByText('Moderated recruiter review of the synthetic company-research decision flow', { exact: true })).toBeVisible();
+  await expect(page.getByText('Moderated recruiter review of the current decision-led prototype and its version history', { exact: true })).toBeVisible();
   await expect(page.getByText(/release-one company is invented/i)).toBeVisible();
   const order = await page.locator('#evidence-boundary, #proof-sequence').evaluateAll((nodes) => nodes.map((node) => node.id));
   expect(order).toEqual(['evidence-boundary', 'proof-sequence']);
@@ -63,4 +63,12 @@ test('the guided reading order remains stable and printable', async ({ page }) =
   await page.emulateMedia({ media: 'print' });
   await expect(page.getByRole('heading', { level: 2, name: 'Is this company and role worth my time?' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What this evidence does not prove.' })).toBeVisible();
+});
+
+test('current release and previous edition are both discoverable', async ({ page }) => {
+  await page.goto('/proof/job-agent/');
+  await expect(page.getByText('0.9-public-proof', { exact: true }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: /0.8-public-proof archive/ })).toHaveAttribute('href', 'archive/0.8-public-proof/');
+  await expect(page.getByRole('link', { name: /Current release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v2.json');
+  await expect(page.getByRole('link', { name: /Previous release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v1.json');
 });

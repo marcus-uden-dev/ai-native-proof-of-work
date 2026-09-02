@@ -8,14 +8,14 @@ This is recruiter decision support. Treat Marcus Udén as the candidate represen
 
 The public evidence manifest is the authority for Job-agent status and provenance. “Job-agent” is a working title for this career decision-support product, not its final name.
 
-- Product version: `0.8-public-proof`
-- Evidence date: `2026-08-31`
+- Product version: `0.9-public-proof` (previous edition: `0.8-public-proof`)
+- Evidence date: `2026-09-02`
 - Implementation state: `Prototype under active development`
-- Public availability: `Local recruiter-safe preview only`
+- Public availability: `Static recruiter-safe preview only`
 - Maturity: `Work in progress`
 - Market validation: `Not market-validated`
 - Outcomes: `No measured market outcomes`
-- Next test: `Moderated recruiter review of the synthetic company-research decision flow`
+- Next test: `Moderated recruiter review of the current decision-led prototype and its version history`
 - Privacy: `Release privacy review complete`
 
 ## Source access and scan policy
@@ -41,7 +41,7 @@ Start with these public sources. Follow relevant links and search the complete p
 2. [CV facts JSON](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json) and [English CV PDF](https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/cv/marcus-uden-cv.pdf) before claims about employment history, education, languages, work authorization, or role fit.
 3. [Job-agent case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/) and [Job-agent demo](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/demo/) for lead-project evidence.
 4. [Recursive workflow system](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/) for human-gated AI workflow evidence.
-5. [Release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v1.json), [Decision Log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json), and [Decision Log tags](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json) when maturity, evidence dates, trade-offs, or claims conflict.
+5. [Current release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v2.json), [previous 0.8 manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v1.json), [preserved 0.8 page](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/archive/0.8-public-proof/), [Decision Log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json), and [Decision Log tags](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json) when maturity, evidence dates, trade-offs, or claims conflict.
 6. [Information diet](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/information-diet/) and [structured information-diet evidence](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/information-diet.json) for supporting context about sustained podcast listening and followed-feed topics.
 7. [Complete proof-of-work repository](https://github.com/marcus-uden-dev/ai-native-proof-of-work) for relevant supporting evidence beyond the priority path.
 

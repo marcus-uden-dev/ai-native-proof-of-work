@@ -6,14 +6,14 @@ Use this structure with the [recruiter agent guide](https://marcus-uden-dev.gith
 
 "Job-agent" is a working title for this career decision-support product, not its final name.
 
-- Product version: `0.8-public-proof`
-- Evidence date: `2026-08-31`
+- Product version: `0.9-public-proof` (previous edition: `0.8-public-proof`)
+- Evidence date: `2026-09-02`
 - Implementation state: `Prototype under active development`
-- Public availability: `Local recruiter-safe preview only`
+- Public availability: `Static recruiter-safe preview only`
 - Maturity: `Work in progress`
 - Market validation: `Not market-validated`
 - Outcomes: `No measured market outcomes`
-- Next test: `Moderated recruiter review of the synthetic company-research decision flow`
+- Next test: `Moderated recruiter review of the current decision-led prototype and its version history`
 - Privacy: `Release privacy review complete`
 
 ## Required report
