@@ -128,6 +128,22 @@ test('the decision log renders the newest published entry', async ({ page }) => 
   await expect(section.getByText('Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.')).toBeVisible();
 });
 
+test('the decision log uses the v2 project-first hierarchy and public evidence links', async ({ page }) => {
+  await page.goto('/proof/recursive-workflow/');
+  const section = page.locator('#decision-log');
+  const cards = section.locator('.decision-log-project-card');
+
+  await expect(section.getByRole('heading', { name: 'What changed, in order.' })).toBeVisible();
+  await expect(cards).toHaveCount(4);
+  await expect(cards.filter({ hasText: 'Personal AI Harness' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/tree/main/strategy/personal-ai-harness');
+  await expect(cards.filter({ hasText: 'Job-agent' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md');
+  await expect(cards.filter({ hasText: 'PKM' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/PKM_CASE_STUDY.md');
+  await expect(cards.filter({ hasText: 'Household Finance' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md');
+  await expect(section.locator('.decision-log-capabilities')).toContainText('decision-traceability');
+  await expect(section.getByRole('button', { name: /Household Finance/ })).toBeVisible();
+  await expect(section.locator('#decision-timeline > li[data-project="household-budget"]')).toHaveCount(2);
+});
+
 test('the Oracle project and capability filters reveal the matching decisions', async ({ page }) => {
   await page.goto('/proof/recursive-workflow/');
   const entries = page.locator('#decision-timeline > li[data-project]');
