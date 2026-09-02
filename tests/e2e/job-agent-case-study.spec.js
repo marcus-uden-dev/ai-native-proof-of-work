@@ -69,6 +69,7 @@ test('current release and previous edition are both discoverable', async ({ page
   await page.goto('/proof/job-agent/');
   await expect(page.getByText('0.9-public-proof', { exact: true }).first()).toBeVisible();
   await expect(page.getByRole('link', { name: /0.8-public-proof archive/ })).toHaveAttribute('href', 'archive/0.8-public-proof/');
+  await page.locator('.technical-appendix summary').click();
   await expect(page.getByRole('link', { name: /Current release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v2.json');
   await expect(page.getByRole('link', { name: /Previous release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v1.json');
 });
