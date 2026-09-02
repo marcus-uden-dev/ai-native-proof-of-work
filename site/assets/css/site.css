@@ -1342,6 +1342,64 @@ h3 {
   border-top: 1px solid var(--line);
 }
 
+@media (max-width: 47.5rem) {
+  .timeline-list__item {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
+
+.version-timeline {
+  border-top: 1px solid var(--line);
+}
+
+.timeline-list {
+  display: grid;
+  gap: 0;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-list__item {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.7fr) 1.3fr;
+  gap: 2rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-list__item > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.timeline-list__item strong {
+  color: var(--ink);
+}
+
+.timeline-list__item > div > span:last-child {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.timeline-list__item p {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.timeline-list__item--current {
+  border-top-color: var(--gold);
+}
+
+.timeline-list code {
+  color: var(--gold);
+  font-size: 0.85em;
+}
+
 .ui-evolution__intro {
   display: grid;
   margin-top: 2rem;
