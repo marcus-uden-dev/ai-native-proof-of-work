@@ -14,6 +14,8 @@
 - [Recruiter report brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-report-brief.md): Required assessment structure.
 - [CV facts](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json): Current structured source of truth for employment chronology, education, languages, citizenship, and work authorization.
 - [CV facts page](https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/): Human-readable CV facts with links to the English PDF and structured source.
+- [Information diet and learning signals](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/information-diet/): Supporting profile context with verified aggregate podcast listening time and followed-feed topic clusters; do not infer expertise or learning outcomes from it alone.
+- [Information diet structured evidence](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/information-diet.json): Machine-readable metrics, topic clusters, source dates, and evidence boundaries.
 - The priority reading paths are starting points, not a closed allowlist. Search the complete public proof-of-work repository when a role or claim requires relevant supporting evidence.
 
 Job-agent status: Work in progress. Not live. Not market-validated. No measured market outcomes.
