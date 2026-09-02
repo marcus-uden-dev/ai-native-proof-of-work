@@ -1338,6 +1338,42 @@ h3 {
   aspect-ratio: 4 / 3;
 }
 
+.ui-evolution {
+  border-top: 1px solid var(--line);
+}
+
+.ui-evolution__intro {
+  display: grid;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.ui-evolution__intro p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.ui-evolution__intro strong {
+  color: var(--ink);
+}
+
+.ui-evolution__proof-sequence {
+  margin-top: 2rem;
+}
+
+.visual-proof-grid--historical a {
+  aspect-ratio: 4 / 3;
+  background: var(--dark);
+}
+
+.visual-proof-grid--historical img {
+  object-fit: contain;
+}
+
 .visual-proof-grid figure {
   min-width: 0;
   margin: 0;
@@ -2105,7 +2141,8 @@ h3 {
   .trust-notice__grid,
   .research-heading,
   .research-decision,
-  .prototype-invitation__grid {
+  .prototype-invitation__grid,
+  .ui-evolution__intro {
     grid-template-columns: 1fr;
   }
 

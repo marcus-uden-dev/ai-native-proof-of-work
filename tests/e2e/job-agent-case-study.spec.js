@@ -44,20 +44,22 @@ test('research includes the required decision signals and outputs', async ({ pag
   }
 });
 
-test('three proof frames use reviewed synthetic prototype images', async ({ page }) => {
+test('current and historical proof frames use reviewed synthetic prototype images', async ({ page }) => {
   await page.goto('/proof/job-agent/#proof-sequence');
-  const figures = page.locator('.visual-proof-grid figure');
-  await expect(figures).toHaveCount(3);
-  for (const image of await figures.locator('img').all()) {
-    await expect(image).toBeVisible();
-    expect(await image.getAttribute('alt')).toBeTruthy();
+  for (const grid of ['#proof-sequence .visual-proof-grid', '#ui-evolution .visual-proof-grid']) {
+    const figures = page.locator(`${grid} figure`);
+    await expect(figures).toHaveCount(3);
+    for (const image of await figures.locator('img').all()) {
+      await expect(image).toBeVisible();
+      expect(await image.getAttribute('alt')).toBeTruthy();
+    }
   }
 });
 
 test('the guided reading order remains stable and printable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   const ids = await page.locator('main > section[id]').evaluateAll((sections) => sections.map((section) => section.id));
-  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'company-research', 'decisions', 'limitations', 'contact']);
+  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'ui-evolution', 'company-research', 'decisions', 'limitations', 'contact']);
   await page.emulateMedia({ media: 'print' });
   await expect(page.getByRole('heading', { level: 2, name: 'Is this company and role worth my time?' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What this evidence does not prove.' })).toBeVisible();
