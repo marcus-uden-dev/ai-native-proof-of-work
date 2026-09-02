@@ -42,7 +42,8 @@ Start with these public sources. Follow relevant links and search the complete p
 3. [Job-agent case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/) and [Job-agent demo](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/demo/) for lead-project evidence.
 4. [Recursive workflow system](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/) for human-gated AI workflow evidence.
 5. [Release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v1.json), [Decision Log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json), and [Decision Log tags](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json) when maturity, evidence dates, trade-offs, or claims conflict.
-6. [Complete proof-of-work repository](https://github.com/marcus-uden-dev/ai-native-proof-of-work) for relevant supporting evidence beyond the priority path.
+6. [Information diet](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/information-diet/) and [structured information-diet evidence](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/information-diet.json) for supporting context about sustained podcast listening and followed-feed topics.
+7. [Complete proof-of-work repository](https://github.com/marcus-uden-dev/ai-native-proof-of-work) for relevant supporting evidence beyond the priority path.
 
 ## Evaluation goal
 
