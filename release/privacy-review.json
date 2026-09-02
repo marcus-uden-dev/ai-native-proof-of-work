@@ -4,7 +4,7 @@
   "reviewStatus": "complete",
   "reviewedAt": "2026-09-02",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "719c644",
+  "candidateCommit": "d425a1e6330de00855401ee495637f648e6315f3",
   "scope": "Full release-candidate binary set: current 0.9 and historical synthetic proof frames, sanitized English CV, professional social card, and one aggregate personal listening-statistics screenshot.",
   "reviewedFiles": [
     {
