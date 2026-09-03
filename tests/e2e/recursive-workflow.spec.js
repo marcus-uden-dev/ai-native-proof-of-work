@@ -131,7 +131,7 @@ test('the decision log renders the newest published entry', async ({ page }) => 
   await expect(section.getByText('Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.')).toBeVisible();
 });
 
-test('the Oracle project and capability filters reveal the matching decisions', async ({ page }) => {
+test('the How I think project and capability filters reveal the matching decisions', async ({ page }) => {
   await page.goto('/proof/recursive-workflow/');
   const entries = page.locator('#decision-timeline > li[data-project]');
 
