@@ -1046,6 +1046,165 @@ h3 {
   display: none;
 }
 
+.repository-interview .review-result {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .review-result[hidden] {
+  display: none;
+}
+
+.repository-interview .review-summary {
+  margin: 0 0 1rem;
+  color: var(--ri-ink);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.repository-interview .review-findings,
+.repository-interview .experience-fit-tracks,
+.repository-interview .review-evidence-links {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repository-interview .review-findings > li,
+.repository-interview .experience-fit-track {
+  padding: 1rem;
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+}
+
+.repository-interview .review-findings p,
+.repository-interview .experience-fit-track p {
+  margin: 0;
+  color: var(--ri-muted);
+  line-height: 1.55;
+}
+
+.repository-interview .review-evidence-links {
+  margin-top: 0.75rem;
+}
+
+.repository-interview .review-evidence-links a {
+  color: var(--ri-gold);
+  font-size: 0.82rem;
+}
+
+.repository-interview .review-evidence-unavailable {
+  color: var(--ri-muted);
+  font-size: 0.82rem;
+}
+
+.repository-interview .review-map-label {
+  margin: 1.5rem 0 0.8rem;
+  color: var(--ri-gold);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.repository-interview .experience-fit-radar {
+  display: grid;
+  max-width: 20rem;
+  margin: 0 0 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+  gap: 0.7rem;
+}
+
+.repository-interview .experience-fit-radar__svg {
+  width: 100%;
+  height: auto;
+}
+
+.repository-interview .experience-fit-radar__ring,
+.repository-interview .experience-fit-radar__axis {
+  fill: none;
+  stroke: var(--ri-panel-rule);
+  stroke-width: 1;
+}
+
+.repository-interview .experience-fit-radar__evidence {
+  fill: rgba(154, 96, 30, 0.28);
+  stroke: var(--ri-gold);
+  stroke-width: 1.5;
+}
+
+.repository-interview .experience-fit-radar__marker { fill: var(--ri-gold); }
+.repository-interview .experience-fit-radar__marker--direct { fill: #a6cfbc; }
+.repository-interview .experience-fit-radar__marker--not_evidenced { fill: var(--ri-muted); }
+
+.repository-interview .experience-fit-radar figcaption {
+  color: var(--ri-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.repository-interview .experience-fit-tracks {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.repository-interview .experience-fit-track h4 {
+  margin: 0 0 0.45rem;
+  color: var(--ri-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.repository-interview .evidence-state {
+  margin-bottom: 0.65rem !important;
+  color: var(--ri-gold) !important;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.repository-interview .evidence-state--direct { color: #a6cfbc !important; }
+.repository-interview .evidence-state--transferable { color: #d8ad72 !important; }
+.repository-interview .evidence-state--needs_interview_verification { color: #dfb873 !important; }
+.repository-interview .evidence-state--not_evidenced { color: var(--ri-muted) !important; }
+
+.repository-interview .verification-question {
+  margin-top: 0.85rem !important;
+  color: var(--ri-ink) !important;
+  font-size: 0.9rem;
+}
+
+.repository-interview .review-detail {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .review-detail h4 {
+  margin: 0 0 0.65rem;
+  color: var(--ri-gold);
+  font-family: var(--mono);
+  font-size: 0.77rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.repository-interview .review-detail-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ri-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 .repository-interview .result-title {
   margin: 0 0 6px;
   color: var(--ri-panel-text);
@@ -1116,6 +1275,10 @@ h3 {
 
   .repository-interview .prompt-window {
     max-height: 52vh;
+  }
+
+  .repository-interview .experience-fit-tracks {
+    grid-template-columns: 1fr;
   }
 }
 
