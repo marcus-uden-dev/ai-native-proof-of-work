@@ -12,10 +12,12 @@ test('the first viewport establishes the hiring case and conversion path', async
 
 test('claim-to-evidence links target three named public anchors', async ({ page }) => {
   await page.goto('/');
+  await expect(page.getByRole('heading', { name: 'See how I turn a claim into a decision.' })).toBeVisible();
+  await expect(page.getByText('Each example pairs a product claim with the public artifact behind it. Open one to see the reasoning, trade-offs, and evidence.')).toBeVisible();
   const expected = [
-    ['Inspect the research decision', 'proof/job-agent/#company-research'],
-    ['Follow the proof sequence', 'proof/job-agent/#proof-sequence'],
-    ['See the evidence boundary', 'proof/job-agent/#evidence-boundary']
+    ['See the company research decision', 'proof/job-agent/#company-research'],
+    ['See how the scope became working proof', 'proof/job-agent/#proof-sequence'],
+    ['See how the AI workflow is governed', 'proof/job-agent/#evidence-boundary']
   ];
   for (const [name, href] of expected) {
     await expect(page.getByRole('link', { name })).toHaveAttribute('href', href);
