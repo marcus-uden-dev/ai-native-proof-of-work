@@ -195,7 +195,6 @@ export function validateRepository(root = repositoryRoot, options = {}) {
     const head = git(root, ['rev-parse', '--verify', 'HEAD']);
   if (head) {
     const roots = git(root, ['rev-list', '--max-parents=0', 'HEAD']).split(/\r?\n/).filter(Boolean);
-    if (roots.length !== 1) console.log(`[git-debug] root=${root} head=${head} roots=${JSON.stringify(roots)}`);
     if (roots.length !== 1) addMatch(errors, 'git-ancestry', '.git', 'The repository must have exactly one clean root commit.');
     const authors = git(root, ['log', '--format=%ae']).split(/\r?\n/).filter(Boolean);
     if (authors.some((email) => email.toLowerCase() !== requiredProfessionalEmail)) {
