@@ -930,6 +930,42 @@ h3 {
   line-height: 1.5;
 }
 
+.repository-interview .input-mode {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 9px;
+}
+
+.repository-interview .mode-choice {
+  min-height: 36px;
+  border: 1px solid #5d513b;
+  background: #201b12;
+  color: var(--ri-panel-muted);
+  cursor: pointer;
+  font: 600 13px/1.2 var(--sans);
+  padding: 8px 10px;
+}
+
+.repository-interview .mode-choice[aria-pressed="true"],
+.repository-interview .mode-choice:hover,
+.repository-interview .mode-choice:focus-visible {
+  border-color: var(--ri-gold);
+  color: var(--ri-panel-text);
+}
+
+.repository-interview .mode-choice:focus-visible {
+  outline: 3px solid rgba(208, 161, 83, 0.28);
+  outline-offset: 2px;
+}
+
+.repository-interview .input-classification {
+  min-height: 20px;
+  margin: 0 0 10px;
+  color: #d6bf8d;
+  font: 12px/1.4 var(--mono);
+}
+
 .repository-interview .generator-input {
   width: 100%;
   min-height: 144px;
