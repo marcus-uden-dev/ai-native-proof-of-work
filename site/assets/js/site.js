@@ -32,15 +32,59 @@ if (promptGenerator) {
   const clearButton = promptGenerator.querySelector('#clearInput');
   const copyButton = promptGenerator.querySelector('#copyPrompt');
   const copyStatus = promptGenerator.querySelector('#copyStatus');
-  const templatePromise = fetch('repository-interview-prompt.txt', { cache: 'no-store' }).then((response) => {
-    if (!response.ok) throw new Error('Prompt template unavailable');
-    return response.text();
+  const classification = promptGenerator.querySelector('#inputClassification');
+  const modeChoices = [...promptGenerator.querySelectorAll('[data-mode-choice]')];
+  let selectedMode = 'auto';
+  const templatesPromise = Promise.all([
+    fetch('repository-question-prompt.txt', { cache: 'no-store' }),
+    fetch('repository-interview-prompt.txt', { cache: 'no-store' })
+  ]).then(async ([questionResponse, roleResponse]) => {
+    if (!questionResponse.ok || !roleResponse.ok) throw new Error('Prompt template unavailable');
+    return { question: await questionResponse.text(), role: await roleResponse.text() };
   });
+
+  function detectInputMode(value) {
+    const normalized = value.toLowerCase();
+    const roleSignals = [
+      /\b(job description|role summary|responsibilities|requirements|qualifications|we are looking for|about the role|ansvar|krav|kvalifikationer|arbetsuppgifter|vi söker)\b/,
+      /\n\s*(?:[-•]|\d+\.)\s+.+/,
+      /\b(?:years of experience|erfarenhet av|experience with)\b/
+    ];
+    const matches = roleSignals.filter((signal) => signal.test(normalized)).length;
+    return matches >= 2 || (normalized.length > 700 && matches >= 1) ? 'role' : 'question';
+  }
+
+  function effectiveMode(value) {
+    return selectedMode === 'auto' ? detectInputMode(value) : selectedMode;
+  }
+
+  function updateClassification() {
+    const mode = effectiveMode(input.value.trim());
+    const label = mode === 'role' ? 'role assessment' : 'evidence question';
+    classification.textContent = selectedMode === 'auto'
+      ? `Detected mode: ${label}.`
+      : `Selected mode: ${label}.`;
+  }
+
+  function setMode(mode) {
+    selectedMode = mode;
+    for (const choice of modeChoices) {
+      choice.setAttribute('aria-pressed', String(choice.dataset.modeChoice === mode));
+    }
+    updateClassification();
+  }
+
+  for (const choice of modeChoices) {
+    choice.addEventListener('click', () => setMode(choice.dataset.modeChoice));
+  }
+
+  input.addEventListener('input', updateClassification);
 
   for (const button of promptGenerator.querySelectorAll('[data-example]')) {
     button.addEventListener('click', () => {
       input.value = button.dataset.example;
       input.focus();
+      updateClassification();
     });
   }
 
@@ -51,6 +95,7 @@ if (promptGenerator) {
     error.textContent = '';
     copyStatus.textContent = '';
     input.focus();
+    updateClassification();
   });
 
   generateButton.addEventListener('click', async () => {
@@ -63,8 +108,9 @@ if (promptGenerator) {
     }
 
     try {
-      const template = await templatePromise;
-      output.textContent = template.replace('{{INPUT}}', recruiterInput);
+      const templates = await templatesPromise;
+      const mode = effectiveMode(recruiterInput);
+      output.textContent = templates[mode].replace('{{INPUT}}', recruiterInput);
       error.textContent = '';
       result.hidden = false;
       result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -88,4 +134,6 @@ if (promptGenerator) {
       copyStatus.textContent = 'Select and copy the highlighted prompt.';
     }
   });
+
+  updateClassification();
 }

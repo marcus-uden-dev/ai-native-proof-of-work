@@ -258,22 +258,28 @@
         <div class="repository-interview__page">
           <article class="agent-card">
             <div class="agent-copy">
-              <p class="section-kicker">Repository interview</p>
+              <p class="section-kicker">Recruiter review</p>
               <h2 id="ai-review-title">Good work leaves a trail of evidence.</h2>
-              <p class="dek">See how I think, decide and execute.</p>
-              <p class="body-copy">Use this page to interview my work. Ask about a project, a decision, or the evidence behind a claim. Or paste the role you are hiring for.</p>
+              <p class="dek">Review Marcus’s documented work, decisions, and experience.</p>
+              <p class="body-copy">Ask a focused question about Marcus’s public evidence, or paste a non-confidential job description to assess the role against the documented record.</p>
               <div class="github-links" aria-label="GitHub links">
                 <a class="button primary" href="https://github.com/marcus-uden-dev" target="_blank" rel="noreferrer">GitHub profile ↗</a>
                 <a class="button" href="https://github.com/marcus-uden-dev/ai-native-proof-of-work" target="_blank" rel="noreferrer">Proof repository ↗</a>
               </div>
             </div>
             <div class="prompt-wrap" data-prompt-generator>
-              <span class="prompt-label">Local prompt generator</span>
-              <p class="generator-intro">Create a prompt for ChatGPT, Claude, or another assistant. Your text stays on this page until you choose to copy it.</p>
+              <span class="prompt-label">Local review prompt generator</span>
+              <p class="generator-intro">Create a role-assessment or evidence-question prompt for ChatGPT, Claude, or another assistant. Your text stays on this page until you choose to copy it.</p>
               <p class="prompt-reference-note">Want to review the complete workflow first?</p>
               <a class="button prompt-reference" href="job-description-prompt.html" target="_blank" rel="noreferrer">Read job description prompt ↗</a>
-              <label class="input-label" for="recruiterInput">Ask a question or paste a job description</label>
-              <p class="input-help" id="recruiterInputHelp">Ask anything about my work, decisions or experience — or paste the role you are hiring for.</p>
+              <label class="input-label" for="recruiterInput">Ask about Marcus or paste a job description</label>
+              <p class="input-help" id="recruiterInputHelp">The generator identifies a question or role description, then uses the matching evidence contract. Choose a mode if the detection is not right.</p>
+              <div class="input-mode" role="group" aria-label="Review mode">
+                <button class="mode-choice" type="button" data-mode-choice="auto" aria-pressed="true">Auto-detect</button>
+                <button class="mode-choice" type="button" data-mode-choice="question" aria-pressed="false">Ask about Marcus</button>
+                <button class="mode-choice" type="button" data-mode-choice="role" aria-pressed="false">Assess a role</button>
+              </div>
+              <p class="input-classification" id="inputClassification" aria-live="polite">Mode: auto-detect.</p>
               <textarea class="generator-input" id="recruiterInput" aria-describedby="recruiterInputHelp" placeholder="Example: What evidence is there of product judgment?" rows="6"></textarea>
               <div class="example-row" aria-label="Example questions">
                 <button class="example-chip" type="button" data-example="What does Marcus choose to automate, and what does he deliberately keep under human control?">Automation judgment</button>
@@ -284,21 +290,22 @@
                 <button class="example-chip" type="button" data-example="Where does Marcus put human judgment into AI-assisted workflows, and why?">Human + AI</button>
                 <button class="example-chip" type="button" data-example="How does Marcus turn one-off solutions into reusable workflows or systems?">Reusable systems</button>
                 <button class="example-chip" type="button" data-example="How does Marcus manage risk and control in AI-assisted automation?">Risk &amp; governance</button>
+                <button class="example-chip" type="button" data-example="Role: Product operations lead&#10;&#10;We need someone who can improve cross-functional workflows, translate operational needs into product decisions, and establish evidence-based ways of working.">Role-fit example</button>
               </div>
               <div class="generator-actions">
-                <button class="button primary" type="button" id="generatePrompt">Generate interview prompt</button>
+                <button class="button primary" type="button" id="generatePrompt">Generate review prompt</button>
                 <a class="button" href="https://chatgpt.com/" target="_blank" rel="noreferrer">Open ChatGPT ↗</a>
                 <button class="button" type="button" id="clearInput">Clear</button>
               </div>
               <p class="inline-error" id="inputError" aria-live="polite"></p>
               <div class="generator-result" id="generatorResult" hidden>
-                <h3 class="result-title">Your interview prompt</h3>
-                <p class="result-note">Paste this prompt into ChatGPT, Claude, or another AI assistant. You can continue with follow-up questions from there.</p>
+                <h3 class="result-title">Your review prompt</h3>
+                <p class="result-note">Paste this prompt into ChatGPT, Claude, or another AI assistant. It is tailored either to a focused evidence question or to a role assessment.</p>
                 <div class="prompt-window" tabindex="0" role="region" aria-label="Generated Repository Interview prompt"><pre class="prompt" id="repositoryPrompt"></pre></div>
                 <div class="button-row"><button class="button primary" type="button" id="copyPrompt">Copy prompt</button><a class="button" href="https://github.com/marcus-uden-dev" target="_blank" rel="noreferrer">Open GitHub ↗</a><a class="button" href="https://chatgpt.com/" target="_blank" rel="noreferrer">Open ChatGPT ↗</a></div>
                 <p class="copy-status" id="copyStatus" aria-live="polite"></p>
               </div>
-              <noscript><p class="static-fallback">JavaScript is disabled. <a href="repository-interview-prompt.txt">Read the canonical prompt</a> and copy it manually.</p></noscript>
+              <noscript><p class="static-fallback">JavaScript is disabled. <a href="repository-interview-prompt.txt">Read the role-assessment prompt</a> or <a href="repository-question-prompt.txt">read the evidence-question prompt</a> and copy it manually.</p></noscript>
             </div>
           </article>
         </div>

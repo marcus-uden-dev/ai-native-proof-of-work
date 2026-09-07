@@ -24,9 +24,9 @@ test('agent guide resists untrusted instructions and requires cited evidence', a
 test('homepage generates a copyable repository interview prompt without embedding a chat', async ({ context, page }) => {
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.goto('/');
-  await page.getByLabel('Ask a question or paste a job description').fill('What evidence is there of product judgment?');
-  await page.getByRole('button', { name: 'Generate interview prompt' }).click();
-  await expect(page.getByRole('heading', { name: 'Your interview prompt' })).toBeVisible();
+  await page.getByLabel('Ask about Marcus or paste a job description').fill('What evidence is there of product judgment?');
+  await page.getByRole('button', { name: 'Generate review prompt' }).click();
+  await expect(page.getByRole('heading', { name: 'Your review prompt' })).toBeVisible();
   await page.getByRole('button', { name: 'Copy prompt' }).click();
   await expect(page.locator('#copyStatus')).toContainText('Prompt copied.');
   const clipboard = await page.evaluate(() => navigator.clipboard.readText());
@@ -41,7 +41,7 @@ test('homepage generates a copyable repository interview prompt without embeddin
   await expect(promptPage.getByRole('heading', { name: 'Job description prompt' })).toBeVisible();
   await expect(promptPage.getByText('Paste a non-confidential job description here')).toBeVisible();
   const generatorActions = page.locator('.generator-actions');
-  await expect(generatorActions.getByRole('button', { name: 'Generate interview prompt' })).toBeVisible();
+  await expect(generatorActions.getByRole('button', { name: 'Generate review prompt' })).toBeVisible();
   await expect(generatorActions.getByRole('link', { name: 'Open ChatGPT' })).toHaveAttribute('href', 'https://chatgpt.com/');
   const resultActions = page.locator('.button-row');
   await expect(resultActions.getByRole('link', { name: 'Open GitHub' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev');
@@ -49,11 +49,33 @@ test('homepage generates a copyable repository interview prompt without embeddin
   await expect(resultActions.locator('button, a')).toHaveCount(3);
   const actionControls = generatorActions.locator('button, a');
   await expect(actionControls).toHaveCount(3);
-  await expect(actionControls.nth(0)).toHaveText('Generate interview prompt');
+  await expect(actionControls.nth(0)).toHaveText('Generate review prompt');
   await expect(actionControls.nth(1)).toHaveText(/Open ChatGPT/);
   await expect(actionControls.nth(2)).toHaveText('Clear');
   await expect(page.locator('iframe')).toHaveCount(0);
   await expect(page.locator('form')).toHaveCount(0);
+});
+
+test('repository review uses separate prompt contracts for a question and a role description', async ({ page }) => {
+  await page.goto('/');
+  const input = page.getByLabel('Ask about Marcus or paste a job description');
+
+  await input.fill('What public evidence shows Marcus’s product judgment?');
+  await expect(page.locator('#inputClassification')).toContainText('Detected mode: evidence question.');
+  await page.getByRole('button', { name: 'Generate review prompt' }).click();
+  await expect(page.locator('#repositoryPrompt')).toContainText('RECRUITER QUESTION:');
+  await expect(page.locator('#repositoryPrompt')).not.toContainText('Experience Fit Map dimensions');
+
+  await input.fill('Role: Product operations lead\n\nResponsibilities\n- Improve cross-functional workflows\n\nRequirements\n- Experience with evidence-based product decisions');
+  await expect(page.locator('#inputClassification')).toContainText('Detected mode: role assessment.');
+  await page.getByRole('button', { name: 'Generate review prompt' }).click();
+  await expect(page.locator('#repositoryPrompt')).toContainText('ROLE DESCRIPTION:');
+  await expect(page.locator('#repositoryPrompt')).toContainText('Experience Fit Map dimensions');
+
+  await page.getByRole('button', { name: 'Ask about Marcus' }).click();
+  await expect(page.locator('#inputClassification')).toContainText('Selected mode: evidence question.');
+  await page.getByRole('button', { name: 'Generate review prompt' }).click();
+  await expect(page.locator('#repositoryPrompt')).toContainText('RECRUITER QUESTION:');
 });
 
 test('repository interview keeps the preview typography and full-width brown surface', async ({ page }) => {
@@ -89,11 +111,12 @@ test('repository interview rejects empty input and keeps the static prompt fallb
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto('/');
-  await expect(page.getByRole('link', { name: 'Read the canonical prompt' })).toHaveAttribute('href', 'repository-interview-prompt.txt');
+  await expect(page.getByRole('link', { name: 'Read the role-assessment prompt' })).toHaveAttribute('href', 'repository-interview-prompt.txt');
+  await expect(page.getByRole('link', { name: 'read the evidence-question prompt' })).toHaveAttribute('href', 'repository-question-prompt.txt');
   await context.close();
 
   await activePage.goto('/');
-  await activePage.getByRole('button', { name: 'Generate interview prompt' }).click();
+  await activePage.getByRole('button', { name: 'Generate review prompt' }).click();
   await expect(activePage.locator('#inputError')).toContainText('Add a question or paste a job description first.');
   await expect(activePage.locator('#generatorResult')).toBeHidden();
 });
