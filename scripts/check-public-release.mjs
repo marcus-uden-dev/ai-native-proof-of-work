@@ -205,7 +205,8 @@ export function validateRepository(root = repositoryRoot, options = {}) {
       if (!candidateExists) {
         addMatch(errors, 'privacy-record', 'release/privacy-review.json', 'The reviewed candidate commit does not exist in this repository.');
       } else {
-        const candidateIsAncestor = git(root, ['merge-base', '--is-ancestor', privacy.candidateCommit, 'HEAD'], 'missing') === '';
+        const mergeBase = git(root, ['merge-base', privacy.candidateCommit, 'HEAD'], 'missing');
+        const candidateIsAncestor = mergeBase === privacy.candidateCommit;
         if (!candidateIsAncestor) addMatch(errors, 'privacy-record', 'release/privacy-review.json', 'The reviewed candidate commit is not an ancestor of HEAD.');
         for (const file of binaries) {
           const changedAfterReview = git(root, ['diff', '--name-only', `${privacy.candidateCommit}..HEAD`, '--', file]);

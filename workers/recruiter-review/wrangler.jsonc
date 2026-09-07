@@ -1,0 +1,28 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ai-native-proof-of-work-review-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-07",
+  "workers_dev": true,
+  "vars": {
+    "GROQ_MODEL": "openai/gpt-oss-20b",
+    "ALLOWED_ORIGINS": "https://marcus-uden-dev.github.io,https://marcus.uden.dev,http://127.0.0.1:8123"
+  },
+  "secrets": {
+    "required": ["GROQ_API_KEY"]
+  },
+  "ratelimits": [
+    {
+      "name": "RECRUITER_REVIEW_RATE_LIMITER",
+      "namespace_id": "8032701",
+      "simple": {
+        "limit": 5,
+        "period": 60
+      }
+    }
+  ],
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

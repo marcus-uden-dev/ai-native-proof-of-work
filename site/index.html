@@ -34,6 +34,7 @@
     </script>
     <link rel="stylesheet" href="assets/css/site.css">
     <script src="assets/js/access-gate.js"></script>
+    <script src="assets/js/recruiter-review-config.js"></script>
     <script src="assets/js/site.js" defer></script>
   </head>
   <body>
@@ -283,8 +284,8 @@
               </div>
             </div>
             <div class="prompt-wrap" data-prompt-generator>
-              <span class="prompt-label">Local review prompt generator</span>
-              <p class="generator-intro">Create a role-assessment or evidence-question prompt for ChatGPT, Claude, or another assistant. Your text stays on this page until you choose to copy it.</p>
+              <span class="prompt-label">Recruiter review</span>
+              <p class="generator-intro">Ask a question or paste a non-confidential role description. The review uses published evidence only. If the AI service is unavailable, this panel still creates a copyable prompt.</p>
               <p class="prompt-reference-note">Want to review the complete workflow first?</p>
               <a class="button prompt-reference" href="job-description-prompt.html" target="_blank" rel="noreferrer">Read job description prompt ↗</a>
               <label class="input-label" for="recruiterInput">Ask about Marcus or paste a job description</label>
@@ -313,6 +314,11 @@
                 <button class="button" type="button" id="clearInput">Clear</button>
               </div>
               <p class="inline-error" id="inputError" aria-live="polite"></p>
+              <section class="review-result" id="apiReviewResult" aria-labelledby="apiReviewTitle" hidden>
+                <h3 class="result-title" id="apiReviewTitle">AI review</h3>
+                <p class="result-note" id="apiReviewStatus" aria-live="polite"></p>
+                <div id="apiReviewOutput"></div>
+              </section>
               <div class="generator-result" id="generatorResult" hidden>
                 <h3 class="result-title">Your review prompt</h3>
                 <p class="result-note">Paste this prompt into ChatGPT, Claude, or another AI assistant. It is tailored either to a focused evidence question or to a role assessment.</p>

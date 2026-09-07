@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Curated public evidence available to the recruiter-review API. This catalogue is an evidence boundary, not a candidate scoring system.",
+  "records": [
+    {
+      "id": "cv-product-operations",
+      "label": "CV: product operations and workflow design",
+      "sourceClass": "employment",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/",
+      "excerpt": "Product and operations practitioner who turns messy operating problems into clear, buildable work."
+    },
+    {
+      "id": "cv-customer-journey",
+      "label": "CV: customer journey and business model work",
+      "sourceClass": "employment",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json",
+      "excerpt": "A consulting assignment analysed the end-to-end customer journey and produced prioritised product, flow, business-model, and scaling recommendations."
+    },
+    {
+      "id": "cv-risk-controls",
+      "label": "CV: risk analysis and contract review",
+      "sourceClass": "employment",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json",
+      "excerpt": "Public CV facts document finance, risk-analysis, contract-review, and process-improvement experience."
+    },
+    {
+      "id": "job-agent-decisions",
+      "label": "Job-agent: decision-led product work",
+      "sourceClass": "portfolio-decision",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/",
+      "excerpt": "A public prototype documents scoped product reasoning and implementation decisions; it is work in progress and not market-validated."
+    },
+    {
+      "id": "recursive-workflow-controls",
+      "label": "Recursive workflow: human-gated improvement",
+      "sourceClass": "portfolio-decision",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/",
+      "excerpt": "A supporting proof source documents a human-gated workflow for evaluating and promoting reusable improvements."
+    },
+    {
+      "id": "decision-log-traceability",
+      "label": "Decision log: trade-offs and traceability",
+      "sourceClass": "portfolio-decision",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json",
+      "excerpt": "The public decision log links context, options, trade-offs, decisions, and next actions."
+    },
+    {
+      "id": "job-agent-synthetic-boundary",
+      "label": "Job-agent: synthetic-demo boundary",
+      "sourceClass": "synthetic-demo",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v2.json",
+      "excerpt": "The Job-agent company fixture is synthetic-only. It demonstrates product behaviour and cannot establish production outcomes."
+    },
+    {
+      "id": "information-diet-context",
+      "label": "Information diet: supporting profile context",
+      "sourceClass": "persona-context",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/information-diet.json",
+      "excerpt": "A public supporting signal documents aggregate learning-input patterns. It does not establish expertise or employment experience."
+    }
+  ]
+}
