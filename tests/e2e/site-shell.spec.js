@@ -32,7 +32,7 @@ test('core positioning and actions remain available without JavaScript', async (
   await expect(page.getByRole('link', { name: 'Request an interview' })).toHaveAttribute('href', /mailto:/);
   await expect(page.getByRole('link', { name: 'Review fit with AI' })).toHaveAttribute('href', '#ai-review');
   await expect(page.getByRole('heading', { name: 'How the work is thought through.' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Open the Decision Log detail' })).toHaveAttribute('href', 'proof/recursive-workflow/#decision-log');
+  await expect(page.getByRole('link', { name: 'Open the Decision Log' })).toHaveAttribute('href', 'proof/recursive-workflow/#decision-log');
   await context.close();
 });
 

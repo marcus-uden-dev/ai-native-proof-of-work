@@ -1374,6 +1374,100 @@ h3 {
   aspect-ratio: 4 / 3;
 }
 
+.ui-evolution {
+  border-top: 1px solid var(--line);
+}
+
+@media (max-width: 47.5rem) {
+  .timeline-list__item {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+  }
+}
+
+.version-timeline {
+  border-top: 1px solid var(--line);
+}
+
+.timeline-list {
+  display: grid;
+  gap: 0;
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-list__item {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.7fr) 1.3fr;
+  gap: 2rem;
+  padding: 1.2rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.timeline-list__item > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.timeline-list__item strong {
+  color: var(--ink);
+}
+
+.timeline-list__item > div > span:last-child {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.timeline-list__item p {
+  max-width: 60ch;
+  margin: 0;
+  color: var(--muted);
+}
+
+.timeline-list__item--current {
+  border-top-color: var(--gold);
+}
+
+.timeline-list code {
+  color: var(--gold);
+  font-size: 0.85em;
+}
+
+.ui-evolution__intro {
+  display: grid;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.ui-evolution__intro p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.ui-evolution__intro strong {
+  color: var(--ink);
+}
+
+.ui-evolution__proof-sequence {
+  margin-top: 2rem;
+}
+
+.visual-proof-grid--historical a {
+  aspect-ratio: 4 / 3;
+  background: var(--dark);
+}
+
+.visual-proof-grid--historical img {
+  object-fit: contain;
+}
+
 .visual-proof-grid figure {
   min-width: 0;
   margin: 0;
@@ -1402,6 +1496,31 @@ h3 {
 }
 
 .visual-proof-grid figcaption strong {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--gold);
+}
+
+.information-diet-figure {
+  max-width: 24rem;
+  margin: 2rem 0 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.information-diet-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.information-diet-figure figcaption {
+  padding: 1rem;
+  color: var(--muted);
+  font-size: 0.86rem;
+}
+
+.information-diet-figure figcaption strong {
   display: block;
   margin-bottom: 0.3rem;
   color: var(--gold);
@@ -2116,7 +2235,8 @@ h3 {
   .trust-notice__grid,
   .research-heading,
   .research-decision,
-  .prototype-invitation__grid {
+  .prototype-invitation__grid,
+  .ui-evolution__intro {
     grid-template-columns: 1fr;
   }
 

@@ -1,11 +1,11 @@
 {
   "schemaVersion": 1,
-  "releaseId": "job-agent-v1-release-candidate",
+  "releaseId": "job-agent-v2-release-candidate",
   "reviewStatus": "complete",
-  "reviewedAt": "2026-09-01",
+  "reviewedAt": "2026-09-02",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "6bddf90714be497f417bf7002c7993cfd4fbaefd",
-  "scope": "Full release-candidate binary set: current and historical synthetic proof frames, sanitized English CV, and professional social card.",
+  "candidateCommit": "5ee83aba14e8406c0ceb069488c607fc0a497c14",
+  "scope": "Full release-candidate binary set: current 0.9 and historical synthetic proof frames, sanitized English CV, professional social card, and one aggregate personal listening-statistics screenshot.",
   "reviewedFiles": [
     {
       "path": "site/assets/images/job-agent/decision-research.png",
@@ -56,6 +56,30 @@
       "note": "Captured from the current Job-agent frontend on 2026-08-31 with English UI and mocked synthetic data. Visually checked for local paths, private identifiers, credentials, and realistic private data."
     },
     {
+      "path": "site/assets/images/job-agent/v0.9-public-proof/current-find-jobs.png",
+      "sha256": "0af057e9ae0dbe14f2d1e6e32084cf435c215d27d85a0cf2d5d1cfaa8e80d078",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Captured from the current Job-agent frontend on 2026-09-02 with English UI and mocked synthetic data. Visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
+      "path": "site/assets/images/job-agent/v0.9-public-proof/current-job-detail.png",
+      "sha256": "20506f1dc809a7321808c5a5e5bcca62c11ebb1a59a3733274f45c7257c0823c",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Captured from the current Job-agent frontend on 2026-09-02 with English UI and mocked synthetic data. Visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
+      "path": "site/assets/images/job-agent/v0.9-public-proof/current-today.png",
+      "sha256": "263e462de14ae1470241d9a7f3b2808c8c2d4eed4bea384175fcbc1c0f3ab1d7",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Captured from the current Job-agent frontend on 2026-09-02 with English UI and mocked synthetic data. Visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
       "path": "site/assets/cv/marcus-uden-cv.pdf",
       "sha256": "61a5f2378b8cc553b2eae6c224acc970f03765f1256a81c6027ee675a3adad90",
       "decision": "approved",
@@ -85,6 +109,18 @@
         "public positioning"
       ],
       "note": "Generated from the public design system and visually checked. No photo, private identifier, local path, or unapproved contact detail is present."
+    },
+    {
+      "path": "site/assets/images/information-diet/pocket-casts-listening-stats-2026-08-28.jpg",
+      "sha256": "861e7615d6e0469d367c1e65db6c275a125a44d79f4d3cba7a3dfd4e55227def",
+      "decision": "approved",
+      "dataClass": "aggregate personal usage statistic",
+      "containsPersonalData": true,
+      "approvedPersonalData": [
+        "Aggregate Pocket Casts listening time",
+        "Aggregate playback-time savings"
+      ],
+      "note": "User-provided screenshot visually checked for names, account identifiers, private feeds, messages, credentials, and unrelated personal data. It shows aggregate listening statistics only and is published with an explicit evidence boundary."
     }
   ]
 }
