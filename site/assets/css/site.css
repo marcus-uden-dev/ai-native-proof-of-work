@@ -1195,6 +1195,26 @@ h3 {
   text-transform: uppercase;
 }
 
+.repository-interview .review-detail--role-needs {
+  margin-top: 1rem;
+}
+
+.repository-interview .role-needs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.repository-interview .role-needs-list li {
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+  color: var(--ri-panel-text);
+  padding: 0.45rem 0.6rem;
+  font: 0.75rem/1.35 var(--mono);
+}
+
 .repository-interview .review-detail-list {
   display: grid;
   gap: 0.45rem;

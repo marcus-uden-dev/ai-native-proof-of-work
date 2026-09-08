@@ -51,6 +51,29 @@ test('returns a validated cited answer for a focused question', async () => {
   assert.deepEqual((await response.json()).kind, 'question');
 });
 
+test('derives question sources and a safe limitation when the model omits them', async () => {
+  const worker = createRecruiterReviewWorker({
+    catalogue,
+    provider: {
+      generateStructuredReview: async () => ({
+        kind: 'question',
+        answer: {
+          summary: 'The public record documents workflow design.',
+          findings: [{ claim: 'Marcus has documented workflow-design evidence.', evidenceIds: ['cv-product-operations'] }],
+          limitations: [],
+          sources: []
+        }
+      })
+    }
+  });
+
+  const response = await worker.fetch(request({ mode: 'question', clientMode: 'question', input: 'What public evidence shows workflow design?' }), baseEnv);
+  assert.equal(response.status, 200);
+  const body = await response.json();
+  assert.deepEqual(body.answer.sources, ['cv-product-operations']);
+  assert.deepEqual(body.answer.limitations, ['This answer uses public evidence only and is not a hiring decision.']);
+});
+
 test('rejects untrusted origins, oversized input, rate limits, and invented evidence', async () => {
   const worker = createRecruiterReviewWorker({
     catalogue,
@@ -116,6 +139,36 @@ test('fills missing role dimensions as safe evidence gaps', async () => {
   assert.equal(body.assessment.dimensions.find(({ id }) => id === 'workflow-design').state, 'direct');
   assert.equal(body.assessment.dimensions.find(({ id }) => id === 'product-framing').state, 'not_evidenced');
   assert.deepEqual(body.assessment.evidenceAnchors, ['cv-product-operations']);
+});
+
+test('fills a missing role-needs field with a neutral validation note', async () => {
+  const worker = createRecruiterReviewWorker({
+    catalogue,
+    provider: {
+      generateStructuredReview: async () => ({
+        kind: 'role',
+        assessment: {
+          summary: 'A partial role map.',
+          dimensions: [{
+            id: 'workflow-design',
+            label: 'Workflow design',
+            state: 'direct',
+            explanation: 'The public record documents workflow design.',
+            evidenceIds: ['cv-product-operations'],
+            verificationQuestion: ''
+          }],
+          evidenceAnchors: [],
+          interviewQuestions: [],
+          limitations: ['This is public evidence coverage.']
+        }
+      })
+    }
+  });
+
+  const response = await worker.fetch(request({ mode: 'role', clientMode: 'role', input: 'Role: workflow lead' }), baseEnv);
+  assert.equal(response.status, 200);
+  const body = await response.json();
+  assert.deepEqual(body.assessment.roleNeeds, ['Assess the submitted role requirements against cited public evidence and interview validation.']);
 });
 
 test('rejects a non-direct dimension without an interview-verification question', async () => {
