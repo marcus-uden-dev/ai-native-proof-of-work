@@ -27,3 +27,42 @@ export const stableDirectEvidence = {
   'workflow-design': ['ai-harness-workflow-design', 'recursive-workflow-controls', 'cv-product-operations'],
   'ai-native-execution': ['ai-native-workflow-execution', 'ai-harness-workflow-design', 'decision-log-traceability']
 };
+
+export const roleCapabilityTaxonomy = [
+  {
+    id: 'ai-workflow-automation',
+    label: 'AI and workflow automation',
+    tags: ['ai-native-workflows', 'automation-judgment', 'workflow-automation', 'context-engineering'],
+    evidenceHints: ['ai-native-workflow-execution', 'ai-harness-workflow-design', 'decision-log-automation-judgment']
+  },
+  {
+    id: 'systems-api-integration',
+    label: 'Systems, APIs, and integrations',
+    tags: ['systems-thinking', 'reusable-infrastructure', 'governance-architecture'],
+    evidenceHints: ['cv-product-operations', 'job-agent-decisions', 'decision-log-governance-architecture']
+  },
+  {
+    id: 'operational-service-design',
+    label: 'Operational and service design',
+    tags: ['stakeholder-understanding', 'decision-support', 'product-discovery'],
+    evidenceHints: ['cv-product-operations', 'job-agent-product-framing', 'decision-log-stakeholder-understanding']
+  },
+  {
+    id: 'research-experimentation',
+    label: 'Research, measurement, and experimentation',
+    tags: ['research-synthesis', 'validation', 'continuous-improvement', 'quality-assurance'],
+    evidenceHints: ['cv-customer-journey', 'recursive-workflow-controls', 'decision-log-research-synthesis']
+  },
+  {
+    id: 'risk-governance-controls',
+    label: 'Risk, governance, and controls',
+    tags: ['risk-awareness', 'risk-controls', 'governance-architecture', 'human-in-the-loop'],
+    evidenceHints: ['cv-risk-controls', 'job-agent-product-framing', 'decision-log-governance-architecture']
+  },
+  {
+    id: 'commercial-product-strategy',
+    label: 'Commercial product strategy',
+    tags: ['commercial-awareness', 'value-creation', 'product-judgment', 'prioritization'],
+    evidenceHints: ['cv-customer-journey', 'job-agent-decisions', 'decision-log-commercial-strategy']
+  }
+];

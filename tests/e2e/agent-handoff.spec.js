@@ -119,6 +119,15 @@ test('the existing repository review panel renders a cited AI role assessment wh
           summary: 'The public record directly documents workflow-design evidence for this role.',
           roleNeeds: ['Workflow design'],
           dimensions,
+          roleCoverage: [{
+            capabilityId: 'systems-api-integration',
+            label: 'Systems, APIs, and integrations',
+            roleNeed: 'API layer design and integration',
+            state: 'direct',
+            explanation: 'The public record documents systems and workflow delivery.',
+            evidenceIds: ['cv-product-operations'],
+            verificationQuestion: ''
+          }],
           evidenceAnchors: ['cv-product-operations'],
           interviewQuestions: [],
           limitations: ['This is public evidence coverage, not a hiring decision.']
@@ -147,11 +156,15 @@ test('the existing repository review panel renders a cited AI role assessment wh
   await page.getByRole('button', { name: 'Review with AI' }).click();
   await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
   await expect(page.locator('.experience-fit-radar__svg')).toBeVisible();
-  await expect(page.getByText('Direct evidence')).toBeVisible();
+  await expect(page.locator('.experience-fit-track').getByText('Direct evidence')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Role-specific needs detected' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
+  await expect(page.getByText('API layer design and integration')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Evidence limits' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'CV: product operations and workflow design ↗' })).toHaveAttribute('href', 'https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/');
+  await expect(page.getByRole('link', { name: 'CV: product operations and workflow design ↗' }).first()).toHaveAttribute('href', 'https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/');
   await expect(page.getByRole('link', { name: 'Decision log: workflow evidence ↗' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/decision-log.json');
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.locator('.role-coverage__list').evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length)).toBe(1);
 });
 
 test('repository interview keeps the preview typography and full-width brown surface', async ({ page }) => {

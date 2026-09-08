@@ -1151,6 +1151,78 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.repository-interview .role-coverage {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .role-coverage > h4 {
+  margin: 0 0 0.55rem;
+  color: var(--ri-gold);
+  font: 0.77rem/1.45 var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.repository-interview .role-coverage__intro {
+  max-width: 48rem;
+  margin: 0 0 0.9rem;
+  color: var(--ri-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.repository-interview .role-coverage__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.repository-interview .role-coverage__item {
+  padding: 1rem;
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+}
+
+.repository-interview .role-coverage__item h5 {
+  margin: 0 0 0.35rem;
+  color: var(--ri-ink);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.repository-interview .role-coverage__item p {
+  margin: 0;
+  color: var(--ri-muted);
+  line-height: 1.55;
+}
+
+.repository-interview .role-coverage__capability {
+  margin-bottom: 0.7rem !important;
+  color: var(--ri-gold) !important;
+  font: 0.73rem/1.4 var(--mono);
+}
+
+.repository-interview .role-evidence-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3px;
+  margin: 0.2rem 0 0.8rem;
+}
+
+.repository-interview .role-evidence-bar span {
+  height: 0.35rem;
+  background: #29251d;
+}
+
+.repository-interview .role-evidence-bar--direct span { background: #a6cfbc; }
+.repository-interview .role-evidence-bar--transferable span:nth-child(-n + 3) { background: #d8ad72; }
+.repository-interview .role-evidence-bar--needs_interview_verification span:nth-child(-n + 2) { background: #dfb873; }
+.repository-interview .role-evidence-bar--not_evidenced span:first-child { background: var(--ri-muted); }
+
 .repository-interview .experience-fit-track h4 {
   margin: 0 0 0.45rem;
   color: var(--ri-ink);
@@ -1298,6 +1370,10 @@ h3 {
   }
 
   .repository-interview .experience-fit-tracks {
+    grid-template-columns: 1fr;
+  }
+
+  .repository-interview .role-coverage__list {
     grid-template-columns: 1fr;
   }
 }

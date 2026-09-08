@@ -65,7 +65,7 @@ export function createRecruiterReviewWorker(options = {}) {
 
 function citedEvidenceSources(review, catalogue) {
   const ids = review.kind === 'role'
-    ? review.assessment.dimensions.flatMap(({ evidenceIds }) => evidenceIds)
+    ? [...review.assessment.dimensions.flatMap(({ evidenceIds }) => evidenceIds), ...review.assessment.roleCoverage.flatMap(({ evidenceIds }) => evidenceIds)]
     : [...review.answer.sources, ...review.answer.findings.flatMap(({ evidenceIds }) => evidenceIds)];
   const sourceById = new Map(catalogue.map((source) => [source.id, source]));
   return [...new Set(ids)].flatMap((id) => {
