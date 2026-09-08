@@ -53,7 +53,8 @@ export function createRecruiterReviewWorker(options = {}) {
         return json({ ...validated.value, evidenceSources: citedEvidenceSources(validated.value, reviewCatalogue) }, 200, cors);
       } catch (error) {
         console.error('Recruiter review provider failure', {
-          status: Number.isInteger(error?.status) ? error.status : null
+          status: Number.isInteger(error?.status) ? error.status : null,
+          category: providerErrorCategory(error?.detail)
         });
         return json({ error: 'The review service is temporarily unavailable. Use the copyable prompt instead.' }, 503, cors);
       } finally {
@@ -61,6 +62,15 @@ export function createRecruiterReviewWorker(options = {}) {
       }
     }
   };
+}
+
+function providerErrorCategory(detail) {
+  const message = typeof detail === 'string' ? detail.toLowerCase() : '';
+  if (message.includes('json schema')) return 'json-schema';
+  if (message.includes('context') || message.includes('token')) return 'context-or-token-limit';
+  if (message.includes('model')) return 'model';
+  if (message.includes('rate limit')) return 'rate-limit';
+  return message ? 'other-provider-error' : 'no-provider-detail';
 }
 
 function citedEvidenceSources(review, catalogue) {

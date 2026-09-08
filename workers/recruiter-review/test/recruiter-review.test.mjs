@@ -584,7 +584,7 @@ test('Groq adapter requests strict JSON schema and does not expose the API key',
   assert.equal(body.include_reasoning, false);
 });
 
-test('Groq role adapter uses strict JSON schema before server-side evidence validation', async () => {
+test('Groq role adapter uses JSON mode before server-side evidence validation', async () => {
   let body;
   const provider = createGroqProvider({
     fetch: async (_url, options) => {
@@ -602,7 +602,6 @@ test('Groq role adapter uses strict JSON schema before server-side evidence vali
     schema: { type: 'object' }
   });
 
-  assert.equal(body.response_format.type, 'json_schema');
-  assert.equal(body.response_format.json_schema.strict, true);
+  assert.deepEqual(body.response_format, { type: 'json_object' });
   assert.equal(body.tool_choice, 'none');
 });

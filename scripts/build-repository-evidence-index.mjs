@@ -8,7 +8,7 @@ const outputPath = 'site/evidence/repository-evidence-index.json';
 const publicTextExtensions = new Set(['.css', '.html', '.js', '.json', '.md', '.mjs', '.txt', '.xml', '.yml']);
 const repositoryUrl = 'https://github.com/marcus-uden-dev/ai-native-proof-of-work';
 const chunkSize = 1200;
-const excludedPrefixes = ['.github/', 'release/', 'scripts/', 'tests/', 'workers/'];
+const excludedPrefixes = ['.github/', 'release/', 'scripts/', 'tests/', 'workers/', 'site/evidence/smoke-tests/'];
 
 const allowlist = JSON.parse(readFileSync(resolve(repositoryRoot, 'release/allowlist.json'), 'utf8'));
 const records = allowlist.allowedFiles
