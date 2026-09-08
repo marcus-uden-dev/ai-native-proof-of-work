@@ -1,4 +1,4 @@
-import { experienceFitDimensions } from './catalog.js';
+import { experienceFitDimensions, stableDirectEvidence } from './catalog.js';
 
 const states = new Set(['direct', 'transferable', 'needs_interview_verification', 'not_evidenced']);
 const dimensionIds = new Set(experienceFitDimensions.map(({ id }) => id));
@@ -60,6 +60,7 @@ export function validateReview(value, mode, catalogue) {
   if (invalidRoleFields.length) return invalid(`role-fields-${invalidRoleFields.join('-')}`);
   if (assessment.dimensions.length > dimensionIds.size) return invalid('role-dimension-count');
   if (!noScores(assessment.summary)) return invalid('role-summary-score');
+  applyStableEvidenceFloor(assessment.dimensions, evidenceIds);
   const seen = new Set();
   const suppliedDimensions = new Map();
   for (const dimension of assessment.dimensions) {
@@ -80,6 +81,18 @@ export function validateReview(value, mode, catalogue) {
   assessment.evidenceAnchors = [...new Set(assessment.dimensions.flatMap((dimension) => dimension.evidenceIds))];
   if (assessment.evidenceAnchors.length === 0) return invalid('role-anchor-empty');
   return { ok: true, value };
+}
+
+function applyStableEvidenceFloor(dimensions, evidenceIds) {
+  for (const dimension of dimensions) {
+    if (dimension.state !== 'not_evidenced') continue;
+    const configuredEvidence = (stableDirectEvidence[dimension.id] ?? []).filter((id) => evidenceIds.has(id));
+    if (configuredEvidence.length === 0) continue;
+    dimension.state = 'direct';
+    dimension.evidenceIds = [...new Set([...(dimension.evidenceIds ?? []), ...configuredEvidence])];
+    dimension.explanation = `${dimension.explanation} The public evidence catalogue contains direct support for this stable capability.`;
+    dimension.verificationQuestion = '';
+  }
 }
 
 function nonEmptyText(value) {

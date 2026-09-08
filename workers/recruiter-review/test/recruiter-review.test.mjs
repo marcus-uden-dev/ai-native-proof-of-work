@@ -79,6 +79,53 @@ test('provides dimension-specific evidence anchors for role assessment', () => {
   assert.match(instructions, /workflow-design: cv-product-operations, cv-customer-journey, job-agent-decisions, recursive-workflow-controls/);
   assert.match(instructions, /ai-native-execution: job-agent-decisions, recursive-workflow-controls, decision-log-traceability/);
   assert.match(instructions, /evidence-synthesis: cv-customer-journey, decision-log-traceability, recursive-workflow-controls/);
+  assert.match(instructions, /If a configured direct-evidence anchor supports a stable dimension, do not return not_evidenced/);
+});
+
+test('preserves direct product, harness, and AI-native evidence across role domains', async () => {
+  const stableEvidence = [
+    { id: 'job-agent-product-framing', label: 'Job-agent product framing', sourceClass: 'portfolio-strategy', url: 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md', excerpt: 'Job-agent is framed as a reviewed career workflow product.' },
+    { id: 'ai-harness-workflow-design', label: 'Personal AI Harness workflow design', sourceClass: 'portfolio-workflow', url: 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/proof/recursive-workflow/index.html', excerpt: 'A human-gated system loop promotes confirmed patterns into reusable infrastructure.' },
+    { id: 'ai-native-workflow-execution', label: 'AI-native workflow execution', sourceClass: 'portfolio-execution', url: 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md', excerpt: 'AI assistance is integrated into a reviewed workflow rather than an unchecked generator.' }
+  ];
+  const worker = createRecruiterReviewWorker({
+    catalogue: [...catalogue, ...stableEvidence],
+    provider: {
+      generateStructuredReview: async () => ({
+        kind: 'role',
+        assessment: {
+          summary: 'A role-domain assessment with stable candidate evidence.',
+          roleNeeds: ['Payment product delivery'],
+          dimensions: [
+            { id: 'product-framing', label: 'Product framing', state: 'not_evidenced', explanation: 'The payment domain is not shown.', evidenceIds: [], verificationQuestion: 'Ask about payment product framing.' },
+            { id: 'workflow-design', label: 'Workflow design', state: 'not_evidenced', explanation: 'The payment domain is not shown.', evidenceIds: [], verificationQuestion: 'Ask about payment workflow design.' },
+            { id: 'ai-native-execution', label: 'AI-native execution', state: 'not_evidenced', explanation: 'The payment domain is not shown.', evidenceIds: [], verificationQuestion: 'Ask about AI-native payment execution.' },
+            ...['evidence-synthesis', 'operational-collaboration', 'technical-delivery', 'business-prioritisation'].map((id) => ({
+              id,
+              label: id,
+              state: 'needs_interview_verification',
+              explanation: 'The role needs a domain-specific example.',
+              evidenceIds: [],
+              verificationQuestion: `Ask for a relevant example of ${id}.`
+            }))
+          ],
+          evidenceAnchors: [],
+          interviewQuestions: ['How would you apply this in payments?'],
+          limitations: ['This is public evidence coverage.']
+        }
+      })
+    }
+  });
+
+  const response = await worker.fetch(request({ mode: 'role', clientMode: 'auto', input: 'Product Manager for a regulated payments platform.' }), baseEnv);
+  assert.equal(response.status, 200);
+  const dimensions = (await response.json()).assessment.dimensions;
+  for (const id of ['product-framing', 'workflow-design', 'ai-native-execution']) {
+    const dimension = dimensions.find((item) => item.id === id);
+    assert.equal(dimension.state, 'direct');
+    assert.ok(dimension.evidenceIds.length > 0);
+    assert.equal(dimension.verificationQuestion, '');
+  }
 });
 
 test('loads and ranks the fixed public repository index', async () => {
