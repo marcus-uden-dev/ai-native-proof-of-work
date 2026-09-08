@@ -65,7 +65,9 @@ async function requestWithRetry(fetch, { apiKey, model, mode, systemInstructions
           { role: 'system', content: systemInstructions },
           { role: 'user', content: userInput }
         ],
-        response_format: { type: 'json_schema', json_schema: { name: 'recruiter_review', strict: true, schema } }
+        response_format: mode === 'role'
+          ? { type: 'json_object' }
+          : { type: 'json_schema', json_schema: { name: 'recruiter_review', strict: true, schema } }
       })
     });
 

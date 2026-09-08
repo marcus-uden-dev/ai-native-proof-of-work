@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "title": "Spotify — Customer Service Platform",
+  "savedAt": "2026-09-08",
+  "sourceUrl": "https://jobs.lever.co/spotify/7f0a8faa-f4f5-4db9-9f51-4101d6a29b34",
+  "sourceNote": "Role brief paraphrased from the public job listing. The saved result is public evidence coverage, not a hiring decision.",
+  "roleBrief": "Product Manager for a customer-service platform. Own advisor tools, support channels, a reliable API layer, responsible AI and automation, discovery-to-launch work, and evidence-led prioritisation with engineering, design, data, and service operations.",
+  "kind": "role",
+  "assessment": {
+    "summary": "The public portfolio shows evidence across product framing, workflow design, AI-native execution, evidence synthesis, operational collaboration, technical delivery, and business prioritisation. The role-specific evidence connects this to customer-service tooling, API layers, workflow automation, and experimentation.",
+    "roleNeeds": [
+      "own the vision and roadmap for tools used by support advisors",
+      "improve the advisor experience and how customers access support",
+      "strengthen the API layer connecting support systems",
+      "identify responsible applications of AI and automation in advisor workflows",
+      "define success metrics and run experiments",
+      "use customer insight to prioritise",
+      "communicate technical trade-offs"
+    ],
+    "dimensions": [
+      { "id": "product-framing", "label": "Product framing", "state": "direct", "explanation": "The public evidence catalogue directly supports product framing. Any role-specific domain gap is assessed separately.", "evidenceIds": ["job-agent-product-framing", "cv-customer-journey", "job-agent-decisions"], "verificationQuestion": "" },
+      { "id": "workflow-design", "label": "Workflow design", "state": "direct", "explanation": "The public evidence catalogue directly supports workflow design. Any role-specific domain gap is assessed separately.", "evidenceIds": ["recursive-workflow-controls", "ai-harness-workflow-design", "cv-product-operations"], "verificationQuestion": "" },
+      { "id": "ai-native-execution", "label": "AI-native execution", "state": "direct", "explanation": "The public evidence catalogue directly supports AI-native execution. Any role-specific domain gap is assessed separately.", "evidenceIds": ["ai-native-workflow-execution", "ai-harness-workflow-design", "decision-log-traceability"], "verificationQuestion": "" },
+      { "id": "evidence-synthesis", "label": "Evidence synthesis", "state": "direct", "explanation": "Public customer-journey evidence supports using insight to prioritise and design experiments.", "evidenceIds": ["cv-customer-journey"], "verificationQuestion": "How do you translate customer insights into product experiments?" },
+      { "id": "operational-collaboration", "label": "Operational collaboration", "state": "direct", "explanation": "Public product-operations evidence documents collaboration with operational teams in product delivery.", "evidenceIds": ["cv-product-operations"], "verificationQuestion": "Describe a time you worked with service operations to launch a new tool." },
+      { "id": "technical-delivery", "label": "Technical delivery", "state": "direct", "explanation": "Job-agent decision evidence includes technical trade-off decisions and delivery planning.", "evidenceIds": ["job-agent-decisions"], "verificationQuestion": "Explain a technical trade-off you made during a product launch." },
+      { "id": "business-prioritisation", "label": "Business prioritisation", "state": "direct", "explanation": "Public customer-journey and decision evidence support prioritisation based on business value and metrics.", "evidenceIds": ["cv-customer-journey", "job-agent-decisions"], "verificationQuestion": "How do you balance short-term metrics with long-term product strategy?" }
+    ],
+    "roleCoverage": [
+      { "capabilityId": "ai-workflow-automation", "label": "AI and workflow automation", "roleNeed": "identify responsible applications of AI and automation in advisor workflows", "state": "direct", "explanation": "Recursive workflow and AI-native execution evidence supports AI-workflow automation.", "evidenceIds": ["recursive-workflow-controls", "ai-native-workflow-execution"], "verificationQuestion": "What criteria do you use to decide when to automate a support workflow?" },
+      { "capabilityId": "systems-api-integration", "label": "Systems, APIs, and integrations", "roleNeed": "strengthen the API layer connecting support systems", "state": "direct", "explanation": "Public workflow and job-agent decision evidence supports API integration and governance.", "evidenceIds": ["recursive-workflow-controls", "job-agent-decisions"], "verificationQuestion": "Describe how you designed an extensible API layer for a support platform." },
+      { "capabilityId": "operational-service-design", "label": "Operational and service design", "roleNeed": "improve the advisor experience and how customers access support", "state": "direct", "explanation": "Public product-operations and product-framing evidence supports operational service design.", "evidenceIds": ["cv-product-operations", "job-agent-product-framing"], "verificationQuestion": "How did you redesign a support service to improve advisor experience?" },
+      { "capabilityId": "research-experimentation", "label": "Research, measurement, and experimentation", "roleNeed": "define success metrics, run experiments, and use customer insight to prioritise", "state": "direct", "explanation": "Public customer-journey and recursive-workflow evidence supports experimentation and metric definition.", "evidenceIds": ["cv-customer-journey", "recursive-workflow-controls"], "verificationQuestion": "Give an example of an experiment you ran to validate a support feature." },
+      { "capabilityId": "risk-governance-controls", "label": "Risk, governance, and controls", "roleNeed": "communicate technical trade-offs", "state": "direct", "explanation": "Public job-agent and workflow evidence documents risk, governance, and trade-off handling.", "evidenceIds": ["job-agent-decisions", "recursive-workflow-controls"], "verificationQuestion": "How do you document and communicate risk in technical decisions?" }
+    ],
+    "evidenceAnchors": ["job-agent-product-framing", "cv-customer-journey", "job-agent-decisions", "recursive-workflow-controls", "ai-harness-workflow-design", "cv-product-operations", "ai-native-workflow-execution", "decision-log-traceability"],
+    "interviewQuestions": ["Can you walk us through a product roadmap you owned for a support platform?", "How do you balance API extensibility with reliability in a high-traffic environment?", "Describe a time you introduced AI into a support workflow and how you measured its impact."],
+    "limitations": ["Evidence is limited to public proof of work; it does not establish experience with Spotify's specific platform or scale."]
+  },
+  "evidenceSources": [
+    { "id": "job-agent-product-framing", "label": "Job-agent: product framing and workflow strategy", "sourceClass": "portfolio-strategy", "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md" },
+    { "id": "cv-customer-journey", "label": "CV: customer journey and business model work", "sourceClass": "employment", "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/cv-facts.json" },
+    { "id": "job-agent-decisions", "label": "Job-agent: decision-led product work", "sourceClass": "portfolio-decision", "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/" },
+    { "id": "recursive-workflow-controls", "label": "Recursive workflow: human-gated improvement", "sourceClass": "portfolio-decision", "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/" },
+    { "id": "ai-harness-workflow-design", "label": "Personal AI Harness: human-gated workflow design", "sourceClass": "portfolio-workflow", "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/proof/recursive-workflow/index.html" },
+    { "id": "cv-product-operations", "label": "CV: product operations and workflow design", "sourceClass": "employment", "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/" },
+    { "id": "ai-native-workflow-execution", "label": "Job-agent: AI-native workflow execution", "sourceClass": "portfolio-execution", "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md" },
+    { "id": "decision-log-traceability", "label": "Decision log: trade-offs and traceability", "sourceClass": "portfolio-decision", "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json" }
+  ]
+}

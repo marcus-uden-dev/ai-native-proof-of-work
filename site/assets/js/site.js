@@ -412,8 +412,44 @@ if (promptGenerator) {
     }
   }
 
+  async function loadSavedSmokeTest() {
+    const smokeTestId = new URLSearchParams(window.location.search).get('smoke');
+    if (!smokeTestId) return;
+    if (!/^[a-z0-9-]+$/.test(smokeTestId)) return;
+
+    apiReviewResult.hidden = false;
+    apiReviewStatus.textContent = 'Loading saved smoke test…';
+    apiReviewOutput.replaceChildren();
+    try {
+      const response = await fetch(`evidence/smoke-tests/${smokeTestId}.json`, { cache: 'no-store' });
+      if (!response.ok) throw new Error('Saved smoke test unavailable.');
+      const snapshot = await response.json();
+      if (snapshot.kind !== 'role' || !snapshot.assessment || !Array.isArray(snapshot.evidenceSources)) throw new Error('Saved smoke test is invalid.');
+      input.value = snapshot.roleBrief || '';
+      setMode('role');
+      const catalogue = new Map(snapshot.evidenceSources.map((source) => [source.id, source]));
+      if (snapshot.sourceUrl) {
+        const source = document.createElement('p');
+        source.className = 'result-note';
+        source.textContent = `${snapshot.sourceNote || 'Saved smoke test.'} `;
+        const link = document.createElement('a');
+        link.href = snapshot.sourceUrl;
+        link.target = '_blank';
+        link.rel = 'noreferrer';
+        link.textContent = 'Source role listing ↗';
+        source.append(link);
+        apiReviewOutput.append(source);
+      }
+      apiReviewOutput.append(renderRole(snapshot.assessment, catalogue));
+      apiReviewStatus.textContent = `Saved smoke test: ${snapshot.title}. Public evidence coverage only.`;
+    } catch (loadError) {
+      apiReviewStatus.textContent = loadError.message;
+    }
+  }
+
   if (apiEndpoint) generateButton.textContent = 'Review with AI';
   generateButton.addEventListener('click', () => (apiEndpoint ? runAiReview() : generateFallbackPrompt()));
 
   updateClassification();
+  loadSavedSmokeTest();
 }

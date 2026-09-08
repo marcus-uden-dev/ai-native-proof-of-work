@@ -196,6 +196,18 @@ test('repository interview keeps the preview typography and full-width brown sur
   expect(metrics.headingWeight).toBe('500');
 });
 
+test('a saved smoke test renders through the live recruiter-review interface', async ({ page }) => {
+  await page.goto('/?smoke=spotify-customer-service-platform#ai-review');
+
+  await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
+  await expect(page.getByText('Saved smoke test: Spotify — Customer Service Platform. Public evidence coverage only.')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Source role listing ↗' })).toHaveAttribute('href', 'https://jobs.lever.co/spotify/7f0a8faa-f4f5-4db9-9f51-4101d6a29b34');
+  await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'strengthen the API layer connecting support systems' })).toBeVisible();
+  await expect(page.locator('.experience-fit-track')).toHaveCount(7);
+  await expect(page.locator('.role-coverage__item')).toHaveCount(5);
+});
+
 test('repository interview rejects empty input and keeps the static prompt fallback', async ({ browser, page: activePage }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
