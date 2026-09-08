@@ -26,12 +26,25 @@ export function validateReview(value, mode, catalogue) {
 
   if (mode === 'question') {
     const answer = value.answer;
+    if (answer && Array.isArray(answer.findings)) {
+      if (!scoreFreeTextArray(answer.limitations)) {
+        answer.limitations = ['This answer uses public evidence only and is not a hiring decision.'];
+      }
+      if (!hasOnlyKnownEvidence(answer.sources) || answer.sources.length === 0) {
+        answer.sources = [...new Set(answer.findings.flatMap((finding) => Array.isArray(finding?.evidenceIds)
+          ? finding.evidenceIds.filter((id) => evidenceIds.has(id))
+          : []))];
+      }
+    }
     if (!answer || !nonEmptyText(answer.summary) || !Array.isArray(answer.findings) || answer.findings.length === 0 || !scoreFreeTextArray(answer.limitations) || !hasOnlyKnownEvidence(answer.sources) || answer.sources.length === 0) return invalid('question-fields');
     if (!noScores(answer.summary) || !answer.findings.every((finding) => nonEmptyText(finding?.claim) && noScores(finding.claim) && hasOnlyKnownEvidence(finding.evidenceIds) && finding.evidenceIds.length > 0)) return invalid('question-findings');
     return { ok: true, value };
   }
 
   const assessment = value.assessment;
+  if (assessment && !scoreFreeTextArray(assessment.roleNeeds)) {
+    assessment.roleNeeds = ['Assess the submitted role requirements against cited public evidence and interview validation.'];
+  }
   if (assessment && !scoreFreeTextArray(assessment.interviewQuestions, true)) assessment.interviewQuestions = [];
   if (assessment && !scoreFreeTextArray(assessment.limitations)) {
     assessment.limitations = ['This assessment uses public evidence only and is not a hiring decision.'];
@@ -46,7 +59,6 @@ export function validateReview(value, mode, catalogue) {
   ].filter(Boolean);
   if (invalidRoleFields.length) return invalid(`role-fields-${invalidRoleFields.join('-')}`);
   if (assessment.dimensions.length > dimensionIds.size) return invalid('role-dimension-count');
-  if (!hasOnlyKnownEvidence(assessment.evidenceAnchors)) return invalid('role-anchor-unknown');
   if (!noScores(assessment.summary)) return invalid('role-summary-score');
   const seen = new Set();
   const suppliedDimensions = new Map();
@@ -65,7 +77,7 @@ export function validateReview(value, mode, catalogue) {
     evidenceIds: [],
     verificationQuestion: `Ask Marcus for a relevant example of ${label}.`
   });
-  assessment.evidenceAnchors = [...new Set([...assessment.evidenceAnchors, ...assessment.dimensions.flatMap((dimension) => dimension.evidenceIds)])];
+  assessment.evidenceAnchors = [...new Set(assessment.dimensions.flatMap((dimension) => dimension.evidenceIds))];
   if (assessment.evidenceAnchors.length === 0) return invalid('role-anchor-empty');
   return { ok: true, value };
 }

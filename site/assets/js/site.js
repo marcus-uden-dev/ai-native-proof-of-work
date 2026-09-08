@@ -204,10 +204,10 @@ if (promptGenerator) {
     return fragment;
   }
 
-  function appendTextSection(container, headingText, items, className) {
+  function appendTextSection(container, headingText, items, className, sectionClass = '') {
     if (!items.length) return;
     const section = document.createElement('section');
-    section.className = 'review-detail';
+    section.className = `review-detail ${sectionClass}`.trim();
     const heading = document.createElement('h4');
     heading.textContent = headingText;
     const list = document.createElement('ul');
@@ -283,6 +283,8 @@ if (promptGenerator) {
     summary.textContent = assessment.summary;
     fragment.append(summary);
 
+    appendTextSection(fragment, 'Role-specific needs detected', assessment.roleNeeds, 'review-detail-list role-needs-list', 'review-detail--role-needs');
+
     const map = document.createElement('div');
     map.className = 'experience-fit-map';
     const title = document.createElement('p');
@@ -320,7 +322,6 @@ if (promptGenerator) {
     }
     map.append(tracks);
     fragment.append(map);
-    appendTextSection(fragment, 'Role needs', assessment.roleNeeds, 'review-detail-list');
     appendTextSection(fragment, 'Interview validation', assessment.interviewQuestions, 'review-detail-list');
     appendTextSection(fragment, 'Evidence limits', assessment.limitations, 'review-detail-list');
     return fragment;
