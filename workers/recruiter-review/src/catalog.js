@@ -21,3 +21,9 @@ export const experienceFitEvidenceHints = {
   'technical-delivery': ['job-agent-decisions', 'recursive-workflow-controls'],
   'business-prioritisation': ['cv-customer-journey', 'job-agent-decisions', 'decision-log-traceability']
 };
+
+export const stableDirectEvidence = {
+  'product-framing': ['job-agent-product-framing', 'cv-customer-journey', 'job-agent-decisions'],
+  'workflow-design': ['ai-harness-workflow-design', 'recursive-workflow-controls', 'cv-product-operations'],
+  'ai-native-execution': ['ai-native-workflow-execution', 'ai-harness-workflow-design', 'decision-log-traceability']
+};

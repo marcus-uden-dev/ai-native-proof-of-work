@@ -31,6 +31,27 @@
       "excerpt": "A public prototype documents scoped product reasoning and implementation decisions; it is work in progress and not market-validated."
     },
     {
+      "id": "job-agent-product-framing",
+      "label": "Job-agent: product framing and workflow strategy",
+      "sourceClass": "portfolio-strategy",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "excerpt": "Job-agent is framed as a reviewed career workflow product spanning job discovery, fit and context analysis, CV/application support, feedback, privacy, and consent."
+    },
+    {
+      "id": "ai-harness-workflow-design",
+      "label": "Personal AI Harness: human-gated workflow design",
+      "sourceClass": "portfolio-workflow",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/proof/recursive-workflow/index.html",
+      "excerpt": "The public recursive workflow proof documents a human-gated system loop that executes, reviews, detects patterns, and promotes confirmed patterns into reusable infrastructure through scheduled research and bounded automation."
+    },
+    {
+      "id": "ai-native-workflow-execution",
+      "label": "Job-agent: AI-native workflow execution",
+      "sourceClass": "portfolio-execution",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
+      "excerpt": "The Job-agent case study explicitly documents AI-native workflow design: AI assistance is integrated into a reviewed workflow rather than treated as an unchecked generator."
+    },
+    {
       "id": "recursive-workflow-controls",
       "label": "Recursive workflow: human-gated improvement",
       "sourceClass": "portfolio-decision",
