@@ -276,6 +276,49 @@ if (promptGenerator) {
     return svg;
   }
 
+  function renderRoleCoverage(roleCoverage, catalogue) {
+    if (!Array.isArray(roleCoverage) || roleCoverage.length === 0) return null;
+    const section = document.createElement('section');
+    section.className = 'role-coverage';
+    const heading = document.createElement('h4');
+    heading.textContent = 'Role-specific evidence coverage';
+    const introduction = document.createElement('p');
+    introduction.className = 'role-coverage__intro';
+    introduction.textContent = 'These tracks change with the submitted role. They show cited public evidence for the role requirements, not a candidate score.';
+    const list = document.createElement('div');
+    list.className = 'role-coverage__list';
+    for (const coverage of roleCoverage) {
+      const item = document.createElement('article');
+      item.className = 'role-coverage__item';
+      const roleNeed = document.createElement('h5');
+      roleNeed.textContent = coverage.roleNeed;
+      const capability = document.createElement('p');
+      capability.className = 'role-coverage__capability';
+      capability.textContent = coverage.label;
+      const state = document.createElement('p');
+      state.className = `evidence-state evidence-state--${coverage.state}`;
+      state.textContent = stateLabel(coverage.state);
+      const bar = document.createElement('div');
+      bar.className = `role-evidence-bar role-evidence-bar--${coverage.state}`;
+      bar.setAttribute('role', 'img');
+      bar.setAttribute('aria-label', `${coverage.roleNeed}: ${stateLabel(coverage.state)}`);
+      for (let index = 0; index < 4; index += 1) bar.append(document.createElement('span'));
+      const explanation = document.createElement('p');
+      explanation.textContent = coverage.explanation;
+      item.append(roleNeed, capability, state, bar, explanation);
+      addEvidenceLinks(item, coverage.evidenceIds, catalogue);
+      if (coverage.verificationQuestion) {
+        const question = document.createElement('p');
+        question.className = 'verification-question';
+        question.textContent = `Interview question: ${coverage.verificationQuestion}`;
+        item.append(question);
+      }
+      list.append(item);
+    }
+    section.append(heading, introduction, list);
+    return section;
+  }
+
   function renderRole(assessment, catalogue) {
     const fragment = document.createDocumentFragment();
     const summary = document.createElement('p');
@@ -322,6 +365,8 @@ if (promptGenerator) {
     }
     map.append(tracks);
     fragment.append(map);
+    const roleCoverage = renderRoleCoverage(assessment.roleCoverage, catalogue);
+    if (roleCoverage) fragment.append(roleCoverage);
     appendTextSection(fragment, 'Interview validation', assessment.interviewQuestions, 'review-detail-list');
     appendTextSection(fragment, 'Evidence limits', assessment.limitations, 'review-detail-list');
     return fragment;

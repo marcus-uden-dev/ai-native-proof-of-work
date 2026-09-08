@@ -66,6 +66,41 @@
       "excerpt": "The public decision log links context, options, trade-offs, decisions, and next actions."
     },
     {
+      "id": "decision-log-automation-judgment",
+      "label": "Decision log: bounded automation and validation",
+      "sourceClass": "portfolio-decision",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json",
+      "excerpt": "A public decision entry documents choosing a bounded canary before expanding scheduled finding intake, showing staged validation before automation is scaled."
+    },
+    {
+      "id": "decision-log-governance-architecture",
+      "label": "Decision log: reusable infrastructure and governance",
+      "sourceClass": "portfolio-decision",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json",
+      "excerpt": "Public decision entries document shared skill boundaries, runtime-specific adaptations, and explicit failure controls for reusable infrastructure."
+    },
+    {
+      "id": "decision-log-research-synthesis",
+      "label": "Decision log: research synthesis and decision support",
+      "sourceClass": "portfolio-decision",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json",
+      "excerpt": "A public decision entry documents placing the decision, recommended action, response options, and concise evidence near the top of decision-heavy reports."
+    },
+    {
+      "id": "decision-log-stakeholder-understanding",
+      "label": "Decision log: stakeholder understanding and decision support",
+      "sourceClass": "portfolio-decision",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json",
+      "excerpt": "A public decision entry documents structuring decision-heavy reports around the decision, recommended action, response options, and concise evidence to make them easier to understand and act on."
+    },
+    {
+      "id": "decision-log-commercial-strategy",
+      "label": "Decision log: commercial strategy and prioritisation",
+      "sourceClass": "portfolio-decision",
+      "url": "https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json",
+      "excerpt": "A public Job-agent decision entry records a time-boxed job-search sprint and lightweight monthly plan as pricing hypotheses while willingness to pay remains unvalidated."
+    },
+    {
       "id": "job-agent-synthetic-boundary",
       "label": "Job-agent: synthetic-demo boundary",
       "sourceClass": "synthetic-demo",

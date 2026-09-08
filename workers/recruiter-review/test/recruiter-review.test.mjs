@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 import { createRecruiterReviewWorker } from '../src/index.js';
+import { experienceFitCatalogue, roleCapabilityTaxonomy } from '../src/catalog.js';
 import { composeSystemInstructions } from '../src/prompt.js';
 import { createGroqProvider } from '../src/provider.js';
 import { loadRepositoryEvidence, selectRepositoryEvidence } from '../src/repository-index.js';
@@ -22,6 +23,15 @@ const baseEnv = {
   ALLOWED_ORIGINS: 'https://marcus-uden-dev.github.io,http://127.0.0.1:8123',
   RECRUITER_REVIEW_RATE_LIMITER: { limit: async () => ({ success: true }) }
 };
+
+test('role capability taxonomy only names available public evidence hints', () => {
+  const catalogueIds = new Set(experienceFitCatalogue.map(({ id }) => id));
+  for (const capability of roleCapabilityTaxonomy) {
+    for (const evidenceId of capability.evidenceHints) {
+      assert.ok(catalogueIds.has(evidenceId), `${capability.id} references missing evidence: ${evidenceId}`);
+    }
+  }
+});
 
 function request(body, origin = 'https://marcus-uden-dev.github.io') {
   return new Request('https://review.example/api/recruiter-review', {
@@ -80,6 +90,8 @@ test('provides dimension-specific evidence anchors for role assessment', () => {
   assert.match(instructions, /ai-native-execution: job-agent-decisions, recursive-workflow-controls, decision-log-traceability/);
   assert.match(instructions, /evidence-synthesis: cv-customer-journey, decision-log-traceability, recursive-workflow-controls/);
   assert.match(instructions, /If a configured direct-evidence anchor supports a stable dimension, cite it and use direct/);
+  assert.match(instructions, /Additionally return three to five roleCoverage entries/);
+  assert.match(instructions, /systems-api-integration: Systems, APIs, and integrations/);
 });
 
 test('preserves direct product, harness, and AI-native evidence across role domains', async () => {
@@ -126,6 +138,150 @@ test('preserves direct product, harness, and AI-native evidence across role doma
     assert.ok(dimension.evidenceIds.length > 0);
     assert.equal(dimension.verificationQuestion, '');
   }
+});
+
+test('validates controlled dynamic role coverage and adds canonical labels', async () => {
+  const dimensionIds = [
+    'product-framing', 'workflow-design', 'ai-native-execution', 'evidence-synthesis',
+    'operational-collaboration', 'technical-delivery', 'business-prioritisation'
+  ];
+  const worker = createRecruiterReviewWorker({
+    catalogue,
+    provider: {
+      generateStructuredReview: async () => ({
+        kind: 'role',
+        assessment: {
+          summary: 'A public-evidence role assessment.',
+          roleNeeds: ['API layer design and integration'],
+          dimensions: dimensionIds.map((id) => ({
+            id,
+            label: id,
+            state: id === 'technical-delivery' ? 'direct' : 'not_evidenced',
+            explanation: 'Public evidence summary.',
+            evidenceIds: id === 'technical-delivery' ? ['cv-product-operations'] : [],
+            verificationQuestion: id === 'technical-delivery' ? '' : `Ask Marcus about ${id}.`
+          })),
+          roleCoverage: [
+            {
+              capabilityId: 'systems-api-integration',
+              roleNeed: 'API layer design and integration',
+              state: 'direct',
+              explanation: 'The public record documents systems and workflow delivery.',
+              evidenceIds: ['cv-product-operations'],
+              verificationQuestion: ''
+            },
+            {
+              capabilityId: 'operational-service-design',
+              roleNeed: 'Support advisor tooling',
+              state: 'direct',
+              explanation: 'The public record documents operational workflow delivery.',
+              evidenceIds: ['cv-product-operations'],
+              verificationQuestion: ''
+            },
+            {
+              capabilityId: 'research-experimentation',
+              roleNeed: 'Metrics and experimentation',
+              state: 'needs_interview_verification',
+              explanation: 'The public record needs a role-specific experimentation example.',
+              evidenceIds: [],
+              verificationQuestion: 'Ask Marcus how experimentation informed a product decision.'
+            }
+          ],
+          evidenceAnchors: [],
+          interviewQuestions: [],
+          limitations: ['This is public evidence coverage.']
+        }
+      })
+    }
+  });
+
+  const response = await worker.fetch(request({ mode: 'role', clientMode: 'role', input: 'Product Manager for API platforms.' }), baseEnv);
+  assert.equal(response.status, 200);
+  const body = await response.json();
+  assert.deepEqual(body.assessment.roleCoverage, [
+    {
+      capabilityId: 'systems-api-integration',
+      label: 'Systems, APIs, and integrations',
+      roleNeed: 'API layer design and integration',
+      state: 'direct',
+      explanation: 'The public record documents systems and workflow delivery.',
+      evidenceIds: ['cv-product-operations'],
+      verificationQuestion: ''
+    },
+    {
+      capabilityId: 'operational-service-design',
+      label: 'Operational and service design',
+      roleNeed: 'Support advisor tooling',
+      state: 'direct',
+      explanation: 'The public record documents operational workflow delivery.',
+      evidenceIds: ['cv-product-operations'],
+      verificationQuestion: ''
+    },
+    {
+      capabilityId: 'research-experimentation',
+      label: 'Research, measurement, and experimentation',
+      roleNeed: 'Metrics and experimentation',
+      state: 'needs_interview_verification',
+      explanation: 'The public record needs a role-specific experimentation example.',
+      evidenceIds: [],
+      verificationQuestion: 'Ask Marcus how experimentation informed a product decision.'
+    }
+  ]);
+});
+
+test('rejects role coverage with an unknown controlled capability', async () => {
+  const worker = createRecruiterReviewWorker({
+    catalogue,
+    provider: {
+      generateStructuredReview: async () => ({
+        kind: 'role',
+        assessment: {
+          summary: 'A public-evidence role assessment.',
+          roleNeeds: ['A role-specific capability'],
+          dimensions: [{
+            id: 'workflow-design',
+            label: 'Workflow design',
+            state: 'direct',
+            explanation: 'The public record documents workflow design.',
+            evidenceIds: ['cv-product-operations'],
+            verificationQuestion: ''
+          }],
+          roleCoverage: [
+            {
+              capabilityId: 'invented-capability',
+              roleNeed: 'A role-specific capability',
+              state: 'direct',
+              explanation: 'Unsupported category.',
+              evidenceIds: ['cv-product-operations'],
+              verificationQuestion: ''
+            },
+            {
+              capabilityId: 'systems-api-integration',
+              roleNeed: 'API integration',
+              state: 'direct',
+              explanation: 'Supported category.',
+              evidenceIds: ['cv-product-operations'],
+              verificationQuestion: ''
+            },
+            {
+              capabilityId: 'operational-service-design',
+              roleNeed: 'Operational design',
+              state: 'direct',
+              explanation: 'Supported category.',
+              evidenceIds: ['cv-product-operations'],
+              verificationQuestion: ''
+            }
+          ],
+          evidenceAnchors: [],
+          interviewQuestions: [],
+          limitations: ['This is public evidence coverage.']
+        }
+      })
+    }
+  });
+
+  const response = await worker.fetch(request({ mode: 'role', clientMode: 'role', input: 'Product Manager role.' }), baseEnv);
+  assert.equal(response.status, 502);
 });
 
 test('loads and ranks the fixed public repository index', async () => {
@@ -428,7 +584,7 @@ test('Groq adapter requests strict JSON schema and does not expose the API key',
   assert.equal(body.include_reasoning, false);
 });
 
-test('Groq role adapter uses JSON mode before server-side evidence validation', async () => {
+test('Groq role adapter uses strict JSON schema before server-side evidence validation', async () => {
   let body;
   const provider = createGroqProvider({
     fetch: async (_url, options) => {
@@ -446,6 +602,7 @@ test('Groq role adapter uses JSON mode before server-side evidence validation', 
     schema: { type: 'object' }
   });
 
-  assert.deepEqual(body.response_format, { type: 'json_object' });
+  assert.equal(body.response_format.type, 'json_schema');
+  assert.equal(body.response_format.json_schema.strict, true);
   assert.equal(body.tool_choice, 'none');
 });

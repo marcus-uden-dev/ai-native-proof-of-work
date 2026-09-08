@@ -1,7 +1,8 @@
-import { experienceFitDimensions, stableDirectEvidence } from './catalog.js';
+import { experienceFitDimensions, roleCapabilityTaxonomy, stableDirectEvidence } from './catalog.js';
 
 const states = new Set(['direct', 'transferable', 'needs_interview_verification', 'not_evidenced']);
 const dimensionIds = new Set(experienceFitDimensions.map(({ id }) => id));
+const roleCapabilityById = new Map(roleCapabilityTaxonomy.map((capability) => [capability.id, capability]));
 
 export function validateRequest(payload) {
   if (!payload || typeof payload !== 'object') return { ok: false, status: 400, message: 'A JSON request body is required.' };
@@ -45,6 +46,7 @@ export function validateReview(value, mode, catalogue) {
   if (assessment && !scoreFreeTextArray(assessment.roleNeeds)) {
     assessment.roleNeeds = ['Assess the submitted role requirements against cited public evidence and interview validation.'];
   }
+  if (assessment && !Array.isArray(assessment.roleCoverage)) assessment.roleCoverage = [];
   if (assessment && !scoreFreeTextArray(assessment.interviewQuestions, true)) assessment.interviewQuestions = [];
   if (assessment && !scoreFreeTextArray(assessment.limitations)) {
     assessment.limitations = ['This assessment uses public evidence only and is not a hiring decision.'];
@@ -53,12 +55,14 @@ export function validateReview(value, mode, catalogue) {
     !nonEmptyText(assessment.summary) && 'summary',
     !scoreFreeTextArray(assessment.roleNeeds) && 'roleNeeds',
     !Array.isArray(assessment.dimensions) && 'dimensions',
+    !Array.isArray(assessment.roleCoverage) && 'roleCoverage',
     !Array.isArray(assessment.evidenceAnchors) && 'evidenceAnchors',
     !scoreFreeTextArray(assessment.interviewQuestions, true) && 'interviewQuestions',
     !scoreFreeTextArray(assessment.limitations) && 'limitations'
   ].filter(Boolean);
   if (invalidRoleFields.length) return invalid(`role-fields-${invalidRoleFields.join('-')}`);
   if (assessment.dimensions.length > dimensionIds.size) return invalid('role-dimension-count');
+  if (assessment.roleCoverage.length > 0 && (assessment.roleCoverage.length < 3 || assessment.roleCoverage.length > 5)) return invalid('role-coverage-count');
   if (!noScores(assessment.summary)) return invalid('role-summary-score');
   applyStableEvidenceFloor(assessment.dimensions, evidenceIds);
   const seen = new Set();
@@ -78,7 +82,20 @@ export function validateReview(value, mode, catalogue) {
     evidenceIds: [],
     verificationQuestion: `Ask Marcus for a relevant example of ${label}.`
   });
-  assessment.evidenceAnchors = [...new Set(assessment.dimensions.flatMap((dimension) => dimension.evidenceIds))];
+  const suppliedCoverage = new Set();
+  assessment.roleCoverage = assessment.roleCoverage.map((coverage) => {
+    const capability = roleCapabilityById.get(coverage?.capabilityId);
+    if (!capability || suppliedCoverage.has(coverage.capabilityId) || !nonEmptyText(coverage.roleNeed) || !noScores(coverage.roleNeed) || !states.has(coverage.state) || !nonEmptyText(coverage.explanation) || !noScores(coverage.explanation) || !hasOnlyKnownEvidence(coverage.evidenceIds)) return null;
+    if (coverage.state === 'direct' && coverage.evidenceIds.length === 0) return null;
+    if (coverage.state !== 'direct' && (!nonEmptyText(coverage.verificationQuestion) || !noScores(coverage.verificationQuestion))) return null;
+    suppliedCoverage.add(coverage.capabilityId);
+    return { ...coverage, label: capability.label };
+  });
+  if (assessment.roleCoverage.some((coverage) => coverage === null)) return invalid('role-coverage');
+  assessment.evidenceAnchors = [...new Set([
+    ...assessment.dimensions.flatMap((dimension) => dimension.evidenceIds),
+    ...assessment.roleCoverage.flatMap((coverage) => coverage.evidenceIds)
+  ])];
   if (assessment.evidenceAnchors.length === 0) return invalid('role-anchor-empty');
   return { ok: true, value };
 }
