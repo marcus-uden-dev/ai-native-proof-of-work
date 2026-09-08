@@ -85,12 +85,11 @@ export function validateReview(value, mode, catalogue) {
 
 function applyStableEvidenceFloor(dimensions, evidenceIds) {
   for (const dimension of dimensions) {
-    if (dimension.state !== 'not_evidenced') continue;
     const configuredEvidence = (stableDirectEvidence[dimension.id] ?? []).filter((id) => evidenceIds.has(id));
     if (configuredEvidence.length === 0) continue;
     dimension.state = 'direct';
     dimension.evidenceIds = [...new Set([...(dimension.evidenceIds ?? []), ...configuredEvidence])];
-    dimension.explanation = `${dimension.explanation} The public evidence catalogue contains direct support for this stable capability.`;
+    dimension.explanation = `The public evidence catalogue directly supports ${dimension.label}. Any role-specific domain gap is assessed separately from this stable capability.`;
     dimension.verificationQuestion = '';
   }
 }
