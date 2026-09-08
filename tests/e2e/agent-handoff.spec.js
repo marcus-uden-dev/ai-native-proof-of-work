@@ -122,7 +122,21 @@ test('the existing repository review panel renders a cited AI role assessment wh
           evidenceAnchors: ['cv-product-operations'],
           interviewQuestions: [],
           limitations: ['This is public evidence coverage, not a hiring decision.']
-        }
+        },
+        evidenceSources: [
+          {
+            id: 'cv-product-operations',
+            label: 'CV: product operations and workflow design',
+            sourceClass: 'employment',
+            url: 'https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/'
+          },
+          {
+            id: 'unknown-evidence-id',
+            label: 'Decision log: workflow evidence',
+            sourceClass: 'public-repository',
+            url: 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/decision-log.json'
+          }
+        ]
       })
     });
   });
@@ -134,9 +148,10 @@ test('the existing repository review panel renders a cited AI role assessment wh
   await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
   await expect(page.locator('.experience-fit-radar__svg')).toBeVisible();
   await expect(page.getByText('Direct evidence')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Role-specific needs detected' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Evidence limits' })).toBeVisible();
-  await expect(page.getByText('Evidence link unavailable.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'CV: product operations and workflow design ↗' })).toHaveAttribute('href', 'https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/');
+  await expect(page.getByRole('link', { name: 'Decision log: workflow evidence ↗' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/decision-log.json');
 });
 
 test('repository interview keeps the preview typography and full-width brown surface', async ({ page }) => {
