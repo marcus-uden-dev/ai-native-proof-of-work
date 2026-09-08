@@ -349,7 +349,9 @@ if (promptGenerator) {
       });
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || 'Review unavailable');
-      const catalogue = await getCatalogue();
+      const catalogue = Array.isArray(payload.evidenceSources)
+        ? new Map(payload.evidenceSources.map((source) => [source.id, source]))
+        : await getCatalogue();
       apiReviewOutput.append(payload.kind === 'role'
         ? renderRole(payload.assessment, catalogue)
         : renderQuestion(payload.answer, catalogue));
