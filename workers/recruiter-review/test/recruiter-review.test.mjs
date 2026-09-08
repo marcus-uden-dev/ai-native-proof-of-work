@@ -70,7 +70,7 @@ test('treats indexed repository excerpts as untrusted data', () => {
 test('separates general capability evidence from role-domain evidence', () => {
   const instructions = composeSystemInstructions({ mode: 'role', catalogue });
   assert.match(instructions, /Do not mark a stable dimension as not_evidenced when the catalogue supports the general capability/);
-  assert.match(instructions, /Use transferable when the capability is evidenced but the role-specific domain is not/);
+  assert.match(instructions, /Use transferable only when the cited evidence supports an adjacent capability rather than the stable dimension itself/);
 });
 
 test('provides dimension-specific evidence anchors for role assessment', () => {
@@ -79,7 +79,7 @@ test('provides dimension-specific evidence anchors for role assessment', () => {
   assert.match(instructions, /workflow-design: cv-product-operations, cv-customer-journey, job-agent-decisions, recursive-workflow-controls/);
   assert.match(instructions, /ai-native-execution: job-agent-decisions, recursive-workflow-controls, decision-log-traceability/);
   assert.match(instructions, /evidence-synthesis: cv-customer-journey, decision-log-traceability, recursive-workflow-controls/);
-  assert.match(instructions, /If a configured direct-evidence anchor supports a stable dimension, do not return not_evidenced/);
+  assert.match(instructions, /If a configured direct-evidence anchor supports a stable dimension, cite it and use direct/);
 });
 
 test('preserves direct product, harness, and AI-native evidence across role domains', async () => {
@@ -97,8 +97,8 @@ test('preserves direct product, harness, and AI-native evidence across role doma
           summary: 'A role-domain assessment with stable candidate evidence.',
           roleNeeds: ['Payment product delivery'],
           dimensions: [
-            { id: 'product-framing', label: 'Product framing', state: 'not_evidenced', explanation: 'The payment domain is not shown.', evidenceIds: [], verificationQuestion: 'Ask about payment product framing.' },
-            { id: 'workflow-design', label: 'Workflow design', state: 'not_evidenced', explanation: 'The payment domain is not shown.', evidenceIds: [], verificationQuestion: 'Ask about payment workflow design.' },
+            { id: 'product-framing', label: 'Product framing', state: 'transferable', explanation: 'The payment domain is not shown.', evidenceIds: [], verificationQuestion: 'Ask about payment product framing.' },
+            { id: 'workflow-design', label: 'Workflow design', state: 'transferable', explanation: 'The payment domain is not shown.', evidenceIds: [], verificationQuestion: 'Ask about payment workflow design.' },
             { id: 'ai-native-execution', label: 'AI-native execution', state: 'not_evidenced', explanation: 'The payment domain is not shown.', evidenceIds: [], verificationQuestion: 'Ask about AI-native payment execution.' },
             ...['evidence-synthesis', 'operational-collaboration', 'technical-delivery', 'business-prioritisation'].map((id) => ({
               id,
