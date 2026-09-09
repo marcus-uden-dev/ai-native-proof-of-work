@@ -156,7 +156,7 @@ test('the existing repository review panel renders a cited AI role assessment wh
   await page.getByRole('button', { name: 'Review with AI' }).click();
   await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
   await expect(page.locator('.experience-fit-radar__svg')).toBeVisible();
-  await expect(page.locator('.experience-fit-track').getByText('Direct evidence')).toBeVisible();
+  await expect(page.locator('.experience-fit-track .evidence-state--direct')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Role-specific needs detected' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
   await expect(page.getByText('API layer design and integration')).toBeVisible();
@@ -202,6 +202,9 @@ test('a saved smoke test renders through the live recruiter-review interface', a
   await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
   await expect(page.getByText('Saved smoke test: Spotify — Customer Service Platform. Public evidence coverage only.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Source role listing ↗' })).toHaveAttribute('href', 'https://jobs.lever.co/spotify/7f0a8faa-f4f5-4db9-9f51-4101d6a29b34');
+  await expect(page.getByText('Role reviewed: Spotify — Customer Service Platform')).toBeVisible();
+  await expect(page.locator('.experience-fit-radar__axis-label')).toHaveCount(7);
+  await expect(page.locator('.experience-fit-state-bar')).toHaveCount(12);
   await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'strengthen the API layer connecting support systems' })).toBeVisible();
   await expect(page.locator('.experience-fit-track')).toHaveCount(7);

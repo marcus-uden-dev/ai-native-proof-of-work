@@ -240,7 +240,7 @@ if (promptGenerator) {
     };
     const svg = document.createElementNS(svgNamespace, 'svg');
     svg.classList.add('experience-fit-radar__svg');
-    svg.setAttribute('viewBox', '0 0 260 260');
+    svg.setAttribute('viewBox', '-70 -38 400 340');
     svg.setAttribute('role', 'img');
     svg.setAttribute('aria-label', `Experience Fit Map. ${dimensions.map((dimension) => `${dimension.label}: ${stateLabel(dimension.state)}`).join('. ')}`);
 
@@ -260,6 +260,24 @@ if (promptGenerator) {
       axis.setAttribute('y2', axisY);
       svg.append(axis);
     });
+    dimensions.forEach((dimension, index) => {
+      const [labelX, labelY] = pointFor(index, 128);
+      const label = document.createElementNS(svgNamespace, 'text');
+      const lines = dimension.label.split(' ');
+      const anchor = labelX > center + 12 ? 'start' : labelX < center - 12 ? 'end' : 'middle';
+      label.setAttribute('class', 'experience-fit-radar__axis-label');
+      label.setAttribute('x', labelX);
+      label.setAttribute('y', labelY - ((lines.length - 1) * 4));
+      label.setAttribute('text-anchor', anchor);
+      lines.forEach((line, lineIndex) => {
+        const row = document.createElementNS(svgNamespace, 'tspan');
+        row.setAttribute('x', labelX);
+        if (lineIndex > 0) row.setAttribute('dy', '10');
+        row.textContent = line;
+        label.append(row);
+      });
+      svg.append(label);
+    });
     const evidence = document.createElementNS(svgNamespace, 'polygon');
     evidence.setAttribute('class', 'experience-fit-radar__evidence');
     evidence.setAttribute('points', dimensions.map((dimension, index) => pointFor(index, radii[dimension.state]).join(',')).join(' '));
@@ -274,6 +292,21 @@ if (promptGenerator) {
       svg.append(marker);
     });
     return svg;
+  }
+
+  function renderEvidenceStateBar(state, label) {
+    const group = document.createElement('div');
+    group.className = 'experience-fit-state-indicator';
+    const description = document.createElement('p');
+    description.className = 'experience-fit-state-indicator__label';
+    description.textContent = `Evidence state: ${stateLabel(state)}`;
+    const bar = document.createElement('div');
+    bar.className = `experience-fit-state-bar experience-fit-state-bar--${state}`;
+    bar.setAttribute('role', 'img');
+    bar.setAttribute('aria-label', `${label}: ${stateLabel(state)}. This is a semantic evidence state, not a score.`);
+    for (let index = 0; index < 4; index += 1) bar.append(document.createElement('span'));
+    group.append(description, bar);
+    return group;
   }
 
   function renderRoleCoverage(roleCoverage, catalogue) {
@@ -298,14 +331,9 @@ if (promptGenerator) {
       const state = document.createElement('p');
       state.className = `evidence-state evidence-state--${coverage.state}`;
       state.textContent = stateLabel(coverage.state);
-      const bar = document.createElement('div');
-      bar.className = `role-evidence-bar role-evidence-bar--${coverage.state}`;
-      bar.setAttribute('role', 'img');
-      bar.setAttribute('aria-label', `${coverage.roleNeed}: ${stateLabel(coverage.state)}`);
-      for (let index = 0; index < 4; index += 1) bar.append(document.createElement('span'));
       const explanation = document.createElement('p');
       explanation.textContent = coverage.explanation;
-      item.append(roleNeed, capability, state, bar, explanation);
+      item.append(roleNeed, capability, state, renderEvidenceStateBar(coverage.state, coverage.roleNeed), explanation);
       addEvidenceLinks(item, coverage.evidenceIds, catalogue);
       if (coverage.verificationQuestion) {
         const question = document.createElement('p');
@@ -319,7 +347,7 @@ if (promptGenerator) {
     return section;
   }
 
-  function renderRole(assessment, catalogue) {
+  function renderRole(assessment, catalogue, { roleTitle = 'Submitted role description' } = {}) {
     const fragment = document.createDocumentFragment();
     const summary = document.createElement('p');
     summary.className = 'review-summary';
@@ -333,7 +361,10 @@ if (promptGenerator) {
     const title = document.createElement('p');
     title.className = 'review-map-label';
     title.textContent = 'Experience Fit Map — public evidence coverage, not a candidate score.';
-    map.append(title);
+    const reviewedRole = document.createElement('p');
+    reviewedRole.className = 'reviewed-role';
+    reviewedRole.textContent = `Role reviewed: ${roleTitle}`;
+    map.append(title, reviewedRole);
     const radar = document.createElement('figure');
     radar.className = 'experience-fit-radar';
     radar.append(renderSemanticRadar(assessment.dimensions));
@@ -353,7 +384,7 @@ if (promptGenerator) {
       state.textContent = stateLabel(dimension.state);
       const explanation = document.createElement('p');
       explanation.textContent = dimension.explanation;
-      track.append(heading, state, explanation);
+      track.append(heading, state, renderEvidenceStateBar(dimension.state, dimension.label), explanation);
       addEvidenceLinks(track, dimension.evidenceIds, catalogue);
       if (dimension.verificationQuestion) {
         const question = document.createElement('p');
@@ -398,7 +429,7 @@ if (promptGenerator) {
         ? new Map(payload.evidenceSources.map((source) => [source.id, source]))
         : await getCatalogue();
       apiReviewOutput.append(payload.kind === 'role'
-        ? renderRole(payload.assessment, catalogue)
+        ? renderRole(payload.assessment, catalogue, { roleTitle: 'Submitted role description' })
         : renderQuestion(payload.answer, catalogue));
       apiReviewStatus.textContent = mode === 'role'
         ? 'Role assessment based on published evidence.'
@@ -440,7 +471,7 @@ if (promptGenerator) {
         source.append(link);
         apiReviewOutput.append(source);
       }
-      apiReviewOutput.append(renderRole(snapshot.assessment, catalogue));
+      apiReviewOutput.append(renderRole(snapshot.assessment, catalogue, { roleTitle: snapshot.title }));
       apiReviewStatus.textContent = `Saved smoke test: ${snapshot.title}. Public evidence coverage only.`;
     } catch (loadError) {
       apiReviewStatus.textContent = loadError.message;
