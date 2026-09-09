@@ -6,6 +6,7 @@ test('the first viewport establishes the hiring case and conversion path', async
   await expect(page.getByText('Experienced individual contributor')).toBeVisible();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('clear, buildable product work');
   await expect(page.getByText('Operational depth. Product thinking. AI-native execution.')).toBeVisible();
+  await expect(page.getByText('Product portfolio · CV · interview companion', { exact: true })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Download CV' }).first()).toBeInViewport();
   await expect(page.getByRole('link', { name: 'Contact' })).toBeInViewport();
 });

@@ -159,6 +159,21 @@ h3 {
   font: 700 0.72rem/1 var(--mono);
 }
 
+.wordmark__copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.wordmark__name {
+  font-weight: 720;
+}
+
+.wordmark__descriptor {
+  color: var(--muted);
+  font: 600 0.66rem/1.2 var(--mono);
+  letter-spacing: 0.03em;
+}
+
 .nav-list {
   display: flex;
   margin: 0;
@@ -2610,6 +2625,10 @@ h3 {
   .masthead__inner {
     flex-wrap: wrap;
     padding-block: 1rem;
+  }
+
+  .wordmark__descriptor {
+    max-width: 17rem;
   }
 
   nav {
