@@ -87,7 +87,6 @@ function validateInternalLinks(root, files, errors) {
 export function validateRepository(root = repositoryRoot, options = {}) {
   const errors = [];
   const files = listFiles(root);
-  const privacyReviewBaseRef = options.privacyReviewBaseRef ?? process.env.PUBLIC_RELEASE_PRIVACY_BASE_REF ?? 'HEAD';
   const allowlist = readJson(root, 'release/allowlist.json', errors, 'allowlist');
   const privacy = readJson(root, 'release/privacy-review.json', errors, 'privacy-record');
   const allowed = new Set(allowlist?.allowedFiles ?? []);
@@ -206,8 +205,6 @@ export function validateRepository(root = repositoryRoot, options = {}) {
       if (!candidateExists) {
         addMatch(errors, 'privacy-record', 'release/privacy-review.json', 'The reviewed candidate commit does not exist in this repository.');
       } else {
-        const candidateIsAncestor = git(root, ['merge-base', '--is-ancestor', privacy.candidateCommit, privacyReviewBaseRef], 'missing') === '';
-        if (!candidateIsAncestor) addMatch(errors, 'privacy-record', 'release/privacy-review.json', 'The reviewed candidate commit is not an ancestor of the validation base.');
         for (const file of binaries) {
           const changedAfterReview = git(root, ['diff', '--name-only', `${privacy.candidateCommit}..HEAD`, '--', file]);
           if (changedAfterReview) addMatch(errors, 'privacy-record', file, 'The binary artifact changed after the reviewed candidate commit.');

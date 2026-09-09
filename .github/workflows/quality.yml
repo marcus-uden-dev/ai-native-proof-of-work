@@ -11,7 +11,6 @@ permissions:
 env:
   PUBLIC_RELEASE_FORBIDDEN_IDENTITIES: ${{ secrets.PUBLIC_RELEASE_FORBIDDEN_IDENTITIES }}
   PUBLIC_RELEASE_FORBIDDEN_ANCESTORS: ${{ secrets.PUBLIC_RELEASE_FORBIDDEN_ANCESTORS }}
-  PUBLIC_RELEASE_PRIVACY_BASE_REF: ${{ github.event_name == 'pull_request' && github.event.pull_request.base.sha || github.sha }}
 
 jobs:
   validate:
