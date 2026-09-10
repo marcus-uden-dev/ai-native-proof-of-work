@@ -24,6 +24,37 @@ const baseEnv = {
   RECRUITER_REVIEW_RATE_LIMITER: { limit: async () => ({ success: true }) }
 };
 
+function enquiryRequest(body, origin = 'https://marcus-uden-dev.github.io') {
+  return new Request('https://review.example/api/recruiter-enquiry', {
+    method: 'POST',
+    headers: { 'content-type': 'application/json', origin },
+    body: JSON.stringify(body)
+  });
+}
+
+function createDatabase({ changes = 1 } = {}) {
+  const calls = [];
+  return {
+    calls,
+    prepare(sql) {
+      return {
+        bind(...values) {
+          return {
+            async run() {
+              calls.push({ sql, values });
+              return { meta: { changes } };
+            }
+          };
+        },
+        async run() {
+          calls.push({ sql, values: [] });
+          return { meta: { changes } };
+        }
+      };
+    }
+  };
+}
+
 test('role capability taxonomy only names available public evidence hints', () => {
   const catalogueIds = new Set(experienceFitCatalogue.map(({ id }) => id));
   for (const capability of roleCapabilityTaxonomy) {
@@ -383,12 +414,87 @@ test('rejects untrusted origins, oversized input, rate limits, and invented evid
 
   const invalidResult = await worker.fetch(request({ mode: 'question', clientMode: 'auto', input: 'Question?' }), baseEnv);
   assert.equal(invalidResult.status, 502);
+  assert.equal((await invalidResult.clone().json()).code, 'review_validation_failed');
 
   const rateLimited = await worker.fetch(request({ mode: 'question', clientMode: 'auto', input: 'Question?' }), {
     ...baseEnv,
     RECRUITER_REVIEW_RATE_LIMITER: { limit: async () => ({ success: false }) }
   });
   assert.equal(rateLimited.status, 429);
+});
+
+test('returns a safe and specific response when Groq is rate limited or times out', async () => {
+  const rateLimited = new Error('Provider rate limited');
+  rateLimited.status = 429;
+  const rateWorker = createRecruiterReviewWorker({ catalogue, provider: { generateStructuredReview: async () => { throw rateLimited; } } });
+  const rateResponse = await rateWorker.fetch(request({ mode: 'question', clientMode: 'auto', input: 'Question?' }), baseEnv);
+  assert.equal(rateResponse.status, 429);
+  assert.deepEqual(await rateResponse.json(), {
+    status: 429,
+    code: 'provider_rate_limited',
+    error: 'The AI review service is busy. Please try again in a moment.'
+  });
+
+  const timeout = new Error('Aborted');
+  timeout.name = 'AbortError';
+  const timeoutWorker = createRecruiterReviewWorker({ catalogue, provider: { generateStructuredReview: async () => { throw timeout; } } });
+  const timeoutResponse = await timeoutWorker.fetch(request({ mode: 'question', clientMode: 'auto', input: 'Question?' }), baseEnv);
+  assert.equal(timeoutResponse.status, 504);
+  assert.equal((await timeoutResponse.json()).code, 'review_timeout');
+});
+
+test('stores a consented recruiter enquiry, sends only to Marcus, and rejects missing consent', async () => {
+  const db = createDatabase();
+  const sent = [];
+  const worker = createRecruiterReviewWorker();
+  const body = {
+    submissionId: '123e4567-e89b-12d3-a456-426614174000',
+    mode: 'role',
+    input: 'Role: Product operations lead',
+    name: 'Recruiter Example',
+    email: 'recruiter@example.com',
+    organisation: 'Example Co',
+    consent: true
+  };
+  const response = await worker.fetch(enquiryRequest(body), {
+    ...baseEnv,
+    RECRUITER_ENQUIRIES: db,
+    FOLLOW_UP_FROM: 'notifications@example.test',
+    EMAIL: { send: async (message) => sent.push(message) }
+  });
+  assert.equal(response.status, 202);
+  assert.deepEqual(await response.json(), { accepted: true });
+  assert.equal(sent.length, 1);
+  assert.equal(sent[0].to, 'marcus.uden.dev@gmail.com');
+  assert.match(sent[0].text, /recruiter@example\.com/);
+  assert.ok(db.calls.some(({ sql }) => sql.includes('INSERT OR IGNORE INTO recruiter_enquiries')));
+  assert.ok(db.calls.some(({ sql, values }) => sql.includes('notification_status') && values[0] === 'sent'));
+
+  const rejected = await worker.fetch(enquiryRequest({ ...body, submissionId: '123e4567-e89b-12d3-a456-426614174001', consent: false }), { ...baseEnv, RECRUITER_ENQUIRIES: db });
+  assert.equal(rejected.status, 400);
+  assert.match((await rejected.json()).error, /Consent is required/);
+});
+
+test('keeps the enquiry idempotent and never sends a duplicate notification', async () => {
+  const worker = createRecruiterReviewWorker();
+  const sent = [];
+  const response = await worker.fetch(enquiryRequest({
+    submissionId: '123e4567-e89b-12d3-a456-426614174002',
+    mode: 'question',
+    input: 'What evidence exists?',
+    name: '',
+    email: 'recruiter@example.com',
+    organisation: '',
+    consent: true
+  }), {
+    ...baseEnv,
+    RECRUITER_ENQUIRIES: createDatabase({ changes: 0 }),
+    FOLLOW_UP_FROM: 'notifications@example.test',
+    EMAIL: { send: async (message) => sent.push(message) }
+  });
+  assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), { accepted: true, duplicate: true });
+  assert.equal(sent.length, 0);
 });
 
 test('fills missing role dimensions as safe evidence gaps', async () => {

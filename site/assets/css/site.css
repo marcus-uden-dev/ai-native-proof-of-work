@@ -1071,6 +1071,38 @@ h3 {
   display: none;
 }
 
+.repository-interview .recruiter-follow-up {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .recruiter-follow-up[hidden] {
+  display: none;
+}
+
+.repository-interview .follow-up-fields {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.repository-interview .follow-up-fields .generator-input {
+  min-height: auto;
+  padding: 0.75rem;
+}
+
+.repository-interview .follow-up-consent {
+  color: var(--ri-panel-text);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.repository-interview .follow-up-consent input {
+  accent-color: var(--ri-gold);
+}
+
 .repository-interview .review-summary {
   margin: 0 0 1rem;
   color: var(--ri-panel-text);

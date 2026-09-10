@@ -21,6 +21,22 @@
       }
     }
   ],
+  "d1_databases": [
+    {
+      "binding": "RECRUITER_ENQUIRIES",
+      "database_name": "recruiter-review-enquiries",
+      "database_id": "97e80b9c-ddf6-440f-be7e-f9e9689a991c"
+    }
+  ],
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "destination_address": "marcus.uden.dev@gmail.com"
+    }
+  ],
+  "triggers": {
+    "crons": ["15 3 * * *"]
+  },
   "observability": {
     "enabled": true,
     "head_sampling_rate": 1
