@@ -3,7 +3,7 @@
 This Worker is the secure API layer for the existing Repository Interview panel on GitHub Pages.
 
 ```text
-Recruiter textbox → Cloudflare Worker → Groq
+Recruiter textbox → Cloudflare Worker → Groq → Gemini fallback
 ```
 
 The Worker adds the correct server-side analysis contract for a focused question or role description. It validates model output against the published evidence catalogue before returning it.
@@ -18,7 +18,9 @@ From the repository root, run:
 npm run review-api:provision
 ```
 
-The command opens Cloudflare login if it is needed, then asks for `GROQ_API_KEY` once. It deploys the Worker, stores the key as a Cloudflare secret, and writes the returned Workers URL into the static-site configuration. The key never enters Git.
+The command opens Cloudflare login if it is needed, then asks for `GROQ_API_KEY` and an optional `GEMINI_API_KEY`. Groq remains the primary provider. Gemini is tried only after a timeout, quota/rate-limit, or provider-service failure. The command deploys the Worker, stores supplied keys as Cloudflare secrets, and writes the returned Workers URL into the static-site configuration. Keys never enter Git.
+
+If both available providers report exhausted credits, the site shows a friendly credit-exhaustion message and keeps the copyable prompt available. It never show raw provider errors or secret values.
 
 After provisioning, deploy the changed GitHub Pages configuration through the normal `main` branch workflow.
 
@@ -41,7 +43,7 @@ npx --yes wrangler@4.129.0 deploy --cwd workers/recruiter-review --dry-run --sec
 
 ## Boundaries
 
-- The browser does not receive `GROQ_API_KEY`.
+- The browser does not receive `GROQ_API_KEY` or `GEMINI_API_KEY`.
 - Only listed public origins can call the Worker.
 - The Worker accepts only `POST /api/recruiter-review`.
 - `POST /api/recruiter-enquiry` requires explicit consent, contact email, and an idempotency ID.

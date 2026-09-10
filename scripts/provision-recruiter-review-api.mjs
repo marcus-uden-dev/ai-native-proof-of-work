@@ -21,11 +21,12 @@ if (whoami.exitCode !== 0 || /not authenticated/i.test(whoami.output)) {
 
 const key = await readSecret('Paste GROQ_API_KEY: ');
 if (!key) throw new Error('GROQ_API_KEY cannot be empty. No deployment was made.');
+const geminiKey = await readSecret('Paste GEMINI_API_KEY (press Enter to skip): ', { optional: true });
 
 const directory = await mkdtemp(join(tmpdir(), 'recruiter-review-'));
 const secretsPath = join(directory, '.env');
 try {
-  await writeFile(secretsPath, `GROQ_API_KEY=${JSON.stringify(key)}\n`, { mode: 0o600 });
+  await writeFile(secretsPath, `GROQ_API_KEY=${JSON.stringify(key)}\n${geminiKey ? `GEMINI_API_KEY=${JSON.stringify(geminiKey)}\n` : ''}`, { mode: 0o600 });
   const deployed = await run(npx, npxArgs([...wrangler, 'deploy', '--cwd', workerDirectory, '--secrets-file', secretsPath]));
   const endpoint = deployed.output.match(/https:\/\/[^\s]+\.workers\.dev/)?.[0];
   if (!endpoint) throw new Error('Worker deployed but no workers.dev URL was found. Copy the URL from Wrangler output into site/assets/js/recruiter-review-config.js.');
@@ -36,9 +37,9 @@ try {
   await rm(directory, { recursive: true, force: true });
 }
 
-async function readSecret(prompt) {
+async function readSecret(prompt, { optional = false } = {}) {
   if (!process.stdin.isTTY || !process.stdin.setRawMode) {
-    throw new Error('GROQ_API_KEY must be entered from an interactive terminal.');
+    throw new Error('API keys must be entered from an interactive terminal.');
   }
 
   process.stdout.write(prompt);
