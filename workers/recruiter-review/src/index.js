@@ -1,4 +1,6 @@
 import { experienceFitCatalogue } from './catalog.js';
+import { publicProviderFailure, providerErrorCategory } from './errors.js';
+import { notifyMarcus, purgeExpiredEnquiries, saveEnquiry, updateNotificationStatus, validateEnquiryRequest } from './enquiry.js';
 import { createGroqProvider } from './provider.js';
 import { composeSystemInstructions, composeUserInput } from './prompt.js';
 import { loadRepositoryEvidence } from './repository-index.js';
@@ -17,7 +19,10 @@ export function createRecruiterReviewWorker(options = {}) {
       const cors = corsHeaders(origin, env.ALLOWED_ORIGINS);
       if (origin && !cors) return json({ error: 'Origin is not allowed.' }, 403);
       if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: cors ?? {} });
-      if (request.method !== 'POST' || new URL(request.url).pathname !== '/api/recruiter-review') return json({ error: 'Not found.' }, 404, cors);
+      if (request.method !== 'POST') return json({ error: 'Not found.' }, 404, cors);
+      const path = new URL(request.url).pathname;
+      if (path === '/api/recruiter-enquiry') return handleEnquiry(request, env, cors);
+      if (path !== '/api/recruiter-review') return json({ error: 'Not found.' }, 404, cors);
       if (!env.GROQ_API_KEY) return json({ error: 'The review service is not configured yet. Use the copyable prompt instead.' }, 503, cors);
 
       const allowed = await env.RECRUITER_REVIEW_RATE_LIMITER?.limit({ key: request.headers.get('CF-Connecting-IP') || 'unknown' });
@@ -48,15 +53,13 @@ export function createRecruiterReviewWorker(options = {}) {
         const validated = validateReview(review, parsed.value.mode, reviewCatalogue);
         if (!validated.ok) {
           console.warn('Recruiter review validation failure', { mode: parsed.value.mode, reason: validated.reason });
-          return json({ error: 'The review could not be validated against public evidence. Use the copyable prompt instead.' }, 502, cors);
+          return json({ code: 'review_validation_failed', error: 'The review could not be validated against public evidence. Use the copyable prompt instead.' }, 502, cors);
         }
         return json({ ...validated.value, evidenceSources: citedEvidenceSources(validated.value, reviewCatalogue) }, 200, cors);
       } catch (error) {
-        console.error('Recruiter review provider failure', {
-          status: Number.isInteger(error?.status) ? error.status : null,
-          category: providerErrorCategory(error?.detail)
-        });
-        return json({ error: 'The review service is temporarily unavailable. Use the copyable prompt instead.' }, 503, cors);
+        const failure = publicProviderFailure(error);
+        console.error('Recruiter review provider failure', { status: Number.isInteger(error?.status) ? error.status : null, category: providerErrorCategory(error) });
+        return json(failure, failure.status, cors);
       } finally {
         clearTimeout(timer);
       }
@@ -64,13 +67,25 @@ export function createRecruiterReviewWorker(options = {}) {
   };
 }
 
-function providerErrorCategory(detail) {
-  const message = typeof detail === 'string' ? detail.toLowerCase() : '';
-  if (message.includes('json schema')) return 'json-schema';
-  if (message.includes('context') || message.includes('token')) return 'context-or-token-limit';
-  if (message.includes('model')) return 'model';
-  if (message.includes('rate limit')) return 'rate-limit';
-  return message ? 'other-provider-error' : 'no-provider-detail';
+async function handleEnquiry(request, env, cors) {
+  if (!env.RECRUITER_ENQUIRIES) return json({ error: 'Follow-up is not configured yet.' }, 503, cors);
+  const allowed = await env.RECRUITER_REVIEW_RATE_LIMITER?.limit({ key: request.headers.get('CF-Connecting-IP') || 'unknown' });
+  if (!allowed?.success) return json({ error: 'Too many requests. Try again shortly.' }, 429, cors);
+  let payload;
+  try { payload = await request.json(); } catch { return json({ error: 'Request body must be valid JSON.' }, 400, cors); }
+  const parsed = validateEnquiryRequest(payload);
+  if (!parsed.ok) return json({ error: parsed.message }, parsed.status, cors);
+  await purgeExpiredEnquiries(env.RECRUITER_ENQUIRIES);
+  const created = await saveEnquiry(env.RECRUITER_ENQUIRIES, parsed.value);
+  if (!created) return json({ accepted: true, duplicate: true }, 200, cors);
+  try {
+    const status = await notifyMarcus(env.EMAIL, env.FOLLOW_UP_FROM, parsed.value);
+    await updateNotificationStatus(env.RECRUITER_ENQUIRIES, parsed.value.id, status);
+  } catch {
+    console.error('Recruiter enquiry notification failure', { category: 'email-send-failed' });
+    await updateNotificationStatus(env.RECRUITER_ENQUIRIES, parsed.value.id, 'failed');
+  }
+  return json({ accepted: true }, 202, cors);
 }
 
 function citedEvidenceSources(review, catalogue) {
@@ -100,4 +115,9 @@ function json(payload, status, headers = {}) {
   return new Response(JSON.stringify(payload), { status, headers: { ...headers, 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' } });
 }
 
-export default createRecruiterReviewWorker();
+export default {
+  ...createRecruiterReviewWorker(),
+  async scheduled(_event, env, context) {
+    context.waitUntil(purgeExpiredEnquiries(env.RECRUITER_ENQUIRIES));
+  }
+};

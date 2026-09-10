@@ -1264,7 +1264,15 @@
       "label": "site/index.html · excerpt 6",
       "sourceClass": "public-repository",
       "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/index.html",
-      "excerpt": "prompt ↗ Ask about Marcus or paste a job description The generator identifies a question or role description, then uses the matching evidence contract. Choose a mode if the detection is not right. Auto-detect Ask about Marcus Assess a role Mode: auto-detect. Automation judgment Prioritization Research judgment Execution Decision making Human + AI Reusable systems Risk governance Role-fit example Generate review prompt Open ChatGPT ↗ Clear AI review Your review prompt Paste this prompt into ChatGPT, Claude, or another AI assistant. It is tailored either to a focused evidence question or to a role assessment. Copy prompt Open GitHub ↗ Open ChatGPT ↗ JavaScript is disabled. Read the role-assessment prompt or read the evidence-question prompt and copy it manually. Enough signal for a conversation? Let us discuss the work. Start with the CV, or send a short interview request. marcus.uden.dev@gmail.com Download CV Read CV facts Request an interview Copy email Marcus Udén · Product judgment, execution, and AI-native leverage. marcus.uden.dev@gmail.com · GitHub"
+      "excerpt": "prompt ↗ Ask about Marcus or paste a job description The generator identifies a question or role description, then uses the matching evidence contract. Choose a mode if the detection is not right. Auto-detect Ask about Marcus Assess a role Mode: auto-detect. Automation judgment Prioritization Research judgment Execution Decision making Human + AI Reusable systems Risk governance Role-fit example Generate review prompt Open ChatGPT ↗ Clear AI review Discuss this role or question Optional. Add your details only if you want Marcus to follow up. Your submitted text and contact details are stored for up to 90 days, are not public, and are used only for this follow-up. Name (optional) Work email Organisation (optional) I agree that Marcus may store this submission and contact me about this role or question. Request follow-up Your review prompt Paste this prompt into ChatGPT, Claude, or another AI assistant. It is tailored either to a focused evidence question or to a role assessment. Copy prompt Open GitHub ↗ Open ChatGPT ↗ JavaScript is disabled. Read the role-assessment prompt or read the evidence-question prompt and copy it manually. Enough signal for a conversation? Let us discuss"
+    },
+    {
+      "id": "repo-aef9cf1e2772f383-7",
+      "path": "site/index.html",
+      "label": "site/index.html · excerpt 7",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/index.html",
+      "excerpt": "the work. Start with the CV, or send a short interview request. marcus.uden.dev@gmail.com Download CV Read CV facts Request an interview Copy email Marcus Udén · Product judgment, execution, and AI-native leverage. marcus.uden.dev@gmail.com · GitHub"
     },
     {
       "id": "repo-e96f4e1db07297b0-1",

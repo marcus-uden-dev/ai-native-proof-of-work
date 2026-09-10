@@ -44,7 +44,7 @@ test('homepage generates a copyable repository interview prompt without embeddin
   expect(promptResponse?.status()).toBe(200);
   await expect(promptPage.getByRole('heading', { name: 'Job description prompt' })).toBeVisible();
   await expect(promptPage.getByText('Paste a non-confidential job description here')).toBeVisible();
-  const generatorActions = page.locator('.generator-actions');
+  const generatorActions = page.getByRole('button', { name: 'Generate review prompt' }).locator('..');
   await expect(generatorActions.getByRole('button', { name: 'Generate review prompt' })).toBeVisible();
   await expect(generatorActions.getByRole('link', { name: 'Open ChatGPT' })).toHaveAttribute('href', 'https://chatgpt.com/');
   const resultActions = page.locator('.button-row');
@@ -149,6 +149,16 @@ test('the existing repository review panel renders a cited AI role assessment wh
       })
     });
   });
+  await page.route('**/api/recruiter-enquiry', async (route) => {
+    const request = route.request();
+    expect(request.method()).toBe('POST');
+    const payload = await request.postDataJSON();
+    expect(payload.mode).toBe('role');
+    expect(payload.email).toBe('recruiter@example.com');
+    expect(payload.consent).toBe(true);
+    expect(payload.submissionId).toMatch(/^[a-f0-9-]{36}$/i);
+    await route.fulfill({ contentType: 'application/json', status: 202, body: JSON.stringify({ accepted: true }) });
+  });
 
   await page.goto('/');
   await expect(page.getByRole('button', { name: 'Review with AI' })).toBeVisible();
@@ -163,6 +173,12 @@ test('the existing repository review panel renders a cited AI role assessment wh
   await expect(page.getByRole('heading', { name: 'Evidence limits' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'CV: product operations and workflow design ↗' }).first()).toHaveAttribute('href', 'https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/');
   await expect(page.getByRole('link', { name: 'Decision log: workflow evidence ↗' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/decision-log.json');
+  await expect(page.getByRole('heading', { name: 'Discuss this role or question' })).toBeVisible();
+  await expect(page.getByText(/stored for up to 90 days/)).toBeVisible();
+  await page.getByLabel('Work email').fill('recruiter@example.com');
+  await page.getByLabel(/I agree that Marcus may store this submission/).check();
+  await page.getByRole('button', { name: 'Request follow-up' }).click();
+  await expect(page.locator('#recruiterFollowUpStatus')).toContainText('Follow-up request saved.');
   await page.setViewportSize({ width: 390, height: 844 });
   expect(await page.locator('.role-coverage__list').evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length)).toBe(1);
 });
@@ -209,6 +225,20 @@ test('a saved smoke test renders through the live recruiter-review interface', a
   await expect(page.getByRole('heading', { name: 'strengthen the API layer connecting support systems' })).toBeVisible();
   await expect(page.locator('.experience-fit-track')).toHaveCount(7);
   await expect(page.locator('.role-coverage__item')).toHaveCount(5);
+});
+
+test('additional saved smoke tests render distinct role-specific coverage', async ({ page }) => {
+  const cases = [
+    ['saviynt-staff-product-operations', 'Saviynt — Staff Product Operations Manager', 'AI workflow experience'],
+    ['capital-product-operations', 'capital.com — Product Operations Manager', 'coordinating platform changes with a payment provider']
+  ];
+  for (const [slug, title, roleNeed] of cases) {
+    await page.goto(`/?smoke=${slug}#ai-review`);
+    await expect(page.getByText(`Saved smoke test: ${title}. Public evidence coverage only.`)).toBeVisible();
+    await expect(page.getByText(`Role reviewed: ${title}`)).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: roleNeed })).toBeVisible();
+  }
 });
 
 test('repository interview rejects empty input and keeps the static prompt fallback', async ({ browser, page: activePage }) => {

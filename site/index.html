@@ -322,6 +322,21 @@
                 <p class="result-note" id="apiReviewStatus" aria-live="polite"></p>
                 <div id="apiReviewOutput"></div>
               </section>
+              <section class="recruiter-follow-up" id="recruiterFollowUp" aria-labelledby="recruiterFollowUpTitle" hidden>
+                <h3 class="result-title" id="recruiterFollowUpTitle">Discuss this role or question</h3>
+                <p class="result-note">Optional. Add your details only if you want Marcus to follow up. Your submitted text and contact details are stored for up to 90 days, are not public, and are used only for this follow-up.</p>
+                <div class="follow-up-fields">
+                  <label class="input-label" for="recruiterName">Name <span aria-hidden="true">(optional)</span></label>
+                  <input class="generator-input" id="recruiterName" name="name" autocomplete="name" maxlength="100">
+                  <label class="input-label" for="recruiterEmail">Work email</label>
+                  <input class="generator-input" id="recruiterEmail" name="email" type="email" autocomplete="email" maxlength="254">
+                  <label class="input-label" for="recruiterOrganisation">Organisation <span aria-hidden="true">(optional)</span></label>
+                  <input class="generator-input" id="recruiterOrganisation" name="organisation" autocomplete="organization" maxlength="120">
+                </div>
+                <label class="follow-up-consent"><input type="checkbox" id="recruiterConsent"> I agree that Marcus may store this submission and contact me about this role or question.</label>
+                <div class="generator-actions"><button class="button primary" type="button" id="submitRecruiterFollowUp">Request follow-up</button></div>
+                <p class="inline-error" id="recruiterFollowUpStatus" aria-live="polite"></p>
+              </section>
               <div class="generator-result" id="generatorResult" hidden>
                 <h3 class="result-title">Your review prompt</h3>
                 <p class="result-note">Paste this prompt into ChatGPT, Claude, or another AI assistant. It is tailored either to a focused evidence question or to a role assessment.</p>

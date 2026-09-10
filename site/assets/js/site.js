@@ -36,10 +36,19 @@ if (promptGenerator) {
   const apiReviewResult = promptGenerator.querySelector('#apiReviewResult');
   const apiReviewStatus = promptGenerator.querySelector('#apiReviewStatus');
   const apiReviewOutput = promptGenerator.querySelector('#apiReviewOutput');
+  const recruiterFollowUp = promptGenerator.querySelector('#recruiterFollowUp');
+  const followUpName = promptGenerator.querySelector('#recruiterName');
+  const followUpEmail = promptGenerator.querySelector('#recruiterEmail');
+  const followUpOrganisation = promptGenerator.querySelector('#recruiterOrganisation');
+  const followUpConsent = promptGenerator.querySelector('#recruiterConsent');
+  const followUpButton = promptGenerator.querySelector('#submitRecruiterFollowUp');
+  const followUpStatus = promptGenerator.querySelector('#recruiterFollowUpStatus');
   const modeChoices = [...promptGenerator.querySelectorAll('[data-mode-choice]')];
   const apiEndpoint = window.RECRUITER_REVIEW_API?.endpoint;
+  const enquiryEndpoint = window.RECRUITER_REVIEW_API?.enquiryEndpoint || apiEndpoint?.replace(/\/api\/recruiter-review$/, '/api/recruiter-enquiry');
   let selectedMode = 'auto';
   let cataloguePromise;
+  let followUpSubmissionId;
   const templatesPromise = Promise.all([
     fetch('repository-question-prompt.txt', { cache: 'no-store' }),
     fetch('repository-interview-prompt.txt', { cache: 'no-store' })
@@ -102,6 +111,7 @@ if (promptGenerator) {
     apiReviewResult.hidden = true;
     apiReviewStatus.textContent = '';
     apiReviewOutput.replaceChildren();
+    resetFollowUp();
     input.focus();
     updateClassification();
   });
@@ -413,6 +423,7 @@ if (promptGenerator) {
 
     const mode = effectiveMode(recruiterInput);
     error.textContent = '';
+    resetFollowUp();
     apiReviewResult.hidden = false;
     apiReviewStatus.textContent = 'Reviewing published evidence…';
     apiReviewOutput.replaceChildren();
@@ -424,7 +435,7 @@ if (promptGenerator) {
         body: JSON.stringify({ mode, clientMode: selectedMode, input: recruiterInput })
       });
       const payload = await response.json();
-      if (!response.ok) throw new Error(payload.error || 'Review unavailable');
+      if (!response.ok) throw new Error(userFacingApiError(payload, response.status));
       const catalogue = Array.isArray(payload.evidenceSources)
         ? new Map(payload.evidenceSources.map((source) => [source.id, source]))
         : await getCatalogue();
@@ -439,7 +450,80 @@ if (promptGenerator) {
       await generateFallbackPrompt();
     } finally {
       generateButton.disabled = false;
+      showFollowUp();
       apiReviewResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function userFacingApiError(payload, status) {
+    const messages = {
+      review_timeout: 'The review took too long. Please try again.',
+      provider_rate_limited: 'The AI review service is busy. Please try again in a moment.',
+      provider_unavailable: 'The AI review service is temporarily unavailable. Please try again shortly.',
+      provider_configuration: 'The AI review service is temporarily unavailable.',
+      provider_response_invalid: 'The AI review response could not be used safely.',
+      review_validation_failed: 'The AI review response could not be verified against the public evidence.'
+    };
+    return messages[payload?.code] || (status === 429 ? 'Too many requests. Please try again shortly.' : 'The review is unavailable.');
+  }
+
+  function showFollowUp() {
+    if (enquiryEndpoint) recruiterFollowUp.hidden = false;
+  }
+
+  function resetFollowUp() {
+    recruiterFollowUp.hidden = true;
+    followUpName.value = '';
+    followUpEmail.value = '';
+    followUpOrganisation.value = '';
+    followUpConsent.checked = false;
+    followUpStatus.textContent = '';
+    followUpButton.disabled = false;
+    followUpSubmissionId = undefined;
+  }
+
+  async function submitFollowUp() {
+    const recruiterInput = input.value.trim();
+    const email = followUpEmail.value.trim();
+    if (!recruiterInput) {
+      followUpStatus.textContent = 'Add a question or role description first.';
+      return;
+    }
+    if (!email) {
+      followUpStatus.textContent = 'Add a work email address to request follow-up.';
+      followUpEmail.focus();
+      return;
+    }
+    if (!followUpConsent.checked) {
+      followUpStatus.textContent = 'Confirm consent before submitting follow-up details.';
+      followUpConsent.focus();
+      return;
+    }
+    followUpStatus.textContent = 'Saving your follow-up request…';
+    followUpButton.disabled = true;
+    try {
+      const response = await fetch(enquiryEndpoint, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          submissionId: followUpSubmissionId ||= crypto.randomUUID(),
+          mode: effectiveMode(recruiterInput),
+          input: recruiterInput,
+          name: followUpName.value,
+          email,
+          organisation: followUpOrganisation.value,
+          consent: true
+        })
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload?.error || 'Follow-up is unavailable.');
+      followUpStatus.textContent = payload.duplicate
+        ? 'This follow-up request has already been saved.'
+        : 'Follow-up request saved. Marcus can contact you using the details you provided.';
+      followUpButton.disabled = true;
+    } catch (requestError) {
+      followUpStatus.textContent = requestError.message || 'Follow-up is unavailable. Please use the contact email below.';
+      followUpButton.disabled = false;
     }
   }
 
@@ -480,6 +564,7 @@ if (promptGenerator) {
 
   if (apiEndpoint) generateButton.textContent = 'Review with AI';
   generateButton.addEventListener('click', () => (apiEndpoint ? runAiReview() : generateFallbackPrompt()));
+  followUpButton.addEventListener('click', submitFollowUp);
 
   updateClassification();
   loadSavedSmokeTest();

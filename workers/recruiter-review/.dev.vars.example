@@ -1,2 +1,4 @@
 # Copy to .dev.vars for local Worker development. Never commit .dev.vars.
 GROQ_API_KEY="replace-with-a-local-test-key"
+# Optional: a verified sender address in Cloudflare Email Service.
+FOLLOW_UP_FROM="notifications@yourdomain.example"
