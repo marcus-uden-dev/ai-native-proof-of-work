@@ -500,6 +500,34 @@ test('uses Gemini when Groq returns malformed structured output', async () => {
   assert.equal(backupCalls, 1);
 });
 
+test('retries a review that fails server-side evidence validation', async () => {
+  let calls = 0;
+  const worker = createRecruiterReviewWorker({
+    catalogue,
+    provider: {
+      generateStructuredReview: async () => {
+        calls += 1;
+        if (calls === 1) {
+          return { kind: 'question', answer: { summary: 'An incomplete answer.', findings: [], limitations: [], sources: [] } };
+        }
+        return {
+          kind: 'question',
+          answer: {
+            summary: 'A cited public-evidence answer.',
+            findings: [{ claim: 'The public record documents workflow design.', evidenceIds: ['cv-product-operations'] }],
+            limitations: ['This answer uses public evidence only and is not a hiring decision.'],
+            sources: ['cv-product-operations']
+          }
+        };
+      }
+    }
+  });
+
+  const response = await worker.fetch(request({ mode: 'question', clientMode: 'auto', input: 'What public evidence shows workflow design?' }), baseEnv);
+  assert.equal(response.status, 200);
+  assert.equal(calls, 2);
+});
+
 test('returns the friendly credits-exhausted state when both providers are out of credit', async () => {
   const quotaError = () => {
     const error = new Error('Provider quota exhausted');

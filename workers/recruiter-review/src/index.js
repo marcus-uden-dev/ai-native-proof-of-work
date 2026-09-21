@@ -39,20 +39,21 @@ export function createRecruiterReviewWorker(options = {}) {
           input: parsed.value.input,
           fallbackCatalogue: catalogue
         });
-        const review = await generateWithBackup({
-          provider,
-          backupProvider,
-          env,
-          mode: parsed.value.mode,
-          catalogue: reviewCatalogue,
-          userInput: parsed.value.input
-        });
-        const validated = validateReview(review, parsed.value.mode, reviewCatalogue);
-        if (!validated.ok) {
-          console.warn('Recruiter review validation failure', { mode: parsed.value.mode, reason: validated.reason });
-          return json({ code: 'review_validation_failed', error: 'The review could not be validated against public evidence. Use the copyable prompt instead.' }, 502, cors);
+        for (let attempt = 0; attempt < 2; attempt += 1) {
+          const review = await generateWithBackup({
+            provider,
+            backupProvider,
+            env,
+            mode: parsed.value.mode,
+            catalogue: reviewCatalogue,
+            userInput: parsed.value.input,
+            validationReason: attempt === 0 ? null : 'The previous response did not meet the required evidence-validation shape. Return complete JSON with only supported evidence IDs.'
+          });
+          const validated = validateReview(review, parsed.value.mode, reviewCatalogue);
+          if (validated.ok) return json({ ...validated.value, evidenceSources: citedEvidenceSources(validated.value, reviewCatalogue) }, 200, cors);
+          console.warn('Recruiter review validation failure', { mode: parsed.value.mode, reason: validated.reason, attempt: attempt + 1 });
         }
-        return json({ ...validated.value, evidenceSources: citedEvidenceSources(validated.value, reviewCatalogue) }, 200, cors);
+        return json({ code: 'review_validation_failed', error: 'The review could not be validated against public evidence. Use the copyable prompt instead.' }, 502, cors);
       } catch (error) {
         const failure = publicProviderFailure(error);
         console.error('Recruiter review provider failure', { status: Number.isInteger(error?.status) ? error.status : null, category: providerErrorCategory(error) });
@@ -62,10 +63,10 @@ export function createRecruiterReviewWorker(options = {}) {
   };
 }
 
-async function generateWithBackup({ provider, backupProvider, env, mode, catalogue, userInput }) {
+async function generateWithBackup({ provider, backupProvider, env, mode, catalogue, userInput, validationReason }) {
   const request = {
     mode,
-    systemInstructions: composeSystemInstructions({ mode, catalogue }),
+    systemInstructions: `${composeSystemInstructions({ mode, catalogue })}${validationReason ? `\n\n${validationReason}` : ''}`,
     userInput: composeUserInput(userInput),
     schema: schemaForMode(mode)
   };
