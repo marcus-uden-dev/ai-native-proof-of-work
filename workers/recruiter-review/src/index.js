@@ -40,18 +40,23 @@ export function createRecruiterReviewWorker(options = {}) {
           fallbackCatalogue: catalogue
         });
         for (let attempt = 0; attempt < 2; attempt += 1) {
-          const review = await generateWithBackup({
-            provider,
-            backupProvider,
-            env,
-            mode: parsed.value.mode,
-            catalogue: reviewCatalogue,
-            userInput: parsed.value.input,
-            validationReason: attempt === 0 ? null : 'The previous response did not meet the required evidence-validation shape. Return complete JSON with only supported evidence IDs.'
-          });
-          const validated = validateReview(review, parsed.value.mode, reviewCatalogue);
-          if (validated.ok) return json({ ...validated.value, evidenceSources: citedEvidenceSources(validated.value, reviewCatalogue) }, 200, cors);
-          console.warn('Recruiter review validation failure', { mode: parsed.value.mode, reason: validated.reason, attempt: attempt + 1 });
+          try {
+            const review = await generateWithBackup({
+              provider,
+              backupProvider,
+              env,
+              mode: parsed.value.mode,
+              catalogue: reviewCatalogue,
+              userInput: parsed.value.input,
+              validationReason: attempt === 0 ? null : 'The previous response did not meet the required evidence-validation shape. Return complete JSON with only supported evidence IDs.'
+            });
+            const validated = validateReview(review, parsed.value.mode, reviewCatalogue);
+            if (validated.ok) return json({ ...validated.value, evidenceSources: citedEvidenceSources(validated.value, reviewCatalogue) }, 200, cors);
+            console.warn('Recruiter review validation failure', { mode: parsed.value.mode, reason: validated.reason, attempt: attempt + 1 });
+          } catch (error) {
+            if (attempt === 1) throw error;
+            console.warn('Recruiter review retryable provider failure', { status: Number.isInteger(error?.status) ? error.status : null, category: providerErrorCategory(error) });
+          }
         }
         return json({ code: 'review_validation_failed', error: 'The review could not be validated against public evidence. Use the copyable prompt instead.' }, 502, cors);
       } catch (error) {
