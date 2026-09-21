@@ -18,12 +18,12 @@ export function createGroqProvider({ fetch = globalThis.fetch } = {}) {
       }
       const payload = await response.json();
       const content = payload?.choices?.[0]?.message?.content;
-      if (typeof content !== 'string' || !content.trim()) throw new Error('Groq response did not contain structured content');
+      if (typeof content !== 'string' || !content.trim()) throw invalidStructuredOutput('groq', 'response did not contain structured content');
 
       try {
         return JSON.parse(content);
       } catch {
-        throw new Error('Groq response was not valid JSON');
+        throw invalidStructuredOutput('groq', 'response was not valid JSON');
       }
     }
   };
@@ -57,11 +57,11 @@ export function createGeminiProvider({ fetch = globalThis.fetch } = {}) {
       if (!response.ok) throw await providerResponseError(response, 'gemini');
       const payload = await response.json();
       const content = payload?.candidates?.[0]?.content?.parts?.map(({ text }) => text).filter(Boolean).join('');
-      if (typeof content !== 'string' || !content.trim()) throw new Error('Gemini response did not contain structured content');
+      if (typeof content !== 'string' || !content.trim()) throw invalidStructuredOutput('gemini', 'response did not contain structured content');
       try {
         return JSON.parse(content);
       } catch {
-        throw new Error('Gemini response was not valid JSON');
+        throw invalidStructuredOutput('gemini', 'response was not valid JSON');
       }
     }
   };
@@ -83,6 +83,13 @@ async function providerResponseError(response, provider) {
   error.status = response.status;
   error.detail = detail;
   error.provider = provider;
+  return error;
+}
+
+function invalidStructuredOutput(provider, detail) {
+  const error = new Error(`${provider} ${detail}`);
+  error.provider = provider;
+  error.retryable = true;
   return error;
 }
 
