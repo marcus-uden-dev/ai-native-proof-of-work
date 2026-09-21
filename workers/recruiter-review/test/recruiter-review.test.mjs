@@ -4,7 +4,7 @@ import test from 'node:test';
 import { createRecruiterReviewWorker } from '../src/index.js';
 import { experienceFitCatalogue, roleCapabilityTaxonomy } from '../src/catalog.js';
 import { composeSystemInstructions } from '../src/prompt.js';
-import { createGroqProvider } from '../src/provider.js';
+import { createGeminiProvider, createGroqProvider } from '../src/provider.js';
 import { loadRepositoryEvidence, selectRepositoryEvidence } from '../src/repository-index.js';
 
 const catalogue = [
@@ -443,6 +443,57 @@ test('returns a safe and specific response when Groq is rate limited or times ou
   assert.equal((await timeoutResponse.json()).code, 'review_timeout');
 });
 
+test('uses Gemini when Groq has a retryable provider failure', async () => {
+  const unavailable = new Error('Groq rate limited');
+  unavailable.status = 429;
+  unavailable.detail = 'Rate limit reached.';
+  let backupCalls = 0;
+  const worker = createRecruiterReviewWorker({
+    catalogue,
+    provider: { generateStructuredReview: async () => { throw unavailable; } },
+    backupProvider: {
+      generateStructuredReview: async () => {
+        backupCalls += 1;
+        return {
+          kind: 'question',
+          answer: {
+            summary: 'Gemini returned a cited public-evidence answer.',
+            findings: [{ claim: 'The public record documents workflow design.', evidenceIds: ['cv-product-operations'] }],
+            limitations: ['This answer uses public evidence only and is not a hiring decision.'],
+            sources: ['cv-product-operations']
+          }
+        };
+      }
+    }
+  });
+
+  const response = await worker.fetch(request({ mode: 'question', clientMode: 'auto', input: 'What public evidence shows workflow design?' }), { ...baseEnv, GEMINI_API_KEY: 'gemini-test-key' });
+  assert.equal(response.status, 200);
+  assert.equal(backupCalls, 1);
+});
+
+test('returns the friendly credits-exhausted state when both providers are out of credit', async () => {
+  const quotaError = () => {
+    const error = new Error('Provider quota exhausted');
+    error.status = 429;
+    error.detail = 'You exceeded your current quota and billing limit.';
+    return error;
+  };
+  const worker = createRecruiterReviewWorker({
+    catalogue,
+    provider: { generateStructuredReview: async () => { throw quotaError(); } },
+    backupProvider: { generateStructuredReview: async () => { throw quotaError(); } }
+  });
+
+  const response = await worker.fetch(request({ mode: 'question', clientMode: 'auto', input: 'What public evidence shows workflow design?' }), { ...baseEnv, GEMINI_API_KEY: 'gemini-test-key' });
+  assert.equal(response.status, 503);
+  assert.deepEqual(await response.json(), {
+    status: 503,
+    code: 'provider_credits_exhausted',
+    error: 'The best things in life are free — sadly, API credits are not. The AI review credits have run out. Please try again soon or use the copyable prompt.'
+  });
+});
+
 test('stores a consented recruiter enquiry, sends only to Marcus, and rejects missing consent', async () => {
   const db = createDatabase();
   const sent = [];
@@ -710,4 +761,27 @@ test('Groq role adapter uses JSON mode before server-side evidence validation', 
 
   assert.deepEqual(body.response_format, { type: 'json_object' });
   assert.equal(body.tool_choice, 'none');
+});
+
+test('Gemini adapter requests server-side structured JSON and does not expose the API key', async () => {
+  let body;
+  const provider = createGeminiProvider({
+    fetch: async (_url, options) => {
+      body = JSON.parse(options.body);
+      assert.equal(options.headers['x-goog-api-key'], 'gemini-test-key');
+      return new Response(JSON.stringify({ candidates: [{ content: { parts: [{ text: JSON.stringify({ kind: 'question' }) }] } }] }), { status: 200 });
+    }
+  });
+
+  await provider.generateStructuredReview({
+    apiKey: 'gemini-test-key',
+    model: 'gemini-2.5-flash-lite',
+    mode: 'question',
+    systemInstructions: 'System instructions',
+    userInput: 'User input',
+    schema: { type: 'object', properties: { kind: { const: 'question' } }, required: ['kind'], additionalProperties: false }
+  });
+
+  assert.equal(body.generationConfig.responseMimeType, 'application/json');
+  assert.deepEqual(body.generationConfig.responseJsonSchema, { type: 'object', properties: { kind: { enum: ['question'] } }, required: ['kind'] });
 });

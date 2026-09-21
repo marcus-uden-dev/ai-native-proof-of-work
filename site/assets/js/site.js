@@ -459,6 +459,7 @@ if (promptGenerator) {
     const messages = {
       review_timeout: 'The review took too long. Please try again.',
       provider_rate_limited: 'The AI review service is busy. Please try again in a moment.',
+      provider_credits_exhausted: 'The best things in life are free — sadly, API credits are not. The AI review credits have run out. Please try again soon or use the copyable prompt below.',
       provider_unavailable: 'The AI review service is temporarily unavailable. Please try again shortly.',
       provider_configuration: 'The AI review service is temporarily unavailable.',
       provider_response_invalid: 'The AI review response could not be used safely.',

@@ -1,7 +1,7 @@
 import { experienceFitCatalogue } from './catalog.js';
-import { publicProviderFailure, providerErrorCategory } from './errors.js';
+import { publicProviderFailure, providerErrorCategory, providerCreditsExhausted, shouldTryBackupProvider } from './errors.js';
 import { notifyMarcus, purgeExpiredEnquiries, saveEnquiry, updateNotificationStatus, validateEnquiryRequest } from './enquiry.js';
-import { createGroqProvider } from './provider.js';
+import { createGeminiProvider, createGroqProvider } from './provider.js';
 import { composeSystemInstructions, composeUserInput } from './prompt.js';
 import { loadRepositoryEvidence } from './repository-index.js';
 import { schemaForMode } from './schema.js';
@@ -12,6 +12,7 @@ const timeoutMs = 12000;
 export function createRecruiterReviewWorker(options = {}) {
   const catalogue = options.catalogue ?? experienceFitCatalogue;
   const provider = options.provider ?? createGroqProvider();
+  const backupProvider = options.backupProvider ?? createGeminiProvider();
   const catalogueLoader = options.catalogueLoader ?? (options.catalogue ? ({ fallbackCatalogue }) => fallbackCatalogue : loadRepositoryEvidence);
   return {
     async fetch(request, env) {
@@ -23,7 +24,7 @@ export function createRecruiterReviewWorker(options = {}) {
       const path = new URL(request.url).pathname;
       if (path === '/api/recruiter-enquiry') return handleEnquiry(request, env, cors);
       if (path !== '/api/recruiter-review') return json({ error: 'Not found.' }, 404, cors);
-      if (!env.GROQ_API_KEY) return json({ error: 'The review service is not configured yet. Use the copyable prompt instead.' }, 503, cors);
+      if (!env.GROQ_API_KEY && !env.GEMINI_API_KEY) return json({ error: 'The review service is not configured yet. Use the copyable prompt instead.' }, 503, cors);
 
       const allowed = await env.RECRUITER_REVIEW_RATE_LIMITER?.limit({ key: request.headers.get('CF-Connecting-IP') || 'unknown' });
       if (!allowed?.success) return json({ error: 'Too many review requests. Try again shortly.' }, 429, cors);
@@ -33,22 +34,18 @@ export function createRecruiterReviewWorker(options = {}) {
       const parsed = validateRequest(payload);
       if (!parsed.ok) return json({ error: parsed.message }, parsed.status, cors);
 
-      const controller = new AbortController();
-      const timer = setTimeout(() => controller.abort(), timeoutMs);
       try {
         const reviewCatalogue = await catalogueLoader({
           input: parsed.value.input,
-          fallbackCatalogue: catalogue,
-          abortSignal: controller.signal
+          fallbackCatalogue: catalogue
         });
-        const review = await provider.generateStructuredReview({
-          apiKey: env.GROQ_API_KEY,
-          model: env.GROQ_MODEL || 'openai/gpt-oss-20b',
+        const review = await generateWithBackup({
+          provider,
+          backupProvider,
+          env,
           mode: parsed.value.mode,
-          systemInstructions: composeSystemInstructions({ mode: parsed.value.mode, catalogue: reviewCatalogue }),
-          userInput: composeUserInput(parsed.value.input),
-          schema: schemaForMode(parsed.value.mode),
-          abortSignal: controller.signal
+          catalogue: reviewCatalogue,
+          userInput: parsed.value.input
         });
         const validated = validateReview(review, parsed.value.mode, reviewCatalogue);
         if (!validated.ok) {
@@ -60,11 +57,45 @@ export function createRecruiterReviewWorker(options = {}) {
         const failure = publicProviderFailure(error);
         console.error('Recruiter review provider failure', { status: Number.isInteger(error?.status) ? error.status : null, category: providerErrorCategory(error) });
         return json(failure, failure.status, cors);
-      } finally {
-        clearTimeout(timer);
       }
     }
   };
+}
+
+async function generateWithBackup({ provider, backupProvider, env, mode, catalogue, userInput }) {
+  const request = {
+    mode,
+    systemInstructions: composeSystemInstructions({ mode, catalogue }),
+    userInput: composeUserInput(userInput),
+    schema: schemaForMode(mode)
+  };
+  if (!env.GROQ_API_KEY) {
+    return generateWithTimeout(backupProvider, { ...request, apiKey: env.GEMINI_API_KEY, model: env.GEMINI_MODEL || 'gemini-2.5-flash-lite' });
+  }
+  try {
+    return await generateWithTimeout(provider, { ...request, apiKey: env.GROQ_API_KEY, model: env.GROQ_MODEL || 'openai/gpt-oss-20b' });
+  } catch (primaryError) {
+    if (!env.GEMINI_API_KEY || !shouldTryBackupProvider(primaryError)) throw primaryError;
+    try {
+      return await generateWithTimeout(backupProvider, { ...request, apiKey: env.GEMINI_API_KEY, model: env.GEMINI_MODEL || 'gemini-2.5-flash-lite' });
+    } catch (backupError) {
+      const error = new Error('Primary and backup review providers failed.');
+      error.status = backupError?.status ?? primaryError?.status;
+      error.failures = [primaryError, backupError];
+      error.creditsExhausted = providerCreditsExhausted(primaryError) && providerCreditsExhausted(backupError);
+      throw error;
+    }
+  }
+}
+
+async function generateWithTimeout(provider, request) {
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    return await provider.generateStructuredReview({ ...request, abortSignal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
 }
 
 async function handleEnquiry(request, env, cors) {

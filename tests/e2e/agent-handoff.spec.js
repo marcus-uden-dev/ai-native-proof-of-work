@@ -183,6 +183,24 @@ test('the existing repository review panel renders a cited AI role assessment wh
   expect(await page.locator('.role-coverage__list').evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length)).toBe(1);
 });
 
+test('repository review explains when all configured API credits are exhausted', async ({ page }) => {
+  await page.route('**/assets/js/recruiter-review-config.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: "window.RECRUITER_REVIEW_API = { endpoint: '/api/recruiter-review' };"
+  }));
+  await page.route('**/api/recruiter-review', (route) => route.fulfill({
+    status: 503,
+    contentType: 'application/json',
+    body: JSON.stringify({ code: 'provider_credits_exhausted' })
+  }));
+
+  await page.goto('/');
+  await page.getByLabel('Ask about Marcus or paste a job description').fill('What public evidence shows workflow design?');
+  await page.getByRole('button', { name: 'Review with AI' }).click();
+  await expect(page.locator('#apiReviewStatus')).toContainText('The best things in life are free — sadly, API credits are not.');
+  await expect(page.locator('#apiReviewStatus')).toContainText('copyable prompt is available below');
+});
+
 test('repository interview keeps the preview typography and full-width brown surface', async ({ page }) => {
   await page.goto('/');
   const metrics = await page.locator('#ai-review').evaluate((section) => {
