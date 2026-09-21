@@ -22,7 +22,8 @@ export function publicProviderFailure(error) {
 }
 
 export function shouldTryBackupProvider(error) {
-  return error?.name === 'AbortError'
+  return error?.retryable === true
+    || error?.name === 'AbortError'
     || error?.status === 401
     || error?.status === 403
     || error?.status === 429
