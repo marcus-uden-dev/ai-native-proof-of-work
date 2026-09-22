@@ -8,6 +8,8 @@ import { schemaForMode } from './schema.js';
 import { validateRequest, validateReview } from './validation.js';
 
 const timeoutMs = 12000;
+const defaultGeminiModel = 'gemini-2.5-flash-lite';
+const secondaryGeminiModel = 'gemini-2.5-flash';
 
 export function createRecruiterReviewWorker(options = {}) {
   const catalogue = options.catalogue ?? experienceFitCatalogue;
@@ -61,7 +63,13 @@ export function createRecruiterReviewWorker(options = {}) {
         return json({ code: 'review_validation_failed', error: 'The review could not be validated against public evidence. Use the copyable prompt instead.' }, 502, cors);
       } catch (error) {
         const failure = publicProviderFailure(error);
-        console.error('Recruiter review provider failure', { status: Number.isInteger(error?.status) ? error.status : null, category: providerErrorCategory(error) });
+        console.error('Recruiter review provider failure', {
+          status: Number.isInteger(error?.status) ? error.status : null,
+          category: providerErrorCategory(error),
+          failures: Array.isArray(error?.failures)
+            ? error.failures.map((failure) => ({ provider: failure?.provider ?? 'unknown', status: Number.isInteger(failure?.status) ? failure.status : null, message: failure?.message ?? 'unknown failure' }))
+            : undefined
+        });
         return json(failure, failure.status, cors);
       }
     }
@@ -76,14 +84,14 @@ async function generateWithBackup({ provider, backupProvider, env, mode, catalog
     schema: schemaForMode(mode)
   };
   if (!env.GROQ_API_KEY) {
-    return generateWithTimeout(backupProvider, { ...request, apiKey: env.GEMINI_API_KEY, model: env.GEMINI_MODEL || 'gemini-2.5-flash-lite' });
+    return generateWithGeminiModelFallback(backupProvider, request, env);
   }
   try {
     return await generateWithTimeout(provider, { ...request, apiKey: env.GROQ_API_KEY, model: env.GROQ_MODEL || 'openai/gpt-oss-20b' });
   } catch (primaryError) {
     if (!env.GEMINI_API_KEY || !shouldTryBackupProvider(primaryError)) throw primaryError;
     try {
-      return await generateWithTimeout(backupProvider, { ...request, apiKey: env.GEMINI_API_KEY, model: env.GEMINI_MODEL || 'gemini-2.5-flash-lite' });
+      return await generateWithGeminiModelFallback(backupProvider, request, env);
     } catch (backupError) {
       const error = new Error('Primary and backup review providers failed.');
       error.status = backupError?.status ?? primaryError?.status;
@@ -92,6 +100,20 @@ async function generateWithBackup({ provider, backupProvider, env, mode, catalog
       throw error;
     }
   }
+}
+
+async function generateWithGeminiModelFallback(provider, request, env) {
+  const models = [...new Set([env.GEMINI_MODEL || defaultGeminiModel, secondaryGeminiModel])];
+  let lastError;
+  for (const model of models) {
+    try {
+      return await generateWithTimeout(provider, { ...request, apiKey: env.GEMINI_API_KEY, model });
+    } catch (error) {
+      lastError = error;
+      if (error?.status !== 404) throw error;
+    }
+  }
+  throw lastError;
 }
 
 async function generateWithTimeout(provider, request) {

@@ -115,9 +115,7 @@ async function requestWithRetry(fetch, { abortSignal, request, ...requestOptions
           { role: 'system', content: requestOptions.systemInstructions },
           { role: 'user', content: requestOptions.userInput }
         ],
-        response_format: requestOptions.mode === 'role'
-          ? { type: 'json_object' }
-          : { type: 'json_schema', json_schema: { name: 'recruiter_review', strict: true, schema: requestOptions.schema } }
+        response_format: { type: 'json_schema', json_schema: { name: 'recruiter_review', strict: true, schema: requestOptions.schema } }
       })
     }));
 

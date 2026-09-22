@@ -121,8 +121,15 @@ test('provides dimension-specific evidence anchors for role assessment', () => {
   assert.match(instructions, /ai-native-execution: job-agent-decisions, recursive-workflow-controls, decision-log-traceability/);
   assert.match(instructions, /evidence-synthesis: cv-customer-journey, decision-log-traceability, recursive-workflow-controls/);
   assert.match(instructions, /If a configured direct-evidence anchor supports a stable dimension, cite it and use direct/);
-  assert.match(instructions, /Additionally return three to five roleCoverage entries/);
+  assert.match(instructions, /Additionally return exactly three roleCoverage entries/);
   assert.match(instructions, /systems-api-integration: Systems, APIs, and integrations/);
+});
+
+test('keeps the role assessment compact enough for structured provider output', () => {
+  const instructions = composeSystemInstructions({ mode: 'role', catalogue });
+  assert.match(instructions, /Keep the complete JSON response under 2,400 tokens/);
+  assert.match(instructions, /return exactly three roleCoverage entries/);
+  assert.match(instructions, /each explanation to one sentence of at most 180 characters/);
 });
 
 test('preserves direct product, harness, and AI-native evidence across role domains', async () => {
@@ -332,6 +339,25 @@ test('loads and ranks the fixed public repository index', async () => {
   assert.equal(selected[0].id, 'repo-finance-1');
 });
 
+test('bounds the dynamic repository evidence packet for long role descriptions', async () => {
+  const records = Array.from({ length: 4 }, (_, index) => ({
+    id: `repo-healthcare-${index}`,
+    path: `site/proof/healthcare-${index}.md`,
+    label: `Healthcare evidence ${index}`,
+    sourceClass: 'portfolio',
+    url: `https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/proof/healthcare-${index}.md`,
+    excerpt: `Healthcare product evidence ${'x'.repeat(500)}`
+  }));
+  const selected = await loadRepositoryEvidence({
+    input: 'Healthcare product delivery',
+    fallbackCatalogue: catalogue,
+    fetchImpl: async () => new Response(JSON.stringify({ records }))
+  });
+  const dynamic = selected.filter(({ id }) => id.startsWith('repo-healthcare-'));
+  assert.equal(dynamic.length, 3);
+  assert.ok(dynamic.every(({ excerpt }) => excerpt.length <= 420));
+});
+
 test('returns source metadata for an indexed public citation', async () => {
   const indexedCatalogue = [{
     id: 'repo-finance-1',
@@ -498,6 +524,39 @@ test('uses Gemini when Groq returns malformed structured output', async () => {
   const response = await worker.fetch(request({ mode: 'question', clientMode: 'auto', input: 'What public evidence shows workflow design?' }), { ...baseEnv, GEMINI_API_KEY: 'gemini-test-key' });
   assert.equal(response.status, 200);
   assert.equal(backupCalls, 1);
+});
+
+test('tries a supported Gemini fallback model when the configured model is unavailable', async () => {
+  const calls = [];
+  const unavailable = new Error('Gemini model unavailable');
+  unavailable.status = 404;
+  unavailable.provider = 'gemini';
+  const rateLimited = new Error('Groq rate limited');
+  rateLimited.status = 429;
+  rateLimited.provider = 'groq';
+  const worker = createRecruiterReviewWorker({
+    catalogue,
+    provider: { generateStructuredReview: async () => { throw rateLimited; } },
+    backupProvider: {
+      generateStructuredReview: async ({ model }) => {
+        calls.push(model);
+        if (model === 'gemini-2.5-flash-lite') throw unavailable;
+        return {
+          kind: 'question',
+          answer: {
+            summary: 'The public record documents workflow design.',
+            findings: [{ claim: 'Marcus has workflow-design evidence.', evidenceIds: ['cv-product-operations'] }],
+            limitations: ['This answer uses public evidence only and is not a hiring decision.'],
+            sources: ['cv-product-operations']
+          }
+        };
+      }
+    }
+  });
+
+  const response = await worker.fetch(request({ mode: 'question', clientMode: 'question', input: 'What public evidence shows workflow design?' }), { ...baseEnv, GEMINI_API_KEY: 'gemini-test-key', GEMINI_MODEL: 'gemini-2.5-flash-lite' });
+  assert.equal(response.status, 200);
+  assert.deepEqual(calls, ['gemini-2.5-flash-lite', 'gemini-2.5-flash']);
 });
 
 test('retries a review that fails server-side evidence validation', async () => {
@@ -797,7 +856,7 @@ test('Groq adapter requests strict JSON schema and does not expose the API key',
   assert.equal(body.include_reasoning, false);
 });
 
-test('Groq role adapter uses JSON mode before server-side evidence validation', async () => {
+test('Groq role adapter uses strict JSON schema before server-side evidence validation', async () => {
   let body;
   const provider = createGroqProvider({
     fetch: async (_url, options) => {
@@ -815,7 +874,9 @@ test('Groq role adapter uses JSON mode before server-side evidence validation', 
     schema: { type: 'object' }
   });
 
-  assert.deepEqual(body.response_format, { type: 'json_object' });
+  assert.equal(body.response_format.type, 'json_schema');
+  assert.equal(body.response_format.json_schema.strict, true);
+  assert.deepEqual(body.response_format.json_schema.schema, { type: 'object' });
   assert.equal(body.tool_choice, 'none');
 });
 
