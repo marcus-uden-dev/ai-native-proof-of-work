@@ -142,11 +142,17 @@ h3 {
 }
 
 .wordmark {
+  display: grid;
+  gap: 0.2rem;
+  font-weight: 720;
+}
+
+.wordmark__home {
   display: inline-flex;
   min-height: 2.75rem;
   align-items: center;
   gap: 0.75rem;
-  font-weight: 720;
+  color: var(--ink);
   text-decoration: none;
 }
 
@@ -172,6 +178,29 @@ h3 {
   color: var(--muted);
   font: 600 0.66rem/1.2 var(--mono);
   letter-spacing: 0.03em;
+}
+
+.wordmark__routes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.32rem;
+  padding-left: 2.9rem;
+}
+
+.wordmark__routes a {
+  display: inline-flex;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.wordmark__routes a:hover {
+  color: var(--teal);
 }
 
 .nav-list {
@@ -251,6 +280,19 @@ h3 {
   flex-wrap: wrap;
   align-items: center;
   gap: 0.75rem;
+}
+
+.action-row--entry-points {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(100%, 38rem);
+}
+
+.action-row--entry-points .button {
+  width: 100%;
+  min-height: 3.5rem;
+  justify-content: center;
+  padding-inline: 1rem;
 }
 
 .button {
@@ -534,6 +576,10 @@ h3 {
 }
 
 @media (max-width: 47.5rem) {
+  .action-row--entry-points {
+    grid-template-columns: 1fr;
+  }
+
   .oracle-summary__facts,
   .oracle-lens-grid {
     grid-template-columns: 1fr 1fr;
@@ -2663,7 +2709,11 @@ h3 {
     max-width: 17rem;
   }
 
-  nav {
+  .wordmark__routes {
+    padding-left: 2.9rem;
+  }
+
+  .masthead__inner > nav {
     order: 3;
     width: 100%;
     margin-left: 0;
