@@ -1,5 +1,6 @@
 const canonicalIndexUrl = 'https://raw.githubusercontent.com/marcus-uden-dev/ai-native-proof-of-work/main/site/evidence/repository-evidence-index.json';
-const maxDynamicRecords = 10;
+const maxDynamicRecords = 3;
+const maxDynamicExcerptCharacters = 420;
 const ignoredTerms = new Set(['about', 'against', 'also', 'and', 'are', 'ask', 'but', 'can', 'for', 'from', 'has', 'how', 'into', 'job', 'marcus', 'not', 'role', 'that', 'the', 'this', 'what', 'with', 'work']);
 
 export async function loadRepositoryEvidence({ input, fallbackCatalogue, fetchImpl = fetch, abortSignal }) {
@@ -13,7 +14,7 @@ export async function loadRepositoryEvidence({ input, fallbackCatalogue, fetchIm
     const document = await response.json();
     const records = Array.isArray(document?.records) ? document.records.filter(isEvidenceRecord) : [];
     const selected = selectRepositoryEvidence(records, input);
-    return selected.length > 0 ? mergeEvidence(selected, fallbackCatalogue) : fallbackCatalogue;
+    return selected.length > 0 ? mergeEvidence(selected.map(compactDynamicRecord), fallbackCatalogue) : fallbackCatalogue;
   } catch (error) {
     if (abortSignal?.aborted) throw error;
     return fallbackCatalogue;
@@ -39,6 +40,12 @@ function mergeEvidence(selected, fallbackCatalogue) {
     seen.add(record.id);
     return true;
   });
+}
+
+function compactDynamicRecord(record) {
+  return record.excerpt.length <= maxDynamicExcerptCharacters
+    ? record
+    : { ...record, excerpt: `${record.excerpt.slice(0, maxDynamicExcerptCharacters - 1).trimEnd()}…` };
 }
 
 function scoreRecord(record, terms) {

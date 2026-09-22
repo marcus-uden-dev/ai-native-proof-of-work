@@ -1,5 +1,9 @@
 const evidenceId = { type: 'string', minLength: 1, maxLength: 80 };
 const shortText = { type: 'string', minLength: 1, maxLength: 900 };
+const roleSummary = { type: 'string', minLength: 1, maxLength: 240 };
+const roleNeedText = { type: 'string', minLength: 1, maxLength: 120 };
+const roleExplanation = { type: 'string', minLength: 1, maxLength: 180 };
+const roleVerificationQuestion = { type: 'string', maxLength: 160 };
 
 export const questionResponseSchema = {
   type: 'object',
@@ -42,46 +46,44 @@ export const roleResponseSchema = {
       additionalProperties: false,
       required: ['summary', 'roleNeeds', 'dimensions', 'roleCoverage', 'evidenceAnchors', 'interviewQuestions', 'limitations'],
       properties: {
-        summary: shortText,
-        roleNeeds: { type: 'array', minItems: 1, maxItems: 7, items: shortText },
+        summary: roleSummary,
+        roleNeeds: { type: 'array', minItems: 4, maxItems: 5, items: roleNeedText },
         dimensions: {
-          type: 'array',
-          maxItems: 10,
+          type: 'array', minItems: 7, maxItems: 7,
           items: {
             type: 'object',
             additionalProperties: false,
             required: ['id', 'label', 'state', 'explanation', 'evidenceIds', 'verificationQuestion'],
             properties: {
               id: evidenceId,
-              label: shortText,
+              label: roleNeedText,
               state: { enum: ['direct', 'transferable', 'needs_interview_verification', 'not_evidenced'] },
-              explanation: shortText,
-              evidenceIds: { type: 'array', maxItems: 4, items: evidenceId },
-              verificationQuestion: { type: 'string', maxLength: 500 }
+              explanation: roleExplanation,
+              evidenceIds: { type: 'array', maxItems: 3, items: evidenceId },
+              verificationQuestion: roleVerificationQuestion
             }
           }
         },
         roleCoverage: {
           type: 'array',
-          minItems: 3,
-          maxItems: 5,
+          minItems: 3, maxItems: 3,
           items: {
             type: 'object',
             additionalProperties: false,
             required: ['capabilityId', 'roleNeed', 'state', 'explanation', 'evidenceIds', 'verificationQuestion'],
             properties: {
               capabilityId: evidenceId,
-              roleNeed: shortText,
+              roleNeed: roleNeedText,
               state: { enum: ['direct', 'transferable', 'needs_interview_verification', 'not_evidenced'] },
-              explanation: shortText,
-              evidenceIds: { type: 'array', maxItems: 4, items: evidenceId },
-              verificationQuestion: { type: 'string', maxLength: 500 }
+              explanation: roleExplanation,
+              evidenceIds: { type: 'array', maxItems: 3, items: evidenceId },
+              verificationQuestion: roleVerificationQuestion
             }
           }
         },
-        evidenceAnchors: { type: 'array', minItems: 1, maxItems: 20, items: evidenceId },
-        interviewQuestions: { type: 'array', maxItems: 7, items: shortText },
-        limitations: { type: 'array', minItems: 1, maxItems: 6, items: shortText }
+        evidenceAnchors: { type: 'array', minItems: 1, maxItems: 18, items: evidenceId },
+        interviewQuestions: { type: 'array', maxItems: 3, items: roleVerificationQuestion },
+        limitations: { type: 'array', minItems: 1, maxItems: 3, items: roleVerificationQuestion }
       }
     }
   }

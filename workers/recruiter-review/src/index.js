@@ -8,6 +8,8 @@ import { schemaForMode } from './schema.js';
 import { validateRequest, validateReview } from './validation.js';
 
 const timeoutMs = 12000;
+const defaultGeminiModel = 'gemini-2.5-flash-lite';
+const secondaryGeminiModel = 'gemini-2.5-flash';
 
 export function createRecruiterReviewWorker(options = {}) {
   const catalogue = options.catalogue ?? experienceFitCatalogue;
@@ -39,45 +41,57 @@ export function createRecruiterReviewWorker(options = {}) {
           input: parsed.value.input,
           fallbackCatalogue: catalogue
         });
-        const review = await generateWithBackup({
-          provider,
-          backupProvider,
-          env,
-          mode: parsed.value.mode,
-          catalogue: reviewCatalogue,
-          userInput: parsed.value.input
-        });
-        const validated = validateReview(review, parsed.value.mode, reviewCatalogue);
-        if (!validated.ok) {
-          console.warn('Recruiter review validation failure', { mode: parsed.value.mode, reason: validated.reason });
-          return json({ code: 'review_validation_failed', error: 'The review could not be validated against public evidence. Use the copyable prompt instead.' }, 502, cors);
+        for (let attempt = 0; attempt < 2; attempt += 1) {
+          try {
+            const review = await generateWithBackup({
+              provider,
+              backupProvider,
+              env,
+              mode: parsed.value.mode,
+              catalogue: reviewCatalogue,
+              userInput: parsed.value.input,
+              validationReason: attempt === 0 ? null : 'The previous response did not meet the required evidence-validation shape. Return complete JSON with only supported evidence IDs.'
+            });
+            const validated = validateReview(review, parsed.value.mode, reviewCatalogue);
+            if (validated.ok) return json({ ...validated.value, evidenceSources: citedEvidenceSources(validated.value, reviewCatalogue) }, 200, cors);
+            console.warn('Recruiter review validation failure', { mode: parsed.value.mode, reason: validated.reason, attempt: attempt + 1 });
+          } catch (error) {
+            if (attempt === 1) throw error;
+            console.warn('Recruiter review retryable provider failure', { status: Number.isInteger(error?.status) ? error.status : null, category: providerErrorCategory(error) });
+          }
         }
-        return json({ ...validated.value, evidenceSources: citedEvidenceSources(validated.value, reviewCatalogue) }, 200, cors);
+        return json({ code: 'review_validation_failed', error: 'The review could not be validated against public evidence. Use the copyable prompt instead.' }, 502, cors);
       } catch (error) {
         const failure = publicProviderFailure(error);
-        console.error('Recruiter review provider failure', { status: Number.isInteger(error?.status) ? error.status : null, category: providerErrorCategory(error) });
+        console.error('Recruiter review provider failure', {
+          status: Number.isInteger(error?.status) ? error.status : null,
+          category: providerErrorCategory(error),
+          failures: Array.isArray(error?.failures)
+            ? error.failures.map((failure) => ({ provider: failure?.provider ?? 'unknown', status: Number.isInteger(failure?.status) ? failure.status : null, message: failure?.message ?? 'unknown failure' }))
+            : undefined
+        });
         return json(failure, failure.status, cors);
       }
     }
   };
 }
 
-async function generateWithBackup({ provider, backupProvider, env, mode, catalogue, userInput }) {
+async function generateWithBackup({ provider, backupProvider, env, mode, catalogue, userInput, validationReason }) {
   const request = {
     mode,
-    systemInstructions: composeSystemInstructions({ mode, catalogue }),
+    systemInstructions: `${composeSystemInstructions({ mode, catalogue })}${validationReason ? `\n\n${validationReason}` : ''}`,
     userInput: composeUserInput(userInput),
     schema: schemaForMode(mode)
   };
   if (!env.GROQ_API_KEY) {
-    return generateWithTimeout(backupProvider, { ...request, apiKey: env.GEMINI_API_KEY, model: env.GEMINI_MODEL || 'gemini-2.5-flash-lite' });
+    return generateWithGeminiModelFallback(backupProvider, request, env);
   }
   try {
     return await generateWithTimeout(provider, { ...request, apiKey: env.GROQ_API_KEY, model: env.GROQ_MODEL || 'openai/gpt-oss-20b' });
   } catch (primaryError) {
     if (!env.GEMINI_API_KEY || !shouldTryBackupProvider(primaryError)) throw primaryError;
     try {
-      return await generateWithTimeout(backupProvider, { ...request, apiKey: env.GEMINI_API_KEY, model: env.GEMINI_MODEL || 'gemini-2.5-flash-lite' });
+      return await generateWithGeminiModelFallback(backupProvider, request, env);
     } catch (backupError) {
       const error = new Error('Primary and backup review providers failed.');
       error.status = backupError?.status ?? primaryError?.status;
@@ -86,6 +100,20 @@ async function generateWithBackup({ provider, backupProvider, env, mode, catalog
       throw error;
     }
   }
+}
+
+async function generateWithGeminiModelFallback(provider, request, env) {
+  const models = [...new Set([env.GEMINI_MODEL || defaultGeminiModel, secondaryGeminiModel])];
+  let lastError;
+  for (const model of models) {
+    try {
+      return await generateWithTimeout(provider, { ...request, apiKey: env.GEMINI_API_KEY, model });
+    } catch (error) {
+      lastError = error;
+      if (error?.status !== 404) throw error;
+    }
+  }
+  throw lastError;
 }
 
 async function generateWithTimeout(provider, request) {
