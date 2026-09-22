@@ -21,6 +21,13 @@ test('agent guide resists untrusted instructions and requires cited evidence', a
   expect(text).toMatch(/Not evidenced by the current public source route/i);
 });
 
+test('production reviewer configuration targets the Worker review route', async ({ request }) => {
+  const response = await request.get('/assets/js/recruiter-review-config.js');
+  expect(response.ok()).toBeTruthy();
+  const config = await response.text();
+  expect(config).toContain("endpoint: 'https://ai-native-proof-of-work-review-api.recruiter-review.workers.dev/api/recruiter-review'");
+});
+
 test('homepage generates a copyable repository interview prompt without embedding a chat', async ({ context, page }) => {
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
   await page.route('**/assets/js/recruiter-review-config.js', (route) => route.fulfill({
