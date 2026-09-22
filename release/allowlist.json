@@ -129,6 +129,8 @@
     "tests/evaluation/fixtures/chatgpt-incognito-skolverket-digital-strategist-followup-2026-08-24.prompt.txt",
     "tests/evaluation/fixtures/public-incognito-guided-recruiter-smoke-2026-08-27.md",
     "tests/evaluation/fixtures/public-incognito-guided-recruiter-smoke-2026-08-27.prompt.txt",
+    "tests/evaluation/fixtures/tandem-health-product-manager-2026-09-21.md",
+    "tests/evaluation/fixtures/tandem-health-product-manager-2026-09-21.prompt.txt",
     "tests/evaluation/fixtures/public-incognito-zinova-product-manager-2026-08-27.md",
     "tests/evaluation/fixtures/public-incognito-zinova-product-manager-2026-08-27.prompt.txt",
     "tests/evaluation/rubric.md",
