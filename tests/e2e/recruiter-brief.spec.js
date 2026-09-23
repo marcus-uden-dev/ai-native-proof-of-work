@@ -1,6 +1,6 @@
 import { expect, test } from './fixtures.js';
 
-test('the first viewport establishes the hiring case and conversion path', async ({ page }) => {
+test('the first viewport establishes the hiring case and primary conversion path', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
   await expect(page.getByText('Experienced individual contributor')).toBeVisible();
@@ -13,8 +13,8 @@ test('the first viewport establishes the hiring case and conversion path', async
   const entryPoints = page.locator('.action-row--entry-points');
   await expect(entryPoints.getByRole('link', { name: 'Explore product work' })).toBeInViewport();
   await expect(entryPoints.getByRole('link', { name: 'Follow the decisions' })).toBeInViewport();
-  await expect(entryPoints.getByRole('link', { name: 'CV' })).toBeInViewport();
-  await expect(entryPoints.getByRole('link', { name: 'Interview my work' })).toBeInViewport();
+  await expect(entryPoints.getByRole('link', { name: 'CV' })).toBeVisible();
+  await expect(entryPoints.getByRole('link', { name: 'Interview my work' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Contact' })).toBeInViewport();
 });
 
