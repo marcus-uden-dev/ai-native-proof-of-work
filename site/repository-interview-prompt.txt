@@ -22,7 +22,7 @@ Return:
 1. a concise fit summary;
 2. six to seven Experience Fit Map dimensions, each labelled Direct evidence, Transferable evidence, Needs interview verification, or Not evidenced;
 3. cited public evidence for every material conclusion;
-4. the most important gaps and five interview questions.
+4. the most important evidence gaps and concise areas to explore further.
 
 ROLE DESCRIPTION:
 {{INPUT}}

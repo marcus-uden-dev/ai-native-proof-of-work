@@ -44,12 +44,12 @@ export function validateReview(value, mode, catalogue) {
 
   const assessment = value.assessment;
   if (assessment && !scoreFreeTextArray(assessment.roleNeeds)) {
-    assessment.roleNeeds = ['Assess the submitted role requirements against cited public evidence and interview validation.'];
+    assessment.roleNeeds = ['Assess the submitted role requirements against cited public evidence and identify areas to explore.'];
   }
   if (assessment && !Array.isArray(assessment.roleCoverage)) assessment.roleCoverage = [];
-  if (assessment && !scoreFreeTextArray(assessment.interviewQuestions, true)) assessment.interviewQuestions = [];
-  if (assessment && !scoreFreeTextArray(assessment.limitations)) {
-    assessment.limitations = ['This assessment uses public evidence only and is not a hiring decision.'];
+  if (assessment) {
+    assessment.interviewQuestions = [];
+    assessment.limitations = [];
   }
   const invalidRoleFields = !assessment ? ['assessment'] : [
     !nonEmptyText(assessment.summary) && 'summary',
@@ -58,7 +58,7 @@ export function validateReview(value, mode, catalogue) {
     !Array.isArray(assessment.roleCoverage) && 'roleCoverage',
     !Array.isArray(assessment.evidenceAnchors) && 'evidenceAnchors',
     !scoreFreeTextArray(assessment.interviewQuestions, true) && 'interviewQuestions',
-    !scoreFreeTextArray(assessment.limitations) && 'limitations'
+    !scoreFreeTextArray(assessment.limitations, true) && 'limitations'
   ].filter(Boolean);
   if (invalidRoleFields.length) return invalid(`role-fields-${invalidRoleFields.join('-')}`);
   if (assessment.dimensions.length > dimensionIds.size) return invalid('role-dimension-count');
@@ -80,7 +80,7 @@ export function validateReview(value, mode, catalogue) {
     state: 'not_evidenced',
     explanation: `No direct public evidence was identified for ${label} in this review.`,
     evidenceIds: [],
-    verificationQuestion: `Ask Marcus for a relevant example of ${label}.`
+    verificationQuestion: `Explore the role-specific context for ${label}.`
   });
   const suppliedCoverage = new Set();
   assessment.roleCoverage = assessment.roleCoverage.map((coverage) => {

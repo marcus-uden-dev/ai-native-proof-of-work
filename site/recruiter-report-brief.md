@@ -21,10 +21,10 @@ Use this structure with the [recruiter agent guide](https://marcus-uden-dev.gith
 1. **Executive summary** — Use at most four bullets. State the evidence-backed fit, two strongest matches, the main gap, and confidence.
 2. **Role needs** — List the role's important outcomes and constraints.
 3. **Evidence-backed matches** — Map each supported need to a public source. Use short numbered items and begin with a strength label.
-4. **Inference** — Label interpretations that need interview validation.
+4. **Inference** — Label interpretations that need further context.
 5. **Gaps** — State requirements with no public evidence or unavailable sources. Use `Not evidenced by the current public source route` or `Source unavailable`. Do not treat either as a negative capability claim.
-6. **Interview questions** — Ask five questions that test the highest-value uncertainties.
-7. **Fit assessment** — Give a short conclusion with confidence and limitations.
+6. **Areas to explore** — Name the highest-value context gaps. Do not prescribe recruiter interview questions.
+7. **Fit assessment** — Give a short conclusion that keeps public evidence separate from role-specific inference.
 
 Do not use synthetic company data as evidence about a real employer or a measured result. Do not paste confidential or personal data into the assessment.
 

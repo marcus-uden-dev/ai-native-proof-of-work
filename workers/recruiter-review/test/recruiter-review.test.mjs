@@ -123,6 +123,9 @@ test('provides dimension-specific evidence anchors for role assessment', () => {
   assert.match(instructions, /If a configured direct-evidence anchor supports a stable dimension, cite it and use direct/);
   assert.match(instructions, /Additionally return exactly three roleCoverage entries/);
   assert.match(instructions, /systems-api-integration: Systems, APIs, and integrations/);
+  assert.match(instructions, /add a concise exploration area, not a recruiter interview question/);
+  assert.match(instructions, /interviewQuestions must be an empty array/);
+  assert.match(instructions, /limitations must be an empty array/);
 });
 
 test('keeps the role assessment compact enough for structured provider output', () => {
@@ -488,6 +491,10 @@ test('returns an evidence-grounded role baseline when providers are unavailable'
   assert.match(body.notice, /baseline/i);
   assert.equal(body.assessment.dimensions.length, 7);
   assert.equal(body.assessment.roleCoverage.length, 3);
+  assert.deepEqual(body.assessment.interviewQuestions, []);
+  assert.deepEqual(body.assessment.limitations, []);
+  assert.doesNotMatch(body.assessment.roleCoverage[0].verificationQuestion, /^Ask /);
+  assert.match(body.assessment.roleCoverage[0].verificationQuestion, /Explore the role-specific context/i);
   assert.ok(body.evidenceSources.length > 0);
 });
 
@@ -747,7 +754,7 @@ test('fills a missing role-needs field with a neutral validation note', async ()
   const response = await worker.fetch(request({ mode: 'role', clientMode: 'role', input: 'Role: workflow lead' }), baseEnv);
   assert.equal(response.status, 200);
   const body = await response.json();
-  assert.deepEqual(body.assessment.roleNeeds, ['Assess the submitted role requirements against cited public evidence and interview validation.']);
+  assert.deepEqual(body.assessment.roleNeeds, ['Assess the submitted role requirements against cited public evidence and identify areas to explore.']);
 });
 
 test('rejects a non-direct dimension without an interview-verification question', async () => {
@@ -815,7 +822,7 @@ test('returns a complete seven-dimension role assessment', async () => {
   assert.equal(body.assessment.dimensions.length, 7);
   assert.deepEqual(body.assessment.evidenceAnchors, ['cv-product-operations']);
   assert.deepEqual(body.assessment.interviewQuestions, []);
-  assert.deepEqual(body.assessment.limitations, ['This assessment uses public evidence only and is not a hiring decision.']);
+  assert.deepEqual(body.assessment.limitations, []);
 });
 
 test('rejects score language in every role-assessment text field', async () => {
