@@ -42,13 +42,17 @@
 
     <header class="masthead" data-print-hide>
       <div class="shell masthead__inner">
-        <a class="wordmark" href="./" aria-label="Marcus Udén, home">
-          <span class="wordmark__mark" aria-hidden="true">MU</span>
-          <span class="wordmark__copy">
-            <span class="wordmark__name">Marcus Udén</span>
-            <span class="wordmark__descriptor">Product portfolio · CV · interview companion</span>
-          </span>
-        </a>
+        <div class="wordmark">
+          <a class="wordmark__home" href="./" aria-label="Marcus Udén, home">
+            <span class="wordmark__mark" aria-hidden="true">MU</span>
+            <span class="wordmark__copy">
+              <span class="wordmark__name">Marcus Udén</span>
+            </span>
+          </a>
+          <nav class="wordmark__descriptor wordmark__routes" aria-label="Portfolio routes">
+            <a href="#selected-proof">Product portfolio</a><span aria-hidden="true">·</span><a href="cv/">CV</a><span aria-hidden="true">·</span><a href="#ai-review">Interview my work</a>
+          </nav>
+        </div>
         <nav aria-label="Primary navigation">
           <ul class="nav-list">
             <li><a href="#hiring-case">Hiring case</a></li>
@@ -57,7 +61,6 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
-        <a class="repo-link" href="https://github.com/marcus-uden-dev/ai-native-proof-of-work" target="_blank" rel="noreferrer">Browse proof-of-work repo <span aria-hidden="true">↗</span></a>
       </div>
     </header>
 
@@ -67,15 +70,13 @@
           <p class="eyebrow">Experienced individual contributor</p>
           <h1 id="hero-title">I turn messy operational problems into clear, buildable product work.</h1>
           <p class="hero__support">Operational depth. Product thinking. AI-native execution.</p>
-          <div class="action-row">
-            <a class="button button--primary" href="assets/cv/marcus-uden-cv.pdf" download>Download CV</a>
-            <a class="button button--quiet" href="cv/">Read CV facts</a>
-            <a class="button button--secondary" href="#ai-review">Review fit with AI</a>
-            <a class="button button--secondary" href="proof/recursive-workflow/#decision-log">Open Decision Log</a>
-            <a class="button button--quiet" href="#selected-proof">See selected proof <span aria-hidden="true">↓</span></a>
+          <div class="action-row action-row--entry-points">
+            <a class="button button--secondary" href="#selected-proof">Explore product work</a>
+            <a class="button button--secondary" href="proof/recursive-workflow/#decision-log">Follow the decisions</a>
+            <a class="button button--secondary" href="cv/">CV</a>
+            <a class="button button--primary" href="#ai-review">Interview my work</a>
           </div>
-          <p class="hero__decision-note"><strong>What it is:</strong> A dated, tagged record of the decisions and trade-offs behind the work, with the evidence boundary kept visible.</p>
-          <p class="hero__ai-note">The AI review uses an external assistant — ChatGPT or Claude — reading cited public evidence. No assistant is embedded on this site.</p>
+          <p class="hero__ai-note"><strong>Interview my work:</strong> Ask a question about the work or paste a non-confidential role description. The live review uses cited public evidence to explain fit, surface relevant proof, and show where the evidence stops.</p>
         </div>
 
         <aside class="signal-card" aria-labelledby="signal-title">

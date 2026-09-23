@@ -18,7 +18,7 @@ for (const viewport of viewports) {
     }));
     expect(dimensions.scrollWidth).toBeLessThanOrEqual(dimensions.clientWidth);
     await expect(page.locator('main section').first()).toHaveAttribute('aria-labelledby', 'hero-title');
-    await expect(page.getByRole('link', { name: 'Review fit with AI' })).toBeVisible();
+    await expect(page.locator('.action-row--entry-points').getByRole('link', { name: 'Interview my work' })).toBeVisible();
   });
 }
 
@@ -27,12 +27,20 @@ test('core positioning and actions remain available without JavaScript', async (
   const page = await context.newPage();
   await page.goto('/');
   await expect(page.getByText('Experienced individual contributor')).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Download CV' }).first()).toHaveAttribute('href', 'assets/cv/marcus-uden-cv.pdf');
+  const entryPoints = page.locator('.action-row--entry-points');
+  await expect(entryPoints.getByRole('link', { name: 'Explore product work' })).toHaveAttribute('href', '#selected-proof');
+  await expect(entryPoints.getByRole('link', { name: 'Follow the decisions' })).toHaveAttribute('href', 'proof/recursive-workflow/#decision-log');
+  await expect(entryPoints.getByRole('link', { name: 'CV' })).toHaveAttribute('href', 'cv/');
   await expect(page.getByRole('link', { name: /Open the guided case study/ })).toHaveAttribute('href', 'proof/job-agent/');
   await expect(page.getByRole('link', { name: 'Request an interview' })).toHaveAttribute('href', /mailto:/);
-  await expect(page.getByRole('link', { name: 'Review fit with AI' })).toHaveAttribute('href', '#ai-review');
+  await expect(entryPoints.getByRole('link', { name: 'Interview my work' })).toHaveAttribute('href', '#ai-review');
+  const portfolioRoutes = page.locator('.wordmark__routes');
+  await expect(portfolioRoutes.getByRole('link', { name: 'Product portfolio' })).toHaveAttribute('href', '#selected-proof');
+  await expect(portfolioRoutes.getByRole('link', { name: 'CV' })).toHaveAttribute('href', 'cv/');
+  await expect(portfolioRoutes.getByRole('link', { name: 'Interview my work' })).toHaveAttribute('href', '#ai-review');
+  await expect(page.getByRole('link', { name: /Browse proof-of-work repo/ })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'How the work is thought through.' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Open the Decision Log' })).toHaveAttribute('href', 'proof/recursive-workflow/#decision-log');
+  await expect(page.getByText('Ask a question about the work or paste a non-confidential role description.')).toBeVisible();
   await context.close();
 });
 
@@ -45,13 +53,14 @@ test('keyboard navigation exposes visible focus and accurate names', async ({ pa
   await expect(page.getByRole('link', { name: 'Marcus Udén, home' })).toBeFocused();
 });
 
-test('the quiet repository link is reachable after the primary nav and has a visible focus outline', async ({ page }) => {
+test('homepage masthead gives direct access to portfolio routes', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
-  const repoLink = page.getByRole('link', { name: /Browse proof-of-work repo/ });
-  await expect(repoLink).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
-  await repoLink.focus();
-  await expect(repoLink).toHaveCSS('outline-style', 'solid');
+  const portfolioRoutes = page.locator('.wordmark__routes');
+  const portfolioLink = portfolioRoutes.getByRole('link', { name: 'Product portfolio' });
+  await expect(portfolioLink).toHaveAttribute('href', '#selected-proof');
+  await portfolioLink.focus();
+  await expect(portfolioLink).toHaveCSS('outline-style', 'solid');
 });
 
 test('print mode keeps evidence and hides navigation controls', async ({ page }) => {
@@ -75,9 +84,9 @@ test('reduced-motion preference removes smooth movement', async ({ page }) => {
   expect(motion.transitionDuration).toBeLessThanOrEqual(0.001);
 });
 
-test('the quiet repository link is consistent across every masthead page', async ({ page }) => {
+test('the repository link remains available on supporting proof pages', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
-  for (const path of ['/', '/proof/job-agent/', '/proof/recursive-workflow/']) {
+  for (const path of ['/proof/job-agent/', '/proof/recursive-workflow/']) {
     await page.goto(path);
     await expect(page.getByRole('link', { name: /Browse proof-of-work repo/ })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
   }
