@@ -66,7 +66,7 @@ Assess Marcus’s practical evidence for:
 5. Before career-fit claims, read both the CV facts JSON and the linked human-readable English CV.
 6. State `Not evidenced by the current public source route` when a role requirement has no public support.
 7. State `Source unavailable` when a required source cannot be opened. Do not turn missing evidence or source access into a claim that Marcus lacks a capability.
-8. For credit experience, distinguish documented mortgage and construction-finance work from direct SME or commercial lending. Treat direct equivalence as interview validation unless a public source supports it.
+8. For credit experience, distinguish documented mortgage and construction-finance work from direct SME or commercial lending. Treat direct equivalence as an area to explore unless a public source supports it.
 9. Prefer current release-manifest facts when public pages conflict. Report the conflict.
 10. Keep synthetic demo data separate from sourced public facts. Do not treat synthetic company values as facts about Marcus or a real employer.
 11. Do not claim product adoption, market validation, recruiter response, job-search impact, or measured outcomes.
@@ -92,10 +92,10 @@ Return:
 1. Executive summary. Use at most four bullets: evidence-backed fit, two strongest matches, the main gap, and confidence.
 2. Role needs.
 3. Evidence-backed matches.
-4. Inferences that need interview validation.
+4. Inferences that need further context.
 5. Gaps or missing evidence.
-6. Five interview questions.
-7. A concise fit assessment with confidence and limitations.
+6. Areas to explore further, not prescribed recruiter interview questions.
+7. A concise fit assessment that keeps public evidence separate from role-specific inference.
 
 Format each evidence-backed match as a short numbered item, not a Markdown table. Start each item with its strength label, then state the role need, evidence, and interpretation. This keeps the assessment readable on narrow screens.
 

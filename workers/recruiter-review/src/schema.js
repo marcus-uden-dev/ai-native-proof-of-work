@@ -83,7 +83,7 @@ export const roleResponseSchema = {
         },
         evidenceAnchors: { type: 'array', minItems: 1, maxItems: 18, items: evidenceId },
         interviewQuestions: { type: 'array', maxItems: 3, items: roleVerificationQuestion },
-        limitations: { type: 'array', minItems: 1, maxItems: 3, items: roleVerificationQuestion }
+        limitations: { type: 'array', maxItems: 3, items: roleVerificationQuestion }
       }
     }
   }

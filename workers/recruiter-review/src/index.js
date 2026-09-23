@@ -98,7 +98,7 @@ function roleBaseline(input, catalogue) {
               id,
               label,
               state: 'direct',
-              explanation: `The published evidence catalogue directly supports ${label}. Role-specific context still needs interview validation.`,
+              explanation: `The published evidence catalogue directly supports ${label}. Role-specific context remains an area to explore.`,
               evidenceIds,
               verificationQuestion: ''
             }
@@ -106,22 +106,22 @@ function roleBaseline(input, catalogue) {
               id,
               label,
               state: 'needs_interview_verification',
-              explanation: `The provider was unavailable, so validate ${label} against the submitted role in interview.`,
+              explanation: `The provider was unavailable, so the role-specific context for ${label} remains an area to explore.`,
               evidenceIds: [],
-              verificationQuestion: `Ask Marcus for a role-relevant example of ${label}.`
+              verificationQuestion: `Explore the role-specific context for ${label}.`
             };
       }),
       roleCoverage: roleCapabilityTaxonomy.slice(0, 3).map((capability, index) => ({
         capabilityId: capability.id,
         roleNeed: roleNeeds[index],
         state: 'needs_interview_verification',
-        explanation: 'The live provider was unavailable, so this role-specific connection needs interview validation.',
+        explanation: 'The live provider was unavailable, so this role-specific connection remains an area to explore.',
         evidenceIds: [],
-        verificationQuestion: `Ask Marcus for a role-relevant example of ${capability.label}.`
+        verificationQuestion: `Explore the role-specific context for ${capability.label}.`
       })),
       evidenceAnchors: [],
-      interviewQuestions: roleCapabilityTaxonomy.slice(0, 3).map((capability) => `How has Marcus applied ${capability.label.toLowerCase()} in a similar role context?`),
-      limitations: ['This is a cited evidence baseline, not a model-generated role analysis.', 'Validate all role-specific requirements in interview.']
+      interviewQuestions: [],
+      limitations: []
     }
   };
 }

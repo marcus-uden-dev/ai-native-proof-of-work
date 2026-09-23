@@ -1113,6 +1113,13 @@ h3 {
   border-top: 1px solid var(--ri-panel-rule);
 }
 
+.repository-interview__page > .review-result {
+  margin-top: clamp(28px, 5vw, 56px);
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid var(--ri-panel-rule);
+  background: var(--ri-panel-inner);
+}
+
 .repository-interview .review-result[hidden] {
   display: none;
 }
@@ -1123,6 +1130,13 @@ h3 {
   margin-top: 24px;
   padding-top: 20px;
   border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview__page > .recruiter-follow-up {
+  margin-top: 18px;
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid var(--ri-panel-rule);
+  background: var(--ri-panel-inner);
 }
 
 .repository-interview .recruiter-follow-up[hidden] {
@@ -1195,7 +1209,7 @@ h3 {
 }
 
 .repository-interview .review-map-label {
-  margin: 1.5rem 0 0.35rem;
+  margin: 0 0 0.35rem;
   color: var(--ri-gold);
   font-family: var(--mono);
   font-size: 0.8rem;
@@ -1208,10 +1222,23 @@ h3 {
   font: 0.82rem/1.45 var(--mono);
 }
 
+.repository-interview .experience-fit-map {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.65fr) minmax(0, 1.35fr);
+  align-items: start;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin-top: 1.5rem;
+}
+
+.repository-interview .experience-fit-map__overview {
+  min-width: 0;
+}
+
 .repository-interview .experience-fit-radar {
   display: grid;
-  max-width: 20rem;
-  margin: 0 0 1.25rem;
+  width: 100%;
+  max-width: 24rem;
+  margin: 1rem 0 0;
   padding: 1rem;
   border: 1px solid var(--ri-panel-rule);
   background: #0d0d0a;
@@ -1243,9 +1270,17 @@ h3 {
 .repository-interview .experience-fit-radar__axis-label {
   fill: var(--ri-panel-text);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.01em;
+}
+
+.repository-interview .experience-fit-radar__axis-index {
+  display: none;
+  fill: var(--ri-gold);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .repository-interview .experience-fit-radar figcaption {
@@ -1254,8 +1289,60 @@ h3 {
   line-height: 1.45;
 }
 
+.repository-interview .experience-fit-radar-key {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .experience-fit-radar-key__intro {
+  margin: 0 0 0.65rem;
+  color: var(--ri-gold);
+  font: 0.73rem/1.45 var(--mono);
+  letter-spacing: 0.03em;
+}
+
+.repository-interview .experience-fit-radar-key__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.38rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repository-interview .experience-fit-radar-key__list li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.repository-interview .experience-fit-radar-key__number {
+  padding-top: 0.08rem;
+  color: var(--ri-gold);
+  font: 0.72rem/1.4 var(--mono);
+}
+
+.repository-interview .experience-fit-radar-key__detail {
+  display: grid;
+  gap: 0.08rem;
+  color: var(--ri-panel-text);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.repository-interview .experience-fit-radar-key__detail strong {
+  font-weight: 500;
+}
+
+.repository-interview .experience-fit-radar-key .evidence-state {
+  margin: 0 !important;
+  font-size: 0.65rem;
+}
+
 .repository-interview .experience-fit-tracks {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
 }
 
 .repository-interview .role-coverage {
@@ -1283,7 +1370,7 @@ h3 {
 
 .repository-interview .role-coverage__list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
 }
 
@@ -1361,10 +1448,13 @@ h3 {
 .repository-interview .evidence-state--needs_interview_verification { color: #dfb873 !important; }
 .repository-interview .evidence-state--not_evidenced { color: var(--ri-muted) !important; }
 
-.repository-interview .verification-question {
+.repository-interview .exploration-area {
   margin-top: 0.85rem !important;
-  color: var(--ri-ink) !important;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--ri-panel-rule);
+  color: #d6bf8d !important;
   font-size: 0.9rem;
+  line-height: 1.5 !important;
 }
 
 .repository-interview .review-detail {
@@ -1488,6 +1578,19 @@ h3 {
   .repository-interview .experience-fit-tracks {
     grid-template-columns: 1fr;
   }
+
+  .repository-interview .experience-fit-map {
+    grid-template-columns: 1fr;
+  }
+
+  .repository-interview .experience-fit-radar {
+    max-width: min(100%, 28rem);
+    margin-inline: auto;
+  }
+
+  .repository-interview .experience-fit-radar__axis-label { display: none; }
+
+  .repository-interview .experience-fit-radar__axis-index { display: block; }
 
   .repository-interview .role-coverage__list {
     grid-template-columns: 1fr;

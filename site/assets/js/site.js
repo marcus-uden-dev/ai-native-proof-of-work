@@ -235,9 +235,17 @@ if (promptGenerator) {
     return {
       direct: 'Direct evidence',
       transferable: 'Transferable evidence',
-      needs_interview_verification: 'Needs interview verification',
+      needs_interview_verification: 'Explore further',
       not_evidenced: 'Not evidenced in this public record'
     }[state] || state;
+  }
+
+  function appendExplorationArea(container, area, state) {
+    if (!area || state === 'direct' || /\?|^(ask|how|what|when|where|who|which|describe|give)\b/i.test(area.trim())) return;
+    const note = document.createElement('p');
+    note.className = 'exploration-area';
+    note.textContent = `Explore further: ${area}`;
+    container.append(note);
   }
 
   function renderSemanticRadar(dimensions) {
@@ -272,6 +280,13 @@ if (promptGenerator) {
     });
     dimensions.forEach((dimension, index) => {
       const [labelX, labelY] = pointFor(index, 128);
+      const ordinal = document.createElementNS(svgNamespace, 'text');
+      ordinal.setAttribute('class', 'experience-fit-radar__axis-index');
+      ordinal.setAttribute('x', labelX);
+      ordinal.setAttribute('y', labelY);
+      ordinal.setAttribute('text-anchor', labelX > center + 12 ? 'start' : labelX < center - 12 ? 'end' : 'middle');
+      ordinal.textContent = String(index + 1).padStart(2, '0');
+      svg.append(ordinal);
       const label = document.createElementNS(svgNamespace, 'text');
       const lines = dimension.label.split(' ');
       const anchor = labelX > center + 12 ? 'start' : labelX < center - 12 ? 'end' : 'middle';
@@ -302,6 +317,35 @@ if (promptGenerator) {
       svg.append(marker);
     });
     return svg;
+  }
+
+  function renderRadarKey(dimensions) {
+    const key = document.createElement('section');
+    key.className = 'experience-fit-radar-key';
+    key.setAttribute('aria-label', 'Experience Fit Map key');
+    const introduction = document.createElement('p');
+    introduction.className = 'experience-fit-radar-key__intro';
+    introduction.textContent = 'Map key — starts at the top and moves clockwise.';
+    const list = document.createElement('ol');
+    list.className = 'experience-fit-radar-key__list';
+    dimensions.forEach((dimension, index) => {
+      const item = document.createElement('li');
+      const number = document.createElement('span');
+      number.className = 'experience-fit-radar-key__number';
+      number.textContent = String(index + 1).padStart(2, '0');
+      const detail = document.createElement('span');
+      detail.className = 'experience-fit-radar-key__detail';
+      const label = document.createElement('strong');
+      label.textContent = dimension.label;
+      const state = document.createElement('small');
+      state.className = `evidence-state evidence-state--${dimension.state}`;
+      state.textContent = stateLabel(dimension.state);
+      detail.append(label, state);
+      item.append(number, detail);
+      list.append(item);
+    });
+    key.append(introduction, list);
+    return key;
   }
 
   function renderEvidenceStateBar(state, label) {
@@ -345,12 +389,7 @@ if (promptGenerator) {
       explanation.textContent = coverage.explanation;
       item.append(roleNeed, capability, state, renderEvidenceStateBar(coverage.state, coverage.roleNeed), explanation);
       addEvidenceLinks(item, coverage.evidenceIds, catalogue);
-      if (coverage.verificationQuestion) {
-        const question = document.createElement('p');
-        question.className = 'verification-question';
-        question.textContent = `Interview question: ${coverage.verificationQuestion}`;
-        item.append(question);
-      }
+      appendExplorationArea(item, coverage.verificationQuestion, coverage.state);
       list.append(item);
     }
     section.append(heading, introduction, list);
@@ -374,14 +413,16 @@ if (promptGenerator) {
     const reviewedRole = document.createElement('p');
     reviewedRole.className = 'reviewed-role';
     reviewedRole.textContent = `Role reviewed: ${roleTitle}`;
-    map.append(title, reviewedRole);
+    const overview = document.createElement('div');
+    overview.className = 'experience-fit-map__overview';
+    overview.append(title, reviewedRole);
     const radar = document.createElement('figure');
     radar.className = 'experience-fit-radar';
     radar.append(renderSemanticRadar(assessment.dimensions));
     const caption = document.createElement('figcaption');
-    caption.textContent = 'The shape encodes cited public-evidence states only. Read the evidence tracks for the full interpretation.';
+    caption.textContent = 'One point represents each labelled dimension. The shape encodes cited public-evidence states only; read the evidence tracks for the full interpretation.';
     radar.append(caption);
-    map.append(radar);
+    overview.append(radar, renderRadarKey(assessment.dimensions));
     const tracks = document.createElement('div');
     tracks.className = 'experience-fit-tracks';
     for (const dimension of assessment.dimensions) {
@@ -396,20 +437,13 @@ if (promptGenerator) {
       explanation.textContent = dimension.explanation;
       track.append(heading, state, renderEvidenceStateBar(dimension.state, dimension.label), explanation);
       addEvidenceLinks(track, dimension.evidenceIds, catalogue);
-      if (dimension.verificationQuestion) {
-        const question = document.createElement('p');
-        question.className = 'verification-question';
-        question.textContent = `Interview question: ${dimension.verificationQuestion}`;
-        track.append(question);
-      }
+      appendExplorationArea(track, dimension.verificationQuestion, dimension.state);
       tracks.append(track);
     }
-    map.append(tracks);
+    map.append(overview, tracks);
     fragment.append(map);
     const roleCoverage = renderRoleCoverage(assessment.roleCoverage, catalogue);
     if (roleCoverage) fragment.append(roleCoverage);
-    appendTextSection(fragment, 'Interview validation', assessment.interviewQuestions, 'review-detail-list');
-    appendTextSection(fragment, 'Evidence limits', assessment.limitations, 'review-detail-list');
     return fragment;
   }
 

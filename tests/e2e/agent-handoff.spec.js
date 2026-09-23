@@ -108,7 +108,7 @@ test('the existing repository review panel renders a cited AI role assessment wh
     state: index === 1 ? 'direct' : 'not_evidenced',
     explanation: index === 1 ? 'The CV documents product operations and workflow design.' : 'The public record needs interview validation for this role requirement.',
     evidenceIds: index === 1 ? ['cv-product-operations'] : index === 2 ? ['unknown-evidence-id'] : [],
-    verificationQuestion: index === 1 ? '' : `Ask Marcus about ${label.toLowerCase()}.`
+    verificationQuestion: index === 1 ? '' : `${label} needs role-specific context before a conclusion.`
   }));
   await page.route('**/assets/js/recruiter-review-config.js', (route) => route.fulfill({
     contentType: 'application/javascript',
@@ -174,12 +174,19 @@ test('the existing repository review panel renders a cited AI role assessment wh
   await page.getByRole('button', { name: 'Review with AI' }).click();
   await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
   await expect(page.getByText('This cited baseline remains transparent.')).toBeVisible();
+  await expect(page.getByText('Explore further: Product framing needs role-specific context before a conclusion.')).toBeVisible();
+  await expect(page.getByText('Interview question:', { exact: false })).toHaveCount(0);
   await expect(page.locator('.experience-fit-radar__svg')).toBeVisible();
+  await expect(page.getByText('Map key — starts at the top and moves clockwise.')).toBeVisible();
+  await expect(page.getByText('01').first()).toBeVisible();
   await expect(page.locator('.experience-fit-track .evidence-state--direct')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Role-specific needs detected' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
   await expect(page.getByText('API layer design and integration')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Evidence limits' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Evidence limits' })).toHaveCount(0);
+  const reviewWidth = await page.locator('#apiReviewResult').evaluate((element) => element.getBoundingClientRect().width);
+  const cardWidth = await page.locator('.agent-card').evaluate((element) => element.getBoundingClientRect().width);
+  expect(reviewWidth).toBeGreaterThan(cardWidth * 0.9);
   await expect(page.getByRole('link', { name: 'CV: product operations and workflow design ↗' }).first()).toHaveAttribute('href', 'https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/');
   await expect(page.getByRole('link', { name: 'Decision log: workflow evidence ↗' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/decision-log.json');
   await expect(page.getByRole('heading', { name: 'Discuss this role or question' })).toBeVisible();
@@ -189,6 +196,10 @@ test('the existing repository review panel renders a cited AI role assessment wh
   await page.getByRole('button', { name: 'Request follow-up' }).click();
   await expect(page.locator('#recruiterFollowUpStatus')).toContainText('Follow-up request saved.');
   await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.locator('.experience-fit-map').evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length)).toBe(1);
+  await expect(page.locator('.experience-fit-radar')).toBeVisible();
+  await expect(page.locator('.experience-fit-radar-key')).toBeVisible();
+  await expect(page.locator('.experience-fit-radar__axis-index')).toHaveCount(7);
   expect(await page.locator('.role-coverage__list').evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length)).toBe(1);
 });
 
@@ -247,6 +258,7 @@ test('a saved smoke test renders through the live recruiter-review interface', a
   await expect(page.getByRole('link', { name: 'Source role listing ↗' })).toHaveAttribute('href', 'https://jobs.lever.co/spotify/7f0a8faa-f4f5-4db9-9f51-4101d6a29b34');
   await expect(page.getByText('Role reviewed: Spotify — Customer Service Platform')).toBeVisible();
   await expect(page.locator('.experience-fit-radar__axis-label')).toHaveCount(7);
+  await expect(page.getByText('Explore further:', { exact: false })).toHaveCount(0);
   await expect(page.locator('.experience-fit-state-bar')).toHaveCount(12);
   await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'strengthen the API layer connecting support systems' })).toBeVisible();
