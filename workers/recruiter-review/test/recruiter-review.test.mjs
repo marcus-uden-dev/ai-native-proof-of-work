@@ -469,6 +469,28 @@ test('returns a safe and specific response when Groq is rate limited or times ou
   assert.equal((await timeoutResponse.json()).code, 'review_timeout');
 });
 
+test('returns an evidence-grounded role baseline when providers are unavailable', async () => {
+  const unavailable = new Error('Provider unavailable');
+  unavailable.status = 503;
+  const worker = createRecruiterReviewWorker({
+    catalogue: experienceFitCatalogue,
+    provider: { generateStructuredReview: async () => { throw unavailable; } }
+  });
+
+  const response = await worker.fetch(request({
+    mode: 'role',
+    clientMode: 'role',
+    input: 'Role: Product operations lead\nResponsibilities\n- Improve cross-functional workflows\nRequirements\n- Evidence-based product decisions'
+  }), baseEnv);
+  assert.equal(response.status, 200);
+  const body = await response.json();
+  assert.equal(body.degraded, true);
+  assert.match(body.notice, /baseline/i);
+  assert.equal(body.assessment.dimensions.length, 7);
+  assert.equal(body.assessment.roleCoverage.length, 3);
+  assert.ok(body.evidenceSources.length > 0);
+});
+
 test('uses Gemini when Groq has a retryable provider failure', async () => {
   const unavailable = new Error('Groq rate limited');
   unavailable.status = 429;

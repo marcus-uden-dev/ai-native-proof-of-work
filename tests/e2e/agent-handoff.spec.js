@@ -122,6 +122,7 @@ test('the existing repository review panel renders a cited AI role assessment wh
       contentType: 'application/json',
       body: JSON.stringify({
         kind: 'role',
+        notice: 'The live AI providers did not return a usable review. This cited baseline remains transparent.',
         assessment: {
           summary: 'The public record directly documents workflow-design evidence for this role.',
           roleNeeds: ['Workflow design'],
@@ -172,6 +173,7 @@ test('the existing repository review panel renders a cited AI role assessment wh
   await page.getByLabel('Ask about Marcus or paste a job description').fill('Role: Product operations lead\n\nResponsibilities\n- Improve cross-functional workflows');
   await page.getByRole('button', { name: 'Review with AI' }).click();
   await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
+  await expect(page.getByText('This cited baseline remains transparent.')).toBeVisible();
   await expect(page.locator('.experience-fit-radar__svg')).toBeVisible();
   await expect(page.locator('.experience-fit-track .evidence-state--direct')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Role-specific needs detected' })).toBeVisible();

@@ -1,4 +1,4 @@
-import { experienceFitCatalogue } from './catalog.js';
+import { experienceFitCatalogue, experienceFitDimensions, roleCapabilityTaxonomy, stableDirectEvidence } from './catalog.js';
 import { publicProviderFailure, providerErrorCategory, providerCreditsExhausted, shouldTryBackupProvider } from './errors.js';
 import { notifyMarcus, purgeExpiredEnquiries, saveEnquiry, updateNotificationStatus, validateEnquiryRequest } from './enquiry.js';
 import { createGeminiProvider, createGroqProvider } from './provider.js';
@@ -36,8 +36,9 @@ export function createRecruiterReviewWorker(options = {}) {
       const parsed = validateRequest(payload);
       if (!parsed.ok) return json({ error: parsed.message }, parsed.status, cors);
 
+      let reviewCatalogue;
       try {
-        const reviewCatalogue = await catalogueLoader({
+        reviewCatalogue = await catalogueLoader({
           input: parsed.value.input,
           fallbackCatalogue: catalogue
         });
@@ -70,10 +71,68 @@ export function createRecruiterReviewWorker(options = {}) {
             ? error.failures.map((failure) => ({ provider: failure?.provider ?? 'unknown', status: Number.isInteger(failure?.status) ? failure.status : null, message: failure?.message ?? 'unknown failure' }))
             : undefined
         });
+        if (parsed.value.mode === 'role' && !providerCreditsExhausted(error)) {
+          const baselineCatalogue = reviewCatalogue ?? catalogue;
+          return json(withEvidenceSources(roleBaseline(parsed.value.input, baselineCatalogue), baselineCatalogue), 200, cors);
+        }
         return json(failure, failure.status, cors);
       }
     }
   };
+}
+
+function roleBaseline(input, catalogue) {
+  const availableEvidenceIds = new Set(catalogue.map(({ id }) => id));
+  const roleNeeds = baselineRoleNeeds(input);
+  return {
+    kind: 'role',
+    degraded: true,
+    notice: 'The live AI providers did not return a usable review. This cited baseline Experience Fit Map keeps the evidence boundary visible; validate role-specific requirements in interview.',
+    assessment: {
+      summary: 'The live AI providers did not return a usable role analysis, so this baseline maps the submitted role to published evidence only.',
+      roleNeeds,
+      dimensions: experienceFitDimensions.map(({ id, label }) => {
+        const evidenceIds = (stableDirectEvidence[id] ?? []).filter((evidenceId) => availableEvidenceIds.has(evidenceId));
+        return evidenceIds.length > 0
+          ? {
+              id,
+              label,
+              state: 'direct',
+              explanation: `The published evidence catalogue directly supports ${label}. Role-specific context still needs interview validation.`,
+              evidenceIds,
+              verificationQuestion: ''
+            }
+          : {
+              id,
+              label,
+              state: 'needs_interview_verification',
+              explanation: `The provider was unavailable, so validate ${label} against the submitted role in interview.`,
+              evidenceIds: [],
+              verificationQuestion: `Ask Marcus for a role-relevant example of ${label}.`
+            };
+      }),
+      roleCoverage: roleCapabilityTaxonomy.slice(0, 3).map((capability, index) => ({
+        capabilityId: capability.id,
+        roleNeed: roleNeeds[index],
+        state: 'needs_interview_verification',
+        explanation: 'The live provider was unavailable, so this role-specific connection needs interview validation.',
+        evidenceIds: [],
+        verificationQuestion: `Ask Marcus for a role-relevant example of ${capability.label}.`
+      })),
+      evidenceAnchors: [],
+      interviewQuestions: roleCapabilityTaxonomy.slice(0, 3).map((capability) => `How has Marcus applied ${capability.label.toLowerCase()} in a similar role context?`),
+      limitations: ['This is a cited evidence baseline, not a model-generated role analysis.', 'Validate all role-specific requirements in interview.']
+    }
+  };
+}
+
+function baselineRoleNeeds(input) {
+  const candidates = input
+    .split(/\r?\n/)
+    .map((line) => line.replace(/^\s*(?:[-•]|\d+\.)\s*/, '').trim())
+    .filter((line) => line.length >= 8 && line.length <= 120 && !/^(role|responsibilities|requirements|qualifications)$/i.test(line));
+  const defaults = ['Submitted role requirements', 'Cross-functional delivery context', 'Evidence-based product decisions', 'Role-specific operational collaboration'];
+  return [...new Set([...candidates, ...defaults])].slice(0, 4);
 }
 
 async function generateWithBackup({ provider, backupProvider, env, mode, catalogue, userInput, validationReason }) {
@@ -156,6 +215,10 @@ function citedEvidenceSources(review, catalogue) {
     const source = sourceById.get(id);
     return source ? [{ id: source.id, label: source.label, sourceClass: source.sourceClass, url: source.url }] : [];
   });
+}
+
+function withEvidenceSources(review, catalogue) {
+  return { ...review, evidenceSources: citedEvidenceSources(review, catalogue) };
 }
 
 function corsHeaders(origin, allowedOrigins = '') {
