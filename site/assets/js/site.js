@@ -439,6 +439,12 @@ if (promptGenerator) {
       const catalogue = Array.isArray(payload.evidenceSources)
         ? new Map(payload.evidenceSources.map((source) => [source.id, source]))
         : await getCatalogue();
+      if (payload.notice) {
+        const notice = document.createElement('p');
+        notice.className = 'result-note';
+        notice.textContent = payload.notice;
+        apiReviewOutput.append(notice);
+      }
       apiReviewOutput.append(payload.kind === 'role'
         ? renderRole(payload.assessment, catalogue, { roleTitle: 'Submitted role description' })
         : renderQuestion(payload.answer, catalogue));
