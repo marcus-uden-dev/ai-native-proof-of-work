@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="../../assets/css/site.css">
     <script src="../../assets/js/access-gate.js"></script>
     <script src="../../assets/js/site.js" defer></script>
+    <script src="../../assets/js/project-replay.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to the case study</a>
@@ -30,7 +31,7 @@
         <nav aria-label="Case study navigation">
           <ul class="nav-list">
             <li><a href="#proof-sequence">Proof sequence</a></li>
-            <li><a href="#ui-evolution">UI evolution</a></li>
+            <li><a href="#project-replay">The Job-agent story</a></li>
             <li><a href="#company-research">Research</a></li>
             <li><a href="#limitations">Limitations</a></li>
           </ul>
@@ -128,63 +129,145 @@
         </div>
       </section>
 
-      <section class="section shell ui-evolution" id="ui-evolution" aria-labelledby="ui-evolution-title">
+      <!-- PROJECT_REPLAY:BEGIN -->
+      <section class="section section--ruled shell project-replay" id="project-replay" aria-labelledby="project-replay-title" data-project-story>
         <div class="section-heading section-heading--split">
           <div>
-            <p class="kicker">Earlier UI version · v0.5</p>
-            <h2 id="ui-evolution-title">Inspect the workflow, not a market outcome.</h2>
+            <p class="kicker">Project Replay · Product playback</p>
+            <h2 id="project-replay-title">The Job-agent story.</h2>
           </div>
-          <p>Keep the earlier proof visible so the interface evolution is clear: from a guided decision workflow to the current product shell.</p>
+          <p>Rewind the product chapters. Inspect what changed, how each surface worked, and the evidence that supports the public record.</p>
         </div>
-        <div class="ui-evolution__intro">
-          <p><strong>Original proof framing.</strong> Job-agent connects discovery, company research, application tailoring, and interview preparation. The current proof shows the decision model and recruiter-safe interface, not market outcomes.</p>
-          <p><strong>Aster Vale Software is invented.</strong> Every company-specific value is synthetic or inferred from synthetic inputs. This prototype has no production service or public user data.</p>
+        <p class="project-replay__boundary"><strong>Evidence boundary:</strong> This story uses public, reviewed evidence only. The three interface frames are from the latest approved Job-agent iteration and use consistent synthetic placeholder data. They do not prove market validation.</p>
+        <div class="project-story__controls" data-story-controls hidden aria-label="Job-agent story playback controls">
+          <div class="project-story__control-row">
+            <button class="button button--secondary" type="button" data-story-previous>Previous chapter</button>
+            <button class="button button--secondary" type="button" data-story-next>Next chapter</button>
+            <button class="button button--primary" type="button" data-story-play>Play from origin</button>
+            <button class="button button--secondary" type="button" data-story-pause>Pause</button>
+            <button class="button button--secondary" type="button" data-story-current>Current state</button>
+          </div>
+          <label for="project-story-position">Playback position <output data-story-date-output></output></label>
+          <input id="project-story-position" type="range" min="0" max="3" step="1" value="3" data-story-range>
+          <p class="project-story__control-note" data-story-note></p>
         </div>
-        <ol class="proof-sequence ui-evolution__proof-sequence" aria-label="Earlier Job-agent decision sequence">
-          <li id="historical-scope">
-            <div class="proof-sequence__number">01</div>
-            <div>
-              <p class="claim-card__type">Earlier decision question</p>
-              <h3>What needs attention now?</h3>
-              <p>Combine new roles, saved work, stale items, and missing data into one decision queue.</p>
-              <p class="proof-sequence__evidence"><strong>Evidence:</strong> The Today view puts the next decision before filters and detail.</p>
-            </div>
+        <ol class="project-story__strip" aria-label="Job-agent story chapters">
+          <li data-story-marker data-story-index="0"><a href="#job-agent-origin" data-story-select data-story-index="0"><span class="project-story__dot" aria-hidden="true"></span><span class="project-story__strip-meta">Origin</span><strong>Before build</strong><span>Problem framing</span></a></li>
+          <li data-story-marker data-story-index="1"><a href="#job-agent-discovery-system" data-story-select data-story-index="1"><span class="project-story__dot" aria-hidden="true"></span><span class="project-story__strip-meta">v0.9 public proof</span><strong>Set up a repeatable way to find work</strong><span>Discovery system</span></a></li>
+          <li data-story-marker data-story-index="2"><a href="#job-agent-daily-prioritization" data-story-select data-story-index="2"><span class="project-story__dot" aria-hidden="true"></span><span class="project-story__strip-meta">v0.9 public proof</span><strong>Turn the workflow into a daily next move</strong><span>Daily operating view</span></a></li>
+          <li data-story-marker data-story-index="3"><a href="#job-agent-role-decision" data-story-select data-story-index="3"><span class="project-story__dot" aria-hidden="true"></span><span class="project-story__strip-meta">v0.9 public proof</span><strong>Bring fit, evidence, and action into one role view</strong><span>Role decision surface</span></a></li>
+        </ol>
+        <p class="project-story__strip-note">Every chapter remains available as a complete static record below. JavaScript adds the optional rewind and playback controls.</p>
+        <div class="project-story__stage" data-story-stage aria-live="polite" aria-label="Selected Job-agent story chapter" hidden></div>
+        <ol class="project-story__chapters" aria-label="Complete chronological Job-agent story">
+          <li class="project-story__chapter" id="job-agent-origin" data-story-event data-story-index="0" data-story-date="2026-05-11">
+            <article>
+              <header class="project-story__chapter-meta">
+                <time datetime="2026-05-11">11 May 2026</time>
+                <span>Origin</span>
+                <span>Problem framing</span>
+              </header>
+              <div class="project-story__chapter-layout project-story__chapter-layout--origin">
+                <div class="project-story__chapter-copy">
+                  <p class="project-story__chapter-number">Chapter 01</p>
+                  <h3>Before build</h3>
+                  <dl class="project-story__fields">
+                    <div><dt>What changed</dt><dd>Job search was framed as a fragmented, context-heavy workflow rather than only a writing task.</dd></div>
+                    <div><dt>How it works</dt><dd>The product scope connects opportunity discovery, career context, application support, research, and follow-up while the applicant retains control.</dd></div>
+                    <div><dt>Decision annotation</dt><dd>Build a reviewed workflow, not a generic writer or an autonomous application sender.</dd></div>
+                    <div><dt>Why it matters</dt><dd>The product needed to reduce repeated context reconstruction without removing human judgment from sensitive career choices.</dd></div>
+                    <div><dt>Next question</dt><dd>Which public product surface can make this connected workflow concrete?</dd></div>
+                    <div><dt>What this demonstrates</dt><dd><ul class="project-story__capabilities"><li>problem-framing</li><li>product-judgment</li><li>systems-thinking</li></ul></dd></div>
+                    <div><dt>Evidence available</dt><dd><ul><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md">Job-agent product strategy: core problem</a></li><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/decisions/DECISION_TRAIL.md">Job-agent decision trail: reviewed workflow</a></li></ul></dd></div>
+                  </dl>
+                </div>
+                <div class="project-story__origin-visual"><p class="project-story__origin-mark" aria-hidden="true">01</p><p>This chapter is the public problem framing. A verified interface frame begins with the next chapter.</p></div>
+              </div>
+            </article>
           </li>
-          <li id="historical-research">
-            <div class="proof-sequence__number">02</div>
-            <div>
-              <p class="claim-card__type">Earlier decision question</p>
-              <h3>Is this company and role worth my time?</h3>
-              <p>Structure compensation, stage, financial, culture, and role signals around a pursue, investigate, or pass decision.</p>
-              <p class="proof-sequence__evidence"><strong>Evidence:</strong> Every field keeps its provenance and states the decision it informs.</p>
-            </div>
+          <li class="project-story__chapter" id="job-agent-discovery-system" data-story-event data-story-index="1" data-story-date="2026-08-31">
+            <article>
+              <header class="project-story__chapter-meta">
+                <time datetime="2026-08-31">31 August 2026</time>
+                <span>v0.9 public proof</span>
+                <span>Discovery system</span>
+              </header>
+              <div class="project-story__chapter-layout">
+                <div class="project-story__chapter-copy">
+                  <p class="project-story__chapter-number">Chapter 02</p>
+                  <h3>Set up a repeatable way to find work</h3>
+                  <dl class="project-story__fields">
+                    <div><dt>What changed</dt><dd>Find jobs makes role criteria, sources, saved searches, and monitoring part of one visible discovery surface.</dd></div>
+                    <div><dt>How it works</dt><dd>The applicant defines a search, reviews its criteria and sources, then retains a saved route for returning to relevant opportunities.</dd></div>
+                    <div><dt>Decision annotation</dt><dd>Make discovery inspectable as a system rather than a single opaque search result.</dd></div>
+                    <div><dt>Why it matters</dt><dd>The interface shows how a repeated job-search activity can be organized before it becomes a one-off application task.</dd></div>
+                    <div><dt>Next question</dt><dd>How should a discovered role move into a clear next action?</dd></div>
+                    <div><dt>What this demonstrates</dt><dd><ul class="project-story__capabilities"><li>systems-thinking</li><li>information-architecture</li><li>execution</li></ul></dd></div>
+                    <div><dt>Evidence available</dt><dd><ul><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json">Privacy review: current Job-agent proof frames</a></li><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/releases/job-agent-v2.json">Job-agent v0.9 public-proof manifest</a></li></ul></dd></div>
+                  </dl>
+                </div>
+                <figure class="project-story__visual"><a href="../../assets/images/job-agent/current-find-jobs.png"><img src="../../assets/images/job-agent/current-find-jobs.png" alt="Current Job-agent Find jobs view with synthetic role criteria, source settings, saved searches, and monitoring"></a><figcaption><strong>v0.9 · Find jobs</strong>A synthetic public frame showing criteria, sources, saved searches, and monitoring.</figcaption></figure>
+              </div>
+            </article>
           </li>
-          <li id="historical-prepare">
-            <div class="proof-sequence__number">03</div>
-            <div>
-              <p class="claim-card__type">Earlier decision question</p>
-              <h3>What should change in the application or interview?</h3>
-              <p>Translate research into a tailored emphasis, validation questions, and a compensation check.</p>
-              <p class="proof-sequence__evidence"><strong>Evidence:</strong> Decision outputs stay traceable to the research fields that support them.</p>
-            </div>
+          <li class="project-story__chapter" id="job-agent-daily-prioritization" data-story-event data-story-index="2" data-story-date="2026-08-31">
+            <article>
+              <header class="project-story__chapter-meta">
+                <time datetime="2026-08-31">31 August 2026</time>
+                <span>v0.9 public proof</span>
+                <span>Daily operating view</span>
+              </header>
+              <div class="project-story__chapter-layout">
+                <div class="project-story__chapter-copy">
+                  <p class="project-story__chapter-number">Chapter 03</p>
+                  <h3>Turn the workflow into a daily next move</h3>
+                  <dl class="project-story__fields">
+                    <div><dt>What changed</dt><dd>Today gives the applicant a prioritised view of live work, filters, and the next move in the journey.</dd></div>
+                    <div><dt>How it works</dt><dd>The surface combines the current journey position with a selected action and a filtered list of synthetic roles.</dd></div>
+                    <div><dt>Decision annotation</dt><dd>Use a daily operating surface to make the next decision visible before asking the applicant to inspect every detail.</dd></div>
+                    <div><dt>Why it matters</dt><dd>It makes prioritization visible and gives the product a practical operating rhythm.</dd></div>
+                    <div><dt>Next question</dt><dd>What evidence should be visible when the applicant inspects one role?</dd></div>
+                    <div><dt>What this demonstrates</dt><dd><ul class="project-story__capabilities"><li>prioritization</li><li>workflow-design</li><li>product-judgment</li></ul></dd></div>
+                    <div><dt>Evidence available</dt><dd><ul><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json">Privacy review: current Job-agent proof frames</a></li><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/proof/job-agent/index.html#proof-sequence">Job-agent case study: current proof sequence</a></li></ul></dd></div>
+                  </dl>
+                </div>
+                <figure class="project-story__visual"><a href="../../assets/images/job-agent/current-today.png"><img src="../../assets/images/job-agent/current-today.png" alt="Current Job-agent Today view with a journey bar, next move, filters, and synthetic roles"></a><figcaption><strong>v0.9 · Today</strong>A synthetic public frame for daily priorities and the next move.</figcaption></figure>
+              </div>
+            </article>
+          </li>
+          <li class="project-story__chapter" id="job-agent-role-decision" data-story-event data-story-index="3" data-story-date="2026-08-31">
+            <article>
+              <header class="project-story__chapter-meta">
+                <time datetime="2026-08-31">31 August 2026</time>
+                <span>v0.9 public proof</span>
+                <span>Role decision surface</span>
+              </header>
+              <div class="project-story__chapter-layout">
+                <div class="project-story__chapter-copy">
+                  <p class="project-story__chapter-number">Chapter 04</p>
+                  <h3>Bring fit, evidence, and action into one role view</h3>
+                  <dl class="project-story__fields">
+                    <div><dt>What changed</dt><dd>Job detail joins role fit, CV gap, company signals, and the next decision in the same reviewable surface.</dd></div>
+                    <div><dt>How it works</dt><dd>The applicant can inspect a synthetic role with supporting signals and use that context to decide what to review or prepare next.</dd></div>
+                    <div><dt>Decision annotation</dt><dd>Make the decision surface lead the public proof, with discovery and daily context supporting it.</dd></div>
+                    <div><dt>Why it matters</dt><dd>A recruiter can assess how the system moves from information to a human-reviewed choice.</dd></div>
+                    <div><dt>Next question</dt><dd>Which public-safe evidence can test whether this decision context improves the workflow?</dd></div>
+                    <div><dt>What this demonstrates</dt><dd><ul class="project-story__capabilities"><li>decision-support</li><li>evidence-discipline</li><li>human-in-the-loop</li></ul></dd></div>
+                    <div><dt>Evidence available</dt><dd><ul><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json">Privacy review: current Job-agent proof frames</a></li><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/releases/job-agent-v2.json">Job-agent v0.9 public-proof manifest</a></li></ul></dd></div>
+                  </dl>
+                </div>
+                <figure class="project-story__visual"><a href="../../assets/images/job-agent/current-job-detail.png"><img src="../../assets/images/job-agent/current-job-detail.png" alt="Current Job-agent job detail view with synthetic fit analysis, CV gap, and company signals"></a><figcaption><strong>v0.9 · Job detail</strong>A synthetic public frame that brings fit, evidence, and next action together.</figcaption></figure>
+              </div>
+            </article>
           </li>
         </ol>
-        <p class="proof-capture-note">Earlier public proof capture · 25 August 2026 · English UI · synthetic data</p>
-        <div class="visual-proof-grid visual-proof-grid--historical" aria-label="Earlier recruiter-safe prototype frames">
-          <figure>
-            <a href="../../assets/images/job-agent/intake-scope.png"><img src="../../assets/images/job-agent/intake-scope.png" alt="Earlier Job-agent Today view with a synthetic role prioritised for company research"></a>
-            <figcaption><strong>01 · Scope</strong> The Today view puts the next decision before filters and detail.</figcaption>
-          </figure>
-          <figure>
-            <a href="../../assets/images/job-agent/decision-research.png"><img src="../../assets/images/job-agent/decision-research.png" alt="Earlier Job-agent synthetic company research with provenance labels and decision use"></a>
-            <figcaption><strong>02 · Research</strong> Company signals retain provenance, confidence, and decision use.</figcaption>
-          </figure>
-          <figure>
-            <a href="../../assets/images/job-agent/tailored-action.png"><img src="../../assets/images/job-agent/tailored-action.png" alt="Earlier Job-agent interview preparation view based on synthetic research evidence"></a>
-            <figcaption><strong>03 · Prepare</strong> Research becomes validation questions for the interview.</figcaption>
-          </figure>
-        </div>
+        <details class="project-replay__gaps">
+          <summary>Evidence gaps kept out of this story</summary>
+          <ul><li>The public record does not support finer-grained claims such as a first frontend launch or a complete frontend redesign history.</li><li>The public evidence shows application tailoring as a supported workflow output. It does not support a separate published personal-letter-writer feature claim.</li><li>The product surface is not evidence of live user usage, recruitment outcomes, or market validation.</li></ul>
+        </details>
+        <p class="project-replay__audit">Temporal audit fields are available in <a href="../../evidence/project-replay-job-agent.json">project-replay-job-agent.json</a>. <code>valid_from</code> describes when a chapter applied; <code>recorded_at</code> records when the public evidence model captured it.</p>
       </section>
+<!-- PROJECT_REPLAY:END -->
 
       <section class="research-section" id="company-research" aria-labelledby="research-title">
         <div class="shell">

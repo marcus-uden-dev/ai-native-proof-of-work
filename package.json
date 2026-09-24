@@ -8,6 +8,7 @@
     "serve": "node scripts/serve-static.mjs",
     "test": "npm run test:contracts && npm run test:e2e",
     "test:contracts": "node --test tests/contracts/*.test.mjs",
+    "generate:project-replay": "node scripts/generate-project-replay.mjs",
     "test:e2e": "playwright test",
     "release:validate": "node scripts/check-public-release.mjs"
   },

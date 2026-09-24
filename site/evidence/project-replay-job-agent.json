@@ -1,0 +1,99 @@
+{
+  "schema_version": 2,
+  "project": "job-agent",
+  "title": "The Job-agent story",
+  "recorded_at": "2026-09-24",
+  "summary": "A curated public playback of the current Job-agent product surfaces. It is not a reconstructed source-code history.",
+  "evidence_boundary": "This story uses public, reviewed evidence only. The three interface frames are from the latest approved Job-agent iteration and use consistent synthetic placeholder data. They do not prove market validation.",
+  "evidence_gaps": [
+    "The public record does not support finer-grained claims such as a first frontend launch or a complete frontend redesign history.",
+    "The public evidence shows application tailoring as a supported workflow output. It does not support a separate published personal-letter-writer feature claim.",
+    "The product surface is not evidence of live user usage, recruitment outcomes, or market validation."
+  ],
+  "events": [
+    {
+      "id": "job-agent-origin",
+      "visual_order": 1,
+      "date": "2026-05-11",
+      "valid_from": "2026-05-11",
+      "recorded_at": "2026-09-15",
+      "edition": "Origin",
+      "stage": "Problem framing",
+      "title": "Before build",
+      "summary": "Job search was framed as a fragmented, context-heavy workflow rather than only a writing task.",
+      "how_it_works": "The product scope connects opportunity discovery, career context, application support, research, and follow-up while the applicant retains control.",
+      "decision_annotation": "Build a reviewed workflow, not a generic writer or an autonomous application sender.",
+      "why_it_matters": "The product needed to reduce repeated context reconstruction without removing human judgment from sensitive career choices.",
+      "next_question": "Which public product surface can make this connected workflow concrete?",
+      "demonstrates": ["problem-framing", "product-judgment", "systems-thinking"],
+      "visual": null,
+      "evidence": [
+        {"label": "Job-agent product strategy: core problem", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md"},
+        {"label": "Job-agent decision trail: reviewed workflow", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/decisions/DECISION_TRAIL.md"}
+      ]
+    },
+    {
+      "id": "job-agent-discovery-system",
+      "visual_order": 2,
+      "date": "2026-08-31",
+      "valid_from": "2026-08-31",
+      "recorded_at": "2026-09-24",
+      "edition": "v0.9 public proof",
+      "stage": "Discovery system",
+      "title": "Set up a repeatable way to find work",
+      "summary": "Find jobs makes role criteria, sources, saved searches, and monitoring part of one visible discovery surface.",
+      "how_it_works": "The applicant defines a search, reviews its criteria and sources, then retains a saved route for returning to relevant opportunities.",
+      "decision_annotation": "Make discovery inspectable as a system rather than a single opaque search result.",
+      "why_it_matters": "The interface shows how a repeated job-search activity can be organized before it becomes a one-off application task.",
+      "next_question": "How should a discovered role move into a clear next action?",
+      "demonstrates": ["systems-thinking", "information-architecture", "execution"],
+      "visual": {"href": "../../assets/images/job-agent/current-find-jobs.png", "alt": "Current Job-agent Find jobs view with synthetic role criteria, source settings, saved searches, and monitoring", "label": "v0.9 · Find jobs", "caption": "A synthetic public frame showing criteria, sources, saved searches, and monitoring."},
+      "evidence": [
+        {"label": "Privacy review: current Job-agent proof frames", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json"},
+        {"label": "Job-agent v0.9 public-proof manifest", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/releases/job-agent-v2.json"}
+      ]
+    },
+    {
+      "id": "job-agent-daily-prioritization",
+      "visual_order": 3,
+      "date": "2026-08-31",
+      "valid_from": "2026-08-31",
+      "recorded_at": "2026-09-24",
+      "edition": "v0.9 public proof",
+      "stage": "Daily operating view",
+      "title": "Turn the workflow into a daily next move",
+      "summary": "Today gives the applicant a prioritised view of live work, filters, and the next move in the journey.",
+      "how_it_works": "The surface combines the current journey position with a selected action and a filtered list of synthetic roles.",
+      "decision_annotation": "Use a daily operating surface to make the next decision visible before asking the applicant to inspect every detail.",
+      "why_it_matters": "It makes prioritization visible and gives the product a practical operating rhythm.",
+      "next_question": "What evidence should be visible when the applicant inspects one role?",
+      "demonstrates": ["prioritization", "workflow-design", "product-judgment"],
+      "visual": {"href": "../../assets/images/job-agent/current-today.png", "alt": "Current Job-agent Today view with a journey bar, next move, filters, and synthetic roles", "label": "v0.9 · Today", "caption": "A synthetic public frame for daily priorities and the next move."},
+      "evidence": [
+        {"label": "Privacy review: current Job-agent proof frames", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json"},
+        {"label": "Job-agent case study: current proof sequence", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/proof/job-agent/index.html#proof-sequence"}
+      ]
+    },
+    {
+      "id": "job-agent-role-decision",
+      "visual_order": 4,
+      "date": "2026-08-31",
+      "valid_from": "2026-08-31",
+      "recorded_at": "2026-09-24",
+      "edition": "v0.9 public proof",
+      "stage": "Role decision surface",
+      "title": "Bring fit, evidence, and action into one role view",
+      "summary": "Job detail joins role fit, CV gap, company signals, and the next decision in the same reviewable surface.",
+      "how_it_works": "The applicant can inspect a synthetic role with supporting signals and use that context to decide what to review or prepare next.",
+      "decision_annotation": "Make the decision surface lead the public proof, with discovery and daily context supporting it.",
+      "why_it_matters": "A recruiter can assess how the system moves from information to a human-reviewed choice.",
+      "next_question": "Which public-safe evidence can test whether this decision context improves the workflow?",
+      "demonstrates": ["decision-support", "evidence-discipline", "human-in-the-loop"],
+      "visual": {"href": "../../assets/images/job-agent/current-job-detail.png", "alt": "Current Job-agent job detail view with synthetic fit analysis, CV gap, and company signals", "label": "v0.9 · Job detail", "caption": "A synthetic public frame that brings fit, evidence, and next action together."},
+      "evidence": [
+        {"label": "Privacy review: current Job-agent proof frames", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json"},
+        {"label": "Job-agent v0.9 public-proof manifest", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/releases/job-agent-v2.json"}
+      ]
+    }
+  ]
+}
