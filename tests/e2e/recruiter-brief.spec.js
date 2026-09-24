@@ -6,10 +6,10 @@ test('the first viewport establishes the hiring case and primary conversion path
   await expect(page.getByText('Experienced individual contributor')).toBeVisible();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('clear, buildable product work');
   await expect(page.getByText('Operational depth. Product thinking. AI-native execution.')).toBeVisible();
-  const portfolioRoutes = page.locator('.wordmark__routes');
-  await expect(portfolioRoutes.getByRole('link', { name: 'Product portfolio' })).toBeVisible();
-  await expect(portfolioRoutes.getByRole('link', { name: 'CV' })).toBeVisible();
-  await expect(portfolioRoutes.getByRole('link', { name: 'Interview my work' })).toBeVisible();
+  const primaryNavigation = page.getByRole('navigation', { name: 'Primary navigation' });
+  await expect(primaryNavigation.getByRole('link', { name: 'Product portfolio' })).toBeVisible();
+  await expect(primaryNavigation.getByRole('link', { name: 'CV' })).toBeVisible();
+  await expect(primaryNavigation.getByRole('link', { name: 'Interview my work' })).toBeVisible();
   const entryPoints = page.locator('.action-row--entry-points');
   await expect(entryPoints.getByRole('link', { name: 'Explore product work' })).toBeInViewport();
   await expect(entryPoints.getByRole('link', { name: 'Follow the decisions' })).toBeInViewport();
