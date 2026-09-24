@@ -36,6 +36,7 @@
     <script src="assets/js/access-gate.js"></script>
     <script src="assets/js/recruiter-review-config.js"></script>
     <script src="assets/js/site.js" defer></script>
+    <script src="assets/js/decision-log.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to the hiring brief</a>
@@ -71,11 +72,11 @@
           <p class="hero__support">Operational depth. Product thinking. AI-native execution.</p>
           <div class="action-row action-row--entry-points">
             <a class="button button--secondary" href="#selected-proof">Explore product work</a>
-            <a class="button button--secondary" href="proof/recursive-workflow/#decision-log">Follow the decisions</a>
+            <a class="button button--secondary" href="#decision-log">Follow the decisions</a>
             <a class="button button--secondary" href="cv/">CV</a>
             <a class="button button--primary" href="#ai-review">Interview my work</a>
           </div>
-          <p class="hero__ai-note"><strong>Interview my work:</strong> Ask a question about the work or paste a non-confidential role description. The live review uses cited public evidence to explain fit, surface relevant proof, and show where the evidence stops.</p>
+          <p class="hero__ai-note"><strong>Interview my work with the embedded AI assistant.</strong> Ask about a project or paste a non-confidential role description. It uses cited public evidence to explain relevant work, surface supporting proof, and make the evidence limits clear.</p>
         </div>
 
         <aside class="signal-card" aria-labelledby="signal-title">
@@ -91,13 +92,6 @@
           </ol>
         </aside>
       </section>
-
-      <div class="status-band">
-        <div class="shell status-band__inner">
-          <p><strong>Evidence boundary:</strong> Job-agent (a working title, not the final product name) is work in progress. It is not live or market-validated. No outcome claims are made.</p>
-          <a href="proof/job-agent/">Read the current proof</a>
-        </div>
-      </div>
 
       <section class="section shell" id="hiring-case" aria-labelledby="hiring-title">
         <div class="section-heading">
@@ -116,13 +110,15 @@
       <section class="section section--ruled shell oracle-summary" id="how-i-think" aria-labelledby="how-i-think-title">
         <div class="section-heading section-heading--split">
           <div>
-            <p class="kicker">How I think · WIP</p>
+            <p class="kicker">How I think</p>
             <h2 id="how-i-think-title">How the work is thought through.</h2>
           </div>
-          <p>A compact, recruiter-safe projection of projects, verified decisions, and demonstrated capabilities. The detailed view now lives in the public Decision Log below.</p>
+          <p>Projects, supporting work, and the operating layer behind the decisions below.</p>
         </div>
         <div class="oracle-summary__facts" aria-label="How I think summary">
-          <div><strong>17</strong><span>decision records</span></div>
+          <div><!-- HOW_I_THINK_DECISION_COUNT:BEGIN -->
+<strong>18</strong><span>decision records</span>
+          <!-- HOW_I_THINK_DECISION_COUNT:END --></div>
           <div><strong>4</strong><span>project lenses</span></div>
           <div><strong>10</strong><span>capability tags</span></div>
         </div>
@@ -132,6 +128,12 @@
             <h3>Job-agent</h3>
             <p>Career workflow product showing discovery, company research, application tailoring, and interview preparation.</p>
             <div class="oracle-tags" aria-label="Job-agent capabilities"><span class="pill pill--gold">product judgment</span><span class="pill">evidence-driven</span></div>
+          </article>
+          <article class="oracle-lens oracle-lens--harness">
+            <p class="oracle-lens__role">Operating layer</p>
+            <h3>Personal AI Harness</h3>
+            <p>The memory, agent, automation, and improvement layer behind the work, continuously refined through addition and pruning.</p>
+            <div class="oracle-tags" aria-label="Personal AI Harness capabilities"><span class="pill pill--gold">AI-native workflows</span><span class="pill">continuous improvement</span></div>
           </article>
           <article class="oracle-lens">
             <p class="oracle-lens__role">Supporting proof</p>
@@ -145,17 +147,76 @@
             <p>Shared-domain modeling with roles, imports, review flows, forecasts, and privacy-sensitive data.</p>
             <div class="oracle-tags" aria-label="Household budget capabilities"><span class="pill pill--gold">systems thinking</span><span class="pill">problem framing</span></div>
           </article>
-          <article class="oracle-lens oracle-lens--harness">
-            <p class="oracle-lens__role">Operating layer</p>
-            <h3>Personal AI Harness</h3>
-            <p>The memory, agent, automation, and improvement layer behind the work, continuously refined through addition and pruning.</p>
-            <div class="oracle-tags" aria-label="Personal AI Harness capabilities"><span class="pill pill--gold">AI-native workflows</span><span class="pill">continuous improvement</span></div>
-          </article>
         </div>
         <div class="oracle-summary__actions">
-          <a class="button button--secondary" href="proof/recursive-workflow/#decision-log">Open the Decision Log</a>
-          <a class="text-link" href="evidence/decision-log.json">Read the structured history <span aria-hidden="true">→</span></a>
+          <a class="text-link text-link--decision" href="#decision-log">See the Decision Log <span aria-hidden="true">↓</span></a>
         </div>
+      </section>
+
+      <section class="section section--ruled shell" id="decision-log" aria-labelledby="decision-log-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="kicker">Decision log</p>
+            <h2 id="decision-log-title">Small, verified improvements — tagged and dated.</h2>
+          </div>
+          <p>A dated record of the decisions behind the work: what changed, why it changed, and the public evidence that supports it.</p>
+        </div>
+        <div class="decision-log-oracle" aria-label="How I think through decisions">
+          <div class="decision-log-oracle__intro">
+            <p class="kicker">How I think</p>
+            <h3>What the decision history shows.</h3>
+            <p>The Decision Log connects each project to a dated decision, a compact explanation, and the capability tags supported by the evidence.</p>
+          </div>
+          <div class="decision-log-oracle__facts" aria-label="Decision Log summary">
+          <!-- DECISION_LOG_FACTS:BEGIN -->
+          <div><strong>18</strong><span>decision records</span></div>
+          <div><strong>4</strong><span>project lenses</span></div>
+          <div><strong>28</strong><span>capability tags</span></div>
+          <!-- DECISION_LOG_FACTS:END -->
+          </div>
+          <div class="decision-log-oracle__projects" aria-label="Projects represented in the Decision Log">
+          <!-- DECISION_LOG_PROJECTS:BEGIN -->
+          <span class="decision-log-oracle__filter-label">Filter by project</span>
+          <button class="decision-log-oracle__project decision-log-oracle__project--all" type="button" data-filter-type="all" aria-pressed="true">All decisions <small>18 records</small></button>
+          <button class="decision-log-oracle__project decision-log-oracle__project--lead" type="button" data-filter-type="project" data-filter-value="job-agent" aria-pressed="false">Job-agent <small>6 records · lead proof</small></button>
+          <button class="decision-log-oracle__project decision-log-oracle__project--harness" type="button" data-filter-type="project" data-filter-value="personal-ai-harness" aria-pressed="false">Personal AI Harness <small>8 records · operating layer</small></button>
+          <button class="decision-log-oracle__project" type="button" data-filter-type="project" data-filter-value="pkm" aria-pressed="false">PKM <small>2 records · supporting proof</small></button>
+          <button class="decision-log-oracle__project" type="button" data-filter-type="project" data-filter-value="household-budget" aria-pressed="false">Household budget <small>2 records · supporting proof</small></button>
+          <!-- DECISION_LOG_PROJECTS:END -->
+          </div>
+          <div class="decision-log-oracle__tags" aria-label="Capability tags shown in the Decision Log">
+          <!-- DECISION_LOG_TAGS:BEGIN -->
+          <span class="decision-log-oracle__filter-label">Filter by capability</span>
+          <button class="pill pill--gold" type="button" data-filter-type="tag" data-filter-value="product-taste">product-taste</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="product-judgment">product-judgment</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="commercial-awareness">commercial-awareness</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="research-judgment">research-judgment</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="problem-framing">problem-framing</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="product-discovery">product-discovery</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="prioritization">prioritization</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="decision-support">decision-support</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="evidence-driven">evidence-driven</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="research-synthesis">research-synthesis</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="systems-thinking">systems-thinking</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="workflow-automation">workflow-automation</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="ai-native-workflows">ai-native-workflows</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="human-in-the-loop">human-in-the-loop</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="continuous-improvement">continuous-improvement</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="quality-assurance">quality-assurance</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="validation">validation</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="risk-awareness">risk-awareness</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="risk-controls">risk-controls</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="reusable-systems">reusable-systems</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="reusable-infrastructure">reusable-infrastructure</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="stakeholder-understanding">stakeholder-understanding</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="value-creation">value-creation</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="automation-judgment">automation-judgment</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="context-engineering">context-engineering</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="decision-traceability">decision-traceability</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="knowledge-management">knowledge-management</button><button class="pill" type="button" data-filter-type="tag" data-filter-value="governance-architecture">governance-architecture</button>
+          <!-- DECISION_LOG_TAGS:END -->
+          </div>
+          <p class="decision-log-oracle__boundary"><strong>Boundary:</strong> public entries contain sanitized summaries, stable project identifiers, capability tags, and traceable public evidence. Raw sessions, local paths, secrets, and unsupported outcomes stay out.</p>
+        </div>
+        <div class="decision-log-viewport" data-auto-scroll="true" tabindex="0" aria-label="Scrollable decision timeline">
+          <ul class="limitations-list limitations-list--stacked decision-log-list" id="decision-timeline">
+          <!-- DECISION_LOG_ENTRIES:BEGIN -->
+          <li data-project="personal-ai-harness" data-tags="ai-native-workflows context-engineering decision-traceability automation-judgment risk-controls"><p class="decision-log-entry__date">2026-08-26</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">ai-native-workflows</span><span class="pill">context-engineering</span><span class="pill">decision-traceability</span><span class="pill">automation-judgment</span><span class="pill">risk-controls</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Made each AI-assisted response identify its model and reasoning effort when available. This makes model routing observable without exposing private operating details.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Turns invisible AI configuration into a verifiable, human-readable control. Uses an explicit unknown state instead of false precision.</p></li>
+          <li data-project="personal-ai-harness" data-tags="product-judgment systems-thinking context-engineering continuous-improvement"><p class="decision-log-entry__date">2026-08-24</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">product-judgment</span><span class="pill">systems-thinking</span><span class="pill">context-engineering</span><span class="pill">continuous-improvement</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Explains system ownership and product boundaries clearly as the work evolves.</p></li>
+          <li data-project="personal-ai-harness" data-tags="prioritization automation-judgment workflow-automation validation"><p class="decision-log-entry__date">2026-08-20</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">prioritization</span><span class="pill">automation-judgment</span><span class="pill">workflow-automation</span><span class="pill">validation</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Chose a bounded canary before expanding scheduled finding intake into a broader reporting architecture.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Uses staged validation to control uncertainty before scaling automation.</p></li>
+          <li data-project="personal-ai-harness" data-tags="reusable-infrastructure governance-architecture risk-controls reusable-systems"><p class="decision-log-entry__date">2026-08-10</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">reusable-infrastructure</span><span class="pill">governance-architecture</span><span class="pill">risk-controls</span><span class="pill">reusable-systems</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Separated shared skill source from runtime-specific adaptations so reusable workflows can survive upgrades.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Designs reusable infrastructure with explicit boundaries and failure controls.</p></li>
+          <li data-project="job-agent" data-tags="evidence-driven decision-traceability research-judgment"><p class="decision-log-entry__date">2026-08-09</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Job-agent</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">evidence-driven</span><span class="pill">decision-traceability</span><span class="pill">research-judgment</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Separated product-code freshness from later documentation and operations work so the public proof describes what actually changed.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Maintains an evidence boundary between shipped product work and follow-up work.</p></li>
+          <li data-project="job-agent" data-tags="risk-awareness evidence-driven quality-assurance"><p class="decision-log-entry__date">2026-08-05</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Job-agent</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">risk-awareness</span><span class="pill">evidence-driven</span><span class="pill">quality-assurance</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Anchored recruiter-facing claims to committed source state and excluded uncommitted local work.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Chooses verifiable evidence over a stronger but unsupported progress story.</p></li>
+          <li data-project="job-agent" data-tags="systems-thinking decision-support knowledge-management"><p class="decision-log-entry__date">2026-06-28</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Job-agent</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">systems-thinking</span><span class="pill">decision-support</span><span class="pill">knowledge-management</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Preserved distinct roles for orientation, durable status, and direct freshness verification in the product handoff.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Designs information hierarchies that help people find the right level of truth.</p></li>
+          <li data-project="personal-ai-harness" data-tags="knowledge-management governance-architecture reusable-systems"><p class="decision-log-entry__date">2026-06-25</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">knowledge-management</span><span class="pill">governance-architecture</span><span class="pill">reusable-systems</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Kept repo-owned durable documents with the project they govern while shared agent documentation remains cross-runtime.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Uses clear ownership boundaries to keep durable knowledge maintainable.</p></li>
+          <li data-project="personal-ai-harness" data-tags="decision-support research-synthesis stakeholder-understanding"><p class="decision-log-entry__date">2026-06-24</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">decision-support</span><span class="pill">research-synthesis</span><span class="pill">stakeholder-understanding</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Placed the decision, recommended action, response options, and concise evidence near the top of decision-heavy reports.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Makes complex review outputs easier for people to understand and act on.</p></li>
+          <li data-project="personal-ai-harness" data-tags="reusable-systems ai-native-workflows product-judgment"><p class="decision-log-entry__date">2026-06-02</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">reusable-systems</span><span class="pill">ai-native-workflows</span><span class="pill">product-judgment</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Turned workflow improvements into supporting proof while keeping concrete product work as the main recruiter signal.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Packages operating-layer improvements without letting infrastructure replace product evidence.</p></li>
+          <li data-project="personal-ai-harness" data-tags="product-taste prioritization stakeholder-understanding"><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">product-taste</span><span class="pill">prioritization</span><span class="pill">stakeholder-understanding</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Kept concrete products ahead of the operating layer in the recruiter-facing proof structure.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Prioritizes the clearest audience signal while preserving the enabling system.</p></li>
+          <li data-project="pkm" data-tags="research-judgment product-judgment evidence-driven"><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">PKM</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">research-judgment</span><span class="pill">product-judgment</span><span class="pill">evidence-driven</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Presented PKM as supporting evidence until sustained adoption and daily-use value are validated.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Uses conservative evidence boundaries instead of overstating product maturity.</p></li>
+          <li data-project="household-budget" data-tags="systems-thinking problem-framing stakeholder-understanding"><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Household budget</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">systems-thinking</span><span class="pill">problem-framing</span><span class="pill">stakeholder-understanding</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Used household budgeting to demonstrate shared roles, imports, review flows, forecasts, and privacy-sensitive domain modeling.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Frames a multi-user domain with explicit roles, constraints, and review needs.</p></li>
+          <li data-project="job-agent" data-tags="product-discovery decision-support human-in-the-loop risk-awareness"><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Job-agent</span><span class="pill pill--status">Verified</span><span class="visually-hidden">Decision type:</span><span class="pill">Product flow</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">product-discovery</span><span class="pill">decision-support</span><span class="pill">human-in-the-loop</span><span class="pill">risk-awareness</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Started with a reviewed workflow connecting discovery, fit analysis, application support, privacy, and feedback instead of unreviewed application sending.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Uses user control and explicit risk boundaries to shape an AI-assisted product flow.</p></li>
+          <li data-project="job-agent" data-tags="continuous-improvement validation quality-assurance decision-traceability"><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Job-agent</span><span class="pill pill--status pill--planned">Planned</span><span class="visually-hidden">Decision type:</span><span class="pill">Product learning</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">continuous-improvement</span><span class="pill">validation</span><span class="pill">quality-assurance</span><span class="pill">decision-traceability</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Included telemetry and outcome learning as a medium-priority capability, while keeping measurement ahead of outcome claims.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Designs feedback loops that improve the product without inventing unmeasured results.</p></li>
+          <li data-project="job-agent" data-tags="product-judgment prioritization commercial-awareness value-creation"><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Job-agent</span><span class="pill pill--status pill--hypothesis">Hypothesis</span><span class="visually-hidden">Decision type:</span><span class="pill">Pricing</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">product-judgment</span><span class="pill">prioritization</span><span class="pill">commercial-awareness</span><span class="pill">value-creation</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Kept a time-boxed job-search sprint and a lightweight monthly plan as the first pricing hypotheses while willingness to pay remains unvalidated.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Frames pricing around user value and clearly separates hypotheses from market evidence.</p></li>
+          <li data-project="household-budget" data-tags="risk-awareness prioritization commercial-awareness evidence-driven"><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Household budget</span><span class="pill pill--status pill--planned">Planned</span><span class="visually-hidden">Decision type:</span><span class="pill">Pricing</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">risk-awareness</span><span class="pill">prioritization</span><span class="pill">commercial-awareness</span><span class="pill">evidence-driven</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Deferred pricing until workflow safety, import quality, privacy, and repeated household value are stronger.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Uses trust and evidence thresholds before making commercial product decisions.</p></li>
+          <li data-project="pkm" data-tags="research-judgment prioritization commercial-awareness validation"><p class="decision-log-entry__date">2026-05-11</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">PKM</span><span class="pill pill--status pill--planned">Planned</span><span class="visually-hidden">Decision type:</span><span class="pill">Pricing</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">research-judgment</span><span class="pill">prioritization</span><span class="pill">commercial-awareness</span><span class="pill">validation</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Deferred pricing until one end-to-end daily-use path demonstrates repeated value across ingestion, search, learning, and capture.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Protects commercial credibility by testing repeated value before selecting a pricing model.</p></li>
+          <!-- DECISION_LOG_ENTRIES:END -->
+          </ul>
+        </div>
+        <p class="decision-log-status" data-scroll-status><strong>Auto-scrolling</strong> · Hover or interact to pause.</p>
       </section>
 
       <section class="section section--ruled shell" aria-labelledby="claims-title">

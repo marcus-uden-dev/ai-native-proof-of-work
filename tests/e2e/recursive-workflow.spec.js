@@ -123,30 +123,30 @@ test('the decision log reuses the limitations-list--stacked component rather tha
   await expect(list).toHaveClass(/limitations-list--stacked/);
 });
 
-test('the decision log renders the newest published entry', async ({ page }) => {
-  await page.goto('/proof/recursive-workflow/');
+test('the homepage Decision Log renders the newest published entry', async ({ page }) => {
+  await page.goto('/');
   const section = page.locator('#decision-log');
   await expect(section).toBeVisible();
-  await expect(section.getByText('2026-08-24')).toBeVisible();
-  await expect(section.getByText('Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.')).toBeVisible();
+  await expect(section.getByText('2026-08-26')).toBeVisible();
+  await expect(section.getByText('Made each AI-assisted response identify its model and reasoning effort when available. This makes model routing observable without exposing private operating details.')).toBeVisible();
 });
 
 test('the How I think project and capability filters reveal the matching decisions', async ({ page }) => {
-  await page.goto('/proof/recursive-workflow/');
+  await page.goto('/');
   const entries = page.locator('#decision-timeline > li[data-project]');
 
   await page.getByRole('button', { name: /Job-agent/ }).click();
   await expect(page.locator('[data-scroll-status]')).toContainText('6 decisions');
   expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(6);
-  expect(await entries.evaluateAll((items) => items.filter((item) => item.hidden).length)).toBe(11);
+  expect(await entries.evaluateAll((items) => items.filter((item) => item.hidden).length)).toBe(12);
 
   await page.getByRole('button', { name: 'evidence-driven', exact: true }).click();
   await expect(page.locator('[data-scroll-status]')).toContainText('4 decisions');
   expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(4);
 
   await page.getByRole('button', { name: /All decisions/ }).click();
-  await expect(page.locator('[data-scroll-status]')).toContainText('17 decisions');
-  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(17);
+  await expect(page.locator('[data-scroll-status]')).toContainText('18 decisions');
+  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(18);
 });
 
 test('the compact decision timeline auto-scrolls and pauses on interaction', async ({ page }) => {
