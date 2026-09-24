@@ -29,7 +29,7 @@ test('core positioning and actions remain available without JavaScript', async (
   await expect(page.getByText('Experienced individual contributor')).toBeVisible();
   const entryPoints = page.locator('.action-row--entry-points');
   await expect(entryPoints.getByRole('link', { name: 'Explore product work' })).toHaveAttribute('href', '#selected-proof');
-  await expect(entryPoints.getByRole('link', { name: 'Follow the decisions' })).toHaveAttribute('href', 'proof/recursive-workflow/#decision-log');
+  await expect(entryPoints.getByRole('link', { name: 'Follow the decisions' })).toHaveAttribute('href', '#decision-log');
   await expect(entryPoints.getByRole('link', { name: 'CV' })).toHaveAttribute('href', 'cv/');
   await expect(page.getByRole('link', { name: /Open the guided case study/ })).toHaveAttribute('href', 'proof/job-agent/');
   await expect(page.getByRole('link', { name: 'Request an interview' })).toHaveAttribute('href', /mailto:/);
@@ -40,7 +40,7 @@ test('core positioning and actions remain available without JavaScript', async (
   await expect(primaryNavigation.getByRole('link', { name: 'Interview my work' })).toHaveAttribute('href', '#ai-review');
   await expect(page.getByRole('link', { name: /Browse proof-of-work repo/ })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'How the work is thought through.' })).toBeVisible();
-  await expect(page.getByText('Ask a question about the work or paste a non-confidential role description.')).toBeVisible();
+  await expect(page.getByText('Ask about a project or paste a non-confidential role description.')).toBeVisible();
   await context.close();
 });
 

@@ -498,6 +498,8 @@ h3 {
 }
 
 .oracle-lens {
+  display: flex;
+  flex-direction: column;
   min-width: 0;
   padding: 1.4rem;
   border: 1px solid var(--line);
@@ -540,7 +542,8 @@ h3 {
 
 .oracle-tags {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 1rem;
   gap: 0.4rem;
 }
@@ -556,6 +559,17 @@ h3 {
   margin-top: 1.7rem;
   align-items: center;
   gap: 1.2rem;
+}
+
+.text-link--decision {
+  color: var(--gold);
+  font-size: 1.08rem;
+  font-weight: 760;
+}
+
+.text-link--decision:hover,
+.text-link--decision:focus-visible {
+  color: var(--gold-dark);
 }
 
 .hero__decision-note {
