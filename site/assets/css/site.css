@@ -1910,6 +1910,25 @@ h3 {
   gap: 0.55rem;
 }
 
+.timeline-list__edition-link {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--teal);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+.timeline-list__edition-link strong {
+  color: var(--ink);
+}
+
+.timeline-list__edition-link > span:not(.pill) {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
 .timeline-list__item strong {
   color: var(--ink);
 }

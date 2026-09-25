@@ -6,7 +6,7 @@ test('status and synthetic notices appear before the first proof frame', async (
   await expect(page.getByText('Work in progress', { exact: true })).toBeVisible();
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
-  await expect(page.getByText('Moderated recruiter review of the current decision-led prototype and its version history', { exact: true })).toBeVisible();
+  await expect(page.getByText('Next test:', { exact: true })).toHaveCount(0);
   await expect(page.getByText(/release-one company is invented/i)).toBeVisible();
   const order = await page.locator('#evidence-boundary, #proof-sequence').evaluateAll((nodes) => nodes.map((node) => node.id));
   expect(order).toEqual(['evidence-boundary', 'proof-sequence']);
@@ -44,22 +44,28 @@ test('research includes the required decision signals and outputs', async ({ pag
   }
 });
 
-test('current and historical proof frames use reviewed synthetic prototype images', async ({ page }) => {
+test('current and archived historical proof frames use reviewed synthetic prototype images', async ({ page }) => {
   await page.goto('/proof/job-agent/#proof-sequence');
-  for (const grid of ['#proof-sequence .visual-proof-grid', '#ui-evolution .visual-proof-grid']) {
-    const figures = page.locator(`${grid} figure`);
-    await expect(figures).toHaveCount(3);
-    for (const image of await figures.locator('img').all()) {
-      await expect(image).toBeVisible();
-      expect(await image.getAttribute('alt')).toBeTruthy();
-    }
+  const currentFigures = page.locator('#proof-sequence .visual-proof-grid figure');
+  await expect(currentFigures).toHaveCount(3);
+  for (const image of await currentFigures.locator('img').all()) {
+    await expect(image).toBeVisible();
+    expect(await image.getAttribute('alt')).toBeTruthy();
+  }
+
+  await page.goto('/proof/job-agent/archive/0.8-public-proof/#ui-evolution');
+  const historicalFigures = page.locator('#ui-evolution .visual-proof-grid figure');
+  await expect(historicalFigures).toHaveCount(3);
+  for (const image of await historicalFigures.locator('img').all()) {
+    await expect(image).toBeVisible();
+    expect(await image.getAttribute('alt')).toBeTruthy();
   }
 });
 
 test('the guided reading order remains stable and printable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   const ids = await page.locator('main > section[id]').evaluateAll((sections) => sections.map((section) => section.id));
-  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'ui-evolution', 'company-research', 'decisions', 'limitations', 'contact']);
+  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'company-research', 'decisions', 'limitations', 'contact']);
   await page.emulateMedia({ media: 'print' });
   await expect(page.getByRole('heading', { level: 2, name: 'Is this company and role worth my time?' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What this evidence does not prove.' })).toBeVisible();
@@ -68,7 +74,8 @@ test('the guided reading order remains stable and printable', async ({ page }) =
 test('current release and previous edition are both discoverable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   await expect(page.getByText('0.9-public-proof', { exact: true }).first()).toBeVisible();
-  await expect(page.getByRole('link', { name: /0.8-public-proof archive/ })).toHaveAttribute('href', 'archive/0.8-public-proof/');
+  await expect(page.getByRole('link', { name: /Previous edition 0.8-public-proof/ })).toHaveAttribute('href', 'archive/0.8-public-proof/');
+  await expect(page.getByRole('link', { name: /Historical UI v0.5/ })).toHaveAttribute('href', 'archive/0.8-public-proof/#ui-evolution');
   await page.locator('.technical-appendix summary').click();
   await expect(page.getByRole('link', { name: /Current release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v2.json');
   await expect(page.getByRole('link', { name: /Previous release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v1.json');

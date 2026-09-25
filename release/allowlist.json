@@ -5,6 +5,7 @@
     ".github/workflows/quality.yml",
     ".gitignore",
     "AGENTS.md",
+    "CLAUDE.md",
     "PROJECT_PROOF_POINTS.md",
     "PROJECT_STATUS.md",
     "DESIGN.md",
