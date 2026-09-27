@@ -18,10 +18,11 @@ function listFiles(root, current = root) {
   const files = [];
   for (const entry of readdirSync(current, { withFileTypes: true })) {
     if (entry.name === '.git') continue;
-    if (entry.isDirectory() && ignoredDirectories.has(entry.name)) continue;
     const absolute = resolve(current, entry.name);
+    const relativePath = normalizePath(relative(root, absolute));
+    if (entry.isDirectory() && (ignoredDirectories.has(entry.name) || relativePath === 'docs/handoffs')) continue;
     if (entry.isDirectory()) files.push(...listFiles(root, absolute));
-    if (entry.isFile()) files.push(normalizePath(relative(root, absolute)));
+    if (entry.isFile()) files.push(relativePath);
   }
   return files.sort();
 }

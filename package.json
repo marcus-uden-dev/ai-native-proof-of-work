@@ -14,6 +14,7 @@
     "test:repository-evidence-index": "node scripts/build-repository-evidence-index.mjs --check",
     "test:review-api": "node --test workers/recruiter-review/test/*.test.mjs",
     "review-api:provision": "node scripts/provision-recruiter-review-api.mjs",
+    "generate:project-replay": "node scripts/generate-project-replay.mjs",
     "test:e2e": "playwright test",
     "release:validate": "node scripts/check-public-release.mjs"
   },
