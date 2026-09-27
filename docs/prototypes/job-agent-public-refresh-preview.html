@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job-agent public refresh preview</title>
+    <style>
+      :root {
+        --bg: #0d0e0d;
+        --panel: #151513;
+        --panel-2: #1b1a17;
+        --ink: #f3eee4;
+        --muted: #a59e91;
+        --line: #38342d;
+        --gold: #d9a452;
+        --gold-soft: #312617;
+        --teal: #78b9a5;
+        --teal-soft: #14251f;
+        --red: #d7826f;
+        --serif: Georgia, "Times New Roman", serif;
+        --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); line-height: 1.5; }
+      .shell { width: min(1180px, calc(100% - 36px)); margin: 0 auto; }
+      header { border-bottom: 1px solid var(--line); }
+      .header-row { display: flex; justify-content: space-between; align-items: center; gap: 20px; padding: 18px 0; }
+      .brand { color: var(--gold); font-family: var(--serif); font-size: 22px; font-weight: 700; }
+      .preview-label { color: var(--muted); font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+      main { padding: 68px 0 120px; }
+      .eyebrow, .label { margin: 0 0 12px; color: var(--gold); font-size: 12px; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+      h1, h2, h3 { line-height: 1.06; letter-spacing: -.035em; }
+      h1 { max-width: 820px; margin: 0 0 20px; font-size: clamp(42px, 7vw, 78px); }
+      h2 { margin: 0 0 12px; font-size: clamp(29px, 4vw, 46px); }
+      h3 { margin: 0 0 8px; font-size: 21px; }
+      p { margin: 0; }
+      .lead { max-width: 740px; color: var(--muted); font-size: 19px; }
+      .boundary { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; max-width: 930px; margin-top: 28px; padding: 17px 19px; border: 1px solid #4a3821; background: var(--gold-soft); color: #d6c5a7; }
+      .boundary strong { color: var(--ink); }
+      .boundary .tag { color: var(--gold); font-size: 12px; font-weight: 750; white-space: nowrap; }
+      section { margin-top: 76px; }
+      .section-head { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 24px; }
+      .section-head > p { max-width: 430px; color: var(--muted); }
+      .timeline { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
+      .timeline-item { position: relative; min-height: 190px; padding: 26px 24px 22px 0; border-top: 3px solid var(--line); }
+      .timeline-item + .timeline-item { padding-left: 24px; border-left: 1px solid var(--line); }
+      .timeline-item::before { content: ""; position: absolute; top: -9px; left: 0; width: 11px; height: 11px; border: 2px solid var(--bg); border-radius: 50%; background: var(--line); box-shadow: 0 0 0 1px var(--line); }
+      .timeline-item + .timeline-item::before { left: 24px; }
+      .timeline-item.current { border-color: var(--gold); }
+      .timeline-item.current::before { background: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+      .timeline-meta { margin-bottom: 9px; color: var(--gold); font-size: 12px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+      .timeline-item p:last-child { color: var(--muted); font-size: 14px; }
+      .status { display: inline-block; margin-top: 15px; color: var(--teal); font-size: 12px; font-weight: 750; }
+      .proof-grid { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(260px, .6fr); gap: 18px; }
+      .stack { display: grid; gap: 18px; align-content: start; }
+      .frame { overflow: hidden; border: 1px solid var(--line); background: #080908; }
+      .frame img { display: block; width: 100%; height: auto; }
+      figure { margin: 0; }
+      figcaption { padding: 13px 2px 0; color: var(--muted); font-size: 14px; }
+      figcaption strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: 15px; }
+      .archive { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); gap: 18px; }
+      .archive-card, .history-card, .comparison-card { padding: 24px; border: 1px solid var(--line); background: var(--panel); }
+      .archive-card p, .history-card p, .comparison-card p { color: var(--muted); }
+      .archive-card { border-left: 3px solid var(--gold); }
+      .archive-list { display: grid; gap: 10px; margin-top: 20px; }
+      .archive-list div { display: flex; justify-content: space-between; gap: 15px; padding-bottom: 10px; border-bottom: 1px solid var(--line); color: var(--muted); font-size: 14px; }
+      .archive-list strong { color: var(--ink); }
+      .history-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .history-card { padding: 0 0 15px; }
+      .history-card img { display: block; width: 100%; height: auto; border-bottom: 1px solid var(--line); }
+      .history-card h3, .history-card p { padding: 0 15px; }
+      .history-card h3 { margin-top: 15px; font-size: 17px; }
+      .history-card p { font-size: 13px; }
+      .notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+      .note { padding: 18px; border-top: 3px solid var(--gold); background: var(--panel); }
+      .note p { color: var(--muted); font-size: 14px; }
+      .variant-a .proof-grid { grid-template-columns: repeat(3, 1fr); }
+      .variant-a .proof-grid .lead-frame { grid-column: span 2; }
+      .variant-a .stack { display: contents; }
+      .variant-a .stack figure { align-self: start; }
+      .variant-a .stack figure:first-child { grid-column: 1; }
+      .variant-a .stack figure:last-child { grid-column: 3; }
+      .variant-a .archive { grid-template-columns: 1fr; }
+      .variant-c .compare { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+      .variant-c .comparison-card.current-card { border-top: 3px solid var(--gold); }
+      .variant-c .comparison-card.previous-card { border-top: 3px solid var(--line); }
+      .compare-label { margin-bottom: 15px; color: var(--gold); font-size: 12px; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+      .comparison-card ul { margin: 18px 0 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+      footer { margin-top: 58px; color: var(--muted); font-size: 13px; }
+      .switcher { position: fixed; right: 50%; bottom: 18px; z-index: 2; display: flex; align-items: center; gap: 12px; transform: translateX(50%); padding: 9px 13px; border: 1px solid #62502f; border-radius: 999px; background: #211b11; box-shadow: 0 12px 35px rgba(0,0,0,.35); }
+      .switcher button { width: 28px; height: 28px; border: 1px solid #6b5228; border-radius: 50%; background: transparent; color: var(--gold); cursor: pointer; }
+      .switcher button:hover, .switcher button:focus-visible { background: var(--gold); color: #16120b; }
+      .switcher-label { min-width: 190px; color: var(--ink); font-size: 12px; text-align: center; }
+      @media (max-width: 760px) {
+        .shell { width: min(100% - 28px, 1180px); }
+        main { padding-top: 46px; }
+        .header-row, .section-head { display: block; }
+        .preview-label, .section-head > p { margin-top: 9px; }
+        .boundary, .timeline, .proof-grid, .archive, .history-strip, .notes, .variant-c .compare { grid-template-columns: 1fr; }
+        .timeline-item { min-height: auto; padding: 20px 0 22px 24px; border-left: 3px solid var(--line); border-top: 1px solid var(--line); }
+        .timeline-item + .timeline-item { padding-left: 24px; border-left: 3px solid var(--line); }
+        .timeline-item::before, .timeline-item + .timeline-item::before { top: 20px; left: -8px; }
+        .timeline-item.current { border-left-color: var(--gold); border-top-color: var(--line); }
+        .variant-a .proof-grid .lead-frame, .variant-a .stack figure:first-child, .variant-a .stack figure:last-child { grid-column: auto; }
+        .switcher-label { min-width: 145px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell header-row">
+        <div class="brand">Job-agent · public proof</div>
+        <div class="preview-label">Local layout preview · no public files changed</div>
+      </div>
+    </header>
+
+    <main class="shell" id="app"></main>
+
+    <nav class="switcher" aria-label="Preview layout variants">
+      <button type="button" data-direction="previous" aria-label="Previous layout">←</button>
+      <span class="switcher-label" aria-live="polite"></span>
+      <button type="button" data-direction="next" aria-label="Next layout">→</button>
+    </nav>
+
+    <script>
+      const current = {
+        detail: "../../assets/screenshots/job-agent-current-03-job-detail.png",
+        today: "../../assets/screenshots/job-agent-current-01-today.png",
+        find: "../../assets/screenshots/job-agent-current-02-find-jobs.png"
+      };
+      const historical = {
+        scope: "../../assets/screenshots/job-agent-historical-01-intake-scope.png",
+        research: "../../assets/screenshots/job-agent-historical-02-decision-research.png",
+        action: "../../assets/screenshots/job-agent-historical-03-tailored-action.png"
+      };
+      const variants = [
+        { key: "a", name: "A — Timeline first" },
+        { key: "b", name: "B — Evidence first (selected)" },
+        { key: "c", name: "C — Current vs previous" }
+      ];
+      const timeline = `
+        <section aria-labelledby="timeline-title">
+          <div class="section-head"><div><p class="eyebrow">Version timeline</p><h2 id="timeline-title">Show the product moving forward.</h2></div><p>Each public proof edition keeps its own evidence boundary. The current edition never replaces the earlier record.</p></div>
+          <div class="timeline">
+            <article class="timeline-item"><p class="timeline-meta">v0.5 · historical UI</p><h3>Guided workflow baseline</h3><p>Earlier scope, research, and preparation frames remain available for traceability.</p><span class="status">Retained history</span></article>
+            <article class="timeline-item"><p class="timeline-meta">0.8-public-proof · previous</p><h3>First public evidence edition</h3><p>The current public page stays archived as the previous edition after the refresh.</p><span class="status">Keep unchanged</span></article>
+            <article class="timeline-item current"><p class="timeline-meta">0.9-public-proof · proposed current</p><h3>Current product surface</h3><p>New captures from the current source UI lead the recruiter-safe proof page.</p><span class="status">Proposed next edition</span></article>
+          </div>
+        </section>`;
+      const boundary = `<p class="boundary"><span><strong>Evidence boundary:</strong> This is a static recruiter-safe preview. The product is not presented as live, market-validated, or connected to a production service. Company and job data remain synthetic.</span><span class="tag">0.9 CANDIDATE</span></p>`;
+      const currentProof = `
+        <section aria-labelledby="current-title">
+          <div class="section-head"><div><p class="eyebrow">0.9-public-proof · proposed current</p><h2 id="current-title">Lead with the strongest current decision.</h2></div><p>Keep the current source UI first. Use the job detail view as the anchor, then show Today and Find jobs as context.</p></div>
+          <div class="proof-grid">
+            <figure class="lead-frame"><div class="frame"><img src="${current.detail}" alt="Current Job-agent job detail frame" /></div><figcaption><strong>Primary proof · job detail</strong> Fit signals, CV evidence, company context, and next actions in one surface.</figcaption></figure>
+            <div class="stack">
+              <figure><div class="frame"><img src="${current.today}" alt="Current Job-agent Today frame" /></div><figcaption><strong>Supporting · Today</strong> What deserves attention now?</figcaption></figure>
+              <figure><div class="frame"><img src="${current.find}" alt="Current Job-agent Find jobs frame" /></div><figcaption><strong>Supporting · Find jobs</strong> Where does the next opportunity come from?</figcaption></figure>
+            </div>
+          </div>
+        </section>`;
+      const archive = `
+        <section aria-labelledby="archive-title">
+          <div class="section-head"><div><p class="eyebrow">Preserved editions</p><h2 id="archive-title">Keep the previous proof visible.</h2></div><p>Do not overwrite the existing public evidence. A reviewer should see what changed between editions.</p></div>
+          <div class="archive">
+            <article class="archive-card"><p class="label">0.8-public-proof · archived public edition</p><h3>The previous public page remains the reference point.</h3><p>Keep its screenshots, copy, and release metadata intact. Add a clear “previous edition” label and link from the timeline.</p><div class="archive-list"><div><strong>Evidence</strong><span>Existing current frames</span></div><div><strong>Status</strong><span>Published before refresh</span></div><div><strong>Rollback</strong><span>Revert to 0.8 page assets</span></div></div></article>
+            <article class="archive-card"><p class="label">Version rule</p><h3>One number, one public proof state.</h3><p>Use the version for a meaningful evidence refresh. Use the capture date for smaller changes.</p><div class="archive-list"><div><strong>v0.5</strong><span>Earlier UI baseline</span></div><div><strong>0.8</strong><span>Previous public edition</span></div><div><strong>0.9</strong><span>New current edition</span></div></div></article>
+          </div>
+        </section>`;
+      const history = `
+        <section aria-labelledby="history-title">
+          <div class="section-head"><div><p class="eyebrow">v0.5 · earlier UI version</p><h2 id="history-title">Make the evolution inspectable.</h2></div><p>The original simulated workflow stays on the page as the first point in the timeline.</p></div>
+          <div class="history-strip">
+            <article class="history-card"><img src="${historical.scope}" alt="Historical Job-agent scope frame" /><h3>01 · Scope</h3><p>What needs attention now?</p></article>
+            <article class="history-card"><img src="${historical.research}" alt="Historical Job-agent company research frame" /><h3>02 · Research</h3><p>Is this worth the user's time?</p></article>
+            <article class="history-card"><img src="${historical.action}" alt="Historical Job-agent preparation frame" /><h3>03 · Prepare</h3><p>What should change next?</p></article>
+          </div>
+        </section>`;
+      const notes = `<section><div class="notes"><article class="note"><h3>Replace</h3><p>Add the new current screenshots under a versioned path. Do not reuse the 0.8 filenames.</p></article><article class="note"><h3>Keep</h3><p>Keep v0.5, 0.8, synthetic-data labels, evidence limits, and the existing recruiter-safe copy.</p></article><article class="note"><h3>Verify</h3><p>Run privacy review, release validation, link checks, and a live Pages check after approval.</p></article></div></section>`;
+
+      function renderA() {
+        return `<p class="eyebrow">Public proof refresh · layout A</p><h1>Make the version history the first thing a recruiter can understand.</h1><p class="lead">A timeline-first page makes the product evolution explicit before showing the current source UI.</p>${boundary}${timeline}${currentProof}${archive}${history}${notes}`;
+      }
+      function renderB() {
+        return `<p class="eyebrow">Public proof refresh · layout B</p><h1>Show the product as it is now.</h1><p class="lead">Lead with the current decision-support surface, then preserve the previous public edition and the original UI as a visible timeline.</p>${boundary}${currentProof}${timeline}${archive}${history}${notes}`;
+      }
+      function renderC() {
+        return `<p class="eyebrow">Public proof refresh · layout C</p><h1>Let the before-and-after comparison do the work.</h1><p class="lead">A comparison-first page puts the current and previous public editions side by side, with the original baseline below.</p>${boundary}<section aria-labelledby="compare-title"><div class="section-head"><div><p class="eyebrow">Edition comparison</p><h2 id="compare-title">Current versus previous.</h2></div><p>Use this version when the visual change itself is the main story.</p></div><div class="compare"><article class="comparison-card current-card"><p class="compare-label">0.9-public-proof · proposed current</p><h3>Current product surface</h3><p>Job detail leads. Today and Find jobs provide context.</p><ul><li>Current source UI</li><li>New versioned captures</li><li>Current capture date and commit</li></ul></article><article class="comparison-card previous-card"><p class="compare-label">0.8-public-proof · preserved previous</p><h3>Previous public edition</h3><p>Existing public proof remains available and clearly dated.</p><ul><li>Existing assets stay intact</li><li>Previous copy remains inspectable</li><li>Direct rollback path remains clear</li></ul></article></div></section>${timeline}${currentProof}${history}${notes}`;
+      }
+      const renderers = { a: renderA, b: renderB, c: renderC };
+      const params = new URLSearchParams(location.search);
+      let key = params.get("variant") || "b";
+      if (!renderers[key]) key = "b";
+      const app = document.getElementById("app");
+      const label = document.querySelector(".switcher-label");
+      function render() {
+        app.className = `variant-${key}`;
+        app.innerHTML = renderers[key]() + `<footer>Local layout preview only. The public repository and GitHub Pages have not been changed. The 0.9 label is proposed until the source boundary and new captures pass review.</footer>`;
+        label.textContent = variants.find(v => v.key === key).name;
+        const nextUrl = new URL(location.href); nextUrl.searchParams.set("variant", key); history.replaceState({}, "", nextUrl);
+      }
+      function move(step) { const i = variants.findIndex(v => v.key === key); key = variants[(i + step + variants.length) % variants.length].key; render(); window.scrollTo({ top: 0, behavior: "smooth" }); }
+      document.querySelectorAll(".switcher button").forEach(button => button.addEventListener("click", () => move(button.dataset.direction === "next" ? 1 : -1)));
+      document.addEventListener("keydown", event => { if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return; if (event.key === "ArrowRight") move(1); if (event.key === "ArrowLeft") move(-1); });
+      render();
+    </script>
+  </body>
+</html>

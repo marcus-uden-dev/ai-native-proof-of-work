@@ -432,6 +432,7 @@ Before completing any weekly run, verify:
 23. Treat `.agents` as potentially important but structurally non-standard.
 24. Treat `https://github.com/marcus-uden-dev/ai-native-proof-of-work` as the canonical repository.
 25. If not running inside the repo, report that limitation before attempting edits.
+26. When showing a local HTML prototype, open it with the Codex panel tool or a verified `http://127.0.0.1` URL; never provide a clickable Markdown target containing a Windows backslash path or a hand-written `file://` URL.
 
 ## Weekly Final Response Format
 

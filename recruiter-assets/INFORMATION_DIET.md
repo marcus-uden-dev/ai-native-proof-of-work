@@ -1,6 +1,6 @@
 # Information Diet and Learning Signals
 
-Last updated: 2026-08-27
+Last updated: 2026-08-28
 Status: Recruiter-facing / Evidence-labeled
 
 ## Summary
@@ -42,13 +42,14 @@ It is useful as a measured aggregate listening signal, but not yet as a category
 | Total time saved by Pocket Casts playback features | 1 day 18 hours | Verified screenshot |
 | Time saved by skipping | 1 day 13 hours | Verified screenshot |
 | Time saved by variable speed | 5 hours 19 minutes | Verified screenshot |
+| Pocket Casts' playful comparison for the same period | 85,633,327,853 tweets written | Verified screenshot |
 
 Interpretation: this is a long-running learning and information-intake habit. The stronger professional claim is not "podcasts as proof by themselves"; it is that product, AI, business, science, and policy inputs have been part of the same operating system that supports the project work documented elsewhere in this repository.
 
 Quick conversions:
 
 - 489 days 8 hours is roughly 70 weeks of continuous listening.
-- 11,744 hours is roughly 5.6 full-time work years at 40 hours/week.
+- 11,744 hours equals 293.6 full-time work weeks, rounded to 294 weeks, or about 5.6 full-time work years at 40 hours/week.
 - The long-run average is about 3 hours per day, or 20.7 hours per week.
 - Category-level time is still unavailable, so these totals should not be presented as "AI listening time" or "business listening time" without richer app statistics.
 

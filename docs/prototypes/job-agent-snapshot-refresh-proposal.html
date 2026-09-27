@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Job-agent snapshot refresh proposal</title>
+    <style>
+      :root {
+        --paper: #f7f3eb;
+        --surface: #fffdf8;
+        --ink: #171815;
+        --muted: #626159;
+        --line: #d8d1c4;
+        --gold: #9a601e;
+        --gold-soft: #efe1ca;
+        --teal: #2f6656;
+        --teal-soft: #dce9e3;
+        --dark: #11120f;
+        --serif: Georgia, "Times New Roman", serif;
+        --sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+      }
+
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: var(--sans);
+        line-height: 1.55;
+      }
+      .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+      header {
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+      }
+      .header-row, .section-head, .option-head {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 24px;
+      }
+      .wordmark { color: var(--gold); font-weight: 750; letter-spacing: .02em; }
+      .status { color: var(--teal); font-size: 13px; font-weight: 700; }
+      main { padding: 76px 0 100px; }
+      .eyebrow, .label {
+        margin: 0 0 14px;
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 750;
+        letter-spacing: .11em;
+        text-transform: uppercase;
+      }
+      h1, h2, h3 { line-height: 1.08; letter-spacing: -.035em; }
+      h1 { max-width: 720px; margin: 0 0 18px; font-size: clamp(42px, 7vw, 76px); }
+      h2 { margin: 0; font-size: clamp(26px, 4vw, 42px); }
+      h3 { margin: 0 0 8px; font-size: 21px; }
+      .lead { max-width: 680px; margin: 0; color: var(--muted); font-size: 19px; }
+      .note {
+        max-width: 780px;
+        margin: 28px 0 0;
+        padding: 16px 18px;
+        border-left: 4px solid var(--teal);
+        background: var(--teal-soft);
+        color: #234b40;
+      }
+      .history-note {
+        margin: 22px 0 0;
+        padding: 16px 18px;
+        border: 1px solid var(--line);
+        background: #f0ece3;
+        color: var(--muted);
+      }
+      .history-note strong { color: var(--ink); }
+      section { margin-top: 80px; }
+      .section-head { margin-bottom: 24px; }
+      .section-head p { max-width: 430px; margin: 0; color: var(--muted); }
+      .option {
+        padding: 28px;
+        border: 1px solid var(--line);
+        background: var(--surface);
+        box-shadow: 0 22px 55px rgba(32, 27, 19, .06);
+      }
+      .option + .option { margin-top: 32px; }
+      .option-head { margin-bottom: 22px; }
+      .recommendation {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        padding: 3px 10px;
+        border-radius: 999px;
+        background: var(--gold-soft);
+        color: var(--gold);
+        font-size: 12px;
+        font-weight: 750;
+      }
+      .option-description { max-width: 650px; margin: 0; color: var(--muted); }
+      .version-note { margin: 0 0 22px; color: var(--muted); }
+      .version-track { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--line); }
+      .version {
+        position: relative;
+        min-height: 170px;
+        padding: 24px 22px 0 0;
+        border-top: 3px solid var(--line);
+      }
+      .version + .version { padding-left: 22px; border-left: 1px solid var(--line); }
+      .version::before {
+        content: "";
+        position: absolute;
+        top: -8px;
+        left: 0;
+        width: 11px;
+        height: 11px;
+        border: 2px solid var(--paper);
+        border-radius: 50%;
+        background: var(--line);
+        box-shadow: 0 0 0 1px var(--line);
+      }
+      .version + .version::before { left: 22px; }
+      .version.selected { border-top-color: var(--gold); }
+      .version.selected::before { background: var(--gold); box-shadow: 0 0 0 1px var(--gold); }
+      .version-meta { margin: 0 0 8px; color: var(--gold); font-size: 12px; font-weight: 750; letter-spacing: .08em; text-transform: uppercase; }
+      .version h3 { margin-bottom: 7px; font-size: 18px; }
+      .version p { margin: 0; color: var(--muted); font-size: 14px; }
+      .version-status { display: inline-block; margin-top: 14px; color: var(--teal); font-size: 12px; font-weight: 750; }
+      .sequence { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      figure { margin: 0; }
+      .frame {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        background: var(--dark);
+      }
+      .frame img { display: block; width: 100%; height: auto; }
+      figcaption { padding: 16px 2px 0; color: var(--muted); font-size: 14px; }
+      figcaption strong { display: block; margin-bottom: 3px; color: var(--ink); font-size: 15px; }
+      .split { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, .65fr); gap: 18px; }
+      .split .stack { display: grid; gap: 18px; align-content: start; }
+      .implementation {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+        margin-top: 24px;
+      }
+      .implementation article { padding: 18px; border-top: 3px solid var(--gold); background: var(--surface); }
+      .implementation p { margin: 0; color: var(--muted); font-size: 14px; }
+      footer { margin-top: 56px; color: var(--muted); font-size: 14px; }
+      @media (max-width: 760px) {
+        .shell { width: min(100% - 28px, 1120px); }
+        main { padding-top: 48px; }
+        .header-row, .section-head, .option-head { display: block; }
+        .status, .section-head p, .recommendation { margin-top: 10px; }
+        .option { padding: 18px; }
+        .version-track, .sequence, .split, .implementation { grid-template-columns: 1fr; }
+        .version { min-height: 0; padding: 20px 0 22px 22px; border-top: 1px solid var(--line); border-left: 3px solid var(--line); }
+        .version + .version { padding-left: 22px; border-left: 3px solid var(--line); }
+        .version.selected { border-top-color: var(--line); border-left-color: var(--gold); }
+        .version::before, .version + .version::before { top: 18px; left: -8px; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="shell header-row">
+        <div class="wordmark">Marcus Udén · Job-agent proof</div>
+        <div class="status">Proposal · current frames · synthetic-only evidence</div>
+      </div>
+    </header>
+
+    <main class="shell">
+      <p class="eyebrow">Snapshot refresh</p>
+      <h1>Make the current product story visible.</h1>
+      <p class="lead">Replace the older Jobs / Discover / Company screenshots with one job-detail-led proof page that shows how Job-agent turns uncertainty into a next action.</p>
+      <p class="note"><strong>Evidence boundary:</strong> these are recruiter-safe prototype frames. The company is synthetic, and the page should keep its existing “work in progress / not market-validated” language.</p>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Design versions</p>
+            <h2>Show the iteration, not only the result.</h2>
+          </div>
+          <p>These labels describe the visible UI/design evolution in the portfolio. They are separate from the source repo's software-release version.</p>
+        </div>
+        <p class="version-note">The historical UI is v0.5 and the current UI is v0.8 in this presentation timeline. Option B is the selected presentation format, not a new product version.</p>
+        <div class="version-track">
+          <article class="version">
+            <p class="version-meta">v0.5 · historical UI</p>
+            <h3>Feature snapshots</h3>
+            <p>Jobs, Discover, and Company screens documented separate capabilities from an earlier product stage.</p>
+            <span class="version-status">Baseline · retained for traceability</span>
+          </article>
+          <article class="version">
+            <p class="version-meta">v0.8 · current UI</p>
+            <h3>Current product frames</h3>
+            <p>Fresh captures from the current frontend show Today, Find jobs, and job detail with synthetic data.</p>
+            <span class="version-status">Verified capture · 31 Aug 2026</span>
+          </article>
+          <article class="version selected">
+            <p class="version-meta">Option B · selected presentation</p>
+            <h3>Job-detail-led proof</h3>
+            <p>The proof-page composition puts the strongest decision-support evidence first, with the wider workflow kept in context.</p>
+            <span class="version-status">Selected direction · Option B</span>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Versioning rule</p>
+            <h2>Change the number when the product meaning changes.</h2>
+          </div>
+          <p>Do not bump the product version for every screenshot, copy edit, or proof-page arrangement. Keep those changes in the capture date and presentation label.</p>
+        </div>
+        <div class="implementation">
+          <article><h3>0.5 → 0.8</h3><p>Use these portfolio UI labels to show meaningful interface and workflow evolution. Keep the capture date beside them so the evidence remains traceable.</p></article>
+          <article><h3>Source release</h3><p>Use the source repo's actual software version for a technical release. Do not turn an Option B proof-page arrangement or a new screenshot into a product release.</p></article>
+          <article><h3>1.0</h3><p>Use 1.0 when the core workflow is coherent, usable end to end, and stable enough for external evaluation. It does not claim market validation or commercial success.</p></article>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">v0.5 · earlier UI version</p>
+            <h2>Inspect the workflow, not a market outcome.</h2>
+          </div>
+          <p>Keep the earlier proof visible so a reviewer can see how the Job-agent interface evolved from a guided workflow to the current product shell.</p>
+        </div>
+        <div class="option">
+          <div class="option-head">
+            <div>
+              <h3>From ambiguity to a supported next move.</h3>
+              <p class="option-description">The earlier version connected discovery, company research, application tailoring, and interview preparation through three explicit decision questions.</p>
+            </div>
+            <span class="recommendation">Earlier version</span>
+          </div>
+          <div class="history-note"><strong>Original evidence boundary:</strong> Aster Vale Software is invented. Every company-specific value is synthetic or inferred from synthetic inputs. This prototype has no production service or public user data.</div>
+          <div class="sequence">
+            <figure>
+              <div class="frame"><img src="../../assets/screenshots/job-agent-historical-01-intake-scope.png" alt="Earlier Job-agent Today view with a synthetic role prioritised for company research" /></div>
+              <figcaption><strong>01 · Scope</strong> What needs attention now? The Today view puts the next decision before filters and detail.</figcaption>
+            </figure>
+            <figure>
+              <div class="frame"><img src="../../assets/screenshots/job-agent-historical-02-decision-research.png" alt="Earlier Job-agent synthetic company research with provenance labels and decision use" /></div>
+              <figcaption><strong>02 · Research</strong> Is this company and role worth my time? Company signals retain provenance, confidence, and decision use.</figcaption>
+            </figure>
+            <figure>
+              <div class="frame"><img src="../../assets/screenshots/job-agent-historical-03-tailored-action.png" alt="Earlier Job-agent interview preparation view based on synthetic research evidence" /></div>
+              <figcaption><strong>03 · Prepare</strong> What should change in the application or interview? Research becomes validation questions.</figcaption>
+            </figure>
+          </div>
+          <p class="history-note"><strong>Earlier page framing:</strong> Work in progress · Not live · Not market-validated · No measured market outcomes.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Option B · selected</p>
+            <h2>Let job detail lead.</h2>
+          </div>
+          <p>Stronger when the goal is to emphasise product judgment and evidence provenance over the breadth of the workflow.</p>
+        </div>
+        <div class="option">
+          <div class="option-head">
+            <div>
+              <h3>Job detail hero + supporting workflow</h3>
+              <p class="option-description">Use the current job-detail view as the single proof-page anchor, then show Today and Find jobs as supporting context for the surrounding workflow.</p>
+            </div>
+            <span class="recommendation">Selected</span>
+          </div>
+          <div class="split">
+            <figure>
+              <div class="frame"><img src="../../assets/screenshots/job-agent-current-03-job-detail.png" alt="Large current Job-agent job detail frame" /></div>
+              <figcaption><strong>Primary proof · decision support</strong> The richest current frame for showing fit, CV evidence, and company signals.</figcaption>
+            </figure>
+            <div class="stack">
+              <figure>
+                <div class="frame"><img src="../../assets/screenshots/job-agent-current-01-today.png" alt="Small current Job-agent Today frame" /></div>
+                <figcaption><strong>Supporting · Today</strong> What deserves attention?</figcaption>
+              </figure>
+              <figure>
+                <div class="frame"><img src="../../assets/screenshots/job-agent-current-02-find-jobs.png" alt="Small current Job-agent Find jobs frame" /></div>
+                <figcaption><strong>Supporting · Find jobs</strong> Where does the next opportunity come from?</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <p class="eyebrow">Suggested implementation</p>
+        <div class="implementation">
+          <article><h3>Replace</h3><p>Use the job-detail-led composition as the single proof-page surface and remove the legacy screenshot references from the lead case.</p></article>
+          <article><h3>Keep</h3><p>Keep the evidence boundary, synthetic labels, decision questions, and limitations. They make the proof credible.</p></article>
+          <article><h3>Do not claim</h3><p>Do not present the frames as market outcomes, live product usage, or measured user impact.</p></article>
+        </div>
+      </section>
+
+      <footer>Local visual proposal only. The public page has not been changed.</footer>
+    </main>
+  </body>
+</html>

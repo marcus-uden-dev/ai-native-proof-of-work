@@ -1,5 +1,50 @@
 # Decision Log
 
+## 2026-09-05 — Keep prompt-first fallback and evaluate Gemini behind a server-side route
+
+### Context
+
+The Repository Interview should eventually let a recruiter ask about Marcus and receive an evidence-grounded answer on the same page. The current public-site source is not available in this repository, and the existing implementation contract is prompt-first.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Keep copy-and-paste only | No API key, backend, quota, or input-retention risk | The recruiter leaves the page for the answer |
+| Call Gemini directly from browser JavaScript | Simple prototype shape | Exposes the API key and permits quota abuse |
+| Use Gemini behind a protected server-side route and keep prompt fallback | Same-page experience, bounded source access, and reversible rollout | Requires a serverless/backend route, rate limits, source refresh, and cost/privacy controls |
+
+### Decision
+
+Keep the provider-neutral prompt-first flow as the fallback. Treat Groq and Gemini as the first API candidates for a low-traffic prototype, with Groq preferred for the first speed/quota test. Call any provider only through a protected server-side route with reviewed, allowlisted public evidence sources. Do not put a model key in the browser or claim that a free tier is unlimited.
+
+### Reasoning Trail
+
+```text
+Context -> A same-page answer would reduce recruiter friction, but the page must retain evidence and privacy boundaries.
+Options Considered -> Copy-and-paste prompt, direct browser API call, or protected server-side Gemini route.
+Tradeoffs -> The protected route adds implementation and operations work but avoids exposing credentials and allows rate/citation controls.
+Decision -> Keep prompt-first fallback; investigate Gemini behind a server-side route.
+Evidence -> Official Gemini pricing, rate-limit, API-key security, and File Search documentation checked 2026-09-05.
+Open Questions -> Which public-site runtime should host the route, which model's quota is sufficient, and whether a reviewed snapshot or File Search is the right retrieval layer.
+Next Action -> Validate the prompt-first UX, then build a small rate-limited endpoint only after the public-site source is available.
+```
+
+### Evidence
+
+[Repository Interview Prompt](../prompts/REPOSITORY_INTERVIEW_PROMPT.md),
+[Repository Interview Prompt Generator plan](../plans/2026-08-30-repository-interview-prompt-generator.md),
+[Gemini pricing](https://ai.google.dev/gemini-api/docs/pricing),
+[Gemini API key security](https://ai.google.dev/gemini-api/docs/api-key)
+
+### Status
+
+Decision / Planned implementation
+
+### 2026-09-05 research addendum
+
+The shortlist now includes Groq, Cerebras, OpenRouter, Cloudflare Workers AI, Mistral, and Hugging Face. Groq is the recommended first alternative for a low-traffic Azure/serverless prototype; Cerebras is the second candidate for speed; OpenRouter is useful for model comparison and privacy-controlled routing. GitHub Models is excluded because GitHub retired its inference API on 2026-07-30.
+
 ## 2026-08-28 — Use deterministic, approval-gated execution for Android launcher automation
 
 ### Context

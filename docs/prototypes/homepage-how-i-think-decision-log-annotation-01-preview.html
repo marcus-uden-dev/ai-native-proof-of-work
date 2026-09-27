@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How I think — Decision Log placement preview</title>
+  <style>
+    :root { --paper:#f6f2e9; --surface:#fffdf8; --ink:#181715; --muted:#605d57; --line:#d8d0c3; --gold:#a4651b; --teal:#dcece8; --link:#1f6967; --dark:#201e19; --serif: Georgia, 'Times New Roman', serif; --sans: Arial, Helvetica, sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--sans); }
+    a { color:inherit; }
+    .shell { width:min(calc(100% - 3rem), 76rem); margin:0 auto; }
+    .masthead { border-bottom:1px solid var(--line); background:rgba(246,242,233,.96); }
+    .masthead__inner { min-height:5.4rem; display:flex; gap:2rem; align-items:center; justify-content:space-between; }
+    .brand { display:flex; align-items:center; gap:.8rem; font-weight:800; text-decoration:none; }
+    .mark { width:2.35rem; height:2.35rem; display:grid; place-items:center; border:1px solid var(--ink); font-size:.7rem; }
+    nav ul { display:flex; flex-wrap:wrap; gap:1.4rem; padding:0; margin:0; list-style:none; }
+    nav a { text-decoration:none; font-weight:700; font-size:.88rem; color:#5d5850; }
+    .notice { margin:1.6rem auto 0; padding:1rem 1.2rem; border-left:5px solid var(--gold); background:#f3e5cb; color:#51310e; line-height:1.5; }
+    .notice strong { color:var(--ink); }
+    main { padding:4.5rem 0 9rem; }
+    .kicker { margin:0 0 .75rem; color:var(--gold); font-family:ui-monospace, SFMono-Regular, Consolas, monospace; font-size:.78rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { max-width:45rem; margin-bottom:0; font-size:clamp(2.8rem, 6vw, 5.2rem); line-height:.98; letter-spacing:-.055em; }
+    h2 { font-size:clamp(2rem, 4vw, 3.35rem); line-height:1; letter-spacing:-.045em; }
+    h3 { margin-bottom:.65rem; font-size:1.35rem; letter-spacing:-.03em; }
+    .intro { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(17rem,.55fr); gap:3rem; padding-bottom:3.2rem; }
+    .intro p:last-child { max-width:31rem; margin:.55rem 0 0; color:var(--muted); font-size:1.08rem; line-height:1.55; }
+    .facts { display:grid; grid-template-columns:repeat(3,1fr); border-block:1px solid var(--line); margin-bottom:2.2rem; }
+    .facts div { padding:1rem 1.25rem; border-right:1px solid var(--line); }
+    .facts div:last-child { border-right:0; }
+    .facts strong { display:block; color:var(--gold); font:700 1.8rem/1 var(--serif); }
+    .facts span { color:var(--muted); font-size:.78rem; }
+    .lenses { display:grid; grid-template-columns:repeat(4,1fr); }
+    .lens { min-height:15.5rem; padding:1.35rem; border:1px solid var(--line); border-right:0; }
+    .lens:last-child { border-right:1px solid var(--line); }
+    .lens--tint { background:var(--teal); }
+    .role { color:var(--gold); font-size:.68rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+    .lens p:not(.role) { color:var(--muted); font-size:.9rem; line-height:1.5; }
+    .tag { display:inline-block; margin:.2rem .16rem 0 0; padding:.35rem .55rem; border:1px solid #e2c895; border-radius:99px; background:#f5ead4; color:#76470c; font-size:.66rem; font-weight:800; }
+    .tag--plain { border-color:#ded6c9; background:transparent; color:#5d5850; }
+    .section-rule { margin:3.8rem 0 2.1rem; border:0; border-top:1px solid var(--line); }
+    .decision-heading { display:grid; grid-template-columns:minmax(0,1fr) minmax(18rem,.6fr); gap:3rem; align-items:end; }
+    .decision-heading p:last-child { color:var(--muted); line-height:1.5; }
+    .decision-list { margin-top:1.4rem; border-top:1px solid var(--ink); }
+    .decision { display:grid; grid-template-columns:8rem minmax(0,1.25fr) minmax(0,.9fr); gap:1.5rem; padding:1.45rem 0; border-bottom:1px solid var(--line); }
+    .decision time { color:var(--gold); font:700 1rem/1.2 var(--serif); }
+    .decision p { margin-bottom:.35rem; color:var(--muted); line-height:1.45; }
+    .decision strong { color:var(--ink); }
+    .decision .tag { margin-top:0; }
+    .note { margin:1.25rem 0 0; color:var(--muted); font-size:.88rem; line-height:1.5; }
+    .variant { display:none; }
+    .variant.is-active { display:block; }
+    .project-ledger { display:grid; grid-template-columns:17rem 1fr; border:1px solid var(--line); }
+    .project-ledger__aside { padding:1.4rem; background:var(--teal); border-right:1px solid var(--line); }
+    .project-ledger__aside p { color:var(--muted); line-height:1.5; }
+    .project-ledger__content { padding:0 1.4rem; }
+    .project-ledger .decision { grid-template-columns:7rem 1fr; }
+    .project-ledger .decision div:last-child { display:none; }
+    .stream { display:grid; grid-template-columns:repeat(3,1fr); border-top:1px solid var(--ink); border-left:1px solid var(--line); }
+    .stream article { padding:1.35rem; border-right:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .stream article:nth-child(4) { grid-column:span 3; display:grid; grid-template-columns:8rem 1fr 1fr; gap:1.5rem; background:var(--surface); }
+    .stream p { color:var(--muted); line-height:1.5; }
+    .inline-label { color:var(--gold); font-size:.72rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; }
+    .switcher { position:fixed; z-index:10; bottom:1.25rem; left:50%; transform:translateX(-50%); display:flex; align-items:center; gap:1rem; padding:.7rem .85rem; background:var(--dark); color:white; box-shadow:0 18px 40px rgba(0,0,0,.25); }
+    .switcher button { min-width:2.75rem; min-height:2.4rem; border:1px solid #dda558; background:transparent; color:white; font-size:1.4rem; cursor:pointer; }
+    .switcher a { min-width:12rem; padding:.7rem .9rem; border:1px solid #dda558; color:white; text-align:center; text-decoration:none; font:700 .9rem ui-monospace, SFMono-Regular, Consolas, monospace; }
+    .switcher a[aria-current='true'] { background:#a4651b; }
+    @media (max-width: 47rem) { .shell { width:min(calc(100% - 2rem), 40rem); } .masthead__inner { padding:1rem 0; align-items:flex-start; flex-direction:column; } nav ul { gap:.85rem; } main { padding-top:3rem; } .intro,.decision-heading { grid-template-columns:1fr; gap:1.25rem; } .facts,.lenses { grid-template-columns:1fr 1fr; } .facts div:nth-child(2) { border-right:0; } .lenses .lens { border-right:1px solid var(--line); border-bottom:0; } .lenses .lens:last-child { border-bottom:1px solid var(--line); } .decision,.project-ledger .decision { grid-template-columns:1fr; gap:.75rem; } .project-ledger { grid-template-columns:1fr; } .project-ledger__aside { border-right:0; border-bottom:1px solid var(--line); } .stream { grid-template-columns:1fr; } .stream article:nth-child(4) { grid-column:auto; display:block; } .switcher { width:calc(100% - 2rem); justify-content:center; gap:.45rem; } .switcher a { min-width:0; padding:.7rem .55rem; font-size:.74rem; } }
+  </style>
+</head>
+<body>
+  <header class="masthead"><div class="shell masthead__inner"><a class="brand" href="#"><span class="mark">MU</span><span>Marcus Udén</span></a><nav aria-label="Primary navigation"><ul><li><a href="#">Hiring case</a></li><li><a href="#">Product portfolio</a></li><li><a href="#how-i-think">How I think</a></li><li><a href="#">CV</a></li><li><a href="#">Interview my work</a></li><li><a href="#">Contact</a></li></ul></nav></div></header>
+  <div class="shell notice"><strong>Review only — local design proposal.</strong> This preview answers annotations H-04 to H-07. It does not change the live site. The raw JSON remains repository evidence, but is not offered as a recruiter-facing route.</div>
+  <main class="shell" id="how-i-think">
+    <article class="variant" data-variant="A">
+      <section class="intro"><div><p class="kicker">How I think</p><h1>The decisions behind the work.</h1></div><p>A dated record of meaningful product and workflow decisions: what changed, why the choice was made, and the public evidence that supports it.</p></section>
+      <div class="facts"><div><strong>17</strong><span>dated decisions</span></div><div><strong>4</strong><span>projects represented</span></div><div><strong>10+</strong><span>capabilities shown</span></div></div>
+      <section class="lenses" aria-label="Projects represented"><article class="lens"><p class="role">Lead product</p><h3>Job-agent</h3><p>Career-workflow product: discovery, research, application tailoring, and interview preparation.</p><span class="tag">product judgment</span><span class="tag tag--plain">research taste</span></article><article class="lens"><p class="role">Supporting work</p><h3>PKM</h3><p>Knowledge-work evidence presented conservatively until sustained daily-use value is validated.</p><span class="tag">product judgment</span><span class="tag tag--plain">research taste</span></article><article class="lens"><p class="role">Supporting work</p><h3>Household budget</h3><p>Shared-domain modelling with roles, imports, review flows, forecasts, and privacy-sensitive data.</p><span class="tag">systems thinking</span><span class="tag tag--plain">problem framing</span></article><article class="lens lens--tint"><p class="role">Operating layer</p><h3>Personal AI Harness</h3><p>The memory, agent, automation, and improvement system behind the work.</p><span class="tag">AI-native workflows</span><span class="tag tag--plain">systems thinking</span></article></section>
+      <hr class="section-rule">
+      <section><div class="decision-heading"><div><p class="kicker">Decision log</p><h2>The decisions, in context.</h2></div><p>Each entry states the decision, the reason, and what it demonstrates. The full dated history continues in this page.</p></div><div class="decision-list"><article class="decision"><time datetime="2026-08-24">24 Aug<br>2026</time><div><span class="tag">Personal AI Harness</span><p><strong>Kept the operating layer separate from the products.</strong></p><p>It makes the products the main proof while showing the system that supports them.</p></div><div><p><strong>Shows</strong></p><p>Clear product boundaries as the work evolves.</p></div></article><article class="decision"><time datetime="2026-08-09">09 Aug<br>2026</time><div><span class="tag">Job-agent</span><p><strong>Separated product freshness from later documentation work.</strong></p><p>The public proof describes only what changed in the product source.</p></div><div><p><strong>Shows</strong></p><p>An evidence boundary between product work and follow-up work.</p></div></article><article class="decision"><time datetime="2026-05-11">11 May<br>2026</time><div><span class="tag">Household budget</span><p><strong>Used shared budgeting to test a multi-user domain.</strong></p><p>The work included roles, imports, review flows, forecasts, and privacy constraints.</p></div><div><p><strong>Shows</strong></p><p>System thinking with explicit constraints and review needs.</p></div></article></div><p class="note"><strong>Preview behaviour:</strong> all 17 entries would continue below this point, with project and capability filters. No separate Decision Log page or raw JSON link is needed.</p></section>
+    </article>
+    <article class="variant" data-variant="B">
+      <section class="intro"><div><p class="kicker">How I think</p><h1>How I turn work into decisions.</h1></div><p>Browse the dated choices behind the portfolio. Each record connects a project, a reason, and the evidence boundary that keeps the claim credible.</p></section>
+      <section class="project-ledger"><aside class="project-ledger__aside"><p class="kicker">Decision log</p><h2>Start with the decision.</h2><p>The portfolio is the index. The decision history is the evidence trail.</p><div class="facts"><div><strong>17</strong><span>records</span></div><div><strong>4</strong><span>projects</span></div><div><strong>10+</strong><span>signals</span></div></div></aside><div class="project-ledger__content"><article class="decision"><time>24 Aug<br>2026</time><div><span class="tag">Personal AI Harness</span><p><strong>Kept the operating layer separate from the products.</strong></p><p>The system remains supporting proof, not the portfolio’s main product claim.</p></div><div></div></article><article class="decision"><time>09 Aug<br>2026</time><div><span class="tag">Job-agent</span><p><strong>Separated product freshness from later documentation work.</strong></p><p>This kept public product proof tied to the actual source change.</p></div><div></div></article><article class="decision"><time>11 May<br>2026</time><div><span class="tag">PKM</span><p><strong>Presented knowledge work conservatively until adoption is validated.</strong></p><p>This protected the evidence boundary from a stronger, unsupported claim.</p></div><div></div></article></div></section>
+      <hr class="section-rule"><section><div class="decision-heading"><div><p class="kicker">Project map</p><h2>Where the decisions come from.</h2></div><p>Projects remain visible, but they explain the decision history rather than compete with it.</p></div><div class="lenses"><article class="lens"><h3>Job-agent</h3><p>6 decisions · lead product</p></article><article class="lens"><h3>PKM</h3><p>2 decisions · supporting work</p></article><article class="lens"><h3>Household budget</h3><p>2 decisions · supporting work</p></article><article class="lens lens--tint"><h3>Personal AI Harness</h3><p>7 decisions · operating layer</p></article></div></section>
+    </article>
+    <article class="variant" data-variant="C">
+      <section class="intro"><div><p class="kicker">How I think</p><h1>A portfolio with its reasoning attached.</h1></div><p>Projects show the work. The Decision Log shows the choices behind it: dated, scoped, and limited to public evidence.</p></section>
+      <div class="facts"><div><strong>17</strong><span>decision records</span></div><div><strong>4</strong><span>projects represented</span></div><div><strong>10+</strong><span>capability signals</span></div></div>
+      <section class="stream"><article><p class="inline-label">Lead product</p><h3>Job-agent</h3><p>Career-workflow product with visible research, decision, and delivery steps.</p></article><article><p class="inline-label">Supporting work</p><h3>PKM</h3><p>Knowledge work with conservative claims until sustained daily use is validated.</p></article><article><p class="inline-label">Supporting work</p><h3>Household budget</h3><p>Shared-domain modelling with roles, constraints, and review flows.</p></article><article><time>Decision log</time><div><p><strong>24 Aug 2026 · Personal AI Harness</strong></p><p>Kept the operating layer separate from the products so the portfolio stays product-led.</p></div><div><p><strong>09 Aug 2026 · Job-agent</strong></p><p>Separated product freshness from later documentation to protect the public evidence boundary.</p></div></article></section>
+      <section style="margin-top:3rem"><div class="decision-heading"><div><p class="kicker">Decision history</p><h2>Continue through every decision here.</h2></div><p>The complete list follows the project map. It does not send the reader to a raw data file.</p></div><div class="decision-list"><article class="decision"><time>11 May<br>2026</time><div><span class="tag">Household budget</span><p><strong>Deferred pricing until workflow safety and repeated household value are stronger.</strong></p></div><div><p><strong>Shows</strong></p><p>Evidence thresholds before commercial claims.</p></div></article><article class="decision"><time>11 May<br>2026</time><div><span class="tag">Job-agent</span><p><strong>Started with a reviewed workflow instead of unreviewed application sending.</strong></p></div><div><p><strong>Shows</strong></p><p>User control and explicit risk boundaries.</p></div></article></div></section>
+    </article>
+  </main>
+  <div class="switcher" aria-label="Preview variants"><button type="button" data-step="-1" aria-label="Previous variant">←</button><a href="?variant=A" data-link="A">A · Log follows project map</a><a href="?variant=B" data-link="B">B · Log first</a><a href="?variant=C" data-link="C">C · Interleaved</a><button type="button" data-step="1" aria-label="Next variant">→</button></div>
+  <script>
+    const keys=['A','B','C']; const current=(new URLSearchParams(location.search).get('variant')||'A').toUpperCase(); const key=keys.includes(current)?current:'A';
+    document.querySelector(`[data-variant="${key}"]`).classList.add('is-active'); document.querySelector(`[data-link="${key}"]`).setAttribute('aria-current','true');
+    const move=(amount)=>{ const next=keys[(keys.indexOf(key)+amount+keys.length)%keys.length]; location.search=`?variant=${next}`; };
+    document.querySelectorAll('[data-step]').forEach((button)=>button.addEventListener('click',()=>move(Number(button.dataset.step))));
+    document.addEventListener('keydown',(event)=>{ if(['INPUT','TEXTAREA'].includes(document.activeElement.tagName)) return; if(event.key==='ArrowLeft') move(-1); if(event.key==='ArrowRight') move(1); });
+  </script>
+</body>
+</html>

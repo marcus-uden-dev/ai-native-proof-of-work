@@ -1,7 +1,7 @@
 # Todo: Replace “Profile Oracle” with a repository interview surface
 
-Status: `Planned`  
-Priority: `High`  
+Status: `Planned`
+Priority: `High`
 Owner: Marcus + Codex
 
 ## Why
@@ -27,7 +27,7 @@ Use the existing decision log as the public, human-readable record of meaningful
 
 Proposed copy:
 
-> Learn how I think through my continuous decision log.
+> See how Marcus thinks through his continuous decision log.
 
 Alternative:
 
@@ -57,11 +57,11 @@ The current published recursive-workflow page still contains these stale public 
 Replace them with the settled information architecture:
 
 - `Decision Log`
-- `Learn how I think through my continuous decision log.`
+- `See how Marcus thinks through his continuous decision log.`
 - `Ask the Repository`
 - `Ask questions about skills, work history, projects, decisions, evidence, and open questions.`
 
-The public-page source was located in the canonical public repository: `site/proof/recursive-workflow/index.html`, with the homepage prompt in `site/index.html` and the recruiter guidance in `site/recruiter-agent-guide.md`. The live page still requires a commit and push from that source checkout before the change is published.
+The public-page source was previously identified in the canonical public repository: `site/proof/recursive-workflow/index.html`, with the homepage prompt in `site/index.html` and the recruiter guidance in `site/recruiter-agent-guide.md`. Source unavailable in the current repository checkout — needs the public-site repository path or export before implementation. The live page still requires a commit and push from that source checkout before the change is published.
 
 ### Repository-interview prompt contract
 
@@ -140,3 +140,10 @@ Launch the prompt-first flow and add an API-backed answer field later if the int
 - Whether “continuous decision log” is the primary copy or supporting copy.
 - Whether a later release should show answers directly after the prompt-first flow has been validated.
 - Whether the public repository is the only retrieval source, or whether a separate reviewed index is needed.
+
+## Future TODO — same-page API-backed repository answers
+
+- [x] Investigate an optional API-backed flow. Gemini is a viable first candidate for a low-traffic prototype because Google documents a free tier, but the free tier is quota-limited and may use submitted content to improve products.
+- [ ] Design a protected server-side route so the recruiter can ask about Marcus and receive a repository-grounded answer without leaving the website.
+
+Keep implementation deferred until the prompt-first flow and evidence boundary are validated. Any implementation must cover explicit user consent, API-key protection through a server-side boundary, privacy and retention, prompt-injection handling, citation quality, rate limits, cost controls, failure states, and a clear fallback to the provider-neutral copy-and-paste flow. Do not add API calls, credentials, backend scaffolding, or client-side secrets to the current implementation.

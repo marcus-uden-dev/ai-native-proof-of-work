@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage brand label — annotation 1 preview</title>
+  <style>
+    :root { --paper:#f4efe5; --card:#fffaf0; --ink:#171714; --muted:#665f52; --line:#d8cdbb; --gold:#a2641e; --teal:#286a60; --teal-soft:#dcebe5; --dark:#211c14; --serif:Georgia,"Times New Roman",serif; --sans:Inter,"Segoe UI",system-ui,sans-serif; --mono:"IBM Plex Mono",Consolas,monospace; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--ink); font:16px/1.5 var(--sans); }
+    a { color:inherit; }
+    .shell { width:min(1120px,calc(100% - 40px)); margin:0 auto; }
+    header { border-bottom:1px solid var(--line); background:rgba(255,250,240,.88); }
+    .mast { min-height:102px; display:flex; align-items:center; justify-content:space-between; gap:30px; }
+    .brand { display:flex; align-items:center; gap:14px; text-decoration:none; }
+    .mark { display:grid; place-items:center; width:42px; height:42px; border:1px solid var(--ink); font:700 13px var(--mono); flex:none; }
+    .brand-name { font:700 25px/1.05 var(--sans); }
+    .brand-descriptor { margin-top:6px; color:var(--muted); font:12px var(--mono); letter-spacing:.04em; }
+    nav { color:var(--muted); font:13px var(--mono); }
+    nav a { margin-left:18px; text-decoration:none; }
+    main { padding:60px 0 150px; }
+    .note { margin:0 0 32px; padding:14px 18px; border-left:3px solid var(--gold); background:#efe0c5; color:#774410; font:13px/1.45 var(--mono); }
+    .frame { padding:36px; border:1px solid var(--line); background:var(--card); }
+    .frame-head { display:flex; justify-content:space-between; gap:25px; align-items:end; padding-bottom:26px; border-bottom:1px solid var(--line); }
+    .kicker { margin:0 0 12px; color:var(--gold); font:700 12px var(--mono); letter-spacing:.12em; text-transform:uppercase; }
+    h1,h2,h3 { margin:0; font-family:var(--serif); font-weight:500; line-height:1.06; letter-spacing:-.035em; }
+    h1 { max-width:700px; font-size:clamp(42px,7vw,78px); }
+    h2 { font-size:clamp(31px,4vw,52px); }
+    h3 { font-size:25px; }
+    .frame-head p:not(.kicker) { max-width:360px; margin:0; color:var(--muted); }
+    .variant[hidden] { display:none; }
+    .variant-title { margin:26px 0 21px; color:var(--muted); font:600 13px var(--mono); }
+    .mock-hero { display:grid; grid-template-columns:minmax(0,1.3fr) minmax(250px,.7fr); gap:38px; align-items:start; padding:28px 0 34px; border-bottom:1px solid var(--line); }
+    .dek { max-width:650px; margin:22px 0 0; color:var(--muted); font-size:20px; }
+    .mock-card { padding:23px; border:1px solid var(--line); background:#fffdf7; }
+    .mock-card p:not(.kicker) { color:var(--muted); }
+    .mock-card h3 { margin-bottom:10px; }
+    .identity-note { margin-top:28px; padding:18px 20px; background:var(--teal-soft); color:#355b53; }
+    .identity-note strong { color:var(--ink); }
+    .option-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:14px; margin-top:28px; }
+    .option { padding:20px; border:1px solid var(--line); background:#fffdf7; }
+    .option--recommended { border-color:var(--teal); box-shadow:inset 4px 0 var(--teal); }
+    .option__label { margin:0 0 12px; color:var(--gold); font:700 12px var(--mono); letter-spacing:.08em; text-transform:uppercase; }
+    .option__copy { font-size:18px; font-weight:700; }
+    .option__why { margin-top:9px; color:var(--muted); font-size:14px; }
+    .single-line .brand { gap:9px; }
+    .single-line .brand-name { font-size:21px; }
+    .single-line .brand-name::after { content:"  /  Digital portfolio & interview companion"; color:var(--muted); font:13px var(--mono); letter-spacing:0; }
+    .wide-label { display:flex; align-items:baseline; gap:25px; padding:17px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .wide-label .brand-name { font-size:24px; }
+    .wide-label .brand-descriptor { margin:0; }
+    .switcher { position:fixed; right:20px; bottom:18px; left:20px; z-index:3; display:flex; justify-content:center; }
+    .switcher-inner { display:flex; align-items:center; gap:14px; padding:10px 14px; border:1px solid var(--ink); background:var(--dark); color:#fffaf0; box-shadow:0 8px 24px rgba(23,23,20,.2); font:13px var(--mono); }
+    .switcher button { width:28px; height:28px; border:1px solid #d8ad72; background:transparent; color:#fffaf0; cursor:pointer; }
+    .switcher strong { min-width:190px; text-align:center; }
+    @media (max-width:760px) {
+      .shell { width:min(100% - 28px,1120px); }
+      .mast { min-height:0; padding:15px 0; align-items:flex-start; flex-direction:column; gap:15px; }
+      nav a { margin:0 15px 0 0; }
+      main { padding-top:34px; }
+      .frame { padding:22px; }
+      .frame-head,.mock-hero,.wide-label { display:grid; grid-template-columns:1fr; align-items:start; }
+      .option-grid { grid-template-columns:1fr; }
+      .single-line .brand-name::after { content:" / Digital portfolio & interview companion"; display:block; margin-top:6px; }
+      .switcher strong { min-width:0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell mast" id="header-preview">
+      <a class="brand" href="#"><span class="mark">MU</span><span><span class="brand-name">Marcus Udén</span><span class="brand-descriptor">Product portfolio · CV · interview companion</span></span></a>
+      <nav aria-label="Preview navigation"><a href="#hiring-case">Hiring case</a><a href="#selected-work">Selected work</a><a href="#how-i-think">How I think</a></nav>
+    </div>
+  </header>
+  <main>
+    <div class="shell">
+      <p class="note"><strong>Review only — local design proposal.</strong> This preview answers the brand-label annotation. It does not change the live site. Use the switcher to compare three lockup treatments.</p>
+      <section class="frame" aria-labelledby="preview-title">
+        <div class="frame-head"><div><p class="kicker">Homepage annotation 1</p><h2 id="preview-title">Make the site identity clear.</h2></div><p>The name stays primary. The descriptor tells a first-time visitor what this site contains.</p></div>
+
+        <article class="variant" data-variant="A">
+          <p class="variant-title">A — Two-line identity · recommended</p>
+          <div class="mock-hero">
+            <div><p class="kicker">Experienced individual contributor</p><h1>I turn messy operational problems into clear, buildable product work.</h1><p class="dek">Operational depth. Product thinking. AI-native execution.</p></div>
+            <div class="mock-card"><p class="kicker">Header role</p><h3>Identify the site before reading the hero.</h3><p>The descriptor remains quiet, but makes the portfolio, CV, and public archive explicit.</p></div>
+          </div>
+          <div class="identity-note"><strong>Recommended copy:</strong> Marcus Udén · Product portfolio · CV · interview companion. The site helps a recruiter explore the work, decisions, and evidence behind the CV before the first conversation.</div>
+          <div class="option-grid">
+            <div class="option option--recommended"><p class="option__label">A1 · Recommended</p><p class="option__copy">Product portfolio · CV · interview companion</p><p class="option__why">Explains what the site is useful for without sounding like an AI replica.</p></div>
+            <div class="option"><p class="option__label">A2</p><p class="option__copy">Digital portfolio · CV · interview companion</p><p class="option__why">Clearer about the digital format, but less specific about the work.</p></div>
+            <div class="option"><p class="option__label">A3</p><p class="option__copy">CV · selected work · interview context</p><p class="option__why">Concrete, but “interview context” needs more explanation.</p></div>
+            <div class="option"><p class="option__label">A4</p><p class="option__copy">Product & developer portfolio · CV · interview companion</p><p class="option__why">Includes developer positioning, but is longer.</p></div>
+          </div>
+        </article>
+
+        <article class="variant single-line" data-variant="B" hidden>
+          <p class="variant-title">B — Single-line descriptor</p>
+          <div class="mock-hero"><div><p class="kicker">Header lockup</p><h1>Marcus Udén</h1><p class="dek">A single-line header keeps the identity compact: the name is followed by “Digital portfolio & interview companion”.</p></div><div class="mock-card"><p class="kicker">Strength</p><h3>Fast to scan.</h3><p>Good for a compact desktop header, but it needs a mobile rule to wrap cleanly.</p></div></div>
+          <div class="identity-note"><strong>Suggested copy:</strong> Marcus Udén / Digital portfolio & interview companion.</div>
+          <div class="option-grid"><div class="option option--recommended"><p class="option__label">B1 · Recommended</p><p class="option__copy">Marcus Udén / Digital portfolio & interview companion</p><p class="option__why">Clear in one line and explains the visitor use case.</p></div><div class="option"><p class="option__label">B2</p><p class="option__copy">Marcus Udén / CV, product work & interview context</p><p class="option__why">Concrete, but slightly abstract.</p></div><div class="option"><p class="option__label">B3</p><p class="option__copy">Marcus Udén / Developer portfolio & interview companion</p><p class="option__why">Clear, but it narrows the positioning.</p></div><div class="option"><p class="option__label">B4</p><p class="option__copy">Marcus Udén / Portfolio, CV & digital interview twin</p><p class="option__why">Distinctive, but implies a speaking AI replica.</p></div></div>
+        </article>
+
+        <article class="variant" data-variant="C" hidden>
+          <p class="variant-title">C — Name first, descriptor as a site strapline</p>
+          <div class="wide-label"><span class="brand-name">Marcus Udén</span><span class="brand-descriptor">Product portfolio · CV · interview companion</span></div>
+          <div class="mock-hero"><div><p class="kicker">Site strapline</p><h1>The public work archive behind the portfolio.</h1><p class="dek">The descriptor becomes a page-level identity line below the header, while the header stays minimal.</p></div><div class="mock-card"><p class="kicker">Strength</p><h3>Most flexible.</h3><p>Best if the header should stay quiet, but it gives the identity less immediate prominence.</p></div></div>
+          <div class="option-grid"><div class="option option--recommended"><p class="option__label">C1 · Recommended</p><p class="option__copy">Product portfolio · CV · interview companion</p><p class="option__why">Uses the clearest descriptor in a larger page rhythm.</p></div><div class="option"><p class="option__label">C2</p><p class="option__copy">A digital companion to the CV and selected work</p><p class="option__why">Human and clear, but less compact.</p></div><div class="option"><p class="option__label">C3</p><p class="option__copy">Product work · decisions · interview context</p><p class="option__why">Strong proof language, but does not mention the portfolio.</p></div><div class="option"><p class="option__label">C4</p><p class="option__copy">Portfolio, CV & digital interview twin</p><p class="option__why">Keeps the concept, but “twin” needs explanation.</p></div></div>
+        </article>
+      </section>
+    </div>
+  </main>
+  <div class="switcher" aria-label="Prototype variant switcher"><div class="switcher-inner"><button type="button" data-direction="prev" aria-label="Previous variant">←</button><strong id="variant-label">A — Two-line identity</strong><button type="button" data-direction="next" aria-label="Next variant">→</button></div></div>
+  <script>
+    const names = { A: 'Two-line identity', B: 'Single-line descriptor', C: 'Site strapline' };
+    const keys = Object.keys(names); const params = new URLSearchParams(window.location.search); let current = keys.includes(params.get('variant')) ? params.get('variant') : 'A'; const label = document.querySelector('#variant-label');
+    const render = () => { document.querySelectorAll('.variant').forEach((element) => { element.hidden = element.dataset.variant !== current; }); label.textContent = `${current} — ${names[current]}`; const nextUrl = new URL(window.location.href); nextUrl.searchParams.set('variant', current); window.history.replaceState({}, '', nextUrl); };
+    const move = (direction) => { const index = keys.indexOf(current); current = keys[(index + direction + keys.length) % keys.length]; render(); };
+    document.querySelector('[data-direction="prev"]').addEventListener('click', () => move(-1)); document.querySelector('[data-direction="next"]').addEventListener('click', () => move(1));
+    window.addEventListener('keydown', (event) => { if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) return; if (event.key === 'ArrowLeft') move(-1); if (event.key === 'ArrowRight') move(1); }); render();
+  </script>
+</body>
+</html>

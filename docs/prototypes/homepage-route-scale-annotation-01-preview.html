@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Homepage route scale preview — Marcus Udén</title>
+  <link rel="stylesheet" href="https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/css/site.css">
+  <style>
+    /* Review question: Can portfolio routes match the main navigation scale while staying secondary to the name? */
+    .preview-note {
+      margin-top: 1.25rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--gold);
+      background: var(--gold-soft);
+      color: var(--ink);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .wordmark {
+      display: grid;
+      gap: 0.1rem;
+    }
+
+    .wordmark__home {
+      display: inline-flex;
+      min-height: 2.75rem;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .wordmark__routes {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.45rem;
+      margin: 0;
+      padding-left: 2.9rem;
+      color: var(--muted);
+      font: 650 0.9rem/1.1 var(--sans);
+      letter-spacing: normal;
+    }
+
+    .wordmark__routes a {
+      display: inline-flex;
+      min-height: 1.5rem;
+      align-items: center;
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    .wordmark__routes a:hover { color: var(--teal); }
+
+    .preview-hero { padding-top: 6rem; }
+
+    @media (max-width: 47.5rem) {
+      .wordmark__routes { padding-left: 2.9rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead" data-print-hide>
+    <div class="shell masthead__inner">
+      <div class="wordmark">
+        <a class="wordmark__home" href="#top" aria-label="Marcus Udén, home">
+          <span class="wordmark__mark" aria-hidden="true">MU</span>
+          <span class="wordmark__copy"><span class="wordmark__name">Marcus Udén</span></span>
+        </a>
+        <nav class="wordmark__routes" aria-label="Portfolio routes">
+          <a href="#portfolio">Product portfolio</a><span aria-hidden="true">·</span><a href="#cv">CV</a><span aria-hidden="true">·</span><a href="#interview">Interview my work</a>
+        </nav>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#hiring-case">Hiring case</a></li>
+          <li><a href="#portfolio">Proof</a></li>
+          <li><a href="#how-i-think">How I think</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <p class="preview-note shell"><strong>Review only — local preview.</strong> Annotation 1 changes only the route row: it now uses the same 0.9rem sans-serif scale and weight as the main navigation. It remains under the identity, with muted colour and underlines to preserve the hierarchy.</p>
+    <section class="hero shell preview-hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow">Experienced individual contributor</p>
+        <h1 id="hero-title">I turn messy operational problems into clear, buildable product work.</h1>
+        <p class="hero__support">Operational depth. Product thinking. AI-native execution.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

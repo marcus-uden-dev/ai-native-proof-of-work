@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Job-agent evidence boundary placement preview — Marcus Udén</title>
+  <link rel="stylesheet" href="https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/css/site.css">
+  <style>
+    /* Review question: Where should Job-agent-specific evidence framing appear? */
+    .preview-note {
+      margin-top: 1.25rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--gold);
+      background: var(--gold-soft);
+      color: var(--ink);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .placement-flow {
+      display: grid;
+      gap: 3rem;
+      margin-block: 3.5rem;
+    }
+
+    .placement-label {
+      margin: 0 0 0.7rem;
+      color: var(--gold);
+      font: 700 0.72rem/1.3 var(--mono);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .homepage-cutaway {
+      padding-block: 2rem;
+      border-block: 1px solid var(--line);
+    }
+
+    .homepage-cutaway h1,
+    .case-cutaway h2 { margin: 0; }
+
+    .homepage-cutaway p:not(.placement-label),
+    .case-cutaway > p:not(.placement-label) {
+      max-width: 42rem;
+      color: var(--muted);
+    }
+
+    .flow-arrow {
+      display: grid;
+      place-items: center;
+      min-height: 3rem;
+      color: var(--teal);
+      font: 700 1.1rem/1 var(--mono);
+    }
+
+    .case-cutaway {
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .case-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+      margin: 1.25rem 0 0;
+      padding: 0;
+      color: var(--muted);
+      list-style: none;
+      font-size: 0.84rem;
+    }
+
+    .case-meta strong { color: var(--ink); }
+
+    .boundary-preview {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      border: 1px solid #b7cfc5;
+      background: var(--teal-soft);
+    }
+
+    .boundary-preview h3 { margin: 0.2rem 0 0.7rem; }
+    .boundary-preview p:last-child { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <header class="masthead" data-print-hide>
+    <div class="shell masthead__inner">
+      <div class="wordmark">
+        <a class="wordmark__home" href="#top" aria-label="Marcus Udén, home">
+          <span class="wordmark__mark" aria-hidden="true">MU</span>
+          <span class="wordmark__copy"><span class="wordmark__name">Marcus Udén</span></span>
+        </a>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#homepage">Hiring case</a></li>
+          <li><a href="#job-agent">Product portfolio</a></li>
+          <li><a href="#how-i-think">How I think</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#interview">Interview my work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="shell">
+    <p class="preview-note"><strong>Review only — local preview.</strong> The homepage band is removed. The same factual framing stays with Job-agent, where visitors first see that specific case and its interface.</p>
+
+    <div class="placement-flow">
+      <section class="homepage-cutaway" id="homepage" aria-labelledby="homepage-title">
+        <p class="placement-label">1 · Homepage</p>
+        <h1 id="homepage-title">The homepage continues directly from the hero to the hiring brief.</h1>
+        <p>No Job-agent-specific status, no “Read the current proof” link, and no context switch before the hiring story.</p>
+      </section>
+
+      <div class="flow-arrow" aria-hidden="true">↓</div>
+
+      <section class="case-cutaway" id="job-agent" aria-labelledby="job-agent-title">
+        <p class="placement-label">2 · Job-agent case study</p>
+        <h2 id="job-agent-title">Job-agent</h2>
+        <p>The case opens with its release context. The evidence boundary follows this context, before the interface or prototype link.</p>
+        <ul class="case-meta" aria-label="Job-agent release context">
+          <li><strong>0.9-public-proof</strong></li>
+          <li>Work in progress</li>
+          <li>Not live</li>
+          <li>Not market-validated</li>
+        </ul>
+
+        <aside class="boundary-preview" aria-labelledby="boundary-title">
+          <p class="placement-label">Evidence boundary</p>
+          <h3 id="boundary-title">Read the status before the interface.</h3>
+          <p><strong>Work in progress.</strong> Job-agent is a working title, not a final product name. It is not live or market-validated. The example company data is synthetic, and the prototype has not yet been tested with real recruiters, employers, or users.</p>
+        </aside>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

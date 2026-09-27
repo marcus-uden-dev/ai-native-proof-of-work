@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Homepage unified navigation preview — Marcus Udén</title>
+  <link rel="stylesheet" href="https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/css/site.css">
+  <style>
+    /* Review question: Do all first-level destinations work better as one centred navigation system? */
+    .preview-note {
+      margin-top: 1.25rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--gold);
+      background: var(--gold-soft);
+      color: var(--ink);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .masthead__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .wordmark { grid-column: 1; }
+
+    .wordmark__home {
+      display: inline-flex;
+      min-height: 2.75rem;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .masthead__inner > nav {
+      grid-column: 2;
+      justify-self: center;
+    }
+
+    .nav-list { gap: 1.2rem; }
+
+    .preview-hero { padding-top: 6rem; }
+
+    @media (max-width: 60rem) {
+      .masthead__inner {
+        grid-template-columns: 1fr;
+        gap: 0.35rem;
+      }
+
+      .wordmark,
+      .masthead__inner > nav { grid-column: 1; }
+
+      .masthead__inner > nav { justify-self: start; }
+
+      .nav-list { flex-wrap: wrap; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead" data-print-hide>
+    <div class="shell masthead__inner">
+      <div class="wordmark">
+        <a class="wordmark__home" href="#top" aria-label="Marcus Udén, home">
+          <span class="wordmark__mark" aria-hidden="true">MU</span>
+          <span class="wordmark__copy"><span class="wordmark__name">Marcus Udén</span></span>
+        </a>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#hiring-case">Hiring case</a></li>
+          <li><a href="#portfolio">Product portfolio</a></li>
+          <li><a href="#how-i-think">How I think</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#interview">Interview my work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <p class="preview-note shell"><strong>Review only — local preview.</strong> One centred, first-level navigation group replaces the separate portfolio route row. All header links now use the same visual treatment. The orange interview action remains in the hero, where it has context.</p>
+    <section class="hero shell preview-hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow">Experienced individual contributor</p>
+        <h1 id="hero-title">I turn messy operational problems into clear, buildable product work.</h1>
+        <p class="hero__support">Operational depth. Product thinking. AI-native execution.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

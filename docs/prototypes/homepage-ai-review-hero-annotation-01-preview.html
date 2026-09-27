@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/ai-native-proof-of-work-live-entry-points/site/">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <title>Hero AI review copy preview</title>
+  <style>
+    .hero-preview-status {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 10;
+      margin: 0;
+      padding: .55rem .75rem;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      font: 700 .72rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div id="preview"></div>
+  <p class="hero-preview-status" id="preview-status">Loading the current hero…</p>
+  <script>
+    const root = document.querySelector('#preview');
+    const status = document.querySelector('#preview-status');
+    const sourceRoot = '/ai-native-proof-of-work-live-entry-points/site/';
+
+    async function renderPreview() {
+      const response = await fetch(`${sourceRoot}index.html`);
+      if (!response.ok) throw new Error(`index.html returned ${response.status}`);
+      const source = new DOMParser().parseFromString(await response.text(), 'text/html');
+      const masthead = source.querySelector('header.masthead');
+      const hero = source.querySelector('.hero');
+      if (!masthead || !hero) throw new Error('Could not find the current header or hero.');
+
+      const heroPreview = hero.cloneNode(true);
+      const note = heroPreview.querySelector('.hero__ai-note');
+      if (note) {
+        note.innerHTML = '<strong>Interview my work with the embedded AI assistant.</strong> Ask about a project or paste a non-confidential role description. It uses cited public evidence to explain relevant work, surface supporting proof, and make the evidence limits clear.';
+      }
+
+      root.append(masthead.cloneNode(true), heroPreview);
+      status.textContent = 'Preview · existing hero layout, clearer AI review explanation';
+    }
+
+    renderPreview().catch((error) => {
+      status.textContent = `Preview could not load: ${error.message}`;
+      status.style.color = '#8a1d14';
+    });
+  </script>
+</body>
+</html>

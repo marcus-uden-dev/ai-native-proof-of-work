@@ -1,17 +1,18 @@
 # Start Here
 
-Last updated: 2026-08-28
+Last updated: 2026-09-01
 Status: Active / Recruiter-facing
 
 ## One-Minute Overview
 
 Marcus uses AI-assisted workflows to design, build, test, and explain real products. The lead proof point is **Job-agent**, a career-workflow product that covers CV handling, job discovery, application support, feedback, privacy, QA, deployment planning, telemetry, and billing decisions.
 
-Two supporting projects show range:
+Supporting projects show range:
 
 - **PKM (personal knowledge management)** explores capture, ingestion, search, learning, and knowledge retrieval.
 - **Household Budget** explores shared financial workflows, imports, forecasting, goals, permissions, and migration-safe domain modeling.
 - **Phone-layout-agent** explores approval-gated Android launcher automation, deterministic execution, physical-device reliability, and evidence-based recovery.
+- **PCMR Device Agent** explores a small Android device-control bridge for Codex or Claude, Wi-Fi setup, visible scrcpy control, and approval-gated actions.
 
 This repository is the evidence and explanation layer around those products. It is not the product itself.
 
@@ -24,6 +25,8 @@ Evidence was checked on 2026-08-15 against this repository and the source-verifi
 3. [Project Status](PROJECT_STATUS.md) — current state, evidence boundaries, and open work.
 
 For the Android automation case, read [Phone-layout-agent Case Study](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) and its [Decision Trail](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md).
+
+For the broader device-control bridge, read the [PCMR Device Agent Case Study](case-studies/PCMR_DEVICE_AGENT_CASE_STUDY.md), [setup tutorial](docs/tutorial-pcmr-device-agent.md), and [CLI reference](docs/reference-pcmr-device-agent.md). The source project and device evidence remain private.
 
 For case selection, promotion status, and evidence boundaries, use the
 [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md).

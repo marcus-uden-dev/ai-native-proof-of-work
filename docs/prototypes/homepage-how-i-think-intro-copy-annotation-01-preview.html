@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/ai-native-proof-of-work-live-entry-points/site/">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <title>How I think introduction copy preview</title>
+  <style>
+    .intro-preview-status {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 10;
+      margin: 0;
+      padding: .55rem .75rem;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      font: 700 .72rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+  </style>
+</head>
+<body>
+  <div id="preview"></div>
+  <p class="intro-preview-status" id="preview-status">Loading the current section…</p>
+  <script>
+    const root = document.querySelector('#preview');
+    const status = document.querySelector('#preview-status');
+    const sourceRoot = '/ai-native-proof-of-work-live-entry-points/site/';
+
+    async function renderPreview() {
+      const response = await fetch(`${sourceRoot}index.html`);
+      if (!response.ok) throw new Error(`index.html returned ${response.status}`);
+      const source = new DOMParser().parseFromString(await response.text(), 'text/html');
+      const masthead = source.querySelector('header.masthead');
+      const section = source.querySelector('#how-i-think');
+      if (!masthead || !section) throw new Error('Could not find the current header or How I think section.');
+
+      const sectionPreview = section.cloneNode(true);
+      const introduction = sectionPreview.querySelector('.section-heading--split > p');
+      if (introduction) {
+        introduction.textContent = 'A dated record of the decisions behind the work: what changed, why it changed, and the public evidence that supports it.';
+      }
+
+      root.append(masthead.cloneNode(true), sectionPreview);
+      status.textContent = 'Preview · existing layout, revised introduction only';
+    }
+
+    renderPreview().catch((error) => {
+      status.textContent = `Preview could not load: ${error.message}`;
+      status.style.color = '#8a1d14';
+    });
+  </script>
+</body>
+</html>

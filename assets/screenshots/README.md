@@ -13,13 +13,23 @@ Two screenshots in this folder are different: the Pocket Casts statistics images
 
 | File | Project | What It Shows |
 |---|---|---|
-| `job-agent-01-jobs-first-page.png` | Job-agent | First jobs/dashboard view with scored opportunities |
-| `job-agent-02-discovery-monitoring.png` | Job-agent | Discovery criteria and saved monitoring workflow |
-| `job-agent-03-company-research-icons.png` | Job-agent | Company research view, including positive and warning signal icons |
+| `job-agent-current-01-today.png` | Job-agent | Current Today shell with JourneyBar, next move, filters, and scored opportunities; captured 2026-08-31 |
+| `job-agent-current-02-find-jobs.png` | Job-agent | Current Find jobs view with criteria, sources, and saved monitoring; captured 2026-08-31 |
+| `job-agent-current-03-job-detail.png` | Job-agent | Current job detail with match analysis, CV gap, and company signals; captured 2026-08-31 |
 | `pkm-01-knowledge-feed.png` | PKM | Saved knowledge feed with source summaries and tags |
 | `household-budget-01-dashboard.png` | Household budget app | Dashboard with liquidity, budget, household, recurring, and category views |
 | `pocket-casts-listening-stats-2026-06-02.jpg` | Information diet | Pocket Casts aggregate listening-time stats used in [Information Diet](../../recruiter-assets/INFORMATION_DIET.md) |
 | `pocket-casts-listening-stats-2026-08-28.jpg` | Information diet | Current Pocket Casts aggregate listening-time stats used in [Information Diet](../../recruiter-assets/INFORMATION_DIET.md) |
+
+## Historical Job-agent Set
+
+The older job-agent screenshots remain for traceability but should not be used as the current product representation:
+
+| File | Historical content |
+|---|---|
+| `job-agent-01-jobs-first-page.png` | Earlier Jobs workspace with onboarding progress strip |
+| `job-agent-02-discovery-monitoring.png` | Earlier Discover page and monitoring form |
+| `job-agent-03-company-research-icons.png` | Earlier job detail/company research layout |
 
 ## Privacy Note
 

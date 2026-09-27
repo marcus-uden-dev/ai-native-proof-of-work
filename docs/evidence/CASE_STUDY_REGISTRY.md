@@ -1,6 +1,6 @@
 # Canonical Case Study Registry
 
-Last updated: 2026-08-28
+Last updated: 2026-09-01
 Status: Active / Evidence-bounded
 
 ## Purpose
@@ -27,7 +27,7 @@ machine-readable `repository-evidence-index.json` is a retrieval projection.
 | Tier | Cases | Default treatment |
 |---|---|---|
 | Lead proof | CASE-001 Job-agent | Default first-level attention |
-| Strong product / experience proof | CASE-002 PKM, CASE-003 Household Budget, CASE-005 ELSA, CASE-006 Lendify, CASE-011 PostNord, CASE-015 Phone-layout-agent | Promote according to status below |
+| Strong product / experience proof | CASE-002 PKM, CASE-003 Household Budget, CASE-005 ELSA, CASE-006 Lendify, CASE-011 PostNord, CASE-015 Phone-layout-agent, CASE-016 PCMR Device Agent | Promote according to status below |
 | Role-specific supporting depth | CASE-007 IoT Fitness, CASE-008 ChefNextDoor | Retrieve for relevant roles |
 | Agent database / historical experience | CASE-009 Murphy Bed, CASE-010 Tierps Tryckeri, CASE-012 SEB, CASE-013 Ramshöjden | Keep searchable; promote only when relevant and sufficiently evidenced |
 | Operating and trust proof | CASE-004 Human-gated Workflow Improvement, CASE-014 Public Evidence and Release System | Supporting evidence beneath stronger cases |
@@ -232,6 +232,21 @@ boundary, and one concrete next evidence test.
 - **Result boundary:** Implementation and selected physical-device exercises are evidenced. No controlled throughput, external adoption, unattended multi-device reliability, or production-readiness claim is made.
 - **Next evidence test:** Run a fixed baseline-versus-deterministic workload and report verified moves, failures, retries, recovery levels, disconnects, and median successful move time.
 - **Sources:** `case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md`; `strategy/phone-layout-agent/README.md`; `strategy/phone-layout-agent/decisions/DECISION_TRAIL.md`; private source repository `marcus-uden-dev/phone-layout-agent`
+
+### CASE-016 — PCMR Device Agent
+
+- **Title:** PCMR Device Agent — Local Android device-control bridge for AI-assisted workflows
+- **Portfolio status:** Supporting product proof
+- **Public status:** Public recruiter-safe summary; source repository private
+- **Evidence status:** Private-source implementation verified; selected Wi-Fi and smoke-test evidence summarized
+- **Outcome status:** Operational proof demonstrated; productivity and external adoption not measured
+- **Role lenses:** AI Product; AI Transformation / Enablement; Technical Product; Product Operations
+- **Capabilities:** Product judgment; systems thinking; automation judgment; technical execution; quality assurance; privacy/security judgment; evidence discipline
+- **Platform tags:** Android; ADB; scrcpy; Wireless debugging; Tailscale; human-in-the-loop
+- **Decision:** Use a small ADB and scrcpy bridge for visible Android control, keep Tailscale optional, and require explicit confirmation for every mutating action.
+- **Result boundary:** A connected, smoke-tested local bridge is evidenced. No packaged installer, unattended control, message sending, multi-device orchestration, or measured productivity result is claimed.
+- **Next evidence test:** Test the packaged installation flow and one controlled, approval-gated multi-step workflow across more than one Android app.
+- **Sources:** `case-studies/PCMR_DEVICE_AGENT_CASE_STUDY.md`; `docs/tutorial-pcmr-device-agent.md`; `docs/reference-pcmr-device-agent.md`; private source repository `marcus-uden-dev/pcmr-device-agent`
 
 ## Mechanism boundary
 

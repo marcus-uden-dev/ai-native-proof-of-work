@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <base href="/ai-native-proof-of-work-live-entry-points/site/">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <title>How I think — Decision Log relocation preview</title>
+  <style>
+    .relocation-preview-status {
+      position: fixed;
+      right: 1rem;
+      bottom: 1rem;
+      z-index: 10;
+      margin: 0;
+      padding: .55rem .75rem;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      color: var(--muted);
+      font: 700 .72rem/1.2 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    #how-i-think .oracle-lens {
+      display: flex;
+      flex-direction: column;
+    }
+    #how-i-think .oracle-tags {
+      margin-top: auto;
+      min-height: 4rem;
+      align-content: flex-start;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+    }
+    #how-i-think .decision-log-continuation {
+      color: var(--gold);
+      font-size: 1.1rem;
+      font-weight: 800;
+    }
+  </style>
+</head>
+<body>
+  <div id="preview"></div>
+  <p class="relocation-preview-status" id="preview-status">Loading the current live-source markup…</p>
+  <script>
+    const root = document.querySelector('#preview');
+    const status = document.querySelector('#preview-status');
+    const sourceRoot = '/ai-native-proof-of-work-live-entry-points/site/';
+
+    async function getDocument(path) {
+      const response = await fetch(`${sourceRoot}${path}`);
+      if (!response.ok) throw new Error(`${path} returned ${response.status}`);
+      return new DOMParser().parseFromString(await response.text(), 'text/html');
+    }
+
+    async function renderRelocation() {
+      const [home, workflow] = await Promise.all([
+        getDocument('index.html'),
+        getDocument('proof/recursive-workflow/index.html')
+      ]);
+      const masthead = home.querySelector('header.masthead');
+      const howIThink = home.querySelector('#how-i-think');
+      const decisionLog = workflow.querySelector('#decision-log');
+      const decisionLogScript = [...workflow.querySelectorAll('script')]
+        .find((script) => script.textContent.includes('data-filter-type'));
+
+      if (!masthead || !howIThink || !decisionLog) throw new Error('Could not find the current homepage section or Decision Log.');
+
+      const howIThinkPreview = howIThink.cloneNode(true);
+      const kicker = howIThinkPreview.querySelector('.section-heading .kicker');
+      if (kicker) kicker.textContent = 'How I think';
+      const summaryIntroduction = howIThinkPreview.querySelector('.section-heading--split > p');
+      if (summaryIntroduction) {
+        summaryIntroduction.textContent = 'Projects, supporting work, and the operating layer behind the decisions below.';
+      }
+      const lensGrid = howIThinkPreview.querySelector('.oracle-lens-grid');
+      const harness = howIThinkPreview.querySelector('.oracle-lens--harness');
+      if (lensGrid && harness) {
+        lensGrid.insertBefore(harness, lensGrid.children[1]);
+      }
+      const actions = howIThinkPreview.querySelector('.oracle-summary__actions');
+      if (actions) {
+        actions.replaceChildren();
+        const continuation = document.createElement('a');
+        continuation.className = 'text-link decision-log-continuation';
+        continuation.href = '#decision-log';
+        continuation.textContent = 'See the Decision Log ↓';
+        actions.append(continuation);
+      }
+
+      const decisionLogPreview = decisionLog.cloneNode(true);
+      const decisionLogIntroduction = decisionLogPreview.querySelector('.section-heading--split > p');
+      if (decisionLogIntroduction) {
+        decisionLogIntroduction.textContent = 'A dated record of the decisions behind the work: what changed, why it changed, and the public evidence that supports it.';
+      }
+
+      // The source markup is retained. Preview changes: direct placement, one in-page continuation link, and aligned card tags.
+      root.append(masthead.cloneNode(true), howIThinkPreview, decisionLogPreview);
+
+      if (decisionLogScript) {
+        const script = document.createElement('script');
+        script.textContent = decisionLogScript.textContent;
+        document.body.append(script);
+      }
+
+      status.textContent = 'Preview · relocation, one continuation link, stacked tags';
+    }
+
+    renderRelocation().catch((error) => {
+      status.textContent = `Preview could not load: ${error.message}`;
+      status.style.color = '#8a1d14';
+    });
+  </script>
+</body>
+</html>

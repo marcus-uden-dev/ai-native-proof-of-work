@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Homepage entry-point preview — Marcus Udén</title>
+  <link rel="stylesheet" href="https://marcus-uden-dev.github.io/ai-native-proof-of-work/assets/css/site.css">
+  <style>
+    .preview-note {
+      margin-top: 1.25rem;
+      padding: 0.85rem 1rem;
+      border-left: 4px solid var(--gold);
+      background: var(--gold-soft);
+      color: var(--ink);
+      font-size: 0.86rem;
+      line-height: 1.5;
+    }
+
+    .preview-hero .action-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      width: min(100%, 38rem);
+      gap: 0.75rem;
+    }
+
+    .preview-hero .action-row .button {
+      width: 100%;
+      min-height: 3.5rem;
+      justify-content: center;
+      padding-inline: 1rem;
+    }
+
+    .preview-hero .hero__ai-note strong { color: var(--ink); }
+
+    .wordmark {
+      display: grid;
+      gap: 0.2rem;
+    }
+
+    .wordmark__home {
+      display: inline-flex;
+      min-height: 2.75rem;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .wordmark__routes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.32rem;
+      margin: 0;
+      padding-left: 2.9rem;
+    }
+
+    .wordmark__routes a {
+      display: inline-flex;
+      min-width: 1.5rem;
+      min-height: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      color: inherit;
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+    }
+
+    .wordmark__routes a:hover { color: var(--teal); }
+
+    @media (max-width: 47.5rem) {
+      .preview-hero .action-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead" data-print-hide>
+    <div class="shell masthead__inner">
+      <div class="wordmark">
+        <a class="wordmark__home" href="#top" aria-label="Marcus Udén, home">
+          <span class="wordmark__mark" aria-hidden="true">MU</span>
+          <span class="wordmark__copy">
+            <span class="wordmark__name">Marcus Udén</span>
+          </span>
+        </a>
+        <nav class="wordmark__descriptor wordmark__routes" aria-label="Portfolio routes">
+          <a href="#selected-work">Product portfolio</a><span aria-hidden="true">·</span><a href="#cv">CV</a><span aria-hidden="true">·</span><a href="#ai-review">Interview my work</a>
+        </nav>
+      </div>
+      <nav aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#hiring-case">Hiring case</a></li>
+          <li><a href="#selected-work">Proof</a></li>
+          <li><a href="#how-i-think">How I think</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <p class="preview-note shell"><strong>Review only — local preview.</strong> This uses the live page’s current visual language and hero structure. The proposed changes are the linked homepage routes, the four entry controls, and the AI-review explanation.</p>
+
+    <section class="hero shell preview-hero" aria-labelledby="hero-title">
+      <div class="hero__copy">
+        <p class="eyebrow">Experienced individual contributor</p>
+        <h1 id="hero-title">I turn messy operational problems into clear, buildable product work.</h1>
+        <p class="hero__support">Operational depth. Product thinking. AI-native execution.</p>
+
+        <nav class="action-row" aria-label="Primary entry points">
+          <a class="button button--secondary" href="#selected-work">Explore product work</a>
+          <a class="button button--secondary" href="#how-i-think">Follow the decisions</a>
+          <a class="button button--secondary" href="#cv">CV</a>
+          <a class="button button--primary" href="#ai-review">Interview my work</a>
+        </nav>
+
+        <p class="hero__ai-note"><strong>Interview my work:</strong> Ask a question about the work or paste a non-confidential role description. The live review uses cited public evidence to explain fit, surface relevant proof, and show where the evidence stops.</p>
+      </div>
+
+      <aside class="signal-card" aria-labelledby="signal-title">
+        <div class="signal-card__topline">
+          <p class="kicker" id="signal-title">The hiring case</p>
+          <span class="index-number" aria-hidden="true">01</span>
+        </div>
+        <p class="signal-card__lead">Hands-on product work grounded in operations, structured decisions, and practical delivery.</p>
+        <ol class="signal-list">
+          <li><span>01</span> Finds the leverage point before defining the solution.</li>
+          <li><span>02</span> Turns fragmented evidence into product decisions.</li>
+          <li><span>03</span> Uses AI for speed while keeping human judgment visible.</li>
+        </ol>
+      </aside>
+    </section>
+  </main>
+</body>
+</html>

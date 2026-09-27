@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homepage hero actions — annotation 1 preview</title>
+  <style>
+    :root {
+      --paper: #f4efe5;
+      --paper-strong: #fffaf0;
+      --ink: #171714;
+      --muted: #665f52;
+      --line: #d8cdbb;
+      --gold: #a2641e;
+      --gold-dark: #774410;
+      --teal: #286a60;
+      --teal-soft: #dcebe5;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Inter, "Segoe UI", system-ui, sans-serif;
+      --mono: "IBM Plex Mono", Consolas, monospace;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font: 16px/1.5 var(--sans); }
+    a { color: inherit; }
+    .shell { width: min(1080px, calc(100% - 40px)); margin: 0 auto; }
+    header { border-bottom: 1px solid var(--line); background: rgba(255, 250, 240, .8); }
+    .mast { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; text-decoration: none; }
+    .mark { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--ink); font: 700 12px var(--mono); }
+    .eyebrow, .label { margin: 0 0 14px; color: var(--gold); font: 700 12px var(--mono); letter-spacing: .12em; text-transform: uppercase; }
+    nav { color: var(--muted); font: 13px var(--mono); }
+    nav a { margin-left: 18px; text-decoration: none; }
+    main { padding: 76px 0 150px; }
+    h1, h2, h3 { margin: 0; font-family: var(--serif); font-weight: 500; line-height: 1.05; letter-spacing: -.035em; }
+    h1 { max-width: 760px; font-size: clamp(48px, 8vw, 92px); }
+    h2 { font-size: clamp(32px, 5vw, 54px); }
+    .dek { max-width: 650px; margin: 24px 0 0; color: var(--muted); font-size: 20px; }
+    .prototype-note { margin: 28px 0 0; padding: 12px 16px; border-left: 3px solid var(--gold); color: var(--gold-dark); background: #efe0c5; font: 13px/1.45 var(--mono); }
+    .preview { margin-top: 70px; padding: 36px; border: 1px solid var(--line); background: var(--paper-strong); }
+    .preview-head { display: flex; justify-content: space-between; gap: 20px; align-items: end; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
+    .preview-head p { max-width: 440px; margin: 0; color: var(--muted); }
+    .variant { padding-top: 32px; }
+    .variant[hidden] { display: none; }
+    .variant-name { margin: 0 0 22px; color: var(--muted); font: 600 13px var(--mono); }
+    .action-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+    .action { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 11px 18px; border: 1px solid var(--ink); text-decoration: none; font-weight: 700; }
+    .action--primary { border-color: var(--gold); background: var(--gold); color: #fffaf0; }
+    .action--primary:hover { background: var(--gold-dark); }
+    .action--secondary { background: transparent; }
+    .action--secondary:hover { background: var(--teal-soft); }
+    .action--quiet { padding-inline: 5px; border-color: transparent; color: var(--teal); text-decoration: underline; text-underline-offset: 4px; }
+    .lane-layout { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; }
+    .lane { padding: 24px; border: 1px solid var(--line); }
+    .lane--main { background: #f8e9cf; }
+    .lane--utility { background: var(--teal-soft); }
+    .lane h3 { font-size: 30px; }
+    .lane p { margin: 10px 0 20px; color: var(--muted); }
+    .route-list { display: grid; gap: 0; border-top: 1px solid var(--line); }
+    .route { display: grid; grid-template-columns: 44px 1fr auto; gap: 16px; align-items: center; padding: 18px 0; border-bottom: 1px solid var(--line); text-decoration: none; }
+    .route-index { color: var(--gold); font: 700 15px var(--mono); }
+    .route-copy strong { display: block; font-size: 18px; }
+    .route-copy span { display: block; margin-top: 3px; color: var(--muted); font-size: 14px; }
+    .route-arrow { color: var(--teal); font-size: 24px; }
+    .switcher { position: fixed; right: 50%; bottom: 18px; z-index: 2; display: flex; align-items: center; gap: 8px; padding: 8px 10px; transform: translateX(50%); border: 1px solid #574525; border-radius: 999px; background: #211c14; color: #fffaf0; box-shadow: 0 8px 24px rgba(23, 23, 20, .2); font: 12px var(--mono); }
+    .switcher button { width: 28px; height: 28px; border: 1px solid #9d7a42; border-radius: 50%; background: transparent; color: inherit; cursor: pointer; }
+    .switcher button:hover, .switcher button:focus-visible { background: var(--gold); }
+    @media (max-width: 700px) {
+      nav { display: none; }
+      main { padding-top: 48px; }
+      .shell { width: min(100% - 28px, 1080px); }
+      .preview { margin-top: 48px; padding: 22px; }
+      .preview-head { display: block; }
+      .preview-head p { margin-top: 10px; }
+      .action-row, .action { width: 100%; }
+      .action--quiet { width: auto; justify-content: flex-start; }
+      .lane-layout { grid-template-columns: 1fr; }
+      .route { grid-template-columns: 34px 1fr 20px; gap: 10px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell mast">
+      <a class="brand" href="#top"><span class="mark">MU</span><span>Marcus Udén</span></a>
+      <nav aria-label="Preview navigation"><a href="#preview">Annotation 1</a><a href="#decision">Decision</a></nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <div class="shell">
+      <p class="eyebrow">Prototype · annotation 1</p>
+      <h1>Make the next step obvious.</h1>
+      <p class="dek">A review of the homepage hero actions. The goal is a calmer action group with one clear starting point, two explicit reading paths, and a small CV utility link.</p>
+      <p class="prototype-note"><strong>Review only:</strong> this page is a local design proposal. It does not change the live site.</p>
+
+      <section class="preview" id="preview" aria-labelledby="preview-title">
+        <div class="preview-head">
+          <div>
+            <p class="label">Recommended copy</p>
+            <h2 id="preview-title">Choose a clear route.</h2>
+          </div>
+          <p>Use the arrows below to compare three structural options for the same CTA set.</p>
+        </div>
+
+        <article class="variant" data-variant="A">
+          <p class="variant-name">A — Clear priority</p>
+          <div class="action-row" aria-label="Clear priority actions">
+            <a class="action action--primary" href="#">Explore the portfolio <span aria-hidden="true">↓</span></a>
+            <a class="action action--secondary" href="#">Read the Decision Log</a>
+            <a class="action action--secondary" href="#">Compare a role with my evidence</a>
+            <a class="action action--quiet" href="#">CV</a>
+          </div>
+        </article>
+
+        <article class="variant" data-variant="B" hidden>
+          <p class="variant-name">B — Intent lanes</p>
+          <div class="lane-layout">
+            <div class="lane lane--main">
+              <p class="label">Start with the work</p>
+              <h3>Explore the portfolio</h3>
+              <p>See the selected cases, then open the depth behind each one.</p>
+              <a class="action action--primary" href="#">Explore selected work <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="lane lane--utility">
+              <p class="label">Go deeper</p>
+              <h3>Understand the decisions</h3>
+              <p>Read the history or compare a role with the public evidence.</p>
+              <div class="action-row">
+                <a class="action action--secondary" href="#">Read the Decision Log</a>
+                <a class="action action--quiet" href="#">Compare a role · CV</a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="variant" data-variant="C" hidden>
+          <p class="variant-name">C — Numbered route</p>
+          <div class="route-list" aria-label="Numbered reading route">
+            <a class="route" href="#"><span class="route-index">01</span><span class="route-copy"><strong>Explore the portfolio</strong><span>Start with selected product work.</span></span><span class="route-arrow" aria-hidden="true">→</span></a>
+            <a class="route" href="#"><span class="route-index">02</span><span class="route-copy"><strong>Read the Decision Log</strong><span>See how decisions and trade-offs developed.</span></span><span class="route-arrow" aria-hidden="true">→</span></a>
+            <a class="route" href="#"><span class="route-index">03</span><span class="route-copy"><strong>Compare a role with my evidence</strong><span>Use an external assistant with the public repository.</span></span><span class="route-arrow" aria-hidden="true">→</span></a>
+            <a class="route" href="#"><span class="route-index">CV</span><span class="route-copy"><strong>Read the CV</strong><span>Download the full CV from the CV page.</span></span><span class="route-arrow" aria-hidden="true">→</span></a>
+          </div>
+        </article>
+      </section>
+
+      <section id="decision" style="margin-top:70px; max-width:720px;">
+        <p class="label">Suggested default</p>
+        <h2>Start with A.</h2>
+        <p class="dek" style="font-size:18px;">It keeps the existing hero shape, removes the chip feeling, and makes the portfolio the obvious first click. B and C test stronger grouping if the page needs more explanation.</p>
+      </section>
+    </div>
+  </main>
+
+  <div class="switcher" aria-label="Prototype variant switcher">
+    <button type="button" data-direction="previous" aria-label="Previous variant">←</button>
+    <span>Variant <strong id="variant-label">A</strong></span>
+    <button type="button" data-direction="next" aria-label="Next variant">→</button>
+  </div>
+
+  <script>
+    const variants = ['A', 'B', 'C'];
+    const params = new URLSearchParams(window.location.search);
+    let current = variants.includes(params.get('variant')) ? params.get('variant') : 'A';
+    const label = document.querySelector('#variant-label');
+    const cards = [...document.querySelectorAll('[data-variant]')];
+    function render() {
+      cards.forEach((card) => { card.hidden = card.dataset.variant !== current; });
+      label.textContent = current;
+      const nextUrl = new URL(window.location.href);
+      nextUrl.searchParams.set('variant', current);
+      window.history.replaceState({}, '', nextUrl);
+    }
+    function move(step) {
+      const index = (variants.indexOf(current) + step + variants.length) % variants.length;
+      current = variants[index];
+      render();
+    }
+    document.querySelectorAll('[data-direction]').forEach((button) => {
+      button.addEventListener('click', () => move(button.dataset.direction === 'next' ? 1 : -1));
+    });
+    window.addEventListener('keydown', (event) => {
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
+      if (event.key === 'ArrowRight') move(1);
+      if (event.key === 'ArrowLeft') move(-1);
+    });
+    render();
+  </script>
+</body>
+</html>
