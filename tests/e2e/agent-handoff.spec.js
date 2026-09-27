@@ -5,7 +5,7 @@ test('llms discovery file points to the normative public evidence contract', asy
   expect(response.ok()).toBeTruthy();
   const text = await response.text();
   expect(text).toContain('recruiter-agent-guide.md');
-  expect(text).toContain('job-agent-v1.json');
+  expect(text).toContain('job-agent-v2.json');
   expect(text).toContain('Not market-validated');
 });
 
@@ -21,12 +21,23 @@ test('agent guide resists untrusted instructions and requires cited evidence', a
   expect(text).toMatch(/Not evidenced by the current public source route/i);
 });
 
+test('production reviewer configuration targets the Worker review route', async ({ request }) => {
+  const response = await request.get('/assets/js/recruiter-review-config.js');
+  expect(response.ok()).toBeTruthy();
+  const config = await response.text();
+  expect(config).toContain("endpoint: 'https://ai-native-proof-of-work-review-api.recruiter-review.workers.dev/api/recruiter-review'");
+});
+
 test('homepage generates a copyable repository interview prompt without embedding a chat', async ({ context, page }) => {
   await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+  await page.route('**/assets/js/recruiter-review-config.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: 'window.RECRUITER_REVIEW_API = {};'
+  }));
   await page.goto('/');
-  await page.getByLabel('Ask a question or paste a job description').fill('What evidence is there of product judgment?');
-  await page.getByRole('button', { name: 'Generate interview prompt' }).click();
-  await expect(page.getByRole('heading', { name: 'Your interview prompt' })).toBeVisible();
+  await page.getByLabel('Ask about Marcus or paste a job description').fill('What evidence is there of product judgment?');
+  await page.getByRole('button', { name: 'Generate review prompt' }).click();
+  await expect(page.getByRole('heading', { name: 'Your review prompt' })).toBeVisible();
   await page.getByRole('button', { name: 'Copy prompt' }).click();
   await expect(page.locator('#copyStatus')).toContainText('Prompt copied.');
   const clipboard = await page.evaluate(() => navigator.clipboard.readText());
@@ -40,8 +51,8 @@ test('homepage generates a copyable repository interview prompt without embeddin
   expect(promptResponse?.status()).toBe(200);
   await expect(promptPage.getByRole('heading', { name: 'Job description prompt' })).toBeVisible();
   await expect(promptPage.getByText('Paste a non-confidential job description here')).toBeVisible();
-  const generatorActions = page.locator('.generator-actions');
-  await expect(generatorActions.getByRole('button', { name: 'Generate interview prompt' })).toBeVisible();
+  const generatorActions = page.getByRole('button', { name: 'Generate review prompt' }).locator('..');
+  await expect(generatorActions.getByRole('button', { name: 'Generate review prompt' })).toBeVisible();
   await expect(generatorActions.getByRole('link', { name: 'Open ChatGPT' })).toHaveAttribute('href', 'https://chatgpt.com/');
   const resultActions = page.locator('.button-row');
   await expect(resultActions.getByRole('link', { name: 'Open GitHub' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev');
@@ -49,11 +60,165 @@ test('homepage generates a copyable repository interview prompt without embeddin
   await expect(resultActions.locator('button, a')).toHaveCount(3);
   const actionControls = generatorActions.locator('button, a');
   await expect(actionControls).toHaveCount(3);
-  await expect(actionControls.nth(0)).toHaveText('Generate interview prompt');
+  await expect(actionControls.nth(0)).toHaveText('Generate review prompt');
   await expect(actionControls.nth(1)).toHaveText(/Open ChatGPT/);
   await expect(actionControls.nth(2)).toHaveText('Clear');
   await expect(page.locator('iframe')).toHaveCount(0);
   await expect(page.locator('form')).toHaveCount(0);
+});
+
+test('repository review uses separate prompt contracts for a question and a role description', async ({ page }) => {
+  await page.route('**/assets/js/recruiter-review-config.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: 'window.RECRUITER_REVIEW_API = {};'
+  }));
+  await page.goto('/');
+  const input = page.getByLabel('Ask about Marcus or paste a job description');
+
+  await input.fill('What public evidence shows Marcus’s product judgment?');
+  await expect(page.locator('#inputClassification')).toContainText('Detected mode: evidence question.');
+  await page.getByRole('button', { name: 'Generate review prompt' }).click();
+  await expect(page.locator('#repositoryPrompt')).toContainText('RECRUITER QUESTION:');
+  await expect(page.locator('#repositoryPrompt')).not.toContainText('Experience Fit Map dimensions');
+
+  await input.fill('Role: Product operations lead\n\nResponsibilities\n- Improve cross-functional workflows\n\nRequirements\n- Experience with evidence-based product decisions');
+  await expect(page.locator('#inputClassification')).toContainText('Detected mode: role assessment.');
+  await page.getByRole('button', { name: 'Generate review prompt' }).click();
+  await expect(page.locator('#repositoryPrompt')).toContainText('ROLE DESCRIPTION:');
+  await expect(page.locator('#repositoryPrompt')).toContainText('Experience Fit Map dimensions');
+
+  await page.getByRole('button', { name: 'Ask about Marcus' }).click();
+  await expect(page.locator('#inputClassification')).toContainText('Selected mode: evidence question.');
+  await page.getByRole('button', { name: 'Generate review prompt' }).click();
+  await expect(page.locator('#repositoryPrompt')).toContainText('RECRUITER QUESTION:');
+});
+
+test('the existing repository review panel renders a cited AI role assessment when configured', async ({ page }) => {
+  const dimensions = [
+    ['product-framing', 'Product framing'],
+    ['workflow-design', 'Workflow design'],
+    ['ai-native-execution', 'AI-native execution'],
+    ['evidence-synthesis', 'Evidence synthesis'],
+    ['operational-collaboration', 'Operational collaboration'],
+    ['technical-delivery', 'Technical delivery'],
+    ['business-prioritisation', 'Business prioritisation']
+  ].map(([id, label], index) => ({
+    id,
+    label,
+    state: index === 1 ? 'direct' : 'not_evidenced',
+    explanation: index === 1 ? 'The CV documents product operations and workflow design.' : 'The public record needs interview validation for this role requirement.',
+    evidenceIds: index === 1 ? ['cv-product-operations'] : index === 2 ? ['unknown-evidence-id'] : [],
+    verificationQuestion: index === 1 ? '' : `${label} needs role-specific context before a conclusion.`
+  }));
+  await page.route('**/assets/js/recruiter-review-config.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: "window.RECRUITER_REVIEW_API = { endpoint: '/api/recruiter-review' };"
+  }));
+  await page.route('**/api/recruiter-review', async (route) => {
+    const request = route.request();
+    expect(request.method()).toBe('POST');
+    expect((await request.postDataJSON()).mode).toBe('role');
+    await route.fulfill({
+      contentType: 'application/json',
+      body: JSON.stringify({
+        kind: 'role',
+        notice: 'The live AI providers did not return a usable review. This cited baseline remains transparent.',
+        assessment: {
+          summary: 'The public record directly documents workflow-design evidence for this role.',
+          roleNeeds: ['Workflow design'],
+          dimensions,
+          roleCoverage: [{
+            capabilityId: 'systems-api-integration',
+            label: 'Systems, APIs, and integrations',
+            roleNeed: 'API layer design and integration',
+            state: 'direct',
+            explanation: 'The public record documents systems and workflow delivery.',
+            evidenceIds: ['cv-product-operations'],
+            verificationQuestion: ''
+          }],
+          evidenceAnchors: ['cv-product-operations'],
+          interviewQuestions: [],
+          limitations: ['This is public evidence coverage, not a hiring decision.']
+        },
+        evidenceSources: [
+          {
+            id: 'cv-product-operations',
+            label: 'CV: product operations and workflow design',
+            sourceClass: 'employment',
+            url: 'https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/'
+          },
+          {
+            id: 'unknown-evidence-id',
+            label: 'Decision log: workflow evidence',
+            sourceClass: 'public-repository',
+            url: 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/decision-log.json'
+          }
+        ]
+      })
+    });
+  });
+  await page.route('**/api/recruiter-enquiry', async (route) => {
+    const request = route.request();
+    expect(request.method()).toBe('POST');
+    const payload = await request.postDataJSON();
+    expect(payload.mode).toBe('role');
+    expect(payload.email).toBe('recruiter@example.com');
+    expect(payload.consent).toBe(true);
+    expect(payload.submissionId).toMatch(/^[a-f0-9-]{36}$/i);
+    await route.fulfill({ contentType: 'application/json', status: 202, body: JSON.stringify({ accepted: true }) });
+  });
+
+  await page.goto('/');
+  await expect(page.getByRole('button', { name: 'Review with AI' })).toBeVisible();
+  await page.getByLabel('Ask about Marcus or paste a job description').fill('Role: Product operations lead\n\nResponsibilities\n- Improve cross-functional workflows');
+  await page.getByRole('button', { name: 'Review with AI' }).click();
+  await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
+  await expect(page.getByText('This cited baseline remains transparent.')).toBeVisible();
+  await expect(page.getByText('Explore further: Product framing needs role-specific context before a conclusion.')).toBeVisible();
+  await expect(page.getByText('Interview question:', { exact: false })).toHaveCount(0);
+  await expect(page.locator('.experience-fit-radar__svg')).toBeVisible();
+  await expect(page.getByText('Map key — starts at the top and moves clockwise.')).toBeVisible();
+  await expect(page.getByText('01').first()).toBeVisible();
+  await expect(page.locator('.experience-fit-track .evidence-state--direct')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Role-specific needs detected' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
+  await expect(page.getByText('API layer design and integration')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Evidence limits' })).toHaveCount(0);
+  const reviewWidth = await page.locator('#apiReviewResult').evaluate((element) => element.getBoundingClientRect().width);
+  const cardWidth = await page.locator('.agent-card').evaluate((element) => element.getBoundingClientRect().width);
+  expect(reviewWidth).toBeGreaterThan(cardWidth * 0.9);
+  await expect(page.getByRole('link', { name: 'CV: product operations and workflow design ↗' }).first()).toHaveAttribute('href', 'https://marcus-uden-dev.github.io/ai-native-proof-of-work/cv/');
+  await expect(page.getByRole('link', { name: 'Decision log: workflow evidence ↗' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/decision-log.json');
+  await expect(page.getByRole('heading', { name: 'Discuss this role or question' })).toBeVisible();
+  await expect(page.getByText(/stored for up to 90 days/)).toBeVisible();
+  await page.getByLabel('Work email').fill('recruiter@example.com');
+  await page.getByLabel(/I agree that Marcus may store this submission/).check();
+  await page.getByRole('button', { name: 'Request follow-up' }).click();
+  await expect(page.locator('#recruiterFollowUpStatus')).toContainText('Follow-up request saved.');
+  await page.setViewportSize({ width: 390, height: 844 });
+  expect(await page.locator('.experience-fit-map').evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length)).toBe(1);
+  await expect(page.locator('.experience-fit-radar')).toBeVisible();
+  await expect(page.locator('.experience-fit-radar-key')).toBeVisible();
+  await expect(page.locator('.experience-fit-radar__axis-index')).toHaveCount(7);
+  expect(await page.locator('.role-coverage__list').evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length)).toBe(1);
+});
+
+test('repository review explains when all configured API credits are exhausted', async ({ page }) => {
+  await page.route('**/assets/js/recruiter-review-config.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: "window.RECRUITER_REVIEW_API = { endpoint: '/api/recruiter-review' };"
+  }));
+  await page.route('**/api/recruiter-review', (route) => route.fulfill({
+    status: 503,
+    contentType: 'application/json',
+    body: JSON.stringify({ code: 'provider_credits_exhausted' })
+  }));
+
+  await page.goto('/');
+  await page.getByLabel('Ask about Marcus or paste a job description').fill('What public evidence shows workflow design?');
+  await page.getByRole('button', { name: 'Review with AI' }).click();
+  await expect(page.locator('#apiReviewStatus')).toContainText('The best things in life are free — sadly, API credits are not.');
+  await expect(page.locator('#apiReviewStatus')).toContainText('copyable prompt is available below');
 });
 
 test('repository interview keeps the preview typography and full-width brown surface', async ({ page }) => {
@@ -85,15 +250,50 @@ test('repository interview keeps the preview typography and full-width brown sur
   expect(metrics.headingWeight).toBe('500');
 });
 
+test('a saved smoke test renders through the live recruiter-review interface', async ({ page }) => {
+  await page.goto('/?smoke=spotify-customer-service-platform#ai-review');
+
+  await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
+  await expect(page.getByText('Saved smoke test: Spotify — Customer Service Platform. Public evidence coverage only.')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Source role listing ↗' })).toHaveAttribute('href', 'https://jobs.lever.co/spotify/7f0a8faa-f4f5-4db9-9f51-4101d6a29b34');
+  await expect(page.getByText('Role reviewed: Spotify — Customer Service Platform')).toBeVisible();
+  await expect(page.locator('.experience-fit-radar__axis-label')).toHaveCount(7);
+  await expect(page.getByText('Explore further:', { exact: false })).toHaveCount(0);
+  await expect(page.locator('.experience-fit-state-bar')).toHaveCount(12);
+  await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'strengthen the API layer connecting support systems' })).toBeVisible();
+  await expect(page.locator('.experience-fit-track')).toHaveCount(7);
+  await expect(page.locator('.role-coverage__item')).toHaveCount(5);
+});
+
+test('additional saved smoke tests render distinct role-specific coverage', async ({ page }) => {
+  const cases = [
+    ['saviynt-staff-product-operations', 'Saviynt — Staff Product Operations Manager', 'AI workflow experience'],
+    ['capital-product-operations', 'capital.com — Product Operations Manager', 'coordinating platform changes with a payment provider']
+  ];
+  for (const [slug, title, roleNeed] of cases) {
+    await page.goto(`/?smoke=${slug}#ai-review`);
+    await expect(page.getByText(`Saved smoke test: ${title}. Public evidence coverage only.`)).toBeVisible();
+    await expect(page.getByText(`Role reviewed: ${title}`)).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: roleNeed })).toBeVisible();
+  }
+});
+
 test('repository interview rejects empty input and keeps the static prompt fallback', async ({ browser, page: activePage }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   await page.goto('/');
-  await expect(page.getByRole('link', { name: 'Read the canonical prompt' })).toHaveAttribute('href', 'repository-interview-prompt.txt');
+  await expect(page.getByRole('link', { name: 'Read the role-assessment prompt' })).toHaveAttribute('href', 'repository-interview-prompt.txt');
+  await expect(page.getByRole('link', { name: 'read the evidence-question prompt' })).toHaveAttribute('href', 'repository-question-prompt.txt');
   await context.close();
 
+  await activePage.route('**/assets/js/recruiter-review-config.js', (route) => route.fulfill({
+    contentType: 'application/javascript',
+    body: 'window.RECRUITER_REVIEW_API = {};'
+  }));
   await activePage.goto('/');
-  await activePage.getByRole('button', { name: 'Generate interview prompt' }).click();
+  await activePage.getByRole('button', { name: 'Generate review prompt' }).click();
   await expect(activePage.locator('#inputError')).toContainText('Add a question or paste a job description first.');
   await expect(activePage.locator('#generatorResult')).toBeHidden();
 });
@@ -123,7 +323,7 @@ test('CV evidence routes are available to the recruiter assessment flow', async 
 });
 
 test('manifest and fixture are available as static evidence', async ({ request }) => {
-  const manifestResponse = await request.get('/evidence/releases/job-agent-v1.json');
+  const manifestResponse = await request.get('/evidence/releases/job-agent-v2.json');
   const fixtureResponse = await request.get('/evidence/fixtures/job-agent-company-v1.json');
   expect(manifestResponse.ok()).toBeTruthy();
   expect(fixtureResponse.ok()).toBeTruthy();

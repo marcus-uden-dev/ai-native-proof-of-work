@@ -4,4 +4,6 @@ test-results/
 .DS_Store
 Thumbs.db
 *.log
+workers/recruiter-review/.dev.vars
+/docs/handoffs/
 

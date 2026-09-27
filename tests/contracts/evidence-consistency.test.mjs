@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 
-const manifest = JSON.parse(readFileSync('site/evidence/releases/job-agent-v1.json', 'utf8'));
+const manifest = JSON.parse(readFileSync('site/evidence/releases/job-agent-v2.json', 'utf8'));
 const fixture = JSON.parse(readFileSync('site/evidence/fixtures/job-agent-company-v1.json', 'utf8'));
 const cvFacts = JSON.parse(readFileSync('site/evidence/cv-facts.json', 'utf8'));
 const informationDiet = JSON.parse(readFileSync('site/evidence/information-diet.json', 'utf8'));

@@ -47,7 +47,7 @@
       "why_it_matters": "The interface shows how a repeated job-search activity can be organized before it becomes a one-off application task.",
       "next_question": "How should a discovered role move into a clear next action?",
       "demonstrates": ["systems-thinking", "information-architecture", "execution"],
-      "visual": {"href": "../../assets/images/job-agent/current-find-jobs.png", "alt": "Current Job-agent Find jobs view with synthetic role criteria, source settings, saved searches, and monitoring", "label": "v0.9 · Find jobs", "caption": "A synthetic public frame showing criteria, sources, saved searches, and monitoring."},
+      "visual": {"href": "../../assets/images/job-agent/v0.9-public-proof/current-find-jobs.png", "alt": "Current Job-agent Find jobs view with synthetic role criteria, source settings, saved searches, and monitoring", "label": "v0.9 · Find jobs", "caption": "A synthetic public frame showing criteria, sources, saved searches, and monitoring."},
       "evidence": [
         {"label": "Privacy review: current Job-agent proof frames", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json"},
         {"label": "Job-agent v0.9 public-proof manifest", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/releases/job-agent-v2.json"}
@@ -68,7 +68,7 @@
       "why_it_matters": "It makes prioritization visible and gives the product a practical operating rhythm.",
       "next_question": "What evidence should be visible when the applicant inspects one role?",
       "demonstrates": ["prioritization", "workflow-design", "product-judgment"],
-      "visual": {"href": "../../assets/images/job-agent/current-today.png", "alt": "Current Job-agent Today view with a journey bar, next move, filters, and synthetic roles", "label": "v0.9 · Today", "caption": "A synthetic public frame for daily priorities and the next move."},
+      "visual": {"href": "../../assets/images/job-agent/v0.9-public-proof/current-today.png", "alt": "Current Job-agent Today view with a journey bar, next move, filters, and synthetic roles", "label": "v0.9 · Today", "caption": "A synthetic public frame for daily priorities and the next move."},
       "evidence": [
         {"label": "Privacy review: current Job-agent proof frames", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json"},
         {"label": "Job-agent case study: current proof sequence", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/proof/job-agent/index.html#proof-sequence"}
@@ -89,7 +89,7 @@
       "why_it_matters": "A recruiter can assess how the system moves from information to a human-reviewed choice.",
       "next_question": "Which public-safe evidence can test whether this decision context improves the workflow?",
       "demonstrates": ["decision-support", "evidence-discipline", "human-in-the-loop"],
-      "visual": {"href": "../../assets/images/job-agent/current-job-detail.png", "alt": "Current Job-agent job detail view with synthetic fit analysis, CV gap, and company signals", "label": "v0.9 · Job detail", "caption": "A synthetic public frame that brings fit, evidence, and next action together."},
+      "visual": {"href": "../../assets/images/job-agent/v0.9-public-proof/current-job-detail.png", "alt": "Current Job-agent job detail view with synthetic fit analysis, CV gap, and company signals", "label": "v0.9 · Job detail", "caption": "A synthetic public frame that brings fit, evidence, and next action together."},
       "evidence": [
         {"label": "Privacy review: current Job-agent proof frames", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json"},
         {"label": "Job-agent v0.9 public-proof manifest", "href": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/releases/job-agent-v2.json"}

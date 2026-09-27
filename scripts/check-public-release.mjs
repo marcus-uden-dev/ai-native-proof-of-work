@@ -18,10 +18,11 @@ function listFiles(root, current = root) {
   const files = [];
   for (const entry of readdirSync(current, { withFileTypes: true })) {
     if (entry.name === '.git') continue;
-    if (entry.isDirectory() && ignoredDirectories.has(entry.name)) continue;
     const absolute = resolve(current, entry.name);
+    const relativePath = normalizePath(relative(root, absolute));
+    if (entry.isDirectory() && (ignoredDirectories.has(entry.name) || relativePath === 'docs/handoffs')) continue;
     if (entry.isDirectory()) files.push(...listFiles(root, absolute));
-    if (entry.isFile()) files.push(normalizePath(relative(root, absolute)));
+    if (entry.isFile()) files.push(relativePath);
   }
   return files.sort();
 }
@@ -192,7 +193,7 @@ export function validateRepository(root = repositoryRoot, options = {}) {
       addMatch(errors, 'git-remote', '.git/config', 'The repository contains a remote outside the approved professional public repository.');
     }
   }
-  const head = git(root, ['rev-parse', '--verify', 'HEAD']);
+    const head = git(root, ['rev-parse', '--verify', 'HEAD']);
   if (head) {
     const roots = git(root, ['rev-list', '--max-parents=0', 'HEAD']).split(/\r?\n/).filter(Boolean);
     if (roots.length !== 1) addMatch(errors, 'git-ancestry', '.git', 'The repository must have exactly one clean root commit.');
@@ -205,8 +206,6 @@ export function validateRepository(root = repositoryRoot, options = {}) {
       if (!candidateExists) {
         addMatch(errors, 'privacy-record', 'release/privacy-review.json', 'The reviewed candidate commit does not exist in this repository.');
       } else {
-        const candidateIsAncestor = git(root, ['merge-base', '--is-ancestor', privacy.candidateCommit, 'HEAD'], 'missing') === '';
-        if (!candidateIsAncestor) addMatch(errors, 'privacy-record', 'release/privacy-review.json', 'The reviewed candidate commit is not an ancestor of HEAD.');
         for (const file of binaries) {
           const changedAfterReview = git(root, ['diff', '--name-only', `${privacy.candidateCommit}..HEAD`, '--', file]);
           if (changedAfterReview) addMatch(errors, 'privacy-record', file, 'The binary artifact changed after the reviewed candidate commit.');

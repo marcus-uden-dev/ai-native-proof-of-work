@@ -1,0 +1,45 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "ai-native-proof-of-work-review-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-07",
+  "workers_dev": true,
+  "vars": {
+    "GROQ_MODEL": "openai/gpt-oss-20b",
+    "GEMINI_MODEL": "gemini-2.5-flash-lite",
+    "ALLOWED_ORIGINS": "https://marcus-uden-dev.github.io,https://marcus.uden.dev,http://127.0.0.1:8123"
+  },
+  "secrets": {
+    "required": ["GROQ_API_KEY"]
+  },
+  "ratelimits": [
+    {
+      "name": "RECRUITER_REVIEW_RATE_LIMITER",
+      "namespace_id": "8032701",
+      "simple": {
+        "limit": 5,
+        "period": 60
+      }
+    }
+  ],
+  "d1_databases": [
+    {
+      "binding": "RECRUITER_ENQUIRIES",
+      "database_name": "recruiter-review-enquiries",
+      "database_id": "97e80b9c-ddf6-440f-be7e-f9e9689a991c"
+    }
+  ],
+  "send_email": [
+    {
+      "name": "EMAIL",
+      "destination_address": "marcus.uden.dev@gmail.com"
+    }
+  ],
+  "triggers": {
+    "crons": ["15 3 * * *"]
+  },
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1
+  }
+}

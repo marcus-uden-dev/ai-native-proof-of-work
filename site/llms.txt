@@ -8,7 +8,8 @@
 - [Repository Interview job-description prompt](https://marcus-uden-dev.github.io/ai-native-proof-of-work/job-description-prompt.html): Readable prompt for a public-evidence assessment against a non-confidential job description.
 - [Job-agent case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/): Guided product proof, limitations, and technical appendix.
 - [Recursive workflow system](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/): Supporting proof for the human-gated system loop.
-- [Job-agent release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v1.json): Canonical maturity, version, evidence date, and provenance state.
+- [Job-agent current release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v2.json): Canonical current maturity, version, evidence date, source commit, and provenance state.
+- [Job-agent previous release](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/archive/0.8-public-proof/): Preserved 0.8-public-proof page and prototype for UI timeline review.
 - [Decision log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json): Structured history of auto-published, tagged, dated self-improvement entries — rendered as static HTML on the recursive workflow page and available here as structured data.
 - [Decision log tag taxonomy](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json): The fixed set of capability tags decision log entries are assigned from.
 - [Recruiter report brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-report-brief.md): Required assessment structure.

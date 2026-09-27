@@ -1,21 +1,44 @@
 import { expect, test } from './fixtures.js';
 
-test('the first viewport establishes the hiring case and conversion path', async ({ page }) => {
+test('the first viewport establishes the hiring case and primary conversion path', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
   await expect(page.getByText('Experienced individual contributor')).toBeVisible();
   await expect(page.getByRole('heading', { level: 1 })).toContainText('clear, buildable product work');
   await expect(page.getByText('Operational depth. Product thinking. AI-native execution.')).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Download CV' }).first()).toBeInViewport();
+  const primaryNavigation = page.getByRole('navigation', { name: 'Primary navigation' });
+  await expect(primaryNavigation.getByRole('link', { name: 'Product portfolio' })).toBeVisible();
+  await expect(primaryNavigation.getByRole('link', { name: 'CV' })).toBeVisible();
+  await expect(primaryNavigation.getByRole('link', { name: 'Interview my work' })).toBeVisible();
+  const entryPoints = page.locator('.action-row--entry-points');
+  await expect(entryPoints.getByRole('link', { name: 'Explore product work' })).toBeInViewport();
+  await expect(entryPoints.getByRole('link', { name: 'Follow the decisions' })).toBeInViewport();
+  await expect(entryPoints.getByRole('link', { name: 'CV' })).toBeVisible();
+  await expect(entryPoints.getByRole('link', { name: 'Interview my work' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Contact' })).toBeInViewport();
+});
+
+test('hero entry controls share a single layout and direct visitors to distinct routes', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+  const controls = page.locator('.action-row--entry-points .button');
+  await expect(controls).toHaveCount(4);
+  const dimensions = await controls.evaluateAll((elements) => elements.map((element) => {
+    const box = element.getBoundingClientRect();
+    return { width: Math.round(box.width), height: Math.round(box.height) };
+  }));
+  expect(new Set(dimensions.map(({ width }) => width)).size).toBe(1);
+  expect(new Set(dimensions.map(({ height }) => height)).size).toBe(1);
 });
 
 test('claim-to-evidence links target three named public anchors', async ({ page }) => {
   await page.goto('/');
+  await expect(page.getByRole('heading', { name: 'See how I turn a claim into a decision.' })).toBeVisible();
+  await expect(page.getByText('Each example pairs a product claim with the public artifact behind it. Open one to see the reasoning, trade-offs, and evidence.')).toBeVisible();
   const expected = [
-    ['Inspect the research decision', 'proof/job-agent/#company-research'],
-    ['Follow the proof sequence', 'proof/job-agent/#proof-sequence'],
-    ['See the evidence boundary', 'proof/job-agent/#evidence-boundary']
+    ['See the company research decision', 'proof/job-agent/#company-research'],
+    ['See how the scope became working proof', 'proof/job-agent/#proof-sequence'],
+    ['See how the AI workflow is governed', 'proof/job-agent/#evidence-boundary']
   ];
   for (const [name, href] of expected) {
     await expect(page.getByRole('link', { name })).toHaveAttribute('href', href);

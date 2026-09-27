@@ -3,13 +3,13 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Job-agent case study — Marcus Udén</title>
+    <title>Job-agent case study — 0.9-public-proof — Marcus Udén</title>
     <meta name="description" content="A guided Job-agent case study showing how fragmented company and role information becomes practical product decisions.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://marcus.uden.dev/proof/job-agent/">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="en_GB">
-    <meta property="og:title" content="Job-agent case study — Marcus Udén">
+    <meta property="og:title" content="Job-agent case study — 0.9-public-proof — Marcus Udén">
     <meta property="og:description" content="A guided Job-agent case study showing how fragmented company and role information becomes practical product decisions.">
     <meta property="og:url" content="https://marcus.uden.dev/proof/job-agent/">
     <meta property="og:image" content="https://marcus.uden.dev/assets/social-card.png">
@@ -49,14 +49,14 @@
             <h1 id="case-title">Make each job decision more deliberate.</h1>
             <p class="case-hero__lead">Job-agent connects discovery, company research, application tailoring, and interview preparation. The current proof shows the decision model and recruiter-safe interface, not market outcomes.</p>
           </div>
-          <dl class="release-card" data-release-contract="job-agent-v1">
+          <dl class="release-card" data-release-contract="job-agent-v2">
             <div><dt>Maturity</dt><dd data-release-field="maturity">Work in progress</dd></div>
             <div><dt>Implementation</dt><dd data-release-field="implementationState">Prototype under active development</dd></div>
-            <div><dt>Availability</dt><dd data-release-field="publicAvailability">Local recruiter-safe preview only</dd></div>
+            <div><dt>Availability</dt><dd data-release-field="publicAvailability">Static recruiter-safe preview only</dd></div>
             <div><dt>Market validation</dt><dd data-release-field="marketValidationState">Not market-validated</dd></div>
             <div><dt>Outcomes</dt><dd data-release-field="outcomeMeasurementState">No measured market outcomes</dd></div>
-            <div><dt>Evidence date</dt><dd data-release-field="evidenceDate">2026-08-31</dd></div>
-            <div><dt>Product version</dt><dd data-release-field="productVersion">0.8-public-proof</dd></div>
+            <div><dt>Evidence date</dt><dd data-release-field="evidenceDate">2026-09-02</dd></div>
+            <div><dt>Product version</dt><dd data-release-field="productVersion">0.9-public-proof</dd></div>
           </dl>
         </div>
       </section>
@@ -69,7 +69,7 @@
           </div>
           <div>
             <p><strong>Work in progress.</strong> Job-agent (a working title, not the final product name) is not live and is not market-validated. The release-one company is invented. Company-specific values are synthetic or inferred from synthetic inputs.</p>
-            <p><strong>Next test:</strong> <span data-release-field="nextTest">Moderated recruiter review of the synthetic company-research decision flow</span>.</p>
+            <p><strong>Next test:</strong> <span data-release-field="nextTest">Moderated recruiter review of the current decision-led prototype and its version history</span>.</p>
             <p><strong>Privacy:</strong> <span data-release-field="privacyState">Release privacy review complete</span>.</p>
           </div>
         </div>
@@ -112,21 +112,45 @@
             </div>
           </li>
         </ol>
-        <p class="proof-capture-note">Current frontend capture · 31 August 2026 · English UI · synthetic data</p>
+        <p class="proof-capture-note">Current frontend capture · 2 September 2026 · English UI · synthetic data · source commit 061d0e2</p>
         <div class="visual-proof-grid visual-proof-grid--job-detail-lead" aria-label="Option B recruiter-safe prototype frames">
           <figure>
-            <a href="../../assets/images/job-agent/current-job-detail.png"><img src="../../assets/images/job-agent/current-job-detail.png" alt="Current Job-agent job detail view with match analysis, CV gap, and company signals"></a>
+            <a href="../../assets/images/job-agent/v0.9-public-proof/current-job-detail.png"><img src="../../assets/images/job-agent/v0.9-public-proof/current-job-detail.png" alt="Current Job-agent job detail view with match analysis, CV gap, and company signals"></a>
             <figcaption><strong>Primary proof · Job detail</strong> The strongest current frame for showing fit, CV evidence, company signals, and the next decision.</figcaption>
           </figure>
           <figure>
-            <a href="../../assets/images/job-agent/current-today.png"><img src="../../assets/images/job-agent/current-today.png" alt="Current Job-agent Today view with the journey bar, next move, filters, and synthetic roles"></a>
+            <a href="../../assets/images/job-agent/v0.9-public-proof/current-today.png"><img src="../../assets/images/job-agent/v0.9-public-proof/current-today.png" alt="Current Job-agent Today view with the journey bar, next move, filters, and synthetic roles"></a>
             <figcaption><strong>Supporting · Today</strong> Orient the visitor around the next move and the job funnel.</figcaption>
           </figure>
           <figure>
-            <a href="../../assets/images/job-agent/current-find-jobs.png"><img src="../../assets/images/job-agent/current-find-jobs.png" alt="Current Job-agent Find jobs view with search criteria, sources, and saved monitoring"></a>
+            <a href="../../assets/images/job-agent/v0.9-public-proof/current-find-jobs.png"><img src="../../assets/images/job-agent/v0.9-public-proof/current-find-jobs.png" alt="Current Job-agent Find jobs view with search criteria, sources, and saved monitoring"></a>
             <figcaption><strong>Supporting · Find jobs</strong> Show where new opportunities come from and how monitoring works.</figcaption>
           </figure>
         </div>
+      </section>
+
+      <section class="section shell version-timeline" aria-labelledby="version-timeline-title">
+        <div class="section-heading section-heading--split">
+          <div>
+            <p class="kicker">Version history</p>
+            <h2 id="version-timeline-title">Follow the interface as it changes.</h2>
+          </div>
+          <p>The current edition is shown first. Earlier public proof remains available as a named, dated reference.</p>
+        </div>
+        <ol class="timeline-list">
+          <li class="timeline-list__item timeline-list__item--current">
+            <div><span class="pill pill--gold">Current</span><strong>0.9-public-proof</strong><span>2 September 2026</span></div>
+            <p>Decision-led current Job-agent shell: Today, Find jobs, and Pipeline job detail, captured from source commit <code>061d0e2</code>.</p>
+          </li>
+          <li class="timeline-list__item">
+            <div><span class="pill">Previous edition</span><strong>0.8-public-proof</strong><span>31 August 2026</span></div>
+            <p>The previous public page and prototype are preserved unchanged in the <a href="archive/0.8-public-proof/">0.8-public-proof archive</a>.</p>
+          </li>
+          <li class="timeline-list__item">
+            <div><span class="pill">Historical UI</span><strong>v0.5</strong><span>25 August 2026</span></div>
+            <p>Earlier guided workflow proof remains preserved in the archive. It is not shown in the current project playback.</p>
+          </li>
+        </ol>
       </section>
 
       <!-- PROJECT_REPLAY:BEGIN -->
@@ -206,7 +230,7 @@
                     <div><dt>Evidence available</dt><dd><ul><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json">Privacy review: current Job-agent proof frames</a></li><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/releases/job-agent-v2.json">Job-agent v0.9 public-proof manifest</a></li></ul></dd></div>
                   </dl>
                 </div>
-                <figure class="project-story__visual"><a href="../../assets/images/job-agent/current-find-jobs.png"><img src="../../assets/images/job-agent/current-find-jobs.png" alt="Current Job-agent Find jobs view with synthetic role criteria, source settings, saved searches, and monitoring"></a><figcaption><strong>v0.9 · Find jobs</strong>A synthetic public frame showing criteria, sources, saved searches, and monitoring.</figcaption></figure>
+                <figure class="project-story__visual"><a href="../../assets/images/job-agent/v0.9-public-proof/current-find-jobs.png"><img src="../../assets/images/job-agent/v0.9-public-proof/current-find-jobs.png" alt="Current Job-agent Find jobs view with synthetic role criteria, source settings, saved searches, and monitoring"></a><figcaption><strong>v0.9 · Find jobs</strong>A synthetic public frame showing criteria, sources, saved searches, and monitoring.</figcaption></figure>
               </div>
             </article>
           </li>
@@ -231,7 +255,7 @@
                     <div><dt>Evidence available</dt><dd><ul><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json">Privacy review: current Job-agent proof frames</a></li><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/proof/job-agent/index.html#proof-sequence">Job-agent case study: current proof sequence</a></li></ul></dd></div>
                   </dl>
                 </div>
-                <figure class="project-story__visual"><a href="../../assets/images/job-agent/current-today.png"><img src="../../assets/images/job-agent/current-today.png" alt="Current Job-agent Today view with a journey bar, next move, filters, and synthetic roles"></a><figcaption><strong>v0.9 · Today</strong>A synthetic public frame for daily priorities and the next move.</figcaption></figure>
+                <figure class="project-story__visual"><a href="../../assets/images/job-agent/v0.9-public-proof/current-today.png"><img src="../../assets/images/job-agent/v0.9-public-proof/current-today.png" alt="Current Job-agent Today view with a journey bar, next move, filters, and synthetic roles"></a><figcaption><strong>v0.9 · Today</strong>A synthetic public frame for daily priorities and the next move.</figcaption></figure>
               </div>
             </article>
           </li>
@@ -256,7 +280,7 @@
                     <div><dt>Evidence available</dt><dd><ul><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/release/privacy-review.json">Privacy review: current Job-agent proof frames</a></li><li><a href="https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/site/evidence/releases/job-agent-v2.json">Job-agent v0.9 public-proof manifest</a></li></ul></dd></div>
                   </dl>
                 </div>
-                <figure class="project-story__visual"><a href="../../assets/images/job-agent/current-job-detail.png"><img src="../../assets/images/job-agent/current-job-detail.png" alt="Current Job-agent job detail view with synthetic fit analysis, CV gap, and company signals"></a><figcaption><strong>v0.9 · Job detail</strong>A synthetic public frame that brings fit, evidence, and next action together.</figcaption></figure>
+                <figure class="project-story__visual"><a href="../../assets/images/job-agent/v0.9-public-proof/current-job-detail.png"><img src="../../assets/images/job-agent/v0.9-public-proof/current-job-detail.png" alt="Current Job-agent job detail view with synthetic fit analysis, CV gap, and company signals"></a><figcaption><strong>v0.9 · Job detail</strong>A synthetic public frame that brings fit, evidence, and next action together.</figcaption></figure>
               </div>
             </article>
           </li>
@@ -395,7 +419,9 @@
           <div class="technical-appendix__content">
             <p>The public proof uses static HTML, CSS, and a versioned JSON fixture. Core content does not depend on client-side rendering.</p>
             <ul>
-              <li><a href="../../evidence/releases/job-agent-v1.json">Release manifest</a></li>
+              <li><a href="../../evidence/releases/job-agent-v2.json">Current release manifest · 0.9-public-proof</a></li>
+              <li><a href="../../evidence/releases/job-agent-v1.json">Previous release manifest · 0.8-public-proof</a></li>
+              <li><a href="archive/0.8-public-proof/">Open the preserved 0.8-public-proof page</a></li>
               <li><a href="../../evidence/fixtures/job-agent-company-v1.json">Synthetic company fixture</a></li>
               <li><a href="../../recruiter-agent-guide.md">External AI evidence guide</a></li>
               <li><a href="https://github.com/marcus-uden-dev">Professional GitHub profile</a></li>

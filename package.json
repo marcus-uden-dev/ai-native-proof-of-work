@@ -6,8 +6,14 @@
   "description": "Recruiter-first public proof of work for Marcus Udén",
   "scripts": {
     "serve": "node scripts/serve-static.mjs",
-    "test": "npm run test:contracts && npm run test:e2e",
+    "test": "npm run test:contracts && npm run test:repository-evidence-index && npm run test:review-api && npm run test:e2e",
+    "render:decision-log": "node scripts/render-decision-log.mjs",
+    "check:decision-log": "node scripts/render-decision-log.mjs --check",
     "test:contracts": "node --test tests/contracts/*.test.mjs",
+    "build:repository-evidence-index": "node scripts/build-repository-evidence-index.mjs",
+    "test:repository-evidence-index": "node scripts/build-repository-evidence-index.mjs --check",
+    "test:review-api": "node --test workers/recruiter-review/test/*.test.mjs",
+    "review-api:provision": "node scripts/provision-recruiter-review-api.mjs",
     "generate:project-replay": "node scripts/generate-project-replay.mjs",
     "test:e2e": "playwright test",
     "release:validate": "node scripts/check-public-release.mjs"

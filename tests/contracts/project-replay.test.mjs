@@ -17,9 +17,9 @@ test('The Job-agent story is a small, valid evidence-backed playback dataset', (
   assert.deepEqual(
     data.events.filter((event) => event.visual).map((event) => event.visual.href),
     [
-      '../../assets/images/job-agent/current-find-jobs.png',
-      '../../assets/images/job-agent/current-today.png',
-      '../../assets/images/job-agent/current-job-detail.png'
+    '../../assets/images/job-agent/v0.9-public-proof/current-find-jobs.png',
+    '../../assets/images/job-agent/v0.9-public-proof/current-today.png',
+    '../../assets/images/job-agent/v0.9-public-proof/current-job-detail.png'
     ]
   );
 });

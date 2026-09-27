@@ -2,42 +2,36 @@
   "schemaVersion": 1,
   "artifactId": "job-agent",
   "releaseId": "job-agent-v2",
-  "supersedesReleaseId": "job-agent-v1",
   "productVersion": "0.9-public-proof",
-  "evidenceDate": "2026-08-31",
-  "recordedAt": "2026-09-24",
+  "previousProductVersion": "0.8-public-proof",
+  "evidenceDate": "2026-09-02",
   "implementationState": "Prototype under active development",
-  "publicAvailability": "Recruiter-safe static case study",
+  "publicAvailability": "Static recruiter-safe preview only",
   "maturity": "Work in progress",
   "marketValidationState": "Not market-validated",
   "outcomeMeasurementState": "No measured market outcomes",
-  "nextTest": "Moderated recruiter review of the current synthetic decision workflow",
+  "nextTest": "Moderated recruiter review of the current decision-led prototype and its version history",
   "privacyState": "Release privacy review complete",
   "canonicalUrl": "https://marcus.uden.dev/proof/job-agent/",
+  "sourceCommit": "061d0e29c46bb639ea07cc01c65c50b21c071a03",
+  "sourceRepository": "https://github.com/marcus-uden-dev/job-agent",
+  "previousRelease": {
+    "productVersion": "0.8-public-proof",
+    "manifest": "job-agent-v1.json",
+    "archiveUrl": "../../proof/job-agent/archive/0.8-public-proof/"
+  },
   "fixture": {
     "id": "job-agent-company-v1",
     "version": 1,
     "path": "../fixtures/job-agent-company-v1.json",
     "companyMode": "synthetic-only"
   },
-  "approvedFrames": [
-    {
-      "path": "../../assets/images/job-agent/current-find-jobs.png",
-      "sha256": "f82f2a135931b6cab3389eec0ce41d4b0c9725f0bf53691303feb483790f4c68",
-      "dataClass": "synthetic demo"
-    },
-    {
-      "path": "../../assets/images/job-agent/current-today.png",
-      "sha256": "492f4890f518557d0b8c08c594b816eeb33a0a9ea56f909849dc4131a939f8e0",
-      "dataClass": "synthetic demo"
-    },
-    {
-      "path": "../../assets/images/job-agent/current-job-detail.png",
-      "sha256": "7e02bb8fe73d56a36b63e893000be86ff184a32aa862de369658ebeb78a8e954",
-      "dataClass": "synthetic demo"
-    }
-  ],
   "sourceClasses": [
+    {
+      "id": "public_source",
+      "label": "public source",
+      "meaning": "A traceable fact from a named public source. No release-one company field uses this class."
+    },
     {
       "id": "synthetic_demo",
       "label": "synthetic demo",
@@ -50,7 +44,7 @@
     }
   ],
   "limitations": [
-    "All shown company, role, person, and company-specific values are synthetic.",
+    "The release-one company and all company-specific values are synthetic.",
     "The prototype has no production service or public user data.",
     "Recruiter response, job-search impact, and market outcomes are not measured.",
     "The next test evaluates decision clarity and trust, not product-market fit."
