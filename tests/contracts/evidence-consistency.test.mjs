@@ -20,7 +20,6 @@ const facts = {
   maturity: manifest.maturity,
   marketValidationState: manifest.marketValidationState,
   outcomeMeasurementState: manifest.outcomeMeasurementState,
-  nextTest: manifest.nextTest,
   privacyState: manifest.privacyState
 };
 
