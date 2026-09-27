@@ -6,7 +6,7 @@ test('status and synthetic notices appear before the first proof frame', async (
   await expect(page.getByText('Work in progress', { exact: true })).toBeVisible();
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
-  await expect(page.getByText('Next test:', { exact: true })).toHaveCount(0);
+  await expect(page.getByText(/next test/i)).toHaveCount(0);
   await expect(page.getByText(/release-one company is invented/i)).toBeVisible();
   const order = await page.locator('#evidence-boundary, #proof-sequence').evaluateAll((nodes) => nodes.map((node) => node.id));
   expect(order).toEqual(['evidence-boundary', 'proof-sequence']);
@@ -54,6 +54,7 @@ test('current and archived historical proof frames use reviewed synthetic protot
   }
 
   await page.goto('/proof/job-agent/archive/0.8-public-proof/#ui-evolution');
+  await expect(page.getByText(/next test/i)).toHaveCount(0);
   const historicalFigures = page.locator('#ui-evolution .visual-proof-grid figure');
   await expect(historicalFigures).toHaveCount(3);
   for (const image of await historicalFigures.locator('img').all()) {

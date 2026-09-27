@@ -13,7 +13,6 @@ Use this structure with the [recruiter agent guide](https://marcus-uden-dev.gith
 - Maturity: `Work in progress`
 - Market validation: `Not market-validated`
 - Outcomes: `No measured market outcomes`
-- Next test: `Moderated recruiter review of the current decision-led prototype and its version history`
 - Privacy: `Release privacy review complete`
 
 ## Required report
