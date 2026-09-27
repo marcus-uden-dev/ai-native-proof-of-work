@@ -9,7 +9,6 @@
   "maturity": "Work in progress",
   "marketValidationState": "Not market-validated",
   "outcomeMeasurementState": "No measured market outcomes",
-  "nextTest": "Moderated recruiter review of the synthetic company-research decision flow",
   "privacyState": "Release privacy review complete",
   "canonicalUrl": "https://marcus.uden.dev/proof/job-agent/",
   "fixture": {
@@ -38,7 +37,6 @@
   "limitations": [
     "The release-one company and all company-specific values are synthetic.",
     "The prototype has no production service or public user data.",
-    "Recruiter response, job-search impact, and market outcomes are not measured.",
-    "The next test evaluates decision clarity and trust, not product-market fit."
+    "Recruiter response, job-search impact, and market outcomes are not measured."
   ]
 }

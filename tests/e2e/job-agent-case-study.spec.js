@@ -6,7 +6,7 @@ test('status and synthetic notices appear before the first proof frame', async (
   await expect(page.getByText('Work in progress', { exact: true })).toBeVisible();
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
-  await expect(page.getByText('Moderated recruiter review of the current decision-led prototype and its version history', { exact: true })).toBeVisible();
+  await expect(page.getByText(/next test/i)).toHaveCount(0);
   await expect(page.getByText(/release-one company is invented/i)).toBeVisible();
   const order = await page.locator('#evidence-boundary, #proof-sequence').evaluateAll((nodes) => nodes.map((node) => node.id));
   expect(order).toEqual(['evidence-boundary', 'proof-sequence']);
@@ -44,7 +44,7 @@ test('research includes the required decision signals and outputs', async ({ pag
   }
 });
 
-test('current proof and the Job-agent story use reviewed synthetic prototype images', async ({ page }) => {
+test('current, replayed, and archived proof frames use reviewed synthetic prototype images', async ({ page }) => {
   await page.goto('/proof/job-agent/#proof-sequence');
   const proofImages = page.locator('#proof-sequence .visual-proof-grid img');
   await expect(proofImages).toHaveCount(3);
@@ -55,8 +55,14 @@ test('current proof and the Job-agent story use reviewed synthetic prototype ima
     expect(await image.getAttribute('alt')).toBeTruthy();
     expect(await image.getAttribute('src')).toContain('v0.9-public-proof');
   }
-  for (const image of await proofImages.all()) {
+
+  await page.goto('/proof/job-agent/archive/0.8-public-proof/#ui-evolution');
+  await expect(page.getByText(/next test/i)).toHaveCount(0);
+  const historicalFigures = page.locator('#ui-evolution .visual-proof-grid figure');
+  await expect(historicalFigures).toHaveCount(3);
+  for (const image of await historicalFigures.locator('img').all()) {
     await expect(image).toBeVisible();
+    expect(await image.getAttribute('alt')).toBeTruthy();
   }
 });
 
@@ -138,7 +144,8 @@ test('the guided reading order remains stable and printable', async ({ page }) =
 test('current release and previous edition are both discoverable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   await expect(page.getByText('0.9-public-proof', { exact: true }).first()).toBeVisible();
-  await expect(page.getByRole('link', { name: /0.8-public-proof archive/ })).toHaveAttribute('href', 'archive/0.8-public-proof/');
+  await expect(page.getByRole('link', { name: /Previous edition 0.8-public-proof/ })).toHaveAttribute('href', 'archive/0.8-public-proof/');
+  await expect(page.getByRole('link', { name: /Historical UI v0.5/ })).toHaveAttribute('href', 'archive/0.8-public-proof/#ui-evolution');
   await page.locator('.technical-appendix summary').click();
   await expect(page.getByRole('link', { name: /Current release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v2.json');
   await expect(page.getByRole('link', { name: /Previous release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v1.json');

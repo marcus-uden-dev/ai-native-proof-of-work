@@ -32,6 +32,7 @@
           <ul class="nav-list">
             <li><a href="#proof-sequence">Proof sequence</a></li>
             <li><a href="#project-replay">The Job-agent story</a></li>
+            <li><a href="archive/0.8-public-proof/#ui-evolution">Earlier UI</a></li>
             <li><a href="#company-research">Research</a></li>
             <li><a href="#limitations">Limitations</a></li>
           </ul>
@@ -68,8 +69,7 @@
             <h2 id="trust-title">Read the status before the interface.</h2>
           </div>
           <div>
-            <p><strong>Work in progress.</strong> Job-agent (a working title, not the final product name) is not live and is not market-validated. The release-one company is invented. Company-specific values are synthetic or inferred from synthetic inputs.</p>
-            <p><strong>Next test:</strong> <span data-release-field="nextTest">Moderated recruiter review of the current decision-led prototype and its version history</span>.</p>
+            <p><strong>Work in progress.</strong> Job-agent (a working title, not the final product name) is not live and is not market-validated. The release-one company is invented example data. “Synthetic” means its company-specific details were made up to demonstrate the workflow; they are not facts about a real employer.</p>
             <p><strong>Privacy:</strong> <span data-release-field="privacyState">Release privacy review complete</span>.</p>
           </div>
         </div>
@@ -78,7 +78,7 @@
       <section class="section shell" id="proof-sequence" aria-labelledby="sequence-title">
         <div class="section-heading section-heading--split">
           <div>
-            <p class="kicker">Selected proof path · Option B</p>
+            <p class="kicker">Current proof</p>
             <h2 id="sequence-title">Job detail first. Context when it helps.</h2>
           </div>
           <p>A short visit should expose the strongest product judgment first. Today and Find jobs remain available as supporting context.</p>
@@ -113,7 +113,7 @@
           </li>
         </ol>
         <p class="proof-capture-note">Current frontend capture · 2 September 2026 · English UI · synthetic data · source commit 061d0e2</p>
-        <div class="visual-proof-grid visual-proof-grid--job-detail-lead" aria-label="Option B recruiter-safe prototype frames">
+        <div class="visual-proof-grid visual-proof-grid--job-detail-lead" aria-label="Recruiter-safe prototype frames">
           <figure>
             <a href="../../assets/images/job-agent/v0.9-public-proof/current-job-detail.png"><img src="../../assets/images/job-agent/v0.9-public-proof/current-job-detail.png" alt="Current Job-agent job detail view with match analysis, CV gap, and company signals"></a>
             <figcaption><strong>Primary proof · Job detail</strong> The strongest current frame for showing fit, CV evidence, company signals, and the next decision.</figcaption>
@@ -143,12 +143,12 @@
             <p>Decision-led current Job-agent shell: Today, Find jobs, and Pipeline job detail, captured from source commit <code>061d0e2</code>.</p>
           </li>
           <li class="timeline-list__item">
-            <div><span class="pill">Previous edition</span><strong>0.8-public-proof</strong><span>31 August 2026</span></div>
-            <p>The previous public page and prototype are preserved unchanged in the <a href="archive/0.8-public-proof/">0.8-public-proof archive</a>.</p>
+            <div><a class="timeline-list__edition-link" href="archive/0.8-public-proof/"><span class="pill">Previous edition</span><strong>0.8-public-proof</strong><span>31 August 2026</span><span aria-hidden="true">↗</span></a></div>
+            <p>Open the preserved 0.8 public proof and prototype.</p>
           </li>
           <li class="timeline-list__item">
-            <div><span class="pill">Historical UI</span><strong>v0.5</strong><span>25 August 2026</span></div>
-            <p>Earlier guided workflow proof remains preserved in the archive. It is not shown in the current project playback.</p>
+            <div><a class="timeline-list__edition-link" href="archive/0.8-public-proof/#ui-evolution"><span class="pill">Historical UI</span><strong>v0.5</strong><span>25 August 2026</span><span aria-hidden="true">↗</span></a></div>
+            <p>Open the earlier guided workflow when you need to compare it with the current product shell.</p>
           </li>
         </ol>
       </section>
@@ -292,7 +292,6 @@
         <p class="project-replay__audit">Temporal audit fields are available in <a href="../../evidence/project-replay-job-agent.json">project-replay-job-agent.json</a>. <code>valid_from</code> describes when a chapter applied; <code>recorded_at</code> records when the public evidence model captured it.</p>
       </section>
 <!-- PROJECT_REPLAY:END -->
-
       <section class="research-section" id="company-research" aria-labelledby="research-title">
         <div class="shell">
           <div class="research-heading">
@@ -411,7 +410,6 @@
           <li>The release-one company and all company-specific values are synthetic.</li>
           <li>The prototype has no production service or public user data.</li>
           <li>Recruiter response, job-search impact, and market outcomes are not measured.</li>
-          <li>The next test evaluates decision clarity and trust, not product-market fit.</li>
         </ul>
 
         <details class="technical-appendix">
