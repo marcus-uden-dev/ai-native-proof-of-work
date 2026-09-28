@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
@@ -48,6 +49,14 @@ test('ignores private local checkpoint handoffs during public release validation
     'README.md': '# Public proof',
     'docs/handoffs/checkpoint-2026-09-27-example.md': '# Private checkpoint'
   });
+  assert.deepEqual(validateRepository(root).errors, []);
+});
+
+test('ignores Git-ignored untracked local files during public release validation', () => {
+  const root = makeRepository({ 'README.md': '# Public proof' }, {}, ['.gitignore']);
+  writeFileSync(join(root, '.gitignore'), 'private-notes.md\n');
+  writeFileSync(join(root, 'private-notes.md'), 'not public');
+  execFileSync('git', ['init', '--quiet'], { cwd: root });
   assert.deepEqual(validateRepository(root).errors, []);
 });
 

@@ -7,3 +7,8 @@ Thumbs.db
 workers/recruiter-review/.dev.vars
 /docs/handoffs/
 
+# Local-only planning notes. These contain provider and sender choices that are
+# not approved for the public recruiter repository.
+/docs/plans/2026-09-27-recruiter-follow-up-email-sender-plan.md
+/docs/reports/2026-09-28-email-notification-service-options.md
+

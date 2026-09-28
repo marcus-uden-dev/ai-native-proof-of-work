@@ -35,6 +35,21 @@ function git(root, args, fallback = '') {
   }
 }
 
+function ignoredPathsByGit(root, paths) {
+  if (paths.length === 0) return new Set();
+  let output = '';
+  try {
+    output = execFileSync(
+      'git',
+      ['-C', root, 'check-ignore', '--stdin', '-z'],
+      { encoding: 'utf8', input: `${paths.join('\0')}\0`, stdio: ['pipe', 'pipe', 'ignore'] }
+    );
+  } catch (error) {
+    output = typeof error.stdout === 'string' ? error.stdout : '';
+  }
+  return new Set(output.split('\0').filter(Boolean).map(normalizePath));
+}
+
 function readJson(root, path, errors, category) {
   try {
     return JSON.parse(readFileSync(resolve(root, path), 'utf8'));
@@ -87,7 +102,9 @@ function validateInternalLinks(root, files, errors) {
 
 export function validateRepository(root = repositoryRoot, options = {}) {
   const errors = [];
-  const files = listFiles(root);
+  const candidateFiles = listFiles(root);
+  const ignoredPaths = ignoredPathsByGit(root, candidateFiles);
+  const files = candidateFiles.filter((file) => !ignoredPaths.has(file));
   const allowlist = readJson(root, 'release/allowlist.json', errors, 'allowlist');
   const privacy = readJson(root, 'release/privacy-review.json', errors, 'privacy-record');
   const allowed = new Set(allowlist?.allowedFiles ?? []);
