@@ -6,7 +6,7 @@ The site leads with a concise hiring case. It then provides dated evidence, expl
 
 ## Current state
 
-This is the professional public repository staging area for `marcus-uden-dev/ai-native-proof-of-work`. It contains the curated static site and a staged migration of project strategy and case-study evidence from the earlier proof-of-work archive. It is a public, recruiter-shareable evidence layer around product work, not a mirror of every working file or a claim that a product is released or market-validated.
+This is the public repository for `marcus-uden-dev/ai-native-proof-of-work`. Its curated static site is served at `https://marcus-uden-dev.github.io/ai-native-proof-of-work/`. It contains a content-only migration of selected project strategy and case-study evidence from the earlier proof-of-work archive. It is a public, recruiter-shareable evidence layer around product work, not a mirror of every working file or a claim that a product is released or market-validated.
 
 The migration is content-only. The earlier repository history is not imported. See [release/migration-manifest.json](release/migration-manifest.json) for the staged file boundary. The recruiter route does not require a custom domain or a separate public website.
 
@@ -35,10 +35,10 @@ npm test
 npm run release:validate
 ```
 
-The static site will live under `site/`. The release validator checks file allowlisting, identity separation, private paths, credentials, product maturity wording, Git metadata, and binary privacy records.
+The static site is served from `site/` through GitHub Pages. The release validator checks file allowlisting, identity separation, private paths, credentials, product maturity wording, Git metadata, and binary privacy records.
 
 ## Publication boundary
 
-Publication, GitHub Pages activation, and domain changes require explicit approval. The rollback method is an append-only revert commit to the last approved release.
+The public repository and its GitHub Pages project URL are active. New public content, GitHub Pages configuration changes, and domain changes require explicit approval. The rollback method is an append-only revert commit to the last approved release.
 
 CI uses read-only permissions for quality checks. Pages and identity-token permissions exist only in the deployment job, which runs after Quality succeeds. See `docs/RELEASE_RUNBOOK.md` for the release, temporary-host, rollback, and domain gates.

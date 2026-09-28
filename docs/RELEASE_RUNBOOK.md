@@ -2,7 +2,7 @@
 
 ## Current gate
 
-The repository is local-only. Public repository creation, Pages activation, and DNS changes require explicit approval from Marcus.
+The repository is public, and its GitHub Pages project URL is active. No custom domain is active. New public content, GitHub Pages configuration changes, and DNS changes require explicit approval from Marcus.
 
 ## Local Ready gate
 
@@ -19,24 +19,24 @@ git diff --check
 
 Confirm these items before approval:
 
-1. `git remote -v` is empty.
+1. `git remote -v` identifies only `https://github.com/marcus-uden-dev/ai-native-proof-of-work.git` as `origin`.
 2. Every commit uses `Marcus Udén <marcus.uden.dev@gmail.com>`.
 3. `release/privacy-review.json` binds every binary digest to an ancestor candidate commit.
 4. The private repository HEAD, remote, and user-owned changes remain unchanged.
-5. The professional profile staging repository has no remote and contains only approved professional identity text.
+5. The public repository contains only approved professional identity text.
 
 ## Publication gate — one-way door
 
 Public caches and Git history can retain published material. Do not run these steps without explicit approval.
 
-After approval:
+After approval for a new public release:
 
-1. Create `marcus-uden-dev/ai-native-proof-of-work` as a new public repository. Do not fork, transfer, mirror, or import history.
-2. Add only `https://github.com/marcus-uden-dev/ai-native-proof-of-work.git` as `origin`.
-3. Configure the protected identity and ancestor values as repository secrets for the Quality workflow.
-4. Push the approved staging history.
-5. Confirm repository metadata reports no fork parent.
-6. Confirm Quality passes before Pages deploys.
+1. Run the Local Ready gate.
+2. Confirm the changed files are listed in `release/allowlist.json`.
+3. Complete the required privacy review, including binary digests where applicable.
+4. Confirm Quality passes before Pages deploys.
+5. Push the approved release commit to `origin`.
+6. Confirm the Pages deployment serves that commit.
 7. Record the released commit SHA and the last approved rollback commit.
 
 ## Temporary Pages validation
@@ -67,5 +67,5 @@ Search Console registration follows a working HTTPS custom domain. It is not a L
 
 ## External AI gate
 
-After the temporary public URL exists, run every fixture in `tests/evaluation/fixtures.json` with ChatGPT and Claude. Use `tests/evaluation/rubric.md`. Record provider, model, date, access state, output, and pass or failure. Provider access limits are recorded; they do not weaken the public evidence contract.
+Before a material public release, run every fixture in `tests/evaluation/fixtures.json` against the active project URL with ChatGPT and Claude. Use `tests/evaluation/rubric.md`. Record provider, model, date, access state, output, and pass or failure. Provider access limits are recorded; they do not weaken the public evidence contract.
 
