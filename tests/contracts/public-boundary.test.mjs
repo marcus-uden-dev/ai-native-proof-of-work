@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { execFileSync } from 'node:child_process';
 import { mkdtempSync, mkdirSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { dirname, join } from 'node:path';
@@ -40,6 +41,14 @@ test('accepts a clean allowlisted scaffold without a remote', () => {
 test('ignores the Git worktree control file during public release validation', () => {
   const root = makeRepository({ 'README.md': '# Public proof' });
   writeFileSync(join(root, '.git'), 'gitdir: /private/worktree-control');
+  assert.deepEqual(validateRepository(root).errors, []);
+});
+
+test('ignores local files covered by the repository Git ignore rules', () => {
+  const root = makeRepository({ 'README.md': '# Public proof' }, {}, ['.gitignore']);
+  execFileSync('git', ['init', '--quiet', root]);
+  writeFileSync(join(root, '.gitignore'), 'private-notes.md\n');
+  writeFileSync(join(root, 'private-notes.md'), 'not public');
   assert.deepEqual(validateRepository(root).errors, []);
 });
 
