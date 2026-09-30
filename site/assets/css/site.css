@@ -1345,6 +1345,81 @@ h3 {
   grid-template-columns: 1fr;
 }
 
+.repository-interview .experience-fit-signals {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.repository-interview .experience-fit-signals__heading {
+  margin: 0;
+  color: var(--ri-gold);
+  font: 0.77rem/1.45 var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.repository-interview .experience-fit-signals__intro {
+  max-width: 48rem;
+  margin: -0.25rem 0 0.15rem;
+  color: var(--ri-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.repository-interview .experience-fit-signal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .experience-fit-signal h4 {
+  margin: 0;
+  color: var(--ri-panel-text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.repository-interview .experience-fit-signal .evidence-state {
+  margin: 0 !important;
+  text-align: right;
+}
+
+.repository-interview .experience-fit-details,
+.repository-interview .role-coverage__details {
+  margin-top: 0.25rem;
+  border-block: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .experience-fit-details > summary,
+.repository-interview .role-coverage__details > summary {
+  min-height: 44px;
+  padding: 0.8rem 1.4rem 0.8rem 0;
+  color: var(--ri-gold);
+  cursor: pointer;
+  font: 0.78rem/1.45 var(--mono);
+}
+
+.repository-interview .experience-fit-details > summary:focus-visible,
+.repository-interview .role-coverage__details > summary:focus-visible {
+  outline: 2px solid var(--ri-gold);
+  outline-offset: -2px;
+}
+
+.repository-interview .experience-fit-details[open] > summary,
+.repository-interview .role-coverage__details[open] > summary {
+  border-bottom: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .experience-fit-details > .experience-fit-tracks,
+.repository-interview .role-coverage__details > .role-coverage__list {
+  padding: 0.85rem 0;
+}
+
 .repository-interview .role-coverage {
   margin-top: 1.5rem;
   padding-top: 1rem;
@@ -1591,6 +1666,13 @@ h3 {
   .repository-interview .experience-fit-radar__axis-label { display: none; }
 
   .repository-interview .experience-fit-radar__axis-index { display: block; }
+
+  .repository-interview .experience-fit-signal {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .repository-interview .experience-fit-signal .evidence-state { text-align: left; }
 
   .repository-interview .role-coverage__list {
     grid-template-columns: 1fr;

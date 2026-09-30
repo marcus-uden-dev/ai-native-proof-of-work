@@ -363,6 +363,60 @@ if (promptGenerator) {
     return group;
   }
 
+  function renderExperienceFitTrack(dimension, catalogue) {
+    const track = document.createElement('article');
+    track.className = 'experience-fit-track';
+    const heading = document.createElement('h4');
+    heading.textContent = dimension.label;
+    const state = document.createElement('p');
+    state.className = `evidence-state evidence-state--${dimension.state}`;
+    state.textContent = stateLabel(dimension.state);
+    const explanation = document.createElement('p');
+    explanation.textContent = dimension.explanation;
+    track.append(heading, state, renderEvidenceStateBar(dimension.state, dimension.label), explanation);
+    addEvidenceLinks(track, dimension.evidenceIds, catalogue);
+    appendExplorationArea(track, dimension.verificationQuestion, dimension.state);
+    return track;
+  }
+
+  function executiveSignals(dimensions) {
+    const selected = dimensions.filter((dimension) => dimension.state === 'direct').slice(0, 2);
+    const exploration = dimensions.find((dimension) => (
+      !selected.includes(dimension)
+      && ['needs_interview_verification', 'not_evidenced'].includes(dimension.state)
+    ));
+    if (exploration) selected.push(exploration);
+    for (const dimension of dimensions) {
+      if (selected.length === 3) break;
+      if (!selected.includes(dimension)) selected.push(dimension);
+    }
+    return selected;
+  }
+
+  function renderExecutiveSignal(dimension) {
+    const signal = document.createElement('article');
+    signal.className = 'experience-fit-signal';
+    const heading = document.createElement('h4');
+    heading.textContent = dimension.label;
+    const state = document.createElement('p');
+    state.className = `evidence-state evidence-state--${dimension.state}`;
+    state.textContent = stateLabel(dimension.state);
+    signal.append(heading, state);
+    return signal;
+  }
+
+  function renderEvidenceDetails(dimensions, catalogue) {
+    const details = document.createElement('details');
+    details.className = 'experience-fit-details';
+    const summary = document.createElement('summary');
+    summary.textContent = `Show full evidence details and sources (${dimensions.length} dimensions)`;
+    const tracks = document.createElement('div');
+    tracks.className = 'experience-fit-tracks';
+    dimensions.forEach((dimension) => tracks.append(renderExperienceFitTrack(dimension, catalogue)));
+    details.append(summary, tracks);
+    return details;
+  }
+
   function renderRoleCoverage(roleCoverage, catalogue) {
     if (!Array.isArray(roleCoverage) || roleCoverage.length === 0) return null;
     const section = document.createElement('section');
@@ -372,6 +426,10 @@ if (promptGenerator) {
     const introduction = document.createElement('p');
     introduction.className = 'role-coverage__intro';
     introduction.textContent = 'These tracks change with the submitted role. They show cited public evidence for the role requirements, not a candidate score.';
+    const details = document.createElement('details');
+    details.className = 'role-coverage__details';
+    const summary = document.createElement('summary');
+    summary.textContent = `Show role-specific evidence coverage (${roleCoverage.length} requirement${roleCoverage.length === 1 ? '' : 's'})`;
     const list = document.createElement('div');
     list.className = 'role-coverage__list';
     for (const coverage of roleCoverage) {
@@ -392,7 +450,8 @@ if (promptGenerator) {
       appendExplorationArea(item, coverage.verificationQuestion, coverage.state);
       list.append(item);
     }
-    section.append(heading, introduction, list);
+    details.append(summary, list);
+    section.append(heading, introduction, details);
     return section;
   }
 
@@ -420,27 +479,21 @@ if (promptGenerator) {
     radar.className = 'experience-fit-radar';
     radar.append(renderSemanticRadar(assessment.dimensions));
     const caption = document.createElement('figcaption');
-    caption.textContent = 'One point represents each labelled dimension. The shape encodes cited public-evidence states only; read the evidence tracks for the full interpretation.';
+    caption.textContent = 'One point represents each labelled dimension. The shape encodes cited public-evidence states only; open evidence details for the full interpretation.';
     radar.append(caption);
     overview.append(radar, renderRadarKey(assessment.dimensions));
-    const tracks = document.createElement('div');
-    tracks.className = 'experience-fit-tracks';
-    for (const dimension of assessment.dimensions) {
-      const track = document.createElement('article');
-      track.className = 'experience-fit-track';
-      const heading = document.createElement('h4');
-      heading.textContent = dimension.label;
-      const state = document.createElement('p');
-      state.className = `evidence-state evidence-state--${dimension.state}`;
-      state.textContent = stateLabel(dimension.state);
-      const explanation = document.createElement('p');
-      explanation.textContent = dimension.explanation;
-      track.append(heading, state, renderEvidenceStateBar(dimension.state, dimension.label), explanation);
-      addEvidenceLinks(track, dimension.evidenceIds, catalogue);
-      appendExplorationArea(track, dimension.verificationQuestion, dimension.state);
-      tracks.append(track);
-    }
-    map.append(overview, tracks);
+    const signals = document.createElement('section');
+    signals.className = 'experience-fit-signals';
+    const signalHeading = document.createElement('h4');
+    signalHeading.className = 'experience-fit-signals__heading';
+    signalHeading.textContent = 'Executive scan';
+    const signalIntroduction = document.createElement('p');
+    signalIntroduction.className = 'experience-fit-signals__intro';
+    signalIntroduction.textContent = 'The clearest public-evidence signals for this role. Open the detail view to inspect every dimension and its cited sources.';
+    signals.append(signalHeading, signalIntroduction);
+    executiveSignals(assessment.dimensions).forEach((dimension) => signals.append(renderExecutiveSignal(dimension)));
+    signals.append(renderEvidenceDetails(assessment.dimensions, catalogue));
+    map.append(overview, signals);
     fragment.append(map);
     const roleCoverage = renderRoleCoverage(assessment.roleCoverage, catalogue);
     if (roleCoverage) fragment.append(roleCoverage);
