@@ -6,6 +6,7 @@
   "description": "Recruiter-first public proof of work for Marcus Udén",
   "scripts": {
     "serve": "node scripts/serve-static.mjs",
+    "serve:prototypes": "node scripts/serve-static.mjs --root prototypes --port 54959",
     "test": "npm run test:contracts && npm run test:repository-evidence-index && npm run test:review-api && npm run test:e2e",
     "render:decision-log": "node scripts/render-decision-log.mjs",
     "check:decision-log": "node scripts/render-decision-log.mjs --check",
