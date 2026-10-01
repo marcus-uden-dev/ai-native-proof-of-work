@@ -258,6 +258,45 @@ Next Action → Use the complete translation plan to confirm the canonical publi
 
 Planned — translation research is complete. Implementation remains deferred until the canonical public GitHub-profile source and public release checkout are confirmed. Technical-depth personalization remains deferred.
 
+## 2026-08-24 — Name the operating layer Personal AI Harness
+
+### Context
+
+The system contains memory, agents, automation, reusable workflows, and recursive improvement, but is not itself the product portfolio.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Use Portfolio OS | Familiar portfolio framing | Hides the agent and workflow infrastructure |
+| Use Personal AI Harness | Describes the operating layer directly | Less familiar terminology |
+
+### Tradeoffs
+
+The name is less familiar than Portfolio OS, but it better describes the underlying agent and workflow infrastructure.
+
+### Decision
+
+Use Personal AI Harness as the name for the continuously evolving operating layer behind the work.
+
+### Evidence
+
+Evidence Status: Verified. Inventory ID: `decision-2026-08-24-personal-ai-harness-name`. [Personal AI Harness strategy](../strategy/personal-ai-harness/README.md), [README](../README.md), [changelog](CHANGELOG.md)
+
+### Open Questions
+
+Which future recruiter-facing explanations need to distinguish the harness from the products it supports?
+
+### Next Action
+
+Keep product claims separate from the operating-layer name in recruiter-facing documentation.
+
+### Status
+
+Decision
+
+---
+
 ## 2026-08-09 — Separate committed product-code freshness from later docs/ops commits
 
 ### Context
@@ -477,6 +516,280 @@ Next Action → Review recruiter-facing navigation after the next weekly run.
 ### Evidence
 
 [strategy/README.md](../strategy/README.md), [strategy/job-agent/README.md](../strategy/job-agent/README.md), [strategy/pkm/README.md](../strategy/pkm/README.md), [strategy/household-budget-app/README.md](../strategy/household-budget-app/README.md), [strategy/personal-ai-harness/README.md](../strategy/personal-ai-harness/README.md)
+
+### Status
+
+Decision
+
+---
+
+## 2026-05-11 — Keep PKM pricing deferred until repeated daily value is validated
+
+### Context
+
+PKM may reduce knowledge-work friction through ingestion, search, learning, and browser capture, but repeated value is not yet validated.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Set pricing now | Starts commercial testing | Risks pricing an unvalidated workflow |
+| Defer pricing until a daily-use path repeats | Protects credibility and validates value first | Leaves the commercial model unresolved |
+
+### Tradeoffs
+
+Deferral slows commercial testing, but avoids unsupported pricing claims.
+
+### Decision
+
+Defer PKM pricing until one end-to-end daily-use path demonstrates repeated value.
+
+### Evidence
+
+Evidence Status: Verified. Inventory ID: `decision-2026-05-11-pkm-pricing-boundary`. [Pricing strategy](../strategy/pkm/business/PRICING_STRATEGY.md)
+
+### Open Questions
+
+Which repeated workflow and outcome signal will demonstrate sufficient daily-use value?
+
+### Next Action
+
+Validate one end-to-end PKM workflow before revisiting pricing.
+
+### Status
+
+Decision
+
+---
+
+## 2026-05-11 — Keep PKM supporting until sustained value is validated
+
+### Context
+
+The PKM work is promising, but sustained daily-use value needs stronger evidence.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Present PKM as a validated product | Stronger headline | Overstates adoption and outcomes |
+| Present PKM as supporting evidence | Narrower and defensible | Gives the project less prominence |
+
+### Tradeoffs
+
+The narrower framing limits the claim but protects evidence quality.
+
+### Decision
+
+Present PKM as supporting evidence rather than claim validated product-market value.
+
+### Evidence
+
+Evidence Status: Verified. Inventory ID: `decision-2026-05-11-pkm-evidence-boundary`. [PKM strategy](../strategy/pkm/README.md), [project proof points](../PROJECT_PROOF_POINTS.md)
+
+### Open Questions
+
+What verified usage evidence would justify a broader product claim?
+
+### Next Action
+
+Keep recruiter-facing PKM claims bounded until sustained value is evidenced.
+
+### Status
+
+Decision
+
+---
+
+## 2026-05-11 — Treat telemetry and outcome learning as a product layer
+
+### Context
+
+The workflow needs quality and outcome feedback, but instrumentation can add complexity before the core flow is proven.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Instrument extensively now | Earlier signals | Adds complexity before the core flow is proven |
+| Make telemetry and outcome learning a planned product layer | Preserves learning path with bounded scope | Defers some measurement |
+
+### Tradeoffs
+
+Keeping first instrumentation bounded reduces build scope but delays some learning.
+
+### Decision
+
+Include telemetry and outcome learning as a medium-priority product capability, with measurement planned before outcome claims are made.
+
+### Evidence
+
+Evidence Status: Verified. Inventory ID: `decision-2026-05-11-job-agent-telemetry-as-learning-layer`. [Product strategy](../strategy/job-agent/product/PRODUCT_STRATEGY.md), [case study](../case-studies/JOB_AGENT_CASE_STUDY.md)
+
+### Open Questions
+
+Which quality and outcome signals are useful and privacy-safe?
+
+### Next Action
+
+Define the smallest measurement set before making outcome claims.
+
+### Status
+
+Decision
+
+---
+
+## 2026-05-11 — Use a reviewed career workflow instead of an autonomous applier
+
+### Context
+
+Job-agent could be framed as generic AI writing, autonomous application sending, or a reviewed workflow connecting discovery, fit analysis, application support, and feedback.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Autonomous application sending | Fewer user steps | Higher trust, quality, privacy, and platform risk |
+| Reviewed career workflow | Preserves user control and safer boundaries | Adds review steps |
+
+### Tradeoffs
+
+Human review adds interaction steps, but lowers trust, quality, privacy, and platform risk.
+
+### Decision
+
+Start with a reviewed career workflow where the user keeps control of decisions, generated materials, privacy, and application actions.
+
+### Evidence
+
+Evidence Status: Verified. Inventory ID: `decision-2026-05-11-job-agent-reviewed-career-flow`. [Product strategy](../strategy/job-agent/product/PRODUCT_STRATEGY.md), [decision trail](../strategy/job-agent/decisions/DECISION_TRAIL.md)
+
+### Open Questions
+
+Which reviewed steps should be streamlined after real workflow evidence is available?
+
+### Next Action
+
+Keep review and user control explicit in the career workflow.
+
+### Status
+
+Decision
+
+---
+
+## 2026-05-11 — Test a job-search sprint or focused monthly plan first
+
+### Context
+
+The strongest paid job-agent workflow and willingness to pay are not validated.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Time-boxed sprint | Easy to explain and test | Less recurring revenue |
+| Lightweight monthly plan | Can scale recurring value | Needs sustained perceived value |
+| Usage credits or coach license | Familiar alternatives | Less aligned with current evidence |
+
+### Tradeoffs
+
+A sprint is clearer but less recurring; a subscription needs sustained value.
+
+### Decision
+
+Treat a time-boxed job-search sprint and a lightweight monthly plan as the first pricing hypotheses, rather than committing to usage credits or a coach license.
+
+### Evidence
+
+Evidence Status: Verified. Inventory ID: `decision-2026-05-11-job-agent-pricing-hypotheses`. [Pricing strategy](../strategy/job-agent/business/PRICING_STRATEGY.md)
+
+### Open Questions
+
+Which offer produces repeatable value and willingness to pay?
+
+### Next Action
+
+Test the hypotheses only after the core workflow and value signals are clearer.
+
+### Status
+
+Decision
+
+---
+
+## 2026-05-11 — Use household budgeting as shared-domain modeling evidence
+
+### Context
+
+The budget app involves shared roles, imports, review flows, forecasts, and privacy-sensitive data.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Present it as a generic finance app | Simple headline | Hides domain and workflow reasoning |
+| Present it as shared-domain modeling evidence | Shows concrete product judgment | Requires a more specific explanation |
+
+### Tradeoffs
+
+The specific framing is narrower, but makes the product reasoning easier to evaluate.
+
+### Decision
+
+Present it as evidence of domain modeling and shared workflow design, not as a generic finance app claim.
+
+### Evidence
+
+Evidence Status: Verified. Inventory ID: `decision-2026-05-11-household-budget-domain-modeling`. [Household strategy](../strategy/household-budget-app/README.md), [decision trail](../strategy/household-budget-app/decisions/DECISION_TRAIL.md), [project proof points](../PROJECT_PROOF_POINTS.md)
+
+### Open Questions
+
+Which additional privacy-safe artifacts best demonstrate the shared workflow?
+
+### Next Action
+
+Keep household-budget proof focused on domain modeling and shared workflow design.
+
+### Status
+
+Decision
+
+---
+
+## 2026-05-11 — Defer household-budget pricing until trust and daily value are proven
+
+### Context
+
+Household finance requires confidence in workflow safety, import quality, privacy, and repeated value before a price model can be evaluated.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Set pricing now | Enables immediate commercial testing | Prices a sensitive workflow before trust is earned |
+| Defer pricing | Protects trust and evidence quality | Delays commercial testing |
+
+### Tradeoffs
+
+Waiting delays commercial testing, but avoids pricing a sensitive workflow before trust is earned.
+
+### Decision
+
+Defer pricing decisions until the privacy-safe workflow, import quality, and daily-use value are stronger.
+
+### Evidence
+
+Evidence Status: Verified. Inventory ID: `decision-2026-05-11-household-budget-pricing-boundary`. [Pricing strategy](../strategy/household-budget-app/business/PRICING_STRATEGY.md)
+
+### Open Questions
+
+What evidence is sufficient to revisit pricing without exposing household or financial details?
+
+### Next Action
+
+Strengthen privacy-safe workflow and value evidence before pricing work.
 
 ### Status
 
