@@ -9,6 +9,19 @@
   {
     "date": "2026-08-24",
     "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Profile experience",
+    "tags": [
+      "stakeholder-understanding",
+      "design-governance",
+      "quality-assurance"
+    ],
+    "why": "Planned one localized content model for English and Swedish, with stable capability identifiers and synchronized display labels.",
+    "demonstrates": "Keeps a multi-language reader experience consistent without changing the underlying evidence structure."
+  },
+  {
+    "date": "2026-08-24",
+    "project": "Personal AI Harness",
     "tags": [
       "product-judgment",
       "systems-thinking",
@@ -96,6 +109,17 @@
     ],
     "why": "Placed the decision, recommended action, response options, and concise evidence near the top of decision-heavy reports.",
     "demonstrates": "Makes complex review outputs easier for people to understand and act on."
+  },
+  {
+    "date": "2026-06-14",
+    "project": "Job-agent",
+    "tags": [
+      "research-judgment",
+      "evidence-driven",
+      "quality-assurance"
+    ],
+    "why": "Used direct source verification when status documentation could lag behind the latest product state.",
+    "demonstrates": "Resolves freshness conflicts by checking the strongest available evidence before describing project progress."
   },
   {
     "date": "2026-06-02",
