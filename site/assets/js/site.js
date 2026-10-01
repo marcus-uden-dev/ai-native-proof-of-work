@@ -405,6 +405,89 @@ if (promptGenerator) {
     return signal;
   }
 
+  function narrativeChip(label, variant = 'capability') {
+    const chip = document.createElement('span');
+    chip.className = 'role-narrative__chip role-narrative__chip--' + variant;
+    chip.textContent = label;
+    return chip;
+  }
+
+  function renderRoleNarrative(assessment, catalogue) {
+    const section = document.createElement('section');
+    section.className = 'role-narrative';
+
+    const header = document.createElement('div');
+    header.className = 'role-narrative__header';
+    const title = document.createElement('div');
+    const label = document.createElement('p');
+    label.className = 'role-narrative__label';
+    label.textContent = 'Role narrative';
+    const heading = document.createElement('h3');
+    heading.textContent = assessment.summary;
+    title.append(label, heading);
+
+    const ingress = document.createElement('p');
+    ingress.className = 'role-narrative__ingress';
+    ingress.append('The public record gives the strongest support for ');
+    const direct = assessment.dimensions.filter((dimension) => dimension.state === 'direct').slice(0, 3);
+    direct.forEach((dimension, index) => {
+      if (index > 0) ingress.append(index === direct.length - 1 ? ' and ' : ', ');
+      ingress.append(narrativeChip(dimension.label));
+    });
+    if (direct.length === 0) ingress.append('the areas cited below');
+    ingress.append('. It documents the work through ');
+    ingress.append(narrativeChip('Source-linked product decisions', 'evidence'));
+    ingress.append(', ');
+    ingress.append(narrativeChip('Reusable workflow controls', 'evidence'));
+    ingress.append(', and ');
+    ingress.append(narrativeChip('An inspectable evidence trail', 'evidence'));
+    ingress.append('.');
+    header.append(title, ingress);
+
+    const ledger = document.createElement('div');
+    ledger.className = 'role-narrative__ledger';
+    const coverage = Array.isArray(assessment.roleCoverage) ? assessment.roleCoverage.slice(0, 2) : [];
+    for (const item of coverage) {
+      const row = document.createElement('article');
+      row.className = 'role-narrative__row';
+      const question = document.createElement('h4');
+      question.textContent = 'Can Marcus support “' + item.roleNeed + '”?';
+      const explanation = document.createElement('p');
+      explanation.textContent = item.explanation;
+      const evidence = document.createElement('div');
+      evidence.className = 'role-narrative__evidence';
+      const state = document.createElement('p');
+      state.className = 'evidence-state evidence-state--' + item.state;
+      state.textContent = stateLabel(item.state);
+      evidence.append(state);
+      const sources = document.createElement('p');
+      sources.className = 'role-narrative__source-count';
+      sources.textContent = item.evidenceIds.length + ' cited public source' + (item.evidenceIds.length === 1 ? '' : 's');
+      evidence.append(sources);
+      addEvidenceLinks(evidence, item.evidenceIds, catalogue);
+      row.append(question, explanation, evidence);
+      ledger.append(row);
+    }
+
+    const domainRow = document.createElement('article');
+    domainRow.className = 'role-narrative__row';
+    const domainQuestion = document.createElement('h4');
+    domainQuestion.textContent = 'Can he apply this in this role’s domain?';
+    const domainExplanation = document.createElement('p');
+    domainExplanation.textContent = 'The public record does not prove the local systems, metrics, or domain constraints. That is an exploration topic, not a negative score.';
+    const domainEvidence = document.createElement('div');
+    domainEvidence.className = 'role-narrative__evidence';
+    const domainState = document.createElement('p');
+    domainState.className = 'evidence-state evidence-state--needs_interview_verification';
+    domainState.textContent = 'Exploration topic';
+    domainEvidence.append(domainState);
+    domainRow.append(domainQuestion, domainExplanation, domainEvidence);
+    ledger.append(domainRow);
+
+    section.append(header, ledger);
+    return section;
+  }
+
   function renderEvidenceDetails(dimensions, catalogue) {
     const details = document.createElement('details');
     details.className = 'experience-fit-details';
@@ -457,10 +540,7 @@ if (promptGenerator) {
 
   function renderRole(assessment, catalogue, { roleTitle = 'Submitted role description' } = {}) {
     const fragment = document.createDocumentFragment();
-    const summary = document.createElement('p');
-    summary.className = 'review-summary';
-    summary.textContent = assessment.summary;
-    fragment.append(summary);
+    fragment.append(renderRoleNarrative(assessment, catalogue));
 
     appendTextSection(fragment, 'Role-specific needs detected', assessment.roleNeeds, 'review-detail-list role-needs-list', 'review-detail--role-needs');
 
@@ -486,12 +566,11 @@ if (promptGenerator) {
     signals.className = 'experience-fit-signals';
     const signalHeading = document.createElement('h4');
     signalHeading.className = 'experience-fit-signals__heading';
-    signalHeading.textContent = 'Executive scan';
+    signalHeading.textContent = 'Evidence by dimension';
     const signalIntroduction = document.createElement('p');
     signalIntroduction.className = 'experience-fit-signals__intro';
-    signalIntroduction.textContent = 'The clearest public-evidence signals for this role. Open the detail view to inspect every dimension and its cited sources.';
+    signalIntroduction.textContent = 'The map adapts to the submitted role. Open the evidence detail view to inspect every dimension and its cited sources.';
     signals.append(signalHeading, signalIntroduction);
-    executiveSignals(assessment.dimensions).forEach((dimension) => signals.append(renderExecutiveSignal(dimension)));
     signals.append(renderEvidenceDetails(assessment.dimensions, catalogue));
     map.append(overview, signals);
     fragment.append(map);

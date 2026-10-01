@@ -1350,6 +1350,119 @@ h3 {
   gap: 0.75rem;
 }
 
+.repository-interview .role-narrative {
+  margin: 1.4rem 0 1.8rem;
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+}
+
+.repository-interview .role-narrative__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(16rem, 0.95fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(1.4rem, 3vw, 2.7rem);
+  border-bottom: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .role-narrative__label {
+  margin: 0 0 1rem;
+  color: var(--ri-gold);
+  font: 0.77rem/1.45 var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.repository-interview .role-narrative h3 {
+  max-width: 17ch;
+  margin: 0;
+  color: var(--ri-panel-text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 3.4vw, 3.3rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.repository-interview .role-narrative__ingress {
+  align-self: center;
+  margin: 0;
+  color: var(--ri-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.repository-interview .role-narrative__chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  margin: 0.08rem 0.08rem;
+  padding: 0.08rem 0.45rem;
+  border: 1px solid #6c9d88;
+  color: #c2e1d1;
+  font: 0.72rem/1.25 var(--mono);
+  letter-spacing: 0.01em;
+  vertical-align: baseline;
+}
+
+.repository-interview .role-narrative__chip--evidence {
+  border-color: #b98b52;
+  color: #efd1a6;
+}
+
+.repository-interview .role-narrative__ledger {
+  display: grid;
+}
+
+.repository-interview .role-narrative__row {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.8fr) minmax(18rem, 1.25fr) minmax(10rem, 0.55fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: start;
+  padding: clamp(1.15rem, 2.4vw, 1.8rem) clamp(1.4rem, 3vw, 2.7rem);
+  border-bottom: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .role-narrative__row:last-child {
+  border-bottom: 0;
+}
+
+.repository-interview .role-narrative__row h4 {
+  margin: 0;
+  color: var(--ri-panel-text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.repository-interview .role-narrative__row > p {
+  margin: 0;
+  color: var(--ri-muted);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.repository-interview .role-narrative__evidence {
+  display: grid;
+  justify-items: start;
+  gap: 0.35rem;
+}
+
+.repository-interview .role-narrative__evidence .evidence-state {
+  margin: 0 !important;
+}
+
+.repository-interview .role-narrative__source-count {
+  margin: 0;
+  color: var(--ri-muted);
+  font: 0.7rem/1.45 var(--mono);
+}
+
+.repository-interview .role-narrative__evidence .evidence-links {
+  margin-top: 0.25rem;
+}
+
 .repository-interview .experience-fit-signals__heading {
   margin: 0;
   color: var(--ri-gold);
@@ -1447,6 +1560,21 @@ h3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .repository-interview .role-narrative__header,
+  .repository-interview .role-narrative__row {
+    grid-template-columns: 1fr;
+  }
+
+  .repository-interview .role-narrative__header {
+    gap: 1.25rem;
+  }
+
+  .repository-interview .role-narrative h3 {
+    max-width: 20ch;
+  }
 }
 
 .repository-interview .role-coverage__item {
