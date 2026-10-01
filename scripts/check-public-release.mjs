@@ -214,7 +214,10 @@ export function validateRepository(root = repositoryRoot, options = {}) {
     // Validate the resolved commit object, rather than the symbolic HEAD ref. This keeps the
     // ancestry check stable in CI checkouts that also fetch unrelated remote branches or refs.
     const roots = git(root, ['--no-replace-objects', 'rev-list', '--max-parents=0', '--end-of-options', head]).split(/\r?\n/).filter(Boolean);
-    if (roots.length !== 1) addMatch(errors, 'git-ancestry', '.git', 'The repository must have exactly one clean root commit.');
+    if (roots.length !== 1) {
+      const foundRoots = roots.length > 0 ? roots.join(', ') : 'none (the Git command returned no root commit)';
+      addMatch(errors, 'git-ancestry', '.git', `The repository must have exactly one clean root commit; found ${roots.length}: ${foundRoots}.`);
+    }
     const authors = git(root, ['log', '--format=%ae']).split(/\r?\n/).filter(Boolean);
     if (authors.some((email) => email.toLowerCase() !== requiredProfessionalEmail)) {
       addMatch(errors, 'git-author', '.git', 'All commits must use the professional author email.');
