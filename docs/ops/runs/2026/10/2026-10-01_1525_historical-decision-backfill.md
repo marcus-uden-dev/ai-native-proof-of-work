@@ -4,7 +4,7 @@ author: Marcus Udén + Codex
 source_tool: Codex Desktop
 source: Historical decision backfill run
 type: ops-run
-status: in-progress
+status: complete
 review_status: objective-gates
 tags: [historical-decisions, decision-log, evidence, github-pages, automation]
 ---
@@ -20,8 +20,8 @@ The private inventory now contains 20 normalized candidates. Fifteen passed the 
 - Public decision records added: 2.
 - Already represented public candidates: 13.
 - Held candidates exported: 0.
-- Public commits: `d0b78c2` (historical evidence) and `97428ea` (generated evidence-index refresh).
-- GitHub Pages state: pending the Quality workflow for `97428ea`.
+- Public commits: `d0b78c2` (historical evidence), `97428ea` (generated evidence-index refresh), and `56f9ec0` (filter-count test made data-driven).
+- GitHub Quality passed for `56f9ec0`; the Deploy Pages workflow then passed. The live public JSON returned HTTP 200 with 20 records and 7 Job-agent records.
 
 ## Gates
 
@@ -33,7 +33,9 @@ The private inventory now contains 20 normalized candidates. Fifteen passed the 
 | Public evidence-index projection | Pass | Generated index check passes after regeneration. |
 | Public project-replay projection | Pass | 4 project-replay contract tests pass after regeneration. |
 | Public release validation | Pass | Public release validator passes for 162 files. |
-| Public end-to-end browser tests | Pending CI | Playwright is not installed in the isolated release clone. |
+| Public end-to-end browser tests | Pass | 84 Playwright tests pass after locked dependencies are installed in the isolated release clone. |
+| GitHub Quality | Pass | [Quality run 36913121951](https://github.com/marcus-uden-dev/ai-native-proof-of-work/actions/runs/36913121951). |
+| GitHub Pages deployment | Pass | [Deploy Pages run 36913377868](https://github.com/marcus-uden-dev/ai-native-proof-of-work/actions/runs/36913377868); live public JSON returned HTTP 200. |
 
 ## Hold register
 
@@ -44,7 +46,7 @@ The private inventory now contains 20 normalized candidates. Fifteen passed the 
 
 ## Recovery note
 
-The first public Quality run failed because generated public evidence artifacts were stale after a concurrent upstream update. The run regenerated the repository evidence index and the project-replay static fallback, then reran the affected gates. The corrected follow-up commit triggered a new Quality workflow.
+The first public Quality run failed because generated public evidence artifacts were stale after a concurrent upstream update. The run regenerated the repository evidence index and the project-replay static fallback. The next Quality run exposed stale hard-coded E2E filter counts after the public decision-log total grew. The test now derives counts from the same public decision-log JSON that drives the page. Quality and deployment passed after that root-cause fix.
 
 ## Next automatic action
 
