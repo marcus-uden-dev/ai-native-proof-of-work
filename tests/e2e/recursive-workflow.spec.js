@@ -131,22 +131,27 @@ test('the homepage Decision Log renders the newest published entry', async ({ pa
   await expect(section.getByText('Made each AI-assisted response identify its model and reasoning effort when available. This makes model routing observable without exposing private operating details.')).toBeVisible();
 });
 
-test('the How I think project and capability filters reveal the matching decisions', async ({ page }) => {
+test('the How I think project and capability filters reveal the matching decisions', async ({ page, request }) => {
   await page.goto('/');
   const entries = page.locator('#decision-timeline > li[data-project]');
+  const decisionLogResponse = await request.get('/evidence/decision-log.json');
+  expect(decisionLogResponse.ok()).toBeTruthy();
+  const decisionLog = await decisionLogResponse.json();
+  const jobAgentCount = decisionLog.filter((entry) => entry.project === 'Job-agent').length;
+  const evidenceDrivenCount = decisionLog.filter((entry) => entry.tags.includes('evidence-driven')).length;
 
   await page.getByRole('button', { name: /Job-agent/ }).click();
-  await expect(page.locator('[data-scroll-status]')).toContainText('6 decisions');
-  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(6);
-  expect(await entries.evaluateAll((items) => items.filter((item) => item.hidden).length)).toBe(12);
+  await expect(page.locator('[data-scroll-status]')).toContainText(`${jobAgentCount} decisions`);
+  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(jobAgentCount);
+  expect(await entries.evaluateAll((items) => items.filter((item) => item.hidden).length)).toBe(decisionLog.length - jobAgentCount);
 
   await page.getByRole('button', { name: 'evidence-driven', exact: true }).click();
-  await expect(page.locator('[data-scroll-status]')).toContainText('4 decisions');
-  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(4);
+  await expect(page.locator('[data-scroll-status]')).toContainText(`${evidenceDrivenCount} decisions`);
+  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(evidenceDrivenCount);
 
   await page.getByRole('button', { name: /All decisions/ }).click();
-  await expect(page.locator('[data-scroll-status]')).toContainText('18 decisions');
-  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(18);
+  await expect(page.locator('[data-scroll-status]')).toContainText(`${decisionLog.length} decisions`);
+  expect(await entries.evaluateAll((items) => items.filter((item) => !item.hidden).length)).toBe(decisionLog.length);
 });
 
 test('the compact decision timeline auto-scrolls and pauses on interaction', async ({ page }) => {
