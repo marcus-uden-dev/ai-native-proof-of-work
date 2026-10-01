@@ -29,18 +29,18 @@ test('core positioning and actions remain available without JavaScript', async (
   await expect(page.getByText('Experienced individual contributor')).toBeVisible();
   const entryPoints = page.locator('.action-row--entry-points');
   await expect(entryPoints.getByRole('link', { name: 'Explore product work' })).toHaveAttribute('href', '#selected-proof');
-  await expect(entryPoints.getByRole('link', { name: 'Follow the decisions' })).toHaveAttribute('href', 'proof/recursive-workflow/#decision-log');
+  await expect(entryPoints.getByRole('link', { name: 'Follow the decisions' })).toHaveAttribute('href', '#decision-log');
   await expect(entryPoints.getByRole('link', { name: 'CV' })).toHaveAttribute('href', 'cv/');
   await expect(page.getByRole('link', { name: /Open the guided case study/ })).toHaveAttribute('href', 'proof/job-agent/');
   await expect(page.getByRole('link', { name: 'Request an interview' })).toHaveAttribute('href', /mailto:/);
   await expect(entryPoints.getByRole('link', { name: 'Interview my work' })).toHaveAttribute('href', '#ai-review');
-  const portfolioRoutes = page.locator('.wordmark__routes');
-  await expect(portfolioRoutes.getByRole('link', { name: 'Product portfolio' })).toHaveAttribute('href', '#selected-proof');
-  await expect(portfolioRoutes.getByRole('link', { name: 'CV' })).toHaveAttribute('href', 'cv/');
-  await expect(portfolioRoutes.getByRole('link', { name: 'Interview my work' })).toHaveAttribute('href', '#ai-review');
+  const primaryNavigation = page.getByRole('navigation', { name: 'Primary navigation' });
+  await expect(primaryNavigation.getByRole('link', { name: 'Product portfolio' })).toHaveAttribute('href', '#selected-proof');
+  await expect(primaryNavigation.getByRole('link', { name: 'CV' })).toHaveAttribute('href', 'cv/');
+  await expect(primaryNavigation.getByRole('link', { name: 'Interview my work' })).toHaveAttribute('href', '#ai-review');
   await expect(page.getByRole('link', { name: /Browse proof-of-work repo/ })).toHaveCount(0);
   await expect(page.getByRole('heading', { name: 'How the work is thought through.' })).toBeVisible();
-  await expect(page.getByText('Ask a question about the work or paste a non-confidential role description.')).toBeVisible();
+  await expect(page.getByText('Ask about a project or paste a non-confidential role description.')).toBeVisible();
   await context.close();
 });
 
@@ -53,12 +53,14 @@ test('keyboard navigation exposes visible focus and accurate names', async ({ pa
   await expect(page.getByRole('link', { name: 'Marcus Udén, home' })).toBeFocused();
 });
 
-test('homepage masthead gives direct access to portfolio routes', async ({ page }) => {
+test('homepage masthead keeps all first-level routes in one navigation group', async ({ page }) => {
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto('/');
-  const portfolioRoutes = page.locator('.wordmark__routes');
-  const portfolioLink = portfolioRoutes.getByRole('link', { name: 'Product portfolio' });
+  const primaryNavigation = page.getByRole('navigation', { name: 'Primary navigation' });
+  const portfolioLink = primaryNavigation.getByRole('link', { name: 'Product portfolio' });
   await expect(portfolioLink).toHaveAttribute('href', '#selected-proof');
+  await expect(primaryNavigation.getByRole('link', { name: 'CV' })).toHaveAttribute('href', 'cv/');
+  await expect(primaryNavigation.getByRole('link', { name: 'Interview my work' })).toHaveAttribute('href', '#ai-review');
   await portfolioLink.focus();
   await expect(portfolioLink).toHaveCSS('outline-style', 'solid');
 });

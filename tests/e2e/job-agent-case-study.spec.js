@@ -6,7 +6,7 @@ test('status and synthetic notices appear before the first proof frame', async (
   await expect(page.getByText('Work in progress', { exact: true })).toBeVisible();
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
-  await expect(page.getByText('Moderated recruiter review of the current decision-led prototype and its version history', { exact: true })).toBeVisible();
+  await expect(page.getByText(/next test/i)).toHaveCount(0);
   await expect(page.getByText(/release-one company is invented/i)).toBeVisible();
   const order = await page.locator('#evidence-boundary, #proof-sequence').evaluateAll((nodes) => nodes.map((node) => node.id));
   expect(order).toEqual(['evidence-boundary', 'proof-sequence']);
@@ -40,26 +40,102 @@ test('research includes the required decision signals and outputs', async ({ pag
     await expect(page.getByText(label, { exact: true })).toBeVisible();
   }
   for (const decision of ['Application tailoring', 'Interview investigation', 'Compensation']) {
-    await expect(page.getByRole('heading', { name: decision })).toBeVisible();
+    await expect(page.getByRole('heading', { name: decision, exact: true })).toBeVisible();
   }
 });
 
-test('current and historical proof frames use reviewed synthetic prototype images', async ({ page }) => {
+test('current, replayed, and archived proof frames use reviewed synthetic prototype images', async ({ page }) => {
   await page.goto('/proof/job-agent/#proof-sequence');
-  for (const grid of ['#proof-sequence .visual-proof-grid', '#ui-evolution .visual-proof-grid']) {
-    const figures = page.locator(`${grid} figure`);
-    await expect(figures).toHaveCount(3);
-    for (const image of await figures.locator('img').all()) {
-      await expect(image).toBeVisible();
-      expect(await image.getAttribute('alt')).toBeTruthy();
-    }
+  const proofImages = page.locator('#proof-sequence .visual-proof-grid img');
+  await expect(proofImages).toHaveCount(3);
+  const staticStoryImages = page.locator('#project-replay .project-story__chapters .project-story__visual img');
+  await expect(staticStoryImages).toHaveCount(3);
+  await expect(page.locator('#project-replay [data-story-stage] .project-story__visual img')).toHaveCount(1);
+  for (const image of [...await proofImages.all(), ...await staticStoryImages.all()]) {
+    expect(await image.getAttribute('alt')).toBeTruthy();
+    expect(await image.getAttribute('src')).toContain('v0.9-public-proof');
   }
+
+  await page.goto('/proof/job-agent/archive/0.8-public-proof/#ui-evolution');
+  await expect(page.getByText(/next test/i)).toHaveCount(0);
+  const historicalFigures = page.locator('#ui-evolution .visual-proof-grid figure');
+  await expect(historicalFigures).toHaveCount(3);
+  for (const image of await historicalFigures.locator('img').all()) {
+    await expect(image).toBeVisible();
+    expect(await image.getAttribute('alt')).toBeTruthy();
+  }
+});
+
+test('The Job-agent story preserves complete chapter records in raw HTML without JavaScript', async ({ request }) => {
+  const response = await request.get('/proof/job-agent/');
+  expect(response.ok()).toBeTruthy();
+  const html = await response.text();
+  expect(html).toContain('id="project-replay"');
+  expect(html).toContain('The Job-agent story.');
+  expect(html).toContain('data-project-story');
+  expect(html).toContain('Before build');
+  expect(html).toContain('Set up a repeatable way to find work');
+  expect(html).toContain('Bring fit, evidence, and action into one role view');
+  expect(html).not.toContain('v0.5 public proof');
+  expect(html).toContain('Evidence gaps kept out of this story');
+  expect(html).toContain('data-story-controls');
+  expect(html).not.toContain('data-replay-range');
+});
+
+test('The Job-agent story rewinds from the evidence-backed origin and restores the current state', async ({ page }) => {
+  await page.goto('/proof/job-agent/#project-replay');
+  const story = page.locator('#project-replay');
+  const stage = story.locator('[data-story-stage]');
+  const range = story.locator('[data-story-range]');
+  await expect(story.locator('.project-story__strip li')).toHaveCount(4);
+  await expect(story.locator('.project-story__chapters > li')).toHaveCount(4);
+  await expect(story.locator('[data-story-controls]')).toBeVisible();
+  await range.fill('0');
+  await expect(stage).toContainText('Before build');
+  await expect(stage).toContainText('Build a reviewed workflow');
+  expect(await story.locator('[data-story-marker]:not([hidden])').count()).toBe(1);
+  await story.getByRole('button', { name: 'Current state' }).click();
+  await expect(stage).toContainText('Bring fit, evidence, and action into one role view');
+  expect(await story.locator('[data-story-marker]:not([hidden])').count()).toBe(4);
+});
+
+test('The Job-agent story plays from origin and respects reduced motion', async ({ page }) => {
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await page.goto('/proof/job-agent/#project-replay');
+  const story = page.locator('#project-replay');
+  await story.getByRole('button', { name: 'Play from origin' }).click();
+  await expect(story.locator('[data-story-stage]')).toContainText('Before build');
+  await expect(story.getByText('Reduced motion is enabled. Playback starts at the origin and advances only when you select Next chapter.')).toBeVisible();
+  await expect(story.getByRole('button', { name: 'Play from origin' })).toBeEnabled();
+});
+
+test('The Job-agent story supports keyboard chapter navigation', async ({ page }) => {
+  await page.goto('/proof/job-agent/#project-replay');
+  const story = page.locator('#project-replay');
+  await story.getByRole('button', { name: 'Play from origin' }).click();
+  await story.locator('[data-story-select]').first().focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(story.locator('[data-story-stage]')).toContainText('Set up a repeatable way to find work');
+  await story.getByRole('button', { name: 'Next chapter' }).click();
+  await expect(story.locator('[data-story-stage]')).toContainText('Turn the workflow into a daily next move');
+});
+
+test('The Job-agent story is a vertical, keyboard-reachable chronological trail on mobile', async ({ page }) => {
+  await page.setViewportSize({ width: 375, height: 900 });
+  await page.goto('/proof/job-agent/#project-replay');
+  const story = page.locator('#project-replay');
+  await expect(story.locator('.project-story__strip')).toBeVisible();
+  await expect(story.locator('.project-story__chapters > li')).toHaveCount(4);
+  const previous = story.getByRole('button', { name: 'Previous chapter' });
+  await previous.focus();
+  await page.keyboard.press('Enter');
+  await expect(story.locator('[data-story-stage]')).toContainText('Turn the workflow into a daily next move');
 });
 
 test('the guided reading order remains stable and printable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   const ids = await page.locator('main > section[id]').evaluateAll((sections) => sections.map((section) => section.id));
-  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'ui-evolution', 'company-research', 'decisions', 'limitations', 'contact']);
+  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'project-replay', 'company-research', 'decisions', 'limitations', 'contact']);
   await page.emulateMedia({ media: 'print' });
   await expect(page.getByRole('heading', { level: 2, name: 'Is this company and role worth my time?' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What this evidence does not prove.' })).toBeVisible();
@@ -68,7 +144,8 @@ test('the guided reading order remains stable and printable', async ({ page }) =
 test('current release and previous edition are both discoverable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   await expect(page.getByText('0.9-public-proof', { exact: true }).first()).toBeVisible();
-  await expect(page.getByRole('link', { name: /0.8-public-proof archive/ })).toHaveAttribute('href', 'archive/0.8-public-proof/');
+  await expect(page.getByRole('link', { name: /Previous edition 0.8-public-proof/ })).toHaveAttribute('href', 'archive/0.8-public-proof/');
+  await expect(page.getByRole('link', { name: /Historical UI v0.5/ })).toHaveAttribute('href', 'archive/0.8-public-proof/#ui-evolution');
   await page.locator('.technical-appendix summary').click();
   await expect(page.getByRole('link', { name: /Current release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v2.json');
   await expect(page.getByRole('link', { name: /Previous release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v1.json');

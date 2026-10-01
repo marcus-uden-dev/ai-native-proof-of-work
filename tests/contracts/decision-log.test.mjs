@@ -5,6 +5,7 @@ import test from 'node:test';
 const entries = JSON.parse(readFileSync('site/evidence/decision-log.json', 'utf8'));
 const tags = JSON.parse(readFileSync('site/evidence/decision-log-tags.json', 'utf8'));
 const currentTagNames = new Set(tags.map((t) => t.tag));
+const supportedProjects = new Set(['Job-agent', 'PKM', 'Household budget', 'Personal AI Harness']);
 
 // Session-mechanics / tool-internal markers this test can safely name directly.
 // Forbidden-identity and local-path leaks are already caught repo-wide by
@@ -36,6 +37,7 @@ function validateEntry(entry, index) {
   assert.ok(entry.why.trim().length > 0, `${label}.why must not be empty`);
   assert.equal(typeof entry.demonstrates, 'string', `${label}.demonstrates must be a string`);
   assert.ok(entry.demonstrates.trim().length > 0, `${label}.demonstrates must not be empty`);
+  assert.ok(supportedProjects.has(entry.project), `${label}.project must name one of the public project lenses`);
   if (entry.status !== undefined) assert.ok(['Verified', 'Planned', 'Hypothesis'].includes(entry.status), `${label}.status must be Verified, Planned, or Hypothesis`);
   if (entry.type !== undefined) assert.ok(typeof entry.type === 'string' && entry.type.trim().length > 0, `${label}.type must be a non-empty string`);
   assert.ok(!Number.isNaN(Date.parse(entry.date)), `${label}.date must be a valid date`);
@@ -55,6 +57,15 @@ test('decision-log entries are ordered newest-first', () => {
     const curr = Date.parse(entries[i].date);
     assert.ok(prev >= curr, `entries[${i - 1}] (${entries[i - 1].date}) must not be older than entries[${i}] (${entries[i].date})`);
   }
+});
+
+test('homepage Decision Log is generated from every public decision record', () => {
+  const html = readFileSync('site/index.html', 'utf8');
+  const renderedDates = [...html.matchAll(/decision-log-entry__date">([^<]+)/g)].map((match) => match[1]);
+  const jsonDates = entries.map((entry) => entry.date);
+
+  assert.deepEqual(renderedDates, jsonDates, 'the static timeline must contain every JSON record in newest-first order');
+  assert.match(html, new RegExp(`<strong>${entries.length}</strong><span>decision records</span>`), 'the homepage metric must match the JSON record count');
 });
 
 test('decision-log-tags.json is a subset of the current-tags taxonomy (never the future bank)', () => {
@@ -98,6 +109,7 @@ test('validator rejects every redaction-backstop pattern (fixture-only, not live
 test('validator accepts a well-formed sample entry (fixture-only, not live data)', () => {
   const goodEntry = {
     date: '2026-08-23',
+    project: 'Personal AI Harness',
     tags: ['product-taste', 'evidence-driven', 'systems-thinking'],
     why: 'Added a deterministic redaction backstop instead of relying solely on prompt compliance.',
     demonstrates: 'Designs automated systems with a second, code-enforced safety gate, not just a single point of trust.'

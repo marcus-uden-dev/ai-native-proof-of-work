@@ -52,6 +52,14 @@ test('ignores local files covered by the repository Git ignore rules', () => {
   assert.deepEqual(validateRepository(root).errors, []);
 });
 
+test('ignores private local checkpoint handoffs during public release validation', () => {
+  const root = makeRepository({
+    'README.md': '# Public proof',
+    'docs/handoffs/checkpoint-2026-09-27-example.md': '# Private checkpoint'
+  });
+  assert.deepEqual(validateRepository(root).errors, []);
+});
+
 test('rejects an unexpected file with an exact category and path', () => {
   const root = makeRepository({ 'README.md': '# Public proof' });
   writeFileSync(join(root, 'private-notes.md'), 'not public');

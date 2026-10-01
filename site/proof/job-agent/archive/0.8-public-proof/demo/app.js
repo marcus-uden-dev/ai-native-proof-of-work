@@ -88,4 +88,3 @@ async function loadFixture() {
 
 showView(selectedView());
 loadFixture();
-
