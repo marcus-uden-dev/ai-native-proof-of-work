@@ -71,7 +71,7 @@ Each weekly run evaluates every candidate independently. A candidate publishes a
 4. The decision-log schema and contract tests pass.
 5. The public release validator passes.
 
-There is no manual approval queue. If a candidate fails a gate, that candidate stays out of the public projection with the failed gate recorded. Other eligible updates continue.
+There is no manual approval queue. Each candidate is routed independently to publish, hold, or internal-only. If a candidate fails a gate, record its stable ID, failed gate, evidence references, and automatic retry condition; keep it out of the public projection until the retry succeeds. Other eligible updates continue.
 
 ## Weekly execution model
 
@@ -91,4 +91,4 @@ One verified decision can therefore have three distinct outcomes:
 
 ## Operational rule
 
-Trust objective gates, not recurring manual approvals. A failed gate is actionable feedback for the next automatic run; it is not a request for a human to approve an otherwise unsafe claim.
+Trust objective gates, not recurring manual approvals. A failed gate is actionable feedback for the next automatic run; it is not a request for a human to approve an otherwise unsafe claim. The retry condition is evaluated automatically and never blocks unrelated candidates.

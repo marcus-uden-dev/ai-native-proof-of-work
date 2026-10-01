@@ -10,8 +10,11 @@
   "policy": {
     "date_rule": "Use explicit decision dates first. Never infer a decision date from filesystem modification time.",
     "project_rule": "Every record has one primary project tag and optional capability tags.",
-    "public_rule": "Only sanitized records with sufficient evidence can enter the public profile oracle.",
-    "source_rule": "Plans, lessons, memory, and incident reports are evidence sources, not automatic public content."
+    "public_rule": "Each candidate is evaluated independently. Publish only when every objective gate passes; otherwise hold or keep it internal-only. A failed candidate must not block other candidates.",
+    "source_rule": "Plans, lessons, memory, and incident reports are evidence sources, not automatic public content.",
+    "hold_fields": ["stable_id", "failed_gate", "evidence_refs", "automatic_retry_condition"],
+    "retry_rule": "Retry held candidates automatically when the recorded retry condition is met; do not require per-record manual approval.",
+    "publish_gates": ["grounded_evidence", "privacy_and_redaction", "current_capability_tags", "decision_log_contract", "release_validation"]
   },
   "project_taxonomy": [
     "personal-ai-harness",

@@ -4,7 +4,8 @@ type: feat
 date: 2026-08-24
 topic: historical-decision-harness-backfill
 execution: code
-status: in-progress
+status: superseded
+superseded_by: docs/plans/2026-10-01-historical-project-decision-backfill.md
 ---
 
 # Historical Decision and Personal AI Harness Backfill
@@ -24,13 +25,13 @@ This is a backfill plan, not an instruction to publish every historical artifact
 
 The first execution pass produced 15 inventory records and 12 sanitized profile-oracle decisions. Sources included the repository decision log, project strategy trails, repository plans, `tasks/lessons.md`, and selected shared harness plans, durable lessons, and incident summaries.
 
-The profile oracle contains only records with a usable public summary and stable project assignment. Records marked `eligible-after-redaction`, `eligible-after-implementation`, or `planned` remain bounded claims and require the normal human review or implementation gate before publication.
+The profile oracle contains only records with a usable public summary and stable project assignment. This plan is superseded for routing and publishing by the objective publish-or-hold gates in `docs/plans/2026-10-01-historical-project-decision-backfill.md`: candidates publish when all gates pass, otherwise they remain held or internal-only with the failed gate recorded. A failed candidate must not block other candidates.
 
 ## Problem Frame
 
 The current decision log begins after the public decision-log mechanism was designed. Earlier product and harness decisions already exist across repository documents and local operating sources, but they are split by source type and use different levels of detail. If they are copied directly into the public log, the result may have incorrect dates, duplicate decisions, mixed project ownership, or claims that are stronger than the evidence.
 
-The backfill must therefore separate extraction from classification, classification from human review, and reviewed history from public export.
+The backfill must therefore separate extraction from classification, classification from objective gate evaluation, and the internal inventory from public export.
 
 ## Scope
 
@@ -42,7 +43,7 @@ The backfill must therefore separate extraction from classification, classificat
 - Primary project assignment and stable project tags.
 - Decision type, lifecycle status, evidence status, capability tags, and public eligibility.
 - Duplicate detection and links between related decisions, implementations, lessons, and incidents.
-- A human review queue for ambiguous, incomplete, or public-facing records.
+- A publish/hold route for ambiguous, incomplete, or public-facing records, with internal-only retention where publication is not appropriate.
 - A sanitized export shape for the recruiter-facing decision log.
 
 ### Out of scope
@@ -141,7 +142,7 @@ Never use filesystem modification time as the decision date. If a later document
 
 ## Classification Rules
 
-Every candidate receives all four classifications before human review:
+Every candidate receives all four classifications before objective publish/hold evaluation:
 
 1. **Decision type:** what kind of change it represents.
 2. **Primary project:** which project owns the decision.
@@ -159,10 +160,12 @@ flowchart TD
     C --> D[Assign project and decision type]
     D --> E[Assign lifecycle and evidence status]
     E --> F[Deduplicate and link related records]
-    F --> G[Human review queue]
-    G --> H[Internal historical inventory]
-    G --> I[Sanitize eligible public records]
-    I --> J[Decision-log export]
+    F --> G{Objective publish gates}
+    G -->|Pass| H[Sanitize eligible public records]
+    G -->|Fail| I[Hold or internal-only with failed gate]
+    H --> J[Internal historical inventory]
+    I --> J
+    H --> K[Decision-log export]
 ```
 
 ## Implementation Units
@@ -208,15 +211,15 @@ Apply the date precedence rules, primary project taxonomy, decision types, lifec
 - Every accepted record has exactly one primary project tag.
 - Tags are drawn only from the current evidence-based taxonomy.
 
-### U5 — Deduplicate and route human review
+### U5 — Deduplicate and route publish/hold outcomes
 
-Detect repeated descriptions of the same decision across a plan, log, lesson, incident, or source summary. Keep one canonical decision record with linked evidence. Route ambiguous ownership, uncertain dates, duplicate candidates, and public-boundary concerns to a review queue.
+Detect repeated descriptions of the same decision across a plan, log, lesson, incident, or source summary. Keep one canonical decision record with linked evidence. Evaluate each candidate independently: publish when all objective gates pass; otherwise hold it or keep it internal-only. A hold records the stable ID, failed gate, evidence references, and automatic retry condition. No candidate-level manual approval is required, and one failing candidate must not block others.
 
 **Acceptance scenarios:**
 
 - A plan and its later implementation are linked as one decision with lifecycle progression, not published as duplicate decisions.
 - A lesson that records a correction is linked to the incident that caused it when available.
-- A candidate with conflicting dates or project ownership remains `needs-review` until resolved.
+- A candidate with conflicting dates or project ownership remains held or internal-only until the objective retry condition is met.
 
 ### U6 — Produce the internal historical inventory
 
@@ -230,7 +233,7 @@ Write the reviewed inventory in a machine-readable or structured Markdown form t
 
 ### U7 — Export eligible records to the recruiter decision log
 
-Only after human review, convert eligible records into the existing public decision-log shape. Preserve newest-first ordering, stable capability tags, redaction rules, and the public site's static HTML requirement. Historical records should not bypass the existing quality gate.
+Convert records that pass the objective publish gates into the existing public decision-log shape. Preserve newest-first ordering, stable capability tags, redaction rules, and the public site's static HTML requirement. Historical records should not bypass the existing quality gate.
 
 **Acceptance scenarios:**
 
@@ -272,7 +275,7 @@ The implementation should verify:
 | Harness and product evidence are mixed | Require exactly one primary project and separate cross-cutting harness work from product work |
 | Planned work looks implemented | Keep lifecycle and evidence status separate; require completion evidence |
 | Private sources leak into public copy | Separate internal inventory from sanitized export and run boundary scans |
-| Duplicate decisions appear across sources | Use stable IDs, source identity, links, and a human review queue |
+| Duplicate decisions appear across sources | Use stable IDs, source identity, links, and deterministic hold/retry routing |
 | Historical items overwhelm the recruiter page | Keep the full history in structured data and cap the visible page to the most useful reviewed entries |
 | Re-scanning local sources is expensive or stale | Use internal indexes first and refresh only when stale or explicitly requested |
 
@@ -280,14 +283,14 @@ The implementation should verify:
 
 - Should `project: obsidian` remain a separate tag, or should all current Obsidian work remain under `project: personal-ai-harness` until it has an independent product boundary?
 - Should historical entries use a distinct `historical` lifecycle marker, or is `decision_date` plus evidence status sufficient?
-- Which internal inventory format best supports both human review and deterministic public export?
+- Which internal inventory format best supports deterministic publish/hold routing and public export?
 - Which source roots are currently accessible enough for the first harness backfill pass?
 
 ## Definition of Done
 
 - Repository-visible and harness-source inventories are defined as separate evidence inputs.
 - Historical dates, project ownership, lifecycle, evidence, tags, and public eligibility have explicit rules.
-- A candidate can be routed to publish, internal-only, or human review without ambiguity.
+- A candidate can be routed to publish, hold, or internal-only without ambiguity, with a failed gate and retry condition recorded.
 - The first backfill pass can be run without reading raw conversations as the primary source.
 - Public exports use the existing decision-log quality and privacy gates.
 - The weekly compiler has a no-duplicate handoff rule for future decisions.
