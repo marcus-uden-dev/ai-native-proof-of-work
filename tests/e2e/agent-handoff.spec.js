@@ -45,7 +45,9 @@ test('homepage generates a copyable repository interview prompt without embeddin
   expect(clipboard).toContain('What evidence is there of product judgment?');
   expect(clipboard).toContain('Do not use private paths, raw sessions, secrets, or unsupported claims.');
   await expect(page.getByRole('link', { name: 'Proof repository' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
-  await expect(page.getByRole('link', { name: 'Read job description prompt' })).toHaveAttribute('href', 'job-description-prompt.html');
+  await expect(page.getByText('The embedded review sends the text below to its review service')).toBeVisible();
+  await expect(page.getByText('Want to run the full assessment in ChatGPT or Claude?')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Open the standalone job-description prompt' })).toHaveAttribute('href', 'job-description-prompt.html');
   const promptPage = await context.newPage();
   const promptResponse = await promptPage.goto('/job-description-prompt.html');
   expect(promptResponse?.status()).toBe(200);
@@ -91,6 +93,18 @@ test('repository review uses separate prompt contracts for a question and a role
   await expect(page.locator('#inputClassification')).toContainText('Selected mode: evidence question.');
   await page.getByRole('button', { name: 'Generate review prompt' }).click();
   await expect(page.locator('#repositoryPrompt')).toContainText('RECRUITER QUESTION:');
+});
+
+test('repository review keeps the compact editorial mode controls', async ({ page }) => {
+  await page.goto('/');
+  const controls = page.locator('.repository-interview .mode-choice');
+
+  await expect(controls).toHaveCount(3);
+  await expect(controls.first()).toHaveAttribute('aria-pressed', 'true');
+  await expect(controls.first()).toHaveCSS('background-color', 'rgb(32, 27, 18)');
+  await expect(controls.first()).toHaveCSS('border-top-color', 'rgb(208, 161, 83)');
+  await expect(controls.nth(1)).toHaveCSS('border-top-color', 'rgb(93, 81, 59)');
+  await expect(controls.first()).toHaveCSS('min-height', '36px');
 });
 
 test('the existing repository review panel renders a cited AI role assessment when configured', async ({ page }) => {
