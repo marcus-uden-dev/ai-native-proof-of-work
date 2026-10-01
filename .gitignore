@@ -1,6 +1,7 @@
 # Internal source maps and local machine paths
 internal/LOCAL_SOURCE_MAP.md
 internal/source-indexes/*.md
+internal/decision-backfill/
 
 # Local exports or temporary files
 tmp/
