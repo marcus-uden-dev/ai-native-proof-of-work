@@ -70,6 +70,14 @@ It should:
 - avoid private source leakage
 - avoid invented progress
 
+### Historical decision handling
+
+- Use `docs/evidence/historical-decision-inventory.json` as the private candidate layer.
+- Process only new, changed, newly unblocked, or not-yet-projected candidates.
+- Route each candidate independently to `publish`, `hold`, or `internal-only`; do not use a candidate-level manual approval queue.
+- Publish only after grounded evidence, explicit status, redaction, taxonomy, inventory validation, public contract tests, and release validation pass.
+- Record a held candidate's ID, failed gate, evidence references, and automatic retry condition. Continue unrelated eligible candidates.
+
 ## Required Inspection List
 
 Before editing, the automation should inspect:

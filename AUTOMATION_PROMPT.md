@@ -97,6 +97,15 @@ Update or create:
 33. template adoption files under `template/` when clone/fork guidance, bootstrap prompts, automation recreation, reusable-template rules, or custom skill case templates change
 34. dependent indexes, reading paths, prompt inspection lists, runbooks, source maps, and local Markdown links whenever a file is added, removed, renamed, moved, or repositioned
 
+## Historical Decision Backfill
+
+- Treat `docs/evidence/historical-decision-inventory.json` as the candidate layer. The private decision log and public Pages JSON are projections, not competing sources of truth.
+- Re-evaluate only candidates that are new, changed, held with a changed retry condition, or absent from their project projection. Do not rediscover unchanged evidence.
+- Route each candidate independently to `publish`, `hold`, or `internal-only`. No candidate-level manual approval queue exists.
+- Publish only when grounded evidence, explicit status, redaction, taxonomy, inventory validation, public decision-log contract tests, and release validation pass.
+- For a held candidate, record its ID, failed gate, evidence references, and automatic retry condition. Continue eligible candidates; do not let one held record block the run.
+- Keep raw chats, private local paths, secrets, personal data, confidential material, and unsupported outcomes out of public projections.
+
 Focus on:
 - practical execution
 - concrete project proof, especially job-agent
