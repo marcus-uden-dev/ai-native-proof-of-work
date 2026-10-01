@@ -13,7 +13,8 @@ const inventory = (record = {}) => ({ project_taxonomy: ['job-agent', 'pkm', 'ho
 const errors = (value) => validateInventory(value).errors;
 
 test('accepts a valid baseline and publication states', () => {
-  for (const state of ['publish', 'hold', 'internal-only']) assert.equal(errors(inventory({ publication_state: state })).length, 0);
+  for (const state of ['publish', 'internal-only']) assert.equal(errors(inventory({ publication_state: state })).length, 0);
+  assert.equal(errors(inventory({ publication_state: 'hold', failed_gate: 'grounded_evidence', automatic_retry_condition: 'Verified evidence becomes available.' })).length, 0);
   assert.equal(errors(inventory()).length, 0);
 });
 
@@ -37,4 +38,8 @@ test('rejects manual approval states', () => {
   for (const key of ['public_eligibility', 'publication_state']) {
     assert.ok(errors(inventory({ [key]: 'manual-approval' })).some((e) => e.code === 'manual-approval'));
   }
+});
+
+test('rejects hold records without a failed gate and automatic retry condition', () => {
+  assert.ok(errors(inventory({ publication_state: 'hold' })).some((e) => e.code === 'invalid-hold-record'));
 });

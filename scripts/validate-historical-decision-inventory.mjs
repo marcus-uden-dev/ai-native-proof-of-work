@@ -46,6 +46,7 @@ export function validateInventory(inventory) {
     const state = record.publication_state ?? record.public_eligibility;
     if (MANUAL_STATES.has(normalize(state))) errors.push(issue('manual-approval', 'manual approval states are not supported', index));
     if (record.publication_state !== undefined && !PUBLICATION_STATES.has(record.publication_state) && !MANUAL_STATES.has(normalize(record.publication_state))) errors.push(issue('invalid-publication-state', 'invalid publication state', index));
+    if (record.publication_state === 'hold' && (!text(record.failed_gate) || !text(record.automatic_retry_condition))) errors.push(issue('invalid-hold-record', 'hold records need a failed gate and automatic retry condition', index));
     const fingerprint = record.fingerprint || decisionFingerprint(record);
     if (fingerprints.has(fingerprint)) errors.push(issue('duplicate-fingerprint', `duplicate decision fingerprint: ${fingerprint}`, index)); else fingerprints.set(fingerprint, index);
   });

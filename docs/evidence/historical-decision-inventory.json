@@ -5,16 +5,32 @@
   "source": "historical backfill across repository decision logs, plans, lessons, and sanitized harness evidence",
   "type": "decision-inventory",
   "status": "reviewed-draft",
-  "review_status": "needs-human-review",
-  "tags": ["historical", "decisions", "backfill", "recruiter-evidence"],
+  "review_status": "objective-gates",
+  "tags": [
+    "historical",
+    "decisions",
+    "backfill",
+    "recruiter-evidence"
+  ],
   "policy": {
     "date_rule": "Use explicit decision dates first. Never infer a decision date from filesystem modification time.",
     "project_rule": "Every record has one primary project tag and optional capability tags.",
     "public_rule": "Each candidate is evaluated independently. Publish only when every objective gate passes; otherwise hold or keep it internal-only. A failed candidate must not block other candidates.",
     "source_rule": "Plans, lessons, memory, and incident reports are evidence sources, not automatic public content.",
-    "hold_fields": ["stable_id", "failed_gate", "evidence_refs", "automatic_retry_condition"],
+    "hold_fields": [
+      "id",
+      "failed_gate",
+      "evidence_refs",
+      "automatic_retry_condition"
+    ],
     "retry_rule": "Retry held candidates automatically when the recorded retry condition is met; do not require per-record manual approval.",
-    "publish_gates": ["grounded_evidence", "privacy_and_redaction", "current_capability_tags", "decision_log_contract", "release_validation"]
+    "publish_gates": [
+      "grounded_evidence",
+      "privacy_and_redaction",
+      "current_capability_tags",
+      "decision_log_contract",
+      "release_validation"
+    ]
   },
   "project_taxonomy": [
     "personal-ai-harness",
@@ -35,10 +51,21 @@
       "context": "Historical decisions are distributed across repository documents and harness records.",
       "decision": "Extract, date, tag, classify, deduplicate, and review candidates before creating recruiter-facing entries.",
       "tradeoff": "The process is slower than copying documents directly, but it protects chronology, evidence quality, and privacy.",
-      "evidence_refs": ["docs/plans/2026-08-24-003-feat-historical-decision-and-harness-backfill-plan.md"],
-      "capability_tags": ["decision-traceability", "evidence-driven", "quality-gate", "ai-governance"],
+      "evidence_refs": [
+        "docs/plans/2026-08-24-003-feat-historical-decision-and-harness-backfill-plan.md"
+      ],
+      "capability_tags": [
+        "decision-traceability",
+        "evidence-driven",
+        "quality-gate",
+        "ai-governance"
+      ],
       "public_eligibility": "eligible-after-implementation",
-      "redaction_notes": "Publish the resulting records, not the source plan."
+      "redaction_notes": "Publish the resulting records, not the source plan.",
+      "fingerprint": "personal-ai-harness|evidence-publishing|classify historical decisions before exporting them|extract, date, tag, classify, deduplicate, and review candidates before creating recruiter-facing entries.",
+      "publication_state": "hold",
+      "failed_gate": "grounded_evidence",
+      "automatic_retry_condition": "Retry when verified implementation evidence is available."
     },
     {
       "id": "decision-2026-08-24-personal-ai-harness-name",
@@ -52,10 +79,21 @@
       "context": "The system contains memory, agents, automation, reusable workflows, and recursive improvement, but is not itself the product portfolio.",
       "decision": "Use Personal AI Harness as the name for the continuously evolving operating layer behind the work.",
       "tradeoff": "The name is less familiar than Portfolio OS, but it better describes the underlying agent and workflow infrastructure.",
-      "evidence_refs": ["strategy/personal-ai-harness/README.md", "README.md", "logs/CHANGELOG.md"],
-      "capability_tags": ["product-judgment", "systems-thinking", "context-engineering", "continuous-improvement"],
+      "evidence_refs": [
+        "strategy/personal-ai-harness/README.md",
+        "README.md",
+        "logs/CHANGELOG.md"
+      ],
+      "capability_tags": [
+        "product-judgment",
+        "systems-thinking",
+        "context-engineering",
+        "continuous-improvement"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Keep the explanation product-first and avoid exposing runtime mechanics."
+      "redaction_notes": "Keep the explanation product-first and avoid exposing runtime mechanics.",
+      "fingerprint": "personal-ai-harness|positioning|name the operating layer personal ai harness|use personal ai harness as the name for the continuously evolving operating layer behind the work.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-08-24-bilingual-recruiter-experience",
@@ -69,10 +107,20 @@
       "context": "Recruiters may read the profile in either Swedish or English, while tag identifiers and evidence links must remain stable.",
       "decision": "Keep stable English tag IDs, add Swedish display labels, and require language-sync validation for profile changes.",
       "tradeoff": "A shared localized model costs more than an English-only page, but reduces translation drift.",
-      "evidence_refs": ["logs/DECISION_LOG.md", "logs/DECISION_LOG_TAGS.md", "docs/plans/2026-08-24-001-feat-bilingual-recruiter-profile-experience.md"],
-      "capability_tags": ["stakeholder-understanding", "design-governance", "quality-assurance"],
+      "evidence_refs": [
+        "logs/DECISION_LOG.md",
+        "logs/DECISION_LOG_TAGS.md",
+        "docs/plans/2026-08-24-001-feat-bilingual-recruiter-profile-experience.md"
+      ],
+      "capability_tags": [
+        "stakeholder-understanding",
+        "design-governance",
+        "quality-assurance"
+      ],
       "public_eligibility": "eligible-as-planned",
-      "redaction_notes": "Present the user-facing language decision, not internal planning mechanics."
+      "redaction_notes": "Present the user-facing language decision, not internal planning mechanics.",
+      "fingerprint": "personal-ai-harness|profile-experience|use one localized content model for english and swedish|keep stable english tag ids, add swedish display labels, and require language-sync validation for profile changes.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-08-20-scheduled-finding-canary",
@@ -86,10 +134,21 @@
       "context": "A full cross-runtime reporting architecture would add cost before adoption and operator value were proven.",
       "decision": "Run a 14-day job-agent canary with one writer, one existing queue, deduplication, positive-evidence closure, and measured runtime cost.",
       "tradeoff": "The canary does not solve the final multi-producer architecture, but it lowers rollout risk and produces decision evidence.",
-      "evidence_refs": ["Shared harness plan: scheduled finding intake path decision, dated 2026-08-15"],
-      "capability_tags": ["prioritization", "automation-judgment", "workflow-automation", "validation"],
+      "evidence_refs": [
+        "Shared harness plan: scheduled finding intake path decision, dated 2026-08-15"
+      ],
+      "capability_tags": [
+        "prioritization",
+        "automation-judgment",
+        "workflow-automation",
+        "validation"
+      ],
       "public_eligibility": "eligible-after-redaction",
-      "redaction_notes": "Use the canary decision and evaluation logic without private tracker identifiers."
+      "redaction_notes": "Use the canary decision and evaluation logic without private tracker identifiers.",
+      "fingerprint": "personal-ai-harness|automation-rollout|test scheduled finding intake with a bounded canary first|run a 14-day job-agent canary with one writer, one existing queue, deduplication, positive-evidence closure, and measured runtime cost.",
+      "publication_state": "hold",
+      "failed_gate": "source_availability",
+      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available."
     },
     {
       "id": "decision-2026-08-10-shared-skill-runtime-neutrality",
@@ -103,10 +162,21 @@
       "context": "A shared installer placed inside an upstream-managed runtime folder was lost during a system refresh, and a whole-root junction prevented runtime-specific adaptation.",
       "decision": "Move reusable installation logic to a shared source layer and expose skills per runtime, preserving local variants and rollback paths.",
       "tradeoff": "Per-skill synchronization is more explicit than one root junction, but it protects upgrades and supports multiple runtimes.",
-      "evidence_refs": ["Shared incident: shared skill installer runtime drift, dated 2026-08-10"],
-      "capability_tags": ["reusable-infrastructure", "governance-architecture", "risk-controls", "reusable-systems"],
+      "evidence_refs": [
+        "Shared incident: shared skill installer runtime drift, dated 2026-08-10"
+      ],
+      "capability_tags": [
+        "reusable-infrastructure",
+        "governance-architecture",
+        "risk-controls",
+        "reusable-systems"
+      ],
       "public_eligibility": "eligible-after-redaction",
-      "redaction_notes": "Remove machine paths, runtime internals, and credential details."
+      "redaction_notes": "Remove machine paths, runtime internals, and credential details.",
+      "fingerprint": "personal-ai-harness|runtime-architecture|keep reusable skill source runtime-neutral|move reusable installation logic to a shared source layer and expose skills per runtime, preserving local variants and rollback paths.",
+      "publication_state": "hold",
+      "failed_gate": "source_availability",
+      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available."
     },
     {
       "id": "decision-2026-08-09-product-code-freshness-boundary",
@@ -120,10 +190,20 @@
       "context": "The latest commits combined a meaningful product-code milestone with later documentation and operations work.",
       "decision": "Name the latest product-code signal separately and avoid presenting every later commit as product progress.",
       "tradeoff": "The explanation is more precise, but it protects the credibility of the product narrative.",
-      "evidence_refs": ["logs/DECISION_LOG.md", "PROJECT_STATUS.md", "PROJECT_TIMELINE.md"],
-      "capability_tags": ["evidence-driven", "decision-traceability", "research-judgment"],
+      "evidence_refs": [
+        "logs/DECISION_LOG.md",
+        "PROJECT_STATUS.md",
+        "PROJECT_TIMELINE.md"
+      ],
+      "capability_tags": [
+        "evidence-driven",
+        "decision-traceability",
+        "research-judgment"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Use only the already sanitized commit and evidence boundary."
+      "redaction_notes": "Use only the already sanitized commit and evidence boundary.",
+      "fingerprint": "job-agent|evidence-boundary|separate product-code freshness from later documentation work|name the latest product-code signal separately and avoid presenting every later commit as product progress.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-08-05-committed-branch-over-dirty-wip",
@@ -137,10 +217,20 @@
       "context": "The accessible source branch was committed, while newer local work remained uncommitted.",
       "decision": "Anchor recruiter-facing claims to the committed branch and label newer local work as outside the verified boundary.",
       "tradeoff": "Some recent work is not shown, but the published evidence remains reproducible.",
-      "evidence_refs": ["logs/DECISION_LOG.md", "RECRUITER_AGENT_GUIDE.md", "SOURCE_MAP.md"],
-      "capability_tags": ["risk-awareness", "evidence-driven", "quality-assurance"],
+      "evidence_refs": [
+        "logs/DECISION_LOG.md",
+        "RECRUITER_AGENT_GUIDE.md",
+        "SOURCE_MAP.md"
+      ],
+      "capability_tags": [
+        "risk-awareness",
+        "evidence-driven",
+        "quality-assurance"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Do not include local worktree paths or private branch details."
+      "redaction_notes": "Do not include local worktree paths or private branch details.",
+      "fingerprint": "job-agent|evidence-boundary|use committed source state and exclude dirty work in recruiter proof|anchor recruiter-facing claims to the committed branch and label newer local work as outside the verified boundary.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-06-28-job-agent-handoff-hierarchy",
@@ -154,10 +244,20 @@
       "context": "Orientation, durable status, and commit freshness are different kinds of truth in the lead product repository.",
       "decision": "Use orientation docs for navigation, durable status docs for product state, and direct source verification for freshness overrides.",
       "tradeoff": "The hierarchy requires more reading discipline, but avoids flattening different evidence types into one status claim.",
-      "evidence_refs": ["logs/DECISION_LOG.md", "RECRUITER_AGENT_GUIDE.md", "case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md"],
-      "capability_tags": ["systems-thinking", "decision-support", "knowledge-management"],
+      "evidence_refs": [
+        "logs/DECISION_LOG.md",
+        "RECRUITER_AGENT_GUIDE.md",
+        "case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md"
+      ],
+      "capability_tags": [
+        "systems-thinking",
+        "decision-support",
+        "knowledge-management"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Link to public handoff documentation only."
+      "redaction_notes": "Link to public handoff documentation only.",
+      "fingerprint": "job-agent|handoff-architecture|preserve the source repository handoff hierarchy|use orientation docs for navigation, durable status docs for product state, and direct source verification for freshness overrides.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-06-14-direct-source-verification",
@@ -171,10 +271,20 @@
       "context": "A product can move faster than its curated status summary.",
       "decision": "Use status docs as context, but let direct git and file verification override stale freshness dates.",
       "tradeoff": "The weekly process needs extra verification, but published status remains current and defensible.",
-      "evidence_refs": ["logs/DECISION_LOG.md", "logs/PROBLEM_SOLVING_LOG.md", "SOURCE_MAP.md"],
-      "capability_tags": ["research-judgment", "evidence-driven", "quality-assurance"],
+      "evidence_refs": [
+        "logs/DECISION_LOG.md",
+        "logs/PROBLEM_SOLVING_LOG.md",
+        "SOURCE_MAP.md"
+      ],
+      "capability_tags": [
+        "research-judgment",
+        "evidence-driven",
+        "quality-assurance"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Keep source references at the repository documentation level."
+      "redaction_notes": "Keep source references at the repository documentation level.",
+      "fingerprint": "job-agent|research-method|use direct source verification when status docs lag|use status docs as context, but let direct git and file verification override stale freshness dates.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-06-02-workflow-cases-supporting-proof",
@@ -188,10 +298,20 @@
       "context": "Practical improvements were scattered across lessons, prompts, skills, automations, and templates.",
       "decision": "Create supporting workflow cases while keeping concrete product projects as the primary proof.",
       "tradeoff": "The operating layer becomes visible without allowing it to overshadow product execution.",
-      "evidence_refs": ["logs/DECISION_LOG.md", "case-studies/WORKFLOW_IMPLEMENTATION_CASES.md", "tasks/lessons.md"],
-      "capability_tags": ["reusable-systems", "ai-native-workflows", "product-judgment"],
+      "evidence_refs": [
+        "logs/DECISION_LOG.md",
+        "case-studies/WORKFLOW_IMPLEMENTATION_CASES.md",
+        "tasks/lessons.md"
+      ],
+      "capability_tags": [
+        "reusable-systems",
+        "ai-native-workflows",
+        "product-judgment"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Use sanitized workflow cases, never raw prompts or local runtime details."
+      "redaction_notes": "Use sanitized workflow cases, never raw prompts or local runtime details.",
+      "fingerprint": "personal-ai-harness|proof-packaging|show workflow improvements as supporting cases|create supporting workflow cases while keeping concrete product projects as the primary proof.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-05-11-product-first-proof-points",
@@ -205,10 +325,20 @@
       "context": "The portfolio contains both product work and a substantial AI-native operating layer.",
       "decision": "Lead with Job-agent, use PKM and the household budget app as supporting products, and present automation as the enabling layer.",
       "tradeoff": "The harness receives less prominence, but the portfolio is easier to evaluate as product work.",
-      "evidence_refs": ["README.md", "PROJECT_PROOF_POINTS.md", "tasks/lessons.md"],
-      "capability_tags": ["product-taste", "prioritization", "stakeholder-understanding"],
+      "evidence_refs": [
+        "README.md",
+        "PROJECT_PROOF_POINTS.md",
+        "tasks/lessons.md"
+      ],
+      "capability_tags": [
+        "product-taste",
+        "prioritization",
+        "stakeholder-understanding"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Keep product projects as the lead reading path."
+      "redaction_notes": "Keep product projects as the lead reading path.",
+      "fingerprint": "personal-ai-harness|portfolio-strategy|keep concrete products ahead of the operating layer|lead with job-agent, use pkm and the household budget app as supporting products, and present automation as the enabling layer.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-05-11-pkm-evidence-boundary",
@@ -222,10 +352,20 @@
       "context": "The PKM work is promising, but sustained daily-use value needs stronger evidence.",
       "decision": "Present PKM as supporting evidence rather than claim validated product-market value.",
       "tradeoff": "The story is narrower, but it avoids overstating adoption or outcomes.",
-      "evidence_refs": ["strategy/pkm/README.md", "strategy/pkm/decisions/DECISION_TRAIL.md", "PROJECT_PROOF_POINTS.md"],
-      "capability_tags": ["research-judgment", "product-judgment", "evidence-driven"],
+      "evidence_refs": [
+        "strategy/pkm/README.md",
+        "strategy/pkm/decisions/DECISION_TRAIL.md",
+        "PROJECT_PROOF_POINTS.md"
+      ],
+      "capability_tags": [
+        "research-judgment",
+        "product-judgment",
+        "evidence-driven"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Do not infer usage metrics that are not directly evidenced."
+      "redaction_notes": "Do not infer usage metrics that are not directly evidenced.",
+      "fingerprint": "pkm|evidence-boundary|keep pkm supporting until sustained value is validated|present pkm as supporting evidence rather than claim validated product-market value.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-05-11-household-budget-domain-modeling",
@@ -239,10 +379,20 @@
       "context": "The budget app involves shared roles, imports, review flows, forecasts, and privacy-sensitive data.",
       "decision": "Present it as evidence of domain modeling and shared workflow design, not as a generic finance app claim.",
       "tradeoff": "The framing is more specific, but it makes the product reasoning easier to evaluate.",
-      "evidence_refs": ["strategy/household-budget-app/README.md", "strategy/household-budget-app/decisions/DECISION_TRAIL.md", "PROJECT_PROOF_POINTS.md"],
-      "capability_tags": ["systems-thinking", "problem-framing", "stakeholder-understanding"],
+      "evidence_refs": [
+        "strategy/household-budget-app/README.md",
+        "strategy/household-budget-app/decisions/DECISION_TRAIL.md",
+        "PROJECT_PROOF_POINTS.md"
+      ],
+      "capability_tags": [
+        "systems-thinking",
+        "problem-framing",
+        "stakeholder-understanding"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Exclude private household details and personal financial data."
+      "redaction_notes": "Exclude private household details and personal financial data.",
+      "fingerprint": "household-budget|product-strategy|use household budgeting as shared-domain modeling evidence|present it as evidence of domain modeling and shared workflow design, not as a generic finance app claim.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-05-11-job-agent-reviewed-career-flow",
@@ -256,10 +406,20 @@
       "context": "Job-agent could be framed as generic AI writing, autonomous application sending, or a reviewed workflow connecting discovery, fit analysis, application support, and feedback.",
       "decision": "Start with a reviewed career workflow where the user keeps control of decisions, generated materials, privacy, and application actions.",
       "tradeoff": "Human review adds interaction steps, but lowers trust, quality, privacy, and platform risk.",
-      "evidence_refs": ["strategy/job-agent/product/PRODUCT_STRATEGY.md", "strategy/job-agent/decisions/DECISION_TRAIL.md"],
-      "capability_tags": ["product-discovery", "decision-support", "human-in-the-loop", "risk-awareness"],
+      "evidence_refs": [
+        "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+        "strategy/job-agent/decisions/DECISION_TRAIL.md"
+      ],
+      "capability_tags": [
+        "product-discovery",
+        "decision-support",
+        "human-in-the-loop",
+        "risk-awareness"
+      ],
       "public_eligibility": "eligible",
-      "redaction_notes": "Describe the product flow without exposing private application data or internal implementation details."
+      "redaction_notes": "Describe the product flow without exposing private application data or internal implementation details.",
+      "fingerprint": "job-agent|product-flow|use a reviewed career workflow instead of an autonomous applier|start with a reviewed career workflow where the user keeps control of decisions, generated materials, privacy, and application actions.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-05-11-job-agent-telemetry-as-learning-layer",
@@ -273,10 +433,20 @@
       "context": "The workflow needs feedback about quality and outcomes, but instrumentation can add complexity before the core flow is proven.",
       "decision": "Include telemetry and outcome learning as a medium-priority product capability, with measurement planned before outcome claims are made.",
       "tradeoff": "Delaying extensive instrumentation keeps the first workflow smaller, but reduces early learning until the right signals are defined.",
-      "evidence_refs": ["strategy/job-agent/product/PRODUCT_STRATEGY.md", "case-studies/JOB_AGENT_CASE_STUDY.md"],
-      "capability_tags": ["continuous-improvement", "validation", "quality-assurance", "decision-traceability"],
+      "evidence_refs": [
+        "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+        "case-studies/JOB_AGENT_CASE_STUDY.md"
+      ],
+      "capability_tags": [
+        "continuous-improvement",
+        "validation",
+        "quality-assurance",
+        "decision-traceability"
+      ],
       "public_eligibility": "eligible-as-planned",
-      "redaction_notes": "Show the measurement principle, not unverified outcome metrics."
+      "redaction_notes": "Show the measurement principle, not unverified outcome metrics.",
+      "fingerprint": "job-agent|product-learning|treat telemetry and outcome learning as a product layer|include telemetry and outcome learning as a medium-priority product capability, with measurement planned before outcome claims are made.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-05-11-job-agent-pricing-hypotheses",
@@ -290,10 +460,19 @@
       "context": "Users may value better application throughput and less context switching, but the strongest paid workflow and willingness to pay are not validated.",
       "decision": "Treat a time-boxed job-search sprint and a lightweight monthly plan as the first pricing hypotheses, rather than committing to usage credits or a coach license.",
       "tradeoff": "A sprint is easier to explain but less recurring; a subscription can scale but needs sustained perceived value.",
-      "evidence_refs": ["strategy/job-agent/business/PRICING_STRATEGY.md"],
-      "capability_tags": ["product-judgment", "prioritization", "commercial-awareness", "value-creation"],
+      "evidence_refs": [
+        "strategy/job-agent/business/PRICING_STRATEGY.md"
+      ],
+      "capability_tags": [
+        "product-judgment",
+        "prioritization",
+        "commercial-awareness",
+        "value-creation"
+      ],
       "public_eligibility": "eligible-as-hypothesis",
-      "redaction_notes": "Label this as a pricing hypothesis. Do not imply revenue, conversion, or market validation."
+      "redaction_notes": "Label this as a pricing hypothesis. Do not imply revenue, conversion, or market validation.",
+      "fingerprint": "job-agent|pricing|test a job-search sprint or focused monthly plan first|treat a time-boxed job-search sprint and a lightweight monthly plan as the first pricing hypotheses, rather than committing to usage credits or a coach license.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-05-11-household-budget-pricing-boundary",
@@ -307,10 +486,19 @@
       "context": "Household finance requires confidence in workflow safety, import quality, privacy, and repeated value before a price model can be evaluated.",
       "decision": "Defer pricing decisions until the privacy-safe workflow, import quality, and daily-use value are stronger.",
       "tradeoff": "Waiting delays commercial testing, but avoids pricing a sensitive workflow before trust is earned.",
-      "evidence_refs": ["strategy/household-budget-app/business/PRICING_STRATEGY.md"],
-      "capability_tags": ["risk-awareness", "prioritization", "commercial-awareness", "evidence-driven"],
+      "evidence_refs": [
+        "strategy/household-budget-app/business/PRICING_STRATEGY.md"
+      ],
+      "capability_tags": [
+        "risk-awareness",
+        "prioritization",
+        "commercial-awareness",
+        "evidence-driven"
+      ],
       "public_eligibility": "eligible-as-planned",
-      "redaction_notes": "Exclude personal financial details and present this only as a product-pricing boundary."
+      "redaction_notes": "Exclude personal financial details and present this only as a product-pricing boundary.",
+      "fingerprint": "household-budget|pricing|defer household-budget pricing until trust and daily value are proven|defer pricing decisions until the privacy-safe workflow, import quality, and daily-use value are stronger.",
+      "publication_state": "publish"
     },
     {
       "id": "decision-2026-05-11-pkm-pricing-boundary",
@@ -324,10 +512,19 @@
       "context": "PKM may reduce knowledge-work friction through ingestion, search, learning, and browser capture, but sustained value is not yet validated.",
       "decision": "Defer pricing until one end-to-end daily-use path demonstrates repeated value.",
       "tradeoff": "Waiting protects credibility, but leaves the commercial model unresolved while the workflow is validated.",
-      "evidence_refs": ["strategy/pkm/business/PRICING_STRATEGY.md"],
-      "capability_tags": ["research-judgment", "prioritization", "commercial-awareness", "validation"],
+      "evidence_refs": [
+        "strategy/pkm/business/PRICING_STRATEGY.md"
+      ],
+      "capability_tags": [
+        "research-judgment",
+        "prioritization",
+        "commercial-awareness",
+        "validation"
+      ],
       "public_eligibility": "eligible-as-planned",
-      "redaction_notes": "Do not imply adoption, retention, or willingness to pay."
+      "redaction_notes": "Do not imply adoption, retention, or willingness to pay.",
+      "fingerprint": "pkm|pricing|defer pkm pricing until daily-use value is validated|defer pricing until one end-to-end daily-use path demonstrates repeated value.",
+      "publication_state": "publish"
     },
     {
       "id": "lesson-2026-06-25-repo-docs-stay-with-repo",
@@ -341,10 +538,20 @@
       "context": "Shared runtime documentation and product-repository documentation have different ownership and portability needs.",
       "decision": "Keep repo-specific plans, specs, reports, incidents, and runbooks in the owning repo, while reserving shared agent docs for cross-runtime coordination.",
       "tradeoff": "This creates clearer ownership and portability, but requires an explicit ownership check before writing a durable document.",
-      "evidence_refs": ["Shared lesson: repo docs stay with the owning repository, dated 2026-06-25"],
-      "capability_tags": ["knowledge-management", "governance-architecture", "reusable-systems"],
+      "evidence_refs": [
+        "Shared lesson: repo docs stay with the owning repository, dated 2026-06-25"
+      ],
+      "capability_tags": [
+        "knowledge-management",
+        "governance-architecture",
+        "reusable-systems"
+      ],
       "public_eligibility": "eligible-after-redaction",
-      "redaction_notes": "Describe the ownership principle without exposing machine paths or runtime structure."
+      "redaction_notes": "Describe the ownership principle without exposing machine paths or runtime structure.",
+      "fingerprint": "personal-ai-harness|documentation-governance|keep repo-owned durable documents with the owning repository|keep repo-specific plans, specs, reports, incidents, and runbooks in the owning repo, while reserving shared agent docs for cross-runtime coordination.",
+      "publication_state": "hold",
+      "failed_gate": "source_availability",
+      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available."
     },
     {
       "id": "lesson-2026-06-24-decision-first-reporting",
@@ -358,10 +565,20 @@
       "context": "A technically complete report can still be hard to act on if the actual decisions are buried in prose.",
       "decision": "Put counts, recommended actions, decision items, reply codes, and concise evidence near the top of decision-oriented reports.",
       "tradeoff": "The format gives less space to background before the decision, but improves speed and clarity for the reader.",
-      "evidence_refs": ["Shared lesson: decision-first report format, dated 2026-06-24"],
-      "capability_tags": ["decision-support", "research-synthesis", "stakeholder-understanding"],
+      "evidence_refs": [
+        "Shared lesson: decision-first report format, dated 2026-06-24"
+      ],
+      "capability_tags": [
+        "decision-support",
+        "research-synthesis",
+        "stakeholder-understanding"
+      ],
       "public_eligibility": "eligible-after-redaction",
-      "redaction_notes": "Use the report-design principle without exposing internal task mechanics."
+      "redaction_notes": "Use the report-design principle without exposing internal task mechanics.",
+      "fingerprint": "personal-ai-harness|communication-governance|make decision-heavy reports decision-first|put counts, recommended actions, decision items, reply codes, and concise evidence near the top of decision-oriented reports.",
+      "publication_state": "hold",
+      "failed_gate": "source_availability",
+      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available."
     }
   ]
 }
