@@ -1,0 +1,33 @@
+flowchart TD
+    A["Nytt beslut eller övervägande"] --> B{"Varaktigt beslut?"}
+    B -->|Nej| C["Veckologg eller arbetsnotering"]
+    B -->|Ja| D["Samla verifierad evidens"]
+
+    subgraph PRIVATE["Privata repot: komplett och granskningsbar källa"]
+      direction LR
+      D --> E["Full post i<br/>logs/DECISION_LOG.md"]
+      E --> F["3–7 evidensbaserade taggar<br/>DECISION_LOG_TAGS.md"]
+      F --> G["Integritets- och evidensgrind"]
+    end
+
+    G --> H{"Nytt offentligt<br/>påstående?"}
+    H -->|Nej: liten drift- eller kvalitetsförbättring| I["Kort sanerad offentlig post"]
+    H -->|Ja: nytt narrativ, case eller kapabilitetsanspråk| J["Granskningsunderlag<br/>Marcus: godkänn, ändra eller avvisa"]
+    J -->|Godkänd och sanerad| I
+    J -->|Ändra eller avvisa| E
+
+    subgraph PUBLIC["Publikt sajt-repo och GitHub Pages"]
+      direction LR
+      I --> K["Uppdatera decision-log.json<br/>och offentlig taggkopia"]
+      K --> L{"Kvalitetsgrind"}
+      L -->|Godkänd| M["Pusha till publikt sajt-repo"]
+      M --> N["GitHub Pages bygger<br/>och visar posten"]
+    end
+    L -->|Underkänd| E
+
+    classDef repo fill:#e8f1ff,stroke:#2563eb,color:#0f172a;
+    classDef review fill:#fff7ed,stroke:#ea580c,color:#0f172a;
+    classDef public fill:#ecfdf5,stroke:#059669,color:#0f172a;
+    class E,F repo;
+    class G,H,J,L review;
+    class I,K,M,N public;

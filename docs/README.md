@@ -6,6 +6,7 @@ Repo-owned durable documents live here. Do not copy private runtime-wide agent d
 
 - [reports/](reports/README.md) - recruiter-facing and evidence reports owned by this repo.
 - [audits/](audits/README.md) - dated reviews of repository quality, recruiter flow, and evidence presentation.
+- [Decision-log automation reference](reference/DECISION_LOG_AUTOMATION.md) - source-to-GitHub-Pages flow, automatic gates, and failure handling.
 
 ## Project documentation
 
