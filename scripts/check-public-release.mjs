@@ -209,9 +209,11 @@ export function validateRepository(root = repositoryRoot, options = {}) {
       addMatch(errors, 'git-remote', '.git/config', 'The repository contains a remote outside the approved professional public repository.');
     }
   }
-    const head = git(root, ['rev-parse', '--verify', 'HEAD']);
+  const head = git(root, ['rev-parse', '--verify', 'HEAD']);
   if (head) {
-    const roots = git(root, ['rev-list', '--max-parents=0', 'HEAD']).split(/\r?\n/).filter(Boolean);
+    // Validate the resolved commit object, rather than the symbolic HEAD ref. This keeps the
+    // ancestry check stable in CI checkouts that also fetch unrelated remote branches or refs.
+    const roots = git(root, ['--no-replace-objects', 'rev-list', '--max-parents=0', '--end-of-options', head]).split(/\r?\n/).filter(Boolean);
     if (roots.length !== 1) addMatch(errors, 'git-ancestry', '.git', 'The repository must have exactly one clean root commit.');
     const authors = git(root, ['log', '--format=%ae']).split(/\r?\n/).filter(Boolean);
     if (authors.some((email) => email.toLowerCase() !== requiredProfessionalEmail)) {
