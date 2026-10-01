@@ -363,6 +363,143 @@ if (promptGenerator) {
     return group;
   }
 
+  function renderExperienceFitTrack(dimension, catalogue) {
+    const track = document.createElement('article');
+    track.className = 'experience-fit-track';
+    const heading = document.createElement('h4');
+    heading.textContent = dimension.label;
+    const state = document.createElement('p');
+    state.className = `evidence-state evidence-state--${dimension.state}`;
+    state.textContent = stateLabel(dimension.state);
+    const explanation = document.createElement('p');
+    explanation.textContent = dimension.explanation;
+    track.append(heading, state, renderEvidenceStateBar(dimension.state, dimension.label), explanation);
+    addEvidenceLinks(track, dimension.evidenceIds, catalogue);
+    appendExplorationArea(track, dimension.verificationQuestion, dimension.state);
+    return track;
+  }
+
+  function executiveSignals(dimensions) {
+    const selected = dimensions.filter((dimension) => dimension.state === 'direct').slice(0, 2);
+    const exploration = dimensions.find((dimension) => (
+      !selected.includes(dimension)
+      && ['needs_interview_verification', 'not_evidenced'].includes(dimension.state)
+    ));
+    if (exploration) selected.push(exploration);
+    for (const dimension of dimensions) {
+      if (selected.length === 3) break;
+      if (!selected.includes(dimension)) selected.push(dimension);
+    }
+    return selected;
+  }
+
+  function renderExecutiveSignal(dimension) {
+    const signal = document.createElement('article');
+    signal.className = 'experience-fit-signal';
+    const heading = document.createElement('h4');
+    heading.textContent = dimension.label;
+    const state = document.createElement('p');
+    state.className = `evidence-state evidence-state--${dimension.state}`;
+    state.textContent = stateLabel(dimension.state);
+    signal.append(heading, state);
+    return signal;
+  }
+
+  function narrativeChip(label, variant = 'capability') {
+    const chip = document.createElement('span');
+    chip.className = 'role-narrative__chip role-narrative__chip--' + variant;
+    chip.textContent = label;
+    return chip;
+  }
+
+  function renderRoleNarrative(assessment, catalogue) {
+    const section = document.createElement('section');
+    section.className = 'role-narrative';
+
+    const header = document.createElement('div');
+    header.className = 'role-narrative__header';
+    const title = document.createElement('div');
+    const label = document.createElement('p');
+    label.className = 'role-narrative__label';
+    label.textContent = 'Role narrative';
+    const heading = document.createElement('h3');
+    heading.textContent = assessment.summary;
+    title.append(label, heading);
+
+    const ingress = document.createElement('p');
+    ingress.className = 'role-narrative__ingress';
+    ingress.append('The public record gives the strongest support for ');
+    const direct = assessment.dimensions.filter((dimension) => dimension.state === 'direct').slice(0, 3);
+    direct.forEach((dimension, index) => {
+      if (index > 0) ingress.append(index === direct.length - 1 ? ' and ' : ', ');
+      ingress.append(narrativeChip(dimension.label));
+    });
+    if (direct.length === 0) ingress.append('the areas cited below');
+    ingress.append('. It documents the work through ');
+    ingress.append(narrativeChip('Source-linked product decisions', 'evidence'));
+    ingress.append(', ');
+    ingress.append(narrativeChip('Reusable workflow controls', 'evidence'));
+    ingress.append(', and ');
+    ingress.append(narrativeChip('An inspectable evidence trail', 'evidence'));
+    ingress.append('.');
+    header.append(title, ingress);
+
+    const ledger = document.createElement('div');
+    ledger.className = 'role-narrative__ledger';
+    const coverage = Array.isArray(assessment.roleCoverage) ? assessment.roleCoverage.slice(0, 2) : [];
+    for (const item of coverage) {
+      const row = document.createElement('article');
+      row.className = 'role-narrative__row';
+      const question = document.createElement('h4');
+      question.textContent = 'Can Marcus support “' + item.roleNeed + '”?';
+      const explanation = document.createElement('p');
+      explanation.textContent = item.explanation;
+      const evidence = document.createElement('div');
+      evidence.className = 'role-narrative__evidence';
+      const state = document.createElement('p');
+      state.className = 'evidence-state evidence-state--' + item.state;
+      state.textContent = stateLabel(item.state);
+      evidence.append(state);
+      const sources = document.createElement('p');
+      sources.className = 'role-narrative__source-count';
+      sources.textContent = item.evidenceIds.length + ' cited public source' + (item.evidenceIds.length === 1 ? '' : 's');
+      evidence.append(sources);
+      addEvidenceLinks(evidence, item.evidenceIds, catalogue);
+      row.append(question, explanation, evidence);
+      ledger.append(row);
+    }
+
+    const domainRow = document.createElement('article');
+    domainRow.className = 'role-narrative__row';
+    const domainQuestion = document.createElement('h4');
+    domainQuestion.textContent = 'Can he apply this in this role’s domain?';
+    const domainExplanation = document.createElement('p');
+    domainExplanation.textContent = 'The public record does not prove the local systems, metrics, or domain constraints. That is an exploration topic, not a negative score.';
+    const domainEvidence = document.createElement('div');
+    domainEvidence.className = 'role-narrative__evidence';
+    const domainState = document.createElement('p');
+    domainState.className = 'evidence-state evidence-state--needs_interview_verification';
+    domainState.textContent = 'Exploration topic';
+    domainEvidence.append(domainState);
+    domainRow.append(domainQuestion, domainExplanation, domainEvidence);
+    ledger.append(domainRow);
+
+    section.append(header, ledger);
+    return section;
+  }
+
+  function renderEvidenceDetails(dimensions, catalogue) {
+    const details = document.createElement('details');
+    details.className = 'experience-fit-details';
+    const summary = document.createElement('summary');
+    summary.textContent = `Show full evidence details and sources (${dimensions.length} dimensions)`;
+    const tracks = document.createElement('div');
+    tracks.className = 'experience-fit-tracks';
+    dimensions.forEach((dimension) => tracks.append(renderExperienceFitTrack(dimension, catalogue)));
+    details.append(summary, tracks);
+    return details;
+  }
+
   function renderRoleCoverage(roleCoverage, catalogue) {
     if (!Array.isArray(roleCoverage) || roleCoverage.length === 0) return null;
     const section = document.createElement('section');
@@ -372,6 +509,10 @@ if (promptGenerator) {
     const introduction = document.createElement('p');
     introduction.className = 'role-coverage__intro';
     introduction.textContent = 'These tracks change with the submitted role. They show cited public evidence for the role requirements, not a candidate score.';
+    const details = document.createElement('details');
+    details.className = 'role-coverage__details';
+    const summary = document.createElement('summary');
+    summary.textContent = `Show role-specific evidence coverage (${roleCoverage.length} requirement${roleCoverage.length === 1 ? '' : 's'})`;
     const list = document.createElement('div');
     list.className = 'role-coverage__list';
     for (const coverage of roleCoverage) {
@@ -392,16 +533,14 @@ if (promptGenerator) {
       appendExplorationArea(item, coverage.verificationQuestion, coverage.state);
       list.append(item);
     }
-    section.append(heading, introduction, list);
+    details.append(summary, list);
+    section.append(heading, introduction, details);
     return section;
   }
 
   function renderRole(assessment, catalogue, { roleTitle = 'Submitted role description' } = {}) {
     const fragment = document.createDocumentFragment();
-    const summary = document.createElement('p');
-    summary.className = 'review-summary';
-    summary.textContent = assessment.summary;
-    fragment.append(summary);
+    fragment.append(renderRoleNarrative(assessment, catalogue));
 
     appendTextSection(fragment, 'Role-specific needs detected', assessment.roleNeeds, 'review-detail-list role-needs-list', 'review-detail--role-needs');
 
@@ -420,27 +559,20 @@ if (promptGenerator) {
     radar.className = 'experience-fit-radar';
     radar.append(renderSemanticRadar(assessment.dimensions));
     const caption = document.createElement('figcaption');
-    caption.textContent = 'One point represents each labelled dimension. The shape encodes cited public-evidence states only; read the evidence tracks for the full interpretation.';
+    caption.textContent = 'One point represents each labelled dimension. The shape encodes cited public-evidence states only; open evidence details for the full interpretation.';
     radar.append(caption);
     overview.append(radar, renderRadarKey(assessment.dimensions));
-    const tracks = document.createElement('div');
-    tracks.className = 'experience-fit-tracks';
-    for (const dimension of assessment.dimensions) {
-      const track = document.createElement('article');
-      track.className = 'experience-fit-track';
-      const heading = document.createElement('h4');
-      heading.textContent = dimension.label;
-      const state = document.createElement('p');
-      state.className = `evidence-state evidence-state--${dimension.state}`;
-      state.textContent = stateLabel(dimension.state);
-      const explanation = document.createElement('p');
-      explanation.textContent = dimension.explanation;
-      track.append(heading, state, renderEvidenceStateBar(dimension.state, dimension.label), explanation);
-      addEvidenceLinks(track, dimension.evidenceIds, catalogue);
-      appendExplorationArea(track, dimension.verificationQuestion, dimension.state);
-      tracks.append(track);
-    }
-    map.append(overview, tracks);
+    const signals = document.createElement('section');
+    signals.className = 'experience-fit-signals';
+    const signalHeading = document.createElement('h4');
+    signalHeading.className = 'experience-fit-signals__heading';
+    signalHeading.textContent = 'Evidence by dimension';
+    const signalIntroduction = document.createElement('p');
+    signalIntroduction.className = 'experience-fit-signals__intro';
+    signalIntroduction.textContent = 'The map adapts to the submitted role. Open the evidence detail view to inspect every dimension and its cited sources.';
+    signals.append(signalHeading, signalIntroduction);
+    signals.append(renderEvidenceDetails(assessment.dimensions, catalogue));
+    map.append(overview, signals);
     fragment.append(map);
     const roleCoverage = renderRoleCoverage(assessment.roleCoverage, catalogue);
     if (roleCoverage) fragment.append(roleCoverage);

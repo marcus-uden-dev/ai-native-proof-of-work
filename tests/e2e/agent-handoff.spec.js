@@ -98,16 +98,16 @@ test('the existing repository review panel renders a cited AI role assessment wh
     ['product-framing', 'Product framing'],
     ['workflow-design', 'Workflow design'],
     ['ai-native-execution', 'AI-native execution'],
-    ['evidence-synthesis', 'Evidence synthesis'],
+    ['evidence-synthesis', 'Evidence-informed decisions'],
     ['operational-collaboration', 'Operational collaboration'],
     ['technical-delivery', 'Technical delivery'],
     ['business-prioritisation', 'Business prioritisation']
   ].map(([id, label], index) => ({
     id,
     label,
-    state: index === 1 ? 'direct' : 'not_evidenced',
-    explanation: index === 1 ? 'The CV documents product operations and workflow design.' : 'The public record needs interview validation for this role requirement.',
-    evidenceIds: index === 1 ? ['cv-product-operations'] : index === 2 ? ['unknown-evidence-id'] : [],
+    state: index < 3 ? 'direct' : 'not_evidenced',
+    explanation: index < 3 ? 'The CV documents product operations and workflow design.' : 'The public record needs interview validation for this role requirement.',
+    evidenceIds: index < 3 ? ['cv-product-operations'] : index === 3 ? ['unknown-evidence-id'] : [],
     verificationQuestion: index === 1 ? '' : `${label} needs role-specific context before a conclusion.`
   }));
   await page.route('**/assets/js/recruiter-review-config.js', (route) => route.fulfill({
@@ -174,15 +174,22 @@ test('the existing repository review panel renders a cited AI role assessment wh
   await page.getByRole('button', { name: 'Review with AI' }).click();
   await expect(page.getByRole('heading', { name: 'AI review' })).toBeVisible();
   await expect(page.getByText('This cited baseline remains transparent.')).toBeVisible();
-  await expect(page.getByText('Explore further: Product framing needs role-specific context before a conclusion.')).toBeVisible();
+  await expect(page.getByText('Show full evidence details and sources (7 dimensions)')).toBeVisible();
+  await page.getByText('Show full evidence details and sources (7 dimensions)').click();
+  await expect(page.getByText('Explore further: Evidence-informed decisions needs role-specific context before a conclusion.')).toBeVisible();
   await expect(page.getByText('Interview question:', { exact: false })).toHaveCount(0);
   await expect(page.locator('.experience-fit-radar__svg')).toBeVisible();
   await expect(page.getByText('Map key — starts at the top and moves clockwise.')).toBeVisible();
   await expect(page.getByText('01').first()).toBeVisible();
-  await expect(page.locator('.experience-fit-track .evidence-state--direct')).toBeVisible();
+  await expect(page.getByText('Role narrative')).toBeVisible();
+  await expect(page.getByText('Can he apply this in this role’s domain?')).toBeVisible();
+  await expect(page.getByText('The public record does not prove the local systems, metrics, or domain constraints. That is an exploration topic, not a negative score.')).toBeVisible();
+  await expect(page.locator('.role-narrative__chip')).toHaveCount(6);
+  await expect(page.getByText('Evidence by dimension')).toBeVisible();
+  await expect(page.getByText('Show full evidence details and sources (7 dimensions)')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Role-specific needs detected' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
-  await expect(page.getByText('API layer design and integration')).toBeVisible();
+  await expect(page.getByText('Show role-specific evidence coverage (1 requirement)')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Evidence limits' })).toHaveCount(0);
   const reviewWidth = await page.locator('#apiReviewResult').evaluate((element) => element.getBoundingClientRect().width);
   const cardWidth = await page.locator('.agent-card').evaluate((element) => element.getBoundingClientRect().width);
@@ -200,7 +207,10 @@ test('the existing repository review panel renders a cited AI role assessment wh
   await expect(page.locator('.experience-fit-radar')).toBeVisible();
   await expect(page.locator('.experience-fit-radar-key')).toBeVisible();
   await expect(page.locator('.experience-fit-radar__axis-index')).toHaveCount(7);
+  await expect(page.locator('.experience-fit-track .evidence-state--direct').first()).toBeVisible();
+  await page.getByText('Show role-specific evidence coverage (1 requirement)').click();
   expect(await page.locator('.role-coverage__list').evaluate((element) => getComputedStyle(element).gridTemplateColumns.split(' ').length)).toBe(1);
+  expect(await page.locator('#apiReviewResult').evaluate((element) => element.scrollWidth <= element.clientWidth)).toBe(true);
 });
 
 test('repository review explains when all configured API credits are exhausted', async ({ page }) => {
@@ -257,12 +267,21 @@ test('a saved smoke test renders through the live recruiter-review interface', a
   await expect(page.getByText('Saved smoke test: Spotify — Customer Service Platform. Public evidence coverage only.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Source role listing ↗' })).toHaveAttribute('href', 'https://jobs.lever.co/spotify/7f0a8faa-f4f5-4db9-9f51-4101d6a29b34');
   await expect(page.getByText('Role reviewed: Spotify — Customer Service Platform')).toBeVisible();
+  await expect(page.getByText('Can he apply this in this role’s domain?')).toBeVisible();
+  await expect(page.getByText('The public record does not prove the local systems, metrics, or domain constraints. That is an exploration topic, not a negative score.')).toBeVisible();
+  await expect(page.locator('.role-narrative__row')).toHaveCount(3);
+  await expect(page.getByLabel('Experience Fit Map key').getByText('Evidence-informed decisions')).toBeVisible();
   await expect(page.locator('.experience-fit-radar__axis-label')).toHaveCount(7);
   await expect(page.getByText('Explore further:', { exact: false })).toHaveCount(0);
-  await expect(page.locator('.experience-fit-state-bar')).toHaveCount(12);
+  await expect(page.getByText('Show full evidence details and sources (7 dimensions)')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'strengthen the API layer connecting support systems' })).toBeVisible();
+  await expect(page.getByText('Show role-specific evidence coverage (5 requirements)')).toBeVisible();
+  await page.getByText('Show full evidence details and sources (7 dimensions)').click();
+  await expect(page.locator('.experience-fit-details[open] .experience-fit-state-bar')).toHaveCount(7);
   await expect(page.locator('.experience-fit-track')).toHaveCount(7);
+  await page.getByText('Show role-specific evidence coverage (5 requirements)').click();
+  await expect(page.getByRole('heading', { name: 'strengthen the API layer connecting support systems', exact: true })).toBeVisible();
+  await expect(page.locator('.role-coverage__details[open] .experience-fit-state-bar')).toHaveCount(5);
   await expect(page.locator('.role-coverage__item')).toHaveCount(5);
 });
 
@@ -275,6 +294,9 @@ test('additional saved smoke tests render distinct role-specific coverage', asyn
     await page.goto(`/?smoke=${slug}#ai-review`);
     await expect(page.getByText(`Saved smoke test: ${title}. Public evidence coverage only.`)).toBeVisible();
     await expect(page.getByText(`Role reviewed: ${title}`)).toBeVisible();
+    await expect(page.getByText('Can he apply this in this role’s domain?')).toBeVisible();
+    await expect(page.locator('.role-narrative__row')).toHaveCount(3);
+    await expect(page.getByLabel('Experience Fit Map key').getByText('Evidence-informed decisions')).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Role-specific evidence coverage' })).toBeVisible();
     await expect(page.getByRole('heading', { name: roleNeed })).toBeVisible();
   }

@@ -239,6 +239,10 @@ test('validates controlled dynamic role coverage and adds canonical labels', asy
   const response = await worker.fetch(request({ mode: 'role', clientMode: 'role', input: 'Product Manager for API platforms.' }), baseEnv);
   assert.equal(response.status, 200);
   const body = await response.json();
+  assert.equal(
+    body.assessment.dimensions.find((dimension) => dimension.id === 'evidence-synthesis').label,
+    'Evidence-informed decisions'
+  );
   assert.deepEqual(body.assessment.roleCoverage, [
     {
       capabilityId: 'systems-api-integration',

@@ -1016,6 +1016,605 @@ h3 {
   display: none;
 }
 
+.repository-interview .review-result {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview__page > .review-result {
+  margin-top: clamp(28px, 5vw, 56px);
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid var(--ri-panel-rule);
+  background: var(--ri-panel-inner);
+}
+
+.repository-interview .review-result[hidden] {
+  display: none;
+}
+
+.repository-interview .recruiter-follow-up {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview__page > .recruiter-follow-up {
+  margin-top: 18px;
+  padding: clamp(24px, 4vw, 44px);
+  border: 1px solid var(--ri-panel-rule);
+  background: var(--ri-panel-inner);
+}
+
+.repository-interview .recruiter-follow-up[hidden] {
+  display: none;
+}
+
+.repository-interview .follow-up-fields {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.repository-interview .follow-up-fields .generator-input {
+  min-height: auto;
+  padding: 0.75rem;
+}
+
+.repository-interview .follow-up-consent {
+  color: var(--ri-panel-text);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.repository-interview .follow-up-consent input {
+  accent-color: var(--ri-gold);
+}
+
+.repository-interview .review-summary {
+  margin: 0 0 1rem;
+  color: var(--ri-panel-text);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.repository-interview .review-findings,
+.repository-interview .experience-fit-tracks,
+.repository-interview .review-evidence-links {
+  display: grid;
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repository-interview .review-findings > li,
+.repository-interview .experience-fit-track {
+  padding: 1rem;
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+}
+
+.repository-interview .review-findings p,
+.repository-interview .experience-fit-track p {
+  margin: 0;
+  color: var(--ri-muted);
+  line-height: 1.55;
+}
+
+.repository-interview .review-evidence-links {
+  margin-top: 0.75rem;
+}
+
+.repository-interview .review-evidence-links a {
+  color: var(--ri-gold);
+  font-size: 0.82rem;
+}
+
+.repository-interview .review-evidence-unavailable {
+  color: var(--ri-muted);
+  font-size: 0.82rem;
+}
+
+.repository-interview .review-map-label {
+  margin: 0 0 0.35rem;
+  color: var(--ri-gold);
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.repository-interview .reviewed-role {
+  margin: 0 0 0.8rem;
+  color: var(--ri-panel-muted);
+  font: 0.82rem/1.45 var(--mono);
+}
+
+.repository-interview .experience-fit-map {
+  display: grid;
+  grid-template-columns: minmax(15rem, 0.65fr) minmax(0, 1.35fr);
+  align-items: start;
+  gap: clamp(1rem, 3vw, 2.5rem);
+  margin-top: 1.5rem;
+}
+
+.repository-interview .experience-fit-map__overview {
+  min-width: 0;
+}
+
+.repository-interview .experience-fit-radar {
+  display: grid;
+  width: 100%;
+  max-width: 24rem;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+  gap: 0.7rem;
+}
+
+.repository-interview .experience-fit-radar__svg {
+  width: 100%;
+  height: auto;
+}
+
+.repository-interview .experience-fit-radar__ring,
+.repository-interview .experience-fit-radar__axis {
+  fill: none;
+  stroke: var(--ri-panel-rule);
+  stroke-width: 1;
+}
+
+.repository-interview .experience-fit-radar__evidence {
+  fill: rgba(154, 96, 30, 0.28);
+  stroke: var(--ri-gold);
+  stroke-width: 1.5;
+}
+
+.repository-interview .experience-fit-radar__marker { fill: var(--ri-gold); }
+.repository-interview .experience-fit-radar__marker--direct { fill: #a6cfbc; }
+.repository-interview .experience-fit-radar__marker--not_evidenced { fill: var(--ri-muted); }
+
+.repository-interview .experience-fit-radar__axis-label {
+  fill: var(--ri-panel-text);
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.repository-interview .experience-fit-radar__axis-index {
+  display: none;
+  fill: var(--ri-gold);
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.repository-interview .experience-fit-radar figcaption {
+  color: var(--ri-muted);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.repository-interview .experience-fit-radar-key {
+  margin-top: 0.9rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .experience-fit-radar-key__intro {
+  margin: 0 0 0.65rem;
+  color: var(--ri-gold);
+  font: 0.73rem/1.45 var(--mono);
+  letter-spacing: 0.03em;
+}
+
+.repository-interview .experience-fit-radar-key__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.38rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.repository-interview .experience-fit-radar-key__list li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.5rem;
+  align-items: start;
+}
+
+.repository-interview .experience-fit-radar-key__number {
+  padding-top: 0.08rem;
+  color: var(--ri-gold);
+  font: 0.72rem/1.4 var(--mono);
+}
+
+.repository-interview .experience-fit-radar-key__detail {
+  display: grid;
+  gap: 0.08rem;
+  color: var(--ri-panel-text);
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.repository-interview .experience-fit-radar-key__detail strong {
+  font-weight: 500;
+}
+
+.repository-interview .experience-fit-radar-key .evidence-state {
+  margin: 0 !important;
+  font-size: 0.65rem;
+}
+
+.repository-interview .experience-fit-tracks {
+  grid-template-columns: 1fr;
+}
+
+.repository-interview .experience-fit-signals {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.repository-interview .role-narrative {
+  margin: 1.4rem 0 1.8rem;
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+}
+
+.repository-interview .role-narrative__header {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(16rem, 0.95fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(1.4rem, 3vw, 2.7rem);
+  border-bottom: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .role-narrative__label {
+  margin: 0 0 1rem;
+  color: var(--ri-gold);
+  font: 0.77rem/1.45 var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.repository-interview .role-narrative h3 {
+  max-width: 17ch;
+  margin: 0;
+  color: var(--ri-panel-text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(1.8rem, 3.4vw, 3.3rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.04;
+}
+
+.repository-interview .role-narrative__ingress {
+  align-self: center;
+  margin: 0;
+  color: var(--ri-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.repository-interview .role-narrative__chip {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  margin: 0.08rem 0.08rem;
+  padding: 0.08rem 0.45rem;
+  border: 1px solid #6c9d88;
+  color: #c2e1d1;
+  font: 0.72rem/1.25 var(--mono);
+  letter-spacing: 0.01em;
+  vertical-align: baseline;
+}
+
+.repository-interview .role-narrative__chip--evidence {
+  border-color: #b98b52;
+  color: #efd1a6;
+}
+
+.repository-interview .role-narrative__ledger {
+  display: grid;
+}
+
+.repository-interview .role-narrative__row {
+  display: grid;
+  grid-template-columns: minmax(13rem, 0.8fr) minmax(18rem, 1.25fr) minmax(10rem, 0.55fr);
+  gap: clamp(1rem, 3vw, 2.5rem);
+  align-items: start;
+  padding: clamp(1.15rem, 2.4vw, 1.8rem) clamp(1.4rem, 3vw, 2.7rem);
+  border-bottom: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .role-narrative__row:last-child {
+  border-bottom: 0;
+}
+
+.repository-interview .role-narrative__row h4 {
+  margin: 0;
+  color: var(--ri-panel-text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+.repository-interview .role-narrative__row > p {
+  margin: 0;
+  color: var(--ri-muted);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+.repository-interview .role-narrative__evidence {
+  display: grid;
+  justify-items: start;
+  gap: 0.35rem;
+}
+
+.repository-interview .role-narrative__evidence .evidence-state {
+  margin: 0 !important;
+}
+
+.repository-interview .role-narrative__source-count {
+  margin: 0;
+  color: var(--ri-muted);
+  font: 0.7rem/1.45 var(--mono);
+}
+
+.repository-interview .role-narrative__evidence .evidence-links {
+  margin-top: 0.25rem;
+}
+
+.repository-interview .experience-fit-signals__heading {
+  margin: 0;
+  color: var(--ri-gold);
+  font: 0.77rem/1.45 var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.repository-interview .experience-fit-signals__intro {
+  max-width: 48rem;
+  margin: -0.25rem 0 0.15rem;
+  color: var(--ri-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.repository-interview .experience-fit-signal {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: baseline;
+  padding: 0.85rem 0;
+  border-bottom: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .experience-fit-signal h4 {
+  margin: 0;
+  color: var(--ri-panel-text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.repository-interview .experience-fit-signal .evidence-state {
+  margin: 0 !important;
+  text-align: right;
+}
+
+.repository-interview .experience-fit-details,
+.repository-interview .role-coverage__details {
+  margin-top: 0.25rem;
+  border-block: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .experience-fit-details > summary,
+.repository-interview .role-coverage__details > summary {
+  min-height: 44px;
+  padding: 0.8rem 1.4rem 0.8rem 0;
+  color: var(--ri-gold);
+  cursor: pointer;
+  font: 0.78rem/1.45 var(--mono);
+}
+
+.repository-interview .experience-fit-details > summary:focus-visible,
+.repository-interview .role-coverage__details > summary:focus-visible {
+  outline: 2px solid var(--ri-gold);
+  outline-offset: -2px;
+}
+
+.repository-interview .experience-fit-details[open] > summary,
+.repository-interview .role-coverage__details[open] > summary {
+  border-bottom: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .experience-fit-details > .experience-fit-tracks,
+.repository-interview .role-coverage__details > .role-coverage__list {
+  padding: 0.85rem 0;
+}
+
+.repository-interview .role-coverage {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .role-coverage > h4 {
+  margin: 0 0 0.55rem;
+  color: var(--ri-gold);
+  font: 0.77rem/1.45 var(--mono);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.repository-interview .role-coverage__intro {
+  max-width: 48rem;
+  margin: 0 0 0.9rem;
+  color: var(--ri-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+.repository-interview .role-coverage__list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+@media (max-width: 760px) {
+  .repository-interview .role-narrative__header,
+  .repository-interview .role-narrative__row {
+    grid-template-columns: 1fr;
+  }
+
+  .repository-interview .role-narrative__header {
+    gap: 1.25rem;
+  }
+
+  .repository-interview .role-narrative h3 {
+    max-width: 20ch;
+  }
+}
+
+.repository-interview .role-coverage__item {
+  padding: 1rem;
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+}
+
+.repository-interview .role-coverage__item h5 {
+  margin: 0 0 0.35rem;
+  color: var(--ri-panel-text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.repository-interview .role-coverage__item p {
+  margin: 0;
+  color: var(--ri-muted);
+  line-height: 1.55;
+}
+
+.repository-interview .role-coverage__capability {
+  margin-bottom: 0.7rem !important;
+  color: var(--ri-gold) !important;
+  font: 0.73rem/1.4 var(--mono);
+}
+
+.repository-interview .experience-fit-state-indicator {
+  margin: 0.1rem 0 0.8rem;
+}
+
+.repository-interview .experience-fit-state-indicator__label {
+  margin: 0 0 0.3rem !important;
+  color: var(--ri-muted) !important;
+  font: 0.68rem/1.4 var(--mono) !important;
+}
+
+.repository-interview .experience-fit-state-bar {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3px;
+}
+
+.repository-interview .experience-fit-state-bar span {
+  height: 0.35rem;
+  background: #29251d;
+}
+
+.repository-interview .experience-fit-state-bar--direct span { background: #a6cfbc; }
+.repository-interview .experience-fit-state-bar--transferable span:nth-child(-n + 3) { background: #d8ad72; }
+.repository-interview .experience-fit-state-bar--needs_interview_verification span:nth-child(-n + 2) { background: #dfb873; }
+.repository-interview .experience-fit-state-bar--not_evidenced span:first-child { background: var(--ri-muted); }
+
+.repository-interview .experience-fit-track h4 {
+  margin: 0 0 0.45rem;
+  color: var(--ri-panel-text);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.repository-interview .evidence-state {
+  margin-bottom: 0.65rem !important;
+  color: var(--ri-gold) !important;
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.repository-interview .evidence-state--direct { color: #a6cfbc !important; }
+.repository-interview .evidence-state--transferable { color: #d8ad72 !important; }
+.repository-interview .evidence-state--needs_interview_verification { color: #dfb873 !important; }
+.repository-interview .evidence-state--not_evidenced { color: var(--ri-muted) !important; }
+
+.repository-interview .exploration-area {
+  margin-top: 0.85rem !important;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--ri-panel-rule);
+  color: #d6bf8d !important;
+  font-size: 0.9rem;
+  line-height: 1.5 !important;
+}
+
+.repository-interview .review-detail {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--ri-panel-rule);
+}
+
+.repository-interview .review-detail h4 {
+  margin: 0 0 0.65rem;
+  color: var(--ri-gold);
+  font-family: var(--mono);
+  font-size: 0.77rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.repository-interview .review-detail--role-needs {
+  margin-top: 1rem;
+}
+
+.repository-interview .role-needs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+.repository-interview .role-needs-list li {
+  border: 1px solid var(--ri-panel-rule);
+  background: #0d0d0a;
+  color: var(--ri-panel-text);
+  padding: 0.45rem 0.6rem;
+  font: 0.75rem/1.35 var(--mono);
+}
+
+.repository-interview .review-detail-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ri-muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 .repository-interview .result-title {
   margin: 0 0 6px;
   color: var(--ri-panel-text);
@@ -1086,6 +1685,33 @@ h3 {
 
   .repository-interview .prompt-window {
     max-height: 52vh;
+  }
+  .repository-interview .experience-fit-tracks {
+    grid-template-columns: 1fr;
+  }
+
+  .repository-interview .experience-fit-map {
+    grid-template-columns: 1fr;
+  }
+
+  .repository-interview .experience-fit-radar {
+    max-width: min(100%, 28rem);
+    margin-inline: auto;
+  }
+
+  .repository-interview .experience-fit-radar__axis-label { display: none; }
+
+  .repository-interview .experience-fit-radar__axis-index { display: block; }
+
+  .repository-interview .experience-fit-signal {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+  }
+
+  .repository-interview .experience-fit-signal .evidence-state { text-align: left; }
+
+  .repository-interview .role-coverage__list {
+    grid-template-columns: 1fr;
   }
 }
 
