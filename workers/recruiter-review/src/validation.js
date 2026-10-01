@@ -74,13 +74,17 @@ export function validateReview(value, mode, catalogue) {
     seen.add(dimension.id);
     suppliedDimensions.set(dimension.id, dimension);
   }
-  assessment.dimensions = experienceFitDimensions.map(({ id, label }) => suppliedDimensions.get(id) ?? {
-    id,
-    label,
-    state: 'not_evidenced',
-    explanation: `No direct public evidence was identified for ${label} in this review.`,
-    evidenceIds: [],
-    verificationQuestion: `Explore the role-specific context for ${label}.`
+  assessment.dimensions = experienceFitDimensions.map(({ id, label }) => {
+    const supplied = suppliedDimensions.get(id);
+    if (supplied) return { ...supplied, label };
+    return {
+      id,
+      label,
+      state: 'not_evidenced',
+      explanation: `No direct public evidence was identified for ${label} in this review.`,
+      evidenceIds: [],
+      verificationQuestion: `Explore the role-specific context for ${label}.`
+    };
   });
   const suppliedCoverage = new Set();
   assessment.roleCoverage = assessment.roleCoverage.map((coverage) => {

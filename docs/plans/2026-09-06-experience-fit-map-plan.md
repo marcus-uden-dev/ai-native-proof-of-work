@@ -141,7 +141,7 @@ Both prompts delimit pasted text as untrusted data and instruct the model never 
 
 The primary result is a two-column desktop layout that collapses to one column on small screens:
 
-- **Map:** seven axes — Product framing, Workflow design, AI-native execution, Evidence synthesis, Operational collaboration, Technical delivery, and Business prioritisation. The outer role line communicates which areas the role stresses; the inner evidence area communicates what the public record currently supports.
+- **Map:** seven axes — Product framing, Workflow design, AI-native execution, Evidence-informed decisions, Operational collaboration, Technical delivery, and Business prioritisation. Evidence-informed decisions means turning research and available evidence into an explicit decision trail, not an abstract research score. The outer role line communicates which areas the role stresses; the inner evidence area communicates what the public record currently supports.
 - **Evidence tracks:** each dimension has a named semantic state and a short cited interpretation. They are coverage tracks, not skill bars and not percentages.
 - **Evidence anchors:** selected public sources, grouped by evidence class.
 - **Interview validation:** concrete questions for transferable or not-yet-evidenced areas.
