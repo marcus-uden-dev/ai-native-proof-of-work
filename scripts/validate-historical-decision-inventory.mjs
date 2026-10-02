@@ -9,6 +9,8 @@ const MANUAL_STATES = new Set(['manual-approval', 'manual-review', 'pending-manu
 const issue = (code, message, index) => ({ code, message, ...(index === undefined ? {} : { index }) });
 const text = (value) => typeof value === 'string' && value.trim().length > 0;
 const normalize = (value) => String(value ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
+const unsafeLocation = (value) => /(?:[a-z]:[\\/]|(?:^|[\s"'(])\/(?:users|home|var|tmp)(?:\/|$)|\\|(?:^|[\\/])\.?(?:codex|claude|agents)(?:[\\/]|$)|(?:^|\s)~[\\/]|raw[- ]chat)/i.test(String(value ?? ''));
+const validSourceAnchor = (value) => typeof value === 'string' && /^[a-z0-9][a-z0-9._/-]*#L\d+$/i.test(value) && !unsafeLocation(value) && !value.includes('..');
 
 function validDate(value, precision) {
   if (typeof value !== 'string') return false;
@@ -42,11 +44,13 @@ export function validateInventory(inventory) {
     if (!Array.isArray(record.capability_tags) || record.capability_tags.length < 3 || record.capability_tags.length > 7 || record.capability_tags.some((tag) => !text(tag))) errors.push(issue('invalid-capability-tags', 'capability_tags must contain 3-7 non-empty strings', index));
     else if (new Set(record.capability_tags.map(normalize)).size !== record.capability_tags.length) errors.push(issue('duplicate-capability-tag', 'capability tags must be unique', index));
     if (!Array.isArray(record.evidence_refs) || record.evidence_refs.length === 0 || record.evidence_refs.some((ref) => !text(ref))) errors.push(issue('missing-evidence-refs', 'evidence_refs must be non-empty', index));
+    else if (record.evidence_refs.some(unsafeLocation)) errors.push(issue('unsafe-evidence-ref', 'evidence references cannot include local, runtime, or raw-chat paths', index));
+    if (record.source_anchor !== undefined && !validSourceAnchor(record.source_anchor)) errors.push(issue('unsafe-source-anchor', 'source_anchor must be a safe repository-relative line anchor', index));
     if (!text(record.public_eligibility)) errors.push(issue('missing-public-eligibility', 'public eligibility is required', index));
     const state = record.publication_state ?? record.public_eligibility;
     if (MANUAL_STATES.has(normalize(state))) errors.push(issue('manual-approval', 'manual approval states are not supported', index));
     if (record.publication_state !== undefined && !PUBLICATION_STATES.has(record.publication_state) && !MANUAL_STATES.has(normalize(record.publication_state))) errors.push(issue('invalid-publication-state', 'invalid publication state', index));
-    if (record.publication_state === 'hold' && (!text(record.failed_gate) || !text(record.automatic_retry_condition))) errors.push(issue('invalid-hold-record', 'hold records need a failed gate and automatic retry condition', index));
+    if (record.publication_state === 'hold' && (!text(record.failed_gate) || !text(record.automatic_retry_condition) || !text(record.gate_version) || !Number.isInteger(record.attempt_count) || record.attempt_count < 0)) errors.push(issue('invalid-hold-record', 'hold records need gate, retry, gate version, and non-negative attempt count', index));
     const fingerprint = record.fingerprint || decisionFingerprint(record);
     if (fingerprints.has(fingerprint)) errors.push(issue('duplicate-fingerprint', `duplicate decision fingerprint: ${fingerprint}`, index)); else fingerprints.set(fingerprint, index);
   });

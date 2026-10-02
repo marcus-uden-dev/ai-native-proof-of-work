@@ -9,12 +9,12 @@ const baseRecord = {
   decision: 'Keep human review in the workflow.', evidence_refs: ['logs/DECISION_LOG.md'],
   capability_tags: ['product-judgment', 'validation', 'risk-awareness'], public_eligibility: 'eligible'
 };
-const inventory = (record = {}) => ({ project_taxonomy: ['job-agent', 'pkm', 'household-budget', 'personal-ai-harness'], records: [{ ...baseRecord, ...record }] });
+const inventory = (record = {}) => ({ project_taxonomy: ['job-agent', 'pkm', 'household-budget', 'personal-ai-harness', 'phone-layout-agent'], records: [{ ...baseRecord, ...record }] });
 const errors = (value) => validateInventory(value).errors;
 
 test('accepts a valid baseline and publication states', () => {
   for (const state of ['publish', 'internal-only']) assert.equal(errors(inventory({ publication_state: state })).length, 0);
-  assert.equal(errors(inventory({ publication_state: 'hold', failed_gate: 'grounded_evidence', automatic_retry_condition: 'Verified evidence becomes available.' })).length, 0);
+  assert.equal(errors(inventory({ publication_state: 'hold', failed_gate: 'grounded_evidence', automatic_retry_condition: 'Verified evidence becomes available.', gate_version: 'v1', attempt_count: 0 })).length, 0);
   assert.equal(errors(inventory()).length, 0);
 });
 
@@ -42,4 +42,22 @@ test('rejects manual approval states', () => {
 
 test('rejects hold records without a failed gate and automatic retry condition', () => {
   assert.ok(errors(inventory({ publication_state: 'hold' })).some((e) => e.code === 'invalid-hold-record'));
+  assert.ok(errors(inventory({ publication_state: 'hold', failed_gate: 'grounded_evidence', automatic_retry_condition: 'Retry.', gate_version: 'v1', attempt_count: -1 })).some((e) => e.code === 'invalid-hold-record'));
+});
+
+test('accepts a safe repository-relative source anchor', () => {
+  assert.equal(errors(inventory({ source_anchor: 'logs/DECISION_LOG.md#L3' })).length, 0);
+});
+
+test('rejects runtime paths in inventory evidence or source anchors', () => {
+  assert.ok(errors(inventory({ evidence_refs: ['C:/Users/name/.codex/private.md'] })).some((e) => e.code === 'unsafe-evidence-ref'));
+  assert.ok(errors(inventory({ source_anchor: 'C:/Users/name/private.md#L3' })).some((e) => e.code === 'unsafe-source-anchor'));
+  assert.ok(errors(inventory({ evidence_refs: ['/home/name/private.md'] })).some((e) => e.code === 'unsafe-evidence-ref'));
+});
+
+test('accepts a directly evidenced phone-layout-agent record only when taxonomy includes it', () => {
+  const record = { ...baseRecord, primary_project: 'phone-layout-agent', source_anchor: 'strategy/phone-layout-agent/decisions/DECISION_TRAIL.md#L17' };
+  assert.equal(errors(inventory(record)).length, 0);
+  const missingTaxonomy = inventory(record); missingTaxonomy.project_taxonomy = missingTaxonomy.project_taxonomy.filter((project) => project !== 'phone-layout-agent');
+  assert.ok(errors(missingTaxonomy).some((error) => error.code === 'invalid-primary-project'));
 });

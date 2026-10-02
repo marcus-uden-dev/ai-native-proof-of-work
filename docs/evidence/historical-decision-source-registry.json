@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "register_revision": "2026-10-02-initial",
+  "created": "2026-10-02",
+  "scan_cutoff": "2026-10-02",
+  "privacy_class": "private-repository-evidence",
+  "source_classes": {
+    "dated-decision-heading": {
+      "inclusion_grammar": "An H2-H4 Markdown heading with an ISO day date, an em dash, and a non-template title.",
+      "exclusion_grammar": "Exclude templates, addenda, status-only headings, and headings without an ISO day date."
+    },
+    "decision-trail-heading": {
+      "inclusion_grammar": "An H3-H4 Markdown heading with an ISO day date, an em dash, and a non-template title in a decision trail.",
+      "exclusion_grammar": "Exclude section labels, templates, and undated prose."
+    },
+    "dated-decision-corpus": {
+      "inclusion_grammar": "A Markdown file under the registered corpus with an H2-H4 heading containing an ISO day date, an em dash, and a non-template title.",
+      "exclusion_grammar": "Exclude templates, status-only activity, addenda, and headings without an ISO day date."
+    },
+    "local-source-index": {
+      "inclusion_grammar": "A refreshed local index may identify a dated source for later registration.",
+      "exclusion_grammar": "The index itself is not decision evidence and cannot create a candidate."
+    }
+  },
+  "sources": [
+    { "id": "decision-log", "source_path": "logs/DECISION_LOG.md", "source_class": "dated-decision-heading", "owner_project": "personal-ai-harness", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "technical-decision-log", "source_path": "architecture/TECHNICAL_DECISION_LOG.md", "source_class": "dated-decision-heading", "owner_project": "personal-ai-harness", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "job-agent-decision-trail", "source_path": "strategy/job-agent/decisions/DECISION_TRAIL.md", "source_class": "decision-trail-heading", "owner_project": "job-agent", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "pkm-decision-trail", "source_path": "strategy/pkm/decisions/DECISION_TRAIL.md", "source_class": "decision-trail-heading", "owner_project": "pkm", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "household-budget-decision-trail", "source_path": "strategy/household-budget-app/decisions/DECISION_TRAIL.md", "source_class": "decision-trail-heading", "owner_project": "household-budget", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "phone-layout-agent-decision-trail", "source_path": "strategy/phone-layout-agent/decisions/DECISION_TRAIL.md", "source_class": "decision-trail-heading", "owner_project": "phone-layout-agent", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "case-study-corpus", "source_path": "case-studies", "source_class": "dated-decision-corpus", "owner_project": "personal-ai-harness", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "current-plan-corpus", "source_path": "docs/plans", "source_class": "dated-decision-corpus", "owner_project": "personal-ai-harness", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "legacy-plan-corpus", "source_path": "plans", "source_class": "dated-decision-corpus", "owner_project": "personal-ai-harness", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "workflow-corpus", "source_path": "workflows", "source_class": "dated-decision-corpus", "owner_project": "personal-ai-harness", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "task-corpus", "source_path": "tasks", "source_class": "dated-decision-corpus", "owner_project": "personal-ai-harness", "accessibility": "available", "source_revision": "git:73df14f", "scan_state": "registered", "scan_cutoff": "2026-10-02", "privacy_class": "private-repository-evidence" },
+    { "id": "local-codex-project-index", "source_path": null, "source_class": "local-source-index", "owner_project": "personal-ai-harness", "accessibility": "unavailable", "source_revision": "not-captured", "scan_state": "unavailable", "scan_cutoff": "2026-10-02", "privacy_class": "local-only", "access_requirement": "A refreshed local Codex project index.", "retry_trigger": "The local index becomes available and is refreshed." },
+    { "id": "local-claude-project-index", "source_path": null, "source_class": "local-source-index", "owner_project": "personal-ai-harness", "accessibility": "unavailable", "source_revision": "not-captured", "scan_state": "unavailable", "scan_cutoff": "2026-10-02", "privacy_class": "local-only", "access_requirement": "A refreshed local Claude project index.", "retry_trigger": "The local index becomes available and is refreshed." }
+  ]
+}

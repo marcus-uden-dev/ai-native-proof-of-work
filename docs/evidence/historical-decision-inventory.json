@@ -36,9 +36,41 @@
     "personal-ai-harness",
     "job-agent",
     "pkm",
-    "household-budget"
+    "household-budget",
+    "phone-layout-agent"
   ],
   "records": [
+    {
+      "id": "decision-2026-08-28-phone-layout-deterministic-approval-gate",
+      "decision_date": "2026-08-28",
+      "date_precision": "day",
+      "primary_project": "phone-layout-agent",
+      "decision_type": "automation-safety",
+      "lifecycle_status": "implemented",
+      "evidence_status": "verified",
+      "title": "Use deterministic, approval-gated execution for Samsung launcher changes",
+      "context": "Launcher organization contains uncertain visual states and physical device actions that need a narrow permission and recovery boundary.",
+      "decision": "Use AI for discovery and review, but use deterministic allowlisted operations, checkpoints, recovery, verification, dry-run by default, and explicit approval before physical changes.",
+      "tradeoff": "The device-specific adapter and conservative ambiguity handling add implementation work, but reduce blind interaction and make partial completion recoverable.",
+      "evidence_refs": [
+        "strategy/phone-layout-agent/decisions/DECISION_TRAIL.md"
+      ],
+      "source_anchor": "strategy/phone-layout-agent/decisions/DECISION_TRAIL.md#L17",
+      "capability_tags": [
+        "automation-judgment",
+        "risk-controls",
+        "human-in-the-loop",
+        "quality-assurance"
+      ],
+      "public_eligibility": "eligible-after-redaction",
+      "redaction_notes": "Do not expose private source repository details, device identifiers, or unsupported throughput claims.",
+      "fingerprint": "phone-layout-agent|automation-safety|use deterministic, approval-gated execution for samsung launcher changes|use ai for discovery and review, but use deterministic allowlisted operations, checkpoints, recovery, verification, dry-run by default, and explicit approval before physical changes.",
+      "publication_state": "hold",
+      "failed_gate": "privacy_and_redaction",
+      "automatic_retry_condition": "Retry when a recruiter-safe description is validated without private source or device detail.",
+      "gate_version": "v1",
+      "attempt_count": 0
+    },
     {
       "id": "decision-2026-08-24-harness-backfill-before-export",
       "decision_date": "2026-08-24",
@@ -65,7 +97,9 @@
       "fingerprint": "personal-ai-harness|evidence-publishing|classify historical decisions before exporting them|extract, date, tag, classify, deduplicate, and review candidates before creating recruiter-facing entries.",
       "publication_state": "hold",
       "failed_gate": "grounded_evidence",
-      "automatic_retry_condition": "Retry when verified implementation evidence is available."
+      "automatic_retry_condition": "Retry when verified implementation evidence is available.",
+      "gate_version": "v1",
+      "attempt_count": 0
     },
     {
       "id": "decision-2026-08-24-personal-ai-harness-name",
@@ -148,7 +182,9 @@
       "fingerprint": "personal-ai-harness|automation-rollout|test scheduled finding intake with a bounded canary first|run a 14-day job-agent canary with one writer, one existing queue, deduplication, positive-evidence closure, and measured runtime cost.",
       "publication_state": "hold",
       "failed_gate": "source_availability",
-      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available."
+      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available.",
+      "gate_version": "v1",
+      "attempt_count": 0
     },
     {
       "id": "decision-2026-08-10-shared-skill-runtime-neutrality",
@@ -176,7 +212,9 @@
       "fingerprint": "personal-ai-harness|runtime-architecture|keep reusable skill source runtime-neutral|move reusable installation logic to a shared source layer and expose skills per runtime, preserving local variants and rollback paths.",
       "publication_state": "hold",
       "failed_gate": "source_availability",
-      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available."
+      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available.",
+      "gate_version": "v1",
+      "attempt_count": 0
     },
     {
       "id": "decision-2026-08-09-product-code-freshness-boundary",
@@ -551,7 +589,9 @@
       "fingerprint": "personal-ai-harness|documentation-governance|keep repo-owned durable documents with the owning repository|keep repo-specific plans, specs, reports, incidents, and runbooks in the owning repo, while reserving shared agent docs for cross-runtime coordination.",
       "publication_state": "hold",
       "failed_gate": "source_availability",
-      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available."
+      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available.",
+      "gate_version": "v1",
+      "attempt_count": 0
     },
     {
       "id": "lesson-2026-06-24-decision-first-reporting",
@@ -578,7 +618,9 @@
       "fingerprint": "personal-ai-harness|communication-governance|make decision-heavy reports decision-first|put counts, recommended actions, decision items, reply codes, and concise evidence near the top of decision-oriented reports.",
       "publication_state": "hold",
       "failed_gate": "source_availability",
-      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available."
+      "automatic_retry_condition": "Retry when a verified repo-visible source for this decision is available.",
+      "gate_version": "v1",
+      "attempt_count": 0
     }
   ]
 }

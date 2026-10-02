@@ -1,0 +1,104 @@
+import crypto from 'node:crypto';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { validateSourceRegistry } from './validate-historical-decision-source-registry.mjs';
+
+const normalize = (value) => String(value ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
+const hash = (value) => crypto.createHash('sha256').update(value).digest('hex');
+const isTemplate = (value) => /^(decision title|title|template)$/i.test(value.trim()) || /\b(addendum|status)\b/i.test(value);
+const datedHeading = /^(#{2,4})\s+(\d{4}-\d{2}-\d{2})\s+[—-]\s+(.+?)\s*$/;
+const undatedDecisionHeading = /^(#{2,4})\s+decision\s+[—-]\s+(.+?)\s*$/i;
+
+function isIsoDay(value) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
+  const [year, month, day] = value.split('-').map(Number);
+  const date = new Date(Date.UTC(year, month - 1, day));
+  return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+}
+
+function slug(value) {
+  return normalize(value).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 72) || 'untitled';
+}
+
+function draft({ source, sourcePath, date, title, line, state = 'draft', failedGate, retryCondition }) {
+  const decision = title;
+  const fingerprintInputs = {
+    primary_project: source.owner_project,
+    decision_type: 'unclassified',
+    title: normalize(title),
+    decision: normalize(decision)
+  };
+  const fingerprint = Object.values(fingerprintInputs).join('|');
+  return {
+    draft_only: true,
+    id: `draft-${source.id}-${date ?? 'undated'}-${slug(title)}`,
+    registry_source_id: source.id,
+    source_anchor: `${sourcePath}#L${line}`,
+    decision_date: date,
+    date_precision: date ? 'day' : null,
+    primary_project: source.owner_project,
+    title,
+    decision,
+    fingerprint_inputs: fingerprintInputs,
+    collision_group: hash(fingerprint).slice(0, 16),
+    confidence: date ? 'explicit-dated-heading' : 'date-missing',
+    review_state: state,
+    ...(failedGate ? { failed_gate: failedGate, automatic_retry_condition: retryCondition } : {})
+  };
+}
+
+export function discoverCandidates(registry, rootDirectory) {
+  const validation = validateSourceRegistry(registry);
+  if (validation.errors.length) throw new Error(`Invalid source registry: ${JSON.stringify(validation.errors)}`);
+  const candidates = [];
+  const sourceResults = [];
+  for (const source of registry.sources) {
+    if (source.accessibility !== 'available') {
+      sourceResults.push({ source_id: source.id, scan_state: source.scan_state, candidate_count: 0 });
+      continue;
+    }
+    if (source.scan_state === 'scanned' && source.last_scanned_revision === source.source_revision) {
+      sourceResults.push({ source_id: source.id, scan_state: 'scanned', candidate_count: 0, skipped: 'unchanged' });
+      continue;
+    }
+    const absolutePath = path.resolve(rootDirectory, source.source_path);
+    if (!absolutePath.startsWith(path.resolve(rootDirectory) + path.sep)) throw new Error(`Source escapes repository root: ${source.id}`);
+    if (!fs.existsSync(absolutePath)) throw new Error(`Registered source is missing: ${source.source_path}`);
+    const files = fs.statSync(absolutePath).isDirectory()
+      ? fs.readdirSync(absolutePath, { recursive: true }).filter((entry) => entry.endsWith('.md')).map((entry) => path.join(absolutePath, entry))
+      : [absolutePath];
+    let sourceCount = 0;
+    for (const file of files) {
+      const sourcePath = path.relative(rootDirectory, file).replaceAll('\\', '/');
+      const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
+      lines.forEach((line, offset) => {
+        const dated = line.match(datedHeading);
+        if (dated && isIsoDay(dated[2]) && !isTemplate(dated[3])) {
+          candidates.push(draft({ source, sourcePath, date: dated[2], title: dated[3].trim(), line: offset + 1 }));
+          sourceCount += 1;
+          return;
+        }
+        const undated = line.match(undatedDecisionHeading);
+        if (undated && !isTemplate(undated[2])) {
+          candidates.push(draft({ source, sourcePath, date: null, title: undated[2].trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A source with an explicit ISO decision date is registered.' }));
+          sourceCount += 1;
+        }
+      });
+    }
+    sourceResults.push({ source_id: source.id, scan_state: 'scanned', candidate_count: sourceCount });
+  }
+  return { register_revision: registry.register_revision, candidates, source_results: sourceResults };
+}
+
+const scriptPath = fileURLToPath(import.meta.url);
+if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
+  const registryPath = process.argv[2];
+  const rootIndex = process.argv.indexOf('--root');
+  const rootDirectory = rootIndex >= 0 ? process.argv[rootIndex + 1] : process.cwd();
+  if (!registryPath || !rootDirectory) { console.error('Usage: node scripts/discover-historical-decision-candidates.mjs <registry-path> [--root <repository-root>]'); process.exitCode = 2; }
+  else {
+    try { console.log(JSON.stringify(discoverCandidates(JSON.parse(fs.readFileSync(registryPath, 'utf8')), rootDirectory), null, 2)); }
+    catch (error) { console.error(error.message); process.exitCode = 1; }
+  }
+}

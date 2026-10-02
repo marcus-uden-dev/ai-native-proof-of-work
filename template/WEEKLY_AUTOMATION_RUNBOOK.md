@@ -73,7 +73,9 @@ It should:
 ### Historical decision handling
 
 - Use `docs/evidence/historical-decision-inventory.json` as the private candidate layer.
-- Process only new, changed, newly unblocked, or not-yet-projected candidates.
+- Validate `docs/evidence/historical-decision-source-registry.json` first and process only sources that are new, changed, stale, newly unblocked, or not yet scanned.
+- Keep discovery drafts and the local source-path map private. Discovery does not directly change the normalized inventory or public JSON.
+- Report the frozen register revision and private aggregate counts for normalized, held, internal-only, duplicate, excluded, and unavailable candidates.
 - Route each candidate independently to `publish`, `hold`, or `internal-only`; do not use a candidate-level manual approval queue.
 - Publish only after grounded evidence, explicit status, redaction, taxonomy, inventory validation, public contract tests, and release validation pass.
 - Record a held candidate's ID, failed gate, evidence references, and automatic retry condition. Continue unrelated eligible candidates.

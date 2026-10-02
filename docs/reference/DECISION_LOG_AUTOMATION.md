@@ -46,6 +46,8 @@ flowchart TD
 
 The private repository remains the source of truth.
 
+Historical coverage starts with the versioned source register at `docs/evidence/historical-decision-source-registry.json`. It freezes the private decision-bearing source universe, extraction grammar, source revision, scan state, and cutoff for a coverage run. The register and its local-only source map never reach public projections. See [Historical Decision Coverage](HISTORICAL_DECISION_COVERAGE.md) for the coverage contract.
+
 - `logs/DECISION_LOG.md` records the visible decision trail: context, options, tradeoffs, decision, evidence, open questions, and next action.
 - `logs/DECISION_LOG_TAGS.md` classifies the decision with the approved capability taxonomy.
 - `PROJECT_TIMELINE.md` changes only when a decision creates a meaningful, verified project milestone. A decision alone is not enough.
@@ -78,6 +80,8 @@ There is no manual approval queue. Each candidate is routed independently to pub
 The active weekly automation runs every Sunday at 22:00. It uses isolated, full-history Git clones for the private evidence branch, public `main` branch, and the operations logbook.
 
 This avoids a common failure mode: normal uncommitted work in an interactive checkout cannot block the scheduled run. The automation stages only its own generated files, validates each clone before and after committing, and pushes only validated commits. It removes the exact temporary run directory after completion.
+
+For historical coverage, the weekly run validates the frozen source register and scans only sources that are new, changed, stale, or newly unblocked. It records private aggregate coverage counts. A held candidate retries only when its named gate or source revision changes.
 
 ## Expected result
 
