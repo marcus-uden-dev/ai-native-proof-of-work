@@ -11,6 +11,7 @@ const datedHeading = /^(#{2,4})\s+(\d{4}-\d{2}-\d{2})\s+[—-]\s+(.+?)\s*$/;
 const undatedDecisionHeading = /^(#{2,4})\s+decision\s+[—-]\s+(.+?)\s*$/i;
 const keyDecision = /^\s*(?:[-*]\s+)?\*\*(?:KTD|Decision)\d*\s*[—-]\s*(.+?)\*\*(?:\s+.*)?$/i;
 const decisionTableRow = /^\|\s*Decision\s*\|\s*(.+?)\s*\|\s*$/i;
+const rationaleHeading = /^#{2,4}\s+varför\s+(.+?)\s*$/i;
 
 function isIsoDay(value) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -59,12 +60,13 @@ function draft({ source, sourcePath, date, title, line, state = 'draft', failedG
   };
 }
 
-export function discoverCandidates(registry, rootDirectory, sourceRoots = {}) {
+export function discoverCandidates(registry, rootDirectory, sourceRoots = {}, sourceIds = null) {
   const validation = validateSourceRegistry(registry);
   if (validation.errors.length) throw new Error(`Invalid source registry: ${JSON.stringify(validation.errors)}`);
   const candidates = [];
   const sourceResults = [];
   for (const source of registry.sources) {
+    if (sourceIds && !sourceIds.has(source.id)) continue;
     if (source.accessibility !== 'available') {
       sourceResults.push({ source_id: source.id, scan_state: source.scan_state, candidate_count: 0 });
       continue;
@@ -108,6 +110,13 @@ export function discoverCandidates(registry, rootDirectory, sourceRoots = {}) {
             sourceCount += 1;
           }
         }
+        if (source.source_class === 'session-decision-notes') {
+          const rationale = line.match(rationaleHeading);
+          if (rationale && !isTemplate(rationale[1])) {
+            candidates.push(draft({ source, sourcePath, date: null, title: rationale[1].trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A dated source or independently verifiable evidence is registered.' }));
+            sourceCount += 1;
+          }
+        }
       });
     }
     sourceResults.push({ source_id: source.id, scan_state: 'scanned', candidate_count: sourceCount });
@@ -126,13 +135,15 @@ if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
   else {
     try {
       const sourceRoots = {};
+      const sourceIds = new Set();
       for (let index = 0; index < process.argv.length; index += 1) {
         if (process.argv[index] !== '--source-root') continue;
         const [id, localPath] = (process.argv[index + 1] ?? '').split('=', 2);
         if (!id || !localPath) throw new Error('Each --source-root value must be <source-root-id>=<local-path>.');
         sourceRoots[id] = localPath;
       }
-      const result = discoverCandidates(JSON.parse(fs.readFileSync(registryPath, 'utf8')), rootDirectory, sourceRoots);
+      for (let index = 0; index < process.argv.length; index += 1) if (process.argv[index] === '--source') sourceIds.add(process.argv[index + 1]);
+      const result = discoverCandidates(JSON.parse(fs.readFileSync(registryPath, 'utf8')), rootDirectory, sourceRoots, sourceIds.size ? sourceIds : null);
       const serialized = `${JSON.stringify(result, null, 2)}\n`;
       if (outputPath) fs.writeFileSync(outputPath, serialized);
       else console.log(serialized);

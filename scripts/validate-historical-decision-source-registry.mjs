@@ -6,6 +6,7 @@ const text = (value) => typeof value === 'string' && value.trim().length > 0;
 const issue = (code, message, index) => ({ code, message, ...(index === undefined ? {} : { index }) });
 
 function safeRepositoryPath(value) {
+  if (value === '.') return true;
   if (!text(value) || value.includes('\\') || value.startsWith('/') || value.includes(':')) return false;
   const segments = value.split('/');
   return !segments.some((segment) => !segment || segment === '.' || segment === '..' || /^\.(codex|claude|agents)$/i.test(segment));
