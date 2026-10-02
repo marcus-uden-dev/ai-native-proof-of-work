@@ -54,3 +54,10 @@ test('creates a held draft for a visible decision-table row', (t) => {
   assert.equal(result.candidates[0].title, 'Use a reviewed workflow');
   assert.equal(result.candidates[0].failed_gate, 'supported_date');
 });
+
+test('uses a local source-root mapping without exposing its path in the draft anchor', (t) => {
+  const external = structuredClone(registry); external.sources[0].source_root = 'job-agent';
+  const root = withFixture(t, '## 2026-05-11 — Use reviewed workflow\n');
+  const result = discoverCandidates(external, process.cwd(), { 'job-agent': root });
+  assert.equal(result.candidates[0].source_anchor, 'job-agent:logs/DECISION_LOG.md#L1');
+});

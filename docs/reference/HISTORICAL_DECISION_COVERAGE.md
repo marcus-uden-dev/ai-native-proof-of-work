@@ -48,4 +48,4 @@ The private candidate layer can retain repository-relative anchors, fingerprints
 
 ## Coverage reporting
 
-Every private coverage report names the frozen register revision and reports counts by source and disposition: normalized, held, internal-only, duplicate, excluded activity, and unavailable. The target is at least 100 meaningful, normalized, dispositioned private records. If the frozen universe contains fewer eligible decisions, the report must document that evidence-based exception instead of padding the inventory.
+Every private coverage report names the frozen register revision and reports counts by source and disposition: normalized, held, internal-only, duplicate, excluded activity, and unavailable. The target is at least 100 meaningful, normalized, dispositioned private records. This is a coverage floor, not a maximum: retain every meaningful candidate supported by the frozen source universe. If the frozen universe contains fewer eligible decisions, the report must document that evidence-based exception instead of padding the inventory.

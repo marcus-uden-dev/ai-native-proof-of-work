@@ -45,7 +45,7 @@ function draft({ source, sourcePath, date, title, line, state = 'draft', failedG
     draft_only: true,
     id: `draft-${source.id}-${date ?? 'undated'}-${slug(title)}`,
     registry_source_id: source.id,
-    source_anchor: `${sourcePath}#L${line}`,
+    source_anchor: `${source.source_root ? `${source.source_root}:` : ''}${sourcePath}#L${line}`,
     decision_date: date,
     date_precision: date ? 'day' : null,
     primary_project: projectForPath(source, sourcePath),
@@ -59,7 +59,7 @@ function draft({ source, sourcePath, date, title, line, state = 'draft', failedG
   };
 }
 
-export function discoverCandidates(registry, rootDirectory) {
+export function discoverCandidates(registry, rootDirectory, sourceRoots = {}) {
   const validation = validateSourceRegistry(registry);
   if (validation.errors.length) throw new Error(`Invalid source registry: ${JSON.stringify(validation.errors)}`);
   const candidates = [];
@@ -73,15 +73,18 @@ export function discoverCandidates(registry, rootDirectory) {
       sourceResults.push({ source_id: source.id, scan_state: 'scanned', candidate_count: 0, skipped: 'unchanged' });
       continue;
     }
-    const absolutePath = path.resolve(rootDirectory, source.source_path);
-    if (!absolutePath.startsWith(path.resolve(rootDirectory) + path.sep)) throw new Error(`Source escapes repository root: ${source.id}`);
+    const sourceRoot = source.source_root ? sourceRoots[source.source_root] : rootDirectory;
+    if (!sourceRoot) throw new Error(`No local source root was supplied for: ${source.source_root}`);
+    const resolvedRoot = path.resolve(sourceRoot);
+    const absolutePath = path.resolve(resolvedRoot, source.source_path);
+    if (!absolutePath.startsWith(resolvedRoot + path.sep) && absolutePath !== resolvedRoot) throw new Error(`Source escapes repository root: ${source.id}`);
     if (!fs.existsSync(absolutePath)) throw new Error(`Registered source is missing: ${source.source_path}`);
     const files = fs.statSync(absolutePath).isDirectory()
       ? fs.readdirSync(absolutePath, { recursive: true }).filter((entry) => entry.endsWith('.md')).map((entry) => path.join(absolutePath, entry))
       : [absolutePath];
     let sourceCount = 0;
     for (const file of files) {
-      const sourcePath = path.relative(rootDirectory, file).replaceAll('\\', '/');
+      const sourcePath = path.relative(resolvedRoot, file).replaceAll('\\', '/');
       const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
       lines.forEach((line, offset) => {
         const dated = line.match(datedHeading);
@@ -122,7 +125,14 @@ if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
   if (!registryPath || !rootDirectory || (outputIndex >= 0 && !outputPath)) { console.error('Usage: node scripts/discover-historical-decision-candidates.mjs <registry-path> [--root <repository-root>] [--out <draft-json-path>]'); process.exitCode = 2; }
   else {
     try {
-      const result = discoverCandidates(JSON.parse(fs.readFileSync(registryPath, 'utf8')), rootDirectory);
+      const sourceRoots = {};
+      for (let index = 0; index < process.argv.length; index += 1) {
+        if (process.argv[index] !== '--source-root') continue;
+        const [id, localPath] = (process.argv[index + 1] ?? '').split('=', 2);
+        if (!id || !localPath) throw new Error('Each --source-root value must be <source-root-id>=<local-path>.');
+        sourceRoots[id] = localPath;
+      }
+      const result = discoverCandidates(JSON.parse(fs.readFileSync(registryPath, 'utf8')), rootDirectory, sourceRoots);
       const serialized = `${JSON.stringify(result, null, 2)}\n`;
       if (outputPath) fs.writeFileSync(outputPath, serialized);
       else console.log(serialized);
