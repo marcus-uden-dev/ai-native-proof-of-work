@@ -9,6 +9,8 @@ const hash = (value) => crypto.createHash('sha256').update(value).digest('hex');
 const isTemplate = (value) => /^(decision title|title|template)$/i.test(value.trim()) || /\b(addendum|status)\b/i.test(value);
 const datedHeading = /^(#{2,4})\s+(\d{4}-\d{2}-\d{2})\s+[—-]\s+(.+?)\s*$/;
 const undatedDecisionHeading = /^(#{2,4})\s+decision\s+[—-]\s+(.+?)\s*$/i;
+const keyDecision = /^\s*(?:[-*]\s+)?\*\*(?:KTD|Decision)\d*\s*[—-]\s*(.+?)\*\*(?:\s+.*)?$/i;
+const decisionTableRow = /^\|\s*Decision\s*\|\s*(.+?)\s*\|\s*$/i;
 
 function isIsoDay(value) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -21,10 +23,19 @@ function slug(value) {
   return normalize(value).replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 72) || 'untitled';
 }
 
+function projectForPath(source, sourcePath) {
+  const normalizedPath = sourcePath.toLowerCase();
+  if (normalizedPath.includes('job-agent')) return 'job-agent';
+  if (normalizedPath.includes('household-budget')) return 'household-budget';
+  if (normalizedPath.includes('/pkm')) return 'pkm';
+  if (normalizedPath.includes('phone-layout')) return 'phone-layout-agent';
+  return source.owner_project;
+}
+
 function draft({ source, sourcePath, date, title, line, state = 'draft', failedGate, retryCondition }) {
   const decision = title;
   const fingerprintInputs = {
-    primary_project: source.owner_project,
+    primary_project: projectForPath(source, sourcePath),
     decision_type: 'unclassified',
     title: normalize(title),
     decision: normalize(decision)
@@ -37,7 +48,7 @@ function draft({ source, sourcePath, date, title, line, state = 'draft', failedG
     source_anchor: `${sourcePath}#L${line}`,
     decision_date: date,
     date_precision: date ? 'day' : null,
-    primary_project: source.owner_project,
+    primary_project: projectForPath(source, sourcePath),
     title,
     decision,
     fingerprint_inputs: fingerprintInputs,
@@ -83,6 +94,16 @@ export function discoverCandidates(registry, rootDirectory) {
         if (undated && !isTemplate(undated[2])) {
           candidates.push(draft({ source, sourcePath, date: null, title: undated[2].trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A source with an explicit ISO decision date is registered.' }));
           sourceCount += 1;
+          return;
+        }
+        if (source.source_class === 'decision-statement-corpus') {
+          const keyTechnicalDecision = line.match(keyDecision);
+          const tableDecision = line.match(decisionTableRow);
+          const title = keyTechnicalDecision?.[1] ?? tableDecision?.[1];
+          if (title && !isTemplate(title)) {
+            candidates.push(draft({ source, sourcePath, date: null, title: title.trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A source with an explicit ISO decision date is registered.' }));
+            sourceCount += 1;
+          }
         }
       });
     }
@@ -95,10 +116,17 @@ const scriptPath = fileURLToPath(import.meta.url);
 if (process.argv[1] && path.resolve(process.argv[1]) === scriptPath) {
   const registryPath = process.argv[2];
   const rootIndex = process.argv.indexOf('--root');
+  const outputIndex = process.argv.indexOf('--out');
   const rootDirectory = rootIndex >= 0 ? process.argv[rootIndex + 1] : process.cwd();
-  if (!registryPath || !rootDirectory) { console.error('Usage: node scripts/discover-historical-decision-candidates.mjs <registry-path> [--root <repository-root>]'); process.exitCode = 2; }
+  const outputPath = outputIndex >= 0 ? process.argv[outputIndex + 1] : null;
+  if (!registryPath || !rootDirectory || (outputIndex >= 0 && !outputPath)) { console.error('Usage: node scripts/discover-historical-decision-candidates.mjs <registry-path> [--root <repository-root>] [--out <draft-json-path>]'); process.exitCode = 2; }
   else {
-    try { console.log(JSON.stringify(discoverCandidates(JSON.parse(fs.readFileSync(registryPath, 'utf8')), rootDirectory), null, 2)); }
+    try {
+      const result = discoverCandidates(JSON.parse(fs.readFileSync(registryPath, 'utf8')), rootDirectory);
+      const serialized = `${JSON.stringify(result, null, 2)}\n`;
+      if (outputPath) fs.writeFileSync(outputPath, serialized);
+      else console.log(serialized);
+    }
     catch (error) { console.error(error.message); process.exitCode = 1; }
   }
 }

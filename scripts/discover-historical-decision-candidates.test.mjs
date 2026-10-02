@@ -40,3 +40,17 @@ test('does not rescan a source whose recorded revision is unchanged', (t) => {
   assert.equal(result.candidates.length, 0);
   assert.equal(result.source_results[0].skipped, 'unchanged');
 });
+
+test('creates a held draft for an explicit undated KTD in a registered corpus', (t) => {
+  const corpus = structuredClone(registry); corpus.source_classes['decision-statement-corpus'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; corpus.sources[0].source_class = 'decision-statement-corpus';
+  const result = discoverCandidates(corpus, withFixture(t, '- **KTD1 — Keep publication one-way**\n'));
+  assert.equal(result.candidates[0].title, 'Keep publication one-way');
+  assert.equal(result.candidates[0].review_state, 'hold');
+});
+
+test('creates a held draft for a visible decision-table row', (t) => {
+  const corpus = structuredClone(registry); corpus.source_classes['decision-statement-corpus'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; corpus.sources[0].source_class = 'decision-statement-corpus';
+  const result = discoverCandidates(corpus, withFixture(t, '| Decision | Use a reviewed workflow |\n'));
+  assert.equal(result.candidates[0].title, 'Use a reviewed workflow');
+  assert.equal(result.candidates[0].failed_gate, 'supported_date');
+});
