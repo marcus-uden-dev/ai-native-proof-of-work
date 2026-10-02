@@ -44,6 +44,14 @@ test('ignores the Git worktree control file during public release validation', (
   assert.deepEqual(validateRepository(root).errors, []);
 });
 
+test('ignores local files covered by the repository Git ignore rules', () => {
+  const root = makeRepository({ 'README.md': '# Public proof' }, {}, ['.gitignore']);
+  execFileSync('git', ['init', '--quiet', root]);
+  writeFileSync(join(root, '.gitignore'), 'private-notes.md\n');
+  writeFileSync(join(root, 'private-notes.md'), 'not public');
+  assert.deepEqual(validateRepository(root).errors, []);
+});
+
 test('ignores private local checkpoint handoffs during public release validation', () => {
   const root = makeRepository({
     'README.md': '# Public proof',
