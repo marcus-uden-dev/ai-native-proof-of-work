@@ -12,6 +12,7 @@ const undatedDecisionHeading = /^(#{2,4})\s+decision\s+[—-]\s+(.+?)\s*$/i;
 const keyDecision = /^\s*(?:[-*]\s+)?\*\*(?:KTD|Decision)\d*\s*[—-]\s*(.+?)\*\*(?:\s+.*)?$/i;
 const decisionTableRow = /^\|\s*Decision\s*\|\s*(.+?)\s*\|\s*$/i;
 const rationaleHeading = /^#{2,4}\s+varför\s+(.+?)\s*$/i;
+const sessionDecisionHeading = /^#{2,4}\s+(.+?)\s*$/;
 
 function isIsoDay(value) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -112,8 +113,10 @@ export function discoverCandidates(registry, rootDirectory, sourceRoots = {}, so
         }
         if (source.source_class === 'session-decision-notes') {
           const rationale = line.match(rationaleHeading);
-          if (rationale && !isTemplate(rationale[1])) {
-            candidates.push(draft({ source, sourcePath, date: null, title: rationale[1].trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A dated source or independently verifiable evidence is registered.' }));
+          const heading = line.match(sessionDecisionHeading);
+          const title = rationale?.[1] ?? heading?.[1];
+          if (title && !isTemplate(title)) {
+            candidates.push(draft({ source, sourcePath, date: null, title: title.trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A dated source or independently verifiable evidence is registered.' }));
             sourceCount += 1;
           }
         }

@@ -55,6 +55,21 @@ test('creates a held draft for a visible decision-table row', (t) => {
   assert.equal(result.candidates[0].failed_gate, 'supported_date');
 });
 
+test('creates a held draft for a documented Swedish architecture rationale', (t) => {
+  const notes = structuredClone(registry); notes.source_classes['session-decision-notes'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; notes.sources[0].source_class = 'session-decision-notes';
+  const result = discoverCandidates(notes, withFixture(t, '## Varför MCP-server\nPortability rationale.\n'));
+  assert.equal(result.candidates[0].title, 'MCP-server');
+  assert.equal(result.candidates[0].primary_project, 'job-agent');
+  assert.equal(result.candidates[0].review_state, 'hold');
+});
+
+test('creates a held draft for another explicit section in a dedicated decision note', (t) => {
+  const notes = structuredClone(registry); notes.source_classes['session-decision-notes'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; notes.sources[0].source_class = 'session-decision-notes';
+  const result = discoverCandidates(notes, withFixture(t, '## Deduplicering\nUse URL matching and similarity review.\n'));
+  assert.equal(result.candidates[0].title, 'Deduplicering');
+  assert.equal(result.candidates[0].review_state, 'hold');
+});
+
 test('uses a local source-root mapping without exposing its path in the draft anchor', (t) => {
   const external = structuredClone(registry); external.sources[0].source_root = 'job-agent';
   const root = withFixture(t, '## 2026-05-11 — Use reviewed workflow\n');
