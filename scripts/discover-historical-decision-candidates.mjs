@@ -6,13 +6,16 @@ import { validateSourceRegistry } from './validate-historical-decision-source-re
 
 const normalize = (value) => String(value ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
 const hash = (value) => crypto.createHash('sha256').update(value).digest('hex');
-const isTemplate = (value) => /^(decision title|title|template)$/i.test(value.trim()) || /\b(addendum|status)\b/i.test(value);
+const isTemplate = (value) => /^(decision title|title|template)$/i.test(value.trim()) || /^\[.+\]$/.test(value.trim()) || /\b(addendum|status)\b/i.test(value) || /\?[”"]?$/.test(value.trim());
 const datedHeading = /^(#{2,4})\s+(\d{4}-\d{2}-\d{2})\s+[—-]\s+(.+?)\s*$/;
 const undatedDecisionHeading = /^(#{2,4})\s+decision\s+[—-]\s+(.+?)\s*$/i;
-const keyDecision = /^\s*(?:[-*]\s+)?\*\*(?:KTD|Decision)\d*\s*[—-]\s*(.+?)\*\*(?:\s+.*)?$/i;
+const keyDecision = /^\s*(?:[-*]\s+)?\*\*(?:KTD\d*(?:\s*[—-]\s*|\.\s*)|Decision\d*(?:\s+[—-]\s*|\.\s*))(.+?)\*\*(?:\s+.*)?$/i;
 const decisionTableRow = /^\|\s*Decision\s*\|\s*(.+?)\s*\|\s*$/i;
 const rationaleHeading = /^#{2,4}\s+varför\s+(.+?)\s*$/i;
 const sessionDecisionHeading = /^#{2,4}\s+(.+?)\s*$/;
+const architectureWhyHeading = /^#{2,4}\s+why\s+(.+?)\s*$/i;
+const numberedArchitecturePrinciple = /^#{3,4}\s+\d+\.\s+(.+?)\s*$/;
+const recommendedAlternativeHeading = /^#{3,4}\s+(?:recommended|alternative\s+[a-z]+):\s+(.+?)\s*$/i;
 
 function isIsoDay(value) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
@@ -106,7 +109,8 @@ export function discoverCandidates(registry, rootDirectory, sourceRoots = {}, so
           const keyTechnicalDecision = line.match(keyDecision);
           const tableDecision = line.match(decisionTableRow);
           const title = keyTechnicalDecision?.[1] ?? tableDecision?.[1];
-          if (title && !isTemplate(title)) {
+          const tableHeader = Boolean(tableDecision && /^\|\s*:?-{3,}/.test(lines[offset + 1] ?? ''));
+          if (title && !tableHeader && !isTemplate(title)) {
             candidates.push(draft({ source, sourcePath, date: null, title: title.trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A source with an explicit ISO decision date is registered.' }));
             sourceCount += 1;
           }
@@ -115,6 +119,15 @@ export function discoverCandidates(registry, rootDirectory, sourceRoots = {}, so
           const rationale = line.match(rationaleHeading);
           const heading = line.match(sessionDecisionHeading);
           const title = rationale?.[1] ?? heading?.[1];
+          if (title && !isTemplate(title)) {
+            candidates.push(draft({ source, sourcePath, date: null, title: title.trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A dated source or independently verifiable evidence is registered.' }));
+            sourceCount += 1;
+          }
+        }
+        if (source.source_class === 'architecture-decision-outline') {
+          const title = line.match(architectureWhyHeading)?.[1]
+            ?? line.match(numberedArchitecturePrinciple)?.[1]
+            ?? line.match(recommendedAlternativeHeading)?.[1];
           if (title && !isTemplate(title)) {
             candidates.push(draft({ source, sourcePath, date: null, title: title.trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A dated source or independently verifiable evidence is registered.' }));
             sourceCount += 1;

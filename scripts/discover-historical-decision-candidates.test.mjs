@@ -48,6 +48,19 @@ test('creates a held draft for an explicit undated KTD in a registered corpus', 
   assert.equal(result.candidates[0].review_state, 'hold');
 });
 
+test('recognizes an explicit KTD using the numbered-dot notation', (t) => {
+  const corpus = structuredClone(registry); corpus.source_classes['decision-statement-corpus'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; corpus.sources[0].source_class = 'decision-statement-corpus';
+  const result = discoverCandidates(corpus, withFixture(t, '- **KTD1. Use an allowlisted bridge**\n'));
+  assert.equal(result.candidates[0].title, 'Use an allowlisted bridge');
+  assert.equal(result.candidates[0].review_state, 'hold');
+});
+
+test('excludes templates and similarly named decision-related headings', (t) => {
+  const corpus = structuredClone(registry); corpus.source_classes['decision-statement-corpus'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; corpus.sources[0].source_class = 'decision-statement-corpus';
+  const result = discoverCandidates(corpus, withFixture(t, '**Decision-makers:**\n| Decision | What landed |\n|---|---|\n| Decision | [What we are doing] |\n| Decision | "What tipped you over?" |\n'));
+  assert.equal(result.candidates.length, 0);
+});
+
 test('creates a held draft for a visible decision-table row', (t) => {
   const corpus = structuredClone(registry); corpus.source_classes['decision-statement-corpus'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; corpus.sources[0].source_class = 'decision-statement-corpus';
   const result = discoverCandidates(corpus, withFixture(t, '| Decision | Use a reviewed workflow |\n'));
@@ -68,6 +81,13 @@ test('creates a held draft for another explicit section in a dedicated decision 
   const result = discoverCandidates(notes, withFixture(t, '## Deduplicering\nUse URL matching and similarity review.\n'));
   assert.equal(result.candidates[0].title, 'Deduplicering');
   assert.equal(result.candidates[0].review_state, 'hold');
+});
+
+test('creates held drafts from explicit architecture-outline decisions', (t) => {
+  const notes = structuredClone(registry); notes.source_classes['architecture-decision-outline'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; notes.sources[0].source_class = 'architecture-decision-outline';
+  const result = discoverCandidates(notes, withFixture(t, '## Why multi-agent execution\n### 1. Accounts before budgets\n### Recommended: per-user shortcut\n### Alternative A: Task Scheduler\n'));
+  assert.deepEqual(result.candidates.map((candidate) => candidate.title), ['multi-agent execution', 'Accounts before budgets', 'per-user shortcut', 'Task Scheduler']);
+  assert.ok(result.candidates.every((candidate) => candidate.review_state === 'hold'));
 });
 
 test('uses a local source-root mapping without exposing its path in the draft anchor', (t) => {
