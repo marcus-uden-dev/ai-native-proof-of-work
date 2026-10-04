@@ -1,5 +1,20 @@
 [
   {
+    "date": "2026-10-04",
+    "project": "Job-agent",
+    "status": "Verified",
+    "type": "Evidence governance",
+    "title": "Refresh current claims from committed source state",
+    "tags": [
+      "evidence-driven",
+      "decision-making",
+      "quality-gate",
+      "risk-awareness"
+    ],
+    "why": "Replaced an older branch-specific snapshot with the accessible committed source state while preserving explicit production-activation gates.",
+    "demonstrates": "Keeps portfolio claims traceable to current evidence and prevents unmeasured repository work from being presented as a production outcome."
+  },
+  {
     "date": "2026-09-03",
     "project": "PCMR Device Agent",
     "type": "Integration architecture",
