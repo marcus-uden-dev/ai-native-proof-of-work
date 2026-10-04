@@ -2047,20 +2047,6 @@
     "date": "2026-05-11",
     "project": "Personal AI Harness",
     "status": "Verified",
-    "type": "Technical decision",
-    "title": "Use a reviewed career workflow instead of an autonomous applier",
-    "tags": [
-      "technical-judgment",
-      "systems-thinking",
-      "decision-making"
-    ],
-    "why": "The dated decision record specifies this approach: Use a reviewed career workflow instead of an autonomous applier.",
-    "demonstrates": "Makes the technical decision explicit through technical judgment and systems thinking."
-  },
-  {
-    "date": "2026-05-11",
-    "project": "Personal AI Harness",
-    "status": "Verified",
     "type": "Evidence workflow architecture",
     "title": "Use household budgeting as shared-domain modeling evidence",
     "tags": [
