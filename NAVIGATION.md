@@ -59,12 +59,13 @@ The full recruiter-safe repository remains available for targeted search. This t
 | 1 | [Recruiter Agent Guide](RECRUITER_AGENT_GUIDE.md) | Agent-readable review path |
 | 2 | [Job-Agent Install And Handoff Guide](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Reproducible setup path for the lead product |
 | 3 | [Architecture Overview](architecture/ARCHITECTURE.md) | Technical model |
-| 4 | [AI Operating Model](workflows/AI_OPERATING_MODEL.md) | How the workflow layer works |
-| 5 | [llms.txt](llms.txt) | Machine-readable repository map |
-| 6 | [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md) | Prompt for recruiter questions about skills, work history, projects, decisions, and evidence |
-| 7 | [Repository Evidence Index](repository-evidence-index.json) | Optional high-signal index; the complete repository remains searchable |
-| 8 | [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md) | Case identity, Profiles tiers, role lenses, and evidence boundaries |
-| 9 | [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json) | Backfill source boundary and lifecycle classification |
+| 4 | [Technical Capability Matrix](docs/reports/TECHNICAL_CAPABILITY_MATRIX.md) | Languages, platforms, integration surfaces, and evidence boundaries |
+| 5 | [AI Operating Model](workflows/AI_OPERATING_MODEL.md) | How the workflow layer works |
+| 6 | [llms.txt](llms.txt) | Machine-readable repository map |
+| 7 | [Repository Interview Prompt](prompts/REPOSITORY_INTERVIEW_PROMPT.md) | Prompt for recruiter questions about skills, work history, projects, decisions, and evidence |
+| 8 | [Repository Evidence Index](repository-evidence-index.json) | Optional high-signal index; the complete repository remains searchable |
+| 9 | [Canonical Case Study Registry](docs/evidence/CASE_STUDY_REGISTRY.md) | Case identity, Profiles tiers, role lenses, and evidence boundaries |
+| 10 | [Historical Decision Inventory](docs/evidence/historical-decision-inventory.json) | Backfill source boundary and lifecycle classification |
 
 ## By Question
 

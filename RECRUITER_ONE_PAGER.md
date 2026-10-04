@@ -33,6 +33,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 1. [Job-Agent Case Study](case-studies/JOB_AGENT_CASE_STUDY.md)
 2. [Project Status](PROJECT_STATUS.md)
 3. [Evidence Matrix](EVIDENCE_MATRIX.md)
+4. [Technical Capability Matrix](docs/reports/TECHNICAL_CAPABILITY_MATRIX.md)
 
 For an LLM-assisted review, use the [Recruiter LLM Report Brief](docs/reports/recruiter-llm-report-brief.md).
 

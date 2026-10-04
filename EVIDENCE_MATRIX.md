@@ -29,6 +29,7 @@ flowchart TD
 | Capability | Evidence | Status | Why It Matters |
 |---|---|---|---|
 | Full-stack product execution | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) | Internal / Verified | Shows a broad product system, not only documentation |
+| Technical language and platform range | [Technical Capability Matrix](docs/reports/TECHNICAL_CAPABILITY_MATRIX.md) | Internal / Verified source footprint | Shows TypeScript/TSX, Python, SQL, PowerShell, web delivery, API services, data migrations, and local automation without implying equal depth in every technology |
 | Current project progression | [PROJECT_STATUS.md](PROJECT_STATUS.md), [PROJECT_TIMELINE.md](PROJECT_TIMELINE.md) | Internal / Verified | Shows what is complete, what is progressing, and what remains blocked |
 | Career-domain product judgment | [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [strategy/job-agent/product/VALUE_PROPOSITION.md](strategy/job-agent/product/VALUE_PROPOSITION.md) | Hypothesis / Internal Verified | Connects project execution to job-search workflow pain |
 | Knowledge workflow design | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) | Internal / Verified | Shows ingestion, search, learning, and prioritization thinking |
