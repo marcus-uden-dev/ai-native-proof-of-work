@@ -1,6 +1,6 @@
 # Recruiter One-Pager
 
-Last updated: 2026-08-28
+Last updated: 2026-10-04
 Status: Active / Recruiter-facing
 
 ## Positioning
@@ -11,7 +11,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 
 | Proof Point | Why It Matters | Start Here |
 |---|---|---|
-| Job-agent | Strongest product evidence: career workflow product with CV, discovery, application support, feedback, privacy, QA, deployment, telemetry, billing planning, and now committed redesign planning plus M0/M1 shell work with August 8 shell polish on `feat/frontend-redesign-shell`, with the handoff path re-checked against current source-repo setup on 2026-08-09 | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) and [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
+| Job-agent | Strongest product evidence: career workflow product with CV, discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning. The current committed-source check on 2026-10-04 confirms completed CI-hang, scraper-fallback, dependency-security, cover-letter-instruction, Playwright-repair, and frontend-redesign work, while production activation remains open. | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) and [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) |
 | PKM | Shows knowledge workflow design, ingestion/search thinking, learning surfaces, feature lifecycle discipline, and prioritization | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) |
 | Household budget app | Shows financial domain modeling, shared household access, import/review flows, forecasting, goals, and test-backed product thinking | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) |
 | Phone-layout-agent | Shows approval-gated Android launcher automation, deterministic physical-device execution, recovery, QA, and evidence boundaries; controlled throughput is not measured | [case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md](case-studies/PHONE_LAYOUT_AGENT_CASE_STUDY.md) and [Decision Trail](strategy/phone-layout-agent/decisions/DECISION_TRAIL.md) |
@@ -24,7 +24,7 @@ AI-native product builder focused on career workflow products, knowledge systems
 - Evidence discipline: claims are labeled as `Verified`, `Internal / Verified`, `Estimated`, `Hypothesis`, or `Open Question`.
 - Privacy-aware documentation: raw local paths, chats, and sensitive details are summarized rather than exposed.
 - Reproducible lead-project handoff: the job-agent setup, agent-entry files, startup-port contract, OAuth-routing notes, and direct source-verification date are checked against the source repo before they are promoted here.
-- Evidence discipline over hype: the latest 2026-08-09 refresh updates freshness to the current committed redesign branch state, notes the August 8 shell-polish commit, and explicitly excludes dirty local `job-agent` worktree changes from recruiter-facing proof.
+- Evidence discipline over hype: the latest 2026-10-04 refresh anchors current claims to committed `master` at `5bcff6e` and keeps production outcomes, credit-dependent features, and local uncommitted work out of recruiter-facing proof.
 - AI-native operating method: Claude, Codex, source indexes, scheduled reviews, and decision logs are used as a practical workflow system.
 - Product judgment: open questions and blockers are shown instead of hidden.
 

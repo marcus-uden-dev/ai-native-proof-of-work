@@ -1,5 +1,53 @@
 # Weekly Log
 
+## Weekly Compiler Sync — 2026-10-04
+
+### 1. Executive Summary
+
+No dated weekly-input file was available. The compiler refreshed the lead-project evidence boundary from the accessible committed `job-agent` `master` checkout at `5bcff6e` and promoted only source-status and repository facts. Apporganiser Android was requested as an additional proof point, but no local source checkout or sanitized evidence was available, so it remains `Needs Review`.
+
+### 2. Work Added or Updated
+
+| Item | Type | Status | Evidence | Recruiter Relevance |
+|---|---|---|---|---|
+| Job-agent evidence-boundary refresh | Project evidence | Internal / Verified | Committed source `master` `5bcff6e`, source status dated 2026-10-02, and [JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md) | Keeps the lead case current without claiming production outcomes |
+| Handoff refresh | Reproducibility | Verified | Compose, env example, Makefile, requirements, package metadata, agent instructions, status docs, and migration tree | Keeps setup claims tied to available source material |
+| Apporganiser Android boundary | Additional product proof | Needs Review | No local source checkout or sanitized evidence was available | Prevents an unsupported Android claim |
+
+### 3. Validation
+
+| Check | Result |
+|---|---|
+| Current-week `weekly-input/` check | No dated input present |
+| Direct committed `job-agent` source inspection | Passed |
+| Job-agent migration-directory count | 62 files observed |
+| Apporganiser Android source lookup | No source checkout found; no claim promoted |
+
+### 4. Source Inputs Used
+
+| Source | Used? | Notes |
+|---|---|---|
+| `weekly-input/` dated file | No | Only README and template were present |
+| Portfolio evidence documents | Yes | Used to identify and correct stale source-boundary wording |
+| Direct job-agent committed source files | Yes | Used for setup, status, dependency, and handoff verification |
+| Apporganiser Android source material | No | Source unavailable — needs user-provided file, repo path, export, or connector access. |
+
+### 5. Problems / Blockers
+
+| Problem | Current Handling | Next Action |
+|---|---|---|
+| No current weekly input | No user-visible progress narrative was invented | Add one dated weekly input summary |
+| Apporganiser Android evidence unavailable | Classified as `Needs Review` and excluded from promotion | Provide a source repository or sanitized evidence export |
+| Job-agent production activation gates remain open | Kept as open work, not a delivery claim | Complete the required external-service and owner decisions |
+
+### 6. Time / Effort
+
+Time spent: Estimated / not directly tracked.
+
+### 7. Next Action
+
+Create one dated weekly-input file that names the user-visible result, decision context, and evidence links for the next job-agent milestone.
+
 ## Weekly Compiler Sync — 2026-08-09
 
 ### 1. Executive Summary

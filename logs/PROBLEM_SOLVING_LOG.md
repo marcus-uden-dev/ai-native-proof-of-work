@@ -1,5 +1,29 @@
 # Problem-Solving Log
 
+## 2026-10-04 — The portfolio still described an older job-agent branch as current
+
+### Problem
+
+Several recruiter-facing files described the August redesign branch as the latest job-agent source boundary even though the accessible committed source checkout is now `master` at `5bcff6e`.
+
+### Cause
+
+The last source refresh predates later source-status and merged-work updates. No dated weekly input had been supplied to trigger a later compiler update.
+
+### Resolution
+
+The compiler re-checked committed setup and status material, recorded the current source boundary, and preserved the distinction between completed repository work and uncompleted production activation.
+
+### Lesson
+
+When current source access changes branches or advances materially, refresh the proof layer from the actual committed checkout and keep prior branch-specific notes as historical evidence only.
+
+### Reusable Rule
+
+```text
+For a weekly evidence refresh, identify the available committed source HEAD first, then update only claims directly supported by its files and status documents.
+```
+
 ## 2026-08-09 — The committed `job-agent` source moved again, but only part of that movement is product-code evidence
 
 ### Problem

@@ -1,6 +1,6 @@
 # Proof of Work
 
-Last updated: 2026-08-28
+Last updated: 2026-10-04
 Status: Active / Project-focused evidence map
 
 ## What This Demonstrates
@@ -57,7 +57,7 @@ Status: Active / Project-focused evidence map
 ### 1. Job-agent career workflow product
 
 - What was done: Built and documented a career workflow product covering CV, job discovery, application support, feedback, privacy, QA, deployment, telemetry, and billing planning.
-- Current status: Committed source status still marks MVP and career-ops tasks complete; direct source verification on 2026-08-09 confirms the currently accessible redesign branch at `bc10287`, committed redesign planning plus M0/M1 shell work (`19c3525`, `dd29f6d`, `38cefcb`), August 8 shell polish (`cfb91bc`), 44 migrations with named head `0043`, and an explicit boundary that excludes dirty local worktree changes from recruiter-facing proof.
+- Current status: Committed source status marks the MVP complete. Direct source verification on 2026-10-04 confirms the accessible `master` checkout at `5bcff6e`, 62 migration files, and source-status evidence of completed CI-hang repair, jobs.se fallback correction, dependency-CVE remediation, cover-letter instruction architecture, Playwright repair, and frontend-redesign work. Production activation and service-credit gates remain open.
 - Why it matters: Shows practical full-stack product execution in a domain directly related to job search, recruiter workflows, and AI-assisted career operations.
 - Status: Internal / Verified.
 - Evidence link: [PROJECT_PROOF_POINTS.md](PROJECT_PROOF_POINTS.md), [SOURCE_MAP.md](SOURCE_MAP.md)

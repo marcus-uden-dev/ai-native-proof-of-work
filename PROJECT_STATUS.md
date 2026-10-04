@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-08-28
+Last updated: 2026-10-04
 Status: Active / Recruiter-facing summary
 
 ## Purpose
@@ -13,15 +13,20 @@ It is a recruiter-safe status layer. It does not expose private local paths, raw
 
 | Project / Layer | Current State | Recent Progress | Main Open Work | Evidence Status |
 |---|---|---|---|---|
-| Job-agent | MVP complete in committed source status; remaining work is still mainly infra, production activation, pricing/legal decisions, and selected branch/repo-ops follow-up | Direct source verification on 2026-08-09 confirms the currently accessible committed branch `feat/frontend-redesign-shell` at `bc10287`, twelve commits ahead of `origin/master`, with July 1-2 redesign planning docs (`19c3525`), M0 UI foundations (`dd29f6d`), M1 sidebar shell and legacy redirects (`38cefcb`), August 8 shell polish (`cfb91bc`), later ops/doc follow-through, and 44 migration files with named head `0043` plus one older hash anomaly | Production deploy, public backend origin, OTel/Grafana setup, Stripe live activation, final legal review, real third-party ATS smoke checks, public-safe screenshots/test references, redesign-branch merge/review clarity, and publish-safe confirmation of any branch-local ops artifacts | Internal / Verified |
+| Job-agent | MVP complete in current committed source status; remaining work is mainly production activation, external-service activation, legal/pricing decisions, and selected verification | Direct source verification on 2026-10-04 confirms the accessible `master` checkout at `5bcff6e`. Its current status records completed privacy/data-rights, CI-hang, scraper-fallback, dependency-security, cover-letter-instruction, Playwright-repair, and frontend-redesign work; the committed migration tree contains 62 files. Source status also records unresolved AI-provider credit, production server, Stripe-live, observability, and legal-review gates. | Production deploy, public backend origin, OTel/Grafana setup, Stripe live activation, final legal review, real third-party ATS smoke checks, and public-safe evidence excerpts | Internal / Verified |
 | PKM | Knowledge-workflow product surfaces are represented, but operational blockers remain before full daily use | Ingestion/search/learning/feed/source/person/topic surfaces are represented; feature workflow is explicit; social feed feature is marked done in the queue; Chrome extension exists for browser capture; latest observed repo signal is a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/embedding quota, frontend URL cleanup, SMTP setup, Hetzner deployment, source/person/topic setup, search/flashcard/extension/MCP verification | Internal / Verified |
 | Household budget app | Active product with core surfaces and a large household/shared-account hardening track | Household scope is threaded across major pages; owner/member/admin flows, invite onboarding, shared-account ownership rules, read-model/view-model extraction, and mutation helper extraction have progressed significantly; latest observed repo signal is a 2026-05-26 app dependency-maintenance commit | Finish post-hardening household migration cleanup, remove legacy migration debt, validate ownership hardening end-to-end in Supabase, split future modeling into smaller landing slices | Internal / Verified |
 | Phone-layout-agent | Supporting Android automation proof with a deterministic Samsung One UI launcher path | Approval-gated proposals, allowlisted ADB operations, native folder-picker batching, checkpoints, recovery logic, and independent verification are implemented; source checkout passes 45 test files / 110 tests with one worker, lint, typecheck, and build | Run a controlled baseline-versus-deterministic workload; extend launcher and shortcut coverage only when reliability evidence supports it | Private source / Verified summary |
+| Apporganiser Android | No local source checkout was available for this run | No verified repository documentation, current-status artifact, or technical evidence was available to inspect | Provide the source repository or a sanitized evidence export before promotion | Needs Review |
 | Portfolio evidence repository | GitHub-ready documentation and review layer for the product portfolio | Project-first positioning, recruiter/agent review layer, recruiter-side LLM report brief, evidence matrix, navigation hub, case studies, workflow implementation cases, a provider-neutral template kit, `llms.txt`, published static demo portal, active scheduled compiler task, and source-verified handoff guidance are in place | Add safe test/commit excerpts, dated weekly-input notes, and first curated recruiter export after privacy review | Verified |
 
 ## Job-Agent Status
 
 Job-agent is still the lead proof point.
+
+- Direct source verification on 2026-10-04 used committed `master` at `5bcff6e` and the source status file dated 2026-10-02. This supersedes the older branch-specific freshness note below for current-state claims.
+- The source status reports completed implementation/verification for a CI hang repair, jobs.se fallback regression, dependency CVEs, cover-letter instruction architecture, Playwright repair, and frontend redesign. These are source-status claims, not measured production outcomes.
+- Current source blockers include AI-provider credit, production infrastructure activation, Stripe live activation, observability setup, and legal review. They remain open and are not presented as completed work.
 
 Current status from local project status docs:
 

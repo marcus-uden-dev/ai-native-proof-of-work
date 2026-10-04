@@ -1,5 +1,31 @@
 # Decision Log
 
+## 2026-10-04 — Use the accessible committed source checkout as the current job-agent evidence boundary
+
+### Context
+
+The portfolio still presented an older redesign branch as its latest direct job-agent verification, while the accessible source checkout is now committed `master` at `5bcff6e`.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Retain the older branch as current | No document refresh | Misstates the available source boundary |
+| Promote all current status text as a production outcome | More dramatic narrative | Overstates repo work and ignores open activation gates |
+| Refresh from committed `master` and retain explicit open gates | Current, traceable, and conservative | Does not claim unmeasured product outcomes |
+
+### Decision
+
+Refresh current job-agent claims from the accessible committed `master` checkout and preserve explicit evidence labels and open production gates. Keep earlier branch evidence as historical context rather than the current state.
+
+### Evidence
+
+[PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROJECT_PROOF_POINTS.md](../PROJECT_PROOF_POINTS.md), and [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md).
+
+### Status
+
+Decision / Verified
+
 ## 2026-09-05 — Keep prompt-first fallback and evaluate Gemini behind a server-side route
 
 ### Context

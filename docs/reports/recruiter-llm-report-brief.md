@@ -1,6 +1,6 @@
 # Recruiter LLM Report Brief
 
-Last updated: 2026-08-28
+Last updated: 2026-10-04
 Status: Active / Recruiter-facing / LLM-readable
 
 ## Purpose
@@ -52,7 +52,7 @@ Use `persona_evidence` for profile facts such as target roles, preferences, and 
 - Do not expose private local paths, raw chats, internal indexes, credentials, personal data, or sensitive source details.
 - Distinguish `Verified`, `Internal / Verified`, `Hypothesis`, `Estimated`, `Needs Review`, and `Open Question` claims.
 - When job-agent source status docs lag actual repo HEAD, use the direct source-verification date and cited commits from the portfolio handoff/log files instead of assuming the status doc is freshest.
-- Do not treat dirty local source worktree changes as shipped evidence. On 2026-08-09, the fair `job-agent` boundary is the committed redesign branch state through `bc10287`, including the latest committed product-code signal `cfb91bc`, plus an explicit note that newer local edits were not promoted.
+- Do not treat dirty local source worktree changes as shipped evidence. The latest direct source check is 2026-10-04 against committed `master` at `5bcff6e`; use the handoff guide and weekly log for the current boundary. Older branch-specific evidence remains historical context, not a current deployment claim.
 
 ## Suggested Report Layout
 

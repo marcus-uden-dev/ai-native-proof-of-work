@@ -1,6 +1,6 @@
 # Project Proof Points
 
-Last updated: 2026-08-28
+Last updated: 2026-10-04
 Status: Active / Evidence-backed summary
 
 ## Purpose
@@ -13,10 +13,11 @@ The proof-of-work compiler, source indexes, and weekly review process are docume
 
 | Project | Current Role | Evidence Status | Recruiter Relevance |
 |---|---|---|---|
-| Job-agent / job-agent UX | Primary proof point: career workflow product with CV, job discovery, application support, privacy, feedback, QA, deployment, telemetry, and billing planning | Internal / Verified; summarized from local project docs and tests | Shows full-stack product execution, career-domain judgment, privacy-aware design, test discipline, and AI-assisted workflow design |
+| Job-agent / job-agent UX | Primary proof point: career workflow product with CV, job discovery, application support, privacy, feedback, QA, deployment, telemetry, and billing planning | Internal / Verified; current committed source checkout verified on 2026-10-04 at `master` `5bcff6e` | Shows full-stack product execution, career-domain judgment, privacy-aware design, test discipline, and AI-assisted workflow design |
 | PKM | Supporting proof point: personal knowledge-management product with ingestion, search, learning, social/feed, browser extension, backend/frontend structure, and feature lifecycle workflow | Internal / Verified; summarized from local project index and repo structure | Shows information architecture, knowledge workflows, ingestion thinking, and project prioritization |
 | Household budget app | Supporting proof point: Swedish household budgeting app with shared household, imports, transaction review, forecasting, goals, RLS/security, and extensive unit-test surface | Internal / Verified; summarized from local project docs and repo structure | Shows domain modeling, financial-product UX, privacy/security thinking, and test-backed product development |
 | Phone-layout-agent | Supporting proof point: local Android launcher automation with approval-gated proposals, allowlisted ADB, deterministic Samsung One UI batches, checkpoints, recovery, and verification | Private source / Verified summary; controlled outcome not measured | Shows automation judgment, physical-device reliability, technical risk management, QA, and evidence discipline |
+| Apporganiser Android | Additional potential Android product proof point | Needs Review; no local source checkout or sanitized project evidence was available on 2026-10-04 | Not yet promotable |
 
 ## Case Study Links
 
@@ -48,14 +49,14 @@ The stronger story is:
 | QA discipline | Backend tests, Playwright coverage, live frontend/backend verification notes, CI workflow references, and regression-focused docs are present in the source material | Internal / Verified |
 | Privacy and trust | GDPR/cookie consent, data-rights models, retention/anonymization planning, marketing-pixel guardrails, legal-review blockers, and now committed max-retention/apply-session export-delete implementation are tracked | Internal / Verified |
 | Product judgment | Open decisions include token pricing, referral economy, deployment activation, observability, Stripe live activation, and destructive data-rights workflows | Internal / Verified |
-| Reproducible handoff | The source repo has a recruiter-safe install and LLM handoff layer that has been re-checked against actual env examples, compose, Makefile, package metadata, requirements, migrations, committed status docs, repo-ops startup/LLM handoff files, and actual source HEAD when doc dates lag; the latest direct verification is 2026-08-09 on `feat/frontend-redesign-shell` at `bc10287`, with 44 migration files and named head `0043` plus one older hash anomaly | Verified |
+| Reproducible handoff | The source repo has a recruiter-safe install and LLM handoff layer checked against env examples, Compose, Makefile, package metadata, requirements, migrations, agent instructions, status docs, and source HEAD. The latest direct verification is 2026-10-04 on `master` `5bcff6e`, with 62 migration files. | Verified |
 | Static demo portal | Recruiter-safe static click-through is published publicly from a separate demo repo, with job-agent company research as the strongest surface and explicit public-source/synthetic/inferred-demo labels | Verified |
 
 ## Current Project Status Summary
 
 | Project | Current State | Open Work |
 |---|---|---|
-| Job-agent | Committed source status still marks the MVP complete while the currently accessible redesign branch adds planning, M0 and M1 frontend shell implementation evidence, and August 8 shell polish; privacy, feedback, QA, discovery, shared-job cleanup, CI, telemetry, billing, deployment planning, startup/LLM handoff docs, and prior GDPR/data-rights work remain represented, with direct source verification refreshed on 2026-08-09 | Production activation, legal review, live Stripe, public backend origin, observability setup, public-safe evidence excerpts, redesign-branch merge/review clarity, and publish-safe confirmation of branch/repo-ops state |
+| Job-agent | Current committed source status marks the MVP complete. The 2026-10-04 source check confirms completed CI-hang repair, jobs.se fallback correction, dependency-CVE remediation, cover-letter instruction architecture, Playwright repair, and frontend-redesign work, alongside the earlier privacy, QA, telemetry, billing, and handoff evidence. | Production activation, legal review, live Stripe, public backend origin, observability setup, and public-safe evidence excerpts |
 | PKM | Knowledge-workflow product with ingestion/search/learning/feed/source/person/topic surfaces, feature lifecycle discipline, a Chrome extension for browser capture, and a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/quota, SMTP, deployment, source/person/topic setup, and verification of search, flashcard, extension, and MCP paths |
 | Household budget app | Core budgeting surfaces plus substantial household/shared-account hardening, invite onboarding, ownership rules, read-model/view-model extraction, mutation helper consolidation, and a 2026-05-26 app dependency-maintenance commit | Finish post-hardening migration cleanup, remove legacy bridge debt, validate Supabase ownership hardening, and split future modeling into smaller slices |
 | Phone-layout-agent | Deterministic Android launcher automation with approval-gated proposals, bounded ADB, native folder-picker batches, checkpoints, recovery, and independent verification; current source checks pass | Run a controlled baseline-versus-deterministic workload and keep ambiguous/unsupported launcher cases behind review boundaries |

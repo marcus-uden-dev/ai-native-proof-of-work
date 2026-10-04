@@ -1,6 +1,6 @@
 # Job-Agent Install And Handoff Guide
 
-Last updated: 2026-08-09
+Last updated: 2026-10-04
 Status: Active / Recruiter-facing / LLM-readable
 
 ## Purpose
@@ -19,7 +19,7 @@ This file should stay safe to share. It summarizes install steps, expected local
 | Primary proof role | Lead product proof point |
 | Product type | Local-first job search automation app |
 | Main stack | FastAPI, PostgreSQL with pgvector, Redis/Celery, Next.js |
-| Evidence label | Verified from inspected local source files on 2026-08-09 |
+| Evidence label | Verified from inspected committed source files on 2026-10-04 |
 
 ## What The App Contains
 
@@ -252,7 +252,11 @@ This handoff guide matters because it turns `job-agent` from a private source re
 
 ## Source Verification Notes
 
-This guide was checked against the inspected `job-agent` source tree on 2026-08-09.
+This guide was checked against the inspected committed `job-agent` source tree on 2026-10-04.
+
+- The accessible checkout was `master` at `5bcff6e`; this replaces the older branch-specific snapshot below for current setup and status claims.
+- The check covered README/setup material, `.env.example`, Compose files, Makefile, backend requirements, frontend package metadata, agent instructions, current-status documentation, and the migration directory (62 files observed).
+- The source status dated 2026-10-02 records completed CI-hang repair, jobs.se fallback correction, dependency-CVE remediation, cover-letter instruction architecture, Playwright repair, and frontend-redesign work. It separately records unresolved AI-provider credit, production-server, Stripe-live, observability, and legal-review gates.
 
 - Verified present: `AGENTS.md`, `CLAUDE.md`, `.claude/CLAUDE.md`, `DESIGN.md`, `docs/overview/agent-context.md`, `docs/operations/current-status.md`, `docs/operations/llm-handoff.md`, `docs/operations/job-agent-startup-skill-handoff.md`, `docs/HANDOVER.md`, root `.env.example`, `backend/.env.example`, `docker-compose.yml`, `Makefile`, `frontend/package.json`, `backend/requirements.txt`, `backend/requirements-dev.txt`, and `backend/alembic/versions/`.
 - Verified absent in the inspected worktree: `docs/setup/llm-handoff.md`.
