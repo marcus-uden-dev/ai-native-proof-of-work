@@ -37,6 +37,16 @@ function projectForPath(source, sourcePath) {
   return source.owner_project;
 }
 
+function suggestedCapabilityTags(title) {
+  const value = normalize(title);
+  const tags = [];
+  if (/\b(api|mcp|bridge|adb|integration|embedding)/.test(value)) tags.push('api-and-systems-integration');
+  if (/\b(eval|evaluation|benchmark|verify|verification|test|quality)/.test(value)) tags.push('evaluation-and-quality');
+  if (/\b(approval|safety|recovery|privacy|allowlist|risk)/.test(value)) tags.push('safety-and-governance');
+  if (/\b(architecture|runtime|module|platform|adapter|hosting)/.test(value)) tags.push('systems-architecture');
+  return tags;
+}
+
 function draft({ source, sourcePath, date, title, line, state = 'draft', failedGate, retryCondition }) {
   const decision = title;
   const fingerprintInputs = {
@@ -56,6 +66,7 @@ function draft({ source, sourcePath, date, title, line, state = 'draft', failedG
     primary_project: projectForPath(source, sourcePath),
     title,
     decision,
+    suggested_capability_tags: suggestedCapabilityTags(title),
     fingerprint_inputs: fingerprintInputs,
     collision_group: hash(fingerprint).slice(0, 16),
     confidence: date ? 'explicit-dated-heading' : 'date-missing',

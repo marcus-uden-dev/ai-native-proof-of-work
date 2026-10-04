@@ -90,6 +90,13 @@ test('creates held drafts from explicit architecture-outline decisions', (t) => 
   assert.ok(result.candidates.every((candidate) => candidate.review_state === 'hold'));
 });
 
+test('suggests employer-relevant capability tags without changing review gates', (t) => {
+  const notes = structuredClone(registry); notes.source_classes['session-decision-notes'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; notes.sources[0].source_class = 'session-decision-notes';
+  const result = discoverCandidates(notes, withFixture(t, '## Varför MCP-server\nPortability rationale.\n'));
+  assert.deepEqual(result.candidates[0].suggested_capability_tags, ['api-and-systems-integration']);
+  assert.equal(result.candidates[0].review_state, 'hold');
+});
+
 test('uses a local source-root mapping without exposing its path in the draft anchor', (t) => {
   const external = structuredClone(registry); external.sources[0].source_root = 'job-agent';
   const root = withFixture(t, '## 2026-05-11 — Use reviewed workflow\n');

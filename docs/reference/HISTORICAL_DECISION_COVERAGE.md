@@ -42,6 +42,8 @@ Discovery recognizes only explicit, supported choices or boundaries in a registe
 
 Discovery excludes templates, status-only activity, headings without a supported date, repeated lifecycle updates, and unverified outcome claims. It produces drafts only. A project-wave review normalizes a draft, resolves duplicates, and applies the existing `publish`, `hold`, or `internal-only` gate.
 
+Drafts can include suggested capability tags such as API and systems integration, evaluation and quality, safety and governance, and systems architecture. These tags guide recruiter-relevance review only. They are not evidence of delivery, proficiency, or measured outcome.
+
 ## Private and public boundaries
 
 The private candidate layer can retain repository-relative anchors, fingerprints, scan state, and retry conditions. Public artifacts can contain only allowlisted, sanitized decision fields. They must never contain source-register data, local paths, raw source references, fingerprints, per-source retry state, credentials, personal data, or confidential detail.
