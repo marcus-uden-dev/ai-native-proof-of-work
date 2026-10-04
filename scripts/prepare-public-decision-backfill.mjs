@@ -10,6 +10,7 @@ const projectNames = {
 };
 
 const normalize = (value) => String(value ?? '').trim().toLowerCase().replace(/\s+/g, ' ');
+const label = (value) => value.replaceAll('-', ' ');
 
 function metadataFor(title) {
   const value = normalize(title);
@@ -33,6 +34,7 @@ function isPublicSafe(candidate) {
     && !/^(private source of truth|safe wip link target|dry-run boundary|pending[,.:]?|decision-log placement)[:.]?$/i.test(title)
     && !/\b(?:pending|private source of truth|safe wip link target)\b/i.test(title)
     && !/\.(?:agents|codex|claude)(?:[\\/]|\b)/i.test(title)
+    && !/\b(?:gh auth switch|session transcript)\b/i.test(title)
     && !/\b(api key|token|password|secret value)\b/i.test(title);
 }
 
@@ -46,19 +48,18 @@ export function preparePublicDecisionBackfill(candidates, existing) {
     if (existingKeys.has(key) || selected.has(key)) continue;
     const metadata = metadataFor(candidate.title);
     const status = candidate.confidence === 'dated-filename' ? 'Planned' : 'Verified';
+    const decisionTitle = candidate.title.replaceAll('`', '').replace(/[.:]+$/, '');
     selected.set(key, {
       date: candidate.decision_date,
       project,
       status,
       type: metadata.type,
-      title: candidate.title.replaceAll('`', ''),
+      title: decisionTitle,
       tags: metadata.tags,
       why: status === 'Planned'
-        ? 'The dated design plan selected this boundary instead of a broader or parallel change.'
-        : 'The dated decision record selected this approach to define a clear work boundary.',
-      demonstrates: status === 'Planned'
-        ? 'Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation.'
-        : 'Makes the technical trade-off, scope boundary, and evidence trail inspectable.'
+        ? `The dated design plan specifies this boundary: ${decisionTitle}.`
+        : `The dated decision record specifies this approach: ${decisionTitle}.`,
+      demonstrates: `Makes the ${metadata.type.toLowerCase()} explicit through ${label(metadata.tags[0])} and ${label(metadata.tags[1])}.`
     });
   }
   return [...selected.values()].sort((left, right) => right.date.localeCompare(left.date) || left.project.localeCompare(right.project) || left.title.localeCompare(right.title));

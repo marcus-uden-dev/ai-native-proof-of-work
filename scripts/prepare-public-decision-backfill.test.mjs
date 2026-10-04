@@ -9,8 +9,8 @@ test('normalizes a dated plan candidate as a public planned decision', () => {
   assert.deepEqual(result[0], {
     date: '2026-08-22', project: 'Job-agent', status: 'Planned', type: 'Technical decision',
     title: 'Use a deterministic FX table', tags: ['technical-judgment', 'systems-thinking', 'decision-making'],
-    why: 'The dated design plan selected this boundary instead of a broader or parallel change.',
-    demonstrates: 'Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation.'
+    why: 'The dated design plan specifies this boundary: Use a deterministic FX table.',
+    demonstrates: 'Makes the technical decision explicit through technical judgment and systems thinking.'
   });
 });
 
@@ -24,6 +24,7 @@ test('rejects private and incomplete candidate titles', () => {
   const result = preparePublicDecisionBackfill([
     { review_state: 'draft', decision_date: '2026-08-22', confidence: 'dated-filename', primary_project: 'job-agent', title: 'Private source of truth:' },
     { review_state: 'draft', decision_date: '2026-08-22', confidence: 'dated-filename', primary_project: 'job-agent', title: 'Store records in .agents/docs' },
+    { review_state: 'draft', decision_date: '2026-08-22', confidence: 'dated-filename', primary_project: 'job-agent', title: 'Do not call gh auth switch directly' },
     { review_state: 'hold', decision_date: '2026-08-22', confidence: 'dated-filename', primary_project: 'job-agent', title: 'Use a deterministic FX table' }
   ], []);
   assert.equal(result.length, 0);
