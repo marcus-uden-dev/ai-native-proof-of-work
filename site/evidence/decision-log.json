@@ -1,10 +1,40 @@
 [
   {
+    "date": "2026-09-03",
+    "project": "PCMR Device Agent",
+    "type": "Integration architecture",
+    "title": "Use a loopback-only MCP bridge with explicit approval boundaries",
+    "tags": [
+      "technical-judgment",
+      "least-privilege",
+      "security-by-design",
+      "human-in-the-loop",
+      "risk-controls"
+    ],
+    "why": "Used a typed loopback bridge between MCP clients and approved device modules instead of exposing arbitrary shell access.",
+    "demonstrates": "Defines a narrow local API boundary, explicit approval points, and recoverable controls for consequential device actions."
+  },
+  {
     "date": "2026-08-26",
     "project": "Personal AI Harness",
     "tags": ["ai-native-workflows", "context-engineering", "decision-traceability", "automation-judgment", "risk-controls"],
     "why": "Made each AI-assisted response identify its model and reasoning effort when available. This makes model routing observable without exposing private operating details.",
     "demonstrates": "Turns invisible AI configuration into a verifiable, human-readable control. Uses an explicit unknown state instead of false precision."
+  },
+  {
+    "date": "2026-08-24",
+    "project": "Phone Layout Agent",
+    "type": "Automation architecture",
+    "title": "Use a Windows TypeScript CLI with a bounded ADB bridge",
+    "tags": [
+      "technical-judgment",
+      "automation-judgment",
+      "human-in-the-loop",
+      "risk-controls",
+      "quality-assurance"
+    ],
+    "why": "Selected a Windows-hosted TypeScript CLI with a narrow ADB bridge, an explicit approval artifact, and a launcher-specific adapter instead of a broad device-control layer.",
+    "demonstrates": "Combines typed application work with bounded automation, verification, and human control for a physical-device workflow."
   },
   {
     "date": "2026-08-24",
@@ -239,5 +269,33 @@
     ],
     "why": "Deferred pricing until one end-to-end daily-use path demonstrates repeated value across ingestion, search, learning, and capture.",
     "demonstrates": "Protects commercial credibility by testing repeated value before selecting a pricing model."
+  },
+  {
+    "date": "2026-03-19",
+    "project": "Household budget",
+    "type": "Product architecture",
+    "title": "Model accounts and calculation engines before budget interface expansion",
+    "tags": [
+      "systems-thinking",
+      "technical-judgment",
+      "prioritization",
+      "quality-assurance"
+    ],
+    "why": "Placed explicit account modeling and tested calculation layers ahead of richer budget pages so imports, liquidity, and household migration would have a stable foundation.",
+    "demonstrates": "Sequences data modeling, calculation correctness, and user interface work as connected parts of a financial product system."
+  },
+  {
+    "date": "2026-03-18",
+    "project": "PKM",
+    "type": "Service architecture",
+    "title": "Use a local FastAPI service with managed data and background-work components",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "automation-reliability",
+      "knowledge-management"
+    ],
+    "why": "Separated the local API service, managed vector-capable data store, Redis-backed background work, and frontend responsibilities to support knowledge ingestion and retrieval without a local container dependency.",
+    "demonstrates": "Makes service, data, and asynchronous-work trade-offs visible in an AI-enabled knowledge workflow."
   }
 ]
