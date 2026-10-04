@@ -15,6 +15,230 @@
     "demonstrates": "Keeps portfolio claims traceable to current evidence and prevents unmeasured repository work from being presented as a production outcome."
   },
   {
+    "date": "2026-10-02",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Add projects through evidence, not portfolio preference.",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-10-02",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Export public evidence through an allowlisted one-way bundle.",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-10-02",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Preserve existing objective gates.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-10-02",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Separate discovery, normalization, and publication.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-10-02",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Treat decisions as meaningful choices or constraints.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-10-02",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Use a frozen source universe, coverage completion, and a 100-record floor.",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-16",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Quality architecture",
+    "title": "Drift prevention is literal skill-linking plus one lightweight validation script modeled on the existing Test-CanonicalSurfaceSync.ps1 pattern, not a new CI framework.",
+    "tags": [
+      "technical-judgment",
+      "quality-assurance",
+      "validation"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-16",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Quality architecture",
+    "title": "Shared scripts (index builder, quality validator, compiler dry-run) are plain-stdlib Python, invoked identically via shell by either runtime.",
+    "tags": [
+      "technical-judgment",
+      "quality-assurance",
+      "validation"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-16",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "AI workflow architecture",
+    "title": "The pilot pointer added to job-agent names this system \"Proof Capture (evidence records),\" never bare \"proof-of-work.\"",
+    "tags": [
+      "technical-judgment",
+      "ai-native-workflows",
+      "human-in-the-loop"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-16",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "This pass builds the compiler as a documented source-priority contract plus a minimal read-only dry-run script, not a production writer.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-15",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Full remediation, not a baseline.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-15",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Quality architecture",
+    "title": "Pin and run Ruff from the backend development environment.",
+    "tags": [
+      "technical-judgment",
+      "quality-assurance",
+      "validation"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-15",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Separate mechanical fixes from behavior-sensitive cleanup.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-08",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Do not call gh auth switch directly from the sweep; always go through the wrapper.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-08",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Update, don't duplicate, the existing lessons.md entry.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-09-05",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Application architecture",
+    "title": "Keep prompt-first fallback and evaluate Gemini behind a server-side route",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
     "date": "2026-09-03",
     "project": "PCMR Device Agent",
     "type": "Integration architecture",
@@ -30,26 +254,267 @@
     "demonstrates": "Defines a narrow local API boundary, explicit approval points, and recoverable controls for consequential device actions."
   },
   {
+    "date": "2026-08-28",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Safety architecture",
+    "title": "Use deterministic, approval-gated execution for Android launcher automation",
+    "tags": [
+      "technical-judgment",
+      "risk-controls",
+      "security-by-design"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-08-28",
+    "project": "Phone Layout Agent",
+    "status": "Verified",
+    "type": "Safety architecture",
+    "title": "Use deterministic, approval-gated execution for Samsung launcher changes",
+    "tags": [
+      "technical-judgment",
+      "risk-controls",
+      "security-by-design"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Additive analysis route:",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Bounded aggregate policy:",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Evidence-driven performance:",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "No misleading rates:",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Null-safe group contract:",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Nullable timestamp branch:",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "One filter compiler:",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "PostgreSQL bucket calculation:",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Separate trend endpoint:",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Signed keyset cursor:",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
     "date": "2026-08-26",
     "project": "Personal AI Harness",
-    "tags": ["ai-native-workflows", "context-engineering", "decision-traceability", "automation-judgment", "risk-controls"],
+    "tags": [
+      "ai-native-workflows",
+      "context-engineering",
+      "decision-traceability",
+      "automation-judgment",
+      "risk-controls"
+    ],
     "why": "Made each AI-assisted response identify its model and reasoning effort when available. This makes model routing observable without exposing private operating details.",
     "demonstrates": "Turns invisible AI configuration into a verifiable, human-readable control. Uses an explicit unknown state instead of false precision."
   },
   {
-    "date": "2026-08-24",
-    "project": "Phone Layout Agent",
-    "type": "Automation architecture",
-    "title": "Use a Windows TypeScript CLI with a bounded ADB bridge",
+    "date": "2026-08-26",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "AI workflow architecture",
+    "title": "Make AI model and reasoning effort visible in responses",
     "tags": [
       "technical-judgment",
-      "automation-judgment",
-      "human-in-the-loop",
-      "risk-controls",
-      "quality-assurance"
+      "ai-native-workflows",
+      "human-in-the-loop"
     ],
-    "why": "Selected a Windows-hosted TypeScript CLI with a narrow ADB bridge, an explicit approval artifact, and a launcher-specific adapter instead of a broad device-control layer.",
-    "demonstrates": "Combines typed application work with bounded automation, verification, and human control for a physical-device workflow."
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-08-26",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Evidence workflow architecture",
+    "title": "Make the case-study registry the canonical Profiles evidence layer",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-08-25",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "AI workflow architecture",
+    "title": "Separate the human profile from the agent repository interview",
+    "tags": [
+      "technical-judgment",
+      "ai-native-workflows",
+      "human-in-the-loop"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-08-25",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Quality architecture",
+    "title": "Validation before claims:",
+    "tags": [
+      "technical-judgment",
+      "quality-assurance",
+      "validation"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-24",
+    "project": "Personal AI Harness",
+    "tags": [
+      "product-judgment",
+      "systems-thinking",
+      "context-engineering",
+      "continuous-improvement"
+    ],
+    "why": "Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.",
+    "demonstrates": "Explains system ownership and product boundaries clearly as the work evolves."
+  },
+  {
+    "date": "2026-08-24",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "AI workflow architecture",
+    "title": "Name the operating layer Personal AI Harness",
+    "tags": [
+      "technical-judgment",
+      "ai-native-workflows",
+      "human-in-the-loop"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
   },
   {
     "date": "2026-08-24",
@@ -67,14 +532,899 @@
   {
     "date": "2026-08-24",
     "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Evidence workflow architecture",
+    "title": "Record bilingual recruiter experience and defer technical-depth personalization",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-08-24",
+    "project": "Phone Layout Agent",
+    "type": "Automation architecture",
+    "title": "Use a Windows TypeScript CLI with a bounded ADB bridge",
+    "tags": [
+      "technical-judgment",
+      "automation-judgment",
+      "human-in-the-loop",
+      "risk-controls",
+      "quality-assurance"
+    ],
+    "why": "Selected a Windows-hosted TypeScript CLI with a narrow ADB bridge, an explicit approval artifact, and a launcher-specific adapter instead of a broad device-control layer.",
+    "demonstrates": "Combines typed application work with bounded automation, verification, and human control for a physical-device workflow."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Bulk ingestion CLI mirrors ingest_reactive_resume.py exactly: idempotent, --owner-user-id, per-theme failure collection.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Safety architecture",
+    "title": "Docker execution happens in two isolation phases: networked install, then network-disabled render.",
+    "tags": [
+      "technical-judgment",
+      "risk-controls",
+      "security-by-design"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Extraction produces one canonical sample JSON Resume document, not per-user data.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "New sibling extractor module, same interface shape as reactive_resume.py.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Client-side rendering, not build-time generation.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Flagged-tier delivery reuses an existing routine, not a new one.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Identity pre-flight, covering both vectors that actually gate a publish on this machine.",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Safety architecture",
+    "title": "No new secret, identity-safe by construction, not by credential scoping.",
+    "tags": [
+      "technical-judgment",
+      "risk-controls",
+      "security-by-design"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Taxonomy needs a public-repo-accessible copy, not just a private source.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Tier-boundary rule.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Quality architecture",
+    "title": "Characterization tests land first, since compute_score has none today (R8).",
+    "tags": [
+      "technical-judgment",
+      "quality-assurance",
+      "validation"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product and domain architecture",
+    "title": "Company-research salary extraction is scoped to reading company_intel if it already carries a salary signal, not adding a new extraction call.",
     "tags": [
       "product-judgment",
       "systems-thinking",
-      "context-engineering",
-      "continuous-improvement"
+      "technical-judgment"
     ],
-    "why": "Framed the operating layer as the evolving system behind the products rather than presenting the portfolio infrastructure as a product by itself.",
-    "demonstrates": "Explains system ownership and product boundaries clearly as the work evolves."
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product and domain architecture",
+    "title": "Compensation alignment is computed at read-time in the same place build_compensation_signal is already called, not stored.",
+    "tags": [
+      "product-judgment",
+      "systems-thinking",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product and domain architecture",
+    "title": "Compensation reads resolve_compensation_alignment, mapped to a 0-100 score by its alignment bucket.",
+    "tags": [
+      "product-judgment",
+      "systems-thinking",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Deterministic FX table lives in code, not the database; monthly-SEK is the internal normalization target.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Extend User with range/period/currency fields; keep salary_min_sek as a computed/derived value, not a second source of truth.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "AI workflow architecture",
+    "title": "Job-ad salary extraction extends the existing job_analysis prompt, mirroring the Plan 3 role_summary precedent exactly.",
+    "tags": [
+      "technical-judgment",
+      "ai-native-workflows",
+      "human-in-the-loop"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Location conflicts get a much higher weight, not a hard score cap.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Merge commute and proximity into one location_fit dimension.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Real commute data enters compute_score as an optional caller-supplied parameter, not a live call inside it.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Rebalanced WEIGHTS table (sums to 1.0):",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Compact 3-row promotion table, not the full pattern→destination table.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Ground existing sections, do not add new ones.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "AI workflow architecture",
+    "title": "Job-agent case study needs no content changes.",
+    "tags": [
+      "technical-judgment",
+      "ai-native-workflows",
+      "human-in-the-loop"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Name three task layers, not the full twelve-item list.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-22",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "This plan document's own High-Level Technical Design diagram is mermaid (standard for a markdown plan); the shipped page diagram (U5) is inline SVG/HTML, not mermaid.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "External web research on \"common Swedish merchants\" returned no canonical list (see Sources and Research).",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Fix the timing gap by reordering, not by adding new state.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "New merchant-alias entries are grounded in the app's own existing category usage, not invented.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "User-directed simplification: collapse \"Accept suggestion\" and \"Resolve\" into one \"Accept\" action, rather than a CSS-only layout patch.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "AIActionChip is a new shared component; existing buttons migrate to it individually, this plan does not convert every AI button in the app.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Category mapping is a fixed dict in the service layer, not scattered across each router.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "AI workflow architecture",
+    "title": "Extend the existing job_analysis prompt rather than adding a second LLM call.",
+    "tags": [
+      "technical-judgment",
+      "ai-native-workflows",
+      "human-in-the-loop"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "Inline preview fetches the PDF blob directly instead of routing through a popup window.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Insert a preflight panel state between the closed button and handleStart(), not a separate modal component.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "One new service function, consume_trial_allowance, called only after a product action's real work succeeds — never before.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Paragraph splitting falls back to single-newline when double-newline splitting doesn't structure the text, rather than always splitting on single newlines.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Persist the default as a new UserPersona field, mirroring the existing blueprint-default pattern.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Reuse useGateCooldown for the per-session skip, mirroring AgentStrip.tsx's existing dismissible-banner pattern.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "Templates tab cards become the entry point for setting the persisted default, not a duplicate render trigger.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "The +1 animation is a small, self-contained visual component keyed by category, not wired into taskStore.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "The job summary is one new nullable JSON column on SharedJobPosting, mirroring the existing company_intel column.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "The render panel's initial selectedTemplate/selectedBlueprintId state reads the persona default on mount, not just on click.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-21",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product and domain architecture",
+    "title": "Trial allowance lives on EntitlementState, as new fields, not a new table or a new row per category.",
+    "tags": [
+      "product-judgment",
+      "systems-thinking",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Bundle busy-flag restoration and dead-subsystem removal under \"item 6,\" but as separate units.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "failImportBatch must not mislabel a batch that actually committed.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "failImportBatch targets the batch by id, not by fileName + user_id.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "failImportBatch's own errors are swallowed, not rethrown.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Failure-marking does not call clearReconciliation().",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Full removal of the results-display subsystem, not a partial badge-only trim.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Quality architecture",
+    "title": "Verification method: iterate npx eslint .'s no-unused-vars output.",
+    "tags": [
+      "technical-judgment",
+      "quality-assurance",
+      "validation"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Auto-push the dedicated automation branch; never touch master or the human's branch directly.",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "B4's checkpoint is a fenced YAML block at a fixed anchor in each ops-run report, not a separate state file.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Canary state lives inside open-todos.md, in a delimited table region — not a separate generated file.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Closure requires positive evidence; disappearance alone downgrades, never closes.",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product and domain architecture",
+    "title": "Metering fix threads user_id through existing signatures; two functions need new parameters.",
+    "tags": [
+      "product-judgment",
+      "systems-thinking",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product and domain architecture",
+    "title": "Normalize the billing RuntimeError into LLMProviderError, don't add a second exception type.",
+    "tags": [
+      "product-judgment",
+      "systems-thinking",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "One new adapter error code, not a general error-code redesign.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Propagate via the existing LLMProviderError.code, not a new response envelope.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Saved-search async conversion copies trigger_discovery/discovery_status structurally, including its Celery-or-direct-task fallback.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "The writer runs in a dedicated worktree and branch, never the human's current checkout.",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Add the quiet repository link to every page's masthead.",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
   },
   {
     "date": "2026-08-20",
@@ -87,6 +1437,272 @@
     ],
     "why": "Chose a bounded canary before expanding scheduled finding intake into a broader reporting architecture.",
     "demonstrates": "Uses staged validation to control uncertainty before scaling automation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Quality architecture",
+    "title": "Extend the existing Playwright/node:test suites.",
+    "tags": [
+      "technical-judgment",
+      "quality-assurance",
+      "validation"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Extend the shipped site directly.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Present the recursive workflow as a subordinate proof card.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Evidence workflow architecture",
+    "title": "Register new content in the release allowlist and DESIGN.md within the unit that introduces it.",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Route \"Review fit with AI\" to the existing #ai-review control.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-20",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "Split the recursive-workflow proof into a homepage preview and a dedicated page.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-17",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Default blueprint lives on UserPersona, new column name default_blueprint_id.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-17",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "Frontend stays additive to the existing Studio picker, no new page.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-17",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "No new table for presets.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-17",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Reuse existing sanitizers, don't duplicate them.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-17",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Application architecture",
+    "title": "Reuse the existing PATCH /api/persona/fields pattern, don't add a new endpoint.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "quality-assurance"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-17",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Two endpoints, not one flag.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-11",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "cv/page.tsx: take master's side, full stop.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-11",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Default-flip applies going forward only; no retroactive silent change (R7).",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-11",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "Document picker, not a raw ID input.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-11",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "Extend, don't duplicate, the render modal.",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-11",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "No Pro gating for now",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-11",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Port by file-diff, not git cherry-pick.",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-08-11",
+    "project": "Job-agent",
+    "status": "Planned",
+    "type": "Safety architecture",
+    "title": "Two-tier consent via a new column, not a repurposed one.",
+    "tags": [
+      "technical-judgment",
+      "risk-controls",
+      "security-by-design"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
   },
   {
     "date": "2026-08-10",
@@ -112,6 +1728,20 @@
     "demonstrates": "Maintains an evidence boundary between shipped product work and follow-up work."
   },
   {
+    "date": "2026-08-09",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Separate committed product-code freshness from later docs/ops commits",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
     "date": "2026-08-05",
     "project": "Job-agent",
     "tags": [
@@ -123,6 +1753,20 @@
     "demonstrates": "Chooses verifiable evidence over a stronger but unsupported progress story."
   },
   {
+    "date": "2026-08-05",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Evidence workflow architecture",
+    "title": "Prefer the currently accessible committed branch over older verified snapshots or dirty local WIP",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
     "date": "2026-06-28",
     "project": "Job-agent",
     "tags": [
@@ -132,6 +1776,20 @@
     ],
     "why": "Preserved distinct roles for orientation, durable status, and direct freshness verification in the product handoff.",
     "demonstrates": "Designs information hierarchies that help people find the right level of truth."
+  },
+  {
+    "date": "2026-06-28",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Evidence workflow architecture",
+    "title": "Use the source repo's own handoff hierarchy before falling back to raw freshness checks",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
   },
   {
     "date": "2026-06-25",
@@ -169,6 +1827,20 @@
   {
     "date": "2026-06-02",
     "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Add workflow implementation cases as supporting proof",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-06-02",
+    "project": "Personal AI Harness",
     "tags": [
       "reusable-systems",
       "ai-native-workflows",
@@ -178,26 +1850,47 @@
     "demonstrates": "Packages operating-layer improvements without letting infrastructure replace product evidence."
   },
   {
-    "date": "2026-05-11",
+    "date": "2026-05-24",
     "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Keep the reusable seed template-scoped and provider-neutral",
     "tags": [
-      "product-taste",
-      "prioritization",
-      "stakeholder-understanding"
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
     ],
-    "why": "Kept concrete products ahead of the operating layer in the recruiter-facing proof structure.",
-    "demonstrates": "Prioritizes the clearest audience signal while preserving the enabling system."
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
   },
   {
     "date": "2026-05-11",
-    "project": "PKM",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Pricing",
+    "title": "Defer household-budget pricing until trust and daily value are proven",
     "tags": [
-      "research-judgment",
-      "product-judgment",
+      "risk-awareness",
+      "prioritization",
+      "commercial-awareness",
       "evidence-driven"
     ],
-    "why": "Presented PKM as supporting evidence until sustained adoption and daily-use value are validated.",
-    "demonstrates": "Uses conservative evidence boundaries instead of overstating product maturity."
+    "why": "Deferred pricing until workflow safety, import quality, privacy, and repeated household value are stronger.",
+    "demonstrates": "Uses trust and evidence thresholds before making commercial product decisions."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Household budget",
+    "status": "Verified",
+    "type": "Evidence workflow architecture",
+    "title": "Treat household budgeting as shared-domain modeling evidence",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
   },
   {
     "date": "2026-05-11",
@@ -214,16 +1907,30 @@
     "date": "2026-05-11",
     "project": "Job-agent",
     "status": "Verified",
-    "type": "Product flow",
-    "title": "Use a reviewed career workflow instead of an autonomous applier",
+    "type": "AI workflow architecture",
+    "title": "Position job-agent as a reviewed career workflow product",
     "tags": [
-      "product-discovery",
-      "decision-support",
-      "human-in-the-loop",
-      "risk-awareness"
+      "technical-judgment",
+      "ai-native-workflows",
+      "human-in-the-loop"
     ],
-    "why": "Started with a reviewed workflow connecting discovery, fit analysis, application support, privacy, and feedback instead of unreviewed application sending.",
-    "demonstrates": "Uses user control and explicit risk boundaries to shape an AI-assisted product flow."
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Job-agent",
+    "status": "Hypothesis",
+    "type": "Pricing",
+    "title": "Test a job-search sprint or focused monthly plan first",
+    "tags": [
+      "product-judgment",
+      "prioritization",
+      "commercial-awareness",
+      "value-creation"
+    ],
+    "why": "Kept a time-boxed job-search sprint and a lightweight monthly plan as the first pricing hypotheses while willingness to pay remains unvalidated.",
+    "demonstrates": "Frames pricing around user value and clearly separates hypotheses from market evidence."
   },
   {
     "date": "2026-05-11",
@@ -243,32 +1950,140 @@
   {
     "date": "2026-05-11",
     "project": "Job-agent",
-    "status": "Hypothesis",
-    "type": "Pricing",
-    "title": "Test a job-search sprint or focused monthly plan first",
+    "status": "Verified",
+    "type": "Product flow",
+    "title": "Use a reviewed career workflow instead of an autonomous applier",
     "tags": [
-      "product-judgment",
-      "prioritization",
-      "commercial-awareness",
-      "value-creation"
+      "product-discovery",
+      "decision-support",
+      "human-in-the-loop",
+      "risk-awareness"
     ],
-    "why": "Kept a time-boxed job-search sprint and a lightweight monthly plan as the first pricing hypotheses while willingness to pay remains unvalidated.",
-    "demonstrates": "Frames pricing around user value and clearly separates hypotheses from market evidence."
+    "why": "Started with a reviewed workflow connecting discovery, fit analysis, application support, privacy, and feedback instead of unreviewed application sending.",
+    "demonstrates": "Uses user control and explicit risk boundaries to shape an AI-assisted product flow."
   },
   {
     "date": "2026-05-11",
-    "project": "Household budget",
-    "status": "Planned",
-    "type": "Pricing",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Product and domain architecture",
     "title": "Defer household-budget pricing until trust and daily value are proven",
     "tags": [
-      "risk-awareness",
-      "prioritization",
-      "commercial-awareness",
-      "evidence-driven"
+      "product-judgment",
+      "systems-thinking",
+      "technical-judgment"
     ],
-    "why": "Deferred pricing until workflow safety, import quality, privacy, and repeated household value are stronger.",
-    "demonstrates": "Uses trust and evidence thresholds before making commercial product decisions."
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Product and domain architecture",
+    "title": "Keep PKM pricing deferred until repeated daily value is validated",
+    "tags": [
+      "product-judgment",
+      "systems-thinking",
+      "technical-judgment"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Keep PKM supporting until sustained value is validated",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Personal AI Harness",
+    "tags": [
+      "product-taste",
+      "prioritization",
+      "stakeholder-understanding"
+    ],
+    "why": "Kept concrete products ahead of the operating layer in the recruiter-facing proof structure.",
+    "demonstrates": "Prioritizes the clearest audience signal while preserving the enabling system."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Organize strategy by product project",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Quality architecture",
+    "title": "Test a job-search sprint or focused monthly plan first",
+    "tags": [
+      "technical-judgment",
+      "quality-assurance",
+      "validation"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Treat telemetry and outcome learning as a product layer",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Use a reviewed career workflow instead of an autonomous applier",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Evidence workflow architecture",
+    "title": "Use household budgeting as shared-domain modeling evidence",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
   },
   {
     "date": "2026-05-11",
@@ -286,6 +2101,143 @@
     "demonstrates": "Protects commercial credibility by testing repeated value before selecting a pricing model."
   },
   {
+    "date": "2026-05-11",
+    "project": "PKM",
+    "tags": [
+      "research-judgment",
+      "product-judgment",
+      "evidence-driven"
+    ],
+    "why": "Presented PKM as supporting evidence until sustained adoption and daily-use value are validated.",
+    "demonstrates": "Uses conservative evidence boundaries instead of overstating product maturity."
+  },
+  {
+    "date": "2026-05-11",
+    "project": "PKM",
+    "status": "Verified",
+    "type": "Evidence workflow architecture",
+    "title": "Treat PKM as supporting strategy evidence until daily-use value is validated",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-09",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Lead with concrete projects while documenting the automation",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-08",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Evidence workflow architecture",
+    "title": "Use a private GitHub repository as proof-of-work archive",
+    "tags": [
+      "decision-traceability",
+      "workflow-automation",
+      "risk-controls"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-08",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Use Markdown and Mermaid as canonical documentation format",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-05-08",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Use Markdown and Mermaid as canonical documentation layer",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated decision record selected this approach to define a clear work boundary.",
+    "demonstrates": "Makes the technical trade-off, scope boundary, and evidence trail inspectable."
+  },
+  {
+    "date": "2026-03-19",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Accounts Before Budgets",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-03-19",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Technical decision",
+    "title": "Current Core Is A Platform, Not A Temporary Detour",
+    "tags": [
+      "technical-judgment",
+      "systems-thinking",
+      "decision-making"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-03-19",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Product interaction architecture",
+    "title": "Engines Before UI Polish",
+    "tags": [
+      "product-judgment",
+      "design-consistency",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-03-19",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "Product and domain architecture",
+    "title": "Household Scope Is A Migration Problem, Not A Cosmetic Feature",
+    "tags": [
+      "product-judgment",
+      "systems-thinking",
+      "technical-judgment"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
     "date": "2026-03-19",
     "project": "Household budget",
     "type": "Product architecture",
@@ -298,6 +2250,34 @@
     ],
     "why": "Placed explicit account modeling and tested calculation layers ahead of richer budget pages so imports, liquidity, and household migration would have a stable foundation.",
     "demonstrates": "Sequences data modeling, calculation correctness, and user interface work as connected parts of a financial product system."
+  },
+  {
+    "date": "2026-03-19",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "AI workflow architecture",
+    "title": "Multi-Agent Is The Right Execution Model",
+    "tags": [
+      "technical-judgment",
+      "ai-native-workflows",
+      "human-in-the-loop"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
+  },
+  {
+    "date": "2026-03-19",
+    "project": "Household budget",
+    "status": "Planned",
+    "type": "AI workflow architecture",
+    "title": "Multi-Agent Safety Requires Explicit Ownership",
+    "tags": [
+      "technical-judgment",
+      "ai-native-workflows",
+      "human-in-the-loop"
+    ],
+    "why": "The dated design plan selected this boundary instead of a broader or parallel change.",
+    "demonstrates": "Makes the intended technical trade-off, scope boundary, and validation responsibility inspectable before implementation."
   },
   {
     "date": "2026-03-18",
