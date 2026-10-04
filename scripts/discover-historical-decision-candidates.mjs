@@ -16,12 +16,18 @@ const sessionDecisionHeading = /^#{2,4}\s+(.+?)\s*$/;
 const architectureWhyHeading = /^#{2,4}\s+why\s+(.+?)\s*$/i;
 const numberedArchitecturePrinciple = /^#{3,4}\s+\d+\.\s+(.+?)\s*$/;
 const recommendedAlternativeHeading = /^#{3,4}\s+(?:recommended|alternative\s+[a-z]+):\s+(.+?)\s*$/i;
+const datedFilename = /(?:^|\/)(\d{4}-\d{2}-\d{2})(?:[-_.]|$)/;
 
 function isIsoDay(value) {
   if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) return false;
   const [year, month, day] = value.split('-').map(Number);
   const date = new Date(Date.UTC(year, month - 1, day));
   return date.getUTCFullYear() === year && date.getUTCMonth() === month - 1 && date.getUTCDate() === day;
+}
+
+function dateFromFilename(sourcePath) {
+  const match = sourcePath.match(datedFilename);
+  return match && isIsoDay(match[1]) ? match[1] : null;
 }
 
 function slug(value) {
@@ -47,7 +53,7 @@ function suggestedCapabilityTags(title) {
   return tags;
 }
 
-function draft({ source, sourcePath, date, title, line, state = 'draft', failedGate, retryCondition }) {
+function draft({ source, sourcePath, date, dateSource = 'heading', title, line, state = 'draft', failedGate, retryCondition }) {
   const decision = title;
   const fingerprintInputs = {
     primary_project: projectForPath(source, sourcePath),
@@ -69,7 +75,7 @@ function draft({ source, sourcePath, date, title, line, state = 'draft', failedG
     suggested_capability_tags: suggestedCapabilityTags(title),
     fingerprint_inputs: fingerprintInputs,
     collision_group: hash(fingerprint).slice(0, 16),
-    confidence: date ? 'explicit-dated-heading' : 'date-missing',
+    confidence: date ? (dateSource === 'filename' ? 'dated-filename' : 'explicit-dated-heading') : 'date-missing',
     review_state: state,
     ...(failedGate ? { failed_gate: failedGate, automatic_retry_condition: retryCondition } : {})
   };
@@ -102,6 +108,7 @@ export function discoverCandidates(registry, rootDirectory, sourceRoots = {}, so
     let sourceCount = 0;
     for (const file of files) {
       const sourcePath = path.relative(resolvedRoot, file).replaceAll('\\', '/');
+      const filenameDate = dateFromFilename(sourcePath);
       const lines = fs.readFileSync(file, 'utf8').split(/\r?\n/);
       lines.forEach((line, offset) => {
         const dated = line.match(datedHeading);
@@ -122,7 +129,7 @@ export function discoverCandidates(registry, rootDirectory, sourceRoots = {}, so
           const title = keyTechnicalDecision?.[1] ?? tableDecision?.[1];
           const tableHeader = Boolean(tableDecision && /^\|\s*:?-{3,}/.test(lines[offset + 1] ?? ''));
           if (title && !tableHeader && !isTemplate(title)) {
-            candidates.push(draft({ source, sourcePath, date: null, title: title.trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A source with an explicit ISO decision date is registered.' }));
+            candidates.push(draft({ source, sourcePath, date: filenameDate, dateSource: 'filename', title: title.trim(), line: offset + 1, state: filenameDate ? 'draft' : 'hold', failedGate: filenameDate ? undefined : 'supported_date', retryCondition: filenameDate ? undefined : 'A source with an explicit ISO decision date is registered.' }));
             sourceCount += 1;
           }
         }
@@ -131,7 +138,7 @@ export function discoverCandidates(registry, rootDirectory, sourceRoots = {}, so
           const heading = line.match(sessionDecisionHeading);
           const title = rationale?.[1] ?? heading?.[1];
           if (title && !isTemplate(title)) {
-            candidates.push(draft({ source, sourcePath, date: null, title: title.trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A dated source or independently verifiable evidence is registered.' }));
+            candidates.push(draft({ source, sourcePath, date: filenameDate, dateSource: 'filename', title: title.trim(), line: offset + 1, state: filenameDate ? 'draft' : 'hold', failedGate: filenameDate ? undefined : 'supported_date', retryCondition: filenameDate ? undefined : 'A dated source or independently verifiable evidence is registered.' }));
             sourceCount += 1;
           }
         }
@@ -140,7 +147,7 @@ export function discoverCandidates(registry, rootDirectory, sourceRoots = {}, so
             ?? line.match(numberedArchitecturePrinciple)?.[1]
             ?? line.match(recommendedAlternativeHeading)?.[1];
           if (title && !isTemplate(title)) {
-            candidates.push(draft({ source, sourcePath, date: null, title: title.trim(), line: offset + 1, state: 'hold', failedGate: 'supported_date', retryCondition: 'A dated source or independently verifiable evidence is registered.' }));
+            candidates.push(draft({ source, sourcePath, date: filenameDate, dateSource: 'filename', title: title.trim(), line: offset + 1, state: filenameDate ? 'draft' : 'hold', failedGate: filenameDate ? undefined : 'supported_date', retryCondition: filenameDate ? undefined : 'A dated source or independently verifiable evidence is registered.' }));
             sourceCount += 1;
           }
         }

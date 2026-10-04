@@ -12,6 +12,13 @@ function withFixture(t, contents) {
   fs.writeFileSync(path.join(root, 'logs', 'DECISION_LOG.md'), contents);
   return root;
 }
+function withDatedFixture(t, contents) {
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), 'decision-discovery-'));
+  t.after(() => fs.rmSync(root, { recursive: true, force: true }));
+  fs.mkdirSync(path.join(root, 'docs', 'plans'), { recursive: true });
+  fs.writeFileSync(path.join(root, 'docs', 'plans', '2026-05-11-architecture.md'), contents);
+  return root;
+}
 const registry = { schema_version: 1, register_revision: 'test', scan_cutoff: '2026-10-02', source_classes: { 'dated-decision-heading': { inclusion_grammar: 'test', exclusion_grammar: 'test' } }, sources: [{ id: 'decision-log', source_path: 'logs/DECISION_LOG.md', source_class: 'dated-decision-heading', owner_project: 'job-agent', accessibility: 'available', source_revision: 'test', scan_state: 'registered', scan_cutoff: '2026-10-02', privacy_class: 'private-repository-evidence' }] };
 
 test('creates one draft with an exact date and source anchor', (t) => {
@@ -66,6 +73,14 @@ test('creates a held draft for a visible decision-table row', (t) => {
   const result = discoverCandidates(corpus, withFixture(t, '| Decision | Use a reviewed workflow |\n'));
   assert.equal(result.candidates[0].title, 'Use a reviewed workflow');
   assert.equal(result.candidates[0].failed_gate, 'supported_date');
+});
+
+test('uses an ISO date in a plan filename as explicit source metadata', (t) => {
+  const corpus = structuredClone(registry); corpus.source_classes['decision-statement-corpus'] = { inclusion_grammar: 'test', exclusion_grammar: 'test' }; corpus.sources[0].source_path = 'docs/plans'; corpus.sources[0].source_class = 'decision-statement-corpus';
+  const result = discoverCandidates(corpus, withDatedFixture(t, '- **KTD1 — Keep publication one-way**\n'));
+  assert.equal(result.candidates[0].decision_date, '2026-05-11');
+  assert.equal(result.candidates[0].confidence, 'dated-filename');
+  assert.equal(result.candidates[0].review_state, 'draft');
 });
 
 test('creates a held draft for a documented Swedish architecture rationale', (t) => {
