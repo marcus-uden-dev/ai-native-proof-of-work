@@ -25,6 +25,7 @@ test('rejects private and incomplete candidate titles', () => {
     { review_state: 'draft', decision_date: '2026-08-22', confidence: 'dated-filename', primary_project: 'job-agent', title: 'Private source of truth:' },
     { review_state: 'draft', decision_date: '2026-08-22', confidence: 'dated-filename', primary_project: 'job-agent', title: 'Store records in .agents/docs' },
     { review_state: 'draft', decision_date: '2026-08-22', confidence: 'dated-filename', primary_project: 'job-agent', title: 'Do not call gh auth switch directly' },
+    { review_state: 'draft', decision_date: '2026-08-22', confidence: 'dated-filename', primary_project: 'job-agent', title: 'Use autonomous execution' },
     { review_state: 'hold', decision_date: '2026-08-22', confidence: 'dated-filename', primary_project: 'job-agent', title: 'Use a deterministic FX table' }
   ], []);
   assert.equal(result.length, 0);

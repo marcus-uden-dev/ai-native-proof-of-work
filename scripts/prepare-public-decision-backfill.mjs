@@ -35,6 +35,7 @@ function isPublicSafe(candidate) {
     && !/\b(?:pending|private source of truth|safe wip link target)\b/i.test(title)
     && !/\.(?:agents|codex|claude)(?:[\\/]|\b)/i.test(title)
     && !/\b(?:gh auth switch|session transcript)\b/i.test(title)
+    && !/\bautonomous\b/i.test(title)
     && !/\b(api key|token|password|secret value)\b/i.test(title);
 }
 
