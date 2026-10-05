@@ -18,7 +18,7 @@ const renderedIndex = `${JSON.stringify({ schemaVersion: 1, repository: reposito
 
 if (process.argv.includes('--check')) {
   const currentIndex = readFileSync(resolve(repositoryRoot, outputPath), 'utf8');
-  if (currentIndex !== renderedIndex) {
+  if (currentIndex.replaceAll('\r\n', '\n') !== renderedIndex) {
     console.error('Repository evidence index is stale. Run npm run build:repository-evidence-index.');
     process.exitCode = 1;
   } else {

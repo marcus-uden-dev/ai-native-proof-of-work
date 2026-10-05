@@ -9,7 +9,9 @@ const projects = [
   { name: 'Job-agent', id: 'job-agent', qualifier: 'lead proof', className: 'decision-log-oracle__project--lead' },
   { name: 'Personal AI Harness', id: 'personal-ai-harness', qualifier: 'operating layer', className: 'decision-log-oracle__project--harness' },
   { name: 'PKM', id: 'pkm', qualifier: 'supporting proof', className: '' },
-  { name: 'Household budget', id: 'household-budget', qualifier: 'supporting proof', className: '' }
+  { name: 'Household budget', id: 'household-budget', qualifier: 'supporting proof', className: '' },
+  { name: 'Phone Layout Agent', id: 'phone-layout-agent', qualifier: 'supporting proof', className: '' },
+  { name: 'PCMR Device Agent', id: 'pcmr-device-agent', qualifier: 'supporting proof', className: '' }
 ];
 
 const projectByName = new Map(projects.map((project) => [project.name, project]));

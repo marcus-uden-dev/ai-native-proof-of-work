@@ -77,7 +77,8 @@ test('The Job-agent story preserves complete chapter records in raw HTML without
   expect(html).toContain('Set up a repeatable way to find work');
   expect(html).toContain('Bring fit, evidence, and action into one role view');
   expect(html).not.toContain('v0.5 public proof');
-  expect(html).toContain('Evidence gaps kept out of this story');
+  expect(html).not.toContain('Evidence gaps kept out of this story');
+  expect(html).not.toContain('Temporal audit fields are available');
   expect(html).toContain('data-story-controls');
   expect(html).not.toContain('data-replay-range');
 });

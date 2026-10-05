@@ -5,7 +5,7 @@ import test from 'node:test';
 const entries = JSON.parse(readFileSync('site/evidence/decision-log.json', 'utf8'));
 const tags = JSON.parse(readFileSync('site/evidence/decision-log-tags.json', 'utf8'));
 const currentTagNames = new Set(tags.map((t) => t.tag));
-const supportedProjects = new Set(['Job-agent', 'PKM', 'Household budget', 'Personal AI Harness']);
+const supportedProjects = new Set(['Job-agent', 'PKM', 'Household budget', 'Personal AI Harness', 'Phone Layout Agent', 'PCMR Device Agent']);
 
 // Session-mechanics / tool-internal markers this test can safely name directly.
 // Forbidden-identity and local-path leaks are already caught repo-wide by
