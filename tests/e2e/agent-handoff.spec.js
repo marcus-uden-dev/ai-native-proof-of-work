@@ -95,6 +95,18 @@ test('repository review uses separate prompt contracts for a question and a role
   await expect(page.locator('#repositoryPrompt')).toContainText('RECRUITER QUESTION:');
 });
 
+test('repository review keeps the compact editorial mode controls', async ({ page }) => {
+  await page.goto('/');
+  const controls = page.locator('.repository-interview .mode-choice');
+
+  await expect(controls).toHaveCount(3);
+  await expect(controls.first()).toHaveAttribute('aria-pressed', 'true');
+  await expect(controls.first()).toHaveCSS('background-color', 'rgb(32, 27, 18)');
+  await expect(controls.first()).toHaveCSS('border-top-color', 'rgb(208, 161, 83)');
+  await expect(controls.nth(1)).toHaveCSS('border-top-color', 'rgb(93, 81, 59)');
+  await expect(controls.first()).toHaveCSS('min-height', '36px');
+});
+
 test('the existing repository review panel renders a cited AI role assessment when configured', async ({ page }) => {
   const dimensions = [
     ['product-framing', 'Product framing'],

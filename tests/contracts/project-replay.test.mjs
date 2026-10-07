@@ -52,7 +52,7 @@ test('every chapter has public HTTPS evidence and an approved local visual when 
 test('generated playback stays synchronized with its static HTML fallback', () => {
   assert.ok(html.includes('<!-- PROJECT_REPLAY:BEGIN -->'));
   assert.ok(html.includes('<!-- PROJECT_REPLAY:END -->'));
-  assert.ok(html.includes(renderReplay(data)));
+  assert.ok(html.replaceAll('\r\n', '\n').includes(renderReplay(data)));
   assert.ok(html.includes('data-project-story'));
   assert.ok(html.includes('data-story-controls'));
   assert.ok(html.includes('JavaScript adds the optional rewind and playback controls.'));

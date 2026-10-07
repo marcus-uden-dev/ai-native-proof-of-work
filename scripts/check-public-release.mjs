@@ -212,7 +212,9 @@ export function validateRepository(root = repositoryRoot, options = {}) {
     const head = git(root, ['rev-parse', '--verify', 'HEAD']);
   if (head) {
     const roots = git(root, ['rev-list', '--max-parents=0', 'HEAD']).split(/\r?\n/).filter(Boolean);
-    if (roots.length !== 1) addMatch(errors, 'git-ancestry', '.git', 'The repository must have exactly one clean root commit.');
+    if (roots.length !== 1) {
+      addMatch(errors, 'git-ancestry', '.git', `The repository must have exactly one clean root commit; found ${roots.length}: ${roots.join(', ') || 'none'}.`);
+    }
     const authors = git(root, ['log', '--format=%ae']).split(/\r?\n/).filter(Boolean);
     if (authors.some((email) => email.toLowerCase() !== requiredProfessionalEmail)) {
       addMatch(errors, 'git-author', '.git', 'All commits must use the professional author email.');
