@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const repositoryRoot = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const binaryExtensions = new Set(['.gif', '.jpeg', '.jpg', '.pdf', '.png', '.webp']);
-const ignoredDirectories = new Set(['.git', 'node_modules', 'playwright-report', 'test-results']);
+const ignoredDirectories = new Set(['.git', 'node_modules', 'playwright-report', 'test-results', '.claude']);
 const publicContentExtensions = new Set(['.css', '.html', '.js', '.json', '.md', '.mjs', '.txt', '.xml']);
 const requiredProfessionalEmail = 'marcus.uden.dev@gmail.com';
 

@@ -3,6 +3,7 @@
   "allowedFiles": [
     ".github/workflows/pages.yml",
     ".github/workflows/quality.yml",
+    ".gitattributes",
     ".gitignore",
     "AGENTS.md",
     "CLAUDE.md",
