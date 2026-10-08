@@ -3,7 +3,7 @@
 # Technology capability catalog: Fixture Service
 
 - Swept commit: `{{COMMIT}}` on branch `{{BRANCH}}`
-- Sweep fingerprint: `ace954730b8c99541d74fe34b98bcc0463f5862effed08b2b0e03b0b28c5183d`
+- Sweep fingerprint: `c9d2d9f1cf45d3ea0605e96aa5ca2e01fc22b4c82dc6b0d7a08bb4daeeaed2f0`
 - Tool version: `technology-catalog/1`
 
 This catalog records what the tracked source shows: which technologies the repo uses, what for, and where the source shows it. It makes no claim about adoption, users, or outcomes.

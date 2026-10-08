@@ -20,18 +20,6 @@ export const PYTHON_IMPORT_ALIASES = {
   yaml: 'pyyaml'
 };
 
-// Packages whose normal consumer is a command, not an import.
-export const COMMAND_NAMES = {
-  'python:pytest': ['pytest'],
-  'python:uvicorn': ['uvicorn'],
-  'python:gunicorn': ['gunicorn'],
-  'python:celery': ['celery'],
-  'python:alembic': ['alembic'],
-  'python:ruff': ['ruff'],
-  'python:black': ['black'],
-  'python:mypy': ['mypy']
-};
-
 export function normalizePythonName(name) {
   return name.toLowerCase().replace(/[._]+/g, '-');
 }

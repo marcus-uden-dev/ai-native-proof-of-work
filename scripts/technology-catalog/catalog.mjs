@@ -15,14 +15,23 @@ export const DISPOSITIONS = ['incidental', 'transitive', 'unused'];
 const ID_PATTERN = /^[a-z0-9]+(?:[.-][a-z0-9]+)+$/;
 const DOC_EXTENSION = /\.(md|mdx|rst|txt)$/i;
 
+const rank = (state) => (Object.hasOwn(STATE_RANK, state) ? STATE_RANK[state] : 0);
+
 const SECRET_PATTERNS = [
   /\bgh[pousr]_[A-Za-z0-9_]{20,}\b/,
   /\bsk-[A-Za-z0-9_-]{20,}\b/,
   /-----BEGIN (?:RSA |EC |OPENSSH )?PRIVATE KEY-----/,
   /\bAKIA[0-9A-Z]{16}\b/,
   /\bxox[baprs]-[A-Za-z0-9-]{10,}\b/,
+  /\b[sp]k_live_[A-Za-z0-9]{10,}\b/,
+  /\bgithub_pat_[A-Za-z0-9_]{20,}\b/,
+  /\bAIza[0-9A-Za-z_-]{30,}\b/,
+  /\beyJ[A-Za-z0-9_-]{8,}\.eyJ[A-Za-z0-9_-]{8,}\.[A-Za-z0-9_-]+/,
+  /\b[a-z][a-z0-9+.-]*:\/\/[^\s/:@]+:[^\s/@]+@/i,
+  /hooks\.slack\.com\/services\//,
+  /\b(?:localhost|0\.0\.0\.0|127\.\d{1,3}\.\d{1,3}\.\d{1,3})\b/,
   /\b(?:10\.\d{1,3}\.\d{1,3}\.\d{1,3}|192\.168\.\d{1,3}\.\d{1,3}|172\.(?:1[6-9]|2\d|3[01])\.\d{1,3}\.\d{1,3})\b/,
-  /\b[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:internal|corp|lan)\b/i
+  /\b[a-z0-9-]+(?:\.[a-z0-9-]+)*\.(?:internal|corp|lan|svc|cluster\.local)\b/i
 ];
 
 const CLAIM_PATTERNS = [
@@ -42,12 +51,12 @@ export function findClaims(text) {
   return CLAIM_PATTERNS.filter((pattern) => pattern.test(text)).map((pattern) => pattern.source);
 }
 
-function globToRegExp(glob) {
+export function globToRegExp(glob) {
   const escaped = glob.replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*\*/g, '\u0000').replace(/\*/g, '[^/]*').replace(/\u0000/g, '.*');
   return new RegExp(`^${escaped}$`);
 }
 
-function matchesFile(files, path) {
+export function matchesFile(files, path) {
   if (!path.includes('*')) return files.includes(path);
   const pattern = globToRegExp(path);
   return files.some((file) => pattern.test(file));
@@ -57,6 +66,19 @@ function matchesCandidate(pattern, id) {
   return pattern.endsWith('*') ? id.startsWith(pattern.slice(0, -1)) : pattern === id;
 }
 
+// A wildcard may only end the pattern, and must keep a package ecosystem, infrastructure kind, or "env:" in front of it.
+function disallowedWildcard(pattern) {
+  const star = pattern.indexOf('*');
+  if (star === -1) return null;
+  if (star !== pattern.length - 1) return 'A wildcard may only be the last character.';
+  const prefix = pattern.slice(0, -1);
+  if (prefix === 'env:') return null;
+  if (!/^(?:pkg:[a-z-]+:|infra:[a-z-]+:)[^*]+$/.test(prefix)) {
+    return 'A wildcard needs a package ecosystem or infrastructure kind and at least one more character before it.';
+  }
+  return null;
+}
+
 function nonEmpty(value) {
   return typeof value === 'string' && value.trim() !== '';
 }
@@ -64,6 +86,14 @@ function nonEmpty(value) {
 export function validateCatalog(catalog, sweep) {
   const errors = [];
   const add = (code, entry, message) => errors.push({ code, entry, message });
+  const list = (value, id, field) => {
+    if (value === undefined) return [];
+    if (!Array.isArray(value)) {
+      add('shape', id, `The ${field} field must be an array.`);
+      return [];
+    }
+    return value;
+  };
   if (!catalog || catalog.schemaVersion !== 1 || !Array.isArray(catalog.entries) || !Array.isArray(catalog.capabilities)) {
     return [{ code: 'shape', entry: null, message: 'The catalog needs schemaVersion 1, a capabilities array, and an entries array.' }];
   }
@@ -96,20 +126,20 @@ export function validateCatalog(catalog, sweep) {
     }
     if (!KINDS.includes(entry.kind)) add('kind', id, `The kind must be one of: ${KINDS.join(', ')}.`);
     if (!DOMAINS.includes(entry.domain)) add('domain', id, `The domain must be one of: ${DOMAINS.join(', ')}.`);
-    for (const candidate of entry.candidates ?? []) covered.add(candidate);
+    for (const candidate of list(entry.candidates, id, 'candidates')) covered.add(candidate);
     if (!ALL_STATES.includes(entry.evidenceState)) {
       add('state', id, `The evidence state must be one of: ${ALL_STATES.join(', ')}.`);
       continue;
     }
     if (!Array.isArray(entry.technologies)) add('missing-field', id, 'The technologies field must be an array.');
-    for (const capabilityId of entry.capabilityIds ?? []) {
+    for (const capabilityId of list(entry.capabilityIds, id, 'capabilityIds')) {
       if (!capabilityIds.has(capabilityId)) add('unknown-capability', id, `Unknown capability ID: ${capabilityId}.`);
     }
-    const candidates = entry.candidates ?? [];
+    const candidates = list(entry.candidates, id, 'candidates');
     for (const candidate of candidates) {
       if (!known.has(candidate)) add('unknown-candidate', id, `The sweep has no candidate ${candidate}.`);
     }
-    const evidence = Array.isArray(entry.evidence) ? entry.evidence : [];
+    const evidence = list(entry.evidence, id, 'evidence');
     if (evidence.length === 0) add('evidence', id, 'At least one evidence location is required.');
     for (const item of evidence) {
       if (!nonEmpty(item?.path) || !nonEmpty(item?.description)) {
@@ -121,18 +151,19 @@ export function validateCatalog(catalog, sweep) {
       }
     }
     if (entry.rationale === 'documented') {
-      if ((entry.decisionRefs ?? []).length === 0) add('rationale', id, 'Documented rationale needs at least one decision reference.');
+      if (list(entry.decisionRefs, id, 'decisionRefs').length === 0) add('rationale', id, 'Documented rationale needs at least one decision reference.');
     } else if (entry.rationale !== 'undocumented') {
       add('rationale', id, 'The rationale must be "documented" or "undocumented".');
     }
-    for (const ref of entry.decisionRefs ?? []) {
+    const decisionRefs = list(entry.decisionRefs, id, 'decisionRefs');
+    for (const ref of decisionRefs) {
       if (!sweep.files.includes(ref)) add('decision-ref', id, `The decision reference is not a tracked file: ${ref}.`);
     }
 
     // State gating: the allowed ceiling comes from swept facts, never from the curator's word.
     const override = entry.override;
     if (override && !nonEmpty(override.reason)) add('override-reason', id, 'A state override needs a recorded reason.');
-    if (override && !STATE_RANK[override.maxState]) add('override-state', id, 'The override maxState must be configured, dev-test-only, implemented, or tested.');
+    if (override && rank(override.maxState) === 0) add('override-state', id, 'The override maxState must be configured, dev-test-only, implemented, or tested.');
     if (entry.evidenceState === 'planned' || entry.evidenceState === 'historical') {
       if (!evidence.some((item) => DOC_EXTENSION.test(item?.path ?? ''))) {
         add('state-evidence', id, `A ${entry.evidenceState} entry needs a document as evidence.`);
@@ -148,13 +179,13 @@ export function validateCatalog(catalog, sweep) {
       let ceiling = candidates.length === 0 && entry.kind === 'language'
         ? (evidence.some((item) => matchesFile(sweep.files, item?.path ?? '')) ? 'implemented' : 'configured')
         : maxStateFor(consumers);
-      if (override && nonEmpty(override.reason) && STATE_RANK[override.maxState]) ceiling = override.maxState;
-      if (STATE_RANK[entry.evidenceState] > STATE_RANK[ceiling]) {
+      if (override && nonEmpty(override.reason) && rank(override.maxState) > 0) ceiling = override.maxState;
+      if (rank(entry.evidenceState) > rank(ceiling)) {
         add('state-claim', id, `The entry claims ${entry.evidenceState} but swept evidence allows at most ${ceiling}.`);
       }
     }
 
-    const prose = [entry.name, entry.purpose, entry.problemSolved, entry.architectureRole, override?.reason, ...evidence.map((item) => item?.description), ...(entry.aliases ?? [])]
+    const prose = [entry.name, entry.purpose, entry.problemSolved, entry.architectureRole, override?.reason, ...evidence.map((item) => item?.description), ...list(entry.aliases, id, 'aliases')]
       .filter((value) => typeof value === 'string');
     for (const text of prose) {
       if (findSecrets(text).length > 0) add('secret', id, 'A curated field contains a credential-shaped string or an internal host name.');
@@ -167,13 +198,25 @@ export function validateCatalog(catalog, sweep) {
       add('disposition', null, 'A disposition needs a match.');
       continue;
     }
+    const wildcardProblem = disallowedWildcard(rule.match);
+    if (wildcardProblem) add('disposition', rule.match, wildcardProblem);
     if (!DISPOSITIONS.includes(rule.disposition)) {
       add('disposition', rule.match, `The disposition must be one of: ${DISPOSITIONS.join(', ')}. needs-verification is not a disposition.`);
     }
     if (!nonEmpty(rule.reason)) add('disposition', rule.match, 'A disposition needs a reason.');
     else if (findSecrets(rule.reason).length > 0) add('secret', rule.match, 'A disposition reason contains a credential-shaped string or an internal host name.');
   }
-  const validRules = dispositions.filter((rule) => rule && nonEmpty(rule.match) && DISPOSITIONS.includes(rule.disposition) && nonEmpty(rule.reason));
+  const validRules = dispositions.filter((rule) => rule && nonEmpty(rule.match) && DISPOSITIONS.includes(rule.disposition)
+    && nonEmpty(rule.reason) && !disallowedWildcard(rule.match));
+  for (const rule of validRules.filter((item) => item.disposition === 'unused')) {
+    for (const candidate of known) {
+      if (!matchesCandidate(rule.match, candidate)) continue;
+      const state = maxStateFor([...consumersFor(sweep, candidate), ...infraConsumers(sweep, candidate)]);
+      if (rank(state) >= STATE_RANK.implemented) {
+        add('disposition', candidate, `The candidate is marked unused but the sweep shows a production consumer (${state}).`);
+      }
+    }
+  }
   const needsVerification = new Set((sweep.needsVerification ?? []).map((key) => `pkg:${key}`));
   for (const candidate of known) {
     if (covered.has(candidate) || validRules.some((rule) => matchesCandidate(rule.match, candidate))) continue;

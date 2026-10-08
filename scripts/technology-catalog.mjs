@@ -16,7 +16,8 @@ Commands:
   sweep <repo-id>      Record source facts for a clean checkout of a registered repo.
   validate <repo-id>   Check the curated catalog against the swept facts.
   render <repo-id>     Write the Markdown draft into the private root.
-  distribute <repo-id> Copy the draft into the repo checkout. Never commits or pushes.
+  distribute <repo-id> Render fresh, then copy into the repo checkout. Never commits or pushes.
+                       Refuses a stale sweep unless --allow-stale is given.
   status <repo-id>     Report whether the catalog is stale. With --check, exit 1 when stale.
 `;
 
@@ -52,7 +53,7 @@ export function main(argv, { cwd = process.cwd(), env = process.env, out = conso
       mkdirSync(folder, { recursive: true });
       writeFileSync(sweepPath, `${JSON.stringify(sweep, null, 2)}\n`);
       out(`Swept ${repo.id} at ${sweep.commit.slice(0, 12)} (${sweep.branch}): ${sweep.packages.length} packages, ${sweep.envKeys.length} environment keys, ${sweep.infra.length} infrastructure items.`);
-      out(`Candidates: ${candidateIds(sweep).length}. Needs verification: ${sweep.needsVerification.length}.`);
+      out(`Candidates: ${candidateIds(sweep).length}. Needs verification: ${sweep.needsVerification.length}. Unparsed files: ${sweep.unparsedFiles.length}.`);
       return 0;
     }
     const sweep = readJson(sweepPath, `Run "sweep ${repo.id}" first.`);
@@ -84,6 +85,12 @@ export function main(argv, { cwd = process.cwd(), env = process.env, out = conso
       return 0;
     }
     if (command === 'distribute') {
+      const status = catalogStatus({ repo, sweep });
+      if (status.stale && !flags.includes('--allow-stale')) {
+        throw new Error(`The sweep is stale: ${status.reason} Run sweep, validate, and distribute again, or pass --allow-stale.`);
+      }
+      // Always render from the validated inputs, so the shipped file cannot lag behind catalog.json.
+      writeFileSync(draftPath, renderCatalog({ catalog, sweep, displayName: repo.displayName }));
       const result = distribute({ repo, draftPath });
       out(`${result.action === 'written' ? 'Wrote' : 'Already current:'} ${result.target}`);
       if (result.status) out(`git status: ${result.status}`);

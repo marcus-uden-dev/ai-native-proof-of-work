@@ -36,11 +36,11 @@ The repo ID uses lowercase letters, digits, and hyphens. The target path is rela
 ## Refresh sequence
 
 1. Use a clean checkout of the branch that should receive the file. The sweep refuses uncommitted changes to tracked files.
-2. `npm run catalog -- sweep <repo-id>` records source facts and prints the candidate count and the `needs-verification` count.
+2. `npm run catalog -- sweep <repo-id>` records source facts and prints the candidate count, the `needs-verification` count, and the unparsed-file count. An unparsed file has a line over 20,000 characters, usually minified code, and contributes no consumers. Curate anything it hides by hand.
 3. Edit `<private root>/<repo-id>/catalog.json`. Catalog every candidate or give it a disposition (`incidental`, `transitive`, `unused`) with a reason. Resolve every `needs-verification` candidate.
 4. `npm run catalog -- validate <repo-id>` checks the entries against the swept facts.
 5. `npm run catalog -- render <repo-id>` writes the draft into the private root.
-6. `npm run catalog -- distribute <repo-id>` copies the draft into the checkout. It never stages, commits, or pushes.
+6. `npm run catalog -- distribute <repo-id>` renders again from the validated catalog and copies the result into the checkout. It refuses a stale sweep unless you pass `--allow-stale`. It refuses a target that is git-ignored, inside `.git`, a symbolic link, or has uncommitted changes. It never stages, commits, or pushes.
 7. Review the file in the product repo. Commit and push only after Marcus approves, and follow that repo's own branch rules.
 
 `npm run catalog -- status <repo-id>` reports whether the catalog is stale against the checkout's current HEAD and lists the changed manifest, source, and infrastructure files. Add `--check` to exit non-zero when stale.

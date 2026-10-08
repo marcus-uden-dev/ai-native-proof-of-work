@@ -23,7 +23,7 @@ function tryGit(cwd, args) {
   }
 }
 
-function insideDirectory(parent, child) {
+export function insideDirectory(parent, child) {
   const path = relative(parent, child);
   return path === '' || (!path.startsWith('..') && !isAbsolute(path));
 }
@@ -34,7 +34,11 @@ export function resolvePrivateRoot({ cwd = process.cwd(), env = process.env } = 
   const override = env[PRIVATE_ROOT_ENV];
   if (override) {
     if (!isAbsolute(override)) throw new Error(`${PRIVATE_ROOT_ENV} must be an absolute path.`);
-    return { root: resolve(override), ownerCheckout: null, source: 'env' };
+    const root = resolve(override);
+    const probe = existsSync(root) ? root : dirname(root);
+    const toplevel = tryGit(probe, ['rev-parse', '--show-toplevel']);
+    const common = toplevel ? tryGit(probe, ['rev-parse', '--git-common-dir']) : null;
+    return { root, ownerCheckout: toplevel ? resolve(toplevel) : null, commonDir: common ? resolve(probe, common) : undefined, source: 'env' };
   }
   const common = tryGit(cwd, ['rev-parse', '--git-common-dir']);
   if (!common) throw new Error('Cannot resolve the private root: the working directory is not inside a git repository.');
@@ -107,6 +111,8 @@ export function validateRegistry(registry, { exists = existsSync } = {}) {
     } else if (typeof repo.checkoutPath === 'string' && isAbsolute(repo.checkoutPath)) {
       if (!insideDirectory(resolve(repo.checkoutPath), resolve(repo.checkoutPath, repo.targetPath))) {
         fail('The target path escapes the checkout.');
+      } else if (/^\.git(\/|\\|$)/i.test(repo.targetPath.replace(/^\.[\\/]/, ''))) {
+        fail('The target path may not be inside .git.');
       }
     }
   }
