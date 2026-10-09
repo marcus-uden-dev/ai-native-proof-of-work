@@ -157,6 +157,33 @@
       "publication_state": "publish"
     },
     {
+      "id": "decision-2026-08-23-job-agent-resume-theme-token-reduction",
+      "decision_date": "2026-08-23",
+      "date_precision": "day",
+      "primary_project": "job-agent",
+      "decision_type": "application-architecture",
+      "lifecycle_status": "implemented",
+      "evidence_status": "verified",
+      "title": "Reduce imported resume themes to supported design values",
+      "context": "Imported themes return rendered pages, while the existing CV renderer uses a small set of design values.",
+      "decision": "Convert captured theme output into the supported design values and record confidence for inferred values instead of storing rendered HTML.",
+      "tradeoff": "The conversion loses visual details outside the renderer's supported values, but keeps imported themes compatible and reviewable.",
+      "evidence_refs": [
+        "job-agent:docs/plans/2026-08-23-001-feat-json-resume-theme-extraction-plan.md",
+        "job-agent:backend/app/template_ingestion/external_sources/json_resume_reducer.py",
+        "job-agent:backend/app/template_ingestion/external_sources/ingest_json_resume_themes.py"
+      ],
+      "capability_tags": [
+        "technical-judgment",
+        "design-consistency",
+        "quality-assurance"
+      ],
+      "public_eligibility": "eligible",
+      "redaction_notes": "Describe the design constraint and fidelity tradeoff without source repository paths or unsupported outcome claims.",
+      "fingerprint": "job-agent|application-architecture|reduce imported resume themes to supported design values|convert captured theme output into the supported design values and record confidence for inferred values instead of storing rendered html.",
+      "publication_state": "publish"
+    },
+    {
       "id": "decision-2026-08-20-scheduled-finding-canary",
       "decision_date": "2026-08-20",
       "date_precision": "day",
