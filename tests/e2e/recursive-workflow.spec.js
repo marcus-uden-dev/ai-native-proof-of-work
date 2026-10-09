@@ -126,9 +126,12 @@ test('the decision log reuses the limitations-list--stacked component rather tha
 test('the homepage Decision Log renders the newest published entry', async ({ page }) => {
   await page.goto('/');
   const section = page.locator('#decision-log');
+  const explanation = 'Made each AI-assisted response identify its model and reasoning effort when available. This makes model routing observable without exposing private operating details.';
+  const decision = section.locator('li', { hasText: explanation });
   await expect(section).toBeVisible();
-  await expect(section.getByText('2026-08-26')).toBeVisible();
-  await expect(section.getByText('Made each AI-assisted response identify its model and reasoning effort when available. This makes model routing observable without exposing private operating details.')).toBeVisible();
+  await expect(decision).toHaveCount(1);
+  await expect(decision.getByText('2026-08-26')).toBeVisible();
+  await expect(decision.getByText(explanation)).toBeVisible();
 });
 
 test('the How I think project and capability filters reveal the matching decisions', async ({ page, request }) => {

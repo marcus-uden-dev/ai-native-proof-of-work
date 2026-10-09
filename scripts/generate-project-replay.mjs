@@ -147,11 +147,6 @@ export function renderReplay(data) {
         <div class="project-story__stage" data-story-stage aria-live="polite" aria-label="Selected Job-agent story chapter" hidden></div>
         <ol class="project-story__chapters" aria-label="Complete chronological Job-agent story">${events.map(renderEvent).join('')}
         </ol>
-        <details class="project-replay__gaps">
-          <summary>Evidence gaps kept out of this story</summary>
-          <ul>${data.evidence_gaps.map((gap) => `<li>${escapeHtml(gap)}</li>`).join('')}</ul>
-        </details>
-        <p class="project-replay__audit">Temporal audit fields are available in <a href="../../evidence/project-replay-job-agent.json">project-replay-job-agent.json</a>. <code>valid_from</code> describes when a chapter applied; <code>recorded_at</code> records when the public evidence model captured it.</p>
       </section>
 ${end}`;
 }

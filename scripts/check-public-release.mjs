@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 const repositoryRoot = resolve(fileURLToPath(new URL('..', import.meta.url)));
 const binaryExtensions = new Set(['.gif', '.jpeg', '.jpg', '.pdf', '.png', '.webp']);
-const ignoredDirectories = new Set(['.git', 'node_modules', 'playwright-report', 'test-results']);
+const ignoredDirectories = new Set(['.git', 'node_modules', 'playwright-report', 'test-results', '.claude']);
 const publicContentExtensions = new Set(['.css', '.html', '.js', '.json', '.md', '.mjs', '.txt', '.xml']);
 const requiredProfessionalEmail = 'marcus.uden.dev@gmail.com';
 
@@ -212,7 +212,9 @@ export function validateRepository(root = repositoryRoot, options = {}) {
     const head = git(root, ['rev-parse', '--verify', 'HEAD']);
   if (head) {
     const roots = git(root, ['rev-list', '--max-parents=0', 'HEAD']).split(/\r?\n/).filter(Boolean);
-    if (roots.length !== 1) addMatch(errors, 'git-ancestry', '.git', 'The repository must have exactly one clean root commit.');
+    if (roots.length !== 1) {
+      addMatch(errors, 'git-ancestry', '.git', `The repository must have exactly one clean root commit; found ${roots.length}: ${roots.join(', ') || 'none'}.`);
+    }
     const authors = git(root, ['log', '--format=%ae']).split(/\r?\n/).filter(Boolean);
     if (authors.some((email) => email.toLowerCase() !== requiredProfessionalEmail)) {
       addMatch(errors, 'git-author', '.git', 'All commits must use the professional author email.');
