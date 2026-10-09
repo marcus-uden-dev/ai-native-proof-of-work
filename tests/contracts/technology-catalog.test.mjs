@@ -119,6 +119,12 @@ test('ignores comments, strings, type-only imports, mock targets, and shadowing 
   );
 });
 
+test('finds plain and from imports in CRLF text, as on a Windows autocrlf checkout', () => {
+  assert.deepEqual(extractPythonImports('import structlog\r\nimport b, c as d\r\nfrom e.f import g\r\n'), [
+    { module: 'structlog', typeOnly: false }, { module: 'b', typeOnly: false }, { module: 'c', typeOnly: false }, { module: 'e.f', typeOnly: false }
+  ]);
+});
+
 test('leaves packages without any consumer on the needs-verification list instead of defaulting them', () => {
   const sweep = sweepOf(makeFixtureRepo());
   for (const key of ['python:unusedlib', 'python:typedlib', 'python:cryptography', 'node:lodash', 'node:@types/node']) {

@@ -64,12 +64,13 @@ export function maxStateFor(consumers) {
 }
 
 // Reads regular files only, so a tracked symlink cannot pull in content from outside the checkout.
+// Normalizes CRLF to LF: a Windows checkout with core.autocrlf=true yields CRLF, and `.` in a regex does not match `\r`.
 function readText(root, path) {
   try {
     const absolute = join(root, path);
     const stat = lstatSync(absolute);
     if (!stat.isFile() || stat.size > MAX_FILE_BYTES) return '';
-    return readFileSync(absolute, 'utf8');
+    return readFileSync(absolute, 'utf8').replace(/\r\n?/g, '\n');
   } catch {
     return '';
   }
@@ -177,7 +178,7 @@ export function tokenizeJs(source) {
 export function extractPythonImports(text) {
   const imports = [];
   let typeIndent = null;
-  for (const raw of stripPythonNoise(text).split('\n')) {
+  for (const raw of stripPythonNoise(text).split(/\r?\n/)) {
     const line = raw.replace(/#.*$/, '');
     if (line.trim() === '') continue;
     const indent = line.length - line.trimStart().length;
