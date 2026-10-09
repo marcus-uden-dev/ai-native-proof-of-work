@@ -589,6 +589,20 @@
   {
     "date": "2026-08-23",
     "project": "Job-agent",
+    "status": "Verified",
+    "type": "Application architecture",
+    "title": "Reduce imported resume themes to supported design values",
+    "tags": [
+      "technical-judgment",
+      "design-consistency",
+      "quality-assurance"
+    ],
+    "why": "The existing CV renderer accepts a small set of design values. The importer reduces theme output to those values and records confidence for inferred values.",
+    "demonstrates": "Accepts loss of unsupported visual detail to keep imported themes compatible and reviewable."
+  },
+  {
+    "date": "2026-08-23",
+    "project": "Job-agent",
     "status": "Planned",
     "type": "Application architecture",
     "title": "New sibling extractor module, same interface shape as reactive_resume.py",
