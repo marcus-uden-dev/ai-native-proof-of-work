@@ -8,4 +8,9 @@ workers/recruiter-review/.dev.vars
 docs/handoffs/
 
 internal/technology-catalog/
+.cache/
+.codex-remote-attachments/
+.context/
+internal/
+tmp/
 .claude/
