@@ -15,7 +15,19 @@ const CONFIG_EXTENSIONS = new Set(['.yml', '.yaml', '.toml', '.ini', '.cfg', '.c
 const MANIFEST_NAMES = new Set(['package.json', 'pyproject.toml', 'setup.cfg', 'setup.py', 'Pipfile']);
 
 const APP_ONLY_KINDS = new Set(['import', 'runtime-command', 'compose-service', 'container-image']);
-const LONG_LINE = /[^\n]{20000}/;
+const LONG_LINE_LENGTH = 20000;
+
+// A linear scan: the regex /[^\n]{20000}/ backtracks quadratically on files made of many near-limit lines.
+function hasLongLine(content) {
+  let start = 0;
+  while (start <= content.length) {
+    const end = content.indexOf('\n', start);
+    if ((end === -1 ? content.length : end) - start >= LONG_LINE_LENGTH) return true;
+    if (end === -1) return false;
+    start = end + 1;
+  }
+  return false;
+}
 
 // Path predicates shared by the sweep and the stale check, so both agree on what the sweep reads.
 const isDockerfileName = (name) => /^Dockerfile(\..+)?$/.test(name) || name.endsWith('.dockerfile');
@@ -38,8 +50,9 @@ export function stableStringify(value) {
 
 export function classifyFile(path) {
   if (/(^|\/)(tests?|__tests__|__mocks__|__fixtures__|fixtures?|mocks?|e2e|specs?|cypress|testing|test-utils|testutils)\//i.test(path)) return 'test';
-  if (/(^|\/)(test_[^/]+\.py|[^/]+_test\.py|conftest\.py)$/.test(path)) return 'test';
-  if (/\.(test|spec|mock|fixture)\.[cm]?[jt]sx?$/.test(path)) return 'test';
+  if (/(^|\/)[^/]*[_-]tests?\//i.test(path)) return 'test';
+  if (/(^|\/)(test_[^/]+\.py|[^/]+_tests?\.py|tests?\.py|conftest\.py)$/.test(path)) return 'test';
+  if (/(\.|[_-])(test|spec|mock|fixture|e2e|cy)\.[cm]?[jt]sx?$/.test(path)) return 'test';
   if (/(^|\/)(setup-?tests?|jest\.setup|vitest\.setup)[^/]*$/i.test(path)) return 'test';
   if (/(^|\/)(scripts?|tools?|benchmarks?|bin|examples?|demos?|docs?|stories|\.storybook)\//i.test(path)) return 'dev-tooling';
   if (/\.stories\.[cm]?[jt]sx?$/.test(path)) return 'dev-tooling';
@@ -287,7 +300,8 @@ function parsePyprojectNames(text) {
           const name = parseRequirementName(quoted[1]);
           if (name) names.push(name);
         }
-        if (line.includes(']')) collecting = false;
+        // Extras such as "uvicorn[standard]" put a bracket inside a string; only a bracket outside strings ends the list.
+        if (line.replace(/"[^"]*"|'[^']*'/g, '').includes(']')) collecting = false;
       }
     } else if (section.startsWith('tool.poetry') && section.includes('dependencies')) {
       const entry = /^\s*([A-Za-z0-9][A-Za-z0-9._-]*)\s*=/.exec(line);
@@ -369,13 +383,13 @@ function parseWorkflow(text) {
         const base = indentOf(line);
         for (let j = i + 1; j < lines.length && (lines[j].trim() === '' || indentOf(lines[j]) > base); j += 1) value += `\n${lines[j].trim()}`;
       }
-      commands.push(value);
+      commands.push(value.replace(/\\\n\s*/g, ' '));
     }
   }
   return { actions, commands };
 }
 
-const COMMAND_WRAPPERS = new Set(['sudo', 'exec', 'env', 'time', 'npx', 'bunx', 'pnpm', 'yarn', 'npm', 'run', 'uv', 'poetry', 'pipx', 'python', 'python3', 'py', 'node', '-m']);
+const COMMAND_WRAPPERS = new Set(['sudo', 'exec', 'env', 'time', 'npx', 'bunx', 'pnpm', 'yarn', 'npm', 'run', 'uv', 'poetry', 'pipx', 'python', 'python3', 'py', 'node', '-m', 'sh', 'bash', 'zsh', '-c', 'cross-env', 'dotenv']);
 
 // The program each shell segment starts, after env assignments and launcher words such as "python -m".
 export function commandHeads(text) {
@@ -385,9 +399,8 @@ export function commandHeads(text) {
   for (const segment of normalized.split(/&&|\|\||;|\||\n/)) {
     const tokens = segment.trim().split(/\s+/).filter(Boolean);
     let i = 0;
-    while (i < tokens.length && /^[A-Za-z_][A-Za-z0-9_]*=/.test(tokens[i])) i += 1;
-    while (i < tokens.length && COMMAND_WRAPPERS.has(tokens[i])) i += 1;
-    if (i < tokens.length) heads.add(tokens[i].replace(/^.*[\\/]/, ''));
+    while (i < tokens.length && (/^[A-Za-z_][A-Za-z0-9_]*=/.test(tokens[i]) || COMMAND_WRAPPERS.has(tokens[i]))) i += 1;
+    if (i < tokens.length) heads.add(tokens[i].replace(/^["']+|["']+$/g, '').replace(/^.*[\\/]/, ''));
   }
   return heads;
 }
@@ -441,7 +454,7 @@ export function sweepCheckout({ checkoutPath, repoId }) {
     envKeys.get(name).add(source);
   };
 
-  const census = {};
+  const census = Object.create(null);
   const texts = new Map();
   const text = (path) => {
     if (!texts.has(path)) texts.set(path, readText(checkoutPath, path));
@@ -469,7 +482,7 @@ export function sweepCheckout({ checkoutPath, repoId }) {
         }
         for (const dep of Object.keys(manifest.devDependencies ?? {})) addPackage('node', dep, path);
         for (const [script, command] of Object.entries(manifest.scripts ?? {})) {
-          const scriptClass = /^(start|dev|serve|build)$/.test(script) ? 'app' : /test|e2e|spec/.test(script) ? 'test' : 'dev-tooling';
+          const scriptClass = /^(start|serve|build)$/.test(script) ? 'app' : /test|e2e|spec/.test(script) ? 'test' : 'dev-tooling';
           commandSources.push({ path, heads: commandHeads(String(command)), class: scriptClass });
         }
       } catch {
@@ -564,7 +577,7 @@ export function sweepCheckout({ checkoutPath, repoId }) {
     const isJs = JS_EXTENSIONS.has(extension);
     if (!isPython && !isJs) continue;
     const content = text(path);
-    if (LONG_LINE.test(content)) {
+    if (hasLongLine(content)) {
       unparsedFiles.push(path);
       continue;
     }
