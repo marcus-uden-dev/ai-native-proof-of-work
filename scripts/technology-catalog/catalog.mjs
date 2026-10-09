@@ -36,6 +36,7 @@ const SECRET_PATTERNS = [
 
 const CLAIM_PATTERNS = [
   /\bin production(?! (?:code|path|paths|config|build|image|environment))/i,
+  /\b(?:deployed|running|launched|shipped|released) (?:to|in|on) production\b/i,
   /\b(?:is|are|now|currently|already) live\b/i,
   /\blive (?:demo|product|app|service|system|experience|users)\b/i,
   /\b(?:\d[\d,.]*\+?|many|thousands of|millions of)\s+(?:users|customers|requests)\b/i,
@@ -48,10 +49,12 @@ export function findSecrets(text) {
 }
 
 export function findClaims(text) {
-  return CLAIM_PATTERNS.filter((pattern) => pattern.test(text)).map((pattern) => pattern.source);
+  // Fold compatibility characters and collapse whitespace so double spaces or no-break spaces cannot hide a phrase.
+  const folded = text.normalize('NFKC').replace(/\s+/g, ' ');
+  return CLAIM_PATTERNS.filter((pattern) => pattern.test(folded)).map((pattern) => pattern.source);
 }
 
-export function globToRegExp(glob) {
+function globToRegExp(glob) {
   const escaped = glob.replace(/[.+^${}()|[\]\\]/g, '\\$&').replace(/\*\*/g, '\u0000').replace(/\*/g, '[^/]*').replace(/\u0000/g, '.*');
   return new RegExp(`^${escaped}$`);
 }
@@ -79,6 +82,9 @@ function disallowedWildcard(pattern) {
   return null;
 }
 
+// A language entry without candidates reaches "implemented" only through a source file of that kind, never a README or manifest.
+const LANGUAGE_SOURCE = /(\.(py|[cm]?[jt]sx?|sh|ps1|sql|go|rs|java|kt|rb|php|cs|swift|css|scss|html|vue|svelte|c|cc|cpp|h)|(^|\/)(Makefile|Dockerfile[^/]*))$/;
+
 function nonEmpty(value) {
   return typeof value === 'string' && value.trim() !== '';
 }
@@ -97,7 +103,7 @@ export function validateCatalog(catalog, sweep) {
   if (!catalog || catalog.schemaVersion !== 1 || !Array.isArray(catalog.entries) || !Array.isArray(catalog.capabilities)) {
     return [{ code: 'shape', entry: null, message: 'The catalog needs schemaVersion 1, a capabilities array, and an entries array.' }];
   }
-  const dispositions = Array.isArray(catalog.dispositions) ? catalog.dispositions : [];
+  const dispositions = list(catalog.dispositions, 'dispositions', 'dispositions');
   const known = new Set(candidateIds(sweep));
 
   const capabilityIds = new Set();
@@ -109,6 +115,10 @@ export function validateCatalog(catalog, sweep) {
     if (capabilityIds.has(capability.id)) add('duplicate-capability', capability.id, 'The capability ID is duplicated.');
     capabilityIds.add(capability.id);
     if (!nonEmpty(capability.label)) add('capability-label', capability.id, 'The capability needs a label.');
+    else {
+      if (findSecrets(capability.label).length > 0) add('secret', capability.id, 'A capability label contains a credential-shaped string or an internal host name.');
+      if (findClaims(capability.label).length > 0) add('claim', capability.id, `A capability label makes an adoption or outcome claim: "${capability.label.slice(0, 80)}".`);
+    }
   }
 
   const entryIds = new Set();
@@ -177,7 +187,7 @@ export function validateCatalog(catalog, sweep) {
     } else {
       const consumers = candidates.flatMap((candidate) => [...consumersFor(sweep, candidate), ...infraConsumers(sweep, candidate)]);
       let ceiling = candidates.length === 0 && entry.kind === 'language'
-        ? (evidence.some((item) => matchesFile(sweep.files, item?.path ?? '')) ? 'implemented' : 'configured')
+        ? (evidence.some((item) => LANGUAGE_SOURCE.test(item?.path ?? '') && matchesFile(sweep.files, item.path)) ? 'implemented' : 'configured')
         : maxStateFor(consumers);
       if (override && nonEmpty(override.reason) && rank(override.maxState) > 0) ceiling = override.maxState;
       if (rank(entry.evidenceState) > rank(ceiling)) {
@@ -185,7 +195,8 @@ export function validateCatalog(catalog, sweep) {
       }
     }
 
-    const prose = [entry.name, entry.purpose, entry.problemSolved, entry.architectureRole, override?.reason, ...evidence.map((item) => item?.description), ...list(entry.aliases, id, 'aliases')]
+    const prose = [entry.name, entry.purpose, entry.problemSolved, entry.architectureRole, override?.reason, ...evidence.map((item) => item?.description),
+      ...list(entry.aliases, id, 'aliases'), ...(Array.isArray(entry.technologies) ? entry.technologies : [])]
       .filter((value) => typeof value === 'string');
     for (const text of prose) {
       if (findSecrets(text).length > 0) add('secret', id, 'A curated field contains a credential-shaped string or an internal host name.');
@@ -226,7 +237,7 @@ export function validateCatalog(catalog, sweep) {
         : 'The candidate is neither cataloged nor dispositioned.');
   }
 
-  for (const rule of catalog.dispositions ?? []) {
+  for (const rule of dispositions) {
     if (nonEmpty(rule?.match) && ![...known].some((candidate) => matchesCandidate(rule.match, candidate))) {
       add('disposition', rule.match, 'The disposition matches no sweep candidate.');
     }

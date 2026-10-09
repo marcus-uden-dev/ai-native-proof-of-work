@@ -68,7 +68,7 @@ export function renderCatalog({ catalog, sweep, displayName }) {
   );
 
   const languageRows = Object.entries(sweep.census)
-    .map(([key, count]) => ({ name: LANGUAGE_NAMES[key], key, count }))
+    .map(([key, count]) => ({ name: Object.hasOwn(LANGUAGE_NAMES, key) ? LANGUAGE_NAMES[key] : undefined, key, count }))
     .filter((row) => row.name)
     .sort((a, b) => b.count - a.count || compare(a.name, b.name));
   if (languageRows.length > 0) {

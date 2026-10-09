@@ -527,6 +527,99 @@ test('a pyproject dependency with extras does not end the dependency list early'
   }
 });
 
+// Review round 2
+
+test('many near-limit lines do not stall the sweep', () => {
+  const wide = `# ${'x'.repeat(19990)}\n`.repeat(60);
+  const root = makeFixtureRepo({ 'backend/app/wide.py': wide });
+  const started = Date.now();
+  const sweep = sweepOf(root);
+  assert.ok(Date.now() - started < 15000, 'the long-line check must be linear');
+  assert.equal(sweep.unparsedFiles.includes('backend/app/wide.py'), false);
+  const over = makeFixtureRepo({ 'backend/app/over.py': `# ${'x'.repeat(20010)}\n` });
+  assert.ok(sweepOf(over).unparsedFiles.includes('backend/app/over.py'));
+});
+
+test('file names that match object prototype keys do not corrupt the census or render', () => {
+  const root = makeFixtureRepo({ constructor: 'x\n', toString: 'x\n', ['__proto__']: 'x\n' });
+  const sweep = sweepOf(root);
+  assert.equal(sweep.census.constructor, 1);
+  const text = renderCatalog({ catalog: fixtureCatalog(), sweep, displayName: 'Fixture Service' });
+  assert.equal(text.includes('function'), false);
+});
+
+test('classifies Python test naming variants, end-to-end specs, and the dev script', () => {
+  for (const path of ['backend/tests.py', 'app/foo_tests.py', 'app/integration_tests/api.py', 'web/src/a.e2e.ts', 'web/src/b.cy.ts', 'web/src/c-test.ts']) {
+    assert.equal(classifyFile(path), 'test', path);
+  }
+  assert.equal(classifyFile('backend/app/latest/models.py'), 'app');
+  const root = makeFixtureRepo({
+    'frontend/package.json': JSON.stringify({ dependencies: { vite: '1' }, scripts: { dev: 'vite', build: 'vite build' } })
+  });
+  const classes = sweepOf(root).packages.find((record) => record.key === 'node:vite').consumers.map((consumer) => consumer.class);
+  assert.ok(classes.includes('app') && classes.includes('dev-tooling'), 'build is app, dev is dev-tooling');
+});
+
+test('shell launchers, cross-env, quotes, and workflow line continuations resolve to the real program', () => {
+  const heads = commandHeads('sh -c "alembic upgrade head && uvicorn app:app"');
+  assert.ok(heads.has('alembic') && heads.has('uvicorn'));
+  assert.ok(commandHeads('cross-env NODE_ENV=test vitest run').has('vitest'));
+  const root = makeFixtureRepo({
+    '.github/workflows/pip.yml': ['jobs:', '  a:', '    steps:', '      - run: |', '          pip install \\', '            uvicorn', ''].join('\n')
+  });
+  const uvicorn = packageOf(sweepOf(root), 'python:uvicorn');
+  assert.equal(uvicorn.consumers.some((consumer) => consumer.path === '.github/workflows/pip.yml'), false);
+});
+
+test('CRLF checkouts sweep to the same facts as LF checkouts', () => {
+  const lf = makeFixtureRepo({ 'svc/requirements.txt': 'fastapi==1\nredis\n', 'docker-compose.yml': 'services:\n  cache:\n    image: redis:7\n' });
+  const crlf = makeFixtureRepo({ 'svc/requirements.txt': 'fastapi==1\r\nredis\r\n', 'docker-compose.yml': 'services:\r\n  cache:\r\n    image: redis:7\r\n' });
+  const keys = (sweep) => sweep.packages.map((record) => record.key).sort();
+  assert.deepEqual(keys(sweepOf(crlf)), keys(sweepOf(lf)));
+  assert.ok(keys(sweepOf(crlf)).includes('image:redis'));
+});
+
+test('a language entry without candidates needs a source file of that kind, not a manifest', () => {
+  const root = makeFixtureRepo();
+  const sweep = sweepOf(root);
+  const entry = (path) => ({
+    ...fixtureCatalog().entries[0], id: 'languages.example', kind: 'language', candidates: [], evidenceState: 'implemented',
+    evidence: [{ path, description: 'Evidence file.' }]
+  });
+  const withManifest = fixtureCatalog();
+  withManifest.entries.push(entry('backend/requirements.txt'));
+  assert.ok(codes(validateCatalog(withManifest, sweep)).includes('state-claim'));
+  const withSource = fixtureCatalog();
+  withSource.entries.push(entry('backend/app/main.py'));
+  assert.equal(codes(validateCatalog(withSource, sweep)).includes('state-claim'), false);
+});
+
+test('capability labels, technologies, and a non-array dispositions field are validated', () => {
+  const sweep = sweepOf(makeFixtureRepo());
+  const label = fixtureCatalog();
+  label.capabilities[0].label = 'Serves  many thousands of users';
+  assert.ok(codes(validateCatalog(label, sweep)).includes('claim'));
+  const technologies = fixtureCatalog();
+  technologies.entries[0].technologies = ['Redis', 'now live'];
+  assert.ok(codes(validateCatalog(technologies, sweep)).includes('claim'));
+  const spaced = fixtureCatalog();
+  spaced.entries[0].purpose = 'It is  live for everyone.';
+  assert.ok(codes(validateCatalog(spaced, sweep)).includes('claim'));
+  const shape = fixtureCatalog();
+  shape.dispositions = { match: 'pkg:python:unusedlib' };
+  assert.ok(codes(validateCatalog(shape, sweep)).includes('shape'));
+});
+
+test('status marks a checkout stale when a tracked source file has uncommitted edits after the sweep', () => {
+  const root = makeFixtureRepo();
+  const sweep = sweepOf(root);
+  const repo = { id: 'fixture', checkoutPath: root, targetPath: 'CATALOG.md' };
+  writeFileSync(join(root, 'backend', 'requirements.txt'), 'fastapi==9.9.9\n');
+  const status = catalogStatus({ repo, sweep });
+  assert.equal(status.stale, true);
+  assert.deepEqual(status.changed, ['backend/requirements.txt']);
+});
+
 test('parses compose, workflow, and Dockerfile shapes beyond the simplest', () => {
   const root = makeFixtureRepo({
     'worker/requirements.txt': 'celery==5.0\n',

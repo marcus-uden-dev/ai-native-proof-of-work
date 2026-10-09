@@ -44,7 +44,6 @@ export function distribute({ repo, draftPath }) {
 
   const draft = readFileSync(draftPath, 'utf8');
   if (findSecrets(draft).length > 0) throw new Error(`The draft for ${repo.id} contains a credential-shaped string or an internal host name. Fix the curated entry and render again.`);
-
   if (existsSync(target) && readFileSync(target, 'utf8') === draft) {
     return { action: 'unchanged', target, status: git(checkout, ['status', '--short', '--', relativeTarget]).trim() };
   }
@@ -61,7 +60,12 @@ export function catalogStatus({ repo, sweep }) {
   const checkout = resolve(git(repo.checkoutPath, ['rev-parse', '--show-toplevel']).trim());
   const head = git(checkout, ['rev-parse', 'HEAD']).trim();
   const branch = git(checkout, ['branch', '--show-current']).trim() || '(detached)';
-  if (head === sweep.commit) return { stale: false, head, branch, changed: [], reason: 'The checkout is at the swept commit.' };
+  // Uncommitted edits to tracked files made after the sweep are not in the swept facts.
+  const uncommitted = changedRelevantFiles(git(checkout, ['diff', '--name-only', 'HEAD']).split('\n').filter(Boolean));
+  if (head === sweep.commit) {
+    if (uncommitted.length === 0) return { stale: false, head, branch, changed: [], reason: 'The checkout is at the swept commit.' };
+    return { stale: true, head, branch, changed: uncommitted, reason: `${uncommitted.length} manifest, source, or infrastructure file(s) have uncommitted edits since the sweep.` };
+  }
   let descendant = true;
   try {
     git(checkout, ['merge-base', '--is-ancestor', sweep.commit, head]);
@@ -71,7 +75,8 @@ export function catalogStatus({ repo, sweep }) {
   if (!descendant) {
     return { stale: true, head, branch, changed: [], reason: 'The checkout HEAD does not contain the swept commit.' };
   }
-  const changed = changedRelevantFiles(git(checkout, ['diff', '--name-only', sweep.commit, head]).split('\n').filter(Boolean));
+  const committed = changedRelevantFiles(git(checkout, ['diff', '--name-only', sweep.commit, head]).split('\n').filter(Boolean));
+  const changed = [...new Set([...committed, ...uncommitted])].sort();
   return {
     stale: changed.length > 0,
     head,
