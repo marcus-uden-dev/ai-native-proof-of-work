@@ -2,6 +2,12 @@
   const story = document.querySelector('[data-project-story]');
   if (!story) return;
 
+  // Hazard-tape mask for the live site only. Set to false to remove it.
+  const WIP_MASK = true;
+  const host = window.location.hostname;
+  const isLocal = !host || host === 'localhost' || host === '127.0.0.1' || host === '[::1]' || host === '::1' || host.endsWith('.localhost') || host.endsWith('.test');
+  if (WIP_MASK && !isLocal) story.setAttribute('data-wip-mask', '');
+
   const chapters = [...story.querySelectorAll('[data-story-event]')];
   const markers = [...story.querySelectorAll('[data-story-marker]')];
   const selects = [...story.querySelectorAll('[data-story-select]')];
