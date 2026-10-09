@@ -515,6 +515,18 @@ test('parses pyproject dependency tables and ignores unrelated arrays', () => {
   assert.equal(keys.includes('python:notapackage'), false);
 });
 
+test('a pyproject dependency with extras does not end the dependency list early', () => {
+  const root = makeFixtureRepo({
+    'svc/pyproject.toml': [
+      '[project]', 'name = "svc"', 'dependencies = [', '  "uvicorn[standard]>=0.30",', '  "sqlalchemy>=2",', '  \'celery[redis]\',', '  "anthropic",', ']', ''
+    ].join('\n')
+  });
+  const keys = sweepOf(root).packages.map((record) => record.key);
+  for (const expected of ['python:uvicorn', 'python:sqlalchemy', 'python:celery', 'python:anthropic']) {
+    assert.ok(keys.includes(expected), expected);
+  }
+});
+
 test('parses compose, workflow, and Dockerfile shapes beyond the simplest', () => {
   const root = makeFixtureRepo({
     'worker/requirements.txt': 'celery==5.0\n',

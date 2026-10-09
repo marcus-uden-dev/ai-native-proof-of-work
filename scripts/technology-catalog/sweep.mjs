@@ -287,7 +287,8 @@ function parsePyprojectNames(text) {
           const name = parseRequirementName(quoted[1]);
           if (name) names.push(name);
         }
-        if (line.includes(']')) collecting = false;
+        // Extras such as "uvicorn[standard]" put a bracket inside a string; only a bracket outside strings ends the list.
+        if (line.replace(/"[^"]*"|'[^']*'/g, '').includes(']')) collecting = false;
       }
     } else if (section.startsWith('tool.poetry') && section.includes('dependencies')) {
       const entry = /^\s*([A-Za-z0-9][A-Za-z0-9._-]*)\s*=/.exec(line);
