@@ -283,7 +283,7 @@ U1-U5 are tracked changes in this repo and land together as one reviewable chang
   - A compose-service or workflow-step consumer allows `implemented` for an infrastructure technology, and a string-ref allows at most `configured`.
   - A consumer override without a reason fails, and one with a reason passes and is carried to the renderer.
   - A credential-shaped string or internal host name in a curated field fails.
-  - Prose containing "in production" or "currently live" fails the language lint.
+  - Prose containing a banned live-status phrase, such as "in production", fails the language lint.
   - A technology mapped to two capabilities and a capability backed by two technologies both validate (R7).
 - **Verification:** the validator accepts the fixture catalog and rejects each seeded invalid copy with a specific message.
 
