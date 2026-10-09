@@ -18,8 +18,8 @@ const DOMAIN_LABELS = {
 };
 
 const STATE_MEANING = {
-  tested: 'Live implementation plus an automated test that uses it.',
-  implemented: 'Live implementation in source or runtime configuration. A test may exist but is not established.',
+  tested: 'Working implementation in source plus an automated test that uses it.',
+  implemented: 'Working implementation in source or runtime configuration. A test may exist but is not established.',
   configured: 'Declared or configured, but the swept source does not show it running.',
   'dev-test-only': 'Used only by tests or developer tooling.',
   planned: 'Appears only in a current plan or document.',
