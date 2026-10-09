@@ -1,0 +1,121 @@
+import { ALL_STATES, DOMAINS } from './catalog.mjs';
+import { TOOL_VERSION } from './sweep.mjs';
+
+const DOMAIN_LABELS = {
+  languages: 'Languages and file formats',
+  backend: 'Backend and API',
+  data: 'Data and persistence',
+  async: 'Async work and caching',
+  ai: 'AI and models',
+  frontend: 'Frontend',
+  documents: 'Documents',
+  security: 'Security and authentication',
+  observability: 'Observability and analytics',
+  testing: 'Testing and quality',
+  delivery: 'Delivery and infrastructure',
+  integrations: 'External integrations',
+  practices: 'Engineering practices'
+};
+
+const STATE_MEANING = {
+  tested: 'Working implementation in source plus an automated test that uses it.',
+  implemented: 'Working implementation in source or runtime configuration. A test may exist but is not established.',
+  configured: 'Declared or configured, but the swept source does not show it running.',
+  'dev-test-only': 'Used only by tests or developer tooling.',
+  planned: 'Appears only in a current plan or document.',
+  historical: 'Superseded or removed. Kept for context.'
+};
+
+const LANGUAGE_NAMES = {
+  '.py': 'Python', '.ts': 'TypeScript', '.tsx': 'TypeScript (TSX)', '.js': 'JavaScript', '.jsx': 'JavaScript (JSX)',
+  '.mjs': 'JavaScript (ES modules)', '.cjs': 'JavaScript (CommonJS)', '.sql': 'SQL', '.sh': 'Shell', '.ps1': 'PowerShell',
+  '.html': 'HTML', '.css': 'CSS', '.scss': 'SCSS', '.yml': 'YAML', '.yaml': 'YAML', '.json': 'JSON', '.toml': 'TOML',
+  '.md': 'Markdown', Dockerfile: 'Dockerfile', Makefile: 'Makefile', '.go': 'Go', '.rs': 'Rust', '.java': 'Java', '.kt': 'Kotlin'
+};
+
+const compare = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+
+function list(items) {
+  return items.length === 0 ? 'none' : items.join(', ');
+}
+
+export function renderCatalog({ catalog, sweep, displayName }) {
+  const lines = [];
+  const push = (...items) => lines.push(...items);
+  const entries = catalog.entries.slice().sort((a, b) => compare(a.name.toLowerCase(), b.name.toLowerCase()) || compare(a.id, b.id));
+  const capabilities = catalog.capabilities.slice().sort((a, b) => compare(a.id, b.id));
+  const capabilityLabel = new Map(capabilities.map((capability) => [capability.id, capability.label]));
+
+  push(
+    '<!-- GENERATED FILE. Do not edit by hand. Regenerate it with the technology catalog tooling in the proof-of-work repo. -->',
+    '',
+    `# Technology capability catalog: ${displayName}`,
+    '',
+    `- Swept commit: \`${sweep.commit}\` on branch \`${sweep.branch}\``,
+    `- Sweep fingerprint: \`${sweep.fingerprint}\``,
+    `- Tool version: \`${TOOL_VERSION}\``,
+    '',
+    'This catalog records what the tracked source shows: which technologies the repo uses, what for, and where the source shows it. It makes no claim about adoption, users, or outcomes.',
+    '',
+    '## Evidence states',
+    '',
+    '| State | Meaning |',
+    '|---|---|',
+    ...ALL_STATES.map((state) => `| \`${state}\` | ${STATE_MEANING[state]} |`),
+    ''
+  );
+
+  const languageRows = Object.entries(sweep.census)
+    .map(([key, count]) => ({ name: LANGUAGE_NAMES[key], key, count }))
+    .filter((row) => row.name)
+    .sort((a, b) => b.count - a.count || compare(a.name, b.name));
+  if (languageRows.length > 0) {
+    push('## Languages by tracked file count', '', '| Language | Files |', '|---|---|', ...languageRows.map((row) => `| ${row.name} (\`${row.key}\`) | ${row.count} |`), '');
+  }
+
+  const overridden = [];
+  for (const domain of DOMAINS) {
+    const group = entries.filter((entry) => entry.domain === domain);
+    if (group.length === 0) continue;
+    push(`## ${DOMAIN_LABELS[domain]}`, '');
+    for (const entry of group) {
+      push(
+        `### ${entry.name}`,
+        '',
+        `- State: \`${entry.evidenceState}\``,
+        `- Kind: ${entry.kind}`,
+        `- Used for: ${entry.purpose}`,
+        `- Problem solved: ${entry.problemSolved}`,
+        `- Architecture role: ${entry.architectureRole}`,
+        `- Related technologies: ${list((entry.technologies ?? []).slice().sort())}`,
+        `- Capabilities: ${list((entry.capabilityIds ?? []).slice().sort().map((id) => `${capabilityLabel.get(id)} (\`${id}\`)`))}`,
+        `- Rationale: ${entry.rationale === 'documented' ? `documented in ${list(entry.decisionRefs.slice().sort().map((ref) => `\`${ref}\``))}` : 'not documented'}`
+      );
+      if ((entry.aliases ?? []).length > 0) push(`- Also searched as: ${list(entry.aliases.slice().sort())}`);
+      if (entry.override) {
+        push(`- Evidence ceiling set by the curator to \`${entry.override.maxState}\`: ${entry.override.reason}`);
+        overridden.push(entry);
+      }
+      push('- Evidence:');
+      for (const item of entry.evidence.slice().sort((a, b) => compare(a.path, b.path))) push(`  - \`${item.path}\`: ${item.description}`);
+      push('');
+    }
+  }
+
+  push('## Technology index', '', '| Technology | State | Domain |', '|---|---|---|');
+  for (const entry of entries) push(`| ${entry.name} | \`${entry.evidenceState}\` | ${DOMAIN_LABELS[entry.domain]} |`);
+  push('');
+
+  push('## Capability index', '');
+  for (const capability of capabilities) {
+    const owners = entries.filter((entry) => (entry.capabilityIds ?? []).includes(capability.id));
+    if (owners.length === 0) continue;
+    push(`- ${capability.label} (\`${capability.id}\`): ${list(owners.map((entry) => `${entry.name} (\`${entry.evidenceState}\`)`))}`);
+  }
+  push('');
+
+  if (overridden.length > 0) {
+    push('## Curator overrides', '', ...overridden.map((entry) => `- ${entry.name}: ceiling \`${entry.override.maxState}\`. ${entry.override.reason}`), '');
+  }
+  return `${lines.join('\n').replace(/\n{3,}/g, '\n\n').trimEnd()}\n`;
+}

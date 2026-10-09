@@ -7,4 +7,5 @@ Thumbs.db
 workers/recruiter-review/.dev.vars
 docs/handoffs/
 
+internal/technology-catalog/
 .claude/

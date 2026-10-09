@@ -17,6 +17,7 @@
     "review-api:provision": "node scripts/provision-recruiter-review-api.mjs",
     "generate:project-replay": "node scripts/generate-project-replay.mjs",
     "test:e2e": "playwright test",
+    "catalog": "node scripts/technology-catalog.mjs",
     "release:validate": "node scripts/check-public-release.mjs"
   },
   "devDependencies": {
