@@ -1,7 +1,11 @@
 (() => {
+  // Set to true to restore the password-protected preview.
+  const ACCESS_GATE_ENABLED = false;
   const ACCESS_KEY = 'marcus-proof-preview-unlocked';
   const PASSWORD_HASH = 'cbdd10d72000b3a4068a0ea6c99aec6b306c0d49beb065c105143ee2e815256f';
   const root = document.documentElement;
+
+  if (!ACCESS_GATE_ENABLED) return;
 
   let unlocked = false;
   try {
