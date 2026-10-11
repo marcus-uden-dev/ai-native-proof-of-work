@@ -1523,6 +1523,20 @@
     "demonstrates": "Makes the product interaction architecture explicit through product judgment and design consistency."
   },
   {
+    "date": "2026-08-18",
+    "project": "Household budget",
+    "status": "Verified",
+    "type": "Application architecture",
+    "title": "Require explicit account mapping before statement reconciliation",
+    "tags": [
+      "risk-controls",
+      "human-in-the-loop",
+      "technical-judgment"
+    ],
+    "why": "Statement rows carry an account name, while the reconciliation write requires an account ID. The interface accepts an automatic match only when it is unambiguous and requires a manual choice otherwise.",
+    "demonstrates": "Keeps a financial row out of the confirmation flow until its account is clear, trading one review step for a safer write boundary."
+  },
+  {
     "date": "2026-08-17",
     "project": "Job-agent",
     "status": "Planned",
