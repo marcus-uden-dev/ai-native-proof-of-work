@@ -1,0 +1,2 @@
+# Keep checked-out text as LF so generated-content comparisons and release digests match on every OS.
+* text=auto eol=lf

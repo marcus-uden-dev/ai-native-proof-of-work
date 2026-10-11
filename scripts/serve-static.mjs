@@ -3,8 +3,23 @@ import { createServer } from 'node:http';
 import { extname, join, normalize, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-const siteRoot = resolve(fileURLToPath(new URL('../site/', import.meta.url)));
-const port = Number.parseInt(process.env.PORT ?? '4173', 10);
+const supportedRoots = {
+  site: '../site/',
+  prototypes: '../docs/prototypes/'
+};
+const rootName = process.argv.includes('--root')
+  ? process.argv[process.argv.indexOf('--root') + 1]
+  : 'site';
+if (!Object.hasOwn(supportedRoots, rootName)) {
+  throw new Error(`Unsupported static root: ${rootName}. Use one of: ${Object.keys(supportedRoots).join(', ')}.`);
+}
+const port = Number.parseInt(
+  process.argv.includes('--port')
+    ? process.argv[process.argv.indexOf('--port') + 1]
+    : process.env.PORT ?? '4173',
+  10
+);
+const siteRoot = resolve(fileURLToPath(new URL(supportedRoots[rootName], import.meta.url)));
 const projectSegment = 'ai-native-proof-of-work';
 const contentTypes = {
   '.css': 'text/css; charset=utf-8',
@@ -33,8 +48,13 @@ function resolveRequestPath(url) {
 const server = createServer((request, response) => {
   const absolute = resolveRequestPath(request.url ?? '/');
   if (!absolute || !existsSync(absolute) || !statSync(absolute).isFile()) {
-    response.writeHead(404, { 'Content-Type': contentTypes['.html'] });
-    createReadStream(join(siteRoot, '404.html')).pipe(response);
+    if (rootName === 'site') {
+      response.writeHead(404, { 'Content-Type': contentTypes['.html'] });
+      createReadStream(join(siteRoot, '404.html')).pipe(response);
+    } else {
+      response.writeHead(404, { 'Content-Type': 'text/plain; charset=utf-8' });
+      response.end('Prototype not found.');
+    }
     return;
   }
   response.writeHead(200, {
@@ -45,6 +65,6 @@ const server = createServer((request, response) => {
 });
 
 server.listen(port, '127.0.0.1', () => {
-  console.log(`Static site available at http://127.0.0.1:${port}`);
+  console.log(`Static ${rootName} available at http://127.0.0.1:${port}`);
 });
 

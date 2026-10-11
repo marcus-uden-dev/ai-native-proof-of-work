@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Experience Fit Map — layout directions</title>
+    <style>
+      :root {
+        --ink: #f5eee0;
+        --muted: #b7ab8c;
+        --gold: #d0a153;
+        --mint: #a6cfbc;
+        --panel: #0d0d0a;
+        --page: #201c13;
+        --rule: #3c3524;
+        --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        --serif: Georgia, "Times New Roman", serif;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; background: var(--page); color: var(--ink); font: 16px/1.5 system-ui, sans-serif; }
+      .shell { width: min(1160px, calc(100% - 32px)); margin: 48px auto 84px; }
+      .eyebrow { margin: 0 0 10px; color: var(--gold); font: 700 12px/1.4 var(--mono); letter-spacing: .09em; text-transform: uppercase; }
+      h1 { margin: 0; font: 500 clamp(2rem, 5vw, 4.25rem)/.98 var(--serif); }
+      .lede { max-width: 62ch; margin: 18px 0 30px; color: var(--muted); }
+      .switcher { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+      button { border: 1px solid var(--rule); background: transparent; color: var(--ink); padding: 10px 13px; cursor: pointer; font: 700 12px/1 var(--mono); }
+      button[aria-selected="true"] { border-color: var(--gold); background: var(--gold); color: #201c13; }
+      .option { display: none; border: 1px solid var(--rule); background: var(--panel); padding: clamp(20px, 4vw, 44px); }
+      .option.active { display: block; }
+      .option__intro { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: end; padding-bottom: 20px; border-bottom: 1px solid var(--rule); }
+      .option h2 { margin: 0; font: 500 1.8rem/1.1 var(--serif); }
+      .option__intro p { max-width: 44ch; margin: 7px 0 0; color: var(--muted); font-size: .92rem; }
+      .tag { margin: 0; color: var(--gold); font: 700 11px/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+      .role-needs { padding: 18px 0; border-bottom: 1px solid var(--rule); }
+      .role-needs__header { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; }
+      .role-needs h3, .section-title { margin: 0; font: 700 12px/1.4 var(--mono); color: var(--gold); letter-spacing: .07em; text-transform: uppercase; }
+      .role-needs p { margin: 6px 0 0; color: var(--muted); font-size: .85rem; }
+      .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 13px; }
+      .chip { border: 1px solid var(--rule); padding: 6px 8px; color: var(--ink); font: 700 11px/1.25 var(--mono); }
+      .chip::before { content: "•"; color: var(--gold); padding-right: 6px; }
+      .map { display: grid; grid-template-columns: minmax(270px, .7fr) minmax(0, 1.3fr); gap: 28px; padding: 26px 0 0; }
+      .radar-card { padding: 16px; border: 1px solid var(--rule); background: #10100c; }
+      .radar-card svg { display: block; width: 100%; max-width: 390px; margin: 0 auto; }
+      .radar-card figcaption { margin-top: 6px; color: var(--muted); font-size: .8rem; }
+      .ring, .axis { fill: none; stroke: var(--rule); stroke-width: 1; }
+      .shape { fill: rgba(208,161,83,.2); stroke: var(--gold); stroke-width: 2; }
+      .point { fill: var(--mint); }
+      .n { fill: var(--gold); font: 700 13px var(--mono); }
+      .map-key { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 5px 20px; margin-top: 14px; padding-top: 13px; border-top: 1px solid var(--rule); }
+      .map-key span { color: var(--muted); font: 11px/1.4 var(--mono); }
+      .map-key b { color: var(--gold); }
+      .signals { display: grid; gap: 10px; }
+      .signal { padding: 16px; border: 1px solid var(--rule); }
+      .signal__top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      .signal h3 { margin: 0; font: 500 1.2rem/1.2 var(--serif); }
+      .state { color: var(--mint); font: 700 10px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
+      .state--explore { color: #dfb873; }
+      .signal p { margin: 8px 0 0; color: var(--muted); font-size: .9rem; }
+      .signal a, summary { color: var(--gold); font: 700 11px/1.3 var(--mono); }
+      .signal a { display: inline-block; margin-top: 10px; }
+      details { border-top: 1px solid var(--rule); margin-top: 20px; padding-top: 16px; }
+      summary { cursor: pointer; list-style: none; }
+      summary::after { content: "+"; padding-left: 8px; }
+      details[open] summary::after { content: "–"; }
+      .detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px; }
+      .detail { padding: 13px; border: 1px solid var(--rule); color: var(--muted); font-size: .85rem; }
+      .detail strong { display: block; color: var(--ink); font: 500 1rem var(--serif); margin-bottom: 4px; }
+      .accordion { margin-top: 23px; border-top: 1px solid var(--rule); }
+      .accordion details { margin: 0; padding: 0; border-bottom: 1px solid var(--rule); border-top: 0; }
+      .accordion summary { display: grid; grid-template-columns: 2rem 1fr auto; gap: 12px; align-items: center; padding: 15px 0; color: var(--ink); font: 500 1.04rem var(--serif); }
+      .accordion summary::after { display: none; }
+      .ordinal { color: var(--gold); font: 700 11px var(--mono); }
+      .source-count { color: var(--muted); font: 700 10px var(--mono); }
+      .accordion p { max-width: 68ch; margin: 0 0 16px 44px; color: var(--muted); font-size: .9rem; }
+      .story { display: grid; grid-template-columns: minmax(0, 1fr) minmax(270px, .85fr); gap: 26px; padding-top: 26px; }
+      .story-step { padding: 18px 0; border-top: 1px solid var(--rule); }
+      .story-step h3 { margin: 0; font: 500 1.4rem var(--serif); }
+      .story-step p { margin: 6px 0 0; color: var(--muted); max-width: 60ch; }
+      .metric-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+      .metric { border-left: 2px solid var(--mint); padding: 5px 10px; background: #16150f; color: var(--ink); font: 700 11px var(--mono); }
+      .sidebar-note { margin-top: 14px; color: var(--muted); font-size: .8rem; }
+      @media (max-width: 760px) {
+        .shell { width: min(100% - 20px, 650px); margin-top: 20px; }
+        .option { padding: 18px; }
+        .option__intro, .map, .story { grid-template-columns: 1fr; }
+        .option__intro { align-items: start; }
+        .map-key { grid-template-columns: 1fr; }
+        .detail-grid { grid-template-columns: 1fr; }
+        .radar-card svg { max-width: 340px; }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <p class="eyebrow">Experience Fit Map · layout directions</p>
+      <h1>Less reading.<br>More signal.</h1>
+      <p class="lede">Three ways to keep the spider diagram and role-specific needs, while making evidence optional rather than a wall of repeated text.</p>
+      <nav class="switcher" aria-label="Layout directions">
+        <button type="button" aria-selected="true" data-target="scan">01 · Executive scan</button>
+        <button type="button" aria-selected="false" data-target="accordion">02 · Evidence accordion</button>
+        <button type="button" aria-selected="false" data-target="story">03 · Role-first story</button>
+      </nav>
+
+      <section class="option active" id="scan">
+        <div class="option__intro"><div><h2>Executive scan</h2><p>Two strong signals, one area to explore, then the full evidence only on request.</p></div><p class="tag">Recommended</p></div>
+        <div class="role-needs"><div class="role-needs__header"><h3>Role-specific needs detected</h3><span class="tag">5 signals</span></div><p>What the role asks for — condensed, not analysed again.</p><div class="chips"><span class="chip">Strategy &amp; roadmap</span><span class="chip">AI-native operations</span><span class="chip">Product judgment</span><span class="chip">Rapid iteration</span><span class="chip">Cross-functional bridge</span></div></div>
+        <div class="map"><div><figure class="radar-card"><div data-radar></div><figcaption>Each point is a public-evidence state, not a candidate score.</figcaption></figure><div class="map-key"><span><b>01</b> Product framing</span><span><b>02</b> Workflow design</span><span><b>03</b> AI-native execution</span><span><b>04</b> Research → decisions</span><span><b>05</b> Collaboration</span><span><b>06</b> Technical delivery</span><span><b>07</b> Prioritisation</span></div></div><div class="signals"><article class="signal"><div class="signal__top"><h3>Product framing</h3><span class="state">Direct evidence</span></div><p>Documented product strategy, framing and workflow decisions.</p><a href="#">3 cited sources ↗</a></article><article class="signal"><div class="signal__top"><h3>AI-native execution</h3><span class="state">Direct evidence</span></div><p>Built and documented AI-assisted workflows with explicit human controls.</p><a href="#">3 cited sources ↗</a></article><article class="signal"><div class="signal__top"><h3>Research → decisions</h3><span class="state state--explore">Explore further</span></div><p>Public work shows decision trails; the role-specific research context needs discussion.</p></article><details><summary>Show all 7 evidence dimensions</summary><div class="detail-grid"><div class="detail"><strong>Workflow design</strong>3 cited sources</div><div class="detail"><strong>Collaboration</strong>2 cited sources</div><div class="detail"><strong>Technical delivery</strong>2 cited sources</div></div></details></div></div>
+      </section>
+
+      <section class="option" id="accordion">
+        <div class="option__intro"><div><h2>Evidence accordion</h2><p>The radar remains the overview. Each evidence dimension becomes one scan-friendly row.</p></div><p class="tag">For reviewers who verify</p></div>
+        <div class="role-needs"><div class="role-needs__header"><h3>Role-specific needs detected</h3><span class="tag">5 signals</span></div><div class="chips"><span class="chip">Strategy &amp; roadmap</span><span class="chip">AI-native operations</span><span class="chip">Product judgment</span><span class="chip">Rapid iteration</span><span class="chip">Cross-functional bridge</span></div></div>
+        <div class="map"><div><figure class="radar-card"><div data-radar></div><figcaption>Use the numbered key below; evidence details stay collapsed.</figcaption></figure><div class="map-key"><span><b>01</b> Product framing</span><span><b>02</b> Workflow design</span><span><b>03</b> AI-native execution</span><span><b>04</b> Research → decisions</span><span><b>05</b> Collaboration</span><span><b>06</b> Technical delivery</span><span><b>07</b> Prioritisation</span></div></div><div><p class="section-title">Public evidence by dimension</p><div class="accordion"><details open><summary><span class="ordinal">01</span><span>Product framing</span><span class="source-count">Direct · 3 sources</span></summary><p>Strategy and workflow decisions are documented with linked source material.</p></details><details><summary><span class="ordinal">02</span><span>Workflow design</span><span class="source-count">Direct · 3 sources</span></summary><p>Open to view the exact evidence and source links.</p></details><details><summary><span class="ordinal">03</span><span>AI-native execution</span><span class="source-count">Direct · 3 sources</span></summary><p>Open to view the exact evidence and source links.</p></details><details><summary><span class="ordinal">04</span><span>Research → decisions</span><span class="source-count">Explore further</span></summary><p>Role-specific research practices should be explored in conversation.</p></details><details><summary><span class="ordinal">05–07</span><span>Three more dimensions</span><span class="source-count">5 sources</span></summary><p>Collaboration, technical delivery and prioritisation.</p></details></div></div></div>
+      </section>
+
+      <section class="option" id="story">
+        <div class="option__intro"><div><h2>Role-first story</h2><p>The job is the starting point. The map is supporting context, not the main reading task.</p></div><p class="tag">Most editorial</p></div>
+        <div class="story"><div><section class="story-step"><p class="tag">01 · What this role needs</p><h3>Product strategy that turns AI capability into useful work.</h3><div class="metric-row"><span class="metric">Strategy &amp; roadmap</span><span class="metric">AI-native operations</span><span class="metric">Cross-functional delivery</span></div></section><section class="story-step"><p class="tag">02 · What the work shows</p><h3>Two directly evidenced signals.</h3><p>Product framing and AI-native execution have the clearest published trail. The source links stay one click away.</p><div class="metric-row"><span class="metric">Product framing · 3 sources</span><span class="metric">AI-native execution · 3 sources</span></div></section><section class="story-step"><p class="tag">03 · Explore in conversation</p><h3>Research → decisions in a healthcare setting.</h3><p>This is not a negative score. It identifies the role context that public work cannot prove on its own.</p></section></div><aside><figure class="radar-card"><div data-radar></div><figcaption>Evidence coverage at a glance.</figcaption></figure><div class="map-key"><span><b>01</b> Product framing</span><span><b>02</b> Workflow design</span><span><b>03</b> AI-native execution</span><span><b>04</b> Research → decisions</span><span><b>05</b> Collaboration</span><span><b>06</b> Technical delivery</span><span><b>07</b> Prioritisation</span></div><p class="sidebar-note">Open “Evidence by dimension” only when you want to verify source material.</p></aside></div>
+      </section>
+    </main>
+    <template id="radar"><svg viewBox="0 0 300 280" role="img" aria-label="Example seven-axis experience fit radar"><polygon class="ring" points="150,30 244,75 267,177 202,258 98,258 33,177 56,75"/><polygon class="ring" points="150,55 220,89 238,165 189,231 111,231 62,165 80,89"/><polygon class="ring" points="150,80 197,103 209,153 176,204 124,204 91,153 103,103"/><line class="axis" x1="150" y1="144" x2="150" y2="30"/><line class="axis" x1="150" y1="144" x2="244" y2="75"/><line class="axis" x1="150" y1="144" x2="267" y2="177"/><line class="axis" x1="150" y1="144" x2="202" y2="258"/><line class="axis" x1="150" y1="144" x2="98" y2="258"/><line class="axis" x1="150" y1="144" x2="33" y2="177"/><line class="axis" x1="150" y1="144" x2="56" y2="75"/><polygon class="shape" points="150,45 218,94 232,167 169,186 111,231 47,173 83,95"/><circle class="point" cx="150" cy="45" r="4"/><circle class="point" cx="218" cy="94" r="4"/><circle class="point" cx="232" cy="167" r="4"/><circle class="point" cx="169" cy="186" r="4"/><circle class="point" cx="111" cy="231" r="4"/><circle class="point" cx="47" cy="173" r="4"/><circle class="point" cx="83" cy="95" r="4"/><text class="n" x="143" y="17">01</text><text class="n" x="250" y="67">02</text><text class="n" x="273" y="184">03</text><text class="n" x="202" y="276">04</text><text class="n" x="82" y="276">05</text><text class="n" x="6" y="184">06</text><text class="n" x="33" y="67">07</text></svg></template>
+    <script>
+      document.querySelectorAll('[data-radar]').forEach((node) => node.replaceWith(document.getElementById('radar').content.cloneNode(true)));
+      document.querySelectorAll('[data-target]').forEach((button) => button.addEventListener('click', () => {
+        document.querySelectorAll('[data-target]').forEach((item) => item.setAttribute('aria-selected', String(item === button)));
+        document.querySelectorAll('.option').forEach((item) => item.classList.toggle('active', item.id === button.dataset.target));
+      }));
+    </script>
+  </body>
+</html>

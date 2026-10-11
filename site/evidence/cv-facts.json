@@ -154,6 +154,14 @@
       "scope": "Supporting proof of a human-gated improvement workflow."
     }
   ],
+  "supportingProfileSignals": [
+    {
+      "title": "Information diet and learning signals",
+      "url": "https://marcus.uden.dev/proof/information-diet/",
+      "structuredEvidenceUrl": "https://marcus.uden.dev/evidence/information-diet.json",
+      "scope": "Verified aggregate podcast listening time and followed-feed topic clusters. Supporting profile context only; not employment or expertise proof."
+    }
+  ],
   "assessmentUse": {
     "supports": [
       "Employment chronology",
@@ -162,11 +170,13 @@
       "Citizenship and work authorization",
       "Explicitly listed role scope",
       "Related mortgage, construction-finance, risk-analysis, and contract-review experience",
-      "Public proof sources and their stated limits"
+      "Public proof sources and their stated limits",
+      "The supporting information-diet signal and its stated limits"
     ],
     "doesNotSupport": [
       "Direct SME or commercial lending equivalence unless another public source supports it",
       "Claims outside the stated facts",
+      "Expertise or learning outcomes inferred from listening activity alone",
       "A hiring decision without human review"
     ]
   }

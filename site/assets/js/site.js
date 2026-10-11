@@ -32,15 +32,73 @@ if (promptGenerator) {
   const clearButton = promptGenerator.querySelector('#clearInput');
   const copyButton = promptGenerator.querySelector('#copyPrompt');
   const copyStatus = promptGenerator.querySelector('#copyStatus');
-  const templatePromise = fetch('repository-interview-prompt.txt', { cache: 'no-store' }).then((response) => {
-    if (!response.ok) throw new Error('Prompt template unavailable');
-    return response.text();
+  const classification = promptGenerator.querySelector('#inputClassification');
+  const apiReviewResult = promptGenerator.querySelector('#apiReviewResult');
+  const apiReviewStatus = promptGenerator.querySelector('#apiReviewStatus');
+  const apiReviewOutput = promptGenerator.querySelector('#apiReviewOutput');
+  const recruiterFollowUp = promptGenerator.querySelector('#recruiterFollowUp');
+  const followUpName = promptGenerator.querySelector('#recruiterName');
+  const followUpEmail = promptGenerator.querySelector('#recruiterEmail');
+  const followUpOrganisation = promptGenerator.querySelector('#recruiterOrganisation');
+  const followUpConsent = promptGenerator.querySelector('#recruiterConsent');
+  const followUpButton = promptGenerator.querySelector('#submitRecruiterFollowUp');
+  const followUpStatus = promptGenerator.querySelector('#recruiterFollowUpStatus');
+  const modeChoices = [...promptGenerator.querySelectorAll('[data-mode-choice]')];
+  const apiEndpoint = window.RECRUITER_REVIEW_API?.endpoint;
+  const enquiryEndpoint = window.RECRUITER_REVIEW_API?.enquiryEndpoint || apiEndpoint?.replace(/\/api\/recruiter-review$/, '/api/recruiter-enquiry');
+  let selectedMode = 'auto';
+  let cataloguePromise;
+  let followUpSubmissionId;
+  const templatesPromise = Promise.all([
+    fetch('repository-question-prompt.txt', { cache: 'no-store' }),
+    fetch('repository-interview-prompt.txt', { cache: 'no-store' })
+  ]).then(async ([questionResponse, roleResponse]) => {
+    if (!questionResponse.ok || !roleResponse.ok) throw new Error('Prompt template unavailable');
+    return { question: await questionResponse.text(), role: await roleResponse.text() };
   });
+
+  function detectInputMode(value) {
+    const normalized = value.toLowerCase();
+    const roleSignals = [
+      /\b(job description|role summary|responsibilities|requirements|qualifications|we are looking for|about the role|ansvar|krav|kvalifikationer|arbetsuppgifter|vi söker)\b/,
+      /\n\s*(?:[-•]|\d+\.)\s+.+/,
+      /\b(?:years of experience|erfarenhet av|experience with)\b/
+    ];
+    const matches = roleSignals.filter((signal) => signal.test(normalized)).length;
+    return matches >= 2 || (normalized.length > 700 && matches >= 1) ? 'role' : 'question';
+  }
+
+  function effectiveMode(value) {
+    return selectedMode === 'auto' ? detectInputMode(value) : selectedMode;
+  }
+
+  function updateClassification() {
+    const mode = effectiveMode(input.value.trim());
+    const label = mode === 'role' ? 'role assessment' : 'evidence question';
+    classification.textContent = selectedMode === 'auto'
+      ? `Detected mode: ${label}.`
+      : `Selected mode: ${label}.`;
+  }
+
+  function setMode(mode) {
+    selectedMode = mode;
+    for (const choice of modeChoices) {
+      choice.setAttribute('aria-pressed', String(choice.dataset.modeChoice === mode));
+    }
+    updateClassification();
+  }
+
+  for (const choice of modeChoices) {
+    choice.addEventListener('click', () => setMode(choice.dataset.modeChoice));
+  }
+
+  input.addEventListener('input', updateClassification);
 
   for (const button of promptGenerator.querySelectorAll('[data-example]')) {
     button.addEventListener('click', () => {
       input.value = button.dataset.example;
       input.focus();
+      updateClassification();
     });
   }
 
@@ -50,29 +108,37 @@ if (promptGenerator) {
     result.hidden = true;
     error.textContent = '';
     copyStatus.textContent = '';
+    apiReviewResult.hidden = true;
+    apiReviewStatus.textContent = '';
+    apiReviewOutput.replaceChildren();
+    resetFollowUp();
     input.focus();
+    updateClassification();
   });
 
-  generateButton.addEventListener('click', async () => {
+  async function generateFallbackPrompt() {
     const recruiterInput = input.value.trim();
     if (!recruiterInput) {
       error.textContent = 'Add a question or paste a job description first.';
       result.hidden = true;
       input.focus();
-      return;
+      return false;
     }
 
     try {
-      const template = await templatePromise;
-      output.textContent = template.replace('{{INPUT}}', recruiterInput);
+      const templates = await templatesPromise;
+      const mode = effectiveMode(recruiterInput);
+      output.textContent = templates[mode].replace('{{INPUT}}', recruiterInput);
       error.textContent = '';
       result.hidden = false;
       result.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      return true;
     } catch {
       error.textContent = 'The prompt template is unavailable. Use the canonical prompt link instead.';
       result.hidden = true;
+      return false;
     }
-  });
+  }
 
   copyButton.addEventListener('click', async () => {
     try {
@@ -88,4 +154,591 @@ if (promptGenerator) {
       copyStatus.textContent = 'Select and copy the highlighted prompt.';
     }
   });
+
+  async function getCatalogue() {
+    cataloguePromise ||= fetch('evidence/experience-fit-catalog.json', { cache: 'no-store' })
+      .then(async (response) => {
+        if (!response.ok) throw new Error('Evidence catalogue unavailable');
+        const document = await response.json();
+        return new Map(document.records.map((record) => [record.id, record]));
+      });
+    return cataloguePromise;
+  }
+
+  function addEvidenceLinks(container, evidenceIds, catalogue) {
+    const list = document.createElement('ul');
+    list.className = 'review-evidence-links';
+    let missingEvidence = false;
+    for (const id of evidenceIds) {
+      const record = catalogue.get(id);
+      if (!record) {
+        missingEvidence = true;
+        continue;
+      }
+      const item = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = record.url;
+      link.target = '_blank';
+      link.rel = 'noreferrer';
+      link.textContent = `${record.label} ↗`;
+      item.append(link);
+      list.append(item);
+    }
+    if (missingEvidence) {
+      const item = document.createElement('li');
+      item.className = 'review-evidence-unavailable';
+      item.textContent = 'Evidence link unavailable.';
+      list.append(item);
+    }
+    if (list.childElementCount) container.append(list);
+  }
+
+  function renderQuestion(answer, catalogue) {
+    const fragment = document.createDocumentFragment();
+    const summary = document.createElement('p');
+    summary.className = 'review-summary';
+    summary.textContent = answer.summary;
+    fragment.append(summary);
+    const findings = document.createElement('ol');
+    findings.className = 'review-findings';
+    for (const finding of answer.findings) {
+      const item = document.createElement('li');
+      const claim = document.createElement('p');
+      claim.textContent = finding.claim;
+      item.append(claim);
+      addEvidenceLinks(item, finding.evidenceIds, catalogue);
+      findings.append(item);
+    }
+    fragment.append(findings);
+    appendTextSection(fragment, 'Evidence limits', answer.limitations, 'review-detail-list');
+    return fragment;
+  }
+
+  function appendTextSection(container, headingText, items, className, sectionClass = '') {
+    if (!items.length) return;
+    const section = document.createElement('section');
+    section.className = `review-detail ${sectionClass}`.trim();
+    const heading = document.createElement('h4');
+    heading.textContent = headingText;
+    const list = document.createElement('ul');
+    list.className = className;
+    for (const item of items) {
+      const row = document.createElement('li');
+      row.textContent = item;
+      list.append(row);
+    }
+    section.append(heading, list);
+    container.append(section);
+  }
+
+  function stateLabel(state) {
+    return {
+      direct: 'Direct evidence',
+      transferable: 'Transferable evidence',
+      needs_interview_verification: 'Explore further',
+      not_evidenced: 'Not evidenced in this public record'
+    }[state] || state;
+  }
+
+  function appendExplorationArea(container, area, state) {
+    if (!area || state === 'direct' || /\?|^(ask|how|what|when|where|who|which|describe|give)\b/i.test(area.trim())) return;
+    const note = document.createElement('p');
+    note.className = 'exploration-area';
+    note.textContent = `Explore further: ${area}`;
+    container.append(note);
+  }
+
+  function renderSemanticRadar(dimensions) {
+    const svgNamespace = 'http://www.w3.org/2000/svg';
+    const center = 130;
+    const radii = { direct: 102, transferable: 78, needs_interview_verification: 54, not_evidenced: 30 };
+    const pointFor = (index, radius) => {
+      const angle = ((Math.PI * 2 * index) / dimensions.length) - (Math.PI / 2);
+      return [center + Math.cos(angle) * radius, center + Math.sin(angle) * radius];
+    };
+    const svg = document.createElementNS(svgNamespace, 'svg');
+    svg.classList.add('experience-fit-radar__svg');
+    svg.setAttribute('viewBox', '-70 -38 400 340');
+    svg.setAttribute('role', 'img');
+    svg.setAttribute('aria-label', `Experience Fit Map. ${dimensions.map((dimension) => `${dimension.label}: ${stateLabel(dimension.state)}`).join('. ')}`);
+
+    for (const radius of [30, 54, 78, 102]) {
+      const ring = document.createElementNS(svgNamespace, 'polygon');
+      ring.setAttribute('class', 'experience-fit-radar__ring');
+      ring.setAttribute('points', dimensions.map((_, index) => pointFor(index, radius).join(',')).join(' '));
+      svg.append(ring);
+    }
+    dimensions.forEach((dimension, index) => {
+      const [axisX, axisY] = pointFor(index, 108);
+      const axis = document.createElementNS(svgNamespace, 'line');
+      axis.setAttribute('class', 'experience-fit-radar__axis');
+      axis.setAttribute('x1', center);
+      axis.setAttribute('y1', center);
+      axis.setAttribute('x2', axisX);
+      axis.setAttribute('y2', axisY);
+      svg.append(axis);
+    });
+    dimensions.forEach((dimension, index) => {
+      const [labelX, labelY] = pointFor(index, 128);
+      const ordinal = document.createElementNS(svgNamespace, 'text');
+      ordinal.setAttribute('class', 'experience-fit-radar__axis-index');
+      ordinal.setAttribute('x', labelX);
+      ordinal.setAttribute('y', labelY);
+      ordinal.setAttribute('text-anchor', labelX > center + 12 ? 'start' : labelX < center - 12 ? 'end' : 'middle');
+      ordinal.textContent = String(index + 1).padStart(2, '0');
+      svg.append(ordinal);
+      const label = document.createElementNS(svgNamespace, 'text');
+      const lines = dimension.label.split(' ');
+      const anchor = labelX > center + 12 ? 'start' : labelX < center - 12 ? 'end' : 'middle';
+      label.setAttribute('class', 'experience-fit-radar__axis-label');
+      label.setAttribute('x', labelX);
+      label.setAttribute('y', labelY - ((lines.length - 1) * 4));
+      label.setAttribute('text-anchor', anchor);
+      lines.forEach((line, lineIndex) => {
+        const row = document.createElementNS(svgNamespace, 'tspan');
+        row.setAttribute('x', labelX);
+        if (lineIndex > 0) row.setAttribute('dy', '10');
+        row.textContent = line;
+        label.append(row);
+      });
+      svg.append(label);
+    });
+    const evidence = document.createElementNS(svgNamespace, 'polygon');
+    evidence.setAttribute('class', 'experience-fit-radar__evidence');
+    evidence.setAttribute('points', dimensions.map((dimension, index) => pointFor(index, radii[dimension.state]).join(',')).join(' '));
+    svg.append(evidence);
+    dimensions.forEach((dimension, index) => {
+      const [x, y] = pointFor(index, radii[dimension.state]);
+      const marker = document.createElementNS(svgNamespace, 'circle');
+      marker.setAttribute('class', `experience-fit-radar__marker experience-fit-radar__marker--${dimension.state}`);
+      marker.setAttribute('cx', x);
+      marker.setAttribute('cy', y);
+      marker.setAttribute('r', 3.5);
+      svg.append(marker);
+    });
+    return svg;
+  }
+
+  function renderRadarKey(dimensions) {
+    const key = document.createElement('section');
+    key.className = 'experience-fit-radar-key';
+    key.setAttribute('aria-label', 'Experience Fit Map key');
+    const introduction = document.createElement('p');
+    introduction.className = 'experience-fit-radar-key__intro';
+    introduction.textContent = 'Map key — starts at the top and moves clockwise.';
+    const list = document.createElement('ol');
+    list.className = 'experience-fit-radar-key__list';
+    dimensions.forEach((dimension, index) => {
+      const item = document.createElement('li');
+      const number = document.createElement('span');
+      number.className = 'experience-fit-radar-key__number';
+      number.textContent = String(index + 1).padStart(2, '0');
+      const detail = document.createElement('span');
+      detail.className = 'experience-fit-radar-key__detail';
+      const label = document.createElement('strong');
+      label.textContent = dimension.label;
+      const state = document.createElement('small');
+      state.className = `evidence-state evidence-state--${dimension.state}`;
+      state.textContent = stateLabel(dimension.state);
+      detail.append(label, state);
+      item.append(number, detail);
+      list.append(item);
+    });
+    key.append(introduction, list);
+    return key;
+  }
+
+  function renderEvidenceStateBar(state, label) {
+    const group = document.createElement('div');
+    group.className = 'experience-fit-state-indicator';
+    const description = document.createElement('p');
+    description.className = 'experience-fit-state-indicator__label';
+    description.textContent = `Evidence state: ${stateLabel(state)}`;
+    const bar = document.createElement('div');
+    bar.className = `experience-fit-state-bar experience-fit-state-bar--${state}`;
+    bar.setAttribute('role', 'img');
+    bar.setAttribute('aria-label', `${label}: ${stateLabel(state)}. This is a semantic evidence state, not a score.`);
+    for (let index = 0; index < 4; index += 1) bar.append(document.createElement('span'));
+    group.append(description, bar);
+    return group;
+  }
+
+  function renderExperienceFitTrack(dimension, catalogue) {
+    const track = document.createElement('article');
+    track.className = 'experience-fit-track';
+    const heading = document.createElement('h4');
+    heading.textContent = dimension.label;
+    const state = document.createElement('p');
+    state.className = `evidence-state evidence-state--${dimension.state}`;
+    state.textContent = stateLabel(dimension.state);
+    const explanation = document.createElement('p');
+    explanation.textContent = dimension.explanation;
+    track.append(heading, state, renderEvidenceStateBar(dimension.state, dimension.label), explanation);
+    addEvidenceLinks(track, dimension.evidenceIds, catalogue);
+    appendExplorationArea(track, dimension.verificationQuestion, dimension.state);
+    return track;
+  }
+
+  function executiveSignals(dimensions) {
+    const selected = dimensions.filter((dimension) => dimension.state === 'direct').slice(0, 2);
+    const exploration = dimensions.find((dimension) => (
+      !selected.includes(dimension)
+      && ['needs_interview_verification', 'not_evidenced'].includes(dimension.state)
+    ));
+    if (exploration) selected.push(exploration);
+    for (const dimension of dimensions) {
+      if (selected.length === 3) break;
+      if (!selected.includes(dimension)) selected.push(dimension);
+    }
+    return selected;
+  }
+
+  function renderExecutiveSignal(dimension) {
+    const signal = document.createElement('article');
+    signal.className = 'experience-fit-signal';
+    const heading = document.createElement('h4');
+    heading.textContent = dimension.label;
+    const state = document.createElement('p');
+    state.className = `evidence-state evidence-state--${dimension.state}`;
+    state.textContent = stateLabel(dimension.state);
+    signal.append(heading, state);
+    return signal;
+  }
+
+  function narrativeChip(label, variant = 'capability') {
+    const chip = document.createElement('span');
+    chip.className = 'role-narrative__chip role-narrative__chip--' + variant;
+    chip.textContent = label;
+    return chip;
+  }
+
+  function renderRoleNarrative(assessment, catalogue) {
+    const section = document.createElement('section');
+    section.className = 'role-narrative';
+
+    const header = document.createElement('div');
+    header.className = 'role-narrative__header';
+    const title = document.createElement('div');
+    const label = document.createElement('p');
+    label.className = 'role-narrative__label';
+    label.textContent = 'Role narrative';
+    const heading = document.createElement('h3');
+    heading.textContent = assessment.summary;
+    title.append(label, heading);
+
+    const ingress = document.createElement('p');
+    ingress.className = 'role-narrative__ingress';
+    ingress.append('The public record gives the strongest support for ');
+    const direct = assessment.dimensions.filter((dimension) => dimension.state === 'direct').slice(0, 3);
+    direct.forEach((dimension, index) => {
+      if (index > 0) ingress.append(index === direct.length - 1 ? ' and ' : ', ');
+      ingress.append(narrativeChip(dimension.label));
+    });
+    if (direct.length === 0) ingress.append('the areas cited below');
+    ingress.append('. It documents the work through ');
+    ingress.append(narrativeChip('Source-linked product decisions', 'evidence'));
+    ingress.append(', ');
+    ingress.append(narrativeChip('Reusable workflow controls', 'evidence'));
+    ingress.append(', and ');
+    ingress.append(narrativeChip('An inspectable evidence trail', 'evidence'));
+    ingress.append('.');
+    header.append(title, ingress);
+
+    const ledger = document.createElement('div');
+    ledger.className = 'role-narrative__ledger';
+    const coverage = Array.isArray(assessment.roleCoverage) ? assessment.roleCoverage.slice(0, 2) : [];
+    for (const item of coverage) {
+      const row = document.createElement('article');
+      row.className = 'role-narrative__row';
+      const question = document.createElement('h4');
+      question.textContent = 'Can Marcus support “' + item.roleNeed + '”?';
+      const explanation = document.createElement('p');
+      explanation.textContent = item.explanation;
+      const evidence = document.createElement('div');
+      evidence.className = 'role-narrative__evidence';
+      const state = document.createElement('p');
+      state.className = 'evidence-state evidence-state--' + item.state;
+      state.textContent = stateLabel(item.state);
+      evidence.append(state);
+      const sources = document.createElement('p');
+      sources.className = 'role-narrative__source-count';
+      sources.textContent = item.evidenceIds.length + ' cited public source' + (item.evidenceIds.length === 1 ? '' : 's');
+      evidence.append(sources);
+      addEvidenceLinks(evidence, item.evidenceIds, catalogue);
+      row.append(question, explanation, evidence);
+      ledger.append(row);
+    }
+
+    const domainRow = document.createElement('article');
+    domainRow.className = 'role-narrative__row';
+    const domainQuestion = document.createElement('h4');
+    domainQuestion.textContent = 'Can he apply this in this role’s domain?';
+    const domainExplanation = document.createElement('p');
+    domainExplanation.textContent = 'The public record does not prove the local systems, metrics, or domain constraints. That is an exploration topic, not a negative score.';
+    const domainEvidence = document.createElement('div');
+    domainEvidence.className = 'role-narrative__evidence';
+    const domainState = document.createElement('p');
+    domainState.className = 'evidence-state evidence-state--needs_interview_verification';
+    domainState.textContent = 'Exploration topic';
+    domainEvidence.append(domainState);
+    domainRow.append(domainQuestion, domainExplanation, domainEvidence);
+    ledger.append(domainRow);
+
+    section.append(header, ledger);
+    return section;
+  }
+
+  function renderEvidenceDetails(dimensions, catalogue) {
+    const details = document.createElement('details');
+    details.className = 'experience-fit-details';
+    const summary = document.createElement('summary');
+    summary.textContent = `Show full evidence details and sources (${dimensions.length} dimensions)`;
+    const tracks = document.createElement('div');
+    tracks.className = 'experience-fit-tracks';
+    dimensions.forEach((dimension) => tracks.append(renderExperienceFitTrack(dimension, catalogue)));
+    details.append(summary, tracks);
+    return details;
+  }
+
+  function renderRoleCoverage(roleCoverage, catalogue) {
+    if (!Array.isArray(roleCoverage) || roleCoverage.length === 0) return null;
+    const section = document.createElement('section');
+    section.className = 'role-coverage';
+    const heading = document.createElement('h4');
+    heading.textContent = 'Role-specific evidence coverage';
+    const introduction = document.createElement('p');
+    introduction.className = 'role-coverage__intro';
+    introduction.textContent = 'These tracks change with the submitted role. They show cited public evidence for the role requirements, not a candidate score.';
+    const details = document.createElement('details');
+    details.className = 'role-coverage__details';
+    const summary = document.createElement('summary');
+    summary.textContent = `Show role-specific evidence coverage (${roleCoverage.length} requirement${roleCoverage.length === 1 ? '' : 's'})`;
+    const list = document.createElement('div');
+    list.className = 'role-coverage__list';
+    for (const coverage of roleCoverage) {
+      const item = document.createElement('article');
+      item.className = 'role-coverage__item';
+      const roleNeed = document.createElement('h5');
+      roleNeed.textContent = coverage.roleNeed;
+      const capability = document.createElement('p');
+      capability.className = 'role-coverage__capability';
+      capability.textContent = coverage.label;
+      const state = document.createElement('p');
+      state.className = `evidence-state evidence-state--${coverage.state}`;
+      state.textContent = stateLabel(coverage.state);
+      const explanation = document.createElement('p');
+      explanation.textContent = coverage.explanation;
+      item.append(roleNeed, capability, state, renderEvidenceStateBar(coverage.state, coverage.roleNeed), explanation);
+      addEvidenceLinks(item, coverage.evidenceIds, catalogue);
+      appendExplorationArea(item, coverage.verificationQuestion, coverage.state);
+      list.append(item);
+    }
+    details.append(summary, list);
+    section.append(heading, introduction, details);
+    return section;
+  }
+
+  function renderRole(assessment, catalogue, { roleTitle = 'Submitted role description' } = {}) {
+    const fragment = document.createDocumentFragment();
+    fragment.append(renderRoleNarrative(assessment, catalogue));
+
+    appendTextSection(fragment, 'Role-specific needs detected', assessment.roleNeeds, 'review-detail-list role-needs-list', 'review-detail--role-needs');
+
+    const map = document.createElement('div');
+    map.className = 'experience-fit-map';
+    const title = document.createElement('p');
+    title.className = 'review-map-label';
+    title.textContent = 'Experience Fit Map — public evidence coverage, not a candidate score.';
+    const reviewedRole = document.createElement('p');
+    reviewedRole.className = 'reviewed-role';
+    reviewedRole.textContent = `Role reviewed: ${roleTitle}`;
+    const overview = document.createElement('div');
+    overview.className = 'experience-fit-map__overview';
+    overview.append(title, reviewedRole);
+    const radar = document.createElement('figure');
+    radar.className = 'experience-fit-radar';
+    radar.append(renderSemanticRadar(assessment.dimensions));
+    const caption = document.createElement('figcaption');
+    caption.textContent = 'One point represents each labelled dimension. The shape encodes cited public-evidence states only; open evidence details for the full interpretation.';
+    radar.append(caption);
+    overview.append(radar, renderRadarKey(assessment.dimensions));
+    const signals = document.createElement('section');
+    signals.className = 'experience-fit-signals';
+    const signalHeading = document.createElement('h4');
+    signalHeading.className = 'experience-fit-signals__heading';
+    signalHeading.textContent = 'Evidence by dimension';
+    const signalIntroduction = document.createElement('p');
+    signalIntroduction.className = 'experience-fit-signals__intro';
+    signalIntroduction.textContent = 'The map adapts to the submitted role. Open the evidence detail view to inspect every dimension and its cited sources.';
+    signals.append(signalHeading, signalIntroduction);
+    signals.append(renderEvidenceDetails(assessment.dimensions, catalogue));
+    map.append(overview, signals);
+    fragment.append(map);
+    const roleCoverage = renderRoleCoverage(assessment.roleCoverage, catalogue);
+    if (roleCoverage) fragment.append(roleCoverage);
+    return fragment;
+  }
+
+  async function runAiReview() {
+    const recruiterInput = input.value.trim();
+    if (!recruiterInput) {
+      error.textContent = 'Add a question or paste a job description first.';
+      input.focus();
+      return;
+    }
+
+    const mode = effectiveMode(recruiterInput);
+    error.textContent = '';
+    resetFollowUp();
+    apiReviewResult.hidden = false;
+    apiReviewStatus.textContent = 'Reviewing published evidence…';
+    apiReviewOutput.replaceChildren();
+    generateButton.disabled = true;
+    try {
+      const response = await fetch(apiEndpoint, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ mode, clientMode: selectedMode, input: recruiterInput })
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(userFacingApiError(payload, response.status));
+      const catalogue = Array.isArray(payload.evidenceSources)
+        ? new Map(payload.evidenceSources.map((source) => [source.id, source]))
+        : await getCatalogue();
+      if (payload.notice) {
+        const notice = document.createElement('p');
+        notice.className = 'result-note';
+        notice.textContent = payload.notice;
+        apiReviewOutput.append(notice);
+      }
+      apiReviewOutput.append(payload.kind === 'role'
+        ? renderRole(payload.assessment, catalogue, { roleTitle: 'Submitted role description' })
+        : renderQuestion(payload.answer, catalogue));
+      apiReviewStatus.textContent = mode === 'role'
+        ? 'Role assessment based on published evidence.'
+        : 'Answer based on published evidence.';
+    } catch (requestError) {
+      apiReviewStatus.textContent = `${requestError.message} A copyable prompt is available below.`;
+      await generateFallbackPrompt();
+    } finally {
+      generateButton.disabled = false;
+      showFollowUp();
+      apiReviewResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+  }
+
+  function userFacingApiError(payload, status) {
+    const messages = {
+      review_timeout: 'The review took too long. Please try again.',
+      provider_rate_limited: 'The AI review service is busy. Please try again in a moment.',
+      provider_credits_exhausted: 'The best things in life are free — sadly, API credits are not. The AI review credits have run out. Please try again soon or use the copyable prompt below.',
+      provider_unavailable: 'The AI review service is temporarily unavailable. Please try again shortly.',
+      provider_configuration: 'The AI review service is temporarily unavailable.',
+      provider_response_invalid: 'The AI review response could not be used safely.',
+      review_validation_failed: 'The AI review response could not be verified against the public evidence.'
+    };
+    return messages[payload?.code] || (status === 429 ? 'Too many requests. Please try again shortly.' : 'The review is unavailable.');
+  }
+
+  function showFollowUp() {
+    if (enquiryEndpoint) recruiterFollowUp.hidden = false;
+  }
+
+  function resetFollowUp() {
+    recruiterFollowUp.hidden = true;
+    followUpName.value = '';
+    followUpEmail.value = '';
+    followUpOrganisation.value = '';
+    followUpConsent.checked = false;
+    followUpStatus.textContent = '';
+    followUpButton.disabled = false;
+    followUpSubmissionId = undefined;
+  }
+
+  async function submitFollowUp() {
+    const recruiterInput = input.value.trim();
+    const email = followUpEmail.value.trim();
+    if (!recruiterInput) {
+      followUpStatus.textContent = 'Add a question or role description first.';
+      return;
+    }
+    if (!email) {
+      followUpStatus.textContent = 'Add a work email address to request follow-up.';
+      followUpEmail.focus();
+      return;
+    }
+    if (!followUpConsent.checked) {
+      followUpStatus.textContent = 'Confirm consent before submitting follow-up details.';
+      followUpConsent.focus();
+      return;
+    }
+    followUpStatus.textContent = 'Saving your follow-up request…';
+    followUpButton.disabled = true;
+    try {
+      const response = await fetch(enquiryEndpoint, {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({
+          submissionId: followUpSubmissionId ||= crypto.randomUUID(),
+          mode: effectiveMode(recruiterInput),
+          input: recruiterInput,
+          name: followUpName.value,
+          email,
+          organisation: followUpOrganisation.value,
+          consent: true
+        })
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload?.error || 'Follow-up is unavailable.');
+      followUpStatus.textContent = payload.duplicate
+        ? 'This follow-up request has already been saved.'
+        : 'Follow-up request saved. Marcus can contact you using the details you provided.';
+      followUpButton.disabled = true;
+    } catch (requestError) {
+      followUpStatus.textContent = requestError.message || 'Follow-up is unavailable. Please use the contact email below.';
+      followUpButton.disabled = false;
+    }
+  }
+
+  async function loadSavedSmokeTest() {
+    const smokeTestId = new URLSearchParams(window.location.search).get('smoke');
+    if (!smokeTestId) return;
+    if (!/^[a-z0-9-]+$/.test(smokeTestId)) return;
+
+    apiReviewResult.hidden = false;
+    apiReviewStatus.textContent = 'Loading saved smoke test…';
+    apiReviewOutput.replaceChildren();
+    try {
+      const response = await fetch(`evidence/smoke-tests/${smokeTestId}.json`, { cache: 'no-store' });
+      if (!response.ok) throw new Error('Saved smoke test unavailable.');
+      const snapshot = await response.json();
+      if (snapshot.kind !== 'role' || !snapshot.assessment || !Array.isArray(snapshot.evidenceSources)) throw new Error('Saved smoke test is invalid.');
+      input.value = snapshot.roleBrief || '';
+      setMode('role');
+      const catalogue = new Map(snapshot.evidenceSources.map((source) => [source.id, source]));
+      if (snapshot.sourceUrl) {
+        const source = document.createElement('p');
+        source.className = 'result-note';
+        source.textContent = `${snapshot.sourceNote || 'Saved smoke test.'} `;
+        const link = document.createElement('a');
+        link.href = snapshot.sourceUrl;
+        link.target = '_blank';
+        link.rel = 'noreferrer';
+        link.textContent = 'Source role listing ↗';
+        source.append(link);
+        apiReviewOutput.append(source);
+      }
+      apiReviewOutput.append(renderRole(snapshot.assessment, catalogue, { roleTitle: snapshot.title }));
+      apiReviewStatus.textContent = `Saved smoke test: ${snapshot.title}. Public evidence coverage only.`;
+    } catch (loadError) {
+      apiReviewStatus.textContent = loadError.message;
+    }
+  }
+
+  if (apiEndpoint) generateButton.textContent = 'Review with AI';
+  generateButton.addEventListener('click', () => (apiEndpoint ? runAiReview() : generateFallbackPrompt()));
+  followUpButton.addEventListener('click', submitFollowUp);
+
+  updateClassification();
+  loadSavedSmokeTest();
 }

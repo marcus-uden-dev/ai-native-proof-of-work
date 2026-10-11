@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "artifactId": "marcus-uden-information-diet",
+  "status": "Current public supporting profile signal",
+  "lastReviewed": "2026-08-28",
+  "canonicalUrl": "https://marcus.uden.dev/proof/information-diet/",
+  "evidenceStatus": "Verified aggregate listening time and followed-feed topic clusters; category-level listening share unavailable",
+  "source": {
+    "subscriptionExport": {
+      "type": "Pocket Casts OPML backup",
+      "date": "2026-03-19",
+      "scope": "Followed podcast feeds; raw feed URLs are not published",
+      "followedFeedCount": 511
+    },
+    "listeningStatistics": {
+      "type": "Pocket Casts statistics screenshot",
+      "date": "2026-08-28",
+      "publicArtifact": "https://marcus.uden.dev/assets/images/information-diet/pocket-casts-listening-stats-2026-08-28.jpg"
+    }
+  },
+  "summary": "A long-running and documented podcast-based information-intake habit. Aggregate listening is roughly three hours per day over the measured period, and followed feeds span AI, technology, startups, business, science, decision-making, institutions, and policy.",
+  "professionalRelevance": "Supports a picture of broad external-signal intake and source taste that can inform product judgment and recruiter conversations.",
+  "evidenceBoundary": "This does not establish expertise, learning outcomes, or category-level listening time by itself. Followed feeds are not proof that every show is listened to regularly.",
+  "listeningStatistics": {
+    "periodStart": "2015-10-19",
+    "measurementDate": "2026-08-28",
+    "totalListeningTime": "489 days 8 hours",
+    "totalListeningHours": 11744,
+    "totalListeningMinutes": 704640,
+    "listeningYears": 1.34,
+    "fullTimeWorkWeeksAt40Hours": 294,
+    "fullTimeWorkWeeksExactAt40Hours": 293.6,
+    "fullTimeWorkYearsAt40Hours": 5.6,
+    "averageHoursPerDay": 2.96,
+    "averageMinutesPerDay": 178,
+    "averageHoursPerWeek": 20.7,
+    "shareOfElapsedCalendarTime": 12.3,
+    "totalTimeSavedByPlaybackFeatures": "1 day 18 hours",
+    "timeSavedBySkipping": "1 day 13 hours",
+    "timeSavedByVariableSpeed": "5 hours 19 minutes",
+    "pocketCastsPlayfulTweetComparison": 85633327853
+  },
+  "topicClusters": [
+    {
+      "id": "ai-and-technical-change",
+      "title": "AI and technical change",
+      "representativeFollowedPodcasts": ["AI Breakdown", "The Cognitive Revolution", "Hard Fork", "The TED AI Show", "Latent Space AI", "Practical AI", "Anthropic", "Dwarkesh Podcast", "Lightcone Podcast", "Future of Life Institute Podcast"],
+      "signal": "Attention to AI capability shifts, builder tooling, AI safety, and technical product context"
+    },
+    {
+      "id": "startups-vc-and-product-building",
+      "title": "Startups, VC, and product building",
+      "representativeFollowedPodcasts": ["The Twenty Minute VC", "Request for Startups", "Y Combinator Startup Podcast", "MicroConf On Air", "Startups For the Rest of Us", "This Week in Startups", "The Startup Ideas Podcast", "The Official SaaStr Podcast", "How to Start a Startup", "All-In"],
+      "signal": "Exposure to startup strategy, product-market fit, fundraising, SaaS, and founder/operator trade-offs"
+    },
+    {
+      "id": "business-economics-and-markets",
+      "title": "Business, economics, and markets",
+      "representativeFollowedPodcasts": ["Planet Money", "The Rest Is Money", "Stratechery", "EconTalk", "Money Stuff: The Podcast", "Economist Podcasts", "Macro Voices", "The Answer Is Transaction Costs", "More or Less: Behind the Stats", "Compound Interest from Semafor Business"],
+      "signal": "Business-model thinking, market structure, incentives, and decision-making under uncertainty"
+    },
+    {
+      "id": "science-rationality-and-decision-quality",
+      "title": "Science, rationality, and decision quality",
+      "representativeFollowedPodcasts": ["Skeptoid", "The Studies Show", "Clearer Thinking", "Rationally Speaking", "80,000 Hours Podcast", "The Knowledge Project", "The Jim Rutt Show", "Everything Hertz", "Sean Carroll's Mindscape", "Science Vs"],
+      "signal": "Evidence quality, reasoning hygiene, research literacy, and calibration"
+    },
+    {
+      "id": "institutions-policy-and-geopolitics",
+      "title": "Institutions, policy, and geopolitics",
+      "representativeFollowedPodcasts": ["War on the Rocks", "Net Assessment", "The Ezra Klein Show", "The Dispatch Podcast", "Checks and Balance", "In Our Time", "The Good Fight", "This Week In Free Speech", "Wisdom of Crowds", "Call Me Back"],
+      "signal": "Institutions, policy constraints, governance, geopolitical risk, and public narratives"
+    }
+  ],
+  "privacy": {
+    "publicPodcastDetailsAllowed": true,
+    "publicPodcastDetailsScope": "Podcast show names, followed-feed details, and listening-history detail may be published when deliberately selected as public evidence. Account identifiers, authentication data, and unrelated private metadata remain excluded.",
+    "rawFeedUrlsPublished": false,
+    "rawListeningLogsPublished": false,
+    "privateIdentifiersPublished": false,
+    "categoryLevelListeningShareAvailable": false
+  }
+}

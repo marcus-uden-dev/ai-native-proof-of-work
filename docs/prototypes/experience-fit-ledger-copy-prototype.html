@@ -1,0 +1,118 @@
+<!doctype html>
+<!-- Prototype question: How should evidence terms appear in the Role-question ledger ingress?
+     Three copy treatments are available with ?variant=emphasis, ?variant=chips, or ?variant=anchors. -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Role-question ledger — copy treatments</title>
+    <style>
+      :root {
+        --paper: #f7f3eb; --ink: #171815; --muted: #626159; --gold: #9a601e;
+        --dark: #11120f; --dark-soft: #1b1d18; --dark-muted: #b8b1a4; --dark-line: #3d4038;
+        --mint: #a6cfbc; --amber: #d0a153; --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        --serif: Georgia, "Times New Roman", serif;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; padding-bottom: 6rem; background: var(--paper); color: var(--ink); font: 16px/1.55 system-ui, sans-serif; }
+      main { width: min(1120px, calc(100% - 32px)); margin: 0 auto; padding: 3.75rem 0; }
+      .eyebrow, .label { margin: 0; color: var(--gold); font: 700 .75rem/1.4 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+      h1, h2, h3 { font-family: var(--serif); font-weight: 500; }
+      h1 { max-width: 17ch; margin: .4rem 0 1rem; font-size: clamp(2.6rem, 6vw, 5rem); line-height: .98; }
+      .lede { max-width: 62ch; margin: 0; color: var(--muted); font-size: 1.06rem; }
+      .treatment { display: none; margin-top: 2.5rem; }
+      .treatment.is-active { display: block; }
+      .treatment-note { display: flex; justify-content: space-between; gap: 1rem; margin-bottom: .8rem; color: var(--muted); font-size: .88rem; }
+      .treatment-note strong { color: var(--ink); }
+      .panel { border: 1px solid var(--dark-line); background: var(--dark); color: #f5eee0; }
+      .panel .label { color: var(--amber); }
+      .intro { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(18rem, .85fr); gap: clamp(2rem, 5vw, 5rem); padding: clamp(1.5rem, 4vw, 3.5rem); border-bottom: 1px solid var(--dark-line); }
+      .intro h2 { max-width: 18ch; margin: .5rem 0 0; font-size: clamp(2rem, 4vw, 3.45rem); line-height: 1.03; }
+      .ingress { max-width: 38ch; margin: 0; align-self: end; color: var(--dark-muted); font-size: 1.02rem; }
+      .ingress strong { color: #f5eee0; font-weight: 650; }
+      .inline-chip { display: inline-flex; align-items: center; min-height: 1.8rem; margin: .06rem .08rem; padding: .18rem .45rem; border: 1px solid #6d917f; color: var(--mint); font: 700 .73rem/1.2 var(--mono); letter-spacing: .01em; vertical-align: baseline; white-space: nowrap; }
+      .inline-chip--amber { border-color: #886b3e; color: #dfb873; }
+      .anchor-list { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.15rem; padding-top: 1.15rem; border-top: 1px solid var(--dark-line); }
+      .anchor-list span { padding: .35rem .5rem; border: 1px solid var(--dark-line); color: var(--mint); font: 700 .7rem/1.3 var(--mono); }
+      .ledger-row { display: grid; grid-template-columns: 10rem minmax(0, 1fr) minmax(12rem, .7fr); gap: 1.5rem; padding: 1.35rem clamp(1.5rem, 4vw, 3.5rem); border-bottom: 1px solid var(--dark-line); }
+      .ledger-row:last-child { border: 0; }
+      .ledger-row h3 { margin: 0; font-size: 1.1rem; }
+      .ledger-row p { margin: 0; color: var(--dark-muted); }
+      .evidence-state { align-self: start; padding: .38rem .5rem; border: 1px solid #6d917f; color: var(--mint); font: 700 .7rem/1.3 var(--mono); letter-spacing: .04em; text-transform: uppercase; }
+      .switcher { position: fixed; z-index: 5; left: 50%; bottom: 1.25rem; display: grid; grid-template-columns: 3rem minmax(16rem, auto) 3rem; border: 1px solid #4c4a42; background: #171815; box-shadow: 0 12px 30px rgba(0,0,0,.24); transform: translateX(-50%); }
+      .switcher button { min-height: 3rem; border: 0; background: transparent; color: #f7f3eb; cursor: pointer; font: 700 1.1rem var(--mono); }
+      .switcher button:hover, .switcher button:focus-visible { background: #2a2b25; outline: 2px solid var(--amber); outline-offset: -2px; }
+      .switcher__label { display: grid; align-content: center; padding: .4rem 1rem; border-inline: 1px solid #4c4a42; color: #f7f3eb; text-align: center; font: 700 .73rem/1.35 var(--mono); letter-spacing: .04em; }
+      .switcher__label span { color: var(--amber); }
+      @media (max-width: 760px) {
+        main { width: min(100% - 20px, 680px); padding-top: 1.5rem; }
+        .intro, .ledger-row { grid-template-columns: 1fr; gap: 1rem; }
+        .switcher { width: calc(100% - 20px); grid-template-columns: 3rem 1fr 3rem; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">Prototype · Role-question ledger</p>
+      <h1>Three ways to make the evidence terms easier to scan.</h1>
+      <p class="lede">The reading order stays the same. Only the treatment of the evidence terms changes.</p>
+
+      <section class="treatment is-active" data-variant="emphasis">
+        <div class="treatment-note"><strong>01 — Editorial emphasis</strong><span>Recommended when the narrative should stay calm and read like prose.</span></div>
+        <section class="panel">
+          <header class="intro"><div><p class="label">Role narrative</p><h2>A product operator who makes AI capability useful in day-to-day work.</h2></div><p class="ingress">The public record gives the strongest support for <strong>product framing</strong>, <strong>workflow design</strong>, and <strong>AI-native execution</strong>. It documents the work through <strong>source-linked product decisions</strong>, <strong>reusable workflow controls</strong>, and an <strong>evidence trail</strong> that can be inspected.</p></header>
+          <article class="ledger-row"><h3>Can Marcus turn business needs into product inputs?</h3><p>Documented product framing, customer-journey work, and decision records show a repeatable way to turn context into a scoped next action.</p><span class="evidence-state">Direct evidence · 3 sources</span></article>
+          <article class="ledger-row"><h3>Can he improve the way work moves across teams?</h3><p>Workflow controls and operating patterns show structured improvement work. The exact team setting belongs in the conversation.</p><span class="evidence-state">Direct evidence · 3 sources</span></article>
+        </section>
+      </section>
+
+      <section class="treatment" data-variant="chips">
+        <div class="treatment-note"><strong>02 — Inline chips</strong><span>Highest scan speed, but more visual interruption in the sentence.</span></div>
+        <section class="panel">
+          <header class="intro"><div><p class="label">Role narrative</p><h2>A product operator who makes AI capability useful in day-to-day work.</h2></div><p class="ingress">The public record gives the strongest support for <span class="inline-chip">Product framing</span>, <span class="inline-chip">Workflow design</span>, and <span class="inline-chip">AI-native execution</span>. It documents the work through <span class="inline-chip inline-chip--amber">Source-linked product decisions</span>, <span class="inline-chip inline-chip--amber">Reusable workflow controls</span>, and an <span class="inline-chip inline-chip--amber">Evidence trail</span> that can be inspected.</p></header>
+          <article class="ledger-row"><h3>Can Marcus turn business needs into product inputs?</h3><p>Documented product framing, customer-journey work, and decision records show a repeatable way to turn context into a scoped next action.</p><span class="evidence-state">Direct evidence · 3 sources</span></article>
+          <article class="ledger-row"><h3>Can he improve the way work moves across teams?</h3><p>Workflow controls and operating patterns show structured improvement work. The exact team setting belongs in the conversation.</p><span class="evidence-state">Direct evidence · 3 sources</span></article>
+        </section>
+      </section>
+
+      <section class="treatment" data-variant="anchors">
+        <div class="treatment-note"><strong>03 — Evidence anchors</strong><span>Recommended when chips should support the prose rather than break it apart.</span></div>
+        <section class="panel">
+          <header class="intro"><div><p class="label">Role narrative</p><h2>A product operator who makes AI capability useful in day-to-day work.</h2></div><div><p class="ingress">The public record gives the strongest support for product framing, workflow design, and AI-native execution. It documents the work through source-linked product decisions, reusable workflow controls, and an evidence trail that can be inspected.</p><div class="anchor-list" aria-label="Evidence anchors"><span>Product framing</span><span>Workflow design</span><span>AI-native execution</span><span>Product decisions</span><span>Workflow controls</span><span>Evidence trail</span></div></div></header>
+          <article class="ledger-row"><h3>Can Marcus turn business needs into product inputs?</h3><p>Documented product framing, customer-journey work, and decision records show a repeatable way to turn context into a scoped next action.</p><span class="evidence-state">Direct evidence · 3 sources</span></article>
+          <article class="ledger-row"><h3>Can he improve the way work moves across teams?</h3><p>Workflow controls and operating patterns show structured improvement work. The exact team setting belongs in the conversation.</p><span class="evidence-state">Direct evidence · 3 sources</span></article>
+        </section>
+      </section>
+    </main>
+    <nav class="switcher" aria-label="Copy treatment variants">
+      <button type="button" data-previous aria-label="Previous copy treatment">←</button>
+      <div class="switcher__label"><span data-number>01</span> <span aria-hidden="true">·</span> <span data-name>Editorial emphasis</span></div>
+      <button type="button" data-next aria-label="Next copy treatment">→</button>
+    </nav>
+    <script>
+      const variants = [
+        { key: 'emphasis', number: '01', name: 'Editorial emphasis' },
+        { key: 'chips', number: '02', name: 'Inline chips' },
+        { key: 'anchors', number: '03', name: 'Evidence anchors' }
+      ];
+      const currentIndex = () => variants.findIndex(({ key }) => key === new URLSearchParams(location.search).get('variant'));
+      function setVariant(index) {
+        const selected = variants[(index + variants.length) % variants.length];
+        const url = new URL(location);
+        url.searchParams.set('variant', selected.key);
+        history.replaceState({}, '', url);
+        document.querySelectorAll('.treatment').forEach((treatment) => treatment.classList.toggle('is-active', treatment.dataset.variant === selected.key));
+        document.querySelector('[data-number]').textContent = selected.number;
+        document.querySelector('[data-name]').textContent = selected.name;
+      }
+      setVariant(Math.max(0, currentIndex()));
+      document.querySelector('[data-previous]').addEventListener('click', () => setVariant(currentIndex() - 1));
+      document.querySelector('[data-next]').addEventListener('click', () => setVariant(currentIndex() + 1));
+      window.addEventListener('keydown', (event) => {
+        if (['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName) || document.activeElement.isContentEditable) return;
+        if (event.key === 'ArrowLeft') setVariant(currentIndex() - 1);
+        if (event.key === 'ArrowRight') setVariant(currentIndex() + 1);
+      });
+    </script>
+  </body>
+</html>
