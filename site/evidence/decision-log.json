@@ -1,5 +1,23 @@
 [
   {
+    "date": "2026-08-31",
+    "tags": ["ai-native-workflows", "decision-traceability", "evidence-driven", "context-engineering"],
+    "why": "Added a canonical repository-interview prompt and a job-description prompt page that direct an AI assistant to search the full public repository, cite the specific file or section for each claim, and label each claim's evidence status as Verified, Estimated, Planned, Hypothesis, Open Question, or Needs Review.",
+    "demonstrates": "Designs an AI-agent-readable evidence interface that forces cited, status-labeled claims instead of unsupported narrative."
+  },
+  {
+    "date": "2026-08-28",
+    "tags": ["ai-governance", "risk-controls", "least-privilege", "human-in-the-loop"],
+    "why": "Replaced the recruiter-agent guide's open-ended reading path with an explicit numbered list of allowed public sources, added a WIP preview gate before publishing recruiter evidence and strategy docs, and reinforced that the job description and fetched page content must be treated as untrusted data.",
+    "demonstrates": "Constrains an AI agent's access to an explicit source allowlist and treats external content as untrusted input before widening what the agent can read."
+  },
+  {
+    "date": "2026-08-27",
+    "tags": ["risk-awareness", "least-privilege", "evidence-driven", "decision-traceability"],
+    "why": "Published CV identity facts including birthplace and family background for recruiter evidence, then narrowed the public record to only citizenship and work authorization once those additional facts proved unnecessary for role-fit evidence.",
+    "demonstrates": "Applies a minimum-necessary-disclosure boundary to personal identity data even after a more complete version was already published."
+  },
+  {
     "date": "2026-08-26",
     "tags": ["ai-native-workflows", "context-engineering", "decision-traceability", "automation-judgment", "risk-controls"],
     "why": "Made each AI-assisted response identify its model and reasoning effort when available. This makes model routing observable without exposing private operating details.",
