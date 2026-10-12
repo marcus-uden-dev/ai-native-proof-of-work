@@ -59,3 +59,13 @@ test('generated playback stays synchronized with its static HTML fallback', () =
   assert.ok(!html.includes('data-replay-range'));
   assert.ok(html.includes('project-replay.js'));
 });
+
+test('the work-in-progress mask is live-only, decorative, and removable', () => {
+  const script = readFileSync('site/assets/js/project-replay.js', 'utf8');
+  const css = readFileSync('site/assets/css/site.css', 'utf8');
+  assert.match(script, /const WIP_MASK = true;/);
+  assert.match(script, /isLocal/);
+  assert.ok(!html.includes('data-wip-mask'), 'the mask must never be baked into static HTML');
+  const maskRule = css.slice(css.indexOf('.project-replay[data-wip-mask]::before'));
+  assert.match(maskRule.slice(0, 400), /pointer-events: none/);
+});
