@@ -75,7 +75,7 @@ function renderFile(relativePath) {
   rendered = replaceRegion(rendered, 'DECISION_LOG_TAGS', renderTags(), relativePath);
   rendered = replaceRegion(rendered, 'DECISION_LOG_ENTRIES', renderEntries(), relativePath);
   if (relativePath === 'site/index.html') {
-    rendered = replaceRegion(rendered, 'HOW_I_THINK_DECISION_COUNT', `<strong>${entries.length}</strong><span>decision records</span>`, relativePath);
+    rendered = replaceRegion(rendered, 'HOW_I_THINK_FACTS', renderFacts(), relativePath);
   }
   if (check) {
     if (rendered !== original) throw new Error(`${relativePath} is out of date. Run npm run render:decision-log.`);
