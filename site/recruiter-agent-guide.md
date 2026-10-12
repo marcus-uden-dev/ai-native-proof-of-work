@@ -12,7 +12,7 @@ The public evidence manifest is the authority for Job-agent status and provenanc
 - Evidence date: `2026-09-02`
 - Implementation state: `Prototype under active development`
 - Public availability: `Static recruiter-safe preview only`
-- Maturity: `Work in progress`
+- Maturity: `Preparing for production testing`
 - Market validation: `Not market-validated`
 - Outcomes: `No measured market outcomes`
 - Privacy: `Release privacy review complete`

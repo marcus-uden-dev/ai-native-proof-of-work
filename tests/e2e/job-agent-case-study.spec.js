@@ -3,13 +3,20 @@ import { expect, test } from './fixtures.js';
 test('status and synthetic notices appear before the first proof frame', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('job decision');
-  await expect(page.getByText('Work in progress', { exact: true })).toBeVisible();
+  await expect(page.getByText('Preparing for production testing', { exact: true })).toBeVisible();
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
   await expect(page.getByText(/next test/i)).toHaveCount(0);
   await expect(page.getByText(/release-one company is invented/i)).toBeVisible();
   const order = await page.locator('#evidence-boundary, #proof-sequence').evaluateAll((nodes) => nodes.map((node) => node.id));
   expect(order).toEqual(['evidence-boundary', 'proof-sequence']);
+});
+
+test('interactive prototype appears before the proof sequence without an optional label', async ({ page }) => {
+  await page.goto('/proof/job-agent/');
+  const order = await page.locator('main > .prototype-invitation, main > #proof-sequence').evaluateAll((sections) => sections.map((section) => section.id || section.className));
+  expect(order).toEqual(['prototype-invitation', 'proof-sequence']);
+  await expect(page.getByText('Optional interactive depth', { exact: true })).toHaveCount(0);
 });
 
 test('90-second summary explains the product and the validation limit', async ({ page }) => {
@@ -46,7 +53,7 @@ test('research includes the required decision signals and outputs', async ({ pag
 
 test('current, replayed, and archived proof frames use reviewed synthetic prototype images', async ({ page }) => {
   await page.goto('/proof/job-agent/#proof-sequence');
-  const proofImages = page.locator('#proof-sequence .visual-proof-grid img');
+  const proofImages = page.locator('#proof-sequence .proof-sequence__visual img');
   await expect(proofImages).toHaveCount(3);
   const staticStoryImages = page.locator('#project-replay .project-story__chapters .project-story__visual img');
   await expect(staticStoryImages).toHaveCount(3);
