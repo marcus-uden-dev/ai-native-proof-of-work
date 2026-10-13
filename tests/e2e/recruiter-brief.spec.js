@@ -51,6 +51,7 @@ test('CV precedes the interview action and email has visible and copyable fallba
   await page.goto('/#contact');
   const actions = page.locator('.contact-panel__actions');
   await expect(actions.getByRole('link', { name: 'Download CV' })).toHaveAttribute('download', '');
+  await expect(actions.getByRole('link', { name: 'Read CV facts' })).toHaveClass(/button--secondary/);
   await expect(actions.getByRole('link', { name: 'Request an interview' })).toHaveAttribute('href', /^mailto:/);
   const labels = await actions.locator('a, button').allTextContents();
   expect(labels.indexOf('Download CV')).toBeLessThan(labels.indexOf('Request an interview'));

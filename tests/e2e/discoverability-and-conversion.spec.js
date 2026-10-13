@@ -62,7 +62,9 @@ test('CV and interview actions use the approved public assets and email', async 
   const facts = await request.get('/evidence/cv-facts.json');
   expect(facts.ok()).toBeTruthy();
   expect((await facts.json()).identity.citizenshipAndWorkAuthorization).toBe('Swedish and U.S. citizen, eligible to work in Sweden.');
-  await expect(page.getByRole('link', { name: 'Read CV facts' }).first()).toHaveAttribute('href', 'cv/');
+  const cvFactsAction = page.getByRole('link', { name: 'Read CV facts' }).first();
+  await expect(cvFactsAction).toHaveAttribute('href', 'cv/');
+  await expect(cvFactsAction).toHaveClass(/button--secondary/);
 });
 
 test('project-subpath navigation keeps relative assets and downloads valid', async ({ page }) => {
