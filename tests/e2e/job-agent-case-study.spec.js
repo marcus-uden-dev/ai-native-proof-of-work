@@ -66,7 +66,7 @@ test('research includes the required decision signals and outputs', async ({ pag
 test('current, replayed, and archived proof frames use reviewed synthetic prototype images', async ({ page }) => {
   await page.goto('/proof/job-agent/#proof-sequence');
   const proofImages = page.locator('#proof-sequence .proof-sequence__visual img');
-  await expect(proofImages).toHaveCount(3);
+  await expect(proofImages).toHaveCount(4);
   const staticStoryImages = page.locator('#project-replay .project-story__chapters .project-story__visual img');
   await expect(staticStoryImages).toHaveCount(3);
   await expect(page.locator('#project-replay [data-story-stage] .project-story__visual img')).toHaveCount(1);

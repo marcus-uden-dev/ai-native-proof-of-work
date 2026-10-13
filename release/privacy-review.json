@@ -56,6 +56,14 @@
       "note": "Captured from the current Job-agent frontend on 2026-08-31 with English UI and mocked synthetic data. Visually checked for local paths, private identifiers, credentials, and realistic private data."
     },
     {
+      "path": "site/assets/images/job-agent/v0.9-public-proof/current-company-research.png",
+      "sha256": "7a5aef01796c9697c18cf6d0aa61bfb1099ac8546c4d2d6d87a909f57644e905",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Current public-proof copy of the reviewed synthetic company-research frame. It was visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
       "path": "site/assets/images/job-agent/v0.9-public-proof/current-find-jobs.png",
       "sha256": "0af057e9ae0dbe14f2d1e6e32084cf435c215d27d85a0cf2d5d1cfaa8e80d078",
       "decision": "approved",
