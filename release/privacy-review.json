@@ -4,7 +4,7 @@
   "reviewStatus": "complete",
   "reviewedAt": "2026-09-08",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "3c16f90198e781b572a189c498e7a4cb7dfdfa9b",
+  "candidateCommit": "0b9d48d0b28342ace05564fb643eb1e9702189cc",
   "scope": "Full release-candidate binary set: current 0.9 and historical synthetic proof frames, sanitized English CV, professional social card, and one aggregate personal listening-statistics screenshot. The 2026-09-08 saved smoke-test and role-provider source additions changed no reviewed binary artifacts; their approved hashes remain current.",
   "reviewedFiles": [
     {
@@ -54,6 +54,14 @@
       "dataClass": "synthetic demo",
       "containsPersonalData": false,
       "note": "Captured from the current Job-agent frontend on 2026-08-31 with English UI and mocked synthetic data. Visually checked for local paths, private identifiers, credentials, and realistic private data."
+    },
+    {
+      "path": "site/assets/images/job-agent/v0.9-public-proof/current-company-research.png",
+      "sha256": "7a5aef01796c9697c18cf6d0aa61bfb1099ac8546c4d2d6d87a909f57644e905",
+      "decision": "approved",
+      "dataClass": "synthetic demo",
+      "containsPersonalData": false,
+      "note": "Current public-proof copy of the reviewed synthetic company-research frame. It was visually checked for local paths, private identifiers, credentials, and realistic private data."
     },
     {
       "path": "site/assets/images/job-agent/v0.9-public-proof/current-find-jobs.png",
