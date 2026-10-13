@@ -41,7 +41,9 @@ test('claim-to-evidence links target three named public anchors', async ({ page 
     ['See how the AI workflow is governed', 'proof/job-agent/#evidence-boundary']
   ];
   for (const [name, href] of expected) {
-    await expect(page.getByRole('link', { name })).toHaveAttribute('href', href);
+    const link = page.getByRole('link', { name });
+    await expect(link).toHaveAttribute('href', href);
+    await expect(link).toHaveClass(/button--secondary/);
   }
   await expect(page.locator('[data-role-chip]')).toHaveCount(0);
 });

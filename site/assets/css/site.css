@@ -598,6 +598,15 @@ h3 {
   font-weight: 720;
 }
 
+.claim-card > .button {
+  width: 100%;
+  color: var(--ink);
+}
+
+.proof-card__action {
+  align-self: start;
+}
+
 .proof-card {
   display: grid;
   border: 1px solid var(--line);
