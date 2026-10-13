@@ -45,8 +45,8 @@ test('homepage generates a copyable repository interview prompt without embeddin
   expect(clipboard).toContain('What evidence is there of product judgment?');
   expect(clipboard).toContain('Do not use private paths, raw sessions, secrets, or unsupported claims.');
   await expect(page.getByRole('link', { name: 'Proof repository' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
-  await expect(page.getByText('The embedded review sends the text below to its review service')).toBeVisible();
-  await expect(page.getByText('Want to run the full assessment in ChatGPT or Claude?')).toBeVisible();
+  await expect(page.getByText('To inspect the public review prompt, or run the assessment in your own model such as Claude or Codex, open the standalone prompt below.')).toBeVisible();
+  await expect(page.getByText('Review the public prompt or run the assessment in your own model.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Open the standalone job-description prompt' })).toHaveAttribute('href', 'job-description-prompt.html');
   const promptPage = await context.newPage();
   const promptResponse = await promptPage.goto('/job-description-prompt.html');
