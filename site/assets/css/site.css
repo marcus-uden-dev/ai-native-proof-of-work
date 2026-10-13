@@ -289,6 +289,12 @@ h3 {
   color: var(--ink);
 }
 
+.button--compact {
+  min-height: 2.25rem;
+  align-self: center;
+  padding: 0.45rem 0.75rem;
+}
+
 .button--quiet {
   gap: 0.4rem;
   border-color: transparent;
