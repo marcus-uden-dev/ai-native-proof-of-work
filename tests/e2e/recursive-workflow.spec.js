@@ -7,6 +7,7 @@ test('homepage selected proof shows the lead case and supporting profile signals
   await expect(cards.nth(0).getByText('Lead proof', { exact: true })).toBeVisible();
   await expect(cards.nth(1).getByText('Supporting proof', { exact: true })).toBeVisible();
   await expect(cards.nth(1)).toContainText('Recursive workflow system');
+  await expect(cards.nth(1)).not.toContainText(/autoresearch/i);
   await expect(cards.nth(1).getByRole('link', { name: /Open the recursive workflow proof/ })).toHaveAttribute('href', 'proof/recursive-workflow/');
   await expect(cards.nth(2).getByText('Supporting profile signal', { exact: true })).toBeVisible();
   await expect(cards.nth(2)).toContainText('Information diet');
