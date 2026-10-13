@@ -19,6 +19,18 @@ test('interactive prototype appears before the proof sequence without an optiona
   await expect(page.getByText('Optional interactive depth', { exact: true })).toHaveCount(0);
 });
 
+test('company research is the second decision-support proof card', async ({ page }) => {
+  await page.goto('/proof/job-agent/#proof-sequence');
+  const cards = page.locator('#proof-sequence .proof-sequence > li');
+  await expect(cards).toHaveCount(4);
+  await expect(cards.nth(1)).toContainText('02');
+  await expect(cards.nth(1)).toContainText('Decision support');
+  await expect(cards.nth(1)).toContainText('Is this company and role worth my time?');
+  await expect(cards.nth(2)).toContainText('03');
+  await expect(cards.nth(3)).toContainText('04');
+  await expect(page.getByText('Primary evidence · Company research', { exact: true })).toHaveCount(0);
+});
+
 test('90-second summary explains the product and the validation limit', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   const hero = page.locator('.case-hero');
@@ -145,7 +157,7 @@ test('the guided reading order remains stable and printable', async ({ page }) =
   const ids = await page.locator('main > section[id]').evaluateAll((sections) => sections.map((section) => section.id));
   expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'project-replay', 'company-research', 'decisions', 'limitations', 'contact']);
   await page.emulateMedia({ media: 'print' });
-  await expect(page.getByRole('heading', { level: 2, name: 'Is this company and role worth my time?' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Evidence and decision use.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What this evidence does not prove.' })).toBeVisible();
 });
 
