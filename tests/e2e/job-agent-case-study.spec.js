@@ -4,6 +4,7 @@ test('status and synthetic notices appear before the first proof frame', async (
   await page.goto('/proof/job-agent/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('job decision');
   await expect(page.getByText('Preparing for production testing', { exact: true })).toBeVisible();
+  await expect(page.getByText(/backend implementation, production hardening, and automated testing/i)).toBeVisible();
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
   await expect(page.getByText(/next test/i)).toHaveCount(0);
