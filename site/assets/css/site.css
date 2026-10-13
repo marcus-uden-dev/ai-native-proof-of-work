@@ -1948,7 +1948,7 @@ h3 {
   display: grid;
   margin: 0;
   padding: 0;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   list-style: none;
 }
 
@@ -1960,8 +1960,12 @@ h3 {
   grid-template-rows: auto 1fr;
 }
 
-.proof-sequence li + li {
+.proof-sequence li:nth-child(even) {
   border-left: 0;
+}
+
+.proof-sequence li:nth-child(n + 3) {
+  border-top: 0;
 }
 
 .proof-sequence__number {
@@ -1990,6 +1994,17 @@ h3 {
   padding-top: 1rem;
   border-top: 1px solid var(--line);
   font-size: 0.9rem;
+}
+
+.proof-sequence__detail-link {
+  display: inline-flex;
+  min-height: 44px;
+  margin-top: 1rem;
+  align-items: center;
+  color: var(--teal);
+  font-weight: 720;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
 }
 
 .proof-sequence__visual {
