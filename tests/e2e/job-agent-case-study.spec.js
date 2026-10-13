@@ -156,7 +156,9 @@ test('The Job-agent story is a vertical, keyboard-reachable chronological trail 
 test('the guided reading order remains stable and printable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   const ids = await page.locator('main > section[id]').evaluateAll((sections) => sections.map((section) => section.id));
-  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'project-replay', 'company-research', 'decisions', 'limitations', 'contact']);
+  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'project-replay', 'company-research', 'limitations', 'contact']);
+  await expect(page.locator('#company-research .decision-grid--research article')).toHaveCount(3);
+  await expect(page.locator('#company-research .decision-grid--research > article > span')).toHaveCount(0);
   await page.emulateMedia({ media: 'print' });
   await expect(page.getByRole('heading', { level: 2, name: 'Evidence and decision use.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What this evidence does not prove.' })).toBeVisible();
