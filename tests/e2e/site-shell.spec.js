@@ -75,6 +75,9 @@ test('CV keeps the human-readable source first and presents proof routes as matc
   const interviewAction = page.getByRole('link', { name: 'Interview my work' }).last();
   await expect(interviewAction).toHaveAttribute('href', '../#ai-review');
   await expect(interviewAction).toHaveClass(/button--primary/);
+  const downloadAction = page.getByRole('link', { name: 'Download English CV' }).first();
+  const [downloadBox, interviewBox] = await Promise.all([downloadAction.boundingBox(), interviewAction.boundingBox()]);
+  expect(interviewBox?.y).toBeGreaterThan((downloadBox?.y ?? 0) + (downloadBox?.height ?? 0));
 
   const actions = page.locator('#sources .review-panel__actions');
   await expect(actions.getByRole('link', { name: 'Open information diet evidence' })).toHaveClass(/button--secondary/);
