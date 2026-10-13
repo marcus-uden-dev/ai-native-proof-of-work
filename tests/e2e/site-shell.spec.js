@@ -69,9 +69,10 @@ test('CV keeps the human-readable source first and presents proof routes as matc
   await page.goto('/cv/');
 
   await expect(page.getByRole('heading', { name: 'Start with the English CV for career-fit claims.' })).toBeVisible();
-  await expect(page.getByText('For deeper project evidence, decision records, and supporting context, use the public proof-of-work repository.')).toBeVisible();
+  await expect(page.getByText('For deeper detail or a role-specific question, ask the digital twin in the Repository Interview.')).toBeVisible();
   await expect(page.getByText(/JSON/i)).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Browse proof-of-work repo' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
+  await expect(page.getByRole('link', { name: 'Ask the digital twin' })).toHaveAttribute('href', '../#ai-review');
 
   const actions = page.locator('#sources .review-panel__actions');
   await expect(actions.getByRole('link', { name: 'Open information diet evidence' })).toHaveClass(/button--secondary/);
