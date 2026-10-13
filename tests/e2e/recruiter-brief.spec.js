@@ -53,10 +53,14 @@ test('CV precedes the interview action and email has visible and copyable fallba
   await expect(actions.getByRole('link', { name: 'Download CV' })).toHaveAttribute('download', '');
   await expect(actions.getByRole('link', { name: 'Read CV facts' })).toHaveClass(/button--secondary/);
   await expect(actions.getByRole('link', { name: 'Request an interview' })).toHaveAttribute('href', /^mailto:/);
+  const copyEmail = actions.getByRole('button', { name: 'Copy email' });
+  await expect(copyEmail).toHaveClass(/button--compact/);
+  const [actionsBox, copyEmailBox] = await Promise.all([actions.boundingBox(), copyEmail.boundingBox()]);
+  expect(copyEmailBox?.width).toBeLessThan(actionsBox?.width ?? Number.POSITIVE_INFINITY);
   const labels = await actions.locator('a, button').allTextContents();
   expect(labels.indexOf('Download CV')).toBeLessThan(labels.indexOf('Request an interview'));
   await expect(page.getByRole('link', { name: 'marcus.uden.dev@gmail.com' }).first()).toBeVisible();
-  await actions.getByRole('button', { name: 'Copy email' }).click();
+  await copyEmail.click();
   await expect(actions.locator('[data-copy-status]')).toContainText('succeeded');
   expect(await page.evaluate(() => navigator.clipboard.readText())).toBe('marcus.uden.dev@gmail.com');
 });
