@@ -65,6 +65,19 @@ test('homepage masthead keeps all first-level routes in one navigation group', a
   await expect(portfolioLink).toHaveCSS('outline-style', 'solid');
 });
 
+test('CV keeps the human-readable source first and presents proof routes as matching cards', async ({ page }) => {
+  await page.goto('/cv/');
+
+  await expect(page.getByRole('heading', { name: 'Start with the English CV for career-fit claims.' })).toBeVisible();
+  await expect(page.getByText('For deeper project evidence, decision records, and supporting context, use the public proof-of-work repository.')).toBeVisible();
+  await expect(page.getByText(/JSON/i)).toHaveCount(0);
+  await expect(page.getByRole('link', { name: 'Browse proof-of-work repo' })).toHaveAttribute('href', 'https://github.com/marcus-uden-dev/ai-native-proof-of-work');
+
+  const actions = page.locator('#sources .review-panel__actions');
+  await expect(actions.getByRole('link', { name: 'Open information diet evidence' })).toHaveClass(/button--secondary/);
+  await expect(actions.getByRole('link', { name: 'Open Job-agent proof' })).toHaveClass(/button--secondary/);
+});
+
 test('print mode keeps evidence and hides navigation controls', async ({ page }) => {
   await page.goto('/');
   await page.emulateMedia({ media: 'print' });
