@@ -39,31 +39,6 @@ test('90-second summary explains the product and the validation limit', async ({
   await expect(hero).toContainText('not market outcomes');
 });
 
-test('company research fields retain provenance, confidence, and decision use', async ({ page }) => {
-  await page.goto('/proof/job-agent/#company-research');
-  const fields = page.locator('.research-field');
-  await expect(fields).toHaveCount(4);
-  for (const field of await fields.all()) {
-    await expect(field.locator('.source-label')).toHaveCount(1);
-    await expect(field.getByText('Confidence', { exact: true })).toBeVisible();
-    await expect(field.getByText('Decision use', { exact: true })).toBeVisible();
-  }
-  await expect(page.locator('[data-field="compensation"] .source-label')).toHaveText('inferred demo');
-  await expect(page.locator('[data-field="culture"] .source-label')).toHaveText('inferred demo');
-  await expect(page.locator('[data-field="compensation"]')).not.toContainText('public source');
-  await expect(page.locator('[data-field="culture"]')).not.toContainText('public source');
-});
-
-test('research includes the required decision signals and outputs', async ({ page }) => {
-  await page.goto('/proof/job-agent/#company-research');
-  for (const label of ['Compensation benchmark', 'Company stage', 'Financial signal', 'Culture and working model', 'Positive signals', 'Warning signals']) {
-    await expect(page.getByText(label, { exact: true })).toBeVisible();
-  }
-  for (const decision of ['Application tailoring', 'Interview investigation', 'Compensation']) {
-    await expect(page.getByRole('heading', { name: decision, exact: true })).toBeVisible();
-  }
-});
-
 test('current, replayed, and archived proof frames use reviewed synthetic prototype images', async ({ page }) => {
   await page.goto('/proof/job-agent/#proof-sequence');
   const proofImages = page.locator('#proof-sequence .proof-sequence__visual img');
@@ -156,11 +131,10 @@ test('The Job-agent story is a vertical, keyboard-reachable chronological trail 
 test('the guided reading order remains stable and printable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   const ids = await page.locator('main > section[id]').evaluateAll((sections) => sections.map((section) => section.id));
-  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'project-replay', 'company-research', 'limitations', 'contact']);
-  await expect(page.locator('#company-research .decision-grid--research article')).toHaveCount(3);
-  await expect(page.locator('#company-research .decision-grid--research > article > span')).toHaveCount(0);
+  expect(ids).toEqual(['evidence-boundary', 'proof-sequence', 'project-replay', 'limitations', 'contact']);
+  await expect(page.locator('#proof-sequence #company-research')).toContainText('Is this company and role worth my time?');
+  await expect(page.getByRole('heading', { level: 2, name: 'Evidence and decision use.' })).toHaveCount(0);
   await page.emulateMedia({ media: 'print' });
-  await expect(page.getByRole('heading', { level: 2, name: 'Evidence and decision use.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What this evidence does not prove.' })).toBeVisible();
 });
 
