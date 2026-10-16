@@ -66,6 +66,18 @@ test('homepage masthead keeps all first-level routes in one navigation group', a
   await expect(portfolioLink).toHaveCSS('outline-style', 'solid');
 });
 
+test('portfolio evidence chips reserve consistent space before their headings', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/#selected-proof');
+
+  const labels = page.locator('.proof-card .label-row');
+  expect(await labels.count()).toBe(3);
+
+  for (let index = 0; index < await labels.count(); index += 1) {
+    await expect(labels.nth(index)).toHaveCSS('margin-bottom', '16px');
+  }
+});
+
 test('CV keeps the human-readable source first and presents proof routes as matching cards', async ({ page }) => {
   await page.goto('/cv/');
 
