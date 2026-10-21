@@ -134,3 +134,50 @@ test('project subpath and the recovery page resolve', async ({ page }) => {
   await expect(page.getByRole('heading', { name: 'This page is not part of the current public release.' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Return to the hiring brief' })).toBeVisible();
 });
+
+
+test('editorial masthead is centered and links to home across main routes', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  for (const route of ['/', '/cv/', '/proof/job-agent/', '/proof/recursive-workflow/']) {
+    await page.goto(route);
+    const masthead = page.locator('.masthead');
+    await expect(masthead.locator('.wordmark__name')).toHaveText('Marcus Udén');
+    await expect(masthead.locator('.wordmark__descriptor')).toHaveText('Proof of work');
+    await expect(masthead.locator('.wordmark__mark')).toHaveCount(0);
+    await expect(masthead.getByRole('link', { name: 'Marcus Udén, home' })).toBeVisible();
+    const mainNav = masthead.locator('.masthead__nav');
+    const shell = masthead.locator('.masthead__inner');
+    const [navBox, shellBox] = await Promise.all([mainNav.boundingBox(), shell.boundingBox()]);
+    expect(Math.abs(navBox.x + navBox.width / 2 - (shellBox.x + shellBox.width / 2))).toBeLessThanOrEqual(2);
+    await expect(masthead.locator('.masthead__mobile')).toBeHidden();
+  }
+});
+
+test('mobile editorial masthead opens a native navigation menu without JavaScript', async ({ browser }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 375, height: 900 } });
+  const page = await context.newPage();
+  for (const route of ['/', '/cv/', '/proof/job-agent/', '/proof/recursive-workflow/']) {
+    await page.goto(route);
+    const masthead = page.locator('.masthead');
+    await expect(masthead.locator('.masthead__nav')).toBeHidden();
+    const menu = masthead.locator('.masthead__mobile');
+    const trigger = menu.locator('summary');
+    const mobileNavigation = menu.getByRole('navigation');
+    await expect(trigger).toBeVisible();
+    await expect(mobileNavigation).toBeHidden();
+    await trigger.focus();
+    await page.keyboard.press('Enter');
+    await expect(menu).toHaveAttribute('open', '');
+    await expect(mobileNavigation.getByRole('link').first()).toBeVisible();
+    const viewport = await page.evaluate(() => ({
+      scrollWidth: document.documentElement.scrollWidth,
+      clientWidth: document.documentElement.clientWidth
+    }));
+    expect(viewport.scrollWidth).toBeLessThanOrEqual(viewport.clientWidth);
+    await page.keyboard.press('Escape');
+    // Native details does not require Escape-to-close; click the summary to collapse.
+    await trigger.click();
+    await expect(mobileNavigation).toBeHidden();
+  }
+  await context.close();
+});
