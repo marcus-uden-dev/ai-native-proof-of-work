@@ -129,6 +129,35 @@ h3 {
   transform: translateY(0);
 }
 
+/* Editorial WIP notice: informational, non-blocking, and subordinate to the hero. */
+.preview-notice {
+  border-bottom: 1px solid var(--line);
+  background: var(--gold-soft);
+  color: var(--ink);
+}
+
+.preview-notice__inner {
+  padding-block: 0.65rem;
+}
+
+.preview-notice p {
+  max-width: 70rem;
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.preview-notice strong {
+  margin-right: 0.35rem;
+  font-weight: 750;
+}
+
+@media print {
+  .preview-notice {
+    display: none;
+  }
+}
+
 .masthead {
   border-bottom: 1px solid var(--line);
 }

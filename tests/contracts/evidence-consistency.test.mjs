@@ -140,3 +140,16 @@ test('information diet evidence is public, discoverable, and bounded', () => {
   assert.match(cvFactsPage, /Read the information diet evidence/);
   assert.match(homepage, /Open the information diet evidence/);
 });
+
+test('the homepage has one readable non-blocking WIP notice before the masthead', () => {
+  const html = readFileSync('site/index.html', 'utf8');
+  assert.equal((html.match(/class="preview-notice"/g) ?? []).length, 1);
+  const skip = html.indexOf('class="skip-link"');
+  const notice = html.indexOf('class="preview-notice"');
+  const masthead = html.indexOf('class="masthead"');
+  assert.ok(skip >= 0 && skip < notice && notice < masthead);
+  assert.match(html, /<strong>Work in progress\.<\/strong>/);
+  assert.match(html, /Some interactive features and evidence views are not yet complete\./);
+  assert.match(html, /role="note" aria-label="Portfolio status"/);
+  assert.doesNotMatch(html.slice(notice, masthead), /<script|<button|<a\b/i);
+});
