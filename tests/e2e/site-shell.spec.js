@@ -174,8 +174,7 @@ test('mobile editorial masthead opens a native navigation menu without JavaScrip
       clientWidth: document.documentElement.clientWidth
     }));
     expect(viewport.scrollWidth).toBeLessThanOrEqual(viewport.clientWidth);
-    await page.keyboard.press('Escape');
-    // Native details does not require Escape-to-close; click the summary to collapse.
+    // Collapse via the native summary control.
     await trigger.click();
     await expect(mobileNavigation).toBeHidden();
   }
