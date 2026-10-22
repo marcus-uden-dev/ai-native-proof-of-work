@@ -27,19 +27,21 @@ test('homepage states the system loop beneath the intact product loop', async ({
   await expect(method).toContainText(/human review controls every promotion/i);
 });
 
-test('the supporting-proof page states both loops, Autoresearch, daily automation, and the human gate', async ({ page }) => {
+test('the supporting-proof page states both loops, Automated research, daily automation, and the human gate', async ({ page }) => {
   const response = await page.goto('/proof/recursive-workflow/');
   expect(response?.status()).toBe(200);
   await expect(page.getByRole('heading', { level: 1 })).toHaveCount(1);
   await expect(page.getByText('Discover → Define → Build → Improve', { exact: true })).toBeVisible();
   await expect(page.getByText('Execute → Review → Detect pattern → Human gate → Promote → Next cycle', { exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Broad discovery filtered into decision-relevant evidence.' })).toBeVisible();
+  await expect(page.locator('#autoresearch .kicker')).toHaveText('Automated research');
+  await expect(page.locator('#autoresearch')).not.toContainText('Autoresearch');
   await expect(page.getByText(/scheduled, semi-automated research loop/)).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Health, drift, and opportunities become bounded next actions.' })).toBeVisible();
   await expect(page.getByText(/No important instruction is updated without human review/)).toBeVisible();
 });
 
-test('the Autoresearch section names the actual quality-filter criteria', async ({ page }) => {
+test('the Automated research section names the actual quality-filter criteria', async ({ page }) => {
   await page.goto('/proof/recursive-workflow/');
   const autoresearch = page.locator('#autoresearch');
   for (const criterion of ['primary source', 'reproducible', 'practical', 'relevant', 'low-hype']) {
