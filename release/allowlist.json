@@ -180,6 +180,7 @@
     "workers/recruiter-review/src/validation.js",
     "workers/recruiter-review/migrations/0001_recruiter_enquiries.sql",
     "workers/recruiter-review/test/recruiter-review.test.mjs",
-    "workers/recruiter-review/wrangler.jsonc"
+    "workers/recruiter-review/wrangler.jsonc",
+    "docs/reports/2026-10-22-agent-harness-lifecycle-implementation.md"
   ]
 }
