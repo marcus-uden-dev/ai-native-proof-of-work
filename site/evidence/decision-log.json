@@ -1,5 +1,149 @@
 [
   {
+    "date": "2026-10-22",
+    "project": "Personal AI Harness",
+    "status": "Planned",
+    "type": "Safety architecture",
+    "title": "Close communication-policy gaps before any deployment pilot",
+    "tags": [
+      "risk-controls",
+      "ai-governance",
+      "validation"
+    ],
+    "why": "A gap audit found missing coverage for a full runtime inventory, a prompt-injection boundary, data-egress rules, a readiness gate, multi-run evaluation, nudging scope and model fallback. It is saved as a proposed plan with six new evaluation cases.",
+    "demonstrates": "Shows that policy rollout waits for explicit gaps to be closed and tested instead of being deployed on intent."
+  },
+  {
+    "date": "2026-10-17",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Quality architecture",
+    "title": "Merge only unique work in a cross-repository branch sweep",
+    "tags": [
+      "risk-controls",
+      "decision-traceability",
+      "quality-gate",
+      "automation-judgment"
+    ],
+    "why": "Merged branches with unique work through the merge gate, deleted branches already on the default branch after recording their tips, and held deploying product repositories, the public site and third-party forks for explicit approval.",
+    "demonstrates": "Shows judgment about what to automate and what needs a human decision, with every deletion recoverable."
+  },
+  {
+    "date": "2026-10-17",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Safety architecture",
+    "title": "Untrack junction-backed paths before moving live configuration",
+    "tags": [
+      "risk-awareness",
+      "risk-controls",
+      "security-by-design"
+    ],
+    "why": "Removed 1,199 tracked files under junction-backed folders from Git tracking before branch moves, so checkouts could not write or delete shared skills through the junction. A later mislabeled transfer was refused by Git and the lesson was recorded.",
+    "demonstrates": "Shows anticipation of indirect failure modes in live tooling and a recorded recovery path."
+  },
+  {
+    "date": "2026-10-17",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Technical decision",
+    "title": "Measure model compaction limits instead of assuming them",
+    "tags": [
+      "evidence-driven",
+      "context-engineering",
+      "technical-judgment"
+    ],
+    "why": "Measured that current models default to a 1M-token window and would compact near 967k tokens, then set per-model limits so compaction happens near 167k, or near 147k for the most expensive model. Verified with a live automatic compaction.",
+    "demonstrates": "Shows cost and context-quality judgment grounded in measurement."
+  },
+  {
+    "date": "2026-10-17",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "AI workflow architecture",
+    "title": "Anchor the session goal silently and check drift with a baseline evaluation",
+    "tags": [
+      "validation",
+      "human-in-the-loop",
+      "context-engineering",
+      "evidence-driven"
+    ],
+    "why": "A baseline evaluation showed no nudges during sustained drift. A cheap event-based check after three off-goal requests, once per deviation, then passed sustained-drift and long-investigation cases (2 of 2 each). The limits of the small sample are stated.",
+    "demonstrates": "Shows evaluation before and after a behavior change, and honest reporting of sample size."
+  },
+  {
+    "date": "2026-10-17",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "AI workflow architecture",
+    "title": "Let a controller own integration while child agents only implement",
+    "tags": [
+      "workflow-automation",
+      "governance-architecture",
+      "automation-reliability",
+      "risk-controls"
+    ],
+    "why": "A local task ledger owns approvals, a one-live-dispatch lease, preflight checks, verification and checkpoint commits. Publishing and merging need explicit grants and run through the merge gate in dependency order. Verified with real runs of both agents and a real two-PR sandbox run.",
+    "demonstrates": "Shows separation of authority between workers and the host, with verified recovery from an interrupted run."
+  },
+  {
+    "date": "2026-10-16",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Quality architecture",
+    "title": "Write a durable checkpoint before every context compaction",
+    "tags": [
+      "memory-hygiene",
+      "automation-reliability",
+      "context-engineering"
+    ],
+    "why": "A pre-compaction hook saves git state, recent requests and the session goal, and a session-start hook injects a reconcile step after compaction or resume. Verified with manual and automatic compactions.",
+    "demonstrates": "Shows that long agent sessions keep a recoverable state instead of relying on summaries."
+  },
+  {
+    "date": "2026-10-16",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Governance architecture",
+    "title": "Generate shared agent rules from one source",
+    "tags": [
+      "reusable-systems",
+      "governance-architecture",
+      "traceability"
+    ],
+    "why": "Shared rules for both agents are written from one source file into each entrypoint, and a check fails on drift. Runtime-specific rules stay outside the shared block.",
+    "demonstrates": "Shows removal of duplicated instructions that had drifted apart."
+  },
+  {
+    "date": "2026-10-15",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Safety architecture",
+    "title": "Enforce the merge boundary in a hook, not only in instructions",
+    "tags": [
+      "risk-controls",
+      "least-privilege",
+      "quality-gate",
+      "ai-governance"
+    ],
+    "why": "The hosting plan offers no branch protection, so a shared pre-tool hook blocks merges unless the PR is ready, clean, checked or carries a Verification section, and has no open review threads. It fails closed. In live use it blocked a draft PR and two PRs with open review threads.",
+    "demonstrates": "Shows a control that turns a written rule into an enforced boundary with tests."
+  },
+  {
+    "date": "2026-10-15",
+    "project": "Personal AI Harness",
+    "status": "Verified",
+    "type": "Evidence workflow architecture",
+    "title": "Audit the agent harness read-only before changing it",
+    "tags": [
+      "problem-framing",
+      "evidence-driven",
+      "decision-traceability"
+    ],
+    "why": "A read-only audit against 16 pre-approved lifecycle decisions produced an inventory with hashes, 13 contradictions, a risk-ranked gap list and acceptance tests. Each decision then got one owner and one test in a single decision record.",
+    "demonstrates": "Shows evidence-first change management for agent tooling."
+  },
+  {
     "date": "2026-10-04",
     "project": "Job-agent",
     "status": "Verified",
