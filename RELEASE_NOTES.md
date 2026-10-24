@@ -1,5 +1,96 @@
 # Release Notes
 
+## 2026-10-24 — Recruiter Evidence Review: Decision History and Review Tooling
+
+**Evidence state:** Public site and tooling changes merged to `main` between
+2026-09-27 and 2026-10-21 and checked by the repository's contract and release
+tests (internal evidence). This is a portfolio presentation and tooling update,
+not a product release and not market-validated.
+
+### Problem
+
+A reviewer who opens the portfolio has little time. The public decision log held
+few entries, so the story behind the work was hard to follow. Reviewing a single
+role against the evidence meant reading several pages. The release checks also
+failed on shallow CI checkouts, which blocked evidence updates.
+
+### Decision
+
+Make the evidence easier to scan and easier to audit, without changing what the
+evidence claims.
+
+- Rationale beyond making the review path shorter: Needs Review.
+- Alternatives considered: Unknown.
+
+### What changed
+
+**For reviewers**
+
+- **Role review summary.** The role review page now opens with a short executive
+  scan, so a reviewer sees the fit summary before the detail.
+- **Role narrative ledger.** Each role requirement links to the evidence that
+  supports it, in one ledger instead of several pages.
+- **Clearer review prompts.** The prompts that help a reviewer check a role
+  against the evidence now state what they cover, and the review mode controls
+  work again after a layout regression.
+- **Project Replay.** The replay view shows a clearly marked work-in-progress
+  frame, only while the replay is live.
+- **Simpler evidence actions.** Evidence buttons and captions use one consistent
+  style, and the Job-agent and company-research proof pages show their key frames
+  first.
+
+**Evidence depth**
+
+- **Decision log.** The public decision log grew from a short list to 176
+  entries after historical decisions were added. Entries judged unsafe to publish
+  were filtered out, and summaries were rewritten to be specific. Filter counts
+  on the page are now derived from the data.
+- **Resume theme decision.** A verified decision on the resume theme was added to
+  the public log.
+- **Technology capability catalog.** New tooling builds a catalog of the
+  technologies used across the work, with a runbook, a validator and a state
+  legend that avoids unverified "live" claims.
+- **Prototype library.** One command now serves the design prototypes used to
+  explore the role-fit views.
+
+**Reliability**
+
+- Release validation now restores full Git history on shallow CI checkouts and
+  normalizes line endings, so the same checks pass in CI and on a local machine.
+
+### Result and limits
+
+Directly observed: the changes are merged, the site renders the new views and
+the contract tests pass.
+
+- Whether reviewers find the roles faster or decide differently: Not measured.
+- Customer or market validation: No evidence.
+- The decision log shows decisions, not their outcomes. Backfilled entries
+  record what the repository history supports, not full reasoning.
+
+### Proof interpretation
+
+**Work:** Shortened the path from a role to its supporting evidence and
+widened the public decision record.
+
+**Evidence:** `site/evidence/decision-log.json` (176 entries),
+`docs/TECHNOLOGY_CATALOG_RUNBOOK.md`, `docs/prototypes/`, contract and browser
+tests in `tests/`.
+
+**Judgment:** Filter unsafe entries before publishing; keep claims tied to
+checked evidence. Rationale beyond this: Needs Review.
+
+**Signal:** Execution, Evidence discipline, Systems thinking. Product judgment
+and business outcome are not supported by this evidence alone.
+
+### Validation
+
+- Passed `npm run test:contracts` with 99 passing checks.
+- Passed `npm run release:validate`.
+- Passed `git diff --check`.
+- Browser tests (`npm run test:e2e`) and the pull request validation workflow run
+  in CI before merge.
+
 ## 2026-10-22 — Personal AI Harness: Agent Lifecycle Evidence
 
 **Evidence state:** Verified on the machines where each control runs (internal
