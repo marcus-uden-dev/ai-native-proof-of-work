@@ -75,3 +75,41 @@ test('print keeps the public email and evidence destinations understandable', as
   await expect(page.getByRole('button', { name: 'Copy email' })).toBeHidden();
 });
 
+
+test('How I think claims show project attribution before the unchanged decision log', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('/');
+
+  const order = await page.evaluate(() => {
+    const keys = ['how-i-think', 'claims-title', 'decision-log', 'selected-proof'];
+    return keys.map((key) => {
+      const section = document.getElementById(key).closest('section');
+      return Array.from(document.querySelectorAll('main > section')).indexOf(section);
+    });
+  });
+  expect(order).toEqual([...order].sort((a, b) => a - b));
+  expect(new Set(order).size).toBe(4);
+
+  const how = page.locator('#how-i-think');
+  await expect(how.getByRole('link', { name: 'Job-agent', exact: true })).toHaveAttribute('href', 'proof/job-agent/');
+  await expect(how.getByRole('link', { name: 'Personal AI Harness', exact: true })).toHaveAttribute('href', 'proof/recursive-workflow/');
+
+  const claims = [
+    ['claim-product-judgment', 'Job-agent', 'proof/job-agent/#company-research'],
+    ['claim-execution', 'Personal AI Harness', 'proof/recursive-workflow/#loops'],
+    ['claim-ai-native', 'Personal AI Harness', 'proof/recursive-workflow/#promotion']
+  ];
+  for (const [id, project, href] of claims) {
+    const card = page.locator('#' + id);
+    await expect(card.locator('.claim-card__project')).toHaveText(project);
+    await expect(card.locator('.claim-card__project a')).toHaveCount(0);
+    await expect(card.locator('.claim-card__meta .claim-card__type')).toBeVisible();
+    await expect(card.locator('a.button')).toHaveAttribute('href', href);
+  }
+
+  const chipTops = await page.locator('.claim-card__project').evaluateAll((elements) =>
+    elements.map((element) => Math.round(element.getBoundingClientRect().top))
+  );
+  expect(new Set(chipTops).size).toBe(1);
+  await expect(page.locator('#decision-log .decision-log-oracle')).toBeVisible();
+});
