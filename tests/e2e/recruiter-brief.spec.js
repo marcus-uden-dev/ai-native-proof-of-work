@@ -37,8 +37,8 @@ test('claim-to-evidence links target three named public anchors', async ({ page 
   await expect(page.getByText('Each example pairs a product claim with the public artifact behind it. Open one to see the reasoning, trade-offs, and evidence.')).toBeVisible();
   const expected = [
     ['See the company research decision', 'proof/job-agent/#company-research'],
-    ['See how the scope became working proof', 'proof/job-agent/#proof-sequence'],
-    ['See how the AI workflow is governed', 'proof/job-agent/#evidence-boundary']
+    ['See how the scope became working proof', 'proof/recursive-workflow/#loops'],
+    ['See how the AI workflow is governed', 'proof/recursive-workflow/#promotion']
   ];
   for (const [name, href] of expected) {
     const link = page.getByRole('link', { name });
