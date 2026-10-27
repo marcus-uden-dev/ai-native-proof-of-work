@@ -1,5 +1,26 @@
 # Changelog
 
+## 2026-10-09 — Clearer recruiter evidence and safer decision-history updates
+
+### New Features
+
+- **Technical capability matrix:** Recruiters and collaborators can now see the verified technology and platform range behind the portfolio in one focused view, with clear limits on what each source proves.
+- **Employer capability lens:** The evidence matrix now makes it easier to connect portfolio work to the practical capabilities an employer may need, without overstating depth or production status.
+- **Dated decision-history backfills:** Earlier product and workflow decisions can now be prepared as dated, evidence-linked entries, making the evolution of the work easier to follow.
+
+### Improvements
+
+- **Sharper proof-of-work summaries:** The project status, proof points, and recruiter report now distinguish completed, source-verified work from work that remains planned or gated.
+- **More useful decision summaries:** Historical entries now describe the specific decision and its evidence rather than relying on generic backfill text.
+
+### Bug Fixes
+
+- **Safer public-evidence selection:** Candidates that do not meet the repository's public-safety requirements are filtered out before they can be prepared for release.
+
+### Notes
+
+- This is a portfolio-evidence update, not a production product release. Production deployment, billing, observability, and legal-review claims remain explicitly gated where source evidence is not available.
+
 ## 2026-08-24 — Bilingual recruiter experience planned and technical-depth feature deferred
 
 ### Added
