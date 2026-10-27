@@ -903,3 +903,32 @@ Time spent: Estimated / not directly tracked.
 ### 7. Next Week
 
 Extract one verified proof point from each source layer and add it to the central proof map.
+
+---
+
+## Weekly Compiler Run — 2026-10-12
+
+### 1. Executive Summary
+
+No new verified source material was available in this run. The compiler preserved
+the current public evidence and made no new recruiter-facing claims.
+
+### 2. Source Index Status
+
+| Source | Status | Handling | Missing Input |
+|---|---|---|---|
+| `weekly-input/` | Needs Review | Contains only repository templates | A dated, evidence-backed weekly input |
+| `internal/LOCAL_SOURCE_MAP.md` | Unavailable | Not present in the isolated clone | Sanitized local source map and indexes |
+| Job-agent source material | Unavailable | Not present in the isolated clone | Current source documentation and validation evidence |
+| Apporganiser Android evidence | Needs Review | No verified source was available | Sanitized repository documentation or evidence |
+
+### 3. Publication Decision
+
+- 3.a Outcome: hold.
+- 3.b Gate: no grounded, new, recruiter-safe finding with valid capability tags.
+- 3.c Public update: none.
+
+### 4. Next Action
+
+Provide dated Job-agent evidence or a sanitized Apporganiser Android source index,
+then rerun the compiler.
