@@ -74,3 +74,28 @@ test('project-subpath navigation keeps relative assets and downloads valid', asy
   await expect(page).toHaveURL(/\/ai-native-proof-of-work\/proof\/job-agent\/$/);
   await expect(page.getByRole('link', { name: 'Download CV' })).toHaveAttribute('href', '../../assets/cv/marcus-uden-cv.pdf');
 });
+
+
+test('favicon routes remain portable and return real images', async ({ page, request }) => {
+  for (const route of ['/', '/cv/', '/proof/job-agent/', '/proof/recursive-workflow/', '/proof/job-agent/demo/']) {
+    await page.goto(route);
+    const svg = page.locator('link[rel="icon"][type="image/svg+xml"]');
+    const png = page.locator('link[rel="icon"][type="image/png"]');
+    const apple = page.locator('link[rel="apple-touch-icon"]');
+    await expect(svg).toHaveCount(1);
+    await expect(png).toHaveAttribute('sizes', '32x32');
+    await expect(apple).toHaveAttribute('sizes', '180x180');
+    for (const link of [svg, png, apple]) {
+      const path = await link.getAttribute('href');
+      const result = await request.get(new URL(path, page.url()).href);
+      expect(result.ok(), path).toBeTruthy();
+    }
+  }
+  const vector = await (await request.get('/assets/favicon.svg')).text();
+  expect(vector).toContain('viewBox="0 0 64 64"');
+  expect(vector).toContain('#C59752');
+  const raster = await (await request.get('/assets/favicon-32.png')).body();
+  expect(raster.subarray(0, 8).toString('hex')).toBe('89504e470d0a1a0a');
+  expect(raster.readUInt32BE(16)).toBe(32);
+  expect(raster.readUInt32BE(20)).toBe(32);
+});

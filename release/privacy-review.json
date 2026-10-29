@@ -2,10 +2,10 @@
   "schemaVersion": 1,
   "releaseId": "job-agent-v2-release-candidate",
   "reviewStatus": "complete",
-  "reviewedAt": "2026-09-08",
+  "reviewedAt": "2026-10-29",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "0b9d48d0b28342ace05564fb643eb1e9702189cc",
-  "scope": "Full release-candidate binary set: current 0.9 and historical synthetic proof frames, sanitized English CV, professional social card, and one aggregate personal listening-statistics screenshot. The 2026-09-08 saved smoke-test and role-provider source additions changed no reviewed binary artifacts; their approved hashes remain current.",
+  "candidateCommit": "2d0c333bb2b48e4f5ce8cafe89d424133815f72c",
+  "scope": "Full release-candidate binary set: current 0.9 and historical synthetic proof frames, sanitized English CV, professional social card, and one aggregate personal listening-statistics screenshot. The 2026-09-08 saved smoke-test and role-provider source additions changed no reviewed binary artifacts; their approved hashes remain current. Two original favicon PNGs (browser fallback and Apple touch icon) were added with reviewed SHA-256 checksums.",
   "reviewedFiles": [
     {
       "path": "site/assets/images/job-agent/decision-research.png",
@@ -129,6 +129,22 @@
         "Aggregate playback-time savings"
       ],
       "note": "User-provided screenshot visually checked for names, account identifiers, private feeds, messages, credentials, and unrelated personal data. It shows aggregate listening statistics only and is published with an explicit evidence boundary."
+    },
+    {
+      "path": "site/assets/favicon-32.png",
+      "sha256": "fc31e63396ed103d3c7962e771be39a5ae83aa069161154f2fc4d69ff9ecb86c",
+      "decision": "approved",
+      "dataClass": "original public design asset",
+      "containsPersonalData": false,
+      "note": "Original 32×32 browser fallback, generated exclusively from the Paper Trail Evidence M-monogram SVG. No user data, screenshots, credentials or private identifiers."
+    },
+    {
+      "path": "site/assets/apple-touch-icon.png",
+      "sha256": "7a28316de3265250477bbeb805c69721e9a03aa3292f5d463216aac93a9f166b",
+      "decision": "approved",
+      "dataClass": "original public design asset",
+      "containsPersonalData": false,
+      "note": "Original 180×180 Apple touch icon, generated exclusively from the Paper Trail Evidence M-monogram SVG. No user data, screenshots, credentials or private identifiers."
     }
   ]
 }

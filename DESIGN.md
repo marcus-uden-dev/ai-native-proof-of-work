@@ -97,3 +97,15 @@ Use a centered 1120-pixel content column. Use a 12-column grid on wide screens a
 
 Use the same semantic document for screen and print. Remove navigation and copy controls in print. Keep evidence, status, source labels, links, and contact details visible. Avoid page breaks inside evidence cards.
 
+## Favicon — compact browser identity
+
+The browser/tab identity uses the original **M monogram** without replacing the homepage masthead. It is a small-format extension of Paper Trail Evidence, not a new site logo or a competing visual system.
+
+- **Shape:** dark square (#171815), editorial serif M in paper white (#F7F3EB), and a vertical gold rule (#C59752). No glow, gradients, decorative badges, or initials duplicated beside the masthead.
+- **Editable master:** `site/assets/favicon.svg` (64 × 64 vector, self-contained paths, no external fonts).
+- **Browser fallback:** `site/assets/favicon-32.png` (32 × 32).
+- **Home-screen icon:** `site/assets/apple-touch-icon.png` (180 × 180).
+- **Usage:** reference assets with relative paths from each public HTML page so both GitHub Pages project subpaths and the custom domain work. Keep the site wordmark and navigation unchanged.
+- **Accessibility:** SVG includes a title; icon files are decorative browser metadata and are not evidence of product maturity.
+
+Regenerate the PNGs from the same SVG master when changing the mark; update binary privacy-review hashes before release.
