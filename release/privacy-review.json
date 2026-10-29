@@ -4,7 +4,7 @@
   "reviewStatus": "complete",
   "reviewedAt": "2026-10-29",
   "reviewer": "Marcus Udén (Codex)",
-  "candidateCommit": "2d0c333bb2b48e4f5ce8cafe89d424133815f72c",
+  "candidateCommit": "2eff71beab9cd86a1790e0f8245b60d800ae39ba",
   "scope": "Full release-candidate binary set: current 0.9 and historical synthetic proof frames, sanitized English CV, professional social card, and one aggregate personal listening-statistics screenshot. The 2026-09-08 saved smoke-test and role-provider source additions changed no reviewed binary artifacts; their approved hashes remain current. Two original favicon PNGs (browser fallback and Apple touch icon) were added with reviewed SHA-256 checksums.",
   "reviewedFiles": [
     {
@@ -140,11 +140,11 @@
     },
     {
       "path": "site/assets/apple-touch-icon.png",
-      "sha256": "7a28316de3265250477bbeb805c69721e9a03aa3292f5d463216aac93a9f166b",
+      "sha256": "9f26343e208f59ce562b85bcd4e1ea5b4502193d163e31aa4e9ecab260049080",
       "decision": "approved",
       "dataClass": "original public design asset",
       "containsPersonalData": false,
-      "note": "Original 180×180 Apple touch icon, generated exclusively from the Paper Trail Evidence M-monogram SVG. No user data, screenshots, credentials or private identifiers."
+      "note": "Original 180×180 Apple touch icon, losslessly stored as a validated indexed-color PNG generated from the Paper Trail Evidence M-monogram SVG. No user data, screenshots, credentials or private identifiers."
     }
   ]
 }
