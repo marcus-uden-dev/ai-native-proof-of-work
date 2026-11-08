@@ -932,3 +932,30 @@ the current public evidence and made no new recruiter-facing claims.
 
 Provide dated Job-agent evidence or a sanitized Apporganiser Android source index,
 then rerun the compiler.
+
+---
+
+## Weekly Compiler Run — 2026-11-08
+
+### 1. Executive Summary
+
+The compiler verified fresh committed Job-agent source material through 2026-11-07. It records continuing operational review and CI triage, but no new recruiter-safe product milestone or measured outcome. The public release surface remains unchanged.
+
+### 2. Source Index Status
+
+| Source | Status | Handling | Missing Input |
+|---|---|---|---|
+| `weekly-input/` | Needs Review | Contains only repository templates | A dated, evidence-backed weekly input |
+| `internal/LOCAL_SOURCE_MAP.md` | Unavailable | Not present in the isolated clone | Sanitized local source map and indexes |
+| Job-agent committed source | Verified | Checked committed `master` through `dcbe3ec` (2026-11-07); maintenance evidence only | Privacy-reviewed product outcome or dated weekly narrative |
+| Apporganiser Android evidence | Needs Review | No verified source was available | Sanitized repository documentation or evidence |
+
+### 3. Publication Decision
+
+- 3.a Outcome: hold.
+- 3.b Gate: the new evidence is operational maintenance, not a new public product claim with independently useful recruiter context.
+- 3.c Public update: none.
+
+### 4. Next Action
+
+Provide one dated, privacy-reviewed Job-agent product outcome with supporting evidence.

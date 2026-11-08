@@ -125,3 +125,9 @@ Current status:
 - Local paths, raw logs, and sensitive implementation details are intentionally excluded.
 - Internal source indexes were refreshed at a high level on 2026-06-01. This refresh updates source freshness and project inventory; it does not promote raw local paths or unreviewed source content into recruiter-facing files.
 - No dated weekly-input file existed for the week ending 2026-08-09, so this run promoted only source-verified repo state and did not invent a higher-level weekly narrative beyond the sources above.
+
+## Evidence Refresh — 2026-11-08
+
+- **Verified:** The lead-project source checkout was rechecked at committed `master` revision `dcbe3ec` (2026-11-07). The new committed material is operational review and CI-watchdog documentation; it does not establish a new user-facing product milestone or measured outcome.
+- **Needs Review:** The source status document contains unresolved delivery and dependency-maintenance gates. This portfolio therefore retains its existing distinction between verified repository work and unverified production outcomes.
+- **Open Question:** A dated weekly input or privacy-reviewed product evidence is still required before promoting a stronger recruiter-facing Job-agent outcome claim.

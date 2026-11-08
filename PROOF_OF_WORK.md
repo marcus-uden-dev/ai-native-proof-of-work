@@ -140,3 +140,8 @@ Status: Active / Project-focused evidence map
 | Recruiter assets improve response or interview quality | Hypothesis | Recruiter feedback, interview outcomes, or sharing results |
 | Static demo portal publication | Verified | Published through separate public repo [marcus-uden-dev/ai-native-proof-of-work-demo](https://github.com/marcus-uden-dev/ai-native-proof-of-work-demo) and smoke-tested live |
 | Weekly narrative for the 2026-08-09 source boundary | Needs Review | Direct source verification exists through 2026-08-09, but there is still no dated `weekly-input/` note explaining user-visible outcomes or decision context for the latest job-agent redesign branch changes |
+
+## 2026-11-08 Evidence Refresh
+
+- **Verified:** The accessible committed Job-agent source was checked through 2026-11-07. Its new records document ongoing operational review and CI triage.
+- **Decision:** Do not convert operational maintenance records into a product-outcome claim. The portfolio keeps Job-agent as the lead proof point while requiring dated, safe product evidence for stronger outcome language.

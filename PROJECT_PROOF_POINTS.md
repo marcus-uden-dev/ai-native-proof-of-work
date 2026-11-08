@@ -105,3 +105,8 @@ They should be positioned as secondary proof points unless the specific document
 - Raw chat logs and project internals should be summarized, not copied.
 - Exact metrics should only be used when verified.
 - Internal project status can be cited as `Internal / Verified` when grounded in indexed local files, but recruiter-facing files should link to summaries rather than local-only index files.
+
+## 2026-11-08 Source Refresh Boundary
+
+- **Verified:** Committed Job-agent operational records through 2026-11-07 confirm continued review and CI triage activity.
+- **Needs Review:** Those records are maintenance evidence, not evidence of a new product outcome. They do not change the lead-project proof-point hierarchy or justify a new public capability claim.

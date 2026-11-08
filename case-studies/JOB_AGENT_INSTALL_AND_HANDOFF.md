@@ -289,3 +289,9 @@ Update this file whenever `job-agent` changes:
 - privacy exclusions
 
 If a claim cannot be verified from the source repo or explicit user input, mark it `Needs Review`.
+
+## Source Recheck — 2026-11-08
+
+- **Verified:** The committed source checkout was rechecked at `master` revision `dcbe3ec` (2026-11-07).
+- **Verified:** The recent committed changes are operational review and CI-watchdog records. They do not change the documented setup, service, port, environment, migration, or validation contract in this guide.
+- **Needs Review:** Source status documents retain unresolved delivery and dependency-maintenance gates. Do not infer a production outcome from this maintenance evidence.

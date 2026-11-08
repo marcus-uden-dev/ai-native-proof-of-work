@@ -398,3 +398,25 @@ Future proof-of-work extraction should cite the correct source layer for each cl
 ```text
 Keep Codex execution projects, Claude planning projects, and shared agent workflow assets as separate evidence layers.
 ```
+
+---
+
+## 2026-11-08 — Fresh source maintenance records could be mistaken for product progress
+
+### Problem
+
+The latest committed Job-agent records document operational review and CI triage, but do not provide a user-facing outcome or a dated narrative suitable for a recruiter claim.
+
+### Cause
+
+Repository activity and product evidence answer different questions. Maintenance records demonstrate operating discipline but do not validate delivery, adoption, or user value.
+
+### Resolution
+
+Recorded the source refresh, retained existing product-status limits, and held public publication.
+
+### Reusable Rule
+
+```text
+Classify maintenance evidence as maintenance evidence unless it also proves a safe, dated product outcome.
+```

@@ -323,6 +323,34 @@ Decision
 
 ---
 
+## 2026-11-08 — Keep operational Job-agent maintenance evidence separate from product-outcome claims
+
+### Context
+
+The committed Job-agent source contains fresh operational review and CI-watchdog records through 2026-11-07, but no dated weekly input or privacy-reviewed product outcome.
+
+### Options Considered
+
+| Option | Pros | Cons |
+|---|---|---|
+| Publish a new product claim | Makes the portfolio look more current | Would overstate maintenance activity as an outcome |
+| Ignore the committed source refresh | Avoids documentation changes | Loses a verified evidence-boundary update |
+| Record the refresh and hold publication | Preserves freshness and claim discipline | Adds no new public claim |
+
+### Decision
+
+Record the source refresh in the private evidence layer and hold a public release update until a grounded, recruiter-safe product outcome is available.
+
+### Evidence
+
+[PROJECT_STATUS.md](../PROJECT_STATUS.md), [PROOF_OF_WORK.md](../PROOF_OF_WORK.md), and [case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md](../case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md).
+
+### Status
+
+Decision / Verified
+
+---
+
 ## 2026-08-09 — Separate committed product-code freshness from later docs/ops commits
 
 ### Context
