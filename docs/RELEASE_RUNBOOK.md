@@ -2,7 +2,15 @@
 
 ## Current gate
 
-The repository is local-only. Public repository creation, Pages activation, and DNS changes require explicit approval from Marcus.
+The repository is public and GitHub Pages is active on the project URL. Domain activation and DNS changes still require separate explicit approval from Marcus.
+
+Verified release state, checked on 2026-11-16:
+
+- `marcus-uden-dev/ai-native-proof-of-work` is public, with GitHub Pages built by workflow from `main`.
+- The latest `main` commit is `b30a80e`. Quality and Deploy Pages both passed on it (2026-10-29).
+- The project URL `https://marcus-uden-dev.github.io/ai-native-proof-of-work/` serves the home page, a proof page, the CV PDF, `sitemap.xml`, and `robots.txt` with HTTP 200. An unknown path returns the 404 page.
+- The custom domain `https://marcus.uden.dev` is not active. No custom domain is set in Pages and the host does not respond.
+- The External AI gate below is not recorded as run.
 
 ## Local Ready gate
 
@@ -19,13 +27,15 @@ git diff --check
 
 Confirm these items before approval:
 
-1. `git remote -v` is empty.
+1. `git remote -v` is empty before first publication. After publication, the only remote is the approved `marcus-uden-dev/ai-native-proof-of-work` repository.
 2. Every commit uses `Marcus Udén <marcus.uden.dev@gmail.com>`.
 3. `release/privacy-review.json` binds every binary digest to an ancestor candidate commit.
 4. The private repository HEAD, remote, and user-owned changes remain unchanged.
 5. The professional profile staging repository has no remote and contains only approved professional identity text.
 
 ## Publication gate — one-way door
+
+Status: done. The repository was published and Pages is active. The steps stay here as the record and for any rebuild.
 
 Public caches and Git history can retain published material. Do not run these steps without explicit approval.
 
