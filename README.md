@@ -6,7 +6,7 @@ The site leads with a concise hiring case. It then provides dated evidence, expl
 
 ## Current state
 
-This is the professional public repository staging area for `marcus-uden-dev/ai-native-proof-of-work`. It contains the curated static site and a staged migration of project strategy and case-study evidence from the earlier proof-of-work archive. It is a public, recruiter-shareable evidence layer around product work, not a mirror of every working file or a claim that a product is released or market-validated.
+This is the professional public repository for `marcus-uden-dev/ai-native-proof-of-work`. The site is published on GitHub Pages at `https://marcus-uden-dev.github.io/ai-native-proof-of-work/`. The custom domain `https://marcus.uden.dev` is not active yet. It contains the curated static site and a staged migration of project strategy and case-study evidence from the earlier proof-of-work archive. It is a public, recruiter-shareable evidence layer around product work, not a mirror of every working file or a claim that a product is released or market-validated.
 
 The migration is content-only. The earlier repository history is not imported. See [release/migration-manifest.json](release/migration-manifest.json) for the staged file boundary. The recruiter route does not require a custom domain or a separate public website.
 
@@ -39,6 +39,6 @@ The static site will live under `site/`. The release validator checks file allow
 
 ## Publication boundary
 
-Publication, GitHub Pages activation, and domain changes require explicit approval. The rollback method is an append-only revert commit to the last approved release.
+The repository is public and GitHub Pages is active on the project URL. Domain changes require separate explicit approval. The rollback method is an append-only revert commit to the last approved release.
 
 CI uses read-only permissions for quality checks. Pages and identity-token permissions exist only in the deployment job, which runs after Quality succeeds. See `docs/RELEASE_RUNBOOK.md` for the release, temporary-host, rollback, and domain gates.
