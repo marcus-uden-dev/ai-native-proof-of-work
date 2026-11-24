@@ -6,11 +6,11 @@ import { renderReplay, validateReplay } from '../../scripts/generate-project-rep
 const data = JSON.parse(readFileSync('site/evidence/project-replay-job-agent.json', 'utf8'));
 const html = readFileSync('site/proof/job-agent/index.html', 'utf8');
 
-test('The Job-agent story is a small, valid evidence-backed playback dataset', () => {
+test('The Earned Signal story is a small, valid evidence-backed playback dataset', () => {
   assert.doesNotThrow(() => validateReplay(data));
   assert.equal(data.schema_version, 2);
   assert.equal(data.project, 'job-agent');
-  assert.equal(data.title, 'The Job-agent story');
+  assert.equal(data.title, 'The Earned Signal story');
   assert.equal(data.events.length, 4);
   assert.equal(data.events[0].title, 'Before build');
   assert.ok(data.events.slice(1).every((event) => event.edition === 'v0.9 public proof'));
@@ -24,7 +24,7 @@ test('The Job-agent story is a small, valid evidence-backed playback dataset', (
   );
 });
 
-test('The Job-agent story keeps public evidence time separate from record time', () => {
+test('The Earned Signal story keeps public evidence time separate from record time', () => {
   for (const event of data.events) {
     assert.ok(event.valid_from, `${event.id} has valid_from`);
     assert.ok(event.recorded_at, `${event.id} has recorded_at`);
