@@ -8,7 +8,7 @@ test('status and synthetic notices appear before the first proof frame', async (
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
   await expect(page.getByText(/next test/i)).toHaveCount(0);
-  await expect(page.getByText(/release-one company is invented/i)).toBeVisible();
+  await expect(page.locator('#evidence-boundary')).toContainText('public company-research proof below still uses invented example data');
   const order = await page.locator('#evidence-boundary, #proof-sequence').evaluateAll((nodes) => nodes.map((node) => node.id));
   expect(order).toEqual(['evidence-boundary', 'proof-sequence']);
 });
