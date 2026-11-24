@@ -84,16 +84,16 @@ test('The Earned Signal story rewinds from the evidence-backed origin and restor
   const story = page.locator('#project-replay');
   const stage = story.locator('[data-story-stage]');
   const range = story.locator('[data-story-range]');
-  await expect(story.locator('.project-story__strip li')).toHaveCount(4);
-  await expect(story.locator('.project-story__chapters > li')).toHaveCount(4);
+  await expect(story.locator('.project-story__strip li')).toHaveCount(5);
+  await expect(story.locator('.project-story__chapters > li')).toHaveCount(5);
   await expect(story.locator('[data-story-controls]')).toBeVisible();
   await range.fill('0');
   await expect(stage).toContainText('Before build');
   await expect(stage).toContainText('Build a reviewed workflow');
   expect(await story.locator('[data-story-marker]:not([hidden])').count()).toBe(1);
   await story.getByRole('button', { name: 'Current state' }).click();
-  await expect(stage).toContainText('Bring fit, evidence, and action into one role view');
-  expect(await story.locator('[data-story-marker]:not([hidden])').count()).toBe(4);
+  await expect(stage).toContainText('Move from internal proof to invited use');
+  expect(await story.locator('[data-story-marker]:not([hidden])').count()).toBe(5);
 });
 
 test('The Earned Signal story plays from origin and respects reduced motion', async ({ page }) => {
@@ -122,7 +122,7 @@ test('The Earned Signal story is a vertical, keyboard-reachable chronological tr
   await page.goto('/proof/job-agent/#project-replay');
   const story = page.locator('#project-replay');
   await expect(story.locator('.project-story__strip')).toBeVisible();
-  await expect(story.locator('.project-story__chapters > li')).toHaveCount(4);
+  await expect(story.locator('.project-story__chapters > li')).toHaveCount(5);
   const previous = story.getByRole('button', { name: 'Previous chapter' });
   await previous.focus();
   await page.keyboard.press('Enter');
