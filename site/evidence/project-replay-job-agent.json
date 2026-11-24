@@ -63,7 +63,7 @@
       ],
       "visual": {
         "href": "../../assets/images/job-agent/v0.9-public-proof/current-find-jobs.png",
-        "alt": "Current Job-agent Find jobs view with synthetic role criteria, source settings, saved searches, and monitoring",
+        "alt": "v0.9 Job-agent Find jobs view with synthetic role criteria, source settings, saved searches, and monitoring",
         "label": "v0.9 · Find jobs",
         "caption": "A synthetic public frame showing criteria, sources, saved searches, and monitoring."
       },
@@ -99,7 +99,7 @@
       ],
       "visual": {
         "href": "../../assets/images/job-agent/v0.9-public-proof/current-today.png",
-        "alt": "Current Job-agent Today view with a journey bar, next move, filters, and synthetic roles",
+        "alt": "v0.9 Job-agent Today view with a journey bar, next move, filters, and synthetic roles",
         "label": "v0.9 · Today",
         "caption": "A synthetic public frame for daily priorities and the next move."
       },
@@ -135,7 +135,7 @@
       ],
       "visual": {
         "href": "../../assets/images/job-agent/v0.9-public-proof/current-job-detail.png",
-        "alt": "Current Job-agent job detail view with synthetic fit analysis, CV gap, and company signals",
+        "alt": "v0.9 Job-agent job detail view with synthetic fit analysis, CV gap, and company signals",
         "label": "v0.9 · Job detail",
         "caption": "A synthetic public frame that brings fit, evidence, and next action together."
       },
