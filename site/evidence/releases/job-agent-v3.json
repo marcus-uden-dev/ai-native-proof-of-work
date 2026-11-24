@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "artifactId": "job-agent",
+  "releaseId": "job-agent-v3",
+  "productName": "Earned Signal",
+  "historicalProjectLabel": "Job-agent",
+  "productVersion": "closed-beta-2026-11-24",
+  "previousProductVersion": "0.9-public-proof",
+  "evidenceDate": "2026-11-24",
+  "implementationState": "Closed beta running with invited testers",
+  "publicAvailability": "Invite-only closed beta; public recruiter-safe preview remains separate",
+  "maturity": "Released — closed beta",
+  "marketValidationState": "Not market-validated",
+  "outcomeMeasurementState": "No measured market outcomes",
+  "privacyState": "Public proof privacy review complete; closed-beta operations internally verified",
+  "canonicalUrl": "https://marcus.uden.dev/proof/job-agent/",
+  "previousRelease": {
+    "productVersion": "0.9-public-proof",
+    "manifest": "job-agent-v2.json"
+  },
+  "fixture": {
+    "id": "job-agent-company-v1",
+    "version": 1,
+    "path": "../fixtures/job-agent-company-v1.json",
+    "companyMode": "synthetic-only"
+  },
+  "sourceClasses": [
+    {
+      "id": "public_source",
+      "label": "public source",
+      "meaning": "A traceable fact from a named public source. No release-one company field uses this class."
+    },
+    {
+      "id": "synthetic_demo",
+      "label": "synthetic demo",
+      "meaning": "Invented data used to demonstrate product behaviour."
+    },
+    {
+      "id": "inferred_demo",
+      "label": "inferred demo",
+      "meaning": "An illustrative interpretation derived only from synthetic demo inputs."
+    },
+    {
+      "id": "internal_verified",
+      "label": "internal verified",
+      "meaning": "A recruiter-safe status claim verified against committed private source evidence without publishing private repository identity, paths, tester data, or operational secrets."
+    }
+  ],
+  "closedBetaEvidence": {
+    "evidenceClass": "internal_verified",
+    "verifiedMilestones": [
+      "Invite-only closed beta is running.",
+      "The first invited tester signed in and accepted the current beta terms on 2026-11-24.",
+      "Authentication, telemetry, backup and restore, reboot recovery, and pre-invitation smoke checks are recorded as verified."
+    ],
+    "commercialBoundary": "The beta is free. In-app payments remain test-mode only.",
+    "userControlBoundary": "Application material is prepared for user review; the beta does not submit job applications on the user's behalf."
+  },
+  "limitations": [
+    "Closed-beta access is invitation-only and is not public product availability.",
+    "The public prototype uses synthetic company data and does not expose closed-beta user data.",
+    "The first tester milestone proves controlled external use, not product adoption or market validation.",
+    "Recruiter response, job-search impact, business outcomes, and market outcomes are not measured."
+  ]
+}
