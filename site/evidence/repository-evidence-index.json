@@ -195,22 +195,6 @@
       "excerpt": "evidence handling are part of the product story. ## Value Created | Value | Explanation | Evidence Status | |---|---|---| | Shared household view | Household/member role concepts are central to the design | Internal / Verified | | Import and review workflow | CSV/XLSX import, mapping, dedupe, preview, and review concepts are represented | Internal / Verified | | Forecasting support | Scheduled items, credit-card payments, liquidity, and goals are represented | Internal / Verified | | Security-aware modeling | Household-scoped access and RLS/security thinking are represented | Internal / Verified | ## Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Which flow best demonstrates value: imports, transaction review, liquidity forecast, goals, or shared household administration? - What evidence can be shared without exposing private financial data? - Does the app have a credible consumer product angle or mainly serve as technical/product proof?"
     },
     {
-      "id": "repo-d121ce3568b17abc-1",
-      "path": "strategy/job-agent/README.md",
-      "label": "strategy/job-agent/README.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/README.md",
-      "excerpt": "# Job-Agent Strategy Last updated: 2026-05-11 Status: Active / Lead project strategy ## Purpose This folder contains strategy documents for job-agent, the lead proof point in the portfolio. ## Project Role Job-agent is the primary product strategy surface because it is the lead proof point for career workflow product execution. ## Canonical Documents | Document | Use | |---|---| | [Value Proposition](product/VALUE_PROPOSITION.md) | Who job-agent helps and why it matters | | [Product Strategy](product/PRODUCT_STRATEGY.md) | Target user, wedge, MVP scope, risks | | [Business Model](business/BUSINESS_MODEL.md) | Customer segments and monetization hypotheses | | [Pricing Strategy](business/PRICING_STRATEGY.md) | Pricing philosophy and first hypotheses | | [Go-To-Market](market/GO_TO_MARKET.md) | Initial audience and validation channels | | [Competitive Positioning](product/COMPETITIVE_POSITIONING.md) | Differentiation from alternatives | | [Decision Trail](decisions/DECISION_TRAIL.md) | Visible strategy decision format and decisions | ## Evidence See [Job-Agent Case Study](../../case-studies/JOB_AGENT_CASE_STUDY.md). ## Validation Focus - Confirm the strongest external wedge for"
-    },
-    {
-      "id": "repo-d121ce3568b17abc-2",
-      "path": "strategy/job-agent/README.md",
-      "label": "strategy/job-agent/README.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/README.md",
-      "excerpt": "job-agent. - Add recruiter-safe screenshots or excerpts. - Validate pricing and GTM assumptions with target users or reviewers."
-    },
-    {
       "id": "repo-29be8f510b50a89e-1",
       "path": "strategy/job-agent/business/BUSINESS_MODEL.md",
       "label": "strategy/job-agent/business/BUSINESS_MODEL.md · excerpt 1",
@@ -281,70 +265,6 @@
       "sourceClass": "strategy-document",
       "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/market/GO_TO_MARKET.md",
       "excerpt": "application decisions - reduced application friction - privacy-aware automation - feedback-driven improvement ## Validation Plan 1. Show a private walkthrough to trusted reviewers. 2. Ask which workflow step feels most valuable. 3. Test whether the product is seen as a tool, service, or guided sprint. 4. Compare reactions to subscription vs sprint-package framing. 5. Add sanitized screenshots or demo artifacts once safe. ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
-    },
-    {
-      "id": "repo-da31c523f5b3dfc0-1",
-      "path": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
-      "label": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
-      "excerpt": "# Job-Agent Competitive Positioning Last updated: 2026-05-11 Status: Initial hypothesis ## Project Scope Project: job-agent. Role in portfolio: primary proof point and lead career workflow product. ## Positioning Statement A reviewed career workflow product for job seekers who need AI-assisted discovery, application support, and feedback loops without giving up control, privacy, or professional judgment. ## Differentiation | Category | Typical Approach | Job-Agent Position | |---|---|---| | Generic AI chat | Drafts text on demand | Maintains workflow context across job search steps | | Resume builders | Improve static documents | Connects CV/profile material to specific opportunities | | Job boards | Surface listings | Supports evaluation, tailoring, application, and learning | | Application trackers | Track status | Adds AI-assisted analysis and feedback loops | | Autonomous appliers | Optimize volume | Prioritizes reviewed, user-controlled applications | ## What This Is Not - Not a generic cover-letter generator - Not a fully autonomous job spam tool - Not a public claim of measured placement outcomes - Not a substitute for human judgment - Not a product that should bypass"
-    },
-    {
-      "id": "repo-da31c523f5b3dfc0-2",
-      "path": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
-      "label": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
-      "excerpt": "privacy review ## Strategic Wedge The strongest wedge is reviewed job-search workflow support: enough automation to reduce friction, enough structure to preserve context, and enough human control to remain trustworthy. ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
-    },
-    {
-      "id": "repo-63b5ea8b93ee9e2d-1",
-      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "excerpt": "# Job-Agent Product Strategy Last updated: 2026-05-11 Status: Active hypothesis / Internal evidence summarized ## Project Scope Project: job-agent. Role in portfolio: primary proof point and lead career workflow product. ## Target User Initial target user: job seekers in technical, product, AI-adjacent, and career-transition roles who need a more structured, evidence-aware job search workflow. ## Core Problem Job search is a repeated, context-heavy workflow. Users need help with discovery, tailoring, applying, following up, and learning from feedback without losing control of their personal data or professional voice. ## Existing Alternatives | Alternative | Gap | |---|---| | Manual spreadsheets and notes | Flexible but high-friction and easy to neglect | | Generic AI chat | Good drafts, weak workflow memory and weak privacy boundaries | | Job boards | Discovery-focused, not application workflow-focused | | Resume builders | Improve materials but do not manage the whole loop | | Fully autonomous appliers | High trust, quality, and platform-risk burden | ## Product Wedge Start with reviewed career workflow support: structured job discovery, fit/context analysis, CV/application"
-    },
-    {
-      "id": "repo-63b5ea8b93ee9e2d-2",
-      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "excerpt": "assistance, and feedback capture. ## MVP Scope - Profile and CV workflow - Job discovery and monitoring - Job fit/context analysis - Per-job application support - Feedback and correction loop - Privacy and consent surfaces - Data export/delete planning - QA and regression coverage - Deployment and observability planning ## Non-MVP Scope - Fully autonomous application sending - Unreviewed recruiter outreach - Large-scale scraping without source controls - Production claims before legal/privacy review - Outcome metrics before measurement exists ## Feature Prioritization | Feature | User Value | Complexity | Priority | |---|---|---|---| | CV/profile workflow | High | Medium | High | | Job discovery and monitoring | High | Medium | High | | Per-job application support | High | Medium | High | | Feedback loop | High | Medium | High | | Consent and data-rights flows | High | Medium | High | | Telemetry and outcome learning | Medium | Medium | Medium | | Billing and credits | Medium | Medium | Medium | | Referral economy | Unknown | High | Deferred | ## Risks - Privacy and legal risk - Trust risk from over-automation - Quality risk in generated materials - Source quality risk in job"
-    },
-    {
-      "id": "repo-63b5ea8b93ee9e2d-3",
-      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 3",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "excerpt": "discovery - Platform risk around job boards and application portals - Pricing risk before outcome validation ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Strategy Decisions Use the decision-trail format in [Decision Trail](../decisions/DECISION_TRAIL.md) and summarize public portfolio-level decisions in the [public decision log](../../../site/evidence/decision-log.json) when they materially affect recruiter-facing claims."
-    },
-    {
-      "id": "repo-821a4ccd522ff0fd-1",
-      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "excerpt": "# Job-Agent Value Proposition Last updated: 2026-05-11 Status: Hypothesis / Internal evidence summarized ## Project Scope Project: job-agent. Role in portfolio: primary proof point and lead career workflow product. ## Core Claim Job-agent helps job seekers turn scattered career material, job opportunities, application work, and feedback into a reviewed career workflow. The value proposition is not \"AI writes applications.\" The stronger value is a trustworthy career operating system: discover relevant jobs, adapt materials, support applications, preserve user control, and learn from outcomes. ## User Problem Job search work is fragmented across CVs, job boards, application portals, interview notes, follow-ups, recruiter feedback, and personal constraints. Generic AI tools can generate text, but they do not reliably preserve context, reviewability, privacy, or outcome learning. ## Before - Career material, job opportunities, and application drafts lived in separate places. - Each application required repeated context reconstruction. - It was hard to see which feedback, job criteria, or application choices improved outcomes. - Automation risked becoming either too shallow or too"
-    },
-    {
-      "id": "repo-821a4ccd522ff0fd-2",
-      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "excerpt": "autonomous to trust. ## After - CV/profile material becomes part of a reusable workflow. - Job discovery, fit analysis, application support, and feedback loops are connected. - Human review remains central for quality, privacy, and trust. - Product decisions around consent, data rights, telemetry, pricing, and deployment are explicit. ## Value Created | Value | Explanation | Evidence Status | |---|---|---| | Reduced application friction | Reuses career context instead of restarting every application | Internal / Verified | | Better reviewability | Keeps job analysis, generated material, and user feedback inspectable | Internal / Verified | | Stronger privacy posture | Consent, data-rights, retention, and export/delete flows are part of product planning | Internal / Verified | | Product learning loop | Feedback and outcomes can inform future suggestions and roadmap choices | Internal / Verified | | Recruiter-relevant proof | Demonstrates full-stack product judgment in a real workflow domain | Internal / Verified | ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed -"
-    },
-    {
-      "id": "repo-821a4ccd522ff0fd-3",
-      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 3",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "excerpt": "Which workflow step creates the most user value: discovery, CV adaptation, apply support, interview prep, or feedback capture? - What level of automation feels trustworthy to job seekers? - Which pricing model matches the value users actually perceive? - Which sanitized screenshots or excerpts best support the product story publicly?"
     },
     {
       "id": "repo-e29285a217a85ac1-1",
@@ -473,38 +393,6 @@
       "sourceClass": "strategy-document",
       "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/VALUE_PROPOSITION.md",
       "excerpt": "Internal / Verified | | Learning support | Learning/review surfaces are represented in project evidence | Internal / Verified | | Feature discipline | Brainstorm queues, feature queues, ICE scoring, and lifecycle states reduce random idea drift | Internal / Verified | | Workflow transferability | Shows AI-native source quality and review-loop thinking beyond job-agent | Internal / Verified | ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Which workflow is strongest: capture, search, learning, feed/social, or browser extension? - Does the project solve a daily-use pain or mainly demonstrate architecture and workflow thinking? - What sanitized evidence would best show the product without exposing private notes?"
-    },
-    {
-      "id": "repo-e7f5b2762e65e556-1",
-      "path": "docs/RELEASE_RUNBOOK.md",
-      "label": "docs/RELEASE_RUNBOOK.md · excerpt 1",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/RELEASE_RUNBOOK.md",
-      "excerpt": "# Public release runbook ## Current gate The repository is public and GitHub Pages is active on the project URL. Domain activation and DNS changes still require separate explicit approval from Marcus. Verified release state, checked on 2026-11-16: - `marcus-uden-dev/ai-native-proof-of-work` is public, with GitHub Pages built by workflow from `main`. - The latest `main` commit is `b30a80e`. Quality and Deploy Pages both passed on it (2026-10-29). - The project URL `https://marcus-uden-dev.github.io/ai-native-proof-of-work/` serves the home page, a proof page, the CV PDF, `sitemap.xml`, and `robots.txt` with HTTP 200. An unknown path returns the 404 page. - The custom domain `https://marcus.uden.dev` is not active. No custom domain is set in Pages and the host does not respond. - The External AI gate below is not recorded as run. ## Local Ready gate Run from the repository root: ```text npm ci npx playwright install chromium npm audit --audit-level=high npm test npm run release:validate git diff --check ``` Confirm these items before approval: 1. `git remote -v` is empty before first publication. After publication, the only remote is the approved"
-    },
-    {
-      "id": "repo-e7f5b2762e65e556-2",
-      "path": "docs/RELEASE_RUNBOOK.md",
-      "label": "docs/RELEASE_RUNBOOK.md · excerpt 2",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/RELEASE_RUNBOOK.md",
-      "excerpt": "`marcus-uden-dev/ai-native-proof-of-work` repository. 2. Every commit uses `Marcus Udén <marcus.uden.dev@gmail.com>`. 3. `release/privacy-review.json` binds every binary digest to an ancestor candidate commit. 4. The private repository HEAD, remote, and user-owned changes remain unchanged. 5. The professional profile staging repository has no remote and contains only approved professional identity text. ## Publication gate — one-way door Status: done. The repository was published and Pages is active. The steps stay here as the record and for any rebuild. Public caches and Git history can retain published material. Do not run these steps without explicit approval. After approval: 1. Create `marcus-uden-dev/ai-native-proof-of-work` as a new public repository. Do not fork, transfer, mirror, or import history. 2. Add only `https://github.com/marcus-uden-dev/ai-native-proof-of-work.git` as `origin`. 3. Configure the protected identity and ancestor values as repository secrets for the Quality workflow. 4. Push the approved staging history. 5. Confirm repository metadata reports no fork parent. 6. Confirm Quality passes before Pages deploys. 7. Record the released commit SHA and the last"
-    },
-    {
-      "id": "repo-e7f5b2762e65e556-3",
-      "path": "docs/RELEASE_RUNBOOK.md",
-      "label": "docs/RELEASE_RUNBOOK.md · excerpt 3",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/RELEASE_RUNBOOK.md",
-      "excerpt": "approved rollback commit. ## Temporary Pages validation Keep the project URL as the first host. Test the home page, case study, prototype deep links, CV, prompt copy, email, metadata, sitemap, and 404 page. The canonical domain metadata intentionally names `https://marcus.uden.dev`. Do not activate that domain until the temporary host passes and Marcus gives separate approval. ## Content rollback drill Use append-only history. Do not rewrite public history. 1. Record the bad commit SHA and last approved commit SHA. 2. Run `git revert --no-edit <bad-commit-sha>`. 3. Run the Local Ready gate on the revert commit. 4. Push the revert commit after it passes. 5. Confirm Pages serves the restored content and record the revert SHA. The original content remains recoverable from the recorded commits. ## Domain gate and rollback After separate approval, add the custom subdomain in GitHub Pages before changing DNS. Verify account ownership, retain the DNS verification record, configure the CNAME, wait for HTTPS, then retest every canonical route. If domain activation fails, remove the Pages custom-domain setting and its DNS CNAME. The temporary project URL remains the fallback. No private"
-    },
-    {
-      "id": "repo-e7f5b2762e65e556-4",
-      "path": "docs/RELEASE_RUNBOOK.md",
-      "label": "docs/RELEASE_RUNBOOK.md · excerpt 4",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/RELEASE_RUNBOOK.md",
-      "excerpt": "repository change is part of this rollback. Search Console registration follows a working HTTPS custom domain. It is not a Local Ready or publication blocker. ## External AI gate After the temporary public URL exists, run every fixture in `tests/evaluation/fixtures.json` with ChatGPT and Claude. Use `tests/evaluation/rubric.md`. Record provider, model, date, access state, output, and pass or failure. Provider access limits are recorded; they do not weaken the public evidence contract."
     },
     {
       "id": "repo-01eb3c53cfaa8b47-1",
@@ -4025,6 +3913,126 @@
       "sourceClass": "public-repository",
       "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/plans/2026-11-24-closed-beta-evidence-reconciliation-plan.md",
       "excerpt": "verification checklist. 5. **ce-babysit-pr:** wait for Quality, inspect failing steps, repair the branch, and re-run until green. 6. **merge gate:** merge only after CI is green and the PR diff still matches the evidence boundary. 7. **post-merge:** verify Pages deployment for the merge SHA. Do not change DNS or custom-domain configuration. ## Stop Conditions Stop and do not publish a claim if: - the only support is an uncommitted or ambiguous source; - the claim would identify a tester or expose a private source path/repository identity; - the wording implies public availability, adoption, market validation or measured outcomes; - a generated index or static decision-log projection cannot be reconciled with its source; - release/privacy validation fails."
+    },
+    {
+      "id": "repo-e7f5b2762e65e556-1",
+      "path": "docs/RELEASE_RUNBOOK.md",
+      "label": "docs/RELEASE_RUNBOOK.md · excerpt 1",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/RELEASE_RUNBOOK.md",
+      "excerpt": "# Public release runbook ## Current gate The repository is public and GitHub Pages is active on the project URL. Domain activation and DNS changes still require separate explicit approval from Marcus. Verified public-release baseline, refreshed on 2026-11-24: - `marcus-uden-dev/ai-native-proof-of-work` is public, with GitHub Pages built by workflow from `main`. - The merged baseline before the closed-beta evidence reconciliation is `cf619d6`. Quality and Deploy Pages both passed on it on 2026-11-16. - The project URL was verified to serve the home page, a proof page, the CV PDF, `sitemap.xml`, and `robots.txt` with HTTP 200; an unknown path returned the 404 page. - Any new evidence reconciliation must pass the Quality workflow before merge and a successful Pages deployment after merge before it becomes the new verified public release. - The custom domain `https://marcus.uden.dev` is not active. No custom domain is set in Pages. - The External AI gate below is not recorded as run. It is a separate evaluation gate, not evidence that the GitHub Pages publication itself is incomplete. ## Local Ready gate Run from the repository root: ```text npm ci npx playwright install chromium npm"
+    },
+    {
+      "id": "repo-e7f5b2762e65e556-2",
+      "path": "docs/RELEASE_RUNBOOK.md",
+      "label": "docs/RELEASE_RUNBOOK.md · excerpt 2",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/RELEASE_RUNBOOK.md",
+      "excerpt": "audit --audit-level=high npm test npm run release:validate git diff --check ``` Confirm these items before approval: 1. `git remote -v` is empty before first publication. After publication, the only remote is the approved `marcus-uden-dev/ai-native-proof-of-work` repository. 2. Every commit uses `Marcus Udén <marcus.uden.dev@gmail.com>`. 3. `release/privacy-review.json` binds every binary digest to an ancestor candidate commit. 4. The private repository HEAD, remote, and user-owned changes remain unchanged. 5. The professional profile staging repository has no remote and contains only approved professional identity text. ## Publication gate — one-way door Status: done. The repository was published and Pages is active. The steps stay here as the record and for any rebuild. Public caches and Git history can retain published material. Do not run these steps without explicit approval. After approval: 1. Create `marcus-uden-dev/ai-native-proof-of-work` as a new public repository. Do not fork, transfer, mirror, or import history. 2. Add only `https://github.com/marcus-uden-dev/ai-native-proof-of-work.git` as `origin`. 3. Configure the protected identity and ancestor values as repository"
+    },
+    {
+      "id": "repo-e7f5b2762e65e556-3",
+      "path": "docs/RELEASE_RUNBOOK.md",
+      "label": "docs/RELEASE_RUNBOOK.md · excerpt 3",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/RELEASE_RUNBOOK.md",
+      "excerpt": "secrets for the Quality workflow. 4. Push the approved staging history. 5. Confirm repository metadata reports no fork parent. 6. Confirm Quality passes before Pages deploys. 7. Record the released commit SHA and the last approved rollback commit. ## Temporary Pages validation Keep the project URL as the first host. Test the home page, case study, prototype deep links, CV, prompt copy, email, metadata, sitemap, and 404 page. The canonical domain metadata intentionally names `https://marcus.uden.dev`. Do not activate that domain until the temporary host passes and Marcus gives separate approval. ## Content rollback drill Use append-only history. Do not rewrite public history. 1. Record the bad commit SHA and last approved commit SHA. 2. Run `git revert --no-edit <bad-commit-sha>`. 3. Run the Local Ready gate on the revert commit. 4. Push the revert commit after it passes. 5. Confirm Pages serves the restored content and record the revert SHA. The original content remains recoverable from the recorded commits. ## Domain gate and rollback After separate approval, add the custom subdomain in GitHub Pages before changing DNS. Verify account ownership, retain the DNS verification record,"
+    },
+    {
+      "id": "repo-e7f5b2762e65e556-4",
+      "path": "docs/RELEASE_RUNBOOK.md",
+      "label": "docs/RELEASE_RUNBOOK.md · excerpt 4",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/RELEASE_RUNBOOK.md",
+      "excerpt": "configure the CNAME, wait for HTTPS, then retest every canonical route. If domain activation fails, remove the Pages custom-domain setting and its DNS CNAME. The temporary project URL remains the fallback. No private repository change is part of this rollback. Search Console registration follows a working HTTPS custom domain. It is not a Local Ready or publication blocker. ## External AI gate After the temporary public URL exists, run every fixture in `tests/evaluation/fixtures.json` with ChatGPT and Claude. Use `tests/evaluation/rubric.md`. Record provider, model, date, access state, output, and pass or failure. Provider access limits are recorded; they do not weaken the public evidence contract."
+    },
+    {
+      "id": "repo-d121ce3568b17abc-1",
+      "path": "strategy/job-agent/README.md",
+      "label": "strategy/job-agent/README.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/README.md",
+      "excerpt": "# Earned Signal Strategy Last updated: 2026-11-24 Status: Active / Lead project strategy ## Purpose This folder contains strategy documents for Earned Signal, historically tracked as job-agent and still stored under the stable `strategy/job-agent/` path. ## Project Role Earned Signal is the primary product strategy surface because it is the lead proof point for career workflow product execution. It entered invite-only closed beta on 2026-11-24. ## Canonical Documents | Document | Use | |---|---| | [Value Proposition](product/VALUE_PROPOSITION.md) | Who job-agent helps and why it matters | | [Product Strategy](product/PRODUCT_STRATEGY.md) | Target user, wedge, MVP scope, risks | | [Business Model](business/BUSINESS_MODEL.md) | Customer segments and monetization hypotheses | | [Pricing Strategy](business/PRICING_STRATEGY.md) | Pricing philosophy and first hypotheses | | [Go-To-Market](market/GO_TO_MARKET.md) | Initial audience and validation channels | | [Competitive Positioning](product/COMPETITIVE_POSITIONING.md) | Differentiation from alternatives | | [Decision Trail](decisions/DECISION_TRAIL.md) | Visible strategy decision format and decisions | ## Evidence See [Job-Agent Case"
+    },
+    {
+      "id": "repo-d121ce3568b17abc-2",
+      "path": "strategy/job-agent/README.md",
+      "label": "strategy/job-agent/README.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/README.md",
+      "excerpt": "Study](../../case-studies/JOB_AGENT_CASE_STUDY.md). ## Validation Focus - Learn which workflow steps create repeatable value for invited beta users. - Keep the public proof synthetic and separate from closed-beta user data. - Measure outcomes before claiming adoption or market validation. - Keep paid pricing as a later hypothesis until controlled beta evidence supports it."
+    },
+    {
+      "id": "repo-63b5ea8b93ee9e2d-1",
+      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "excerpt": "# Earned Signal Product Strategy Last updated: 2026-11-24 Status: Active / Closed-beta learning / Internal evidence summarized ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Target User Initial target user: job seekers in technical, product, AI-adjacent, and career-transition roles who need a more structured, evidence-aware job search workflow. ## Core Problem Job search is a repeated, context-heavy workflow. Users need help with discovery, tailoring, applying, following up, and learning from feedback without losing control of their personal data or professional voice. ## Existing Alternatives | Alternative | Gap | |---|---| | Manual spreadsheets and notes | Flexible but high-friction and easy to neglect | | Generic AI chat | Good drafts, weak workflow memory and weak privacy boundaries | | Job boards | Discovery-focused, not application workflow-focused | | Resume builders | Improve materials but do not manage the whole loop | | Fully autonomous appliers | High trust, quality, and platform-risk burden | ## Product Wedge Reviewed career workflow support: structured job"
+    },
+    {
+      "id": "repo-63b5ea8b93ee9e2d-2",
+      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "excerpt": "discovery, fit/context analysis, CV/application assistance, interview preparation, and feedback capture with explicit human review. ## Product Scope - Profile and CV workflow - Job discovery and monitoring - Job fit/context analysis - Per-job application support - Feedback and correction loop - Privacy and consent surfaces - Data export/delete planning - QA and regression coverage - Deployment, telemetry, backup/restore, and recovery controls ## Non-MVP Scope - Fully autonomous application sending - Unreviewed recruiter outreach - Large-scale scraping without source controls - Broad public availability before the closed-beta evidence supports it - Outcome, adoption, or market-validation claims before measurement exists ## Feature Prioritization | Feature | User Value | Complexity | Priority | |---|---|---|---| | CV/profile workflow | High | Medium | High | | Job discovery and monitoring | High | Medium | High | | Per-job application support | High | Medium | High | | Feedback loop | High | Medium | High | | Consent and data-rights flows | High | Medium | High | | Telemetry and outcome learning | High | Medium | High | | Billing and credits | Medium | Medium | Medium | | Referral"
+    },
+    {
+      "id": "repo-63b5ea8b93ee9e2d-3",
+      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 3",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "excerpt": "economy | Unknown | High | Deferred | ## Current Closed-Beta Experiment As of 2026-11-24, Earned Signal is running as an invite-only closed beta. The first invited tester signed in and accepted the current terms after pre-invitation verification. The beta is free, application support remains user-reviewed, and the public demo is separate from beta user data. The next product question is no longer “can this be deployed?” but “which parts create repeatable user value under controlled external use?” ## Risks - Privacy and legal risk - Trust risk from over-automation - Quality risk in generated materials - Source quality risk in job discovery - Platform risk around job boards and application portals - Pricing risk before outcome validation - Mistaking a small controlled cohort for adoption or market validation ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Strategy Decisions Use the decision-trail format in [Decision Trail](../decisions/DECISION_TRAIL.md) and summarize public portfolio-level decisions in the [public decision log](../../../site/evidence/decision-log.json) when they"
+    },
+    {
+      "id": "repo-63b5ea8b93ee9e2d-4",
+      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 4",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "excerpt": "materially affect recruiter-facing claims."
+    },
+    {
+      "id": "repo-821a4ccd522ff0fd-1",
+      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "excerpt": "# Earned Signal Value Proposition Last updated: 2026-11-24 Status: Active hypothesis / Closed-beta evidence available ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Core Claim Earned Signal helps job seekers turn scattered career material, job opportunities, application work, and feedback into a reviewed career workflow. The value proposition is not \"AI writes applications.\" The stronger value is a trustworthy career operating system: discover relevant jobs, adapt materials, support applications, preserve user control, and learn from outcomes. ## User Problem Job search work is fragmented across CVs, job boards, application portals, interview notes, follow-ups, recruiter feedback, and personal constraints. Generic AI tools can generate text, but they do not reliably preserve context, reviewability, privacy, or outcome learning. ## Before - Career material, job opportunities, and application drafts lived in separate places. - Each application required repeated context reconstruction. - It was hard to see which feedback, job criteria, or application choices improved outcomes. -"
+    },
+    {
+      "id": "repo-821a4ccd522ff0fd-2",
+      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "excerpt": "Automation risked becoming either too shallow or too autonomous to trust. ## After - CV/profile material becomes part of a reusable workflow. - Job discovery, fit analysis, application support, and feedback loops are connected. - Human review remains central for quality, privacy, and trust. - Product decisions around consent, data rights, telemetry, pricing, and deployment are explicit. ## Value Created | Value | Explanation | Evidence Status | |---|---|---| | Designed to reduce repeated context work | Reuses career context across applications; user impact is not yet measured | Internal / Verified capability | | Better reviewability | Keeps job analysis, generated material, and user feedback inspectable | Internal / Verified | | Stronger privacy posture | Consent, data-rights, retention, and export/delete flows are part of product planning | Internal / Verified | | Product learning loop | Feedback can inform future suggestions and roadmap choices; outcome improvement is not yet measured | Internal / Verified capability | | Recruiter-relevant proof | Demonstrates full-stack product judgment in a real workflow domain | Internal / Verified | ## Evidence See [Job-Agent Case"
+    },
+    {
+      "id": "repo-821a4ccd522ff0fd-3",
+      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 3",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "excerpt": "Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Closed-Beta Evidence and Validation Needed The first invited tester signed in and accepted the current terms on 2026-11-24. This verifies controlled external use, not the value proposition itself. - Which workflow step creates the most repeatable user value: discovery, CV adaptation, apply support, interview prep, or feedback capture? - What level of automation feels trustworthy to beta users? - Which outcomes can be measured without confusing activity with value? - Which pricing model, if any, matches value users actually perceive after the free beta? - Which additional evidence can be made public without exposing beta user data?"
+    },
+    {
+      "id": "repo-da31c523f5b3dfc0-1",
+      "path": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
+      "label": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
+      "excerpt": "# Earned Signal Competitive Positioning Last updated: 2026-11-24 Status: Active hypothesis / Closed-beta learning ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Positioning Statement A reviewed career workflow product for job seekers who need AI-assisted discovery, application support, and feedback loops without giving up control, privacy, or professional judgment. ## Differentiation | Category | Typical Approach | Earned Signal Position | |---|---|---| | Generic AI chat | Drafts text on demand | Maintains workflow context across job search steps | | Resume builders | Improve static documents | Connects CV/profile material to specific opportunities | | Job boards | Surface listings | Supports evaluation, tailoring, application, and learning | | Application trackers | Track status | Adds AI-assisted analysis and feedback loops | | Autonomous appliers | Optimize volume | Prioritizes reviewed, user-controlled applications | ## What This Is Not - Not a generic cover-letter generator - Not a fully autonomous job spam tool - Not a public claim of measured placement outcomes - Not"
+    },
+    {
+      "id": "repo-da31c523f5b3dfc0-2",
+      "path": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
+      "label": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
+      "excerpt": "evidence of market validation merely because a closed beta exists - Not a substitute for human judgment - Not a product that should bypass privacy review ## Strategic Wedge The strongest wedge remains reviewed job-search workflow support: enough automation to reduce friction, enough structure to preserve context, and enough human control to remain trustworthy. The closed beta now tests that positioning with controlled external use rather than only internal implementation. ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
     }
   ]
 }
