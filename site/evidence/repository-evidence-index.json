@@ -3,126 +3,6 @@
   "repository": "https://github.com/marcus-uden-dev/ai-native-proof-of-work",
   "records": [
     {
-      "id": "repo-d07cb06ce516efb5-1",
-      "path": "strategy/job-agent/market/GO_TO_MARKET.md",
-      "label": "strategy/job-agent/market/GO_TO_MARKET.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/market/GO_TO_MARKET.md",
-      "excerpt": "# Earned Signal Go-To-Market Strategy Last updated: 2026-11-24 Status: Active closed-beta experiment / Market validation not established ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Initial Audience Likely early users: - technical and product job seekers - career switchers entering AI-adjacent roles - consultants/freelancers who repeatedly pitch themselves - career coaches who support structured application workflows ## Distribution Channels | Channel | Why It Might Work | Risk | Status | |---|---|---|---| | Recruiter and hiring-manager conversations | Directly tests credibility of the workflow | Narrow sample | Planned | | LinkedIn proof-of-work posts | Shows career-domain relevance | Requires consistency | Planned | | Invite-only closed beta | Direct product-use learning under controlled access | Small, non-representative cohort | Active | | Career coach feedback | Tests repeatability for multiple users | Different buyer needs | Planned | | GitHub portfolio sharing | Strong artifact for Marcus’s own proof | May not validate buyer demand | Active | ## GTM Principle Do not"
-    },
-    {
-      "id": "repo-d07cb06ce516efb5-2",
-      "path": "strategy/job-agent/market/GO_TO_MARKET.md",
-      "label": "strategy/job-agent/market/GO_TO_MARKET.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/market/GO_TO_MARKET.md",
-      "excerpt": "sell \"AI applies for you.\" Sell: - reviewed career workflow support - better use of existing career material - clearer job fit and application decisions - reduced application friction - privacy-aware automation - feedback-driven improvement ## Current Validation Plan 1. Invite a small cohort deliberately rather than opening access broadly. 2. Observe which workflow steps testers actually use and where they get blocked. 3. Capture feedback without treating one tester or a friends-and-family cohort as market validation. 4. Define outcome measures before claiming time saved, application quality, interviews, or other impact. 5. Revisit paid positioning only after the beta shows repeatable value. 6. Keep public recruiter proof synthetic unless a separate privacy review approves stronger evidence. ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
-    },
-    {
-      "id": "repo-da31c523f5b3dfc0-1",
-      "path": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
-      "label": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
-      "excerpt": "# Earned Signal Competitive Positioning Last updated: 2026-11-24 Status: Active hypothesis / Closed-beta learning ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Positioning Statement A reviewed career workflow product for job seekers who need AI-assisted discovery, application support, and feedback loops without giving up control, privacy, or professional judgment. ## Differentiation | Category | Typical Approach | Earned Signal Position | |---|---|---| | Generic AI chat | Drafts text on demand | Maintains workflow context across job search steps | | Resume builders | Improve static documents | Connects CV/profile material to specific opportunities | | Job boards | Surface listings | Supports evaluation, tailoring, application, and learning | | Application trackers | Track status | Adds AI-assisted analysis and feedback loops | | Autonomous appliers | Optimize volume | Prioritizes reviewed, user-controlled applications | ## What This Is Not - Not a generic cover-letter generator - Not a fully autonomous job spam tool - Not a public claim of measured placement outcomes - Not"
-    },
-    {
-      "id": "repo-da31c523f5b3dfc0-2",
-      "path": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
-      "label": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
-      "excerpt": "evidence of market validation merely because a closed beta exists - Not a substitute for human judgment - Not a product that should bypass privacy review ## Strategic Wedge The strongest wedge remains reviewed job-search workflow support: enough automation to reduce friction, enough structure to preserve context, and enough human control to remain trustworthy. The closed beta now tests that positioning with controlled external use rather than only internal implementation. ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
-    },
-    {
-      "id": "repo-63b5ea8b93ee9e2d-1",
-      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "excerpt": "# Earned Signal Product Strategy Last updated: 2026-11-24 Status: Active / Closed-beta learning / Internal evidence summarized ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Target User Initial target user: job seekers in technical, product, AI-adjacent, and career-transition roles who need a more structured, evidence-aware job search workflow. ## Core Problem Job search is a repeated, context-heavy workflow. Users need help with discovery, tailoring, applying, following up, and learning from feedback without losing control of their personal data or professional voice. ## Existing Alternatives | Alternative | Gap | |---|---| | Manual spreadsheets and notes | Flexible but high-friction and easy to neglect | | Generic AI chat | Good drafts, weak workflow memory and weak privacy boundaries | | Job boards | Discovery-focused, not application workflow-focused | | Resume builders | Improve materials but do not manage the whole loop | | Fully autonomous appliers | High trust, quality, and platform-risk burden | ## Product Wedge Reviewed career workflow support: structured job"
-    },
-    {
-      "id": "repo-63b5ea8b93ee9e2d-2",
-      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "excerpt": "discovery, fit/context analysis, CV/application assistance, interview preparation, and feedback capture with explicit human review. ## Product Scope - Profile and CV workflow - Job discovery and monitoring - Job fit/context analysis - Per-job application support - Feedback and correction loop - Privacy and consent surfaces - Data export/delete planning - QA and regression coverage - Deployment, telemetry, backup/restore, and recovery controls ## Non-MVP Scope - Fully autonomous application sending - Unreviewed recruiter outreach - Large-scale scraping without source controls - Broad public availability before the closed-beta evidence supports it - Outcome, adoption, or market-validation claims before measurement exists ## Feature Prioritization | Feature | User Value | Complexity | Priority | |---|---|---|---| | CV/profile workflow | High | Medium | High | | Job discovery and monitoring | High | Medium | High | | Per-job application support | High | Medium | High | | Feedback loop | High | Medium | High | | Consent and data-rights flows | High | Medium | High | | Telemetry and outcome learning | High | Medium | High | | Billing and credits | Medium | Medium | Medium | | Referral"
-    },
-    {
-      "id": "repo-63b5ea8b93ee9e2d-3",
-      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 3",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "excerpt": "economy | Unknown | High | Deferred | ## Current Closed-Beta Experiment As of 2026-11-24, Earned Signal is running as an invite-only closed beta. The first invited tester signed in and accepted the current terms after pre-invitation verification. The beta is free, application support remains user-reviewed, and the public demo is separate from beta user data. The next product question is no longer “can this be deployed?” but “which parts create repeatable user value under controlled external use?” ## Risks - Privacy and legal risk - Trust risk from over-automation - Quality risk in generated materials - Source quality risk in job discovery - Platform risk around job boards and application portals - Pricing risk before outcome validation - Mistaking a small controlled cohort for adoption or market validation ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Strategy Decisions Use the decision-trail format in [Decision Trail](../decisions/DECISION_TRAIL.md) and summarize public portfolio-level decisions in the [public decision log](../../../site/evidence/decision-log.json) when they"
-    },
-    {
-      "id": "repo-63b5ea8b93ee9e2d-4",
-      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 4",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
-      "excerpt": "materially affect recruiter-facing claims."
-    },
-    {
-      "id": "repo-821a4ccd522ff0fd-1",
-      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "excerpt": "# Earned Signal Value Proposition Last updated: 2026-11-24 Status: Active hypothesis / Closed-beta evidence available ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Core Claim Earned Signal helps job seekers turn scattered career material, job opportunities, application work, and feedback into a reviewed career workflow. The value proposition is not \"AI writes applications.\" The stronger value is a trustworthy career operating system: discover relevant jobs, adapt materials, support applications, preserve user control, and learn from outcomes. ## User Problem Job search work is fragmented across CVs, job boards, application portals, interview notes, follow-ups, recruiter feedback, and personal constraints. Generic AI tools can generate text, but they do not reliably preserve context, reviewability, privacy, or outcome learning. ## Before - Career material, job opportunities, and application drafts lived in separate places. - Each application required repeated context reconstruction. - It was hard to see which feedback, job criteria, or application choices improved outcomes. -"
-    },
-    {
-      "id": "repo-821a4ccd522ff0fd-2",
-      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "excerpt": "Automation risked becoming either too shallow or too autonomous to trust. ## After - CV/profile material becomes part of a reusable workflow. - Job discovery, fit analysis, application support, and feedback loops are connected. - Human review remains central for quality, privacy, and trust. - Product decisions around consent, data rights, telemetry, pricing, and deployment are explicit. ## Value Created | Value | Explanation | Evidence Status | |---|---|---| | Designed to reduce repeated context work | Reuses career context across applications; user impact is not yet measured | Internal / Verified capability | | Better reviewability | Keeps job analysis, generated material, and user feedback inspectable | Internal / Verified | | Stronger privacy posture | Consent, data-rights, retention, and export/delete flows are part of product planning | Internal / Verified | | Product learning loop | Feedback can inform future suggestions and roadmap choices; outcome improvement is not yet measured | Internal / Verified capability | | Recruiter-relevant proof | Demonstrates full-stack product judgment in a real workflow domain | Internal / Verified | ## Evidence See [Job-Agent Case"
-    },
-    {
-      "id": "repo-821a4ccd522ff0fd-3",
-      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 3",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
-      "excerpt": "Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Closed-Beta Evidence and Validation Needed The first invited tester signed in and accepted the current terms on 2026-11-24. This verifies controlled external use, not the value proposition itself. - Which workflow step creates the most repeatable user value: discovery, CV adaptation, apply support, interview prep, or feedback capture? - What level of automation feels trustworthy to beta users? - Which outcomes can be measured without confusing activity with value? - Which pricing model, if any, matches value users actually perceive after the free beta? - Which additional evidence can be made public without exposing beta user data?"
-    },
-    {
-      "id": "repo-e29285a217a85ac1-1",
-      "path": "strategy/pkm/README.md",
-      "label": "strategy/pkm/README.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/README.md",
-      "excerpt": "# PKM Strategy Last updated: 2026-05-11 Status: Supporting project strategy / Internal evidence summarized ## Purpose This folder contains strategy notes for the PKM project, a supporting proof point for knowledge workflow design. ## Project Role PKM is a supporting product strategy surface for knowledge workflow design, ingestion, retrieval, learning loops, and feature lifecycle discipline. ## Canonical Documents | Document | Use | |---|---| | [Value Proposition](product/VALUE_PROPOSITION.md) | Who PKM helps and why it matters | | [Product Strategy](product/PRODUCT_STRATEGY.md) | Target user, wedge, MVP scope, risks | | [Business Model](business/BUSINESS_MODEL.md) | Customer segments and monetization hypotheses | | [Pricing Strategy](business/PRICING_STRATEGY.md) | Pricing philosophy and deferred hypotheses | | [Go-To-Market](market/GO_TO_MARKET.md) | Validation and distribution assumptions | | [Competitive Positioning](product/COMPETITIVE_POSITIONING.md) | Differentiation from alternatives | | [Decision Trail](decisions/DECISION_TRAIL.md) | Visible strategy decisions | ## Evidence See [PKM Case Study](../../case-studies/PKM_CASE_STUDY.md). ## Validation Focus - Verify one"
-    },
-    {
-      "id": "repo-e29285a217a85ac1-2",
-      "path": "strategy/pkm/README.md",
-      "label": "strategy/pkm/README.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/README.md",
-      "excerpt": "end-to-end daily-use workflow. - Clarify whether PKM is a commercial product path or mainly portfolio evidence. - Add sanitized evidence without exposing private notes."
-    },
-    {
-      "id": "repo-b2c8645933060566-1",
-      "path": "strategy/pkm/business/BUSINESS_MODEL.md",
-      "label": "strategy/pkm/business/BUSINESS_MODEL.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/business/BUSINESS_MODEL.md",
-      "excerpt": "# PKM Business Model Last updated: 2026-05-11 Status: Hypothesis / Not validated ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Possible Customer Segments | Segment | Problem | Willingness to Pay | Notes | |---|---|---|---| | Individual knowledge workers | Need better capture, retrieval, and review | Unknown | Most natural early segment | | Builders / founders | Need source memory for product and research work | Unknown | Strong workflow fit | | Small teams | Need shared knowledge workflows | Possible | Requires collaboration scope | ## Business Model Options | Model | Pros | Cons | Best Fit | |---|---|---|---| | Individual subscription | Simple and familiar | Requires sustained daily value | Power users | | One-time setup | Concrete for messy existing systems | Less scalable | Builders with existing source sprawl | | Team license | Higher value | Requires collaboration/admin scope | Small teams | | Open/self-hosted plus services | Trust-friendly | Harder to monetize directly | Technical users | ## Current Hypothesis If commercialized, PKM likely starts as an individual power-user tool. Team or small-business models should"
-    },
-    {
-      "id": "repo-b2c8645933060566-2",
-      "path": "strategy/pkm/business/BUSINESS_MODEL.md",
-      "label": "strategy/pkm/business/BUSINESS_MODEL.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/business/BUSINESS_MODEL.md",
-      "excerpt": "wait until the personal workflow is demonstrably reliable. ## Rejected or Deferred Models | Model | Status | Reason | |---|---|---| | Enterprise knowledge base | Deferred | Too broad before daily-use validation | | Public feed/social product | Deferred | Different product and trust model | | Fully automated research assistant | Deferred | Requires stronger source-quality guarantees | ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Do users pay for retrieval and review, or only for capture convenience? - Is the strongest buyer an individual, founder, student, or team?"
-    },
-    {
       "id": "repo-3837c45d717ee20e-1",
       "path": "strategy/pkm/business/PRICING_STRATEGY.md",
       "label": "strategy/pkm/business/PRICING_STRATEGY.md · excerpt 1",
@@ -4201,6 +4081,126 @@
       "sourceClass": "strategy-document",
       "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/decisions/DECISION_TRAIL.md",
       "excerpt": "application writer | Easy to explain | Weak differentiation and quality risk | | Fully autonomous applier | Strong automation story | High trust, legal, spam, and platform risk | | Reviewed career workflow product | Better trust and product depth | More complex product surface | #### Tradeoffs Reviewed workflow positioning is more complex than a simple AI-writing story, but it better reflects the privacy, QA, feedback, and user-control requirements of the product. #### Decision Position job-agent as a reviewed career workflow product, not a generic AI writer or autonomous applier. #### Evidence Internal project summaries show CV workflow, discovery, application support, feedback loops, privacy/data-rights planning, QA, deployment, telemetry, and billing/product decisions. #### Open Questions - Which workflow step is the strongest wedge for a first external demo? - What evidence can be safely shown without exposing private project material? - Which pricing frame is easiest for users to understand? #### Next Action Add recruiter-safe screenshots or excerpts that show the reviewed workflow without exposing private data."
+    },
+    {
+      "id": "repo-d07cb06ce516efb5-1",
+      "path": "strategy/job-agent/market/GO_TO_MARKET.md",
+      "label": "strategy/job-agent/market/GO_TO_MARKET.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/market/GO_TO_MARKET.md",
+      "excerpt": "# Earned Signal Go-To-Market Strategy Last updated: 2026-11-24 Status: Active closed-beta experiment / Market validation not established ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Initial Audience Likely early users: - technical and product job seekers - career switchers entering AI-adjacent roles - consultants/freelancers who repeatedly pitch themselves - career coaches who support structured application workflows ## Distribution Channels | Channel | Why It Might Work | Risk | Status | |---|---|---|---| | Recruiter and hiring-manager conversations | Directly tests credibility of the workflow | Narrow sample | Planned | | LinkedIn proof-of-work posts | Shows career-domain relevance | Requires consistency | Planned | | Invite-only closed beta | Direct product-use learning under controlled access | Small, non-representative cohort | Active | | Career coach feedback | Tests repeatability for multiple users | Different buyer needs | Planned | | GitHub portfolio sharing | Strong artifact for Marcus’s own proof | May not validate buyer demand | Active | ## GTM Principle Do not"
+    },
+    {
+      "id": "repo-d07cb06ce516efb5-2",
+      "path": "strategy/job-agent/market/GO_TO_MARKET.md",
+      "label": "strategy/job-agent/market/GO_TO_MARKET.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/market/GO_TO_MARKET.md",
+      "excerpt": "sell \"AI applies for you.\" Sell: - reviewed career workflow support - better use of existing career material - clearer job fit and application decisions - reduced application friction - privacy-aware automation - feedback-driven improvement ## Current Validation Plan 1. Invite a small cohort deliberately rather than opening access broadly. 2. Observe which workflow steps testers actually use and where they get blocked. 3. Capture feedback without treating one tester or a friends-and-family cohort as market validation. 4. Define outcome measures before claiming time saved, application quality, interviews, or other impact. 5. Revisit paid positioning only after the beta shows repeatable value. 6. Keep public recruiter proof synthetic unless a separate privacy review approves stronger evidence. ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
+    },
+    {
+      "id": "repo-da31c523f5b3dfc0-1",
+      "path": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
+      "label": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
+      "excerpt": "# Earned Signal Competitive Positioning Last updated: 2026-11-24 Status: Active hypothesis / Closed-beta learning ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Positioning Statement A reviewed career workflow product for job seekers who need AI-assisted discovery, application support, and feedback loops without giving up control, privacy, or professional judgment. ## Differentiation | Category | Typical Approach | Earned Signal Position | |---|---|---| | Generic AI chat | Drafts text on demand | Maintains workflow context across job search steps | | Resume builders | Improve static documents | Connects CV/profile material to specific opportunities | | Job boards | Surface listings | Supports evaluation, tailoring, application, and learning | | Application trackers | Track status | Adds AI-assisted analysis and feedback loops | | Autonomous appliers | Optimize volume | Prioritizes reviewed, user-controlled applications | ## What This Is Not - Not a generic cover-letter generator - Not a fully autonomous job spam tool - Not a public claim of measured placement outcomes - Not"
+    },
+    {
+      "id": "repo-da31c523f5b3dfc0-2",
+      "path": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
+      "label": "strategy/job-agent/product/COMPETITIVE_POSITIONING.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/COMPETITIVE_POSITIONING.md",
+      "excerpt": "evidence of market validation merely because a closed beta exists - Not a substitute for human judgment - Not a product that should bypass privacy review ## Strategic Wedge The strongest wedge remains reviewed job-search workflow support: enough automation to reduce friction, enough structure to preserve context, and enough human control to remain trustworthy. The closed beta now tests that positioning with controlled external use rather than only internal implementation. ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
+    },
+    {
+      "id": "repo-63b5ea8b93ee9e2d-1",
+      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "excerpt": "# Earned Signal Product Strategy Last updated: 2026-11-24 Status: Active / Closed-beta learning / Internal evidence summarized ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Target User Initial target user: job seekers in technical, product, AI-adjacent, and career-transition roles who need a more structured, evidence-aware job search workflow. ## Core Problem Job search is a repeated, context-heavy workflow. Users need help with discovery, tailoring, applying, following up, and learning from feedback without losing control of their personal data or professional voice. ## Existing Alternatives | Alternative | Gap | |---|---| | Manual spreadsheets and notes | Flexible but high-friction and easy to neglect | | Generic AI chat | Good drafts, weak workflow memory and weak privacy boundaries | | Job boards | Discovery-focused, not application workflow-focused | | Resume builders | Improve materials but do not manage the whole loop | | Fully autonomous appliers | High trust, quality, and platform-risk burden | ## Product Wedge Reviewed career workflow support: structured job"
+    },
+    {
+      "id": "repo-63b5ea8b93ee9e2d-2",
+      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "excerpt": "discovery, fit/context analysis, CV/application assistance, interview preparation, and feedback capture with explicit human review. ## Product Scope - Profile and CV workflow - Job discovery and monitoring - Job fit/context analysis - Per-job application support - Feedback and correction loop - Privacy and consent surfaces - Data export/delete planning - QA and regression coverage - Deployment, telemetry, backup/restore, and recovery controls ## Non-MVP Scope - Fully autonomous application sending - Unreviewed recruiter outreach - Large-scale scraping without source controls - Broad public availability before the closed-beta evidence supports it - Outcome, adoption, or market-validation claims before measurement exists ## Feature Prioritization | Feature | User Value | Complexity | Priority | |---|---|---|---| | CV/profile workflow | High | Medium | High | | Job discovery and monitoring | High | Medium | High | | Per-job application support | High | Medium | High | | Feedback loop | High | Medium | High | | Consent and data-rights flows | High | Medium | High | | Telemetry and outcome learning | High | Medium | High | | Billing and credits | Medium | Medium | Medium | | Referral"
+    },
+    {
+      "id": "repo-63b5ea8b93ee9e2d-3",
+      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 3",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "excerpt": "economy | Unknown | High | Deferred | ## Current Closed-Beta Experiment As of 2026-11-24, Earned Signal is running as an invite-only closed beta. The first invited tester signed in and accepted the current terms after pre-invitation verification. The beta is free, application support remains user-reviewed, and the public demo is separate from beta user data. The next product question is no longer “can this be deployed?” but “which parts create repeatable user value under controlled external use?” ## Risks - Privacy and legal risk - Trust risk from over-automation - Quality risk in generated materials - Source quality risk in job discovery - Platform risk around job boards and application portals - Pricing risk before outcome validation - Mistaking a small controlled cohort for adoption or market validation ## Evidence See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Strategy Decisions Use the decision-trail format in [Decision Trail](../decisions/DECISION_TRAIL.md) and summarize public portfolio-level decisions in the [public decision log](../../../site/evidence/decision-log.json) when they"
+    },
+    {
+      "id": "repo-63b5ea8b93ee9e2d-4",
+      "path": "strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/job-agent/product/PRODUCT_STRATEGY.md · excerpt 4",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/PRODUCT_STRATEGY.md",
+      "excerpt": "materially affect recruiter-facing claims."
+    },
+    {
+      "id": "repo-821a4ccd522ff0fd-1",
+      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "excerpt": "# Earned Signal Value Proposition Last updated: 2026-11-24 Status: Active hypothesis / Closed-beta evidence available ## Project Scope Project: Earned Signal (historical project label: job-agent). Role in portfolio: primary proof point and lead career workflow product. ## Core Claim Earned Signal helps job seekers turn scattered career material, job opportunities, application work, and feedback into a reviewed career workflow. The value proposition is not \"AI writes applications.\" The stronger value is a trustworthy career operating system: discover relevant jobs, adapt materials, support applications, preserve user control, and learn from outcomes. ## User Problem Job search work is fragmented across CVs, job boards, application portals, interview notes, follow-ups, recruiter feedback, and personal constraints. Generic AI tools can generate text, but they do not reliably preserve context, reviewability, privacy, or outcome learning. ## Before - Career material, job opportunities, and application drafts lived in separate places. - Each application required repeated context reconstruction. - It was hard to see which feedback, job criteria, or application choices improved outcomes. -"
+    },
+    {
+      "id": "repo-821a4ccd522ff0fd-2",
+      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "excerpt": "Automation risked becoming either too shallow or too autonomous to trust. ## After - CV/profile material becomes part of a reusable workflow. - Job discovery, fit analysis, application support, and feedback loops are connected. - Human review remains central for quality, privacy, and trust. - Product decisions around consent, data rights, telemetry, pricing, and deployment are explicit. ## Value Created | Value | Explanation | Evidence Status | |---|---|---| | Designed to reduce repeated context work | Reuses career context across applications; user impact is not yet measured | Internal / Verified capability | | Better reviewability | Keeps job analysis, generated material, and user feedback inspectable | Internal / Verified | | Stronger privacy posture | Consent, data-rights, retention, and export/delete flows are part of product planning | Internal / Verified | | Product learning loop | Feedback can inform future suggestions and roadmap choices; outcome improvement is not yet measured | Internal / Verified capability | | Recruiter-relevant proof | Demonstrates full-stack product judgment in a real workflow domain | Internal / Verified | ## Evidence See [Job-Agent Case"
+    },
+    {
+      "id": "repo-821a4ccd522ff0fd-3",
+      "path": "strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "label": "strategy/job-agent/product/VALUE_PROPOSITION.md · excerpt 3",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/job-agent/product/VALUE_PROPOSITION.md",
+      "excerpt": "Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Closed-Beta Evidence and Validation Needed The first invited tester signed in and accepted the current terms on 2026-11-24. This verifies controlled external use, not the value proposition itself. - Which workflow step creates the most repeatable user value: discovery, CV adaptation, apply support, interview prep, or feedback capture? - What level of automation feels trustworthy to beta users? - Which outcomes can be measured without confusing activity with value? - Which pricing model, if any, matches value users actually perceive after the free beta? - Which additional evidence can be made public without exposing beta user data?"
+    },
+    {
+      "id": "repo-e29285a217a85ac1-1",
+      "path": "strategy/pkm/README.md",
+      "label": "strategy/pkm/README.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/README.md",
+      "excerpt": "# PKM Strategy Last updated: 2026-05-11 Status: Supporting project strategy / Internal evidence summarized ## Purpose This folder contains strategy notes for the PKM project, a supporting proof point for knowledge workflow design. ## Project Role PKM is a supporting product strategy surface for knowledge workflow design, ingestion, retrieval, learning loops, and feature lifecycle discipline. ## Canonical Documents | Document | Use | |---|---| | [Value Proposition](product/VALUE_PROPOSITION.md) | Who PKM helps and why it matters | | [Product Strategy](product/PRODUCT_STRATEGY.md) | Target user, wedge, MVP scope, risks | | [Business Model](business/BUSINESS_MODEL.md) | Customer segments and monetization hypotheses | | [Pricing Strategy](business/PRICING_STRATEGY.md) | Pricing philosophy and deferred hypotheses | | [Go-To-Market](market/GO_TO_MARKET.md) | Validation and distribution assumptions | | [Competitive Positioning](product/COMPETITIVE_POSITIONING.md) | Differentiation from alternatives | | [Decision Trail](decisions/DECISION_TRAIL.md) | Visible strategy decisions | ## Evidence See [PKM Case Study](../../case-studies/PKM_CASE_STUDY.md). ## Validation Focus - Verify one"
+    },
+    {
+      "id": "repo-e29285a217a85ac1-2",
+      "path": "strategy/pkm/README.md",
+      "label": "strategy/pkm/README.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/README.md",
+      "excerpt": "end-to-end daily-use workflow. - Clarify whether PKM is a commercial product path or mainly portfolio evidence. - Add sanitized evidence without exposing private notes."
+    },
+    {
+      "id": "repo-b2c8645933060566-1",
+      "path": "strategy/pkm/business/BUSINESS_MODEL.md",
+      "label": "strategy/pkm/business/BUSINESS_MODEL.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/business/BUSINESS_MODEL.md",
+      "excerpt": "# PKM Business Model Last updated: 2026-05-11 Status: Hypothesis / Not validated ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Possible Customer Segments | Segment | Problem | Willingness to Pay | Notes | |---|---|---|---| | Individual knowledge workers | Need better capture, retrieval, and review | Unknown | Most natural early segment | | Builders / founders | Need source memory for product and research work | Unknown | Strong workflow fit | | Small teams | Need shared knowledge workflows | Possible | Requires collaboration scope | ## Business Model Options | Model | Pros | Cons | Best Fit | |---|---|---|---| | Individual subscription | Simple and familiar | Requires sustained daily value | Power users | | One-time setup | Concrete for messy existing systems | Less scalable | Builders with existing source sprawl | | Team license | Higher value | Requires collaboration/admin scope | Small teams | | Open/self-hosted plus services | Trust-friendly | Harder to monetize directly | Technical users | ## Current Hypothesis If commercialized, PKM likely starts as an individual power-user tool. Team or small-business models should"
+    },
+    {
+      "id": "repo-b2c8645933060566-2",
+      "path": "strategy/pkm/business/BUSINESS_MODEL.md",
+      "label": "strategy/pkm/business/BUSINESS_MODEL.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/business/BUSINESS_MODEL.md",
+      "excerpt": "wait until the personal workflow is demonstrably reliable. ## Rejected or Deferred Models | Model | Status | Reason | |---|---|---| | Enterprise knowledge base | Deferred | Too broad before daily-use validation | | Public feed/social product | Deferred | Different product and trust model | | Fully automated research assistant | Deferred | Requires stronger source-quality guarantees | ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Do users pay for retrieval and review, or only for capture convenience? - Is the strongest buyer an individual, founder, student, or team?"
     }
   ]
 }
