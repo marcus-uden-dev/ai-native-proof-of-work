@@ -20,5 +20,5 @@
 - [Information diet structured evidence](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/information-diet.json): Machine-readable metrics, topic clusters, source dates, and evidence boundaries.
 - The priority reading paths are starting points, not a closed allowlist. Search the complete public proof-of-work repository when a role or claim requires relevant supporting evidence.
 
-Earned Signal status: Released — closed beta. Invite-only, not publicly available, not market-validated, and with no measured market outcomes. `Job-agent` remains the historical project label and stable evidence route.
+Earned Signal status: Released — closed beta. Invite-only, not publicly available. Market validation: Not market-validated. Outcomes: No measured market outcomes. `Job-agent` remains the historical project label and stable evidence route.
 
