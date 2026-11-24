@@ -4,13 +4,14 @@
 
 The repository is public and GitHub Pages is active on the project URL. Domain activation and DNS changes still require separate explicit approval from Marcus.
 
-Verified release state, checked on 2026-11-16:
+Verified public-release baseline, refreshed on 2026-11-24:
 
 - `marcus-uden-dev/ai-native-proof-of-work` is public, with GitHub Pages built by workflow from `main`.
-- The latest `main` commit is `b30a80e`. Quality and Deploy Pages both passed on it (2026-10-29).
-- The project URL `https://marcus-uden-dev.github.io/ai-native-proof-of-work/` serves the home page, a proof page, the CV PDF, `sitemap.xml`, and `robots.txt` with HTTP 200. An unknown path returns the 404 page.
-- The custom domain `https://marcus.uden.dev` is not active. No custom domain is set in Pages and the host does not respond.
-- The External AI gate below is not recorded as run.
+- The merged baseline before the closed-beta evidence reconciliation is `cf619d6`. Quality and Deploy Pages both passed on it on 2026-11-16.
+- The project URL was verified to serve the home page, a proof page, the CV PDF, `sitemap.xml`, and `robots.txt` with HTTP 200; an unknown path returned the 404 page.
+- Any new evidence reconciliation must pass the Quality workflow before merge and a successful Pages deployment after merge before it becomes the new verified public release.
+- The custom domain `https://marcus.uden.dev` is not active. No custom domain is set in Pages.
+- The External AI gate below is not recorded as run. It is a separate evaluation gate, not evidence that the GitHub Pages publication itself is incomplete.
 
 ## Local Ready gate
 
