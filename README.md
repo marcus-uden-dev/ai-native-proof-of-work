@@ -14,7 +14,7 @@ The migration is content-only. The earlier repository history is not imported. S
 
 - [Project proof points](PROJECT_PROOF_POINTS.md)
 - [Project status](PROJECT_STATUS.md)
-- [Job-agent case study](case-studies/JOB_AGENT_CASE_STUDY.md)
+- [Earned Signal case study](case-studies/JOB_AGENT_CASE_STUDY.md)
 - [PKM case study](case-studies/PKM_CASE_STUDY.md)
 - [Household budget app case study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md)
 
