@@ -6,7 +6,7 @@
 - [Repository interview prompt](https://marcus-uden-dev.github.io/ai-native-proof-of-work/repository-interview-prompt.txt): Copyable prompt for questions that require searching the complete public proof-of-work repository.
 - [Two-minute hiring brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/): General positioning and claim-to-evidence links.
 - [Repository Interview job-description prompt](https://marcus-uden-dev.github.io/ai-native-proof-of-work/job-description-prompt.html): Readable prompt for a public-evidence assessment against a non-confidential job description.
-- [Job-agent case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/): Guided product proof, limitations, and technical appendix.
+- [Earned Signal case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/): Guided product proof, limitations, and technical appendix.
 - [Recursive workflow system](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/): Supporting proof for the human-gated system loop.
 - [Earned Signal current release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v3.json): Canonical current maturity, closed-beta evidence date, and evidence boundary.
 - [Job-agent previous release](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/archive/0.8-public-proof/): Preserved 0.8-public-proof page and prototype for UI timeline review.
