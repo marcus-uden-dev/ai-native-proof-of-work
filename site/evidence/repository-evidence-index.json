@@ -3,246 +3,6 @@
   "repository": "https://github.com/marcus-uden-dev/ai-native-proof-of-work",
   "records": [
     {
-      "id": "repo-f8df0adaeb45c996-1",
-      "path": "PROJECT_PROOF_POINTS.md",
-      "label": "PROJECT_PROOF_POINTS.md · excerpt 1",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
-      "excerpt": "# Project Proof Points Last updated: 2026-11-24 Status: Active / Evidence-backed summary ## Purpose This file keeps the focus on concrete project work. The proof-of-work compiler, source indexes, and weekly review process are documented as a real part of the operating model. They are important secondary proof points, but the main evidence is the product and execution work behind job-agent, PKM, and the household budget app. ## Project Portfolio | Project | Current Role | Evidence Status | Recruiter Relevance | |---|---|---|---| | Earned Signal / Job-agent | Primary proof point: career workflow product now in invite-only closed beta, with CV, job discovery, application support, privacy, feedback, QA, telemetry, recovery controls, and staged rollout | Internal / Verified; closed-beta status summarized from committed release and checkpoint evidence | Shows product judgment, execution from build to controlled external use, privacy/trust boundaries, test discipline, and AI-assisted workflow design | | PKM | Supporting proof point: personal knowledge-management product with ingestion, search, learning, social/feed, browser extension, backend/frontend structure, and feature lifecycle"
-    },
-    {
-      "id": "repo-f8df0adaeb45c996-2",
-      "path": "PROJECT_PROOF_POINTS.md",
-      "label": "PROJECT_PROOF_POINTS.md · excerpt 2",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
-      "excerpt": "workflow | Internal / Verified; summarized from local project index and repo structure | Shows information architecture, knowledge workflows, ingestion thinking, and project prioritization | | Household budget app | Supporting proof point: Swedish household budgeting app with shared household, imports, transaction review, forecasting, goals, RLS/security, and extensive unit-test surface | Internal / Verified; summarized from local project docs and repo structure | Shows domain modeling, financial-product UX, privacy/security thinking, and test-backed product development | ## Case Study Links | Project | Case Study | |---|---| | Earned Signal / Job-agent | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) | | PKM | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) | | Household budget app | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | ## Current Status Link For the current portfolio status snapshot, see [PROJECT_STATUS.md](PROJECT_STATUS.md). ## Primary Narrative The strongest story is not only \"I built an automation that writes portfolio documents.\" The stronger story is: > I use AI-native"
-    },
-    {
-      "id": "repo-f8df0adaeb45c996-3",
-      "path": "PROJECT_PROOF_POINTS.md",
-      "label": "PROJECT_PROOF_POINTS.md · excerpt 3",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
-      "excerpt": "workflows to design, build, test, document, and improve real products. The portfolio evidence layer shows how that work is captured, reviewed, and translated into recruiter-readable evidence without exposing private project material. ## Earned Signal Proof Points | Area | Evidence Summary | Status | |---|---|---| | Product scope | Career workflow covering profile/CV, job discovery, application support, interview practice, feedback, privacy, and settings/billing surfaces | Internal / Verified | | Closed-beta execution | Invite-only beta is running; the first invited tester signed in and accepted the current terms on 2026-11-24 | Internal / Verified | | QA and reliability | Pre-invitation smoke checks, authentication checks, API/worker telemetry, backup/restore, reboot recovery, regression coverage, and CI are recorded in committed source evidence | Internal / Verified | | Privacy and trust | Versioned terms acceptance, consent choices, data export/deletion surfaces, analytics consent gating, controlled invitations, and no autonomous application submission are explicit product boundaries | Internal / Verified | | Product judgment | Launch was staged to a constrained cohort; the beta"
-    },
-    {
-      "id": "repo-f8df0adaeb45c996-4",
-      "path": "PROJECT_PROOF_POINTS.md",
-      "label": "PROJECT_PROOF_POINTS.md · excerpt 4",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
-      "excerpt": "is free; paid monetization remains unvalidated; public proof stays separate from beta user data | Internal / Verified | | Public proof | The recruiter-facing static demo remains synthetic and evidence-labelled; it demonstrates the workflow without exposing tester data or implying closed-beta availability is public | Verified | ## Current Project Status Summary | Project | Current State | Open Work | |---|---|---| | Earned Signal / Job-agent | Invite-only closed beta running as of 2026-11-24, with first tester sign-in and terms acceptance verified; smoke, telemetry, backup/restore and reboot checks are recorded as passed | Controlled cohort learning, measured outcome design, remaining operational follow-ups, and later pricing validation; no public-availability or market-validation claim | | PKM | Knowledge-workflow product with ingestion/search/learning/feed/source/person/topic surfaces, feature lifecycle discipline, a Chrome extension for browser capture, and a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/quota, SMTP, deployment, source/person/topic setup, and verification of search, flashcard, extension, and MCP paths | | Household budget app | Core budgeting"
-    },
-    {
-      "id": "repo-f8df0adaeb45c996-5",
-      "path": "PROJECT_PROOF_POINTS.md",
-      "label": "PROJECT_PROOF_POINTS.md · excerpt 5",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
-      "excerpt": "surfaces plus substantial household/shared-account hardening, invite onboarding, ownership rules, read-model/view-model extraction, mutation helper consolidation, and a 2026-05-26 app dependency-maintenance commit | Finish post-hardening migration cleanup, remove legacy bridge debt, validate Supabase ownership hardening, and split future modeling into smaller slices | ## Supporting Project Signals ### PKM - Uses feature queues, brainstorm queues, ICE scoring, and explicit lifecycle states. - Contains backend/frontend structure, ingestion routes, search, embeddings, learning routes, feed/social tests, and a browser extension. - Social feed work is marked `done` in the local feature queue, while full daily-use readiness still depends on operational setup and verification. - Latest observed repo signal is dependency maintenance on 2026-05-26; do not present it as product-outcome validation. - Demonstrates knowledge workflow design rather than generic note-taking. ### Household Budget App - Defines a desktop-first Swedish household budgeting product with shared household, imports, review queues, liquidity forecasting, goals, credit-card handling, and category/rule logic. - Maintains"
-    },
-    {
-      "id": "repo-f8df0adaeb45c996-6",
-      "path": "PROJECT_PROOF_POINTS.md",
-      "label": "PROJECT_PROOF_POINTS.md · excerpt 6",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
-      "excerpt": "durable product memory, roadmap/status docs, handoff docs, and a broad test surface. - Recent status emphasizes household-scoped reads/writes, shared-account ownership hardening, invite onboarding, and moving complex page logic into dedicated read models, view models, workflow helpers, and mutation helpers. - Latest observed repo signal is dependency maintenance on 2026-05-26; do not present it as product-outcome validation. - Demonstrates careful domain modeling and security-aware household data access. ## How The Automation Fits The compiler and source-indexing workflow should stay documented because they show method, repeatability, and operating discipline. They should be described as: - documented automation infrastructure - evidence extraction - weekly review - recruiter translation layer - privacy and claim-quality control They should be positioned as secondary proof points unless the specific document is about the portfolio evidence layer or automation system itself. ## Evidence Boundaries - Recruiter-facing documents should not expose private local paths. - Raw chat logs and project internals should be summarized, not copied. - Exact metrics should only be used when"
-    },
-    {
-      "id": "repo-f8df0adaeb45c996-7",
-      "path": "PROJECT_PROOF_POINTS.md",
-      "label": "PROJECT_PROOF_POINTS.md · excerpt 7",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
-      "excerpt": "verified. - Internal project status can be cited as `Internal / Verified` when grounded in indexed local files, but recruiter-facing files should link to summaries rather than local-only index files."
-    },
-    {
-      "id": "repo-f1cda6a32212d08e-1",
-      "path": "PROJECT_STATUS.md",
-      "label": "PROJECT_STATUS.md · excerpt 1",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
-      "excerpt": "# Project Status Last updated: 2026-11-24 Status: Active / Recruiter-facing summary ## Purpose This page summarizes how the main projects are progressing right now. It is a recruiter-safe status layer. It does not expose private local paths, raw logs, personal data, credentials, or sensitive project internals. ## Portfolio Status Snapshot | Project / Layer | Current State | Recent Progress | Main Open Work | Evidence Status | |---|---|---|---|---| | Earned Signal (formerly Job-agent) | Released to an invite-only closed beta on 2026-11-24; the public recruiter-safe proof remains separate from beta user data | First invited tester signed in and accepted the current terms; authentication, telemetry, backup/restore, reboot recovery, and pre-invitation smoke checks are recorded as verified | Learn from the controlled cohort, expand invitations deliberately, resolve remaining operational follow-ups, and measure outcomes before making adoption or market claims | Internal / Verified | | PKM | Knowledge-workflow product surfaces are represented, but operational blockers remain before full daily use | Ingestion/search/learning/feed/source/person/topic surfaces are represented; feature"
-    },
-    {
-      "id": "repo-f1cda6a32212d08e-2",
-      "path": "PROJECT_STATUS.md",
-      "label": "PROJECT_STATUS.md · excerpt 2",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
-      "excerpt": "workflow is explicit; social feed feature is marked done in the queue; Chrome extension exists for browser capture; latest observed repo signal is a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/embedding quota, frontend URL cleanup, SMTP setup, Hetzner deployment, source/person/topic setup, search/flashcard/extension/MCP verification | Internal / Verified | | Household budget app | Active product with core surfaces and a large household/shared-account hardening track | Household scope is threaded across major pages; owner/member/admin flows, invite onboarding, shared-account ownership rules, read-model/view-model extraction, and mutation helper extraction have progressed significantly; latest observed repo signal is a 2026-05-26 app dependency-maintenance commit | Finish post-hardening household migration cleanup, remove legacy migration debt, validate ownership hardening end-to-end in Supabase, split future modeling into smaller landing slices | Internal / Verified | | Portfolio evidence repository | Public recruiter-first evidence layer on GitHub Pages | Recruiter/agent review, decision log, case studies, public evidence manifests, static demo portal, and"
-    },
-    {
-      "id": "repo-f1cda6a32212d08e-3",
-      "path": "PROJECT_STATUS.md",
-      "label": "PROJECT_STATUS.md · excerpt 3",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
-      "excerpt": "source-grounded status reconciliation are in place | Keep current product evidence fresh, enable the compiler only under its separate approval gate, and continue privacy/release validation | Verified | ## Earned Signal Status Earned Signal, formerly tracked as Job-agent, is the lead proof point. Current source-grounded status as of 2026-11-24: - The product is running as an invitation-only closed beta. - The first invited tester signed in and accepted the current beta terms on 2026-11-24. - Authentication, pre-invitation smoke checks, API and worker telemetry, backup/restore, and reboot recovery are recorded as verified in committed source evidence. - The beta is free. In-app payments remain test-mode only; a paid model is still a hypothesis rather than validated demand. - Application support remains human-reviewed. The beta prepares application material but does not submit applications on the user's behalf. - The public prototype remains a synthetic recruiter-safe demonstration and is separate from closed-beta user data and services. - This milestone proves controlled external use. It does not prove adoption, market validation, recruiter response, job-search impact, or business"
-    },
-    {
-      "id": "repo-f1cda6a32212d08e-4",
-      "path": "PROJECT_STATUS.md",
-      "label": "PROJECT_STATUS.md · excerpt 4",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
-      "excerpt": "outcomes. Recruiter signal: - Product execution progressed from internal implementation and hardening to controlled external use. - The launch sequence shows explicit trust gates: authentication, terms acceptance, privacy controls, smoke testing, telemetry, backup/restore, and staged invitations. - The commercial boundary stayed conservative: free beta first, paid monetization later if evidence supports it. ## PKM Status PKM is the knowledge-workflow proof point. Current status from local project docs: - Feature workflow is explicit: brainstorm, proposed, ready, in-progress, done, reviewed, or rejected. - Social media feed is marked `done` in the feature queue, with merged feed, tagging, saving to KB, and ranking concepts documented. - Core surfaces include ingestion, search, learning, feed/social, sources, persons, topics, and browser capture. - Chrome extension exists for one-click browser saving. - Operational blockers remain before full daily use: OpenAI credit/embedding quota, SMTP password, local frontend URL cleanup, deployment, source/person/topic setup, and verification of search/learn/extension/MCP paths. - Latest observed repo-level signal is a 2026-05-26 frontend"
-    },
-    {
-      "id": "repo-f1cda6a32212d08e-5",
-      "path": "PROJECT_STATUS.md",
-      "label": "PROJECT_STATUS.md · excerpt 5",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
-      "excerpt": "dependency-maintenance commit. Treat this as maintenance freshness, not a new product milestone. Recruiter signal: - Shows information architecture, ingestion thinking, knowledge retrieval, prioritization, and feature-lifecycle discipline. ## Household Budget App Status The household budget app is the domain-modeling and reliability proof point. Current status from local project docs: - Core surfaces include dashboard, transactions, statement imports, recurring expenses, accounts, liquidity, budget, goals, settings, and household administration. - Household scope now threads through the major operational surfaces. - Shared-account ownership, owner proposals, household invites, member roles, and migration-safe read/write guards have been heavily hardened. - Recent work moved large page-local logic into read models, view models, workflow helpers, and mutation helpers across dashboard, settings, accounts, transactions, statement imports, recurring expenses, budget, goals, and liquidity. - Latest committed feature milestones are reported as passing `npm test` and `npm run lint` in the local project status. - Latest observed repo-level signal is a 2026-05-26 app dependency-maintenance"
-    },
-    {
-      "id": "repo-f1cda6a32212d08e-6",
-      "path": "PROJECT_STATUS.md",
-      "label": "PROJECT_STATUS.md · excerpt 6",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
-      "excerpt": "commit. Treat this as maintenance freshness, not a new product milestone. - Remaining work is to finish post-hardening migration cleanup and retire legacy bridge/debt affordances once validation is complete. Recruiter signal: - Shows careful modeling of household financial data, shared access, security boundaries, migration debt, and test-backed refactoring. ## Portfolio Evidence Repository Status This repository is the evidence packaging layer, not the main product. Current status: - GitHub-readable Markdown is the canonical format. - Project-first positioning is now the main narrative. - Recruiter and recruiter-agent navigation is in place. - Evidence matrix, role reading paths, case studies, milestone timeline, and before/after snapshots are available. - Mermaid diagrams have been adjusted for safer GitHub rendering. - The weekly compiler and source-indexing automation remain documented as the operating layer. - The reusable `template/` adoption layer and weekly automation runbook now give another user a provider-neutral path to recreate the system without copying Marcus-specific evidence. - `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md` has been re-checked against inspected"
-    },
-    {
-      "id": "repo-f1cda6a32212d08e-7",
-      "path": "PROJECT_STATUS.md",
-      "label": "PROJECT_STATUS.md · excerpt 7",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
-      "excerpt": "`job-agent` source files so it reflects actual setup files, repo-ops handoff docs, the difference between Docker Compose frontend `3000` and the canonical manual startup port `3002`, and the newer redesign-shell / shell-polish source state. - Direct source verification for the lead project was refreshed on 2026-11-24 against committed release notes, current status, decision records, and dated checkpoints. Private source paths and identities are not published here. ## Evidence Boundaries - Project status comes from local project docs and source indexes, summarized into recruiter-safe language. - Exact user or business impact is not claimed. - Closed-beta release status is distinguished from public availability, market validation, adoption, and measured outcomes. - Local paths, raw logs, and sensitive implementation details are intentionally excluded. - Internal source indexes were refreshed at a high level on 2026-06-01. This refresh updates source freshness and project inventory; it does not promote raw local paths or unreviewed source content into recruiter-facing files. - No dated weekly-input file existed for the week ending 2026-08-09, so this run promoted only source-verified"
-    },
-    {
-      "id": "repo-f1cda6a32212d08e-8",
-      "path": "PROJECT_STATUS.md",
-      "label": "PROJECT_STATUS.md · excerpt 8",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
-      "excerpt": "repo state and did not invent a higher-level weekly narrative beyond the sources above."
-    },
-    {
-      "id": "repo-b335630551682c19-1",
-      "path": "README.md",
-      "label": "README.md · excerpt 1",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/README.md",
-      "excerpt": "# Marcus Udén — proof of work This repository contains the recruiter-first public proof-of-work edition for Marcus Udén and hands-on product roles. The site leads with a concise hiring case. It then provides dated evidence, explicit maturity labels, and a guided Earned Signal case study. The public edition is curated. It is not a mirror of a working repository. ## Current state This is the professional public repository for `marcus-uden-dev/ai-native-proof-of-work`. The site is published on GitHub Pages at `https://marcus-uden-dev.github.io/ai-native-proof-of-work/`. The custom domain `https://marcus.uden.dev` is not active yet. It contains the curated static site and a staged migration of project strategy and case-study evidence from the earlier proof-of-work archive. It is a public, recruiter-shareable evidence layer around product work, not a mirror of every working file or a claim of public product availability, market validation, adoption, or measured outcomes. The migration is content-only. The earlier repository history is not imported. See [release/migration-manifest.json](release/migration-manifest.json) for the staged file boundary. The recruiter route does not require a"
-    },
-    {
-      "id": "repo-b335630551682c19-2",
-      "path": "README.md",
-      "label": "README.md · excerpt 2",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/README.md",
-      "excerpt": "custom domain or a separate public website. ## Project evidence - [Project proof points](PROJECT_PROOF_POINTS.md) - [Project status](PROJECT_STATUS.md) - [Earned Signal case study](case-studies/JOB_AGENT_CASE_STUDY.md) - [PKM case study](case-studies/PKM_CASE_STUDY.md) - [Household budget app case study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) ## Hiring route 1. Read the two-minute hiring brief. 2. Inspect the Earned Signal case study and synthetic company-research proof. 3. Download the sanitized English CV. 4. Request an interview through `marcus.uden.dev@gmail.com`. The site describes Earned Signal (formerly Job-agent) as released to an invite-only closed beta on 2026-11-24. The first invited tester signed in and accepted the current terms. This is controlled external use, not public availability, market validation, adoption proof, or a measured outcome. ## Development ```text npm ci npm test npm run release:validate ``` The static site lives under `site/`. The release validator checks file allowlisting, identity separation, private paths, credentials, product maturity wording, Git metadata, and binary privacy records. ## Publication boundary The repository is public and"
-    },
-    {
-      "id": "repo-b335630551682c19-3",
-      "path": "README.md",
-      "label": "README.md · excerpt 3",
-      "sourceClass": "public-repository",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/README.md",
-      "excerpt": "GitHub Pages is active on the project URL. Domain changes require separate explicit approval. The rollback method is an append-only revert commit to the last approved release. CI uses read-only permissions for quality checks. Pages and identity-token permissions exist only in the deployment job, which runs after Quality succeeds. See `docs/RELEASE_RUNBOOK.md` for the release, temporary-host, rollback, and domain gates."
-    },
-    {
-      "id": "repo-8ad4fdb382f2f6ff-1",
-      "path": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
-      "label": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
-      "excerpt": "# Household Budget App Case Study Last updated: 2026-06-01 Status: Supporting proof point / Internal evidence summarized ## Executive Summary The household budget app is a supporting proof point for domain modeling, financial-product UX, shared data access, imports, review workflows, forecasting, goals, and test-backed execution. ## Problem Household budgeting is not only category totals. A useful product needs shared household data, imports, review queues, liquidity forecasting, credit-card handling, goals, rules, and security boundaries. ## Product Scope | Area | Evidence Signal | Status | |---|---|---| | Shared household | Household/member role concepts and shared data access are central to the product design | Internal / Verified | | Imports | CSV/XLSX import, mapping, preview, dedupe, and review concepts are represented | Internal / Verified | | Transactions | Transaction review, categories, tags, rules, and split logic are represented | Internal / Verified | | Forecasting | Liquidity forecast, scheduled items, credit-card payments, and goals are represented | Internal / Verified | | Security | RLS/security thinking and household-scoped access are represented | Internal /"
-    },
-    {
-      "id": "repo-8ad4fdb382f2f6ff-2",
-      "path": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
-      "label": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
-      "excerpt": "Verified | | Tests | Broad unit-test surface is represented in project summaries | Internal / Verified | ## Current Status | Area | Current State | Remaining Work | |---|---|---| | Core surfaces | Dashboard, transactions, statement imports, recurring expenses, accounts, liquidity, budget, goals, settings, and household administration are represented | Continue polishing after household migration cleanup | | Household model | Household scope, member roles, admin flows, invites, ownership proposals, and shared-account ownership hardening are active focus areas | Finish remaining post-hardening migration cleanup and retire legacy bridge debt | | Read/write safety | Household-aware read scopes, ownership checks, and migration-safe guards are represented across major surfaces | Validate end-to-end in Supabase after cleanup | | Architecture hygiene | Large page-local logic is being moved into read models, view models, workflow helpers, and mutation helpers | Split future-modeling work into smaller landing slices | | Verification | Local status reports latest committed feature milestones passing `npm test` and `npm run lint` | Add selected safe test excerpts if this becomes externally"
-    },
-    {
-      "id": "repo-8ad4fdb382f2f6ff-3",
-      "path": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
-      "label": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md · excerpt 3",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
-      "excerpt": "shared | | Maintenance freshness | Latest observed repo signal is a 2026-05-26 app dependency-maintenance commit | Treat as maintenance evidence only; do not claim user impact from it | ## Clickable Demo This case study records the household-budget concept and its recruiter-safe evidence boundary. The examples use synthetic/demo data; the public site currently prioritises the Job-agent proof rather than presenting this supporting project as a production product. ## Domain Model View ```mermaid flowchart TD A[\"Household\"] --> B[\"Members / Roles\"] A --> C[\"Accounts\"] C --> D[\"Transactions\"] D --> E[\"Categories / Tags / Splits\"] D --> F[\"Import + Dedupe\"] A --> G[\"Scheduled Items\"] A --> H[\"Goals\"] G --> I[\"Liquidity Forecast\"] H --> I ``` ## Recruiter Relevance - Shows ability to model a real domain with constraints. - Shows privacy/security thinking around shared household data. - Shows test-backed product work outside the AI/career domain. - Demonstrates that the operating style transfers across product categories. ## Evidence Boundaries This case study summarizes internal project evidence. It does not expose household data, private financial details, local paths, or raw project"
-    },
-    {
-      "id": "repo-8ad4fdb382f2f6ff-4",
-      "path": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
-      "label": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md · excerpt 4",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
-      "excerpt": "logs."
-    },
-    {
-      "id": "repo-39258a04c92d4975-1",
-      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
-      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
-      "excerpt": "# Earned Signal Case Study Last updated: 2026-11-24 Status: Active / Lead proof point / Closed beta / Internal evidence summarized ## Executive Summary Earned Signal, formerly tracked as Job-agent, is the lead product proof in this repository. It demonstrates product execution across a career workflow: profile and CV handling, job discovery, application support, interview practice, feedback loops, privacy/data rights, QA, telemetry, recovery controls, and staged rollout. On 2026-11-24 the product reached an invite-only closed beta and the first invited tester signed in and accepted the current terms. That milestone proves controlled external use. It does **not** prove product adoption, market validation, recruiter response, job-search impact, or business outcomes. ## Public Demo The [recruiter-safe static demo](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/demo/) is separate from the closed-beta service. It uses synthetic company data and contains no beta user data. The strongest public surface is company research: it shows positive and warning signals, financial and compensation fields, culture signals, evidence labels, and explicit `public_source`,"
-    },
-    {
-      "id": "repo-39258a04c92d4975-2",
-      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
-      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
-      "excerpt": "`synthetic_demo`, or `inferred_demo` classes. ## Problem Job search work is fragmented across CVs, job boards, application portals, interviews, notes, feedback, and follow-ups. AI can help, but only if the workflow remains trustworthy, reviewable, and grounded in user control. ## What Was Built / Verified | Area | Current evidence | Status | |---|---|---| | Profile and documents | Profile intake, document library, CV variants and export flows are represented in the product | Internal / Verified | | Job discovery | Search, monitoring, match context, source handling and failure visibility are represented | Internal / Verified | | Application support | Application answers and tailored material are prepared for user review; the beta does not submit applications autonomously | Internal / Verified | | Feedback and learning | Generated outputs can be rated and problem reports can be submitted with bounded context | Internal / Verified | | Privacy/data rights | Versioned terms acceptance, consent choices, export/delete surfaces and analytics consent gating are represented | Internal / Verified | | QA and operations | Authentication, pre-invitation smoke checks, telemetry, backup/restore"
-    },
-    {
-      "id": "repo-39258a04c92d4975-3",
-      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
-      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 3",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
-      "excerpt": "and reboot recovery are recorded as verified | Internal / Verified | | Closed beta | Invite-only beta running; first invited tester signed in and accepted terms on 2026-11-24 | Internal / Verified | ## Closed-Beta Decision Trail | Element | Summary | |---|---| | Context | The product had moved beyond internal implementation but still lacked evidence from controlled external use | | Options Considered | Wait for final hosting and commercial setup, open broadly, or launch to a constrained invited cohort with explicit trust gates | | Trade-off | A small closed beta limits learning speed and availability but reduces privacy, reliability, support, and reputation risk while the product is still changing | | Decision | Launch invite-only, verify auth/telemetry/recovery/smoke gates first, keep application submission human-controlled, and keep the beta free while learning | | Execution | Controlled access, versioned terms acceptance, telemetry, backup/restore, reboot recovery and pre-invitation smoke checks were put in place before the first invitation | | Result | First invited tester signed in and accepted the current terms on 2026-11-24 | | Next test | Expand the cohort deliberately and"
-    },
-    {
-      "id": "repo-39258a04c92d4975-4",
-      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
-      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 4",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
-      "excerpt": "measure whether the workflow creates repeatable user value before making pricing, adoption, or outcome claims | ## Recruiter-Relevant Signals | Signal | Evidence | |---|---| | Product judgment | Chose a constrained learning release rather than equating technical readiness with a public launch | | Execution | Took the product from internal implementation through hardening, operational verification, invitation flow and first external use | | Privacy & trust judgment | Terms, consent, data rights, access control and no-autonomous-submit boundaries are explicit | | QA discipline | Smoke tests, telemetry, backup/restore and reboot recovery were used as release gates | | Commercial judgment | Kept the beta free and deferred paid-model claims until evidence exists | | AI-native leverage | AI assistance is embedded in a reviewed workflow rather than an unchecked autonomous application system | ## Evidence Boundaries - Closed-beta status is `Internal / Verified`, grounded in committed source release notes, current-status records, decisions and dated checkpoints. - Private repository identity, paths, tester identity, contact details, secrets and operational host details are intentionally"
-    },
-    {
-      "id": "repo-39258a04c92d4975-5",
-      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
-      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 5",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
-      "excerpt": "excluded. - The public demo is synthetic and separate from the live closed beta. - One invited tester is a release milestone, not adoption or market validation. - No recruiter response, job-search impact, time saved, revenue, retention, or business outcome is claimed. ## Suggested Interview Questions 1. Why launch to a constrained cohort instead of waiting for the final hosting target? 2. Which trust and reliability gates had to pass before the first invitation? 3. Where does the workflow deliberately keep human review instead of automating further? 4. What would count as evidence that the closed beta creates repeatable user value? 5. Which commercial assumptions should remain hypotheses until the cohort produces stronger evidence?"
-    },
-    {
-      "id": "repo-a715a024e4774f44-1",
-      "path": "case-studies/PKM_CASE_STUDY.md",
-      "label": "case-studies/PKM_CASE_STUDY.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/PKM_CASE_STUDY.md",
-      "excerpt": "# PKM Case Study Last updated: 2026-06-01 Status: Supporting proof point / Internal evidence summarized ## Executive Summary PKM is a supporting proof point for knowledge workflow design. It shows ingestion, search, learning surfaces, feed/social ideas, browser-extension material, backend/frontend structure, tests, and feature lifecycle discipline. ## Problem Personal knowledge work can become a pile of notes, links, fragments, and half-processed ideas. A useful PKM system needs capture, retrieval, prioritization, learning loops, and clear feature workflow. ## What This Demonstrates | Area | Evidence Signal | Status | |---|---|---| | Ingestion | Project evidence includes ingestion routes and source handling | Internal / Verified | | Retrieval | Search and embedding-related surfaces are represented in the source summaries | Internal / Verified | | Learning loops | Learning routes and spaced-repetition style signals are represented | Internal / Verified | | Browser capture | Browser extension material is present in project structure | Internal / Verified | | Feature lifecycle | Brainstorm queues, feature queues, ICE scoring, and lifecycle states are documented | Internal / Verified |"
-    },
-    {
-      "id": "repo-a715a024e4774f44-2",
-      "path": "case-studies/PKM_CASE_STUDY.md",
-      "label": "case-studies/PKM_CASE_STUDY.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/PKM_CASE_STUDY.md",
-      "excerpt": "| Testing | Backend tests across auth, ingest, search, learning, feed/social, and related surfaces are represented | Internal / Verified | ## Current Status | Area | Current State | Remaining Work | |---|---|---| | Core workflow | Ingestion, search, learning, feed, sources, persons, topics, and browser capture are represented | Verify full daily-use flow after operational blockers are cleared | | Feature workflow | Brainstorm queue, feature queue, lifecycle states, ICE scoring, and review workflow are documented | Continue promoting only validated ideas into implementation | | Social feed | Marked `done` in the local feature queue | Needs operational source setup and usage validation before impact claims | | Search / AI enrichment | Hybrid search and AI enrichment are part of the product direction | OpenAI billing/quota and re-embedding behavior need cleanup | | Operations | Local setup and deployment docs exist | SMTP, frontend URL cleanup, Hetzner deployment, Discord digest, extension, and MCP verification | | Maintenance freshness | Latest observed repo signal is a 2026-05-26 frontend dependency-maintenance commit | Treat as maintenance evidence only; do not claim user impact"
-    },
-    {
-      "id": "repo-a715a024e4774f44-3",
-      "path": "case-studies/PKM_CASE_STUDY.md",
-      "label": "case-studies/PKM_CASE_STUDY.md · excerpt 3",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/PKM_CASE_STUDY.md",
-      "excerpt": "from it | ## Clickable Demo This case study records the PKM knowledge-feed and source-capture concept. The examples use synthetic/demo data; the project supports the main Job-agent story rather than replacing it as the lead proof point. ## Workflow Model ```mermaid flowchart TD A[\"Capture\"] --> B[\"Ingest\"] B --> C[\"Index / Search\"] C --> D[\"Learn / Review\"] D --> E[\"Prioritize Features\"] E --> F[\"Implement / Validate\"] F --> G[\"Improves next<br/>ingestion cycle\"] ``` ## Recruiter Relevance - Shows information architecture thinking. - Shows ability to design workflows around messy knowledge inputs. - Shows prioritization discipline through feature queues and ICE scoring. - Supports the broader story that AI-native work needs source quality, review loops, and durable structure. ## Evidence Boundaries This case study summarizes internal project evidence. It should not be treated as a public product launch claim or measured adoption claim."
-    },
-    {
       "id": "repo-31059e4b73782699-1",
       "path": "strategy/household-budget-app/README.md",
       "label": "strategy/household-budget-app/README.md · excerpt 1",
@@ -4201,6 +3961,246 @@
       "sourceClass": "public-repository",
       "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/docs/reports/2026-10-22-agent-harness-lifecycle-implementation.md",
       "excerpt": "both sides added content, or toward the newer side for generated snapshots. Product repositories that deploy, the public site and third-party forks were held for explicit approval rather than merged automatically. - **Own errors corrected in the record.** Two merged PRs said tests had run, but the test runner was missing on the merge host. The tests were then run (18 and 10 passed), both PR records were corrected, and the merge helper now treats a missing runner as a failure. ## Limits - The goal-anchoring evaluation used one model and two runs per case. It shows direction, not statistical significance. - Codex-side checks for proof-capture visibility and native-goal resume were not run live because of usage limits. - Child agents launched from the command line are not listed in either desktop app. This is accepted for now. ## Next A communication-policy gap addendum is saved as a proposed plan. It covers a complete runtime inventory across both machines, a prompt-injection boundary, data-egress rules, a deterministic readiness gate, multi-run evaluation, the scope of the nudging setting, and model-fallback rules. None of it is implemented yet."
+    },
+    {
+      "id": "repo-f8df0adaeb45c996-1",
+      "path": "PROJECT_PROOF_POINTS.md",
+      "label": "PROJECT_PROOF_POINTS.md · excerpt 1",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
+      "excerpt": "# Project Proof Points Last updated: 2026-11-24 Status: Active / Evidence-backed summary ## Purpose This file keeps the focus on concrete project work. The proof-of-work compiler, source indexes, and weekly review process are documented as a real part of the operating model. They are important secondary proof points, but the main evidence is the product and execution work behind job-agent, PKM, and the household budget app. ## Project Portfolio | Project | Current Role | Evidence Status | Recruiter Relevance | |---|---|---|---| | Earned Signal / Job-agent | Primary proof point: career workflow product now in invite-only closed beta, with CV, job discovery, application support, privacy, feedback, QA, telemetry, recovery controls, and staged rollout | Internal / Verified; closed-beta status summarized from committed release and checkpoint evidence | Shows product judgment, execution from build to controlled external use, privacy/trust boundaries, test discipline, and AI-assisted workflow design | | PKM | Supporting proof point: personal knowledge-management product with ingestion, search, learning, social/feed, browser extension, backend/frontend structure, and feature lifecycle"
+    },
+    {
+      "id": "repo-f8df0adaeb45c996-2",
+      "path": "PROJECT_PROOF_POINTS.md",
+      "label": "PROJECT_PROOF_POINTS.md · excerpt 2",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
+      "excerpt": "workflow | Internal / Verified; summarized from local project index and repo structure | Shows information architecture, knowledge workflows, ingestion thinking, and project prioritization | | Household budget app | Supporting proof point: Swedish household budgeting app with shared household, imports, transaction review, forecasting, goals, RLS/security, and extensive unit-test surface | Internal / Verified; summarized from local project docs and repo structure | Shows domain modeling, financial-product UX, privacy/security thinking, and test-backed product development | ## Case Study Links | Project | Case Study | |---|---| | Earned Signal / Job-agent | [case-studies/JOB_AGENT_CASE_STUDY.md](case-studies/JOB_AGENT_CASE_STUDY.md) | | PKM | [case-studies/PKM_CASE_STUDY.md](case-studies/PKM_CASE_STUDY.md) | | Household budget app | [case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) | ## Current Status Link For the current portfolio status snapshot, see [PROJECT_STATUS.md](PROJECT_STATUS.md). ## Primary Narrative The strongest story is not only \"I built an automation that writes portfolio documents.\" The stronger story is: > I use AI-native"
+    },
+    {
+      "id": "repo-f8df0adaeb45c996-3",
+      "path": "PROJECT_PROOF_POINTS.md",
+      "label": "PROJECT_PROOF_POINTS.md · excerpt 3",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
+      "excerpt": "workflows to design, build, test, document, and improve real products. The portfolio evidence layer shows how that work is captured, reviewed, and translated into recruiter-readable evidence without exposing private project material. ## Earned Signal Proof Points | Area | Evidence Summary | Status | |---|---|---| | Product scope | Career workflow covering profile/CV, job discovery, application support, interview practice, feedback, privacy, and settings/billing surfaces | Internal / Verified | | Closed-beta execution | Invite-only beta is running; the first invited tester signed in and accepted the current terms on 2026-11-24 | Internal / Verified | | QA and reliability | Pre-invitation smoke checks, authentication checks, API/worker telemetry, backup/restore, reboot recovery, regression coverage, and CI are recorded in committed source evidence | Internal / Verified | | Privacy and trust | Versioned terms acceptance, consent choices, data export/deletion surfaces, analytics consent gating, controlled invitations, and no autonomous application submission are explicit product boundaries | Internal / Verified | | Product judgment | Launch was staged to a constrained cohort; the beta"
+    },
+    {
+      "id": "repo-f8df0adaeb45c996-4",
+      "path": "PROJECT_PROOF_POINTS.md",
+      "label": "PROJECT_PROOF_POINTS.md · excerpt 4",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
+      "excerpt": "is free; paid monetization remains unvalidated; public proof stays separate from beta user data | Internal / Verified | | Public proof | The recruiter-facing static demo remains synthetic and evidence-labelled; it demonstrates the workflow without exposing tester data or implying closed-beta availability is public | Verified | ## Current Project Status Summary | Project | Current State | Open Work | |---|---|---| | Earned Signal / Job-agent | Invite-only closed beta running as of 2026-11-24, with first tester sign-in and terms acceptance verified; smoke, telemetry, backup/restore and reboot checks are recorded as passed | Controlled cohort learning, measured outcome design, remaining operational follow-ups, and later pricing validation; no public-availability or market-validation claim | | PKM | Knowledge-workflow product with ingestion/search/learning/feed/source/person/topic surfaces, feature lifecycle discipline, a Chrome extension for browser capture, and a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/quota, SMTP, deployment, source/person/topic setup, and verification of search, flashcard, extension, and MCP paths | | Household budget app | Core budgeting"
+    },
+    {
+      "id": "repo-f8df0adaeb45c996-5",
+      "path": "PROJECT_PROOF_POINTS.md",
+      "label": "PROJECT_PROOF_POINTS.md · excerpt 5",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
+      "excerpt": "surfaces plus substantial household/shared-account hardening, invite onboarding, ownership rules, read-model/view-model extraction, mutation helper consolidation, and a 2026-05-26 app dependency-maintenance commit | Finish post-hardening migration cleanup, remove legacy bridge debt, validate Supabase ownership hardening, and split future modeling into smaller slices | ## Supporting Project Signals ### PKM - Uses feature queues, brainstorm queues, ICE scoring, and explicit lifecycle states. - Contains backend/frontend structure, ingestion routes, search, embeddings, learning routes, feed/social tests, and a browser extension. - Social feed work is marked `done` in the local feature queue, while full daily-use readiness still depends on operational setup and verification. - Latest observed repo signal is dependency maintenance on 2026-05-26; do not present it as product-outcome validation. - Demonstrates knowledge workflow design rather than generic note-taking. ### Household Budget App - Defines a desktop-first Swedish household budgeting product with shared household, imports, review queues, liquidity forecasting, goals, credit-card handling, and category/rule logic. - Maintains"
+    },
+    {
+      "id": "repo-f8df0adaeb45c996-6",
+      "path": "PROJECT_PROOF_POINTS.md",
+      "label": "PROJECT_PROOF_POINTS.md · excerpt 6",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
+      "excerpt": "durable product memory, roadmap/status docs, handoff docs, and a broad test surface. - Recent status emphasizes household-scoped reads/writes, shared-account ownership hardening, invite onboarding, and moving complex page logic into dedicated read models, view models, workflow helpers, and mutation helpers. - Latest observed repo signal is dependency maintenance on 2026-05-26; do not present it as product-outcome validation. - Demonstrates careful domain modeling and security-aware household data access. ## How The Automation Fits The compiler and source-indexing workflow should stay documented because they show method, repeatability, and operating discipline. They should be described as: - documented automation infrastructure - evidence extraction - weekly review - recruiter translation layer - privacy and claim-quality control They should be positioned as secondary proof points unless the specific document is about the portfolio evidence layer or automation system itself. ## Evidence Boundaries - Recruiter-facing documents should not expose private local paths. - Raw chat logs and project internals should be summarized, not copied. - Exact metrics should only be used when"
+    },
+    {
+      "id": "repo-f8df0adaeb45c996-7",
+      "path": "PROJECT_PROOF_POINTS.md",
+      "label": "PROJECT_PROOF_POINTS.md · excerpt 7",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_PROOF_POINTS.md",
+      "excerpt": "verified. - Internal project status can be cited as `Internal / Verified` when grounded in indexed local files, but recruiter-facing files should link to summaries rather than local-only index files."
+    },
+    {
+      "id": "repo-f1cda6a32212d08e-1",
+      "path": "PROJECT_STATUS.md",
+      "label": "PROJECT_STATUS.md · excerpt 1",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
+      "excerpt": "# Project Status Last updated: 2026-11-24 Status: Active / Recruiter-facing summary ## Purpose This page summarizes how the main projects are progressing right now. It is a recruiter-safe status layer. It does not expose private local paths, raw logs, personal data, credentials, or sensitive project internals. ## Portfolio Status Snapshot | Project / Layer | Current State | Recent Progress | Main Open Work | Evidence Status | |---|---|---|---|---| | Earned Signal (formerly Job-agent) | Released to an invite-only closed beta on 2026-11-24; the public recruiter-safe proof remains separate from beta user data | First invited tester signed in and accepted the current terms; authentication, telemetry, backup/restore, reboot recovery, and pre-invitation smoke checks are recorded as verified | Learn from the controlled cohort, expand invitations deliberately, resolve remaining operational follow-ups, and measure outcomes before making adoption or market claims | Internal / Verified | | PKM | Knowledge-workflow product surfaces are represented, but operational blockers remain before full daily use | Ingestion/search/learning/feed/source/person/topic surfaces are represented; feature"
+    },
+    {
+      "id": "repo-f1cda6a32212d08e-2",
+      "path": "PROJECT_STATUS.md",
+      "label": "PROJECT_STATUS.md · excerpt 2",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
+      "excerpt": "workflow is explicit; social feed feature is marked done in the queue; Chrome extension exists for browser capture; latest observed repo signal is a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/embedding quota, frontend URL cleanup, SMTP setup, Hetzner deployment, source/person/topic setup, search/flashcard/extension/MCP verification | Internal / Verified | | Household budget app | Active product with core surfaces and a large household/shared-account hardening track | Household scope is threaded across major pages; owner/member/admin flows, invite onboarding, shared-account ownership rules, read-model/view-model extraction, and mutation helper extraction have progressed significantly; latest observed repo signal is a 2026-05-26 app dependency-maintenance commit | Finish post-hardening household migration cleanup, remove legacy migration debt, validate ownership hardening end-to-end in Supabase, split future modeling into smaller landing slices | Internal / Verified | | Portfolio evidence repository | Public recruiter-first evidence layer on GitHub Pages | Recruiter/agent review, decision log, case studies, public evidence manifests, static demo portal, and"
+    },
+    {
+      "id": "repo-f1cda6a32212d08e-3",
+      "path": "PROJECT_STATUS.md",
+      "label": "PROJECT_STATUS.md · excerpt 3",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
+      "excerpt": "source-grounded status reconciliation are in place | Keep current product evidence fresh, enable the compiler only under its separate approval gate, and continue privacy/release validation | Verified | ## Earned Signal Status Earned Signal, formerly tracked as Job-agent, is the lead proof point. Current source-grounded status as of 2026-11-24: - The product is running as an invitation-only closed beta. - The first invited tester signed in and accepted the current beta terms on 2026-11-24. - Authentication, pre-invitation smoke checks, API and worker telemetry, backup/restore, and reboot recovery are recorded as verified in committed source evidence. - The beta is free. In-app payments remain test-mode only; a paid model is still a hypothesis rather than validated demand. - Application support remains human-reviewed. The beta prepares application material but does not submit applications on the user's behalf. - The public prototype remains a synthetic recruiter-safe demonstration and is separate from closed-beta user data and services. - This milestone proves controlled external use. It does not prove adoption, market validation, recruiter response, job-search impact, or business"
+    },
+    {
+      "id": "repo-f1cda6a32212d08e-4",
+      "path": "PROJECT_STATUS.md",
+      "label": "PROJECT_STATUS.md · excerpt 4",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
+      "excerpt": "outcomes. Recruiter signal: - Product execution progressed from internal implementation and hardening to controlled external use. - The launch sequence shows explicit trust gates: authentication, terms acceptance, privacy controls, smoke testing, telemetry, backup/restore, and staged invitations. - The commercial boundary stayed conservative: free beta first, paid monetization later if evidence supports it. ## PKM Status PKM is the knowledge-workflow proof point. Current status from local project docs: - Feature workflow is explicit: brainstorm, proposed, ready, in-progress, done, reviewed, or rejected. - Social media feed is marked `done` in the feature queue, with merged feed, tagging, saving to KB, and ranking concepts documented. - Core surfaces include ingestion, search, learning, feed/social, sources, persons, topics, and browser capture. - Chrome extension exists for one-click browser saving. - Operational blockers remain before full daily use: OpenAI credit/embedding quota, SMTP password, local frontend URL cleanup, deployment, source/person/topic setup, and verification of search/learn/extension/MCP paths. - Latest observed repo-level signal is a 2026-05-26 frontend"
+    },
+    {
+      "id": "repo-f1cda6a32212d08e-5",
+      "path": "PROJECT_STATUS.md",
+      "label": "PROJECT_STATUS.md · excerpt 5",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
+      "excerpt": "dependency-maintenance commit. Treat this as maintenance freshness, not a new product milestone. Recruiter signal: - Shows information architecture, ingestion thinking, knowledge retrieval, prioritization, and feature-lifecycle discipline. ## Household Budget App Status The household budget app is the domain-modeling and reliability proof point. Current status from local project docs: - Core surfaces include dashboard, transactions, statement imports, recurring expenses, accounts, liquidity, budget, goals, settings, and household administration. - Household scope now threads through the major operational surfaces. - Shared-account ownership, owner proposals, household invites, member roles, and migration-safe read/write guards have been heavily hardened. - Recent work moved large page-local logic into read models, view models, workflow helpers, and mutation helpers across dashboard, settings, accounts, transactions, statement imports, recurring expenses, budget, goals, and liquidity. - Latest committed feature milestones are reported as passing `npm test` and `npm run lint` in the local project status. - Latest observed repo-level signal is a 2026-05-26 app dependency-maintenance"
+    },
+    {
+      "id": "repo-f1cda6a32212d08e-6",
+      "path": "PROJECT_STATUS.md",
+      "label": "PROJECT_STATUS.md · excerpt 6",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
+      "excerpt": "commit. Treat this as maintenance freshness, not a new product milestone. - Remaining work is to finish post-hardening migration cleanup and retire legacy bridge/debt affordances once validation is complete. Recruiter signal: - Shows careful modeling of household financial data, shared access, security boundaries, migration debt, and test-backed refactoring. ## Portfolio Evidence Repository Status This repository is the evidence packaging layer, not the main product. Current status: - GitHub-readable Markdown is the canonical format. - Project-first positioning is now the main narrative. - Recruiter and recruiter-agent navigation is in place. - Evidence matrix, role reading paths, case studies, milestone timeline, and before/after snapshots are available. - Mermaid diagrams have been adjusted for safer GitHub rendering. - The weekly compiler and source-indexing automation remain documented as the operating layer. - The reusable `template/` adoption layer and weekly automation runbook now give another user a provider-neutral path to recreate the system without copying Marcus-specific evidence. - `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md` has been re-checked against inspected"
+    },
+    {
+      "id": "repo-f1cda6a32212d08e-7",
+      "path": "PROJECT_STATUS.md",
+      "label": "PROJECT_STATUS.md · excerpt 7",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
+      "excerpt": "`job-agent` source files so it reflects actual setup files, repo-ops handoff docs, the difference between Docker Compose frontend `3000` and the canonical manual startup port `3002`, and the newer redesign-shell / shell-polish source state. - Direct source verification for the lead project was refreshed on 2026-11-24 against committed release notes, current status, decision records, and dated checkpoints. Private source paths and identities are not published here. ## Evidence Boundaries - Project status comes from local project docs and source indexes, summarized into recruiter-safe language. - Exact user or business impact is not claimed. - Closed-beta release status is distinguished from public availability, market validation, adoption, and measured outcomes. - Local paths, raw logs, and sensitive implementation details are intentionally excluded. - Internal source indexes were refreshed at a high level on 2026-06-01. This refresh updates source freshness and project inventory; it does not promote raw local paths or unreviewed source content into recruiter-facing files. - No dated weekly-input file existed for the week ending 2026-08-09, so this run promoted only source-verified"
+    },
+    {
+      "id": "repo-f1cda6a32212d08e-8",
+      "path": "PROJECT_STATUS.md",
+      "label": "PROJECT_STATUS.md · excerpt 8",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/PROJECT_STATUS.md",
+      "excerpt": "repo state and did not invent a higher-level weekly narrative beyond the sources above."
+    },
+    {
+      "id": "repo-b335630551682c19-1",
+      "path": "README.md",
+      "label": "README.md · excerpt 1",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/README.md",
+      "excerpt": "# Marcus Udén — proof of work This repository contains the recruiter-first public proof-of-work edition for Marcus Udén and hands-on product roles. The site leads with a concise hiring case. It then provides dated evidence, explicit maturity labels, and a guided Earned Signal case study. The public edition is curated. It is not a mirror of a working repository. ## Current state This is the professional public repository for `marcus-uden-dev/ai-native-proof-of-work`. The site is published on GitHub Pages at `https://marcus-uden-dev.github.io/ai-native-proof-of-work/`. The custom domain `https://marcus.uden.dev` is not active yet. It contains the curated static site and a staged migration of project strategy and case-study evidence from the earlier proof-of-work archive. It is a public, recruiter-shareable evidence layer around product work, not a mirror of every working file or a claim of public product availability, market validation, adoption, or measured outcomes. The migration is content-only. The earlier repository history is not imported. See [release/migration-manifest.json](release/migration-manifest.json) for the staged file boundary. The recruiter route does not require a"
+    },
+    {
+      "id": "repo-b335630551682c19-2",
+      "path": "README.md",
+      "label": "README.md · excerpt 2",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/README.md",
+      "excerpt": "custom domain or a separate public website. ## Project evidence - [Project proof points](PROJECT_PROOF_POINTS.md) - [Project status](PROJECT_STATUS.md) - [Earned Signal case study](case-studies/JOB_AGENT_CASE_STUDY.md) - [PKM case study](case-studies/PKM_CASE_STUDY.md) - [Household budget app case study](case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) ## Hiring route 1. Read the two-minute hiring brief. 2. Inspect the Earned Signal case study and synthetic company-research proof. 3. Download the sanitized English CV. 4. Request an interview through `marcus.uden.dev@gmail.com`. The site describes Earned Signal (formerly Job-agent) as released to an invite-only closed beta on 2026-11-24. The first invited tester signed in and accepted the current terms. This is controlled external use, not public availability, market validation, adoption proof, or a measured outcome. ## Development ```text npm ci npm test npm run release:validate ``` The static site lives under `site/`. The release validator checks file allowlisting, identity separation, private paths, credentials, product maturity wording, Git metadata, and binary privacy records. ## Publication boundary The repository is public and"
+    },
+    {
+      "id": "repo-b335630551682c19-3",
+      "path": "README.md",
+      "label": "README.md · excerpt 3",
+      "sourceClass": "public-repository",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/README.md",
+      "excerpt": "GitHub Pages is active on the project URL. Domain changes require separate explicit approval. The rollback method is an append-only revert commit to the last approved release. CI uses read-only permissions for quality checks. Pages and identity-token permissions exist only in the deployment job, which runs after Quality succeeds. See `docs/RELEASE_RUNBOOK.md` for the release, temporary-host, rollback, and domain gates."
+    },
+    {
+      "id": "repo-8ad4fdb382f2f6ff-1",
+      "path": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
+      "label": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
+      "excerpt": "# Household Budget App Case Study Last updated: 2026-06-01 Status: Supporting proof point / Internal evidence summarized ## Executive Summary The household budget app is a supporting proof point for domain modeling, financial-product UX, shared data access, imports, review workflows, forecasting, goals, and test-backed execution. ## Problem Household budgeting is not only category totals. A useful product needs shared household data, imports, review queues, liquidity forecasting, credit-card handling, goals, rules, and security boundaries. ## Product Scope | Area | Evidence Signal | Status | |---|---|---| | Shared household | Household/member role concepts and shared data access are central to the product design | Internal / Verified | | Imports | CSV/XLSX import, mapping, preview, dedupe, and review concepts are represented | Internal / Verified | | Transactions | Transaction review, categories, tags, rules, and split logic are represented | Internal / Verified | | Forecasting | Liquidity forecast, scheduled items, credit-card payments, and goals are represented | Internal / Verified | | Security | RLS/security thinking and household-scoped access are represented | Internal /"
+    },
+    {
+      "id": "repo-8ad4fdb382f2f6ff-2",
+      "path": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
+      "label": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
+      "excerpt": "Verified | | Tests | Broad unit-test surface is represented in project summaries | Internal / Verified | ## Current Status | Area | Current State | Remaining Work | |---|---|---| | Core surfaces | Dashboard, transactions, statement imports, recurring expenses, accounts, liquidity, budget, goals, settings, and household administration are represented | Continue polishing after household migration cleanup | | Household model | Household scope, member roles, admin flows, invites, ownership proposals, and shared-account ownership hardening are active focus areas | Finish remaining post-hardening migration cleanup and retire legacy bridge debt | | Read/write safety | Household-aware read scopes, ownership checks, and migration-safe guards are represented across major surfaces | Validate end-to-end in Supabase after cleanup | | Architecture hygiene | Large page-local logic is being moved into read models, view models, workflow helpers, and mutation helpers | Split future-modeling work into smaller landing slices | | Verification | Local status reports latest committed feature milestones passing `npm test` and `npm run lint` | Add selected safe test excerpts if this becomes externally"
+    },
+    {
+      "id": "repo-8ad4fdb382f2f6ff-3",
+      "path": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
+      "label": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md · excerpt 3",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
+      "excerpt": "shared | | Maintenance freshness | Latest observed repo signal is a 2026-05-26 app dependency-maintenance commit | Treat as maintenance evidence only; do not claim user impact from it | ## Clickable Demo This case study records the household-budget concept and its recruiter-safe evidence boundary. The examples use synthetic/demo data; the public site currently prioritises the Job-agent proof rather than presenting this supporting project as a production product. ## Domain Model View ```mermaid flowchart TD A[\"Household\"] --> B[\"Members / Roles\"] A --> C[\"Accounts\"] C --> D[\"Transactions\"] D --> E[\"Categories / Tags / Splits\"] D --> F[\"Import + Dedupe\"] A --> G[\"Scheduled Items\"] A --> H[\"Goals\"] G --> I[\"Liquidity Forecast\"] H --> I ``` ## Recruiter Relevance - Shows ability to model a real domain with constraints. - Shows privacy/security thinking around shared household data. - Shows test-backed product work outside the AI/career domain. - Demonstrates that the operating style transfers across product categories. ## Evidence Boundaries This case study summarizes internal project evidence. It does not expose household data, private financial details, local paths, or raw project"
+    },
+    {
+      "id": "repo-8ad4fdb382f2f6ff-4",
+      "path": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
+      "label": "case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md · excerpt 4",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md",
+      "excerpt": "logs."
+    },
+    {
+      "id": "repo-39258a04c92d4975-1",
+      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
+      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
+      "excerpt": "# Earned Signal Case Study Last updated: 2026-11-24 Status: Active / Lead proof point / Closed beta / Internal evidence summarized ## Executive Summary Earned Signal, formerly tracked as Job-agent, is the lead product proof in this repository. It demonstrates product execution across a career workflow: profile and CV handling, job discovery, application support, interview practice, feedback loops, privacy/data rights, QA, telemetry, recovery controls, and staged rollout. On 2026-11-24 the product reached an invite-only closed beta and the first invited tester signed in and accepted the current terms. That milestone proves controlled external use. It does **not** prove product adoption, market validation, recruiter response, job-search impact, or business outcomes. ## Public Demo The [recruiter-safe static demo](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/demo/) is separate from the closed-beta service. It uses synthetic company data and contains no beta user data. The strongest public surface is company research: it shows positive and warning signals, financial and compensation fields, culture signals, evidence labels, and explicit `public_source`,"
+    },
+    {
+      "id": "repo-39258a04c92d4975-2",
+      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
+      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
+      "excerpt": "`synthetic_demo`, or `inferred_demo` classes. ## Problem Job search work is fragmented across CVs, job boards, application portals, interviews, notes, feedback, and follow-ups. AI can help, but only if the workflow remains trustworthy, reviewable, and grounded in user control. ## What Was Built / Verified | Area | Current evidence | Status | |---|---|---| | Profile and documents | Profile intake, document library, CV variants and export flows are represented in the product | Internal / Verified | | Job discovery | Search, monitoring, match context, source handling and failure visibility are represented | Internal / Verified | | Application support | Application answers and tailored material are prepared for user review; the beta does not submit applications autonomously | Internal / Verified | | Feedback and learning | Generated outputs can be rated and problem reports can be submitted with bounded context | Internal / Verified | | Privacy/data rights | Versioned terms acceptance, consent choices, export/delete surfaces and analytics consent gating are represented | Internal / Verified | | QA and operations | Authentication, pre-invitation smoke checks, telemetry, backup/restore"
+    },
+    {
+      "id": "repo-39258a04c92d4975-3",
+      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
+      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 3",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
+      "excerpt": "and reboot recovery are recorded as verified | Internal / Verified | | Closed beta | Invite-only beta running; first invited tester signed in and accepted terms on 2026-11-24 | Internal / Verified | ## Closed-Beta Decision Trail | Element | Summary | |---|---| | Context | The product had moved beyond internal implementation but still lacked evidence from controlled external use | | Options Considered | Wait for final hosting and commercial setup, open broadly, or launch to a constrained invited cohort with explicit trust gates | | Trade-off | A small closed beta limits learning speed and availability but reduces privacy, reliability, support, and reputation risk while the product is still changing | | Decision | Launch invite-only, verify auth/telemetry/recovery/smoke gates first, keep application submission human-controlled, and keep the beta free while learning | | Execution | Controlled access, versioned terms acceptance, telemetry, backup/restore, reboot recovery and pre-invitation smoke checks were put in place before the first invitation | | Result | First invited tester signed in and accepted the current terms on 2026-11-24 | | Next test | Expand the cohort deliberately and"
+    },
+    {
+      "id": "repo-39258a04c92d4975-4",
+      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
+      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 4",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
+      "excerpt": "measure whether the workflow creates repeatable user value before making pricing, adoption, or outcome claims | ## Recruiter-Relevant Signals | Signal | Evidence | |---|---| | Product judgment | Chose a constrained learning release rather than equating technical readiness with a public launch | | Execution | Took the product from internal implementation through hardening, operational verification, invitation flow and first external use | | Privacy & trust judgment | Terms, consent, data rights, access control and no-autonomous-submit boundaries are explicit | | QA discipline | Smoke tests, telemetry, backup/restore and reboot recovery were used as release gates | | Commercial judgment | Kept the beta free and deferred paid-model claims until evidence exists | | AI-native leverage | AI assistance is embedded in a reviewed workflow rather than an unchecked autonomous application system | ## Evidence Boundaries - Closed-beta status is `Internal / Verified`, grounded in committed source release notes, current-status records, decisions and dated checkpoints. - Private repository identity, paths, tester identity, contact details, secrets and operational host details are intentionally"
+    },
+    {
+      "id": "repo-39258a04c92d4975-5",
+      "path": "case-studies/JOB_AGENT_CASE_STUDY.md",
+      "label": "case-studies/JOB_AGENT_CASE_STUDY.md · excerpt 5",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/JOB_AGENT_CASE_STUDY.md",
+      "excerpt": "excluded. - The public demo is synthetic and separate from the live closed beta. - One invited tester is a release milestone, not adoption or market validation. - No recruiter response, job-search impact, time saved, revenue, retention, or business outcome is claimed. ## Suggested Interview Questions 1. Why launch to a constrained cohort instead of waiting for the final hosting target? 2. Which trust and reliability gates had to pass before the first invitation? 3. Where does the workflow deliberately keep human review instead of automating further? 4. What would count as evidence that the closed beta creates repeatable user value? 5. Which commercial assumptions should remain hypotheses until the cohort produces stronger evidence?"
+    },
+    {
+      "id": "repo-a715a024e4774f44-1",
+      "path": "case-studies/PKM_CASE_STUDY.md",
+      "label": "case-studies/PKM_CASE_STUDY.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/PKM_CASE_STUDY.md",
+      "excerpt": "# PKM Case Study Last updated: 2026-06-01 Status: Supporting proof point / Internal evidence summarized ## Executive Summary PKM is a supporting proof point for knowledge workflow design. It shows ingestion, search, learning surfaces, feed/social ideas, browser-extension material, backend/frontend structure, tests, and feature lifecycle discipline. ## Problem Personal knowledge work can become a pile of notes, links, fragments, and half-processed ideas. A useful PKM system needs capture, retrieval, prioritization, learning loops, and clear feature workflow. ## What This Demonstrates | Area | Evidence Signal | Status | |---|---|---| | Ingestion | Project evidence includes ingestion routes and source handling | Internal / Verified | | Retrieval | Search and embedding-related surfaces are represented in the source summaries | Internal / Verified | | Learning loops | Learning routes and spaced-repetition style signals are represented | Internal / Verified | | Browser capture | Browser extension material is present in project structure | Internal / Verified | | Feature lifecycle | Brainstorm queues, feature queues, ICE scoring, and lifecycle states are documented | Internal / Verified |"
+    },
+    {
+      "id": "repo-a715a024e4774f44-2",
+      "path": "case-studies/PKM_CASE_STUDY.md",
+      "label": "case-studies/PKM_CASE_STUDY.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/PKM_CASE_STUDY.md",
+      "excerpt": "| Testing | Backend tests across auth, ingest, search, learning, feed/social, and related surfaces are represented | Internal / Verified | ## Current Status | Area | Current State | Remaining Work | |---|---|---| | Core workflow | Ingestion, search, learning, feed, sources, persons, topics, and browser capture are represented | Verify full daily-use flow after operational blockers are cleared | | Feature workflow | Brainstorm queue, feature queue, lifecycle states, ICE scoring, and review workflow are documented | Continue promoting only validated ideas into implementation | | Social feed | Marked `done` in the local feature queue | Needs operational source setup and usage validation before impact claims | | Search / AI enrichment | Hybrid search and AI enrichment are part of the product direction | OpenAI billing/quota and re-embedding behavior need cleanup | | Operations | Local setup and deployment docs exist | SMTP, frontend URL cleanup, Hetzner deployment, Discord digest, extension, and MCP verification | | Maintenance freshness | Latest observed repo signal is a 2026-05-26 frontend dependency-maintenance commit | Treat as maintenance evidence only; do not claim user impact"
+    },
+    {
+      "id": "repo-a715a024e4774f44-3",
+      "path": "case-studies/PKM_CASE_STUDY.md",
+      "label": "case-studies/PKM_CASE_STUDY.md · excerpt 3",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/PKM_CASE_STUDY.md",
+      "excerpt": "from it | ## Clickable Demo This case study records the PKM knowledge-feed and source-capture concept. The examples use synthetic/demo data; the project supports the main Job-agent story rather than replacing it as the lead proof point. ## Workflow Model ```mermaid flowchart TD A[\"Capture\"] --> B[\"Ingest\"] B --> C[\"Index / Search\"] C --> D[\"Learn / Review\"] D --> E[\"Prioritize Features\"] E --> F[\"Implement / Validate\"] F --> G[\"Improves next<br/>ingestion cycle\"] ``` ## Recruiter Relevance - Shows information architecture thinking. - Shows ability to design workflows around messy knowledge inputs. - Shows prioritization discipline through feature queues and ICE scoring. - Supports the broader story that AI-native work needs source quality, review loops, and durable structure. ## Evidence Boundaries This case study summarizes internal project evidence. It should not be treated as a public product launch claim or measured adoption claim."
     }
   ]
 }
