@@ -15,7 +15,7 @@ execution: code
 - **Objective:** reconcile the public proof-of-work repository with the verified 2026-11-24 Earned Signal closed-beta milestone without overstating adoption, market validation, outcomes, or public availability.
 - **Authority:** `AGENTS.md`, the public evidence manifests, release/privacy rules, and current committed source evidence. Historical public manifests remain immutable snapshots.
 - **Evidence basis:** committed source release notes, current-status documentation, decision records, and dated checkpoints from 2026-11-22 through 2026-11-24.
-- **Current verified state:** invite-only closed beta is live; the first invited tester signed in and accepted the current terms on 2026-11-24; smoke tests, telemetry checks, backup/restore and reboot checks are recorded as passed; the beta is free; in-app payments remain test-mode only.
+- **Current verified state:** invite-only closed beta is running; the first invited tester signed in and accepted the current terms on 2026-11-24; smoke tests, telemetry checks, backup/restore and reboot checks are recorded as passed; the beta is free; in-app payments remain test-mode only.
 - **Evidence boundary:** closed beta is not public availability, market validation, adoption proof, recruiter response, job-search impact, or a measured business outcome.
 - **Privacy boundary:** publish only recruiter-safe conclusions. Do not publish private repository identity, private paths, tester identity, contact details, runtime secrets, allow-list contents, or operational host details.
 
@@ -41,7 +41,7 @@ execution: code
 
 ### Requirements
 
-- R1. Update the repository-level status contract so future agents describe Earned Signal as live in invite-only closed beta, while preserving the no-market-validation/no-measured-outcomes boundary.
+- R1. Update the repository-level status contract so future agents describe Earned Signal as released to and running in an invite-only closed beta, while preserving the no-market-validation/no-measured-outcomes boundary.
 - R2. Add a new current release manifest. Preserve v1 and v2 unchanged as historical snapshots.
 - R3. Update all canonical recruiter-facing release-fact surfaces to the new manifest and exact values.
 - R4. Update the homepage and guided case study so the closed-beta milestone is visible within a short recruiter skim.
