@@ -1,11 +1,11 @@
-# Job-Agent Competitive Positioning
+# Earned Signal Competitive Positioning
 
-Last updated: 2026-05-11
-Status: Initial hypothesis
+Last updated: 2026-11-24
+Status: Active hypothesis / Closed-beta learning
 
 ## Project Scope
 
-Project: job-agent.
+Project: Earned Signal (historical project label: job-agent).
 
 Role in portfolio: primary proof point and lead career workflow product.
 
@@ -15,7 +15,7 @@ A reviewed career workflow product for job seekers who need AI-assisted discover
 
 ## Differentiation
 
-| Category | Typical Approach | Job-Agent Position |
+| Category | Typical Approach | Earned Signal Position |
 |---|---|---|
 | Generic AI chat | Drafts text on demand | Maintains workflow context across job search steps |
 | Resume builders | Improve static documents | Connects CV/profile material to specific opportunities |
@@ -28,12 +28,13 @@ A reviewed career workflow product for job seekers who need AI-assisted discover
 - Not a generic cover-letter generator
 - Not a fully autonomous job spam tool
 - Not a public claim of measured placement outcomes
+- Not evidence of market validation merely because a closed beta exists
 - Not a substitute for human judgment
 - Not a product that should bypass privacy review
 
 ## Strategic Wedge
 
-The strongest wedge is reviewed job-search workflow support: enough automation to reduce friction, enough structure to preserve context, and enough human control to remain trustworthy.
+The strongest wedge remains reviewed job-search workflow support: enough automation to reduce friction, enough structure to preserve context, and enough human control to remain trustworthy. The closed beta now tests that positioning with controlled external use rather than only internal implementation.
 
 ## Evidence
 

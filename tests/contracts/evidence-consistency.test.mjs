@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import test from 'node:test';
 
-const manifest = JSON.parse(readFileSync('site/evidence/releases/job-agent-v2.json', 'utf8'));
+const manifest = JSON.parse(readFileSync('site/evidence/releases/job-agent-v3.json', 'utf8'));
 const fixture = JSON.parse(readFileSync('site/evidence/fixtures/job-agent-company-v1.json', 'utf8'));
 const cvFacts = JSON.parse(readFileSync('site/evidence/cv-facts.json', 'utf8'));
 const informationDiet = JSON.parse(readFileSync('site/evidence/information-diet.json', 'utf8'));
@@ -68,23 +68,29 @@ test('source-class vocabulary remains stable', () => {
     [
       { id: 'public_source', label: 'public source' },
       { id: 'synthetic_demo', label: 'synthetic demo' },
-      { id: 'inferred_demo', label: 'inferred demo' }
+      { id: 'inferred_demo', label: 'inferred demo' },
+      { id: 'internal_verified', label: 'internal verified' }
     ]
   );
 });
 
-test('working-title language for Job-agent is consistent across the brief, case study, and repository documentation', () => {
-  const workingTitleFiles = [
+test('current naming and closed-beta boundary are consistent across recruiter surfaces', () => {
+  const currentStateFiles = [
     'site/index.html',
     'site/proof/job-agent/index.html',
     'site/recruiter-agent-guide.md',
     'site/recruiter-report-brief.md'
   ];
-  for (const file of workingTitleFiles) {
+  for (const file of currentStateFiles) {
     const content = readFileSync(file, 'utf8');
-    assert.match(content, /working title/i, `${file} must state that Job-agent is a working title`);
-    assert.doesNotMatch(content, /Job-agent is (?:the )?final/i, `${file} must not imply Job-agent is the final product name`);
+    assert.match(content, /Earned Signal/i, `${file} must use the current product name`);
+    assert.doesNotMatch(content, /Preparing for production testing/i, `${file} must not repeat the superseded maturity state`);
+    assert.doesNotMatch(content, /Job-agent is (?:not live|a working title)/i, `${file} must not present the historical project label as current product status`);
   }
+  assert.equal(manifest.maturity, 'Released — closed beta');
+  assert.match(manifest.publicAvailability, /Invite-only closed beta/);
+  assert.equal(manifest.marketValidationState, 'Not market-validated');
+  assert.equal(manifest.outcomeMeasurementState, 'No measured market outcomes');
 });
 
 test('agent guide defines citations, inference limits, missing sources, and untrusted input handling', () => {

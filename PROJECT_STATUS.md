@@ -1,6 +1,6 @@
 # Project Status
 
-Last updated: 2026-08-09
+Last updated: 2026-11-24
 Status: Active / Recruiter-facing summary
 
 ## Purpose
@@ -13,35 +13,30 @@ It is a recruiter-safe status layer. It does not expose private local paths, raw
 
 | Project / Layer | Current State | Recent Progress | Main Open Work | Evidence Status |
 |---|---|---|---|---|
-| Job-agent | MVP complete in committed source status; remaining work is still mainly infra, production activation, pricing/legal decisions, and selected branch/repo-ops follow-up | Direct source verification on 2026-08-09 confirms the currently accessible committed branch `feat/frontend-redesign-shell` at `bc10287`, twelve commits ahead of `origin/master`, with July 1-2 redesign planning docs (`19c3525`), M0 UI foundations (`dd29f6d`), M1 sidebar shell and legacy redirects (`38cefcb`), August 8 shell polish (`cfb91bc`), later ops/doc follow-through, and 44 migration files with named head `0043` plus one older hash anomaly | Production deploy, public backend origin, OTel/Grafana setup, Stripe live activation, final legal review, real third-party ATS smoke checks, public-safe screenshots/test references, redesign-branch merge/review clarity, and publish-safe confirmation of any branch-local ops artifacts | Internal / Verified |
+| Earned Signal (formerly Job-agent) | Released to an invite-only closed beta on 2026-11-24; the public recruiter-safe proof remains separate from beta user data | First invited tester signed in and accepted the current terms; authentication, telemetry, backup/restore, reboot recovery, and pre-invitation smoke checks are recorded as verified | Learn from the controlled cohort, expand invitations deliberately, resolve remaining operational follow-ups, and measure outcomes before making adoption or market claims | Internal / Verified |
 | PKM | Knowledge-workflow product surfaces are represented, but operational blockers remain before full daily use | Ingestion/search/learning/feed/source/person/topic surfaces are represented; feature workflow is explicit; social feed feature is marked done in the queue; Chrome extension exists for browser capture; latest observed repo signal is a 2026-05-26 frontend dependency-maintenance commit | OpenAI billing/embedding quota, frontend URL cleanup, SMTP setup, Hetzner deployment, source/person/topic setup, search/flashcard/extension/MCP verification | Internal / Verified |
 | Household budget app | Active product with core surfaces and a large household/shared-account hardening track | Household scope is threaded across major pages; owner/member/admin flows, invite onboarding, shared-account ownership rules, read-model/view-model extraction, and mutation helper extraction have progressed significantly; latest observed repo signal is a 2026-05-26 app dependency-maintenance commit | Finish post-hardening household migration cleanup, remove legacy migration debt, validate ownership hardening end-to-end in Supabase, split future modeling into smaller landing slices | Internal / Verified |
-| Portfolio evidence repository | GitHub-ready documentation and review layer for the product portfolio | Project-first positioning, recruiter/agent review layer, recruiter-side LLM report brief, evidence matrix, navigation hub, case studies, workflow implementation cases, a provider-neutral template kit, `llms.txt`, published static demo portal, active scheduled compiler task, and source-verified handoff guidance are in place | Add safe test/commit excerpts, dated weekly-input notes, and first curated recruiter export after privacy review | Verified |
+| Portfolio evidence repository | Public recruiter-first evidence layer on GitHub Pages | Recruiter/agent review, decision log, case studies, public evidence manifests, static demo portal, and source-grounded status reconciliation are in place | Keep current product evidence fresh, enable the compiler only under its separate approval gate, and continue privacy/release validation | Verified |
 
-## Job-Agent Status
+## Earned Signal Status
 
-Job-agent is still the lead proof point.
+Earned Signal, formerly tracked as Job-agent, is the lead proof point.
 
-Current status from local project status docs:
+Current source-grounded status as of 2026-11-24:
 
-- MVP is marked complete in the local project status.
-- Career-ops tasks are marked done.
-- Shared-job-postings rewire and legacy-ID cleanup are marked complete.
-- Privacy/GDPR work is locally implemented but still needs legal review before production enablement.
-- Feedback and UX signals are implemented across backend API, AI-output feedback, product rating, and admin visibility.
-- Local QA includes backend regression checks, Playwright coverage against real local services, discover regression tests, migration smokes, and CI workflow setup.
-- Source-repo status docs updated on 2026-05-17 report that OAuth social auth landed on master across six commits from 2026-05-13 to 2026-05-16.
-- The accessible committed `job-agent` branch is now `feat/frontend-redesign-shell` at `bc10287`, with `origin/master` at `b38596e`; that branch is twelve commits ahead and carries the strongest currently verifiable redesign and shell-polish signal in this workspace.
-- Committed source status on that branch is still anchored by `docs/operations/current-status.md`, now updated on 2026-08-09, but the triage section still cites an earlier docs commit as the last repo commit. This portfolio sync therefore still cross-checks git history and committed files instead of treating the status page as the single freshness source.
-- Direct source verification on 2026-08-09 confirms July 1-2 redesign planning and implementation evidence across commits `19c3525`, `dd29f6d`, and `38cefcb`, plus August 8 shell-polish evidence at `cfb91bc`.
-- The currently accessible committed migration tree contains 44 Python migration files with named head `0043_snippet_source_metadata.py` plus the older hash-named anomaly `3aac5340ec46_add_user_documents.py`.
-- The local `job-agent` worktree is still dirty on 2026-08-09, including uncommitted M2 `JourneyBar` / Today rebuild work, a backend funnel summary API, and related docs/frontend changes. This portfolio sync does not promote those working-tree changes as shipped evidence.
-- Remaining work is still mostly external or production-facing: hosting, domain, OTel/Grafana, Stripe live, OAuth credentials, legal review, final destructive data-rights workflows, and a clear merge/review path for the redesign branch.
+- The product is running as an invitation-only closed beta.
+- The first invited tester signed in and accepted the current beta terms on 2026-11-24.
+- Authentication, pre-invitation smoke checks, API and worker telemetry, backup/restore, and reboot recovery are recorded as verified in committed source evidence.
+- The beta is free. In-app payments remain test-mode only; a paid model is still a hypothesis rather than validated demand.
+- Application support remains human-reviewed. The beta prepares application material but does not submit applications on the user's behalf.
+- The public prototype remains a synthetic recruiter-safe demonstration and is separate from closed-beta user data and services.
+- This milestone proves controlled external use. It does not prove adoption, market validation, recruiter response, job-search impact, or business outcomes.
 
 Recruiter signal:
 
-- This is not just a prompt wrapper.
-- It shows a product system with CV handling, job discovery, application support, feedback, privacy, QA, deployment planning, telemetry, and billing/product decisions.
+- Product execution progressed from internal implementation and hardening to controlled external use.
+- The launch sequence shows explicit trust gates: authentication, terms acceptance, privacy controls, smoke testing, telemetry, backup/restore, and staged invitations.
+- The commercial boundary stayed conservative: free beta first, paid monetization later if evidence supports it.
 
 ## PKM Status
 
@@ -92,13 +87,13 @@ Current status:
 - The weekly compiler and source-indexing automation remain documented as the operating layer.
 - The reusable `template/` adoption layer and weekly automation runbook now give another user a provider-neutral path to recreate the system without copying Marcus-specific evidence.
 - `case-studies/JOB_AGENT_INSTALL_AND_HANDOFF.md` has been re-checked against inspected `job-agent` source files so it reflects actual setup files, repo-ops handoff docs, the difference between Docker Compose frontend `3000` and the canonical manual startup port `3002`, and the newer redesign-shell / shell-polish source state.
-- This 2026-08-09 weekly run did have direct access to the `job-agent` source repo, so the last direct source verification for lead-project setup and status is now 2026-08-09.
+- Direct source verification for the lead project was refreshed on 2026-11-24 against committed release notes, current status, decision records, and dated checkpoints. Private source paths and identities are not published here.
 
 ## Evidence Boundaries
 
 - Project status comes from local project docs and source indexes, summarized into recruiter-safe language.
 - Exact user or business impact is not claimed.
-- Production readiness is not overstated when external blockers remain.
+- Closed-beta release status is distinguished from public availability, market validation, adoption, and measured outcomes.
 - Local paths, raw logs, and sensitive implementation details are intentionally excluded.
 - Internal source indexes were refreshed at a high level on 2026-06-01. This refresh updates source freshness and project inventory; it does not promote raw local paths or unreviewed source content into recruiter-facing files.
 - No dated weekly-input file existed for the week ending 2026-08-09, so this run promoted only source-verified repo state and did not invent a higher-level weekly narrative beyond the sources above.

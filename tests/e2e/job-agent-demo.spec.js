@@ -6,7 +6,7 @@ test('current entry shows version and synthetic context before prototype data', 
   await page.goto('/proof/job-agent/demo/');
   await expect(page.locator('.entry-notice')).toContainText('static recruiter-safe prototype');
   await expect(page.locator('.context-bar')).toContainText('0.9-public-proof');
-  await expect(page.locator('.context-bar')).toContainText('Not live');
+  await expect(page.locator('.context-bar')).toContainText('Not connected to closed beta');
   const order = await page.locator('.entry-notice, #prototype-main').evaluateAll(nodes => nodes.map(node => node.id || node.className));
   expect(order).toEqual(['entry-notice', 'prototype-main']);
 });
@@ -50,7 +50,7 @@ test('prototype contains no dead controls or disallowed positive maturity wordin
   }
   const source = ['site/proof/job-agent/demo/index.html', 'site/proof/job-agent/demo/app.js'].map(path => readFileSync(resolve(path), 'utf8')).join('\n');
   for (const phrase of ['current-UX', 'working application', 'verified demo snapshot', 'live-verifiable']) expect(source).not.toContain(phrase);
-  expect(source).toContain('Not live');
+  expect(source).toContain('Not connected to closed beta');
 });
 
 test('all seven current views work without horizontal page overflow on mobile', async ({ page }) => {

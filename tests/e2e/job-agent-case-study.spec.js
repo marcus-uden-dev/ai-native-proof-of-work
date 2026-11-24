@@ -3,12 +3,12 @@ import { expect, test } from './fixtures.js';
 test('status and synthetic notices appear before the first proof frame', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('job decision');
-  await expect(page.getByText('Preparing for production testing', { exact: true })).toBeVisible();
-  await expect(page.getByText(/backend implementation, production hardening, and automated testing/i)).toBeVisible();
+  await expect(page.getByText('Released — closed beta', { exact: true })).toBeVisible();
+  await expect(page.locator('#evidence-boundary')).toContainText('The first invited tester signed in and accepted the current terms');
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
   await expect(page.getByText(/next test/i)).toHaveCount(0);
-  await expect(page.getByText(/release-one company is invented/i)).toBeVisible();
+  await expect(page.locator('#evidence-boundary')).toContainText('public company-research proof below still uses invented example data');
   const order = await page.locator('#evidence-boundary, #proof-sequence').evaluateAll((nodes) => nodes.map((node) => node.id));
   expect(order).toEqual(['evidence-boundary', 'proof-sequence']);
 });
@@ -32,11 +32,12 @@ test('company research is the second decision-support proof card', async ({ page
   await expect(page.getByText('Primary evidence · Company research', { exact: true })).toHaveCount(0);
 });
 
-test('90-second summary explains the product and the validation limit', async ({ page }) => {
+test('90-second summary explains the product and the closed-beta boundary', async ({ page }) => {
   await page.goto('/proof/job-agent/');
   const hero = page.locator('.case-hero');
   await expect(hero).toContainText('discovery, company research, application tailoring, and interview preparation');
-  await expect(hero).toContainText('not market outcomes');
+  await expect(hero).toContainText('invite-only closed beta');
+  await expect(hero).toContainText('separate from beta user data');
 });
 
 test('current, replayed, and archived proof frames use reviewed synthetic prototype images', async ({ page }) => {
@@ -45,7 +46,8 @@ test('current, replayed, and archived proof frames use reviewed synthetic protot
   await expect(proofImages).toHaveCount(4);
   const staticStoryImages = page.locator('#project-replay .project-story__chapters .project-story__visual img');
   await expect(staticStoryImages).toHaveCount(3);
-  await expect(page.locator('#project-replay [data-story-stage] .project-story__visual img')).toHaveCount(1);
+  await expect(page.locator('#project-replay [data-story-stage] .project-story__visual img')).toHaveCount(0);
+  await expect(page.locator('#project-replay [data-story-stage]')).toContainText('No beta-user screenshot is published for this milestone.');
   for (const image of [...await proofImages.all(), ...await staticStoryImages.all()]) {
     expect(await image.getAttribute('alt')).toBeTruthy();
     expect(await image.getAttribute('src')).toContain('v0.9-public-proof');
@@ -61,12 +63,12 @@ test('current, replayed, and archived proof frames use reviewed synthetic protot
   }
 });
 
-test('The Job-agent story preserves complete chapter records in raw HTML without JavaScript', async ({ request }) => {
+test('The Earned Signal story preserves complete chapter records in raw HTML without JavaScript', async ({ request }) => {
   const response = await request.get('/proof/job-agent/');
   expect(response.ok()).toBeTruthy();
   const html = await response.text();
   expect(html).toContain('id="project-replay"');
-  expect(html).toContain('The Job-agent story.');
+  expect(html).toContain('The Earned Signal story.');
   expect(html).toContain('data-project-story');
   expect(html).toContain('Before build');
   expect(html).toContain('Set up a repeatable way to find work');
@@ -78,24 +80,24 @@ test('The Job-agent story preserves complete chapter records in raw HTML without
   expect(html).not.toContain('data-replay-range');
 });
 
-test('The Job-agent story rewinds from the evidence-backed origin and restores the current state', async ({ page }) => {
+test('The Earned Signal story rewinds from the evidence-backed origin and restores the current state', async ({ page }) => {
   await page.goto('/proof/job-agent/#project-replay');
   const story = page.locator('#project-replay');
   const stage = story.locator('[data-story-stage]');
   const range = story.locator('[data-story-range]');
-  await expect(story.locator('.project-story__strip li')).toHaveCount(4);
-  await expect(story.locator('.project-story__chapters > li')).toHaveCount(4);
+  await expect(story.locator('.project-story__strip li')).toHaveCount(5);
+  await expect(story.locator('.project-story__chapters > li')).toHaveCount(5);
   await expect(story.locator('[data-story-controls]')).toBeVisible();
   await range.fill('0');
   await expect(stage).toContainText('Before build');
   await expect(stage).toContainText('Build a reviewed workflow');
   expect(await story.locator('[data-story-marker]:not([hidden])').count()).toBe(1);
   await story.getByRole('button', { name: 'Current state' }).click();
-  await expect(stage).toContainText('Bring fit, evidence, and action into one role view');
-  expect(await story.locator('[data-story-marker]:not([hidden])').count()).toBe(4);
+  await expect(stage).toContainText('Move from internal proof to invited use');
+  expect(await story.locator('[data-story-marker]:not([hidden])').count()).toBe(5);
 });
 
-test('The Job-agent story plays from origin and respects reduced motion', async ({ page }) => {
+test('The Earned Signal story plays from origin and respects reduced motion', async ({ page }) => {
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.goto('/proof/job-agent/#project-replay');
   const story = page.locator('#project-replay');
@@ -105,7 +107,7 @@ test('The Job-agent story plays from origin and respects reduced motion', async 
   await expect(story.getByRole('button', { name: 'Play from origin' })).toBeEnabled();
 });
 
-test('The Job-agent story supports keyboard chapter navigation', async ({ page }) => {
+test('The Earned Signal story supports keyboard chapter navigation', async ({ page }) => {
   await page.goto('/proof/job-agent/#project-replay');
   const story = page.locator('#project-replay');
   await story.getByRole('button', { name: 'Play from origin' }).click();
@@ -116,16 +118,16 @@ test('The Job-agent story supports keyboard chapter navigation', async ({ page }
   await expect(story.locator('[data-story-stage]')).toContainText('Turn the workflow into a daily next move');
 });
 
-test('The Job-agent story is a vertical, keyboard-reachable chronological trail on mobile', async ({ page }) => {
+test('The Earned Signal story is a vertical, keyboard-reachable chronological trail on mobile', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 900 });
   await page.goto('/proof/job-agent/#project-replay');
   const story = page.locator('#project-replay');
   await expect(story.locator('.project-story__strip')).toBeVisible();
-  await expect(story.locator('.project-story__chapters > li')).toHaveCount(4);
+  await expect(story.locator('.project-story__chapters > li')).toHaveCount(5);
   const previous = story.getByRole('button', { name: 'Previous chapter' });
   await previous.focus();
   await page.keyboard.press('Enter');
-  await expect(story.locator('[data-story-stage]')).toContainText('Turn the workflow into a daily next move');
+  await expect(story.locator('[data-story-stage]')).toContainText('Bring fit, evidence, and action into one role view');
 });
 
 test('the guided reading order remains stable and printable', async ({ page }) => {
@@ -140,10 +142,10 @@ test('the guided reading order remains stable and printable', async ({ page }) =
 
 test('current release and previous edition are both discoverable', async ({ page }) => {
   await page.goto('/proof/job-agent/');
-  await expect(page.getByText('0.9-public-proof', { exact: true }).first()).toBeVisible();
+  await expect(page.getByText('closed-beta-2026-11-24', { exact: true }).first()).toBeVisible();
   await expect(page.getByRole('link', { name: /Previous edition 0.8-public-proof/ })).toHaveAttribute('href', 'archive/0.8-public-proof/');
   await expect(page.getByRole('link', { name: /Historical UI v0.5/ })).toHaveAttribute('href', 'archive/0.8-public-proof/#ui-evolution');
   await page.locator('.technical-appendix summary').click();
-  await expect(page.getByRole('link', { name: /Current release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v2.json');
-  await expect(page.getByRole('link', { name: /Previous release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v1.json');
+  await expect(page.getByRole('link', { name: /Current release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v3.json');
+  await expect(page.getByRole('link', { name: /Previous release manifest/ })).toHaveAttribute('href', '../../evidence/releases/job-agent-v2.json');
 });

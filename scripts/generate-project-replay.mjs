@@ -28,9 +28,14 @@ function renderEvidence(evidence) {
   return `<ul>${evidence.map((item) => `<li><a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a></li>`).join('')}</ul>`;
 }
 
-function renderVisual(visual) {
+function renderVisual(event) {
+  const visual = event.visual;
   if (!visual) {
-    return `<div class="project-story__origin-visual"><p class="project-story__origin-mark" aria-hidden="true">01</p><p>This chapter is the public problem framing. A verified interface frame begins with the next chapter.</p></div>`;
+    const number = String(event.visual_order).padStart(2, '0');
+    const note = event.visual_order === 1
+      ? 'This chapter is the public problem framing. A verified interface frame begins with the next chapter.'
+      : 'No beta-user screenshot is published for this milestone. The chapter is supported by the public release manifest and recruiter-safe summarized evidence.';
+    return `<div class="project-story__origin-visual"><p class="project-story__origin-mark" aria-hidden="true">${number}</p><p>${note}</p></div>`;
   }
 
   return `<figure class="project-story__visual"><a href="${escapeHtml(visual.href)}"><img src="${escapeHtml(visual.href)}" alt="${escapeHtml(visual.alt)}"></a><figcaption><strong>${escapeHtml(visual.label)}</strong>${escapeHtml(visual.caption)}</figcaption></figure>`;
@@ -59,7 +64,7 @@ function renderEvent(event) {
                     <div><dt>Evidence available</dt><dd>${renderEvidence(event.evidence)}</dd></div>
                   </dl>
                 </div>
-                ${renderVisual(event.visual)}
+                ${renderVisual(event)}
               </div>
             </article>
           </li>`;
@@ -118,17 +123,18 @@ export function validateReplay(data) {
 
 export function renderReplay(data) {
   const events = [...data.events].sort((a, b) => a.visual_order - b.visual_order);
+  const storyLabel = data.title.replace(/^The /, '');
   return `${begin}
       <section class="section section--ruled shell project-replay" id="project-replay" aria-labelledby="project-replay-title" data-project-story>
         <div class="section-heading section-heading--split">
           <div>
             <p class="kicker">Project Replay · Product playback</p>
-            <h2 id="project-replay-title">The Job-agent story.</h2>
+            <h2 id="project-replay-title">${escapeHtml(data.title)}.</h2>
           </div>
           <p>Rewind the product chapters. Inspect what changed, how each surface worked, and the evidence that supports the public record.</p>
         </div>
         <p class="project-replay__boundary"><strong>Evidence boundary:</strong> ${escapeHtml(data.evidence_boundary)}</p>
-        <div class="project-story__controls" data-story-controls hidden aria-label="Job-agent story playback controls">
+        <div class="project-story__controls" data-story-controls hidden aria-label="${escapeHtml(storyLabel)} playback controls">
           <div class="project-story__control-row">
             <button class="button button--secondary" type="button" data-story-previous>Previous chapter</button>
             <button class="button button--secondary" type="button" data-story-next>Next chapter</button>
@@ -140,12 +146,12 @@ export function renderReplay(data) {
           <input id="project-story-position" type="range" min="0" max="${events.length - 1}" step="1" value="${events.length - 1}" data-story-range>
           <p class="project-story__control-note" data-story-note></p>
         </div>
-        <ol class="project-story__strip" aria-label="Job-agent story chapters">${events.map((event) => `
+        <ol class="project-story__strip" aria-label="${escapeHtml(storyLabel)} chapters">${events.map((event) => `
           <li data-story-marker data-story-index="${event.visual_order - 1}"><a href="#${escapeHtml(event.id)}" data-story-select data-story-index="${event.visual_order - 1}"><span class="project-story__dot" aria-hidden="true"></span><span class="project-story__strip-meta">${escapeHtml(event.edition)}</span><strong>${escapeHtml(event.title)}</strong><span>${escapeHtml(event.stage)}</span></a></li>`).join('')}
         </ol>
         <p class="project-story__strip-note">Every chapter remains available as a complete static record below. JavaScript adds the optional rewind and playback controls.</p>
-        <div class="project-story__stage" data-story-stage aria-live="polite" aria-label="Selected Job-agent story chapter" hidden></div>
-        <ol class="project-story__chapters" aria-label="Complete chronological Job-agent story">${events.map(renderEvent).join('')}
+        <div class="project-story__stage" data-story-stage aria-live="polite" aria-label="Selected ${escapeHtml(storyLabel)} chapter" hidden></div>
+        <ol class="project-story__chapters" aria-label="Complete chronological ${escapeHtml(storyLabel)}">${events.map(renderEvent).join('')}
         </ol>
       </section>
 ${end}`;

@@ -94,7 +94,7 @@ test('CV keeps the human-readable source first and presents proof routes as matc
 
   const actions = page.locator('#sources .review-panel__actions');
   await expect(actions.getByRole('link', { name: 'Open information diet evidence' })).toHaveClass(/button--secondary/);
-  await expect(actions.getByRole('link', { name: 'Open Job-agent proof' })).toHaveClass(/button--secondary/);
+  await expect(actions.getByRole('link', { name: 'Open Earned Signal proof' })).toHaveClass(/button--secondary/);
 });
 
 test('print mode keeps evidence and hides navigation controls', async ({ page }) => {
@@ -102,8 +102,8 @@ test('print mode keeps evidence and hides navigation controls', async ({ page })
   await page.emulateMedia({ media: 'print' });
   await expect(page.locator('.masthead')).toBeHidden();
   await expect(page.getByRole('heading', { name: 'Why Marcus for hands-on product work?' })).toBeVisible();
-  await expect(page.locator('#selected-proof').getByRole('heading', { name: 'Job-agent', exact: true })).toBeVisible();
-  await expect(page.getByText('Working title', { exact: true })).toBeVisible();
+  await expect(page.locator('#selected-proof').getByRole('heading', { name: 'Earned Signal', exact: true })).toBeVisible();
+  await expect(page.getByText('Released — closed beta', { exact: true })).toBeVisible();
 });
 
 test('reduced-motion preference removes smooth movement', async ({ page }) => {

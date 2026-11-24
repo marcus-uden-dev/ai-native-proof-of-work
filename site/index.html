@@ -130,7 +130,7 @@
         </div>
         <div class="oracle-summary__facts" aria-label="How I think summary">
           <!-- HOW_I_THINK_FACTS:BEGIN -->
-          <div><strong>176</strong><span>decision records</span></div>
+          <div><strong>179</strong><span>decision records</span></div>
           <div><strong>6</strong><span>project lenses</span></div>
           <div><strong>39</strong><span>capability tags</span></div>
           <!-- HOW_I_THINK_FACTS:END -->
@@ -207,7 +207,7 @@
           </div>
           <div class="decision-log-oracle__facts" aria-label="Decision Log summary">
           <!-- DECISION_LOG_FACTS:BEGIN -->
-          <div><strong>176</strong><span>decision records</span></div>
+          <div><strong>179</strong><span>decision records</span></div>
           <div><strong>6</strong><span>project lenses</span></div>
           <div><strong>39</strong><span>capability tags</span></div>
           <!-- DECISION_LOG_FACTS:END -->
@@ -215,8 +215,8 @@
           <div class="decision-log-oracle__projects" aria-label="Projects represented in the Decision Log">
           <!-- DECISION_LOG_PROJECTS:BEGIN -->
           <span class="decision-log-oracle__filter-label">Filter by project</span>
-          <button class="decision-log-oracle__project decision-log-oracle__project--all" type="button" data-filter-type="all" aria-pressed="true">All decisions <small>176 records</small></button>
-          <button class="decision-log-oracle__project decision-log-oracle__project--lead" type="button" data-filter-type="project" data-filter-value="job-agent" aria-pressed="false">Job-agent <small>75 records · lead proof</small></button>
+          <button class="decision-log-oracle__project decision-log-oracle__project--all" type="button" data-filter-type="all" aria-pressed="true">All decisions <small>179 records</small></button>
+          <button class="decision-log-oracle__project decision-log-oracle__project--lead" type="button" data-filter-type="project" data-filter-value="job-agent" aria-pressed="false">Job-agent <small>78 records · lead proof</small></button>
           <button class="decision-log-oracle__project decision-log-oracle__project--harness" type="button" data-filter-type="project" data-filter-value="personal-ai-harness" aria-pressed="false">Personal AI Harness <small>72 records · operating layer</small></button>
           <button class="decision-log-oracle__project" type="button" data-filter-type="project" data-filter-value="pkm" aria-pressed="false">PKM <small>4 records · supporting proof</small></button>
           <button class="decision-log-oracle__project" type="button" data-filter-type="project" data-filter-value="household-budget" aria-pressed="false">Household budget <small>22 records · supporting proof</small></button>
@@ -235,6 +235,9 @@
         <div class="decision-log-viewport" data-auto-scroll="true" tabindex="0" aria-label="Scrollable decision timeline">
           <ul class="limitations-list limitations-list--stacked decision-log-list" id="decision-timeline">
           <!-- DECISION_LOG_ENTRIES:BEGIN -->
+          <li data-project="job-agent" data-tags="product-judgment risk-awareness validation prioritization"><p class="decision-log-entry__date">2026-11-24</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Job-agent</span><span class="pill pill--status">Verified</span><span class="visually-hidden">Decision type:</span><span class="pill">Release strategy</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">product-judgment</span><span class="pill">risk-awareness</span><span class="pill">validation</span><span class="pill">prioritization</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Moved Earned Signal into an invite-only closed beta after internal hardening instead of waiting indefinitely for the final hosting target or opening access broadly.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Uses a reversible release to gain external evidence while keeping privacy, support, reliability, and reputation risk bounded.</p></li>
+          <li data-project="job-agent" data-tags="product-judgment commercial-awareness validation evidence-driven"><p class="decision-log-entry__date">2026-11-24</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Job-agent</span><span class="pill pill--status">Verified</span><span class="visually-hidden">Decision type:</span><span class="pill">Commercial decision</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">product-judgment</span><span class="pill">commercial-awareness</span><span class="pill">validation</span><span class="pill">evidence-driven</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Kept the closed beta free and in-app payments in test mode so product learning is not confused with unvalidated willingness to pay.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Separates product evidence from commercial claims and defers monetization until repeatable value is better evidenced.</p></li>
+          <li data-project="job-agent" data-tags="quality-assurance risk-controls validation decision-traceability"><p class="decision-log-entry__date">2026-11-23</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Job-agent</span><span class="pill pill--status">Verified</span><span class="visually-hidden">Decision type:</span><span class="pill">Quality architecture</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">quality-assurance</span><span class="pill">risk-controls</span><span class="pill">validation</span><span class="pill">decision-traceability</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Required authentication, terms acceptance, telemetry, backup and restore, reboot recovery, and pre-invitation smoke checks before treating the closed beta as ready to invite.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Turns release readiness into explicit checks that can detect failures and support recovery before external use.</p></li>
           <li data-project="personal-ai-harness" data-tags="risk-controls ai-governance validation"><p class="decision-log-entry__date">2026-10-22</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="pill pill--status pill--planned">Planned</span><span class="visually-hidden">Decision type:</span><span class="pill">Safety architecture</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">risk-controls</span><span class="pill">ai-governance</span><span class="pill">validation</span></p><p class="decision-log-entry__why"><strong>Why: </strong>A gap audit found missing coverage for a full runtime inventory, a prompt-injection boundary, data-egress rules, a readiness gate, multi-run evaluation, nudging scope and model fallback. It is saved as a proposed plan with six new evaluation cases.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Shows that policy rollout waits for explicit gaps to be closed and tested instead of being deployed on intent.</p></li>
           <li data-project="personal-ai-harness" data-tags="risk-controls decision-traceability quality-gate automation-judgment"><p class="decision-log-entry__date">2026-10-17</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="pill pill--status">Verified</span><span class="visually-hidden">Decision type:</span><span class="pill">Quality architecture</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">risk-controls</span><span class="pill">decision-traceability</span><span class="pill">quality-gate</span><span class="pill">automation-judgment</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Merged branches with unique work through the merge gate, deleted branches already on the default branch after recording their tips, and held deploying product repositories, the public site and third-party forks for explicit approval.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Shows judgment about what to automate and what needs a human decision, with every deletion recoverable.</p></li>
           <li data-project="personal-ai-harness" data-tags="risk-awareness risk-controls security-by-design"><p class="decision-log-entry__date">2026-10-17</p><p class="decision-log-entry__tags"><span class="visually-hidden">Project:</span><span class="pill pill--gold">Personal AI Harness</span><span class="pill pill--status">Verified</span><span class="visually-hidden">Decision type:</span><span class="pill">Safety architecture</span><span class="visually-hidden">Capabilities shown:</span><span class="pill">risk-awareness</span><span class="pill">risk-controls</span><span class="pill">security-by-design</span></p><p class="decision-log-entry__why"><strong>Why: </strong>Removed 1,199 tracked files under junction-backed folders from Git tracking before branch moves, so checkouts could not write or delete shared skills through the junction. A later mislabeled transfer was refused by Git and the lesson was recorded.</p><p class="decision-log-entry__demonstrates"><strong>Shows: </strong>Shows anticipation of indirect failure modes in live tooling and a recorded recovery path.</p></li>
@@ -431,14 +434,14 @@
           <div class="proof-card__content">
             <div class="label-row">
               <span class="pill pill--gold">Lead proof</span>
-              <span class="pill">Preparing for production testing</span>
-              <span class="pill">Working title</span>
+              <span class="pill">Released — closed beta</span>
+              <span class="pill">Invite-only</span>
             </div>
-            <h3>Job-agent</h3>
-            <p>A product workflow that turns job discovery, company research, application tailoring, and interview preparation into a more deliberate decision system. "Job-agent" is the current name for this career decision-support product, not its final name.</p>
+            <h3>Earned Signal</h3>
+            <p>Earned Signal, formerly tracked as Job-agent, turns job discovery, company research, application tailoring, and interview preparation into a more deliberate decision system. It entered an invite-only closed beta on 24 November 2026.</p>
             <dl class="proof-facts">
-              <div><dt>Strongest evidence</dt><dd>Company research</dd></div>
-              <div><dt>Public data</dt><dd>Invented demo data only</dd></div>
+              <div><dt>Closed beta</dt><dd>First invited tester signed in · 24 Nov 2026</dd></div>
+              <div><dt>Public proof</dt><dd>Synthetic demo data only</dd></div>
               <div><dt>Market outcome</dt><dd>Not measured</dd></div>
             </dl>
             <a class="button button--secondary proof-card__action" href="proof/job-agent/">Open the guided case study <span aria-hidden="true">→</span></a>

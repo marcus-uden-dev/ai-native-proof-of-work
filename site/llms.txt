@@ -6,10 +6,11 @@
 - [Repository interview prompt](https://marcus-uden-dev.github.io/ai-native-proof-of-work/repository-interview-prompt.txt): Copyable prompt for questions that require searching the complete public proof-of-work repository.
 - [Two-minute hiring brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/): General positioning and claim-to-evidence links.
 - [Repository Interview job-description prompt](https://marcus-uden-dev.github.io/ai-native-proof-of-work/job-description-prompt.html): Readable prompt for a public-evidence assessment against a non-confidential job description.
-- [Job-agent case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/): Guided product proof, limitations, and technical appendix.
+- [Earned Signal case study](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/): Guided product proof, limitations, and technical appendix.
 - [Recursive workflow system](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/recursive-workflow/): Supporting proof for the human-gated system loop.
-- [Job-agent current release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v2.json): Canonical current maturity, version, evidence date, source commit, and provenance state.
-- [Job-agent previous release](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/archive/0.8-public-proof/): Preserved 0.8-public-proof page and prototype for UI timeline review.
+- [Earned Signal current release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v3.json): Canonical current maturity, closed-beta evidence date, and evidence boundary.
+- [Historical 0.9 release manifest](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/releases/job-agent-v2.json): Previous public-proof maturity state and evidence contract.
+- [Job-agent 0.8 archive](https://marcus-uden-dev.github.io/ai-native-proof-of-work/proof/job-agent/archive/0.8-public-proof/): Preserved 0.8-public-proof page and prototype for UI timeline review.
 - [Decision log](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log.json): Structured history of auto-published, tagged, dated self-improvement entries — rendered as static HTML on the recursive workflow page and available here as structured data.
 - [Decision log tag taxonomy](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/decision-log-tags.json): The fixed set of capability tags decision log entries are assigned from.
 - [Recruiter report brief](https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-report-brief.md): Required assessment structure.
@@ -19,5 +20,5 @@
 - [Information diet structured evidence](https://marcus-uden-dev.github.io/ai-native-proof-of-work/evidence/information-diet.json): Machine-readable metrics, topic clusters, source dates, and evidence boundaries.
 - The priority reading paths are starting points, not a closed allowlist. Search the complete public proof-of-work repository when a role or claim requires relevant supporting evidence.
 
-Job-agent status: Preparing for production testing. Not live. Not market-validated. No measured market outcomes.
+Earned Signal status: Released — closed beta. Invite-only, not publicly available. Market validation: Not market-validated. Outcomes: No measured market outcomes. `Job-agent` remains the historical project label and stable evidence route.
 

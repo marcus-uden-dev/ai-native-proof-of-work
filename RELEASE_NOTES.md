@@ -1,5 +1,50 @@
 # Release Notes
 
+## 2026-11-24 — Earned Signal: Invite-only closed beta
+
+**Evidence state:** Internal / Verified from committed source release notes, current status, decision records, and dated checkpoints. Public-safe summary only; private source paths, tester identity, and operational secrets are excluded.
+
+### Milestone
+
+Earned Signal, formerly tracked as Job-agent, entered an invite-only closed beta. The first invited tester signed in and accepted the current beta terms on 2026-11-24.
+
+### What changed
+
+- The product moved from internal implementation and hardening to controlled external use.
+- Authentication and invitation flows are operating for the closed beta.
+- API and worker telemetry, backup/restore, reboot recovery, and pre-invitation smoke checks are recorded as verified.
+- Application material remains user-reviewed; the beta does not submit job applications autonomously.
+- The beta is free. In-app payments remain test-mode only, so paid pricing is still a hypothesis rather than validated demand.
+- The public recruiter demo remains synthetic and separate from beta user data and services.
+
+### Decision
+
+Use a constrained closed beta as the next learning step instead of treating technical readiness as permission for a broad launch. Require trust and reliability checks before invitations, and keep monetization out of the learning loop until stronger evidence exists.
+
+### Result and limits
+
+Directly observed: the first invited tester completed sign-in and terms acceptance.
+
+- Public availability: No. Access is invitation-only.
+- Product adoption: Not established.
+- Market validation: No evidence.
+- Job-search or recruiter outcome: Not measured.
+- Revenue or willingness to pay: Not validated.
+
+### Proof interpretation
+
+**Work:** Moved the lead product into controlled external use with explicit access, privacy, reliability, and human-review boundaries.
+
+**Evidence:** committed source release notes, current-status documentation, decision records, and checkpoints dated 2026-11-22 through 2026-11-24; public status is summarized in `site/evidence/releases/job-agent-v3.json`.
+
+**Judgment:** Chose a reversible learning release, verified operational gates before invitation, and separated beta usage from market/outcome claims.
+
+**Signal:** Product judgment, Execution, Privacy & trust judgment, QA discipline, AI-native leverage.
+
+### Next test
+
+Expand invitations deliberately and define measurable evidence for repeatable user value before promoting pricing, adoption, or outcome claims.
+
 ## 2026-10-24 — Recruiter Evidence Review: Decision History and Review Tooling
 
 **Evidence state:** Public site and tooling changes merged to `main` between

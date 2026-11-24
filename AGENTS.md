@@ -10,7 +10,7 @@ This repository is the public, recruiter-first proof-of-work edition for Marcus 
 - Do not copy Git history, remotes, raw sessions, local paths, credentials, or private metadata.
 - Add public artifacts only after they appear in `release/allowlist.json`.
 - Record every published binary artifact in `release/privacy-review.json` with its SHA-256 digest.
-- Describe Job-agent as work in progress, not live, not market-validated, and without measured outcomes.
+- Describe Earned Signal (formerly Job-agent) as released to an invite-only closed beta as of 2026-11-24. Do not describe it as publicly available, market-validated, or as having measured market outcomes.
 - Use only the professional identity `Marcus Udén`, `marcus.uden.dev`, and `github.com/marcus-uden-dev`.
 
 ## Product and design authority

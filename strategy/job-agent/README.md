@@ -1,15 +1,15 @@
-# Job-Agent Strategy
+# Earned Signal Strategy
 
-Last updated: 2026-05-11
+Last updated: 2026-11-24
 Status: Active / Lead project strategy
 
 ## Purpose
 
-This folder contains strategy documents for job-agent, the lead proof point in the portfolio.
+This folder contains strategy documents for Earned Signal, historically tracked as job-agent and still stored under the stable `strategy/job-agent/` path.
 
 ## Project Role
 
-Job-agent is the primary product strategy surface because it is the lead proof point for career workflow product execution.
+Earned Signal is the primary product strategy surface because it is the lead proof point for career workflow product execution. It entered invite-only closed beta on 2026-11-24.
 
 ## Canonical Documents
 
@@ -29,6 +29,7 @@ See [Job-Agent Case Study](../../case-studies/JOB_AGENT_CASE_STUDY.md).
 
 ## Validation Focus
 
-- Confirm the strongest external wedge for job-agent.
-- Add recruiter-safe screenshots or excerpts.
-- Validate pricing and GTM assumptions with target users or reviewers.
+- Learn which workflow steps create repeatable value for invited beta users.
+- Keep the public proof synthetic and separate from closed-beta user data.
+- Measure outcomes before claiming adoption or market validation.
+- Keep paid pricing as a later hypothesis until controlled beta evidence supports it.
