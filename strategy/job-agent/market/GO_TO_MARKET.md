@@ -1,11 +1,11 @@
-# Job-Agent Go-To-Market Strategy
+# Earned Signal Go-To-Market Strategy
 
-Last updated: 2026-05-11
-Status: Hypothesis
+Last updated: 2026-11-24
+Status: Active closed-beta experiment / Market validation not established
 
 ## Project Scope
 
-Project: job-agent.
+Project: Earned Signal (historical project label: job-agent).
 
 Role in portfolio: primary proof point and lead career workflow product.
 
@@ -24,7 +24,7 @@ Likely early users:
 |---|---|---|---|
 | Recruiter and hiring-manager conversations | Directly tests credibility of the workflow | Narrow sample | Planned |
 | LinkedIn proof-of-work posts | Shows career-domain relevance | Requires consistency | Planned |
-| Private demo walkthroughs | Best for trust and product feedback | Manual effort | Planned |
+| Invite-only closed beta | Direct product-use learning under controlled access | Small, non-representative cohort | Active |
 | Career coach feedback | Tests repeatability for multiple users | Different buyer needs | Planned |
 | GitHub portfolio sharing | Strong artifact for Marcus’s own proof | May not validate buyer demand | Active |
 
@@ -41,13 +41,14 @@ Sell:
 - privacy-aware automation
 - feedback-driven improvement
 
-## Validation Plan
+## Current Validation Plan
 
-1. Show a private walkthrough to trusted reviewers.
-2. Ask which workflow step feels most valuable.
-3. Test whether the product is seen as a tool, service, or guided sprint.
-4. Compare reactions to subscription vs sprint-package framing.
-5. Add sanitized screenshots or demo artifacts once safe.
+1. Invite a small cohort deliberately rather than opening access broadly.
+2. Observe which workflow steps testers actually use and where they get blocked.
+3. Capture feedback without treating one tester or a friends-and-family cohort as market validation.
+4. Define outcome measures before claiming time saved, application quality, interviews, or other impact.
+5. Revisit paid positioning only after the beta shows repeatable value.
+6. Keep public recruiter proof synthetic unless a separate privacy review approves stronger evidence.
 
 ## Evidence
 
