@@ -4,7 +4,7 @@ test('status and synthetic notices appear before the first proof frame', async (
   await page.goto('/proof/job-agent/');
   await expect(page.getByRole('heading', { level: 1 })).toContainText('job decision');
   await expect(page.getByText('Released — closed beta', { exact: true })).toBeVisible();
-  await expect(page.getByText(/first invited tester signed in and accepted the current terms/i)).toBeVisible();
+  await expect(page.locator('#evidence-boundary')).toContainText('The first invited tester signed in and accepted the current terms');
   await expect(page.getByText('Not market-validated', { exact: true })).toBeVisible();
   await expect(page.getByText('No measured market outcomes', { exact: true })).toBeVisible();
   await expect(page.getByText(/next test/i)).toHaveCount(0);
@@ -46,7 +46,8 @@ test('current, replayed, and archived proof frames use reviewed synthetic protot
   await expect(proofImages).toHaveCount(4);
   const staticStoryImages = page.locator('#project-replay .project-story__chapters .project-story__visual img');
   await expect(staticStoryImages).toHaveCount(3);
-  await expect(page.locator('#project-replay [data-story-stage] .project-story__visual img')).toHaveCount(1);
+  await expect(page.locator('#project-replay [data-story-stage] .project-story__visual img')).toHaveCount(0);
+  await expect(page.locator('#project-replay [data-story-stage]')).toContainText('No beta-user screenshot is published for this milestone.');
   for (const image of [...await proofImages.all(), ...await staticStoryImages.all()]) {
     expect(await image.getAttribute('alt')).toBeTruthy();
     expect(await image.getAttribute('src')).toContain('v0.9-public-proof');
