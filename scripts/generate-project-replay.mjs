@@ -28,9 +28,14 @@ function renderEvidence(evidence) {
   return `<ul>${evidence.map((item) => `<li><a href="${escapeHtml(item.href)}">${escapeHtml(item.label)}</a></li>`).join('')}</ul>`;
 }
 
-function renderVisual(visual) {
+function renderVisual(event) {
+  const visual = event.visual;
   if (!visual) {
-    return `<div class="project-story__origin-visual"><p class="project-story__origin-mark" aria-hidden="true">01</p><p>This chapter is the public problem framing. A verified interface frame begins with the next chapter.</p></div>`;
+    const number = String(event.visual_order).padStart(2, '0');
+    const note = event.visual_order === 1
+      ? 'This chapter is the public problem framing. A verified interface frame begins with the next chapter.'
+      : 'No beta-user screenshot is published for this milestone. The chapter is supported by the public release manifest and recruiter-safe summarized evidence.';
+    return `<div class="project-story__origin-visual"><p class="project-story__origin-mark" aria-hidden="true">${number}</p><p>${note}</p></div>`;
   }
 
   return `<figure class="project-story__visual"><a href="${escapeHtml(visual.href)}"><img src="${escapeHtml(visual.href)}" alt="${escapeHtml(visual.alt)}"></a><figcaption><strong>${escapeHtml(visual.label)}</strong>${escapeHtml(visual.caption)}</figcaption></figure>`;
@@ -59,7 +64,7 @@ function renderEvent(event) {
                     <div><dt>Evidence available</dt><dd>${renderEvidence(event.evidence)}</dd></div>
                   </dl>
                 </div>
-                ${renderVisual(event.visual)}
+                ${renderVisual(event)}
               </div>
             </article>
           </li>`;
