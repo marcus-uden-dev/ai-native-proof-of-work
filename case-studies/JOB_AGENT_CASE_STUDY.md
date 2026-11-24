@@ -27,6 +27,7 @@ Job search work is fragmented across CVs, job boards, application portals, inter
 |---|---|---|
 | Profile and documents | Profile intake, document library, CV variants and export flows are represented in the product | Internal / Verified |
 | Job discovery | Search, monitoring, match context, source handling and failure visibility are represented | Internal / Verified |
+| Discovery reliability/performance | Measured source latency exposed sequential source and live-link checks as a bottleneck. Independent source reads now run concurrently with a per-source timeout, search-trust liveness probes use bounded concurrency, and shared database writes remain sequential. The merged PR reports 86 targeted backend tests passing. | Internal / Verified |
 | Application support | Application answers and tailored material are prepared for user review; the beta does not submit applications autonomously | Internal / Verified |
 | Feedback and learning | Generated outputs can be rated and problem reports can be submitted with bounded context | Internal / Verified |
 | Privacy/data rights | Versioned terms acceptance, consent choices, export/delete surfaces and analytics consent gating are represented | Internal / Verified |
@@ -51,6 +52,7 @@ Job search work is fragmented across CVs, job boards, application portals, inter
 |---|---|
 | Product judgment | Chose a constrained learning release rather than equating technical readiness with a public launch |
 | Execution | Took the product from internal implementation through hardening, operational verification, invitation flow and first external use |
+| Technical judgment | Parallelized independent network work while keeping shared database writes sequential, added timeout isolation for hung sources, and bounded live-link concurrency instead of maximizing parallelism indiscriminately |
 | Privacy & trust judgment | Terms, consent, data rights, access control and no-autonomous-submit boundaries are explicit |
 | QA discipline | Smoke tests, telemetry, backup/restore and reboot recovery were used as release gates |
 | Commercial judgment | Kept the beta free and deferred paid-model claims until evidence exists |
@@ -62,6 +64,7 @@ Job search work is fragmented across CVs, job boards, application portals, inter
 - Private repository identity, paths, tester identity, contact details, secrets and operational host details are intentionally excluded.
 - The public demo is synthetic and separate from the live closed beta.
 - One invited tester is a release milestone, not adoption or market validation.
+- The discovery parallelization PR reports 86 targeted backend tests passing and explicitly states that the change was not re-run against live after implementation; no production latency improvement is claimed.
 - No recruiter response, job-search impact, time saved, revenue, retention, or business outcome is claimed.
 
 ## Suggested Interview Questions
