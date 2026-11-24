@@ -118,6 +118,7 @@ export function validateReplay(data) {
 
 export function renderReplay(data) {
   const events = [...data.events].sort((a, b) => a.visual_order - b.visual_order);
+  const storyLabel = data.title.replace(/^The /, '');
   return `${begin}
       <section class="section section--ruled shell project-replay" id="project-replay" aria-labelledby="project-replay-title" data-project-story>
         <div class="section-heading section-heading--split">
