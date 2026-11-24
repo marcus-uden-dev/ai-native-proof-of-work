@@ -1,11 +1,11 @@
-# Job-Agent Business Model
+# Earned Signal Business Model
 
-Last updated: 2026-05-11
-Status: Hypothesis / Not validated
+Last updated: 2026-11-24
+Status: Closed-beta learning / Commercial model not validated
 
 ## Project Scope
 
-Project: job-agent.
+Project: Earned Signal (historical project label: job-agent).
 
 Role in portfolio: primary proof point and lead career workflow product.
 
@@ -29,9 +29,11 @@ Role in portfolio: primary proof point and lead career workflow product.
 | Usage-based credits | Aligns with application volume | Can feel transactional | Apply support and AI-heavy workflows |
 | Coach/team license | Higher revenue | Longer sales and support cycle | Career coaches |
 
-## Current Hypothesis
+## Current Experiment and Commercial Hypothesis
 
-The most realistic early model is either a one-time job-search sprint package or a lightweight subscription for active job seekers who are applying repeatedly and need workflow continuity.
+The current closed beta is free and invitation-only. Its purpose is product learning, not revenue validation.
+
+After the beta, the current paid model to assess is a Pro subscription plus optional credit packs. This is not validated demand, pricing, or willingness to pay.
 
 ## Rejected or Deferred Models
 
@@ -47,6 +49,7 @@ See [Job-Agent Case Study](../../../case-studies/JOB_AGENT_CASE_STUDY.md) and [P
 
 ## Validation Needed
 
+- Does the closed beta show repeatable value before monetization is introduced?
 - Will users pay for better workflow structure before they see interview outcomes?
-- Is willingness to pay higher for job seekers, career switchers, consultants, or coaches?
-- Does value concentrate in application support, discovery, or feedback loops?
+- Does value concentrate in application support, discovery, interview preparation, or feedback loops?
+- Does a Pro-plus-credits model fit actual usage better than the earlier sprint or flat-subscription hypotheses?
