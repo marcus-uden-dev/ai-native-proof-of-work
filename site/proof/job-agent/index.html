@@ -34,7 +34,7 @@
         <nav class="masthead__nav" aria-label="Case study navigation">
           <ul class="nav-list">
             <li><a href="#proof-sequence">Proof sequence</a></li>
-            <li><a href="#project-replay">The Job-agent story</a></li>
+            <li><a href="#project-replay">The Earned Signal story</a></li>
             <li><a href="archive/0.8-public-proof/#ui-evolution">Earlier UI</a></li>
             <li><a href="#company-research">Research</a></li>
             <li><a href="#limitations">Limitations</a></li>
@@ -58,21 +58,21 @@
 
     <main id="main">
       <section class="case-hero shell" aria-labelledby="case-title">
-        <div class="case-hero__breadcrumb"><a href="../../">Selected proof</a><span aria-hidden="true">/</span><span>Job-agent</span></div>
+        <div class="case-hero__breadcrumb"><a href="../../">Selected proof</a><span aria-hidden="true">/</span><span>Earned Signal</span></div>
         <div class="case-hero__grid">
           <div>
             <p class="eyebrow">90-second summary · Lead proof</p>
             <h1 id="case-title">Make each job decision more deliberate.</h1>
-            <p class="case-hero__lead">Job-agent connects discovery, company research, application tailoring, and interview preparation. The current proof shows the decision model and recruiter-safe interface, not market outcomes.</p>
+            <p class="case-hero__lead">Earned Signal, formerly tracked as Job-agent, connects discovery, company research, application tailoring, and interview preparation. It is running as an invite-only closed beta; the public proof remains recruiter-safe and separate from beta user data.</p>
           </div>
-          <dl class="release-card" data-release-contract="job-agent-v2">
-            <div><dt>Maturity</dt><dd data-release-field="maturity">Preparing for production testing</dd></div>
-            <div><dt>Implementation</dt><dd data-release-field="implementationState">Prototype under active development</dd></div>
-            <div><dt>Availability</dt><dd data-release-field="publicAvailability">Static recruiter-safe preview only</dd></div>
+          <dl class="release-card" data-release-contract="job-agent-v3">
+            <div><dt>Maturity</dt><dd data-release-field="maturity">Released — closed beta</dd></div>
+            <div><dt>Implementation</dt><dd data-release-field="implementationState">Closed beta running with invited testers</dd></div>
+            <div><dt>Availability</dt><dd data-release-field="publicAvailability">Invite-only closed beta; public recruiter-safe preview remains separate</dd></div>
             <div><dt>Market validation</dt><dd data-release-field="marketValidationState">Not market-validated</dd></div>
             <div><dt>Outcomes</dt><dd data-release-field="outcomeMeasurementState">No measured market outcomes</dd></div>
-            <div><dt>Evidence date</dt><dd data-release-field="evidenceDate">2026-09-02</dd></div>
-            <div><dt>Product version</dt><dd data-release-field="productVersion">0.9-public-proof</dd></div>
+            <div><dt>Evidence date</dt><dd data-release-field="evidenceDate">2026-11-24</dd></div>
+            <div><dt>Product version</dt><dd data-release-field="productVersion">closed-beta-2026-11-24</dd></div>
           </dl>
         </div>
       </section>
@@ -84,8 +84,8 @@
             <h2 id="trust-title">Read the status before the interface.</h2>
           </div>
           <div>
-            <p><strong>Preparing for production testing.</strong> This phase focuses on backend implementation, production hardening, and automated testing before any controlled production test. Job-agent (a working title, not the final product name) is not live and is not market-validated. The release-one company is invented example data. “Synthetic” means its company-specific details were made up to demonstrate the workflow; they are not facts about a real employer.</p>
-            <p><strong>Privacy:</strong> <span data-release-field="privacyState">Release privacy review complete</span>.</p>
+            <p><strong>Released — closed beta.</strong> Earned Signal entered invite-only closed beta on 24 November 2026. The first invited tester signed in and accepted the current terms after authentication and pre-invitation smoke checks passed. This is controlled external use, not public availability, adoption proof, market validation, or a measured outcome. The public company-research proof below still uses invented example data; “synthetic” means its company-specific details were made up to demonstrate the workflow.</p>
+            <p><strong>Privacy:</strong> <span data-release-field="privacyState">Public proof privacy review complete; closed-beta operations internally verified</span>.</p>
           </div>
         </div>
       </section>
@@ -95,7 +95,7 @@
           <div>
             <p class="kicker">Interactive prototype</p>
             <h2 id="prototype-title">Explore the recruiter-safe prototype.</h2>
-            <p>The prototype uses the same synthetic fixture and evidence labels. It demonstrates the research decision flow. It does not connect to a production service.</p>
+            <p>The prototype uses the same synthetic fixture and evidence labels. It demonstrates the research decision flow. It does not connect to the closed-beta service or expose beta user data.</p>
           </div>
           <a class="button button--primary" href="demo/">Open the static prototype</a>
         </div>
@@ -429,7 +429,8 @@
         </div>
         <ul class="limitations-list">
           <li>The release-one company and all company-specific values are synthetic.</li>
-          <li>The prototype has no production service or public user data.</li>
+          <li>The public prototype is separate from the invite-only closed beta and contains no beta user data.</li>
+              <li>The first invited tester milestone proves controlled external use, not adoption or market validation.</li>
           <li>Recruiter response, job-search impact, and market outcomes are not measured.</li>
         </ul>
 
@@ -438,8 +439,9 @@
           <div class="technical-appendix__content">
             <p>The public proof uses static HTML, CSS, and a versioned JSON fixture. Core content does not depend on client-side rendering.</p>
             <ul>
-              <li><a href="../../evidence/releases/job-agent-v2.json">Current release manifest · 0.9-public-proof</a></li>
-              <li><a href="../../evidence/releases/job-agent-v1.json">Previous release manifest · 0.8-public-proof</a></li>
+              <li><a href="../../evidence/releases/job-agent-v3.json">Current release manifest · closed-beta-2026-11-24</a></li>
+              <li><a href="../../evidence/releases/job-agent-v2.json">Previous release manifest · 0.9-public-proof</a></li>
+              <li><a href="../../evidence/releases/job-agent-v1.json">Earlier release manifest · 0.8-public-proof</a></li>
               <li><a class="button button--secondary" href="archive/0.8-public-proof/">Open the preserved 0.8-public-proof page</a></li>
               <li><a href="../../evidence/fixtures/job-agent-company-v1.json">Synthetic company fixture</a></li>
               <li><a href="../../recruiter-agent-guide.md">External AI evidence guide</a></li>
