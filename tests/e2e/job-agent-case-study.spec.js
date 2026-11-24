@@ -126,7 +126,7 @@ test('The Earned Signal story is a vertical, keyboard-reachable chronological tr
   const previous = story.getByRole('button', { name: 'Previous chapter' });
   await previous.focus();
   await page.keyboard.press('Enter');
-  await expect(story.locator('[data-story-stage]')).toContainText('Turn the workflow into a daily next move');
+  await expect(story.locator('[data-story-stage]')).toContainText('Bring fit, evidence, and action into one role view');
 });
 
 test('the guided reading order remains stable and printable', async ({ page }) => {
