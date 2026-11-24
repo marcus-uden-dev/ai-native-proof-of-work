@@ -3,102 +3,6 @@
   "repository": "https://github.com/marcus-uden-dev/ai-native-proof-of-work",
   "records": [
     {
-      "id": "repo-3837c45d717ee20e-1",
-      "path": "strategy/pkm/business/PRICING_STRATEGY.md",
-      "label": "strategy/pkm/business/PRICING_STRATEGY.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/business/PRICING_STRATEGY.md",
-      "excerpt": "# PKM Pricing Strategy Last updated: 2026-05-11 Status: Deferred hypothesis / Not validated ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Pricing Philosophy PKM should not be priced as generic note storage. If priced at all, pricing should reflect retrieval quality, learning support, and reduced knowledge-work friction. ## Pricing Options Considered | Model | Pros | Cons | Status | |---|---|---|---| | Free local/self-hosted | Low friction | Weak commercial validation | Hypothesis | | Individual subscription | Simple | Requires sustained daily value | Hypothesis | | One-time setup | Concrete for power users | Less scalable | Hypothesis | | Team license | Higher value | Requires collaboration and admin scope | Deferred | ## Current Recommendation Defer pricing until core daily-use value is validated across ingestion, search, learning, and browser capture. ## Reasoning Trail ```text Context → PKM value is not yet validated through daily use. Options Considered → Free/self-hosted, individual subscription, one-time setup, team license. Tradeoffs → Pricing too early can overstate commercial confidence; waiting preserves"
-    },
-    {
-      "id": "repo-3837c45d717ee20e-2",
-      "path": "strategy/pkm/business/PRICING_STRATEGY.md",
-      "label": "strategy/pkm/business/PRICING_STRATEGY.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/business/PRICING_STRATEGY.md",
-      "excerpt": "credibility. Decision → Defer pricing until the core workflow is validated. Evidence → Needs validation. Open Questions → Which workflow creates enough repeated value to justify payment? Next Action → Verify one end-to-end daily-use path. ``` ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - What workflow would justify payment? - Does value come from better search, better learning, or better source organization?"
-    },
-    {
-      "id": "repo-b4ff8bcf22a72c03-1",
-      "path": "strategy/pkm/decisions/DECISION_TRAIL.md",
-      "label": "strategy/pkm/decisions/DECISION_TRAIL.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/decisions/DECISION_TRAIL.md",
-      "excerpt": "# PKM Strategy Decision Trail Last updated: 2026-05-11 Status: Active / Supporting project ## Purpose This file captures major PKM strategy decisions. ## Decision Format Use this visible reasoning format: ```text Context → Options Considered → Tradeoffs → Decision → Evidence → Open Questions → Next Action ``` ## Decisions ### 2026-05-11 — Treat PKM as supporting strategy evidence until daily-use value is validated #### Context PKM shows knowledge workflow design, ingestion, search, learning, browser capture, and feature lifecycle discipline, but external product value is not yet validated. #### Options Considered | Option | Pros | Cons | |---|---|---| | Treat PKM as lead product strategy | Shows breadth beyond job-agent | Dilutes the stronger career-domain proof point | | Treat PKM as supporting proof point | Keeps portfolio focus clear | Less commercial detail for PKM | | Defer PKM strategy entirely | Avoids weak claims | Hides useful knowledge-workflow evidence | #### Tradeoffs Supporting positioning preserves the job-agent lead while still showing transferable product and workflow thinking. #### Decision Position PKM as a supporting proof point rather than the lead product"
-    },
-    {
-      "id": "repo-b4ff8bcf22a72c03-2",
-      "path": "strategy/pkm/decisions/DECISION_TRAIL.md",
-      "label": "strategy/pkm/decisions/DECISION_TRAIL.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/decisions/DECISION_TRAIL.md",
-      "excerpt": "strategy. #### Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md). #### Open Questions - Which PKM workflow is strongest enough for a sanitized demo? - Does the product have a commercial path or mainly demonstrate workflow thinking? #### Next Action Verify and summarize one end-to-end daily-use path."
-    },
-    {
-      "id": "repo-3c13f20602ad9ba1-1",
-      "path": "strategy/pkm/market/GO_TO_MARKET.md",
-      "label": "strategy/pkm/market/GO_TO_MARKET.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/market/GO_TO_MARKET.md",
-      "excerpt": "# PKM Go-To-Market Strategy Last updated: 2026-05-11 Status: Deferred hypothesis ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Initial Audience Likely early reviewers: - personal knowledge-management power users - builders with source-heavy research workflows - people who maintain notes but struggle to retrieve and act on them ## Distribution Channels | Channel | Why It Might Work | Risk | Status | |---|---|---|---| | Private demos | Shows workflow value directly | Manual and narrow | Planned | | PKM/community feedback | Relevant early audience | Can over-index on niche preferences | Planned | | Builder notes/case study | Demonstrates source-heavy workflow | Requires privacy-safe examples | Planned | | GitHub portfolio sharing | Useful for recruiter proof | Does not validate buyer demand | Active | ## GTM Principle Do not sell \"another notes app.\" Sell: - capture-to-retrieval workflow - learning and review loops - source quality and prioritization - feature lifecycle discipline ## Validation Plan 1. Verify the daily capture, search, learning, and browser-capture workflow. 2. Identify one sanitized demo path. 3. Ask users"
-    },
-    {
-      "id": "repo-3c13f20602ad9ba1-2",
-      "path": "strategy/pkm/market/GO_TO_MARKET.md",
-      "label": "strategy/pkm/market/GO_TO_MARKET.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/market/GO_TO_MARKET.md",
-      "excerpt": "which part feels differentiated from existing tools. 4. Defer public launch until operational blockers are cleared. ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
-    },
-    {
-      "id": "repo-81710bec5ff99e96-1",
-      "path": "strategy/pkm/product/COMPETITIVE_POSITIONING.md",
-      "label": "strategy/pkm/product/COMPETITIVE_POSITIONING.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/COMPETITIVE_POSITIONING.md",
-      "excerpt": "# PKM Competitive Positioning Last updated: 2026-05-11 Status: Initial hypothesis ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Positioning Statement A knowledge workflow product for turning scattered captured material into retrievable, reviewable, and actionable knowledge. ## Differentiation | Category | Typical Approach | PKM Position | |---|---|---| | Notes apps | Store notes and links | Connect capture, ingestion, retrieval, and review | | Read-it-later tools | Save content | Preserve source quality and promote reuse | | Search tools | Retrieve documents | Tie retrieval to learning and workflow decisions | | Project trackers | Track tasks | Connect ideas to feature queues and prioritization | ## What This Is Not - Not a generic notes archive - Not a public social network - Not a claim of measured learning outcomes - Not a product ready for public launch without operational validation ## Strategic Wedge The strongest wedge is the capture-to-retrieval-to-review loop: a workflow for making captured knowledge reusable rather than merely stored. ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and"
-    },
-    {
-      "id": "repo-81710bec5ff99e96-2",
-      "path": "strategy/pkm/product/COMPETITIVE_POSITIONING.md",
-      "label": "strategy/pkm/product/COMPETITIVE_POSITIONING.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/COMPETITIVE_POSITIONING.md",
-      "excerpt": "[Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
-    },
-    {
-      "id": "repo-c104740be731598a-1",
-      "path": "strategy/pkm/product/PRODUCT_STRATEGY.md",
-      "label": "strategy/pkm/product/PRODUCT_STRATEGY.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/PRODUCT_STRATEGY.md",
-      "excerpt": "# PKM Product Strategy Last updated: 2026-05-11 Status: Supporting project hypothesis / Internal evidence summarized ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Target User Initial target user: builders, operators, and knowledge workers with many notes, links, source fragments, and reusable ideas. ## Core Problem Useful knowledge material can be captured without becoming searchable, reviewable, learnable, or actionable. ## Existing Alternatives | Alternative | Gap | |---|---| | Notes apps | Store material but often leave retrieval and review to the user | | Read-it-later tools | Save content but do not reliably turn it into reusable knowledge | | Generic search | Retrieves documents but does not manage learning or prioritization | | Task/project tools | Track work but do not preserve source quality | ## Product Wedge Start with ingestion plus retrieval plus learning/review loops. ## MVP Scope - Capture and ingestion - Search and retrieval - Learning/review surfaces - Source/person/topic organization - Browser capture - Feature queue and prioritization workflow ## Non-MVP Scope - Public social product - Team knowledge"
-    },
-    {
-      "id": "repo-c104740be731598a-2",
-      "path": "strategy/pkm/product/PRODUCT_STRATEGY.md",
-      "label": "strategy/pkm/product/PRODUCT_STRATEGY.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/PRODUCT_STRATEGY.md",
-      "excerpt": "base - Claims of measured learning outcomes - Fully automated publishing ## Feature Prioritization | Feature | User Value | Complexity | Priority | |---|---|---|---| | Ingestion | High | Medium | High | | Search and retrieval | High | Medium | High | | Learning/review surfaces | Medium | Medium | Medium | | Browser capture | Medium | Medium | Medium | | Feed/social concepts | Unknown | Medium | Deferred | ## Risks - Daily-use adoption risk - Search quality risk - Source quality risk - Operational setup risk - Private-note exposure risk ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md). ## Strategy Decisions Use the decision-trail format in [Decision Trail](../decisions/DECISION_TRAIL.md) and summarize public portfolio-level decisions in the [public decision log](../../../site/evidence/decision-log.json) when they materially affect recruiter-facing claims."
-    },
-    {
-      "id": "repo-2908b211890fb0ec-1",
-      "path": "strategy/pkm/product/VALUE_PROPOSITION.md",
-      "label": "strategy/pkm/product/VALUE_PROPOSITION.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/VALUE_PROPOSITION.md",
-      "excerpt": "# PKM Value Proposition Last updated: 2026-05-11 Status: Supporting project hypothesis / Internal evidence summarized ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Core Claim PKM helps builders and knowledge workers turn scattered notes, links, sources, ideas, and learning material into retrievable, reviewable, and reusable knowledge. ## User Problem Personal knowledge work often becomes passive storage. Useful material is captured but not reliably retrieved, reviewed, connected, or promoted into action. ## Before - Notes, links, sources, and ideas can accumulate without a reliable reuse path. - Search, learning, and feature prioritization can become disconnected. - Useful source material can remain private and hard to summarize safely. ## After - Capture, ingestion, retrieval, and review are treated as one workflow. - Feature queues and lifecycle states make idea promotion more deliberate. - Project evidence can be summarized without exposing private notes. ## Value Created | Value | Explanation | Evidence Status | |---|---|---| | Better capture-to-retrieval loop | Ingestion and search are part of the project direction |"
-    },
-    {
-      "id": "repo-2908b211890fb0ec-2",
-      "path": "strategy/pkm/product/VALUE_PROPOSITION.md",
-      "label": "strategy/pkm/product/VALUE_PROPOSITION.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/VALUE_PROPOSITION.md",
-      "excerpt": "Internal / Verified | | Learning support | Learning/review surfaces are represented in project evidence | Internal / Verified | | Feature discipline | Brainstorm queues, feature queues, ICE scoring, and lifecycle states reduce random idea drift | Internal / Verified | | Workflow transferability | Shows AI-native source quality and review-loop thinking beyond job-agent | Internal / Verified | ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Which workflow is strongest: capture, search, learning, feed/social, or browser extension? - Does the project solve a daily-use pain or mainly demonstrate architecture and workflow thinking? - What sanitized evidence would best show the product without exposing private notes?"
-    },
-    {
       "id": "repo-e7f5b2762e65e556-1",
       "path": "docs/RELEASE_RUNBOOK.md",
       "label": "docs/RELEASE_RUNBOOK.md · excerpt 1",
@@ -4201,6 +4105,102 @@
       "sourceClass": "strategy-document",
       "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/business/BUSINESS_MODEL.md",
       "excerpt": "wait until the personal workflow is demonstrably reliable. ## Rejected or Deferred Models | Model | Status | Reason | |---|---|---| | Enterprise knowledge base | Deferred | Too broad before daily-use validation | | Public feed/social product | Deferred | Different product and trust model | | Fully automated research assistant | Deferred | Requires stronger source-quality guarantees | ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Do users pay for retrieval and review, or only for capture convenience? - Is the strongest buyer an individual, founder, student, or team?"
+    },
+    {
+      "id": "repo-3837c45d717ee20e-1",
+      "path": "strategy/pkm/business/PRICING_STRATEGY.md",
+      "label": "strategy/pkm/business/PRICING_STRATEGY.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/business/PRICING_STRATEGY.md",
+      "excerpt": "# PKM Pricing Strategy Last updated: 2026-05-11 Status: Deferred hypothesis / Not validated ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Pricing Philosophy PKM should not be priced as generic note storage. If priced at all, pricing should reflect retrieval quality, learning support, and reduced knowledge-work friction. ## Pricing Options Considered | Model | Pros | Cons | Status | |---|---|---|---| | Free local/self-hosted | Low friction | Weak commercial validation | Hypothesis | | Individual subscription | Simple | Requires sustained daily value | Hypothesis | | One-time setup | Concrete for power users | Less scalable | Hypothesis | | Team license | Higher value | Requires collaboration and admin scope | Deferred | ## Current Recommendation Defer pricing until core daily-use value is validated across ingestion, search, learning, and browser capture. ## Reasoning Trail ```text Context → PKM value is not yet validated through daily use. Options Considered → Free/self-hosted, individual subscription, one-time setup, team license. Tradeoffs → Pricing too early can overstate commercial confidence; waiting preserves"
+    },
+    {
+      "id": "repo-3837c45d717ee20e-2",
+      "path": "strategy/pkm/business/PRICING_STRATEGY.md",
+      "label": "strategy/pkm/business/PRICING_STRATEGY.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/business/PRICING_STRATEGY.md",
+      "excerpt": "credibility. Decision → Defer pricing until the core workflow is validated. Evidence → Needs validation. Open Questions → Which workflow creates enough repeated value to justify payment? Next Action → Verify one end-to-end daily-use path. ``` ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - What workflow would justify payment? - Does value come from better search, better learning, or better source organization?"
+    },
+    {
+      "id": "repo-b4ff8bcf22a72c03-1",
+      "path": "strategy/pkm/decisions/DECISION_TRAIL.md",
+      "label": "strategy/pkm/decisions/DECISION_TRAIL.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/decisions/DECISION_TRAIL.md",
+      "excerpt": "# PKM Strategy Decision Trail Last updated: 2026-05-11 Status: Active / Supporting project ## Purpose This file captures major PKM strategy decisions. ## Decision Format Use this visible reasoning format: ```text Context → Options Considered → Tradeoffs → Decision → Evidence → Open Questions → Next Action ``` ## Decisions ### 2026-05-11 — Treat PKM as supporting strategy evidence until daily-use value is validated #### Context PKM shows knowledge workflow design, ingestion, search, learning, browser capture, and feature lifecycle discipline, but external product value is not yet validated. #### Options Considered | Option | Pros | Cons | |---|---|---| | Treat PKM as lead product strategy | Shows breadth beyond job-agent | Dilutes the stronger career-domain proof point | | Treat PKM as supporting proof point | Keeps portfolio focus clear | Less commercial detail for PKM | | Defer PKM strategy entirely | Avoids weak claims | Hides useful knowledge-workflow evidence | #### Tradeoffs Supporting positioning preserves the job-agent lead while still showing transferable product and workflow thinking. #### Decision Position PKM as a supporting proof point rather than the lead product"
+    },
+    {
+      "id": "repo-b4ff8bcf22a72c03-2",
+      "path": "strategy/pkm/decisions/DECISION_TRAIL.md",
+      "label": "strategy/pkm/decisions/DECISION_TRAIL.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/decisions/DECISION_TRAIL.md",
+      "excerpt": "strategy. #### Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md). #### Open Questions - Which PKM workflow is strongest enough for a sanitized demo? - Does the product have a commercial path or mainly demonstrate workflow thinking? #### Next Action Verify and summarize one end-to-end daily-use path."
+    },
+    {
+      "id": "repo-3c13f20602ad9ba1-1",
+      "path": "strategy/pkm/market/GO_TO_MARKET.md",
+      "label": "strategy/pkm/market/GO_TO_MARKET.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/market/GO_TO_MARKET.md",
+      "excerpt": "# PKM Go-To-Market Strategy Last updated: 2026-05-11 Status: Deferred hypothesis ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Initial Audience Likely early reviewers: - personal knowledge-management power users - builders with source-heavy research workflows - people who maintain notes but struggle to retrieve and act on them ## Distribution Channels | Channel | Why It Might Work | Risk | Status | |---|---|---|---| | Private demos | Shows workflow value directly | Manual and narrow | Planned | | PKM/community feedback | Relevant early audience | Can over-index on niche preferences | Planned | | Builder notes/case study | Demonstrates source-heavy workflow | Requires privacy-safe examples | Planned | | GitHub portfolio sharing | Useful for recruiter proof | Does not validate buyer demand | Active | ## GTM Principle Do not sell \"another notes app.\" Sell: - capture-to-retrieval workflow - learning and review loops - source quality and prioritization - feature lifecycle discipline ## Validation Plan 1. Verify the daily capture, search, learning, and browser-capture workflow. 2. Identify one sanitized demo path. 3. Ask users"
+    },
+    {
+      "id": "repo-3c13f20602ad9ba1-2",
+      "path": "strategy/pkm/market/GO_TO_MARKET.md",
+      "label": "strategy/pkm/market/GO_TO_MARKET.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/market/GO_TO_MARKET.md",
+      "excerpt": "which part feels differentiated from existing tools. 4. Defer public launch until operational blockers are cleared. ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
+    },
+    {
+      "id": "repo-81710bec5ff99e96-1",
+      "path": "strategy/pkm/product/COMPETITIVE_POSITIONING.md",
+      "label": "strategy/pkm/product/COMPETITIVE_POSITIONING.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/COMPETITIVE_POSITIONING.md",
+      "excerpt": "# PKM Competitive Positioning Last updated: 2026-05-11 Status: Initial hypothesis ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Positioning Statement A knowledge workflow product for turning scattered captured material into retrievable, reviewable, and actionable knowledge. ## Differentiation | Category | Typical Approach | PKM Position | |---|---|---| | Notes apps | Store notes and links | Connect capture, ingestion, retrieval, and review | | Read-it-later tools | Save content | Preserve source quality and promote reuse | | Search tools | Retrieve documents | Tie retrieval to learning and workflow decisions | | Project trackers | Track tasks | Connect ideas to feature queues and prioritization | ## What This Is Not - Not a generic notes archive - Not a public social network - Not a claim of measured learning outcomes - Not a product ready for public launch without operational validation ## Strategic Wedge The strongest wedge is the capture-to-retrieval-to-review loop: a workflow for making captured knowledge reusable rather than merely stored. ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and"
+    },
+    {
+      "id": "repo-81710bec5ff99e96-2",
+      "path": "strategy/pkm/product/COMPETITIVE_POSITIONING.md",
+      "label": "strategy/pkm/product/COMPETITIVE_POSITIONING.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/COMPETITIVE_POSITIONING.md",
+      "excerpt": "[Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
+    },
+    {
+      "id": "repo-c104740be731598a-1",
+      "path": "strategy/pkm/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/pkm/product/PRODUCT_STRATEGY.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/PRODUCT_STRATEGY.md",
+      "excerpt": "# PKM Product Strategy Last updated: 2026-05-11 Status: Supporting project hypothesis / Internal evidence summarized ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Target User Initial target user: builders, operators, and knowledge workers with many notes, links, source fragments, and reusable ideas. ## Core Problem Useful knowledge material can be captured without becoming searchable, reviewable, learnable, or actionable. ## Existing Alternatives | Alternative | Gap | |---|---| | Notes apps | Store material but often leave retrieval and review to the user | | Read-it-later tools | Save content but do not reliably turn it into reusable knowledge | | Generic search | Retrieves documents but does not manage learning or prioritization | | Task/project tools | Track work but do not preserve source quality | ## Product Wedge Start with ingestion plus retrieval plus learning/review loops. ## MVP Scope - Capture and ingestion - Search and retrieval - Learning/review surfaces - Source/person/topic organization - Browser capture - Feature queue and prioritization workflow ## Non-MVP Scope - Public social product - Team knowledge"
+    },
+    {
+      "id": "repo-c104740be731598a-2",
+      "path": "strategy/pkm/product/PRODUCT_STRATEGY.md",
+      "label": "strategy/pkm/product/PRODUCT_STRATEGY.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/PRODUCT_STRATEGY.md",
+      "excerpt": "base - Claims of measured learning outcomes - Fully automated publishing ## Feature Prioritization | Feature | User Value | Complexity | Priority | |---|---|---|---| | Ingestion | High | Medium | High | | Search and retrieval | High | Medium | High | | Learning/review surfaces | Medium | Medium | Medium | | Browser capture | Medium | Medium | Medium | | Feed/social concepts | Unknown | Medium | Deferred | ## Risks - Daily-use adoption risk - Search quality risk - Source quality risk - Operational setup risk - Private-note exposure risk ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md). ## Strategy Decisions Use the decision-trail format in [Decision Trail](../decisions/DECISION_TRAIL.md) and summarize public portfolio-level decisions in the [public decision log](../../../site/evidence/decision-log.json) when they materially affect recruiter-facing claims."
+    },
+    {
+      "id": "repo-2908b211890fb0ec-1",
+      "path": "strategy/pkm/product/VALUE_PROPOSITION.md",
+      "label": "strategy/pkm/product/VALUE_PROPOSITION.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/VALUE_PROPOSITION.md",
+      "excerpt": "# PKM Value Proposition Last updated: 2026-05-11 Status: Supporting project hypothesis / Internal evidence summarized ## Project Scope Project: PKM. Role in portfolio: supporting proof point for knowledge workflow design. ## Core Claim PKM helps builders and knowledge workers turn scattered notes, links, sources, ideas, and learning material into retrievable, reviewable, and reusable knowledge. ## User Problem Personal knowledge work often becomes passive storage. Useful material is captured but not reliably retrieved, reviewed, connected, or promoted into action. ## Before - Notes, links, sources, and ideas can accumulate without a reliable reuse path. - Search, learning, and feature prioritization can become disconnected. - Useful source material can remain private and hard to summarize safely. ## After - Capture, ingestion, retrieval, and review are treated as one workflow. - Feature queues and lifecycle states make idea promotion more deliberate. - Project evidence can be summarized without exposing private notes. ## Value Created | Value | Explanation | Evidence Status | |---|---|---| | Better capture-to-retrieval loop | Ingestion and search are part of the project direction |"
+    },
+    {
+      "id": "repo-2908b211890fb0ec-2",
+      "path": "strategy/pkm/product/VALUE_PROPOSITION.md",
+      "label": "strategy/pkm/product/VALUE_PROPOSITION.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/pkm/product/VALUE_PROPOSITION.md",
+      "excerpt": "Internal / Verified | | Learning support | Learning/review surfaces are represented in project evidence | Internal / Verified | | Feature discipline | Brainstorm queues, feature queues, ICE scoring, and lifecycle states reduce random idea drift | Internal / Verified | | Workflow transferability | Shows AI-native source quality and review-loop thinking beyond job-agent | Internal / Verified | ## Evidence See [PKM Case Study](../../../case-studies/PKM_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Which workflow is strongest: capture, search, learning, feed/social, or browser extension? - Does the project solve a daily-use pain or mainly demonstrate architecture and workflow thinking? - What sanitized evidence would best show the product without exposing private notes?"
     }
   ]
 }
