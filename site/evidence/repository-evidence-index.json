@@ -3,102 +3,6 @@
   "repository": "https://github.com/marcus-uden-dev/ai-native-proof-of-work",
   "records": [
     {
-      "id": "repo-31059e4b73782699-1",
-      "path": "strategy/household-budget-app/README.md",
-      "label": "strategy/household-budget-app/README.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/README.md",
-      "excerpt": "# Household Budget App Strategy Last updated: 2026-05-11 Status: Supporting project strategy / Internal evidence summarized ## Purpose This folder contains strategy notes for the household budget app, a supporting proof point for financial-product UX, domain modeling, shared data access, and test-backed execution. ## Project Role The household budget app is a supporting product strategy surface for household finance, shared data access, import/review workflows, forecasting, and security-aware domain modeling. ## Canonical Documents | Document | Use | |---|---| | [Value Proposition](product/VALUE_PROPOSITION.md) | Who the household budget app helps and why it matters | | [Product Strategy](product/PRODUCT_STRATEGY.md) | Target user, wedge, MVP scope, risks | | [Business Model](business/BUSINESS_MODEL.md) | Customer segments and monetization hypotheses | | [Pricing Strategy](business/PRICING_STRATEGY.md) | Pricing philosophy and deferred hypotheses | | [Go-To-Market](market/GO_TO_MARKET.md) | Validation and distribution assumptions | | [Competitive Positioning](product/COMPETITIVE_POSITIONING.md) | Differentiation from alternatives | | [Decision Trail](decisions/DECISION_TRAIL.md) |"
-    },
-    {
-      "id": "repo-31059e4b73782699-2",
-      "path": "strategy/household-budget-app/README.md",
-      "label": "strategy/household-budget-app/README.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/README.md",
-      "excerpt": "Visible strategy decisions | ## Evidence See [Household Budget App Case Study](../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md). ## Validation Focus - Verify one privacy-safe sample-data demo path. - Clarify whether the app is a credible consumer product path or mainly portfolio evidence. - Add proof without exposing private household financial data."
-    },
-    {
-      "id": "repo-5cbefa22f00206e3-1",
-      "path": "strategy/household-budget-app/business/BUSINESS_MODEL.md",
-      "label": "strategy/household-budget-app/business/BUSINESS_MODEL.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/business/BUSINESS_MODEL.md",
-      "excerpt": "# Household Budget App Business Model Last updated: 2026-05-11 Status: Hypothesis / Not validated ## Project Scope Project: household budget app. Role in portfolio: supporting proof point for financial-product UX, household domain modeling, shared access, and test-backed execution. ## Possible Customer Segments | Segment | Problem | Willingness to Pay | Notes | |---|---|---|---| | Shared households | Need shared budget visibility and forecasting | Unknown | Natural product fit | | Couples / families | Need roles, shared accounts, and review workflows | Unknown | Privacy/trust is central | | Personal finance power users | Need imports, goals, and forecasting | Possible | Competitive market | ## Business Model Options | Model | Pros | Cons | Best Fit | |---|---|---|---| | Household subscription | Clear buyer unit | Competitive consumer finance market | Shared households | | One-time purchase | Simple and privacy-friendly | Harder to sustain support | Personal finance power users | | Premium imports/forecasting | Ties price to advanced value | Requires strong UX proof | Heavy users | | Local/self-hosted plus services | Trust-friendly | Smaller market | Technical/privacy-focused users"
-    },
-    {
-      "id": "repo-5cbefa22f00206e3-2",
-      "path": "strategy/household-budget-app/business/BUSINESS_MODEL.md",
-      "label": "strategy/household-budget-app/business/BUSINESS_MODEL.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/business/BUSINESS_MODEL.md",
-      "excerpt": "| ## Current Hypothesis If commercialized, the app would likely need a privacy-first personal finance subscription model. The proof point is currently stronger as product/domain execution evidence than as a validated business. ## Rejected or Deferred Models | Model | Status | Reason | |---|---|---| | Financial advice product | Deferred | Regulatory and trust complexity | | Bank-data aggregation product | Deferred | Integration and compliance burden | | B2B finance tool | Deferred | Different buyer and workflow | ## Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Would households pay for shared budgeting if manual spreadsheets are free? - Is forecasting or import review the strongest value driver?"
-    },
-    {
-      "id": "repo-ed193b8d8538a22b-1",
-      "path": "strategy/household-budget-app/business/PRICING_STRATEGY.md",
-      "label": "strategy/household-budget-app/business/PRICING_STRATEGY.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/business/PRICING_STRATEGY.md",
-      "excerpt": "# Household Budget App Pricing Strategy Last updated: 2026-05-11 Status: Deferred hypothesis / Not validated ## Project Scope Project: household budget app. Role in portfolio: supporting proof point for financial-product UX, household domain modeling, shared access, and test-backed execution. ## Pricing Philosophy Pricing should reflect trusted household financial clarity, not generic budgeting charts. Users would need to trust the product with sensitive financial data before pricing matters. ## Pricing Options Considered | Model | Pros | Cons | Status | |---|---|---|---| | Free local/self-hosted | High trust and low friction | Weak commercial validation | Hypothesis | | Household subscription | Clear buyer unit | Competitive consumer market | Hypothesis | | One-time purchase | Simple | Harder to sustain support | Hypothesis | | Premium forecasting/imports | Ties price to advanced value | Requires strong UX proof | Deferred | ## Current Recommendation Defer pricing until household workflow safety, import quality, and daily-use value are proven. ## Reasoning Trail ```text Context → Household finance requires high trust before pricing can be evaluated. Options Considered →"
-    },
-    {
-      "id": "repo-ed193b8d8538a22b-2",
-      "path": "strategy/household-budget-app/business/PRICING_STRATEGY.md",
-      "label": "strategy/household-budget-app/business/PRICING_STRATEGY.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/business/PRICING_STRATEGY.md",
-      "excerpt": "Free/self-hosted, household subscription, one-time purchase, premium imports/forecasting. Tradeoffs → Consumer finance pricing requires privacy and daily-use trust; early claims would be weak. Decision → Defer pricing until workflow safety and value are proven. Evidence → Needs validation. Open Questions → Which feature creates enough trust and value to justify payment? Next Action → Validate a privacy-safe sample-data demo path. ``` ## Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Which feature would justify payment? - Would users pay for privacy, forecasting, import automation, or shared access?"
-    },
-    {
-      "id": "repo-54bbf444583e3a05-1",
-      "path": "strategy/household-budget-app/decisions/DECISION_TRAIL.md",
-      "label": "strategy/household-budget-app/decisions/DECISION_TRAIL.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/decisions/DECISION_TRAIL.md",
-      "excerpt": "# Household Budget App Strategy Decision Trail Last updated: 2026-05-11 Status: Active / Supporting project ## Purpose This file captures major household budget app strategy decisions. ## Decision Format Use this visible reasoning format: ```text Context → Options Considered → Tradeoffs → Decision → Evidence → Open Questions → Next Action ``` ## Decisions ### 2026-05-11 — Treat household budgeting as shared-domain modeling evidence #### Context The app demonstrates household-scoped data, imports, transactions, recurring expenses, forecasting, goals, and security boundaries. Commercial validation is not yet available. #### Options Considered | Option | Pros | Cons | |---|---|---| | Treat household budget app as lead product strategy | Strong domain-modeling evidence | Less connected to career/recruiter workflow than job-agent | | Treat it as supporting proof point | Shows range and reliability without diluting focus | Less commercial detail for the app | | Defer strategy entirely | Avoids weak market claims | Hides useful financial-product UX and security evidence | #### Tradeoffs Supporting positioning preserves the job-agent lead while still showing careful domain modeling,"
-    },
-    {
-      "id": "repo-54bbf444583e3a05-2",
-      "path": "strategy/household-budget-app/decisions/DECISION_TRAIL.md",
-      "label": "strategy/household-budget-app/decisions/DECISION_TRAIL.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/decisions/DECISION_TRAIL.md",
-      "excerpt": "privacy/security thinking, and test-backed execution. #### Decision Position the household budget app as a supporting proof point for domain modeling, financial-product UX, privacy/security thinking, and test-backed execution. #### Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md). #### Open Questions - Which workflow is strongest for a sanitized demo? - Is the app a credible consumer product path or mainly portfolio evidence? #### Next Action Create sample-data screenshots or excerpts if the project becomes externally shareable."
-    },
-    {
-      "id": "repo-9900f49c9c776dd4-1",
-      "path": "strategy/household-budget-app/market/GO_TO_MARKET.md",
-      "label": "strategy/household-budget-app/market/GO_TO_MARKET.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/market/GO_TO_MARKET.md",
-      "excerpt": "# Household Budget App Go-To-Market Strategy Last updated: 2026-05-11 Status: Deferred hypothesis ## Project Scope Project: household budget app. Role in portfolio: supporting proof point for financial-product UX, household domain modeling, shared access, and test-backed execution. ## Initial Audience Likely early reviewers: - households that already budget together - spreadsheet-heavy personal finance users - people who need shared account visibility and liquidity forecasting ## Distribution Channels | Channel | Why It Might Work | Risk | Status | |---|---|---|---| | Private sample-data walkthroughs | Tests household workflow comprehension safely | Manual and narrow | Planned | | Personal finance power-user feedback | Relevant pain points | Privacy/trust concerns | Planned | | Portfolio case study | Shows domain modeling and testing | Does not validate buyer demand | Active | | Public launch | Could test demand | Premature before privacy/security validation | Deferred | ## GTM Principle Do not sell \"another budgeting dashboard.\" Sell: - shared household money workflows - import and review discipline - liquidity forecasting - goals and recurring expense planning -"
-    },
-    {
-      "id": "repo-9900f49c9c776dd4-2",
-      "path": "strategy/household-budget-app/market/GO_TO_MARKET.md",
-      "label": "strategy/household-budget-app/market/GO_TO_MARKET.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/market/GO_TO_MARKET.md",
-      "excerpt": "privacy/security-aware household access ## Validation Plan 1. Verify a privacy-safe demo path with sample data. 2. Test whether users understand the shared-household wedge. 3. Identify whether import review or forecasting creates the strongest pull. 4. Defer public launch until security and privacy boundaries are validated. ## Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
-    },
-    {
-      "id": "repo-8a4ace87dd04a15d-1",
-      "path": "strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md",
-      "label": "strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md · excerpt 1",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md",
-      "excerpt": "# Household Budget App Competitive Positioning Last updated: 2026-05-11 Status: Initial hypothesis ## Project Scope Project: household budget app. Role in portfolio: supporting proof point for financial-product UX, household domain modeling, shared access, and test-backed execution. ## Positioning Statement A shared household budgeting product for import review, transaction organization, liquidity forecasting, goals, and household-scoped financial visibility. ## Differentiation | Category | Typical Approach | Household Budget App Position | |---|---|---| | Spreadsheets | Flexible but manual | Adds structured imports, rules, forecasts, and shared roles | | Personal budgeting apps | Often individual-first | Centers household membership and shared access | | Bank apps | Account-specific views | Combines accounts, categories, goals, and forecasts | | Expense trackers | Track past spending | Adds planning, scheduled items, and liquidity view | ## What This Is Not - Not financial advice - Not a public launch claim - Not a product that should expose private household data - Not validated as a commercial consumer finance product yet ## Strategic Wedge The strongest wedge is household-aware"
-    },
-    {
-      "id": "repo-8a4ace87dd04a15d-2",
-      "path": "strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md",
-      "label": "strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md · excerpt 2",
-      "sourceClass": "strategy-document",
-      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md",
-      "excerpt": "budgeting: shared roles, ownership boundaries, import/review workflows, forecasting, and goals in one privacy-sensitive product domain. ## Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
-    },
-    {
       "id": "repo-f213eb99387a843b-1",
       "path": "strategy/household-budget-app/product/PRODUCT_STRATEGY.md",
       "label": "strategy/household-budget-app/product/PRODUCT_STRATEGY.md · excerpt 1",
@@ -4201,6 +4105,102 @@
       "sourceClass": "strategy-document",
       "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/case-studies/PKM_CASE_STUDY.md",
       "excerpt": "from it | ## Clickable Demo This case study records the PKM knowledge-feed and source-capture concept. The examples use synthetic/demo data; the project supports the main Job-agent story rather than replacing it as the lead proof point. ## Workflow Model ```mermaid flowchart TD A[\"Capture\"] --> B[\"Ingest\"] B --> C[\"Index / Search\"] C --> D[\"Learn / Review\"] D --> E[\"Prioritize Features\"] E --> F[\"Implement / Validate\"] F --> G[\"Improves next<br/>ingestion cycle\"] ``` ## Recruiter Relevance - Shows information architecture thinking. - Shows ability to design workflows around messy knowledge inputs. - Shows prioritization discipline through feature queues and ICE scoring. - Supports the broader story that AI-native work needs source quality, review loops, and durable structure. ## Evidence Boundaries This case study summarizes internal project evidence. It should not be treated as a public product launch claim or measured adoption claim."
+    },
+    {
+      "id": "repo-31059e4b73782699-1",
+      "path": "strategy/household-budget-app/README.md",
+      "label": "strategy/household-budget-app/README.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/README.md",
+      "excerpt": "# Household Budget App Strategy Last updated: 2026-05-11 Status: Supporting project strategy / Internal evidence summarized ## Purpose This folder contains strategy notes for the household budget app, a supporting proof point for financial-product UX, domain modeling, shared data access, and test-backed execution. ## Project Role The household budget app is a supporting product strategy surface for household finance, shared data access, import/review workflows, forecasting, and security-aware domain modeling. ## Canonical Documents | Document | Use | |---|---| | [Value Proposition](product/VALUE_PROPOSITION.md) | Who the household budget app helps and why it matters | | [Product Strategy](product/PRODUCT_STRATEGY.md) | Target user, wedge, MVP scope, risks | | [Business Model](business/BUSINESS_MODEL.md) | Customer segments and monetization hypotheses | | [Pricing Strategy](business/PRICING_STRATEGY.md) | Pricing philosophy and deferred hypotheses | | [Go-To-Market](market/GO_TO_MARKET.md) | Validation and distribution assumptions | | [Competitive Positioning](product/COMPETITIVE_POSITIONING.md) | Differentiation from alternatives | | [Decision Trail](decisions/DECISION_TRAIL.md) |"
+    },
+    {
+      "id": "repo-31059e4b73782699-2",
+      "path": "strategy/household-budget-app/README.md",
+      "label": "strategy/household-budget-app/README.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/README.md",
+      "excerpt": "Visible strategy decisions | ## Evidence See [Household Budget App Case Study](../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md). ## Validation Focus - Verify one privacy-safe sample-data demo path. - Clarify whether the app is a credible consumer product path or mainly portfolio evidence. - Add proof without exposing private household financial data."
+    },
+    {
+      "id": "repo-5cbefa22f00206e3-1",
+      "path": "strategy/household-budget-app/business/BUSINESS_MODEL.md",
+      "label": "strategy/household-budget-app/business/BUSINESS_MODEL.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/business/BUSINESS_MODEL.md",
+      "excerpt": "# Household Budget App Business Model Last updated: 2026-05-11 Status: Hypothesis / Not validated ## Project Scope Project: household budget app. Role in portfolio: supporting proof point for financial-product UX, household domain modeling, shared access, and test-backed execution. ## Possible Customer Segments | Segment | Problem | Willingness to Pay | Notes | |---|---|---|---| | Shared households | Need shared budget visibility and forecasting | Unknown | Natural product fit | | Couples / families | Need roles, shared accounts, and review workflows | Unknown | Privacy/trust is central | | Personal finance power users | Need imports, goals, and forecasting | Possible | Competitive market | ## Business Model Options | Model | Pros | Cons | Best Fit | |---|---|---|---| | Household subscription | Clear buyer unit | Competitive consumer finance market | Shared households | | One-time purchase | Simple and privacy-friendly | Harder to sustain support | Personal finance power users | | Premium imports/forecasting | Ties price to advanced value | Requires strong UX proof | Heavy users | | Local/self-hosted plus services | Trust-friendly | Smaller market | Technical/privacy-focused users"
+    },
+    {
+      "id": "repo-5cbefa22f00206e3-2",
+      "path": "strategy/household-budget-app/business/BUSINESS_MODEL.md",
+      "label": "strategy/household-budget-app/business/BUSINESS_MODEL.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/business/BUSINESS_MODEL.md",
+      "excerpt": "| ## Current Hypothesis If commercialized, the app would likely need a privacy-first personal finance subscription model. The proof point is currently stronger as product/domain execution evidence than as a validated business. ## Rejected or Deferred Models | Model | Status | Reason | |---|---|---| | Financial advice product | Deferred | Regulatory and trust complexity | | Bank-data aggregation product | Deferred | Integration and compliance burden | | B2B finance tool | Deferred | Different buyer and workflow | ## Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Would households pay for shared budgeting if manual spreadsheets are free? - Is forecasting or import review the strongest value driver?"
+    },
+    {
+      "id": "repo-ed193b8d8538a22b-1",
+      "path": "strategy/household-budget-app/business/PRICING_STRATEGY.md",
+      "label": "strategy/household-budget-app/business/PRICING_STRATEGY.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/business/PRICING_STRATEGY.md",
+      "excerpt": "# Household Budget App Pricing Strategy Last updated: 2026-05-11 Status: Deferred hypothesis / Not validated ## Project Scope Project: household budget app. Role in portfolio: supporting proof point for financial-product UX, household domain modeling, shared access, and test-backed execution. ## Pricing Philosophy Pricing should reflect trusted household financial clarity, not generic budgeting charts. Users would need to trust the product with sensitive financial data before pricing matters. ## Pricing Options Considered | Model | Pros | Cons | Status | |---|---|---|---| | Free local/self-hosted | High trust and low friction | Weak commercial validation | Hypothesis | | Household subscription | Clear buyer unit | Competitive consumer market | Hypothesis | | One-time purchase | Simple | Harder to sustain support | Hypothesis | | Premium forecasting/imports | Ties price to advanced value | Requires strong UX proof | Deferred | ## Current Recommendation Defer pricing until household workflow safety, import quality, and daily-use value are proven. ## Reasoning Trail ```text Context → Household finance requires high trust before pricing can be evaluated. Options Considered →"
+    },
+    {
+      "id": "repo-ed193b8d8538a22b-2",
+      "path": "strategy/household-budget-app/business/PRICING_STRATEGY.md",
+      "label": "strategy/household-budget-app/business/PRICING_STRATEGY.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/business/PRICING_STRATEGY.md",
+      "excerpt": "Free/self-hosted, household subscription, one-time purchase, premium imports/forecasting. Tradeoffs → Consumer finance pricing requires privacy and daily-use trust; early claims would be weak. Decision → Defer pricing until workflow safety and value are proven. Evidence → Needs validation. Open Questions → Which feature creates enough trust and value to justify payment? Next Action → Validate a privacy-safe sample-data demo path. ``` ## Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md). ## Validation Needed - Which feature would justify payment? - Would users pay for privacy, forecasting, import automation, or shared access?"
+    },
+    {
+      "id": "repo-54bbf444583e3a05-1",
+      "path": "strategy/household-budget-app/decisions/DECISION_TRAIL.md",
+      "label": "strategy/household-budget-app/decisions/DECISION_TRAIL.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/decisions/DECISION_TRAIL.md",
+      "excerpt": "# Household Budget App Strategy Decision Trail Last updated: 2026-05-11 Status: Active / Supporting project ## Purpose This file captures major household budget app strategy decisions. ## Decision Format Use this visible reasoning format: ```text Context → Options Considered → Tradeoffs → Decision → Evidence → Open Questions → Next Action ``` ## Decisions ### 2026-05-11 — Treat household budgeting as shared-domain modeling evidence #### Context The app demonstrates household-scoped data, imports, transactions, recurring expenses, forecasting, goals, and security boundaries. Commercial validation is not yet available. #### Options Considered | Option | Pros | Cons | |---|---|---| | Treat household budget app as lead product strategy | Strong domain-modeling evidence | Less connected to career/recruiter workflow than job-agent | | Treat it as supporting proof point | Shows range and reliability without diluting focus | Less commercial detail for the app | | Defer strategy entirely | Avoids weak market claims | Hides useful financial-product UX and security evidence | #### Tradeoffs Supporting positioning preserves the job-agent lead while still showing careful domain modeling,"
+    },
+    {
+      "id": "repo-54bbf444583e3a05-2",
+      "path": "strategy/household-budget-app/decisions/DECISION_TRAIL.md",
+      "label": "strategy/household-budget-app/decisions/DECISION_TRAIL.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/decisions/DECISION_TRAIL.md",
+      "excerpt": "privacy/security thinking, and test-backed execution. #### Decision Position the household budget app as a supporting proof point for domain modeling, financial-product UX, privacy/security thinking, and test-backed execution. #### Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md). #### Open Questions - Which workflow is strongest for a sanitized demo? - Is the app a credible consumer product path or mainly portfolio evidence? #### Next Action Create sample-data screenshots or excerpts if the project becomes externally shareable."
+    },
+    {
+      "id": "repo-9900f49c9c776dd4-1",
+      "path": "strategy/household-budget-app/market/GO_TO_MARKET.md",
+      "label": "strategy/household-budget-app/market/GO_TO_MARKET.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/market/GO_TO_MARKET.md",
+      "excerpt": "# Household Budget App Go-To-Market Strategy Last updated: 2026-05-11 Status: Deferred hypothesis ## Project Scope Project: household budget app. Role in portfolio: supporting proof point for financial-product UX, household domain modeling, shared access, and test-backed execution. ## Initial Audience Likely early reviewers: - households that already budget together - spreadsheet-heavy personal finance users - people who need shared account visibility and liquidity forecasting ## Distribution Channels | Channel | Why It Might Work | Risk | Status | |---|---|---|---| | Private sample-data walkthroughs | Tests household workflow comprehension safely | Manual and narrow | Planned | | Personal finance power-user feedback | Relevant pain points | Privacy/trust concerns | Planned | | Portfolio case study | Shows domain modeling and testing | Does not validate buyer demand | Active | | Public launch | Could test demand | Premature before privacy/security validation | Deferred | ## GTM Principle Do not sell \"another budgeting dashboard.\" Sell: - shared household money workflows - import and review discipline - liquidity forecasting - goals and recurring expense planning -"
+    },
+    {
+      "id": "repo-9900f49c9c776dd4-2",
+      "path": "strategy/household-budget-app/market/GO_TO_MARKET.md",
+      "label": "strategy/household-budget-app/market/GO_TO_MARKET.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/market/GO_TO_MARKET.md",
+      "excerpt": "privacy/security-aware household access ## Validation Plan 1. Verify a privacy-safe demo path with sample data. 2. Test whether users understand the shared-household wedge. 3. Identify whether import review or forecasting creates the strongest pull. 4. Defer public launch until security and privacy boundaries are validated. ## Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
+    },
+    {
+      "id": "repo-8a4ace87dd04a15d-1",
+      "path": "strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md",
+      "label": "strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md · excerpt 1",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md",
+      "excerpt": "# Household Budget App Competitive Positioning Last updated: 2026-05-11 Status: Initial hypothesis ## Project Scope Project: household budget app. Role in portfolio: supporting proof point for financial-product UX, household domain modeling, shared access, and test-backed execution. ## Positioning Statement A shared household budgeting product for import review, transaction organization, liquidity forecasting, goals, and household-scoped financial visibility. ## Differentiation | Category | Typical Approach | Household Budget App Position | |---|---|---| | Spreadsheets | Flexible but manual | Adds structured imports, rules, forecasts, and shared roles | | Personal budgeting apps | Often individual-first | Centers household membership and shared access | | Bank apps | Account-specific views | Combines accounts, categories, goals, and forecasts | | Expense trackers | Track past spending | Adds planning, scheduled items, and liquidity view | ## What This Is Not - Not financial advice - Not a public launch claim - Not a product that should expose private household data - Not validated as a commercial consumer finance product yet ## Strategic Wedge The strongest wedge is household-aware"
+    },
+    {
+      "id": "repo-8a4ace87dd04a15d-2",
+      "path": "strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md",
+      "label": "strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md · excerpt 2",
+      "sourceClass": "strategy-document",
+      "url": "https://github.com/marcus-uden-dev/ai-native-proof-of-work/blob/main/strategy/household-budget-app/product/COMPETITIVE_POSITIONING.md",
+      "excerpt": "budgeting: shared roles, ownership boundaries, import/review workflows, forecasting, and goals in one privacy-sensitive product domain. ## Evidence See [Household Budget App Case Study](../../../case-studies/HOUSEHOLD_BUDGET_CASE_STUDY.md) and [Project Proof Points](../../../PROJECT_PROOF_POINTS.md)."
     }
   ]
 }
