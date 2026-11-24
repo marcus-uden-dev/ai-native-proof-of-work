@@ -94,7 +94,7 @@ test('CV keeps the human-readable source first and presents proof routes as matc
 
   const actions = page.locator('#sources .review-panel__actions');
   await expect(actions.getByRole('link', { name: 'Open information diet evidence' })).toHaveClass(/button--secondary/);
-  await expect(actions.getByRole('link', { name: 'Open Job-agent proof' })).toHaveClass(/button--secondary/);
+  await expect(actions.getByRole('link', { name: 'Open Earned Signal proof' })).toHaveClass(/button--secondary/);
 });
 
 test('print mode keeps evidence and hides navigation controls', async ({ page }) => {
