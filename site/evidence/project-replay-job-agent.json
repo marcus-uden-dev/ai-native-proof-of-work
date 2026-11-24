@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "project": "job-agent",
-  "title": "The Job-agent story",
+  "title": "The Earned Signal story",
   "recorded_at": "2026-09-24",
   "summary": "A curated public playback of the current Job-agent product surfaces. It is not a reconstructed source-code history.",
   "evidence_boundary": "This story uses public, reviewed evidence only. The three interface frames are from the latest approved Job-agent iteration and use consistent synthetic placeholder data. They do not prove market validation.",
