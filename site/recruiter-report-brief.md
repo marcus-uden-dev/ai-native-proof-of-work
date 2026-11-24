@@ -2,18 +2,18 @@
 
 Use this structure with the [recruiter agent guide](https://marcus-uden-dev.github.io/ai-native-proof-of-work/recruiter-agent-guide.md).
 
-## Canonical Job-agent release facts
+## Canonical Earned Signal release facts
 
-"Job-agent" is a working title for this career decision-support product, not its final name.
+Earned Signal is the current product name. `Job-agent` is the historical project label and stable evidence route.
 
-- Product version: `0.9-public-proof` (previous edition: `0.8-public-proof`)
-- Evidence date: `2026-09-02`
-- Implementation state: `Prototype under active development`
-- Public availability: `Static recruiter-safe preview only`
-- Maturity: `Preparing for production testing`
+- Product version: `closed-beta-2026-11-24` (previous edition: `0.9-public-proof`)
+- Evidence date: `2026-11-24`
+- Implementation state: `Closed beta running with invited testers`
+- Public availability: `Invite-only closed beta; public recruiter-safe preview remains separate`
+- Maturity: `Released — closed beta`
 - Market validation: `Not market-validated`
 - Outcomes: `No measured market outcomes`
-- Privacy: `Release privacy review complete`
+- Privacy: `Public proof privacy review complete; closed-beta operations internally verified`
 
 ## Required report
 
