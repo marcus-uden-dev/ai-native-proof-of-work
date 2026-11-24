@@ -1,5 +1,50 @@
 [
   {
+    "date": "2026-11-24",
+    "project": "Job-agent",
+    "status": "Verified",
+    "type": "Release strategy",
+    "title": "Release to a constrained invite-only cohort",
+    "tags": [
+      "product-judgment",
+      "risk-awareness",
+      "validation",
+      "prioritization"
+    ],
+    "why": "Moved Earned Signal into an invite-only closed beta after internal hardening instead of waiting indefinitely for the final hosting target or opening access broadly.",
+    "demonstrates": "Uses a reversible release to gain external evidence while keeping privacy, support, reliability, and reputation risk bounded."
+  },
+  {
+    "date": "2026-11-24",
+    "project": "Job-agent",
+    "status": "Verified",
+    "type": "Commercial decision",
+    "title": "Keep the closed beta free while learning",
+    "tags": [
+      "product-judgment",
+      "commercial-awareness",
+      "validation",
+      "evidence-driven"
+    ],
+    "why": "Kept the closed beta free and in-app payments in test mode so product learning is not confused with unvalidated willingness to pay.",
+    "demonstrates": "Separates product evidence from commercial claims and defers monetization until repeatable value is better evidenced."
+  },
+  {
+    "date": "2026-11-23",
+    "project": "Job-agent",
+    "status": "Verified",
+    "type": "Quality architecture",
+    "title": "Gate invitations on trust and recovery checks",
+    "tags": [
+      "quality-assurance",
+      "risk-controls",
+      "validation",
+      "decision-traceability"
+    ],
+    "why": "Required authentication, terms acceptance, telemetry, backup and restore, reboot recovery, and pre-invitation smoke checks before treating the closed beta as ready to invite.",
+    "demonstrates": "Turns release readiness into explicit checks that can detect failures and support recovery before external use."
+  },
+  {
     "date": "2026-10-22",
     "project": "Personal AI Harness",
     "status": "Planned",
