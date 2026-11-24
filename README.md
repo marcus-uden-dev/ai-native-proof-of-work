@@ -2,7 +2,7 @@
 
 This repository contains the recruiter-first public proof-of-work edition for Marcus Udén and hands-on product roles.
 
-The site leads with a concise hiring case. It then provides dated evidence, explicit maturity labels, and a guided Job-agent case study. The public edition is curated. It is not a mirror of a working repository.
+The site leads with a concise hiring case. It then provides dated evidence, explicit maturity labels, and a guided Earned Signal case study. The public edition is curated. It is not a mirror of a working repository.
 
 ## Current state
 
@@ -21,7 +21,7 @@ The migration is content-only. The earlier repository history is not imported. S
 ## Hiring route
 
 1. Read the two-minute hiring brief.
-2. Inspect the Job-agent case study and synthetic company-research proof.
+2. Inspect the Earned Signal case study and synthetic company-research proof.
 3. Download the sanitized English CV.
 4. Request an interview through `marcus.uden.dev@gmail.com`.
 
