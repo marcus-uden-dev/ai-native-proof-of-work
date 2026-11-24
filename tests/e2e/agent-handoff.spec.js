@@ -5,7 +5,7 @@ test('llms discovery file points to the normative public evidence contract', asy
   expect(response.ok()).toBeTruthy();
   const text = await response.text();
   expect(text).toContain('recruiter-agent-guide.md');
-  expect(text).toContain('job-agent-v2.json');
+  expect(text).toContain('job-agent-v3.json');
   expect(text).toContain('Not market-validated');
 });
 
@@ -359,11 +359,14 @@ test('CV evidence routes are available to the recruiter assessment flow', async 
 });
 
 test('manifest and fixture are available as static evidence', async ({ request }) => {
-  const manifestResponse = await request.get('/evidence/releases/job-agent-v2.json');
+  const manifestResponse = await request.get('/evidence/releases/job-agent-v3.json');
   const fixtureResponse = await request.get('/evidence/fixtures/job-agent-company-v1.json');
   expect(manifestResponse.ok()).toBeTruthy();
   expect(fixtureResponse.ok()).toBeTruthy();
-  expect((await manifestResponse.json()).marketValidationState).toBe('Not market-validated');
+  const manifest = await manifestResponse.json();
+  expect(manifest.maturity).toBe('Released — closed beta');
+  expect(manifest.marketValidationState).toBe('Not market-validated');
+  expect(manifest.outcomeMeasurementState).toBe('No measured market outcomes');
   expect((await fixtureResponse.json()).companyMode).toBe('synthetic-only');
 });
 
